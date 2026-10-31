@@ -1,0 +1,82 @@
+/* Teams page: bento grid. One tile anatomy everywhere: a single card (tint, radius 30, 8px inset)
+   holding a surface (photo / logo / quote) and its caption, so text always belongs to its card. */
+
+.page-teams { background: var(--bg-white); }
+
+.roster { padding: 140px 36px var(--section-pad) 38px; }
+.roster__title { margin: 0 0 56px; text-align: center; }
+
+.bento {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 40px 24px;
+}
+
+.tile {
+  --inset: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--inset);
+  border-radius: var(--radius-card);
+  background: var(--tint);
+  transition: background 250ms;
+}
+a.tile:hover { background: rgba(23, 16, 14, 0.08); }
+.tile--wide { grid-column: span 2; }
+
+.tile__surface {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  border-radius: calc(var(--radius-card) - var(--inset)); /* concentric with the card */
+  overflow: hidden;
+  background: var(--bg-white);
+}
+/* The photo sets the row height; every other surface stretches to match it. */
+.tile__surface--photo { flex: none; aspect-ratio: 385 / 462; }
+.tile__surface--photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 900ms var(--ease); }
+a.tile:hover .tile__surface--photo img { transform: scale(1.03); }
+.tile__surface--photo.is-soon img { filter: saturate(0.6); }
+
+.tile__surface--logo { display: grid; place-items: center; }
+.tile__surface--logo img { width: 52%; max-width: 200px; height: auto; }
+
+.tile__surface--quote, .tile__surface--invite { padding: 24px; }
+.tile__surface--quote.is-green { background: var(--green); }
+.tile__surface--quote.is-sky { background: #e4ecf3; }
+.tile__surface--invite { background: var(--ink); color: #fff; transition: background 250ms; }
+a.tile:hover .tile__surface--invite { background: #2a2220; }
+
+/* Same type as the hero lead (17/20) — no extra sizes. */
+.tile__quote { display: block; margin: 0; max-width: 32ch; font-size: 17px; line-height: 20px; }
+
+.tile__caption { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 60px; padding: 8px 8px 8px 16px; }
+.tile__text { display: flex; flex-direction: column; gap: 4px; font-size: 12px; line-height: 1.2; }
+.tile__text .muted { color: var(--ink-muted); }
+.tile__count {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+  padding: 0 12px 0 8px;
+  border-radius: 1000px;
+  background: var(--bg-white);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.tile__count img { width: 16px; height: 16px; object-fit: contain; }
+.tile__crests { display: flex; gap: 4px; }
+.tile__crests img { width: 28px; height: 28px; padding: 3px; border-radius: 50%; background: var(--bg-white); object-fit: contain; }
+
+@media (max-width: 1024px) {
+  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .roster { padding: 110px 16px 64px; }
+  .roster__title { margin-bottom: 32px; }
+}
+@media (max-width: 560px) {
+  .bento { grid-template-columns: minmax(0, 1fr); }
+  .tile--wide { grid-column: auto; }
+  .tile__surface--logo, .tile__surface--quote, .tile__surface--invite { min-height: 240px; }
+}

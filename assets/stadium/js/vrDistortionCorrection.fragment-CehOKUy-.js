@@ -1,0 +1,10 @@
+import { t as e } from "./shaderStore-CXjvw9c2.js";
+//#region node_modules/@babylonjs/core/Shaders/vrDistortionCorrection.fragment.js
+var t = "vrDistortionCorrectionPixelShader", n = "varying vec2 vUV;uniform sampler2D textureSampler;uniform vec2 LensCenter;uniform vec2 Scale;uniform vec2 ScaleIn;uniform vec4 HmdWarpParam;vec2 HmdWarp(vec2 in01) {vec2 theta=(in01-LensCenter)*ScaleIn; \nfloat rSq=theta.x*theta.x+theta.y*theta.y;vec2 rvector=theta*(HmdWarpParam.x+HmdWarpParam.y*rSq+HmdWarpParam.z*rSq*rSq+HmdWarpParam.w*rSq*rSq*rSq);return LensCenter+Scale*rvector;}\n#define CUSTOM_FRAGMENT_DEFINITIONS\nvoid main(void)\n{vec2 tc=HmdWarp(vUV);if (tc.x <0.0 || tc.x>1.0 || tc.y<0.0 || tc.y>1.0)\ngl_FragColor=vec4(0.0,0.0,0.0,0.0);else{gl_FragColor=texture2D(textureSampler,tc);}}";
+e.ShadersStore[t] || (e.ShadersStore[t] = n);
+var r = {
+	name: t,
+	shader: n
+};
+//#endregion
+export { r as vrDistortionCorrectionPixelShader };

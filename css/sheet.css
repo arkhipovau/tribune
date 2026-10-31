@@ -1,0 +1,135 @@
+/* Expanding read-more card (pattern after mouthwash.studio project overlays). */
+
+/* Round pill button: "+" icon, label slides open on hover */
+.expand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 6px 0 14px;
+  border-radius: 100px;
+  background: var(--tint);
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 250ms, transform 250ms var(--ease);
+}
+.expand-btn:hover, .expand-btn:focus-visible { background: rgba(23, 16, 14, 0.1); }
+.expand-btn:active { transform: scale(0.96); }
+.expand-btn__icon {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--bg-white);
+  transition: transform 666ms var(--ease);
+}
+.expand-btn:hover .expand-btn__icon,
+[data-opens]:hover ~ .expand-btn .expand-btn__icon { transform: rotate(180deg); }
+
+/* Collapsible label (close button) */
+.expand-btn--close { height: 28px; padding: 0 4px; gap: 0; }
+.expand-btn--close .expand-btn__icon { width: 20px; height: 20px; }
+.expand-btn__label { display: grid; grid-template-columns: 0fr; transition: grid-template-columns 350ms var(--ease); }
+.expand-btn__label > span {
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(0.5em);
+  transition: opacity 350ms, transform 350ms var(--ease);
+}
+.expand-btn--close:hover .expand-btn__label,
+.expand-btn--close:focus-visible .expand-btn__label { grid-template-columns: 1fr; }
+.expand-btn--close:hover .expand-btn__label > span,
+.expand-btn--close:focus-visible .expand-btn__label > span { opacity: 1; transform: none; padding: 0 8px; transition-delay: 100ms; }
+.expand-btn--close .expand-btn__icon { transform: rotate(45deg); }
+.expand-btn--close:hover .expand-btn__icon { transform: rotate(225deg); }
+
+.founder__more { margin-top: 24px; font: inherit; cursor: pointer; }
+[data-opens].founder__text { cursor: pointer; }
+
+/* Dialog */
+.sheet {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 48px 16px;
+  border: 0;
+  background: transparent;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.sheet::backdrop {
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  animation: sheet-fade 350ms ease both;
+}
+.sheet[open] { display: flex; }
+.sheet__card {
+  position: relative;
+  width: min(520px, 100%);
+  height: fit-content;
+  margin: auto;
+  padding: 21px 24px 24px; /* 21 + label half-leading = 24px to the ink */
+  border-radius: var(--radius-card);
+  background: var(--bg-white);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+  animation: sheet-in 500ms var(--ease) both;
+}
+.sheet.is-closing .sheet__card { animation: sheet-out 250ms ease both; }
+.sheet.is-closing::backdrop { animation: sheet-fade 250ms ease reverse both; }
+.sheet__handle { display: none; }
+/* One 24px rhythm, measured on the ink (not the line boxes):
+   card padding = 24, label → headline = 24, headline → body = 24, paragraph → paragraph = 24.
+   The margins below compensate for each font's own line-height. */
+.sheet__card { --gap-label: 18px; --gap-head: 15px; }
+.sheet__top { padding-right: 40px; }
+.sheet__close { position: absolute; top: 14px; right: 14px; } /* equal corner inset; centred on the label line */
+.sheet__heading { margin: 0; color: var(--ink-soft); }
+.sheet__headline { margin: var(--gap-label) 0 0; font-size: 44px; color: var(--ink); }
+.sheet__body { margin-top: var(--gap-head); font-size: 16px; line-height: 1.4; }
+.sheet__body p + p { margin-top: 1em; }
+
+@keyframes sheet-in { from { opacity: 0; transform: translateY(24px) scale(0.97); } }
+@keyframes sheet-out { to { opacity: 0; transform: translateY(12px) scale(0.98); } }
+@keyframes sheet-fade { from { opacity: 0; } }
+
+html.has-sheet { overflow: hidden; }
+
+/* Phones: bottom sheet */
+@media (max-width: 767px) {
+  .sheet { padding: 0; overflow: hidden; }
+  .sheet::backdrop { background: rgba(0, 0, 0, 0.4); backdrop-filter: none; }
+  .sheet__card {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 80vh;
+    margin: 0;
+    padding: 0 24px 40px;
+    overflow-y: auto;
+    border-radius: 20px 20px 0 0;
+    animation-name: sheet-up;
+  }
+  .sheet.is-closing .sheet__card { animation: sheet-down 250ms ease both; }
+  .sheet__handle {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    margin: 0 -24px 0;
+    background: var(--bg-white);
+  }
+  .sheet__handle::before { content: ""; width: 69px; height: 4px; border-radius: 4px; background: #dcdcdc; }
+  .sheet__headline { font-size: 34px; }
+  @keyframes sheet-up { from { transform: translateY(100%); } }
+  @keyframes sheet-down { to { transform: translateY(100%); } }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "tribune-stadium",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "build:stadium": "tsc && vite build"
+  },
+  "devDependencies": {
+    "@gltf-transform/cli": "^4.5.1",
+    "meshoptimizer": "^1.3.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  },
+  "dependencies": {
+    "@babylonjs/core": "^9.29.0",
+    "@babylonjs/loaders": "^9.29.0"
+  }
+}

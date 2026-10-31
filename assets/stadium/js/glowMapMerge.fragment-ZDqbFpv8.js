@@ -1,0 +1,10 @@
+import { t as e } from "./shaderStore-CXjvw9c2.js";
+//#region node_modules/@babylonjs/core/ShadersWGSL/glowMapMerge.fragment.js
+var t = "glowMapMergePixelShader", n = "varying vUV: vec2f;var textureSamplerSampler: sampler;var textureSampler: texture_2d<f32>;\n#ifdef EMISSIVE\nvar textureSampler2Sampler: sampler;var textureSampler2: texture_2d<f32>;\n#endif\nuniform offset: f32;\n#define CUSTOM_FRAGMENT_DEFINITIONS\n@fragment\nfn main(input: FragmentInputs)->FragmentOutputs {\n#define CUSTOM_FRAGMENT_MAIN_BEGIN\nvar baseColor: vec4f=textureSample(textureSampler,textureSamplerSampler,input.vUV);\n#ifdef EMISSIVE\nbaseColor+=textureSample(textureSampler2,textureSampler2Sampler,input.vUV);baseColor*=uniforms.offset;\n#else\nbaseColor=vec4f(baseColor.rgb,abs(uniforms.offset-baseColor.a));\n#ifdef STROKE\nvar alpha: f32=smoothstep(.0,.1,baseColor.a);baseColor=vec4f(baseColor.rgb*alpha,alpha);\n#endif\n#endif\n#if LDR\nbaseColor=clamp(baseColor,vec4f(0.),vec4f(1.0));\n#endif\nfragmentOutputs.color=baseColor;\n#define CUSTOM_FRAGMENT_MAIN_END\n}\n";
+e.ShadersStoreWGSL[t] || (e.ShadersStoreWGSL[t] = n);
+var r = {
+	name: t,
+	shader: n
+};
+//#endregion
+export { r as glowMapMergePixelShaderWGSL };

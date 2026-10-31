@@ -1,0 +1,30 @@
+import { n as e } from "./typeStore-pENEWnX2.js";
+import { t } from "./logger-DQIzSR_y.js";
+import { t as n } from "./flowGraphInteger.pure-C2wx5rjC.js";
+import { t as r } from "./flowGraphExecutionBlockWithOutSignal-B8S90C-T.js";
+import { s as i } from "./utils-Cc6lHVNn.js";
+import { c as a, i as o, n as s } from "./flowGraphRichTypes.pure-BUaIWo2u.js";
+//#region node_modules/@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphForLoopBlock.pure.js
+var c = class e extends r {
+	constructor(e) {
+		super(e), this.startIndex = this.registerDataInput("startIndex", s, 0), this.endIndex = this.registerDataInput("endIndex", s), this.step = this.registerDataInput("step", a, 1), this.index = this.registerDataOutput("index", o, new n(i(e?.initialIndex ?? 0))), this.executionFlow = this._registerSignalOutput("executionFlow"), this.completed = this._registerSignalOutput("completed"), this._unregisterSignalOutput("out");
+	}
+	_execute(r) {
+		let a = i(this.startIndex.getValue(r)), o = this.step.getValue(r), s = i(this.endIndex.getValue(r)), c = this.config?.maxLoopIterations ?? e.MaxLoopIterations, l = 0, u = !1;
+		for (let e = a; e < s; e += o) if (this.index.setValue(new n(e), r), this.executionFlow._activateSignal(r), s = i(this.endIndex.getValue(r)), ++l >= c) {
+			u = !0;
+			break;
+		}
+		u && t.Warn(`FlowGraphForLoopBlock: loop stopped after reaching the ${c}-iteration safety cap before its range completed.`), this.config?.incrementIndexWhenLoopDone && this.index.setValue(new n(i(this.index.getValue(r)) + o), r), this.completed._activateSignal(r);
+	}
+	getClassName() {
+		return "FlowGraphForLoopBlock";
+	}
+};
+c.MaxLoopIterations = 1e3;
+var l = !1;
+function u() {
+	l || (l = !0, e("FlowGraphForLoopBlock", c));
+}
+//#endregion
+export { c as FlowGraphForLoopBlock, u as RegisterFlowGraphForLoopBlock };

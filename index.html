@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tribune — where the game begins</title>
+  <meta name="description" content="Children sketch the vision. We shape it — together. Tribune turns children's drawings of their own football clubs into a shared virtual stadium.">
+  <link rel="preload" href="assets/fonts/Youth-Medium.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/SuisseIntl-Book.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="css/style.css?v=202610312024">
+  <link rel="stylesheet" href="css/sheet.css?v=202610312024">
+</head>
+<body>
+
+<header class="header">
+  <nav class="pill header__nav" aria-label="Main">
+    <a class="pill__item" href="about.html">Manifesto</a>
+    <a class="pill__item" href="teams.html">Teams</a>
+    <a class="pill__item" href="#journal">Journal</a>
+  </nav>
+  <a class="header__logo" href="#top" aria-label="Tribune — home">
+    <img src="assets/svg/logo-header.svg" width="113" height="23" alt="tribune">
+  </a>
+  <div class="pill header__cta">
+    <a class="pill__item" href="#participate">Participate</a>
+    <a class="btn btn--white btn--sm" href="#participate">Partner with us</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <h1 class="display hero__title">where the game begins</h1>
+    <p class="hero__lead">Children sketch the vision. We shape it — together.</p>
+
+    <div class="hero__actions">
+      <div class="hero__buttons">
+        <a class="btn btn--lg btn--green" href="#teams">Support the Teams</a>
+        <a class="btn btn--lg btn--white" href="#participate">Partner with us</a>
+      </div>
+      <a class="link-under" href="mailto:?subject=Tribune">Email us for any questions</a>
+    </div>
+
+    <figure class="video-card hero__video">
+      <img src="assets/img/stadium-preview.webp" alt="Preview of the interactive stadium">
+      <a class="round-btn video-card__play" href="#stadium" aria-label="Go to the interactive stadium">
+        <img src="assets/svg/arrow.svg" width="12" height="11" alt="">
+      </a>
+    </figure>
+  </section>
+
+  <!-- Interactive stadium (Babylon.js module from stadium-src/, loaded on approach).
+       While you scroll through it, the rounded card opens to full screen, holds, then closes. -->
+  <section class="stadium-scroll" id="stadium" aria-label="Interactive 3D stadium">
+    <div class="stadium-scroll__sticky">
+      <div class="stadium">
+        <div class="stadium__mount"></div>
+        <p class="stadium__fallback" hidden>3D is not available in this browser.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Manifesto -->
+  <section class="section section--grey manifesto" id="manifesto">
+    <p class="display reveal" data-reveal>
+      a place
+      <span class="pill-img"><img src="assets/img/estadio.webp" alt=""></span>
+      where children speak first — then ideas
+      <span class="pill-img"><img src="assets/img/pill-ideas.webp" alt="A child’s drawing"></span>
+      find form
+      <span class="pill-img"><img src="assets/img/pill-form.webp" alt="A team house render"></span> .<br>
+      football as common ground.<br>
+      architecture as shared care.
+    </p>
+    <a class="link-under link-under--muted manifesto__more" href="about.html">Read the Manifesto</a>
+  </section>
+
+  <!-- Teams carousel -->
+  <section class="section section--grey teams" id="teams" aria-roledescription="carousel" aria-label="Teams">
+    <p class="label">Already in the game</p>
+
+    <div class="teams__track" aria-live="polite"></div>
+
+    <div class="teams__arrows">
+      <button class="round-btn round-btn--prev" type="button" data-dir="-1" aria-label="Previous team">
+        <img src="assets/svg/arrow.svg" width="12" height="11" alt="">
+      </button>
+      <button class="round-btn" type="button" data-dir="1" aria-label="Next team">
+        <img src="assets/svg/arrow.svg" width="12" height="11" alt="">
+      </button>
+    </div>
+
+    <div class="pill teams__ticks" role="tablist" aria-label="Choose team"></div>
+  </section>
+
+  <!-- Partners -->
+  <section class="section--grey partners" aria-label="Partners">
+    <p class="label">Made in collaborations with</p>
+    <div class="marquee">
+      <div class="marquee__track">
+        <img src="assets/img/logo-ffh.webp" alt="Football for Humanity">
+        <img src="assets/img/logo-spring.webp" alt="The Spring Ubud">
+        <img src="assets/img/logo-ffh.webp" alt="">
+        <img src="assets/img/logo-spring.webp" alt="">
+        <img src="assets/img/logo-ffh.webp" alt="">
+        <img src="assets/img/logo-spring.webp" alt="">
+        <img src="assets/img/logo-ffh.webp" alt="">
+        <img src="assets/img/logo-spring.webp" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section how" id="how">
+    <p class="label">How it works</p>
+    <div class="how__grid">
+      <ol class="steps">
+        <li class="step is-active">
+          <button class="step__head" type="button" aria-expanded="true">
+            <span class="pill-img step__img"><img src="assets/img/pill-ideas.webp" alt="A child’s drawing of a club"></span>
+            <span class="display step__title">children lead</span>
+          </button>
+          <p class="step__text">In workshops and after-school labs, children imagine their own clubs. They choose a name, colours and crest, sketch players, and write short rituals or chants. We listen first. Consent, care and safeguarding sit at the centre.</p>
+        </li>
+        <li class="step">
+          <button class="step__head" type="button" aria-expanded="false">
+            <span class="pill-img step__img"><img src="assets/img/pill-form.webp" alt="A team house render"></span>
+            <span class="display step__title">we co-design</span>
+          </button>
+          <p class="step__text">Designers and mentors translate the sketches into models—paper, clay, then digital. Nothing is “corrected”; we follow the child’s intent and check back for approval. Each team receives a small visual toolkit (badge, palette, type, textures).</p>
+        </li>
+        <li class="step">
+          <button class="step__head" type="button" aria-expanded="false">
+            <span class="pill-img step__img"><img src="assets/img/estadio.webp" alt="The shared stadium"></span>
+            <span class="display step__title">the stadium grows</span>
+          </button>
+          <p class="step__text">Every team’s “house” is placed in a shared virtual stadium. Profiles open on the site; some clubs pair with ambassadors and develop limited kits based on the drawings. Funds raised support partner foundations using football for social good, and progress is shared in the Journal.</p>
+        </li>
+      </ol>
+      <figure class="how__media">
+        <img src="assets/img/workshop.webp" alt="Children drawing their club at a workshop table" loading="lazy">
+        <span class="glass how__crest"><img src="assets/img/logo-carabell.webp" alt=""></span>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Participate -->
+  <section class="section participate" id="participate">
+    <p class="label">Participate</p>
+    <div class="roles">
+      <a class="role" href="mailto:?subject=Tribune%20%E2%80%94%20Foundation">
+        <span class="role__title">As Foundation</span>
+        <img class="role__mascot role__mascot--1" src="assets/img/mascot-treeboy.webp" alt="" loading="lazy">
+        <span class="role__foot">
+          <span class="role__text">
+            <span>For teams, community centres and NGOs.</span>
+            <span class="muted">We run a lab where children draw their vision.</span>
+          </span>
+          <span class="round-btn"><img src="assets/svg/arrow.svg" width="12" height="11" alt=""></span>
+        </span>
+      </a>
+      <a class="role" href="mailto:?subject=Tribune%20%E2%80%94%20Creator">
+        <span class="role__title">As Creator</span>
+        <img class="role__mascot role__mascot--2" src="assets/img/mascot-monkey.webp" alt="" loading="lazy">
+        <span class="role__foot">
+          <span class="role__text">
+            <span>For designers, architects, illustrators, 3D artists.</span>
+            <span class="muted">Join a lab, help translate drawings into models.</span>
+          </span>
+          <span class="round-btn"><img src="assets/svg/arrow.svg" width="12" height="11" alt=""></span>
+        </span>
+      </a>
+      <a class="role role--wide" href="mailto:?subject=Tribune%20%E2%80%94%20Patron">
+        <span class="role__title">As Patron</span>
+        <img class="role__mascot role__mascot--3" src="assets/img/mascot-shark.webp" alt="" loading="lazy">
+        <span class="role__foot">
+          <span class="role__text">
+            <span>For individuals and partners who wish to fund the work.</span>
+            <span class="muted">Fund a lab or sponsor a team’s kit.</span>
+          </span>
+          <span class="round-btn"><img src="assets/svg/arrow.svg" width="12" height="11" alt=""></span>
+        </span>
+      </a>
+    </div>
+    <a class="join" href="mailto:?subject=Join%20Tribune">
+      <span class="display">mail us to join a tribune</span>
+      <span class="join__sub">Hey! It is always better to talk. Mail us and let’s find a right format together.</span>
+    </a>
+  </section>
+
+  <!-- Journal -->
+  <section class="section journal" id="journal">
+    <p class="label">Tribune’s magazine</p>
+    <div class="posts"></div>
+  </section>
+
+  <!-- Founder -->
+  <section class="section founder" id="founder">
+    <p class="display reveal founder__text" data-reveal data-opens="manifesto-dialog">
+      It started with drawings.<br>
+      Kids sitting on the floor, sketching stadiums with tilted goalposts, rooftops like wings, and flags made of sun.<br>
+      Not copying the world—but rewriting it. I’m an architect. I’m trained to think in structures and plans.
+      But when I sat with these children, I realised: The most important thing I could build wasn’t a stadium. It was a space to be seen.
+      Tribune is that space. A place where children imagine their own football clubs—each with its own name, colours, rituals, and crest.
+      They draw themselves as players, creatures, captains. Each sketch holds a piece of who they are, or who they dream to be.
+      We don’t refine their ideas. We follow them.
+      Designers and 3D artists turn these sketches into digital homes—placing each team’s house in a shared virtual stadium.
+      Every house is different. Every house belongs.
+      Once the stadium is full, each team will be paired with an ambassador. Limited-edition kits, based on the kids’ drawings, will be released—one for each team.
+      They’ll be auctioned or collected, with proceeds donated to foundations working with children in vulnerable places, using football as a language of care.
+      But this project isn’t about kits or collectors. It’s about what happens when a child’s vision is carried, not corrected.
+      When imagination becomes architecture. That’s the kind of stadium I want to keep building.
+    </p>
+    <button class="link-under link-under--muted founder__more" type="button" data-opens="manifesto-dialog" aria-haspopup="dialog">More about the founder</button>
+    <figure class="video-card founder__video">
+      <img src="assets/img/founder.webp" alt="Tribune founder" loading="lazy">
+      <button class="round-btn video-card__play" type="button" aria-label="Play founder video">
+        <img src="assets/svg/arrow.svg" width="12" height="11" alt="">
+      </button>
+    </figure>
+  </section>
+</main>
+
+<footer class="footer">
+  <img class="footer__logo" src="assets/svg/logo-footer.svg" width="1366" height="259" alt="tribune">
+  <div class="footer__row">
+    <nav class="footer__nav" aria-label="Footer">
+      <a href="about.html">Manifesto</a>
+      <a href="teams.html">Teams</a>
+      <a href="#journal">Journal</a>
+      <a href="https://instagram.com" aria-label="Instagram" rel="noopener"><img src="assets/svg/instagram.svg" width="17" height="18" alt=""></a>
+    </nav>
+    <a class="footer__collab" href="mailto:?subject=Collab%20with%20Tribune"><span class="dot"></span>Email us to collab</a>
+  </div>
+  <div class="footer__row footer__meta">
+    <span>A world imagined by children. We’re just listening.</span>
+    <span>All rights reserved © Tribune Kids Space 2025</span>
+  </div>
+</footer>
+
+<dialog class="sheet" id="manifesto-dialog" aria-labelledby="manifesto-title">
+  <article class="sheet__card" tabindex="-1" autofocus>
+    <span class="sheet__handle" aria-hidden="true"></span>
+    <div class="sheet__top">
+      <p class="sheet__heading">Manifesto — from the founder</p>
+      <button class="expand-btn expand-btn--close sheet__close" type="button" data-closes>
+        <span class="expand-btn__label"><span>Close</span></span>
+        <span class="expand-btn__icon"><svg viewBox="0 0 16 16" width="10" height="10" aria-hidden="true"><rect y="7" width="16" height="2" fill="currentColor"/><rect x="7" width="2" height="16" fill="currentColor"/></svg></span>
+      </button>
+    </div>
+    <h2 class="display sheet__headline" id="manifesto-title">It started with drawings.</h2>
+    <div class="sheet__body">
+      <p>Kids sitting on the floor, sketching stadiums with tilted goalposts, rooftops like wings, and flags made of sun. Not copying the world—but rewriting it.</p>
+      <p>I’m an architect. I’m trained to think in structures and plans. But when I sat with these children, I realised: The most important thing I could build wasn’t a stadium. It was a space to be seen.</p>
+      <p>Tribune is that space. A place where children imagine their own football clubs—each with its own name, colours, rituals, and crest. They draw themselves as players, creatures, captains. Each sketch holds a piece of who they are, or who they dream to be.</p>
+      <p>We don’t refine their ideas. We follow them.</p>
+      <p>Designers and 3D artists turn these sketches into digital homes—placing each team’s house in a shared virtual stadium. Every house is different. Every house belongs.</p>
+      <p>Once the stadium is full, each team will be paired with an ambassador. Limited-edition kits, based on the kids’ drawings, will be released—one for each team. They’ll be auctioned or collected, with proceeds donated to foundations working with children in vulnerable places, using football as a language of care.</p>
+      <p>But this project isn’t about kits or collectors. It’s about what happens when a child’s vision is carried, not corrected. When imagination becomes architecture.</p>
+      <p>That’s the kind of stadium I want to keep building.</p>
+    </div>
+  </article>
+</dialog>
+
+<script src="js/teams-data.js?v=202610312024" defer></script>
+<script src="js/carousel.js?v=202610312024" defer></script>
+<script src="js/main.js?v=202610312024" defer></script>
+<script src="js/stadium-loader.js?v=202610312024" defer></script>
+<script src="js/dialogs.js?v=202610312024" defer></script>
+<script src="js/marquee.js?v=202610312024" defer></script>
+</body>
+</html>

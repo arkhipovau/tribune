@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manifesto — Tribune</title>
+  <meta name="description" content="The Tribune manifesto as a stadium: rotate, zoom in and read every stand.">
+  <link rel="preload" href="assets/fonts/Youth-Medium.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/SuisseIntl-Book.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="css/style.css?v=202610312024">
+  <link rel="stylesheet" href="css/sheet.css?v=202610312024">
+  <link rel="stylesheet" href="css/about.css?v=202610312024">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body class="page-about">
+
+<header class="header">
+  <nav class="pill header__nav" aria-label="Main">
+    <a class="pill__item" href="about.html" aria-current="page">Manifesto</a>
+    <a class="pill__item" href="teams.html">Teams</a>
+    <a class="pill__item" href="index.html#journal">Journal</a>
+  </nav>
+  <a class="header__logo" href="index.html" aria-label="Tribune — home">
+    <img src="assets/svg/logo-header.svg" width="113" height="23" alt="tribune">
+  </a>
+  <div class="pill header__cta">
+    <a class="pill__item" href="index.html#participate">Participate</a>
+    <a class="btn btn--white btn--sm" href="index.html#participate">Partner with us</a>
+  </div>
+</header>
+
+<main class="arena">
+  <canvas class="arena__canvas" aria-label="3D stadium made of the Tribune manifesto. Drag to rotate, scroll or pinch to zoom."></canvas>
+
+  <div class="arena__loading" role="status">Building the stadium…</div>
+
+  <nav class="arena__stands" aria-label="Stands"></nav>
+
+
+  <button class="link-under arena__read" type="button" data-opens="manifesto-text" aria-haspopup="dialog">Read as text</button>
+</main>
+
+<dialog class="sheet" id="manifesto-text" aria-labelledby="manifesto-text-title">
+  <article class="sheet__card" tabindex="-1" autofocus>
+    <span class="sheet__handle" aria-hidden="true"></span>
+    <div class="sheet__top">
+      <p class="sheet__heading">Manifesto</p>
+      <button class="expand-btn expand-btn--close sheet__close" type="button" data-closes>
+        <span class="expand-btn__label"><span>Close</span></span>
+        <span class="expand-btn__icon"><svg viewBox="0 0 16 16" width="10" height="10" aria-hidden="true"><rect y="7" width="16" height="2" fill="currentColor"/><rect x="7" width="2" height="16" fill="currentColor"/></svg></span>
+      </button>
+    </div>
+    <h2 class="display sheet__headline" id="manifesto-text-title">tribune</h2>
+    <div class="sheet__body about-text"></div>
+  </article>
+</dialog>
+
+<script src="js/about-content.js?v=202610312024"></script>
+<script src="js/dialogs.js?v=202610312024" defer></script>
+<script type="module" src="js/about-stadium.js?v=202610312024"></script>
+</body>
+</html>

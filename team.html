@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team — Tribune</title>
+  <meta name="description" content="A football club imagined by children, and the house they designed for it.">
+  <link rel="preload" href="assets/fonts/Youth-Medium.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="css/style.css?v=202610312024">
+  <link rel="stylesheet" href="css/team.css?v=202610312024">
+</head>
+<body class="page-team">
+
+<header class="header">
+  <nav class="pill header__nav" aria-label="Main">
+    <a class="pill__item" href="about.html">Manifesto</a>
+    <a class="pill__item" href="teams.html">Teams</a>
+    <a class="pill__item" href="index.html#journal">Journal</a>
+  </nav>
+  <a class="header__logo" href="index.html" aria-label="Tribune — home">
+    <img src="assets/svg/logo-header.svg" width="113" height="23" alt="tribune">
+  </a>
+  <div class="pill header__cta">
+    <a class="pill__item" href="index.html#participate">Participate</a>
+    <a class="btn btn--white btn--sm" href="index.html#participate">Partner with us</a>
+  </div>
+</header>
+
+<main class="team">
+  <!-- Stage for the house. Today: render image. Later: a 3D scene mounts here. -->
+  <div class="team__stage" aria-hidden="true"></div>
+
+  <nav class="team-switch" aria-label="Clubs"></nav>
+
+  <aside class="team__panel">
+    <section class="tp-hero">
+      <h1 class="display tp-hero__title"></h1>
+      <div class="tp-hero__gallery"></div>
+      <div class="pill tp-hero__ticks" role="tablist" aria-label="Team images"></div>
+    </section>
+
+    <section class="tp-row tp-about">
+      <span class="tp-row__text">
+        <span>About</span>
+        <span class="muted tp-about__tagline"></span>
+      </span>
+      <span class="glass tp-row__tile tp-about__crest"></span>
+    </section>
+
+    <section class="tp-row tp-credits">
+      <span class="tp-row__text tp-credits__text"></span>
+      <span class="tp-row__tiles tp-credits__tiles"></span>
+    </section>
+
+    <a class="tp-patron" href="mailto:?subject=Become%20a%20Patron">
+      <span>Become a Patron</span>
+      <span class="tp-patron__btn">+ <img class="tp-patron__drawing" src="" alt=""></span>
+    </a>
+
+  </aside>
+</main>
+
+<script src="js/teams-data.js?v=202610312024" defer></script>
+<script src="js/team-page.js?v=202610312024" defer></script>
+</body>
+</html>
