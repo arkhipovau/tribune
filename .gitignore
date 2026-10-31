@@ -2,10 +2,6 @@
 node_modules/
 .tmp-preview/
 
-# Commercial fonts (Youth, Suisse Intl): licensed, must not be published in a public repo.
-assets/fonts/*.ttf
-assets/fonts/*.otf
-
 # Dev-only symlinks into assets/stadium (used by `npm run dev` in stadium-src)
 stadium-src/public/models-opt
 stadium-src/public/env

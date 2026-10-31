@@ -23,7 +23,7 @@ const BOWL = { inner: 7.5, outer: 13, height: 4.5, lift: 0.15 };
 const ARC = THREE.MathUtils.degToRad(78);
 // Many height segments keep text rows straight: one trapezoid per stand warps the texture.
 const STAND_ROWS = 32;
-const TEX = { w: 3072, h: 1566, pad: 120, title: 160, body: 56, lead: 72, cols: 2, gap: 120 };
+const TEX = { w: 3072, h: 1566, pad: 100, title: 150, titleGap: 70, body: 44, lead: 56, col: 1900 };
 
 const FOCUS_MS = 1200;
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -74,24 +74,15 @@ function standTexture(stand, anisotropy) {
   ctx.textBaseline = "top";
 
   ctx.font = `450 ${TEX.body}px "Suisse Intl", sans-serif`;
-  const colWidth = (TEX.w - TEX.pad * 2 - TEX.gap * (TEX.cols - 1)) / TEX.cols;
-  const top = TEX.pad + TEX.title + 90;
-  const bottom = TEX.h - TEX.pad;
+  // One centred column, narrower than the stand so lines stay short and readable.
+  const colWidth = TEX.col;
+  const x = (TEX.w - colWidth) / 2;
   const paraGap = TEX.lead * 0.6;
-
-  // Balance whole paragraphs across columns so no column is left empty.
   const paras = stand.paragraphs.map((p) => wrapLines(ctx, p, colWidth));
-  const heightOf = (list) => list.reduce((h, lines, i) => h + lines.length * TEX.lead + (i ? paraGap : 0), 0);
-  let split = paras.length;
-  let best = Infinity;
-  for (let k = 1; k <= paras.length; k += 1) {
-    const worst = Math.max(heightOf(paras.slice(0, k)), heightOf(paras.slice(k)));
-    if (worst < best) { best = worst; split = k; }
-  }
-  const columns = [paras.slice(0, split), paras.slice(split)];
+  const bodyH = paras.reduce((h, lines, i) => h + lines.length * TEX.lead + (i ? paraGap : 0), 0);
 
   // Centre title + body vertically on the stand.
-  const blockH = TEX.title + 90 + Math.max(heightOf(columns[0]), heightOf(columns[1]));
+  const blockH = TEX.title + TEX.titleGap + bodyH;
   const shift = Math.max(0, (TEX.h - blockH) / 2 - TEX.pad);
 
   ctx.textAlign = "center";
@@ -102,17 +93,10 @@ function standTexture(stand, anisotropy) {
   ctx.textAlign = "left";
   ctx.font = `450 ${TEX.body}px "Suisse Intl", sans-serif`;
 
-  columns.forEach((colParas, col) => {
-    let x = TEX.pad + col * (colWidth + TEX.gap);
-    let y = top + shift;
-    colParas.forEach((lines, i) => {
-      if (i) y += paraGap;
-      lines.forEach((line) => {
-        if (y + TEX.lead > bottom) { x += colWidth + TEX.gap; y = top; } // overflow guard
-        ctx.fillText(line, x, y);
-        y += TEX.lead;
-      });
-    });
+  let y = TEX.pad + shift + TEX.title + TEX.titleGap;
+  paras.forEach((lines, i) => {
+    if (i) y += paraGap;
+    lines.forEach((line) => { ctx.fillText(line, x, y); y += TEX.lead; });
   });
 
   const tex = new THREE.CanvasTexture(c);
@@ -207,13 +191,18 @@ function buildScene(renderer) {
 
 const easeInOut = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
+// Look at the stand head-on: the camera sits on the normal of the sloped surface,
+// so the printed text faces the viewer instead of being seen at a grazing angle.
+const VIEW_DISTANCE = 17; // leaves the stand edges in view
 function viewFor(stand) {
   const d = dirOf(stand.angle);
   const mid = (BOWL.inner + BOWL.outer) / 2;
-  return {
-    target: d.clone().multiplyScalar(mid).add(new THREE.Vector3(0, BOWL.height * 0.55, 0)),
-    position: d.clone().multiplyScalar(-7).add(new THREE.Vector3(0, BOWL.height + 4.5, 0)),
-  };
+  const centre = d.clone().multiplyScalar(mid).add(new THREE.Vector3(0, BOWL.lift + BOWL.height / 2, 0));
+  const run = BOWL.outer - BOWL.inner;
+  const slope = Math.hypot(run, BOWL.height);
+  // Inward-and-up normal of a surface rising `height` over `run` (outward).
+  const normal = d.clone().multiplyScalar(-BOWL.height / slope).add(new THREE.Vector3(0, run / slope, 0));
+  return { target: centre, position: centre.clone().add(normal.multiplyScalar(VIEW_DISTANCE)) };
 }
 
 const OVERVIEW = { position: new THREE.Vector3(0, 34, 22), target: new THREE.Vector3(0, 0, 0) };
@@ -342,5 +331,5 @@ function start() {
 // Canvas text needs the web fonts before drawing.
 Promise.all([
   document.fonts.load('500 150px "Youth"'),
-  document.fonts.load('450 56px "Suisse Intl"'),
+  document.fonts.load('450 44px "Suisse Intl"'),
 ]).catch(() => {}).finally(start);
