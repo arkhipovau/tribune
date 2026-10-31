@@ -23,7 +23,7 @@ const BOWL = { inner: 7.5, outer: 13, height: 4.5, lift: 0.15 };
 const ARC = THREE.MathUtils.degToRad(78);
 // Many height segments keep text rows straight: one trapezoid per stand warps the texture.
 const STAND_ROWS = 32;
-const TEX = { w: 3072, h: 1566, pad: 100, title: 150, titleGap: 70, body: 44, lead: 56, col: 1400 };
+const TEX = { w: 3072, h: 1566, pad: 100, title: 150, titleGap: 70, body: 40, lead: 60, col: 1300, ink: "rgba(23, 16, 14, 0.78)" };
 
 const FOCUS_MS = 1200;
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -87,7 +87,7 @@ function standTexture(stand, anisotropy) {
     }
     return wrapLines(ctx, text, hi);
   };
-  const paraGap = TEX.lead * 0.6;
+  const paraGap = TEX.lead; // one empty line between paragraphs
   const paras = stand.paragraphs.map(balanced);
   const bodyH = paras.reduce((h, lines, i) => h + lines.length * TEX.lead + (i ? paraGap : 0), 0);
 
@@ -101,6 +101,7 @@ function standTexture(stand, anisotropy) {
   ctx.fillText(stand.title, TEX.w / 2, TEX.pad + shift);
   ctx.letterSpacing = "0px";
   ctx.font = `450 ${TEX.body}px "Suisse Intl", sans-serif`;
+  ctx.fillStyle = TEX.ink; // body a shade lighter than the title
 
   let y = TEX.pad + shift + TEX.title + TEX.titleGap;
   paras.forEach((lines, i) => {
@@ -201,18 +202,21 @@ function buildScene(renderer) {
 
 const easeInOut = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
-// Look at the stand head-on: the camera sits on the normal of the sloped surface,
-// so the printed text faces the viewer instead of being seen at a grazing angle.
-const VIEW_DISTANCE = 17; // leaves the stand edges in view
+// Three-quarter view of each stand: from the stand's normal (so the text faces us)
+// swung sideways and slightly lowered, for a more cinematic, angled close-up.
+const VIEW_DISTANCE = 18;
+const VIEW_SWING = THREE.MathUtils.degToRad(16);
 function viewFor(stand) {
   const d = dirOf(stand.angle);
   const mid = (BOWL.inner + BOWL.outer) / 2;
   const centre = d.clone().multiplyScalar(mid).add(new THREE.Vector3(0, BOWL.lift + BOWL.height / 2, 0));
   const run = BOWL.outer - BOWL.inner;
   const slope = Math.hypot(run, BOWL.height);
-  // Inward-and-up normal of a surface rising `height` over `run` (outward).
   const normal = d.clone().multiplyScalar(-BOWL.height / slope).add(new THREE.Vector3(0, run / slope, 0));
-  return { target: centre, position: centre.clone().add(normal.multiplyScalar(VIEW_DISTANCE)) };
+  const side = new THREE.Vector3(-d.z, 0, d.x); // horizontal, along the stand
+  const dir = normal.multiplyScalar(Math.cos(VIEW_SWING)).add(side.multiplyScalar(Math.sin(VIEW_SWING))).normalize();
+  dir.y *= 0.92; // a touch lower than the normal
+  return { target: centre, position: centre.clone().add(dir.normalize().multiplyScalar(VIEW_DISTANCE)) };
 }
 
 const OVERVIEW = { position: new THREE.Vector3(0, 34, 22), target: new THREE.Vector3(0, 0, 0) };
@@ -341,5 +345,5 @@ function start() {
 // Canvas text needs the web fonts before drawing.
 Promise.all([
   document.fonts.load('500 150px "Youth"'),
-  document.fonts.load('450 44px "Suisse Intl"'),
+  document.fonts.load('450 40px "Suisse Intl"'),
 ]).catch(() => {}).finally(start);
