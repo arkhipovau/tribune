@@ -7,8 +7,7 @@ window.TRIBUNE_MANIFESTO = [
     angle: 0,
     paragraphs: [
       "Where the game begins. Children sketch the vision. We shape it — together.",
-      "A place where children speak first — then ideas find form. Football as common ground. Architecture as shared care.",
-      "A world imagined by children. We’re just listening.",
+      "A place where children speak first — then ideas find form. Football as common ground. Architecture as shared care. A world imagined by children. We’re just listening.",
     ],
   },
   {
@@ -26,8 +25,7 @@ window.TRIBUNE_MANIFESTO = [
     title: "what further?",
     angle: 90,
     paragraphs: [
-      "Once the stadium is full, each team will be paired with an ambassador. Limited-edition kits, based on the kids’ drawings, will be released—one for each team.",
-      "They’ll be auctioned or collected, with proceeds donated to foundations working with children in vulnerable places, using football as a language of care.",
+      "Once the stadium is full, each team will be paired with an ambassador. Limited-edition kits, based on the kids’ drawings, will be released—one for each team. They’ll be auctioned or collected, with proceeds donated to foundations working with children in vulnerable places, using football as a language of care.",
       "Funds raised support partner foundations using football for social good, and progress is shared in the Journal.",
     ],
   },
@@ -36,10 +34,8 @@ window.TRIBUNE_MANIFESTO = [
     title: "who am i and why i do it?",
     angle: 180,
     paragraphs: [
-      "It started with drawings. Kids sitting on the floor, sketching stadiums with tilted goalposts, rooftops like wings, and flags made of sun. Not copying the world—but rewriting it.",
-      "I’m an architect. I’m trained to think in structures and plans. But when I sat with these children, I realised: The most important thing I could build wasn’t a stadium. It was a space to be seen.",
-      "Tribune is that space. A place where children imagine their own football clubs—each with its own name, colours, rituals, and crest. We don’t refine their ideas. We follow them.",
-      "Designers and 3D artists turn these sketches into digital homes. Every house is different. Every house belongs.",
+      "It started with drawings. Kids sitting on the floor, sketching stadiums with tilted goalposts, rooftops like wings, and flags made of sun. Not copying the world—but rewriting it. I’m an architect. I’m trained to think in structures and plans. But when I sat with these children, I realised: The most important thing I could build wasn’t a stadium. It was a space to be seen.",
+      "Tribune is that space. A place where children imagine their own football clubs—each with its own name, colours, rituals, and crest. We don’t refine their ideas. We follow them. Designers and 3D artists turn these sketches into digital homes. Every house is different. Every house belongs.",
       "But this project isn’t about kits or collectors. It’s about what happens when a child’s vision is carried, not corrected. When imagination becomes architecture. That’s the kind of stadium I want to keep building.",
     ],
   },

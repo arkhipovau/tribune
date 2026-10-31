@@ -23,7 +23,7 @@ const BOWL = { inner: 7.5, outer: 13, height: 4.5, lift: 0.15 };
 const ARC = THREE.MathUtils.degToRad(78);
 // Many height segments keep text rows straight: one trapezoid per stand warps the texture.
 const STAND_ROWS = 32;
-const TEX = { w: 3072, h: 1566, pad: 100, title: 150, titleGap: 70, body: 44, lead: 56, col: 1900 };
+const TEX = { w: 3072, h: 1566, pad: 100, title: 150, titleGap: 70, body: 44, lead: 56, col: 1400 };
 
 const FOCUS_MS = 1200;
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -74,11 +74,21 @@ function standTexture(stand, anisotropy) {
   ctx.textBaseline = "top";
 
   ctx.font = `450 ${TEX.body}px "Suisse Intl", sans-serif`;
-  // One centred column, narrower than the stand so lines stay short and readable.
+  // One narrow centred column, centre-aligned, with balanced line lengths
+  // (like CSS text-wrap: balance): each paragraph keeps its line count at the
+  // narrowest width that allows it, so no line ends with a lonely word.
   const colWidth = TEX.col;
-  const x = (TEX.w - colWidth) / 2;
+  const balanced = (text) => {
+    const lines = wrapLines(ctx, text, colWidth).length;
+    let lo = colWidth * 0.5, hi = colWidth;
+    for (let i = 0; i < 14; i += 1) {
+      const mid = (lo + hi) / 2;
+      if (wrapLines(ctx, text, mid).length > lines) lo = mid; else hi = mid;
+    }
+    return wrapLines(ctx, text, hi);
+  };
   const paraGap = TEX.lead * 0.6;
-  const paras = stand.paragraphs.map((p) => wrapLines(ctx, p, colWidth));
+  const paras = stand.paragraphs.map(balanced);
   const bodyH = paras.reduce((h, lines, i) => h + lines.length * TEX.lead + (i ? paraGap : 0), 0);
 
   // Centre title + body vertically on the stand.
@@ -90,14 +100,14 @@ function standTexture(stand, anisotropy) {
   ctx.letterSpacing = "-0.05em";
   ctx.fillText(stand.title, TEX.w / 2, TEX.pad + shift);
   ctx.letterSpacing = "0px";
-  ctx.textAlign = "left";
   ctx.font = `450 ${TEX.body}px "Suisse Intl", sans-serif`;
 
   let y = TEX.pad + shift + TEX.title + TEX.titleGap;
   paras.forEach((lines, i) => {
     if (i) y += paraGap;
-    lines.forEach((line) => { ctx.fillText(line, x, y); y += TEX.lead; });
+    lines.forEach((line) => { ctx.fillText(line, TEX.w / 2, y); y += TEX.lead; });
   });
+  ctx.textAlign = "left";
 
   const tex = new THREE.CanvasTexture(c);
   tex.colorSpace = THREE.SRGBColorSpace;
