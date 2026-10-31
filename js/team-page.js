@@ -119,7 +119,11 @@
     return ticks.appendChild(b);
   });
   function show(index) {
-    frames.forEach((f, i) => f.classList.toggle("is-active", i === index));
+    // Images enter from the right and leave to the left (reverse when going back).
+    frames.forEach((f, i) => {
+      f.classList.toggle("is-active", i === index);
+      f.classList.toggle("is-before", i < index);
+    });
     tickButtons.forEach((b, i) => {
       b.classList.toggle("is-active", i === index);
       b.setAttribute("aria-selected", String(i === index));

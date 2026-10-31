@@ -23,7 +23,7 @@ const BOWL = { inner: 7.5, outer: 13, height: 4.5, lift: 0.15 };
 const ARC = THREE.MathUtils.degToRad(78);
 // Many height segments keep text rows straight: one trapezoid per stand warps the texture.
 const STAND_ROWS = 32;
-const TEX = { w: 3072, h: 1566, pad: 100, title: 150, titleGap: 70, body: 40, lead: 60, col: 1300, ink: "rgba(23, 16, 14, 0.78)" };
+const TEX = { w: 3072, h: 1566, pad: 100, title: 150, titleGap: 70, body: 40, lead: 60, col: 1650, ink: "rgba(23, 16, 14, 0.78)" };
 
 const FOCUS_MS = 1200;
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

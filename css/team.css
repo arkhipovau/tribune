@@ -119,10 +119,11 @@
   height: 100%;
   object-fit: contain;
   opacity: 0;
-  transform: translateY(12px) scale(0.98);
+  transform: translateX(48px); /* waiting on the right */
   transition: opacity var(--dur) var(--ease), transform 700ms var(--ease);
 }
 .tp-hero__gallery img.is-active { opacity: 1; transform: none; }
+.tp-hero__gallery img.is-before { transform: translateX(-48px); } /* left behind on the left */
 .tp-hero__ticks {
   position: absolute;
   left: 50%;

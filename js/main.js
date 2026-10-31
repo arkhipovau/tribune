@@ -91,45 +91,25 @@
 
   // Paste post links from instagram.com/tribune_kids.space here (newest first).
   // While the list is empty the design placeholders are shown.
-  const INSTAGRAM_POSTS = [];
-  const INSTAGRAM_EMBED_SRC = "https://www.instagram.com/embed.js";
+  const INSTAGRAM_POSTS = [
+    "https://www.instagram.com/p/Da7im4SogWo/",
+    "https://www.instagram.com/p/Da2F68iIvMO/",
+    "https://www.instagram.com/p/DavpYCjCH6L/",
+    "https://www.instagram.com/p/DaieaK4CIeX/",
+  ];
 
+  // Each post is Instagram's own embed page in an iframe (no third-party script).
   function renderEmbed(url) {
-    const quote = el("blockquote", "instagram-media");
-    quote.setAttribute("data-instgrm-permalink", url);
-    quote.setAttribute("data-instgrm-version", "14");
-    const link = el("a", "", "View this post on Instagram");
-    link.href = url;
-    link.rel = "noopener";
-    quote.append(link);
     const wrap = el("div", "post-embed");
-    wrap.append(quote);
+    const frame = el("iframe");
+    frame.src = `${url.replace(/\/?$/, "/")}embed/`;
+    frame.title = "Instagram post by tribune_kids.space";
+    frame.loading = "lazy";
+    frame.setAttribute("scrolling", "no");
+    frame.setAttribute("allowtransparency", "true");
+    wrap.append(frame);
     return wrap;
   }
-
-  function loadInstagramEmbeds(list) {
-    const run = () => {
-      if (window.instgrm) { window.instgrm.Embeds.process(); return; }
-      const s = el("script");
-      s.async = true;
-      s.src = INSTAGRAM_EMBED_SRC;
-      document.body.append(s);
-    };
-    // Load Instagram's script only when the journal is about to be seen.
-    const io = new IntersectionObserver((entries) => {
-      if (entries.some((e) => e.isIntersecting)) { io.disconnect(); run(); }
-    }, { rootMargin: "600px 0px" });
-    io.observe(list);
-  }
-
-  const POSTS = Array.from({ length: 4 }, () => ({
-    user: "terrylucas",
-    image: "assets/img/post.webp",
-    likes: "1.069",
-    caption: "Imperdiet in sit rhoncus, eleifend tellus augue lectus potenti pellentesque",
-    comments: 100,
-    time: "1 hour ago",
-  }));
 
   function renderPost(p) {
     const post = el("article", "post");
@@ -170,7 +150,6 @@
     if (INSTAGRAM_POSTS.length > 0) {
       list.classList.add("posts--embeds");
       INSTAGRAM_POSTS.slice(0, 4).forEach((url) => list.append(renderEmbed(url)));
-      loadInstagramEmbeds(list);
       return;
     }
     POSTS.forEach((p) => list.append(renderPost(p)));
