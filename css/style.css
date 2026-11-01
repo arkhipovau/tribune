@@ -381,37 +381,52 @@ button.round-btn:active { transform: scale(0.94); }
 
 /* ---------- how it works ---------- */
 
+/* Static by default (mobile, reduced motion, no JS); js adds .how--pinned on desktop. */
+.how--pinned { height: 300vh; padding: 0; }
+.how--pinned .how__pin { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+
 .how__grid {
   display: grid;
   grid-template-columns: var(--cols-3);
   column-gap: 41px;
   padding: 0 var(--gutter);
 }
-.steps { grid-column: 1 / span 2; align-self: stretch; }
+.how__col { grid-column: 1 / span 2; display: flex; flex-direction: column; justify-content: space-between; gap: 32px; }
 .how__media { grid-column: 3; }
-.steps { list-style: none; display: flex; flex-direction: column; gap: 40px; min-height: 509px; }
-.step { display: flex; flex-direction: column; flex: 0 0 72px; transition: flex-grow var(--dur) var(--ease); }
-.step.is-active { flex-grow: 1; }
-.step__head { display: flex; align-items: center; gap: 24px; height: 72px; text-align: left; border-radius: 100px; }
-.step__img { font-size: 80px; flex: none; }
+
+.steps { list-style: none; display: flex; flex-direction: column; gap: 24px; }
+.step__head { display: flex; align-items: center; gap: 24px; height: 72px; text-align: left; border-radius: 1000px; }
+.step__img { font-size: 80px; flex: none; transition: opacity var(--dur) var(--ease), filter var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
 .step__title { white-space: nowrap; transition: opacity var(--dur) var(--ease); }
-.step__img { transition: filter var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
-.step:not(.is-active) .step__img { box-shadow: none; filter: blur(8px); }
+.step:not(.is-active) .step__img { box-shadow: none; opacity: 0.4; filter: grayscale(1); }
 .step:not(.is-active) .step__title { opacity: 0.32; }
 .step:not(.is-active) .step__head:hover .step__title { opacity: 0.6; }
+/* Text opens smoothly in place: 0fr → 1fr row. */
+.step__body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--dur) var(--ease); }
+.step.is-active .step__body { grid-template-rows: 1fr; }
 .step__text {
+  min-height: 0;
+  overflow: hidden;
   max-width: 440px;
-  margin: 24px 0 0 104px;
+  margin-left: 104px; /* aligned with the title: 80px pill + 24px gap */
   opacity: 0;
-  transform: translateY(8px);
-  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
-  pointer-events: none;
+  transition: opacity var(--dur) var(--ease);
 }
-.step.is-active .step__text { opacity: 1; transform: none; pointer-events: auto; }
-.step:not(.is-active) .step__text { visibility: hidden; height: 0; margin-top: 0; }
+.step.is-active .step__text { padding-top: 16px; opacity: 1; }
 
-.how__media { position: relative; aspect-ratio: 1; border-radius: var(--radius-card); overflow: hidden; }
-.how__media > img { width: 100%; height: 100%; object-fit: cover; }
+/* Progress sits level with the bottom of the photo. */
+.how__progress { display: flex; align-items: center; gap: 16px; margin-left: 104px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.how__count b { font-weight: inherit; color: var(--ink); }
+.how__bars { display: flex; gap: 4px; }
+.how__bars i { position: relative; width: 40px; height: 4px; border-radius: 1000px; background: var(--tint); overflow: hidden; }
+.how__bars i::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--ink); transform-origin: left; transform: scaleX(var(--fill, 0)); }
+
+/* Photos stacked in one frame; the next one slides up over the current. */
+.how__media { position: relative; aspect-ratio: 1; border-radius: var(--radius-card); overflow: hidden; background: var(--bg-grey); isolation: isolate; }
+.how__slide { position: absolute; inset: 0; transform: translateY(100%); transition: transform 700ms var(--ease); will-change: transform; }
+.how__slide.is-shown { transform: none; }
+.how--pinned .how__slide { transition: none; }
+.how__slide > img { width: 100%; height: 100%; object-fit: cover; }
 .how__crest { position: absolute; left: 14px; bottom: 14px; }
 
 /* ---------- participate ---------- */
@@ -618,15 +633,12 @@ button.round-btn:active { transform: scale(0.94); }
   .teams__arrows { position: static; justify-content: center; margin-top: 24px; }
 
   .how__grid { grid-template-columns: minmax(0, 1fr); padding: 0 16px; row-gap: 32px; }
-  .steps, .how__media { grid-column: 1 / -1; }
-  .steps { min-height: 0; }
+  .how__col, .how__media { grid-column: 1 / -1; }
   .step__head { height: auto; min-height: 56px; gap: 16px; }
   .step__title { white-space: normal; font-size: 40px; }
-  .steps { height: auto; gap: 24px; }
-  .step { flex: none; }
+  .steps { gap: 16px; }
   .step__img { font-size: 56px; }
-  .step__text { margin-left: 0; }
-  .step:not(.is-active) .step__text { display: none; }
+  .step__text, .how__progress { margin-left: 0; }
 
   .roles { grid-template-columns: 1fr; gap: 90px; padding: 60px 16px 0; }
   .role__mascot { width: 200px; height: 200px; top: -70px; right: 0; left: auto !important; }

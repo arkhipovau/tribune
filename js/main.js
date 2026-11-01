@@ -20,17 +20,82 @@
 
   /* ---------- How it works ---------- */
 
+  // Desktop: the section is pinned and the scroll walks through the steps; each next photo
+  // slides up over the previous one (which drifts up a little). Elsewhere: click to switch.
+  const HOW_WIPE = 0.6;        // share of each step's scroll spent on the photo wipe
+  const HOW_DRIFT = 25;        // % the covered photo drifts up while the next one arrives
+  const clamp01 = (v) => Math.min(1, Math.max(0, v));
+  const easeInOut = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+
   function initSteps() {
-    const steps = [...document.querySelectorAll(".step")];
-    steps.forEach((step) => {
+    const section = document.getElementById("how");
+    if (!section) return;
+    const steps = [...section.querySelectorAll(".step")];
+    const slides = [...section.querySelectorAll(".how__slide")];
+    const bars = [...section.querySelectorAll(".how__bars i")];
+    const count = section.querySelector(".how__count b");
+    const last = steps.length - 1;
+    const pinQuery = matchMedia("(min-width: 901px) and (prefers-reduced-motion: no-preference)");
+    let active = -1;
+
+    const setActive = (index) => {
+      if (index === active) return;
+      active = index;
+      steps.forEach((s, i) => {
+        s.classList.toggle("is-active", i === index);
+        s.querySelector(".step__head").setAttribute("aria-expanded", String(i === index));
+      });
+      count.textContent = String(index + 1).padStart(2, "0");
+    };
+
+    const range = () => section.offsetHeight - innerHeight;
+    const progress = () => clamp01(-section.getBoundingClientRect().top / Math.max(1, range()));
+
+    const renderPinned = () => {
+      const seg = progress() * last;
+      const wipe = slides.map((_, k) => (k === 0 ? 1 : easeInOut(clamp01((seg - (k - 1) - (1 - HOW_WIPE) / 2) / HOW_WIPE))));
+      slides.forEach((slide, k) => {
+        const next = wipe[k + 1] || 0;
+        slide.style.transform = `translateY(${(1 - wipe[k]) * 100 - next * HOW_DRIFT}%)`;
+      });
+      bars.forEach((bar, i) => bar.style.setProperty("--fill", i === 0 ? 1 : wipe[i]));
+      setActive(wipe.filter((w) => w > 0.5).length - 1);
+    };
+
+    const renderStatic = (index) => {
+      slides.forEach((slide, k) => {
+        slide.style.transform = "";
+        slide.classList.toggle("is-shown", k <= index);
+      });
+      bars.forEach((bar, i) => bar.style.setProperty("--fill", i <= index ? 1 : 0));
+      setActive(index);
+    };
+
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking || !pinQuery.matches) return;
+      ticking = true;
+      requestAnimationFrame(() => { ticking = false; renderPinned(); });
+    };
+
+    const applyMode = () => {
+      section.classList.toggle("how--pinned", pinQuery.matches);
+      if (pinQuery.matches) renderPinned();
+      else renderStatic(Math.max(0, active));
+    };
+
+    steps.forEach((step, i) => {
       step.querySelector(".step__head").addEventListener("click", () => {
-        steps.forEach((s) => {
-          const on = s === step;
-          s.classList.toggle("is-active", on);
-          s.querySelector(".step__head").setAttribute("aria-expanded", String(on));
-        });
+        if (!pinQuery.matches) { renderStatic(i); return; }
+        const top = section.getBoundingClientRect().top + scrollY;
+        scrollTo({ top: top + (i / last) * range(), behavior: "smooth" });
       });
     });
+
+    addEventListener("scroll", onScroll, { passive: true });
+    addEventListener("resize", onScroll);
+    pinQuery.addEventListener("change", applyMode);
+    applyMode();
   }
 
   /* ---------- Word-by-word scroll reveal ---------- */

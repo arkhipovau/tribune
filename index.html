@@ -7,8 +7,8 @@
   <meta name="description" content="Children sketch the vision. We shape it — together. Tribune turns children's drawings of their own football clubs into a shared virtual stadium.">
   <link rel="preload" href="assets/fonts/Youth-Medium.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="assets/fonts/SuisseIntl-Book.otf" as="font" type="font/otf" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=202611011551">
-  <link rel="stylesheet" href="css/sheet.css?v=202611011551">
+  <link rel="stylesheet" href="css/style.css?v=202611011555">
+  <link rel="stylesheet" href="css/sheet.css?v=202611011555">
 </head>
 <body>
 
@@ -112,37 +112,49 @@
     </div>
   </section>
 
-  <!-- How it works -->
+  <!-- How it works: pinned on desktop, the scroll walks through the steps and the photos slide up -->
   <section class="section how" id="how">
+    <div class="how__pin">
     <p class="label">How it works</p>
     <div class="how__grid">
+      <div class="how__col">
       <ol class="steps">
         <li class="step is-active">
           <button class="step__head" type="button" aria-expanded="true">
             <span class="pill-img step__img"><img src="assets/img/pill-ideas.webp" alt="A child’s drawing of a club"></span>
             <span class="display step__title">children lead</span>
           </button>
-          <p class="step__text">In workshops and after-school labs, children imagine their own clubs. They choose a name, colours and crest, sketch players, and write short rituals or chants. We listen first. Consent, care and safeguarding sit at the centre.</p>
+          <div class="step__body"><p class="step__text">In workshops and after-school labs, children imagine their own clubs. They choose a name, colours and crest, sketch players, and write short rituals or chants. We listen first. Consent, care and safeguarding sit at the centre.</p></div>
         </li>
         <li class="step">
           <button class="step__head" type="button" aria-expanded="false">
             <span class="pill-img step__img"><img src="assets/img/pill-form.webp" alt="A team house render"></span>
             <span class="display step__title">we co-design</span>
           </button>
-          <p class="step__text">Designers and mentors translate the sketches into models—paper, clay, then digital. Nothing is “corrected”; we follow the child’s intent and check back for approval. Each team receives a small visual toolkit (badge, palette, type, textures).</p>
+          <div class="step__body"><p class="step__text">Designers and mentors translate the sketches into models—paper, clay, then digital. Nothing is “corrected”; we follow the child’s intent and check back for approval. Each team receives a small visual toolkit (badge, palette, type, textures).</p></div>
         </li>
         <li class="step">
           <button class="step__head" type="button" aria-expanded="false">
             <span class="pill-img step__img"><img src="assets/img/estadio.webp" alt="The shared stadium"></span>
             <span class="display step__title">the stadium grows</span>
           </button>
-          <p class="step__text">Every team’s “house” is placed in a shared virtual stadium. Profiles open on the site; some clubs pair with ambassadors and develop limited kits based on the drawings. Funds raised support partner foundations using football for social good, and progress is shared in the Journal.</p>
+          <div class="step__body"><p class="step__text">Every team’s “house” is placed in a shared virtual stadium. Profiles open on the site; some clubs pair with ambassadors and develop limited kits based on the drawings. Funds raised support partner foundations using football for social good, and progress is shared in the Journal.</p></div>
         </li>
       </ol>
+      <div class="how__progress" aria-hidden="true">
+        <span class="how__count"><b>01</b> / 03</span>
+        <span class="how__bars"><i></i><i></i><i></i></span>
+      </div>
+      </div>
       <figure class="how__media">
-        <img src="assets/img/workshop.webp" alt="Children drawing their club at a workshop table" loading="lazy">
-        <span class="glass how__crest"><img src="assets/img/logo-carabell.webp" alt=""></span>
+        <div class="how__slide is-shown">
+          <img src="assets/img/workshop.webp" alt="Children drawing their club at a workshop table" loading="lazy">
+          <span class="glass how__crest"><img src="assets/img/logo-carabell.webp" alt=""></span>
+        </div>
+        <div class="how__slide"><img src="assets/img/house-tree.webp" alt="A team house designed from a child’s drawing" loading="lazy"></div>
+        <div class="how__slide"><img src="assets/img/how-stadium.webp" alt="A team house placed in the shared stadium" loading="lazy"></div>
       </figure>
+    </div>
     </div>
   </section>
 
@@ -264,12 +276,12 @@
   </article>
 </dialog>
 
-<script src="js/teams-data.js?v=202611011551" defer></script>
-<script src="js/carousel.js?v=202611011551" defer></script>
-<script src="js/journal-data.js?v=202611011551" defer></script>
-<script src="js/main.js?v=202611011551" defer></script>
-<script src="js/stadium-loader.js?v=202611011551" defer></script>
-<script src="js/dialogs.js?v=202611011551" defer></script>
-<script src="js/marquee.js?v=202611011551" defer></script>
+<script src="js/teams-data.js?v=202611011555" defer></script>
+<script src="js/carousel.js?v=202611011555" defer></script>
+<script src="js/journal-data.js?v=202611011555" defer></script>
+<script src="js/main.js?v=202611011555" defer></script>
+<script src="js/stadium-loader.js?v=202611011555" defer></script>
+<script src="js/dialogs.js?v=202611011555" defer></script>
+<script src="js/marquee.js?v=202611011555" defer></script>
 </body>
 </html>
