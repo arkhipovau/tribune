@@ -507,8 +507,29 @@ button.round-btn:active { transform: scale(0.94); }
 
 /* Real Instagram embeds (iframe needs >= 326px) */
 .posts--embeds { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
-.post-embed { border-radius: var(--radius-card); overflow: hidden; background: var(--bg-white); border: 1px solid #efefef; }
-.post-embed iframe { display: block; width: 100%; height: 540px; border: 0; }
+/* Only the post image of Instagram's embed is shown: its header (profile + "View profile",
+   ~56px) is shifted out of view and the "View more" row is clipped. The whole card is a link. */
+.post-embed {
+  --ig-head: 56px;
+  container-type: inline-size;
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1.336; /* the embed's image */
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--tint);
+  transition: transform 250ms var(--ease);
+}
+.post-embed:active { transform: scale(0.98); }
+.post-embed iframe {
+  position: absolute;
+  top: calc(-1 * var(--ig-head));
+  left: 0;
+  width: 100%;
+  height: calc(133.6cqw + var(--ig-head) + 92px);
+  border: 0;
+  pointer-events: none; /* clicks go to the card link */
+}
 @media (max-width: 1100px) { .posts--embeds { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 /* ---------- footer ---------- */
