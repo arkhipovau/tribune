@@ -3,7 +3,7 @@
 
 .page-teams { background: var(--bg-white); }
 
-.roster { padding: 140px 36px var(--section-pad) 38px; }
+.roster { padding: 140px var(--gutter) var(--section-pad); }
 .roster__title { margin: 0 0 56px; text-align: center; }
 
 .bento {
