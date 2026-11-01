@@ -506,7 +506,7 @@ button.round-btn:active { transform: scale(0.94); }
 .post__add span:last-child { margin-left: auto; color: #0095f6; opacity: 0.3; font-weight: 600; }
 
 /* Real Instagram embeds (iframe needs >= 326px) */
-.posts--embeds { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.posts--embeds { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px; } /* Figma: 40px between posts */
 /* Only the post image of Instagram's embed is shown: its header (profile + "View profile",
    ~56px) is shifted out of view and the "View more" row is clipped. The whole card is a link. */
 .post-embed {
