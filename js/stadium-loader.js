@@ -54,16 +54,19 @@
   const CARD = { left: 37, right: 39, radius: 30, ratio: 791 / 1364, zoom: 1.12 };
   // The closed card sits centred in the sticky frame. The frame locks the moment the card
   // reaches the centre of the screen; only then the window opens, holds, and closes again.
-  const OPEN_SPAN = 0.6;  // scroll (in viewport heights) spent opening, and again closing
+  const OPEN_SPAN = 0.9;  // scroll (in viewport heights) spent opening, and again closing
+  // On approach the card starts a little lower and rides up into place as you scroll.
+  const RISE = (vh) => Math.min(140, vh * 0.14);
   const zoomEnabled = () =>
     !window.matchMedia("(max-width: 900px)").matches &&
     !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+  // Sine ease: soft start and finish without a fast middle.
+  const ease = (t) => (1 - Math.cos(Math.PI * t)) / 2;
   const clamp01 = (v) => Math.min(1, Math.max(0, v));
 
   function updateWindow() {
     if (!zoomEnabled()) {
-      ["--clip-t", "--clip-r", "--clip-b", "--clip-l", "--clip-rad", "--zoom", "--zoom-y"].forEach((v) => frame.style.removeProperty(v));
+      ["--clip-t", "--clip-r", "--clip-b", "--clip-l", "--clip-rad", "--zoom", "--zoom-y", "--rise"].forEach((v) => frame.style.removeProperty(v));
       return;
     }
     const vw = document.documentElement.clientWidth;
@@ -85,13 +88,15 @@
     // A touch of scale inside the window sells the "flying into it" feeling.
     frame.style.setProperty("--zoom", (1 + (CARD.zoom - 1) * closed).toFixed(4));
     frame.style.setProperty("--zoom-y", "50%");
+    const approach = clamp01(rect.top / vh); // 1 → section a screen away, 0 → card centred
+    frame.style.setProperty("--rise", `${(RISE(vh) * ease(approach)).toFixed(2)}px`);
   }
   /* Auto-complete the opening: once the window starts to open while scrolling down,
      glide the rest of the way to the fully open, locked screen. Once per entry;
      scrolling up is never hijacked. Trackpad inertia is held off only for the
      short glide itself (it would otherwise cancel a native smooth scroll). */
-  const GLIDE_MS = 700;
-  const ARROW_GLIDE_MS = 1400;
+  const GLIDE_MS = 1000;
+  const ARROW_GLIDE_MS = 1600;
   let lastY = window.scrollY;
   let snapArmed = true;
   let gliding = false;
