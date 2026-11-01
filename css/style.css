@@ -248,6 +248,13 @@ button.round-btn:active { transform: scale(0.94); }
   /* The hero photo runs 265px under the card, as in the frame. */
   background: linear-gradient(transparent calc(265px + var(--card-offset) + var(--rise, 0px)), var(--bg-grey) calc(265px + var(--card-offset) + var(--rise, 0px)));
 }
+/* Native snap point where the window is fully open (OPEN_SPAN in stadium-loader.js).
+   Proximity: it only catches a scroll that comes to rest nearby. */
+@media (min-width: 901px) and (prefers-reduced-motion: no-preference) {
+  html { scroll-snap-type: y proximity; }
+  html.is-gliding { scroll-snap-type: none; }
+}
+.stadium-scroll__snap { position: absolute; left: 0; top: 90vh; width: 1px; height: 1px; scroll-snap-align: start; pointer-events: none; }
 .stadium-scroll__sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; }
 .stadium {
   position: absolute;

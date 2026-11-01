@@ -97,65 +97,29 @@
     frame.style.setProperty("--zoom", (1 + (CARD.zoom - 1) * closed).toFixed(4));
     frame.style.setProperty("--zoom-y", "50%");
   }
-  /* Auto-complete the opening: once the window starts to open while scrolling down,
-     glide the rest of the way to the fully open, locked screen. Once per entry;
-     scrolling up is never hijacked. Trackpad inertia is held off only for the
-     short glide itself (it would otherwise cancel a native smooth scroll). */
-  const GLIDE_MS = 1000;
+  /* Settling into the open stadium is left to the browser: a native scroll-snap point
+     (css: .stadium-scroll__snap, proximity) sits where the window is fully open.
+     A scripted auto-glide fought trackpad inertia and felt jerky. The only scripted
+     scroll left is the hero arrow; snapping is switched off while it runs. */
   const ARROW_GLIDE_MS = 1600;
-  const INERTIA_QUIET_MS = 180; // after a glide, keep swallowing trackpad inertia until it goes quiet
-  // The auto-glide picks up a scroll already in motion, so it starts at speed and settles
-  // (ease-out). Starting from zero (ease-in-out) felt like a brake followed by a push.
-  const easeOut = (t) => 1 - Math.pow(1 - t, 3);
-  let lastY = window.scrollY;
-  let snapArmed = true;
-  let gliding = false;
-  let holdUntil = 0;
-  const holdInput = (e) => {
-    const now = performance.now();
-    if (gliding) { e.preventDefault(); return; }
-    if (now < holdUntil) {
-      // Inertia tail: each event extends the hold until the stream stops.
-      holdUntil = now + INERTIA_QUIET_MS;
-      e.preventDefault();
-    }
-  };
-  window.addEventListener("wheel", holdInput, { passive: false });
-  window.addEventListener("touchmove", holdInput, { passive: false });
+  const root = document.documentElement;
 
-  function glideTo(target, duration = GLIDE_MS, curve = easeOut) {
+  function glideTo(target, duration = ARROW_GLIDE_MS) {
     const from = window.scrollY;
     const t0 = performance.now();
-    gliding = true;
+    root.classList.add("is-gliding");
     const step = () => {
       const k = clamp01((performance.now() - t0) / duration);
-      window.scrollTo({ top: from + (target - from) * curve(k), behavior: "instant" });
-      if (k < 1) { requestAnimationFrame(step); return; }
-      gliding = false;
-      holdUntil = performance.now() + INERTIA_QUIET_MS;
-      lastY = window.scrollY;
+      window.scrollTo({ top: from + (target - from) * ease(k), behavior: "instant" });
+      if (k < 1) requestAnimationFrame(step);
+      else root.classList.remove("is-gliding");
     };
     requestAnimationFrame(step);
   }
 
-  function maybeSnap() {
-    const y = window.scrollY;
-    const goingDown = y > lastY;
-    lastY = y;
-    if (gliding || !zoomEnabled()) return;
-    const rect = section.getBoundingClientRect();
-    const span = window.innerHeight * OPEN_SPAN;
-    if (rect.top > 0) { snapArmed = true; return; } // back above the second screen: re-arm
-    if (!snapArmed || !goingDown) return;
-    if (rect.top < -2 && rect.top > -span + 2) {
-      snapArmed = false;
-      glideTo(y - rect.top + span);
-    }
-  }
-
   // Updated straight from the scroll event: it only writes a few CSS variables,
   // and rAF-throttling can leave the window half-open in background tabs.
-  window.addEventListener("scroll", () => { updateWindow(); maybeSnap(); }, { passive: true });
+  window.addEventListener("scroll", updateWindow, { passive: true });
   window.addEventListener("resize", updateWindow);
   updateWindow();
 
@@ -171,16 +135,10 @@
     e.preventDefault();
     start();
     const top = layoutTop(section);
-    // Desktop: land just after the window locks full-screen.
-    const target = zoomEnabled() ? top + window.innerHeight * (OPEN_SPAN + 0.1) : top - HEADER_OFFSET;
-    // One scripted glide all the way; the auto-snap stays out of it (two competing
-    // smooth scrolls caused the back-and-forth zoom).
-    if (zoomEnabled()) {
-      snapArmed = false;
-      glideTo(target, ARROW_GLIDE_MS, ease); // from a standstill: soft start and finish
-    } else {
-      window.scrollTo({ top: target, behavior: "smooth" });
-    }
+    // Desktop: land exactly where the window is fully open (the snap point).
+    const target = zoomEnabled() ? top + window.innerHeight * OPEN_SPAN : top - HEADER_OFFSET;
+    if (zoomEnabled()) glideTo(target);
+    else window.scrollTo({ top: target, behavior: "smooth" });
     history.replaceState(null, "", "#stadium");
   }));
 })();
