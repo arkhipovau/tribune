@@ -23,7 +23,9 @@
   // Desktop: the section is pinned and the scroll walks through the steps; each next photo
   // slides up over the previous one (which drifts up a little). Elsewhere: click to switch.
   const HOW_WIPE = 0.6;        // share of each step's scroll spent on the photo wipe
-  const HOW_DRIFT = 25;        // % the covered photo drifts up while the next one arrives
+  const HOW_RISE = 130;        // % of the card height the next card travels up from (below the screen)
+  const HOW_BACK = 0.08;       // how much the covered card shrinks
+  const HOW_BLUR = 6;          // px blur on the covered card
   const clamp01 = (v) => Math.min(1, Math.max(0, v));
   const easeInOut = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
@@ -33,7 +35,6 @@
     const steps = [...section.querySelectorAll(".step")];
     const slides = [...section.querySelectorAll(".how__slide")];
     const bars = [...section.querySelectorAll(".how__bars i")];
-    const count = section.querySelector(".how__count b");
     const last = steps.length - 1;
     const pinQuery = matchMedia("(min-width: 901px) and (prefers-reduced-motion: no-preference)");
     let active = -1;
@@ -45,7 +46,6 @@
         s.classList.toggle("is-active", i === index);
         s.querySelector(".step__head").setAttribute("aria-expanded", String(i === index));
       });
-      count.textContent = String(index + 1).padStart(2, "0");
     };
 
     const range = () => section.offsetHeight - innerHeight;
@@ -55,8 +55,13 @@
       const seg = progress() * last;
       const wipe = slides.map((_, k) => (k === 0 ? 1 : easeInOut(clamp01((seg - (k - 1) - (1 - HOW_WIPE) / 2) / HOW_WIPE))));
       slides.forEach((slide, k) => {
+        const own = wipe[k];
         const next = wipe[k + 1] || 0;
-        slide.style.transform = `translateY(${(1 - wipe[k]) * 100 - next * HOW_DRIFT}%)`;
+        slide.style.transform = `translateY(${(1 - own) * HOW_RISE}%) scale(${1 - next * HOW_BACK})`;
+        slide.style.filter = next > 0.001 ? `blur(${next * HOW_BLUR}px)` : "";
+        slide.style.setProperty("--dim", (next * 0.35).toFixed(3));
+        slide.style.setProperty("--lift", (own > 0 && own < 1 ? 0.12 : 0).toFixed(2));
+        slide.style.visibility = own <= 0 ? "hidden" : "";
       });
       bars.forEach((bar, i) => bar.style.setProperty("--fill", i === 0 ? 1 : wipe[i]));
       setActive(wipe.filter((w) => w > 0.5).length - 1);
@@ -64,7 +69,8 @@
 
     const renderStatic = (index) => {
       slides.forEach((slide, k) => {
-        slide.style.transform = "";
+        ["transform", "filter", "visibility"].forEach((prop) => { slide.style[prop] = ""; });
+        slide.style.removeProperty("--dim");
         slide.classList.toggle("is-shown", k <= index);
       });
       bars.forEach((bar, i) => bar.style.setProperty("--fill", i <= index ? 1 : 0));
