@@ -56,8 +56,8 @@
   // reaches the centre of the screen; only then the window opens, holds, and closes again.
   const OPEN_SPAN = 0.9;  // scroll (in viewport heights) spent opening, and again closing
   // On approach the card starts a little lower and rides up into place as you scroll.
-  const RISE = 0.3;        // start this many viewport heights lower…
-  const RISE_SCALE = 0.06; // …and this much smaller, then ride up and grow into place
+  const RISE = 0.4;        // start this many viewport heights lower…
+  const RISE_SCALE = 0.06; // …and this much narrower (window only), then ride up and widen into place
   const zoomEnabled = () =>
     !window.matchMedia("(max-width: 900px)").matches &&
     !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -68,7 +68,7 @@
   function updateWindow() {
     if (!zoomEnabled()) {
       ["--clip-t", "--clip-r", "--clip-b", "--clip-l", "--clip-rad", "--zoom", "--zoom-y"].forEach((v) => frame.style.removeProperty(v));
-      ["--rise", "--rise-scale"].forEach((v) => section.style.removeProperty(v));
+      ["--rise"].forEach((v) => section.style.removeProperty(v));
       return;
     }
     const vw = document.documentElement.clientWidth;
@@ -82,18 +82,20 @@
 
     const cardH = (vw - CARD.left - CARD.right) * CARD.ratio;
     const offset = Math.max(0, (vh - cardH) / 2);
-    frame.style.setProperty("--clip-t", `${(offset * closed).toFixed(2)}px`);
-    frame.style.setProperty("--clip-l", `${(CARD.left * closed).toFixed(2)}px`);
-    frame.style.setProperty("--clip-r", `${(CARD.right * closed).toFixed(2)}px`);
-    frame.style.setProperty("--clip-b", `${(offset * closed).toFixed(2)}px`);
+    // Approach (before the card reaches the centre): the window starts lower and narrower,
+    // then rides up and widens into place. Only the window shrinks, never the stadium inside.
+    const approach = ease(clamp01(rect.top / vh)); // 1 → a screen away, 0 → card centred
+    const shrinkX = (vw - CARD.left - CARD.right) * RISE_SCALE * approach / 2;
+    const shrinkY = cardH * RISE_SCALE * approach / 2;
+    section.style.setProperty("--rise", `${(RISE * vh * approach).toFixed(2)}px`);
+    frame.style.setProperty("--clip-t", `${(offset * closed + shrinkY).toFixed(2)}px`);
+    frame.style.setProperty("--clip-l", `${(CARD.left * closed + shrinkX).toFixed(2)}px`);
+    frame.style.setProperty("--clip-r", `${(CARD.right * closed + shrinkX).toFixed(2)}px`);
+    frame.style.setProperty("--clip-b", `${(offset * closed + shrinkY).toFixed(2)}px`);
     frame.style.setProperty("--clip-rad", `${(CARD.radius * closed).toFixed(2)}px`);
     // A touch of scale inside the window sells the "flying into it" feeling.
     frame.style.setProperty("--zoom", (1 + (CARD.zoom - 1) * closed).toFixed(4));
     frame.style.setProperty("--zoom-y", "50%");
-    // Set on the section: the frame moves with it and the hero photo underneath follows.
-    const approach = ease(clamp01(rect.top / vh)); // 1 → a screen away, 0 → card centred
-    section.style.setProperty("--rise", `${(RISE * vh * approach).toFixed(2)}px`);
-    section.style.setProperty("--rise-scale", (1 - RISE_SCALE * approach).toFixed(4));
   }
   /* Auto-complete the opening: once the window starts to open while scrolling down,
      glide the rest of the way to the fully open, locked screen. Once per entry;
