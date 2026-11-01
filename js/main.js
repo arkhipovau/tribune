@@ -22,12 +22,13 @@
 
   // Desktop: the section is pinned and the scroll walks through the steps; each next photo
   // slides up over the previous one (which drifts up a little). Elsewhere: click to switch.
-  const HOW_WIPE = 0.6;        // share of each step's scroll spent on the photo wipe
+  const HOW_WIPE = 0.7;        // share of each step's scroll spent on the photo wipe
   const HOW_RISE = 130;        // % of the card height the next card travels up from (below the screen)
   const HOW_BACK = 0.08;       // how much the covered card shrinks
   const HOW_BLUR = 6;          // px blur on the covered card
   const clamp01 = (v) => Math.min(1, Math.max(0, v));
-  const easeInOut = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+  // Gentle sine ease: the card never moves much faster than the page scrolls.
+  const easeInOut = (t) => (1 - Math.cos(Math.PI * t)) / 2;
 
   function initSteps() {
     const section = document.getElementById("how");

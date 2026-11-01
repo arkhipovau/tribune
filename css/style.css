@@ -382,7 +382,7 @@ button.round-btn:active { transform: scale(0.94); }
 /* ---------- how it works ---------- */
 
 /* Static by default (mobile, reduced motion, no JS); js adds .how--pinned on desktop. */
-.how--pinned { height: 300vh; padding: 0; }
+.how--pinned { height: 400vh; padding: 0; } /* 1.5 screens of scroll per step */
 .how--pinned .how__pin { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; justify-content: center; }
 
 .how__grid {
@@ -431,7 +431,7 @@ button.round-btn:active { transform: scale(0.94); }
   background: var(--bg-grey);
   transform: translateY(120%);
   opacity: 0;
-  transition: transform 800ms var(--ease), opacity 400ms var(--ease);
+  transition: transform 700ms var(--ease), opacity var(--dur) var(--ease);
   will-change: transform;
 }
 .how__slide.is-shown { transform: none; opacity: 1; }
