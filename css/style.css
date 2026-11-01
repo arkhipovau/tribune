@@ -414,10 +414,10 @@ button.round-btn:active { transform: scale(0.94); }
 }
 .step.is-active .step__text { padding-top: 16px; opacity: 1; }
 
-/* Progress: three bars in a grey pill (same pill as the teams carousel ticks), level with the photo bottom. */
+/* Progress: three bars level with the bottom of the photo. */
 .how__progress { display: flex; margin-left: 104px; }
-.how__bars { display: flex; align-items: center; gap: 6px; height: 44px; padding: 0 18px; }
-.how__bars i { position: relative; width: 32px; height: 3px; border-radius: 1000px; background: var(--ink-muted); opacity: 0.6; overflow: hidden; }
+.how__bars { display: flex; gap: 4px; }
+.how__bars i { position: relative; width: 40px; height: 4px; border-radius: 1000px; background: var(--tint); overflow: hidden; }
 .how__bars i::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--ink); transform-origin: left; transform: scaleX(var(--fill, 0)); }
 
 /* Photos are a stack of cards: the next card rises from below and lands on top,
