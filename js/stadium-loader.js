@@ -103,22 +103,37 @@
      short glide itself (it would otherwise cancel a native smooth scroll). */
   const GLIDE_MS = 1000;
   const ARROW_GLIDE_MS = 1600;
+  const INERTIA_QUIET_MS = 180; // after a glide, keep swallowing trackpad inertia until it goes quiet
+  // The auto-glide picks up a scroll already in motion, so it starts at speed and settles
+  // (ease-out). Starting from zero (ease-in-out) felt like a brake followed by a push.
+  const easeOut = (t) => 1 - Math.pow(1 - t, 3);
   let lastY = window.scrollY;
   let snapArmed = true;
   let gliding = false;
-  const holdInput = (e) => { if (gliding) e.preventDefault(); };
+  let holdUntil = 0;
+  const holdInput = (e) => {
+    const now = performance.now();
+    if (gliding) { e.preventDefault(); return; }
+    if (now < holdUntil) {
+      // Inertia tail: each event extends the hold until the stream stops.
+      holdUntil = now + INERTIA_QUIET_MS;
+      e.preventDefault();
+    }
+  };
   window.addEventListener("wheel", holdInput, { passive: false });
   window.addEventListener("touchmove", holdInput, { passive: false });
 
-  function glideTo(target, duration = GLIDE_MS) {
+  function glideTo(target, duration = GLIDE_MS, curve = easeOut) {
     const from = window.scrollY;
     const t0 = performance.now();
     gliding = true;
     const step = () => {
       const k = clamp01((performance.now() - t0) / duration);
-      window.scrollTo({ top: from + (target - from) * ease(k), behavior: "instant" });
-      if (k < 1) requestAnimationFrame(step);
-      else { gliding = false; lastY = window.scrollY; }
+      window.scrollTo({ top: from + (target - from) * curve(k), behavior: "instant" });
+      if (k < 1) { requestAnimationFrame(step); return; }
+      gliding = false;
+      holdUntil = performance.now() + INERTIA_QUIET_MS;
+      lastY = window.scrollY;
     };
     requestAnimationFrame(step);
   }
@@ -162,7 +177,7 @@
     // smooth scrolls caused the back-and-forth zoom).
     if (zoomEnabled()) {
       snapArmed = false;
-      glideTo(target, ARROW_GLIDE_MS);
+      glideTo(target, ARROW_GLIDE_MS, ease); // from a standstill: soft start and finish
     } else {
       window.scrollTo({ top: target, behavior: "smooth" });
     }
