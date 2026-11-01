@@ -100,17 +100,14 @@
 
   // Each post is Instagram's own embed page in an iframe (no third-party script).
   function renderEmbed(url) {
-    const wrap = el("a", "post-embed");
-    wrap.href = url;
-    wrap.target = "_blank";
-    wrap.rel = "noopener";
-    wrap.setAttribute("aria-label", "Open this post on Instagram");
+    // The embed stays interactive: carousel arrows work, and a click on the image
+    // opens the post on Instagram (the embed's own behaviour).
+    const wrap = el("div", "post-embed");
     const frame = el("iframe");
     frame.src = `${url.replace(/\/?$/, "/")}embed/`;
     frame.title = "Instagram post by tribune_kids.space";
     frame.loading = "lazy";
     frame.setAttribute("scrolling", "no");
-    frame.tabIndex = -1;
     frame.setAttribute("allowtransparency", "true");
     wrap.append(frame);
     return wrap;
