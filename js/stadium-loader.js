@@ -56,7 +56,8 @@
   // reaches the centre of the screen; only then the window opens, holds, and closes again.
   const OPEN_SPAN = 0.9;  // scroll (in viewport heights) spent opening, and again closing
   // On approach the card starts a little lower and rides up into place as you scroll.
-  const RISE = (vh) => Math.min(140, vh * 0.14);
+  const RISE = 0.3;        // start this many viewport heights lower…
+  const RISE_SCALE = 0.06; // …and this much smaller, then ride up and grow into place
   const zoomEnabled = () =>
     !window.matchMedia("(max-width: 900px)").matches &&
     !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -66,7 +67,8 @@
 
   function updateWindow() {
     if (!zoomEnabled()) {
-      ["--clip-t", "--clip-r", "--clip-b", "--clip-l", "--clip-rad", "--zoom", "--zoom-y", "--rise"].forEach((v) => frame.style.removeProperty(v));
+      ["--clip-t", "--clip-r", "--clip-b", "--clip-l", "--clip-rad", "--zoom", "--zoom-y"].forEach((v) => frame.style.removeProperty(v));
+      ["--rise", "--rise-scale"].forEach((v) => section.style.removeProperty(v));
       return;
     }
     const vw = document.documentElement.clientWidth;
@@ -88,8 +90,10 @@
     // A touch of scale inside the window sells the "flying into it" feeling.
     frame.style.setProperty("--zoom", (1 + (CARD.zoom - 1) * closed).toFixed(4));
     frame.style.setProperty("--zoom-y", "50%");
-    const approach = clamp01(rect.top / vh); // 1 → section a screen away, 0 → card centred
-    frame.style.setProperty("--rise", `${(RISE(vh) * ease(approach)).toFixed(2)}px`);
+    // Set on the section: the frame moves with it and the hero photo underneath follows.
+    const approach = ease(clamp01(rect.top / vh)); // 1 → a screen away, 0 → card centred
+    section.style.setProperty("--rise", `${(RISE * vh * approach).toFixed(2)}px`);
+    section.style.setProperty("--rise-scale", (1 - RISE_SCALE * approach).toFixed(4));
   }
   /* Auto-complete the opening: once the window starts to open while scrolling down,
      glide the rest of the way to the fully open, locked screen. Once per entry;

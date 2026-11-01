@@ -212,7 +212,7 @@ button.round-btn:active { transform: scale(0.94); }
 .hero__bg {
   position: absolute;
   inset: 0 0 auto;
-  height: calc(100% + 265px); /* the photo runs 265px under the stadium card */
+  height: calc(100% + 265px + 30vh); /* runs 265px under the stadium card, plus room for its approach */
   background: var(--bg-hero) url("../assets/img/hero.webp") center top / cover no-repeat;
 }
 .hero > *:not(.hero__bg) { position: relative; }
@@ -246,7 +246,7 @@ button.round-btn:active { transform: scale(0.94); }
   height: 340vh; /* open 0.9 + hold 0.6 + close 0.9 screens */
   margin-top: calc(-1 * var(--card-offset));
   /* The hero photo runs 265px under the card, as in the frame. */
-  background: linear-gradient(transparent calc(265px + var(--card-offset)), var(--bg-grey) calc(265px + var(--card-offset)));
+  background: linear-gradient(transparent calc(265px + var(--card-offset) + var(--rise, 0px)), var(--bg-grey) calc(265px + var(--card-offset) + var(--rise, 0px)));
 }
 .stadium-scroll__sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; }
 .stadium {
@@ -255,7 +255,8 @@ button.round-btn:active { transform: scale(0.94); }
   background: #2f3847; /* the stadium keeps its own "blueprint" palette for now */
   text-align: left;
   clip-path: inset(var(--clip-t, var(--card-offset)) var(--clip-r, 39px) var(--clip-b, var(--card-offset)) var(--clip-l, 37px) round var(--clip-rad, 30px));
-  transform: translateY(var(--rise, 0px)); /* approach: rides up into place */
+  transform: translateY(var(--rise, 0px)) scale(var(--rise-scale, 1)); /* approach: rides up and grows into place */
+  transform-origin: 50% 0;
 }
 .stadium__mount { position: absolute; inset: 0; transform: scale(var(--zoom, 1)); transform-origin: 50% var(--zoom-y, 50%); }
 .stadium__fallback { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; color: #91aeb9; }
