@@ -1,0 +1,9 @@
+.video-card {
+  width: 288px;
+  height: var(--video-h, 205.7px);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  filter: drop-shadow(var(--shadow));
+}
+.video-card > img { width: 100%; height: 100%; object-fit: cover; }
+.video-card__play { position: absolute; right: 16px; bottom: 15.7px; }

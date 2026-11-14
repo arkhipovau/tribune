@@ -1,0 +1,22 @@
+.page-team { background: #cfc6c4; }
+.team { position: relative; min-height: 100vh; }
+.team__stage {
+  position: fixed;
+  inset: 0;
+  background-repeat: repeat;
+  background-size: 768px auto;
+  background-position: left top;
+}
+.team__panel {
+  position: relative;
+  z-index: 2;
+  width: 508px;
+  margin: 0 var(--gutter) 0 auto;
+  padding: 118px 0 64px;
+}
+.sep { padding: 0 6px; }
+.team--soon .tp-about, .team--soon .tp-credits { display: none; }
+@media (max-width: 900px) {
+  .team__stage { position: sticky; top: 0; height: 70vh; background-size: cover; background-repeat: no-repeat; background-position: center; }
+  .team__panel { width: auto; margin: -60px 12px 0; padding-top: 0; }
+}

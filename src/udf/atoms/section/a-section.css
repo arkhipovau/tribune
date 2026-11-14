@@ -1,0 +1,2 @@
+.section { position: relative; padding: var(--section-pad) 0; }
+.section--grey { background: var(--bg-grey); }

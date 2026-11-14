@@ -1,0 +1,59 @@
+.slide {
+  position: absolute;
+  top: 0;
+  left: calc(50% - var(--card-w) / 2);
+  width: var(--card-w);
+  transform-origin: 50% 0;
+  transition: transform 950ms var(--ease-slide), opacity 700ms var(--ease-slide);
+  will-change: transform;
+}
+.slide.no-anim, .slide.no-anim * { transition: none !important; }
+.slide:not(.is-center) { opacity: 0.32; cursor: pointer; }
+.team-card__media {
+  position: relative;
+  display: block;
+  aspect-ratio: 508 / 509;
+  border-radius: var(--radius-card);
+  overflow: hidden; 
+  background: #ddd;
+  transform: translateZ(0);
+}
+.team-card__photo { width: 100%; height: 100%; object-fit: cover; transition: filter 800ms var(--ease-slide), transform 950ms var(--ease-slide); }
+.slide:not(.is-center) .team-card__photo { filter: blur(14px); transform: scale(1.12); }
+.team-card__crest { position: absolute; left: 14px; bottom: 20px; }
+.team-card__partners { position: absolute; right: 14px; bottom: 20px; display: flex; gap: 4px; }
+.team-card__do { width: 66px !important; height: 24px !important; }
+.team-card__crest, .team-card__partners, .team-card__bar { transition: opacity 500ms var(--ease-slide); }
+.slide:not(.is-center) .team-card__crest,
+.slide:not(.is-center) .team-card__partners,
+.slide:not(.is-center) .team-card__bar { opacity: 0; }
+.slide.is-center .team-card__crest,
+.slide.is-center .team-card__partners,
+.slide.is-center .team-card__bar { transition-delay: 300ms; }
+.team-card__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 88px;
+  padding: 14px 14px 14px 24px;
+  border-radius: var(--radius-card);
+  background: var(--tint);
+}
+.team-card__text { display: flex; flex-direction: column; gap: 4px; font-size: 12px; line-height: 1.2; }
+.team-card__tagline { color: var(--ink-muted); }
+.team-card__count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 86px;
+  height: 60px;
+  border-radius: var(--radius-tile);
+  background: var(--bg-white);
+  font-size: 12px;
+  font-feature-settings: "case" on;
+}
+.team-card__drawing { width: 34px; height: 34px; object-fit: contain; }
+@media (max-width: 900px) {
+  .slide:not(.is-center) { opacity: 0; pointer-events: none; }
+}

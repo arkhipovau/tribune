@@ -1,0 +1,17 @@
+.pill {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  border-radius: 1000px;
+  background: var(--tint);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.pill__item {
+  padding: 10px 14px;
+  border-radius: 1000px;
+  white-space: nowrap;
+  transition: background 200ms;
+}
+.pill__item:hover { background: var(--tint); }
+.pill__item:focus-visible { background: var(--tint); }

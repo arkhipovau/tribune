@@ -1,0 +1,12 @@
+:root {
+  --ink: #17100e;
+  --ink-muted: rgba(23, 16, 14, 0.32);
+  --ink-soft: rgba(23, 16, 14, 0.4);
+  --tint: rgba(23, 16, 14, 0.05);
+  --bg-hero: #f2f2f2;
+  --bg-grey: #f0f0f0;
+  --bg-white: #ffffff;
+  --green: #c8edbd;
+  --dot: #2e933f;
+  --shadow: 0 4.7px 18.8px rgba(0, 0, 0, 0.16);
+}

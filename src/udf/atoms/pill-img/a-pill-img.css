@@ -1,0 +1,12 @@
+.pill-img {
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 0.75em;
+  vertical-align: -0.06em;
+  border-radius: 100px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transform: translateZ(0);
+}
+.pill-img > img { width: 100%; height: 100%; object-fit: cover; transition: filter var(--dur) var(--ease), transform var(--dur) var(--ease); }

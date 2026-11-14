@@ -1,0 +1,8 @@
+.display {
+  font-family: "Youth", "Suisse Intl", sans-serif;
+  font-weight: 500;
+  font-size: var(--display);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  text-transform: lowercase;
+}

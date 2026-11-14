@@ -1,0 +1,10 @@
+.teams, .participate { overflow-x: clip; }
+.teams { --card-w: 508px; }
+.teams__track { position: relative; height: calc(var(--card-w) * 509 / 508 + 88px); }
+.teams__arrows { position: absolute; top: 172px; right: 36px; display: flex; gap: 8px; z-index: 3; }
+.teams__arrows .round-btn:disabled { opacity: 0.32; cursor: default; transform: none; }
+.teams__ticks { width: max-content; margin: 40px auto 0; padding: 0 40px; gap: 4px; }
+@media (max-width: 900px) {
+  .teams { --card-w: min(508px, calc(100vw - 32px)); }
+  .teams__arrows { position: static; justify-content: center; margin-top: 24px; }
+}

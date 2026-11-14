@@ -1,0 +1,15 @@
+.posts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 40px; 
+  padding: 0 var(--gutter);
+}
+@media (max-width: 1100px) {
+  .posts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 1280px) {
+  .posts { gap: 24px; }
+}
+@media (max-width: 900px) {
+  .posts { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 16px 8px; }
+}

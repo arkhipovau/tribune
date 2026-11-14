@@ -1,0 +1,9 @@
+.roles {
+  display: grid;
+  grid-template-columns: var(--cols-3);
+  gap: 41px;
+  padding: 0 var(--gutter);
+}
+@media (max-width: 900px) {
+  .roles { grid-template-columns: 1fr; gap: 90px; padding: 60px 16px 0; }
+}

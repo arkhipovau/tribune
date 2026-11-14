@@ -1,0 +1,4 @@
+.link-under { text-decoration: underline; text-underline-offset: 2px; transition: opacity 200ms; }
+.link-under:hover { opacity: 0.6; }
+.link-under--muted { color: var(--ink-muted); }
+.link-under--muted:hover { color: var(--ink); opacity: 1; }

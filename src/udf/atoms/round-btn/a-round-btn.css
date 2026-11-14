@@ -1,0 +1,15 @@
+.round-btn {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-white);
+  color: var(--ink);
+  transition: transform 250ms var(--ease), opacity 200ms;
+}
+.round-btn img { width: 9px; height: auto; }
+.round-btn--prev img { transform: rotate(180deg); }
+button.round-btn:hover { background: #f5f5f4; }
+button.round-btn:active { transform: scale(0.94); }

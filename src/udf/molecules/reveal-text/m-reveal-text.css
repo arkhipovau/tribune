@@ -1,0 +1,5 @@
+.reveal .pill-img { opacity: 0.32; filter: blur(8px); box-shadow: none; transition: opacity 400ms var(--ease), filter 500ms var(--ease), box-shadow 400ms; }
+.reveal .pill-img.is-on { opacity: 1; filter: none; box-shadow: var(--shadow); }
+.reveal { color: var(--ink-muted); }
+.reveal .w { transition: color 300ms linear; }
+.reveal .w.is-on { color: var(--ink); }

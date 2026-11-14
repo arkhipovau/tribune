@@ -1,0 +1,10 @@
+:root {
+  --gutter: 38px;
+  --section-pad: 117px;
+  --radius-card: 30px;
+  --radius-tile: 16px;
+  --cols-3: minmax(0, 388fr) minmax(0, 388fr) minmax(0, 508fr);
+}
+@media (max-width: 900px) {
+  :root { --section-pad: 80px; --gutter: 16px; }
+}

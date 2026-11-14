@@ -1,0 +1,12 @@
+.glass {
+  display: grid;
+  place-items: center;
+  width: 86px;
+  height: 84px;
+  padding: 10px;
+  border-radius: var(--radius-tile);
+  background: var(--tint);
+  -webkit-backdrop-filter: blur(4.7px);
+  backdrop-filter: blur(4.7px);
+}
+.glass img { width: 64px; height: 64px; object-fit: contain; }
