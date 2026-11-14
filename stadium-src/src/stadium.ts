@@ -172,7 +172,7 @@ const teamLink = document.createElement("a");
 teamLink.className = "tribuneTeamLink";
 teamLink.textContent = "Open club page";
 teamLink.style.display = "none";
-if (bare) layout.appendChild(actions);
+
 const viewport = document.getElementById("tribuneViewport")!;
 const teamList = document.getElementById("tribuneTeamList")!;
 const canvas = document.createElement("canvas");
@@ -692,11 +692,6 @@ let pointerInside=false;
 const teamLabel=document.createElement("div");
 teamLabel.style.cssText="position:fixed;display:none;padding:12px 16px;background:rgba(5,10,18,.92);color:white;border:1px solid #29647a;border-radius:8px;font:14px Arial,sans-serif;pointer-events:none;z-index:1000";
 if (diagnosticsEnabled) document.body.appendChild(teamLabel);
-const introText=document.createElement("div");
-introText.textContent="TRIBUNE";
-introText.hidden = bare;
-introText.style.cssText="position:absolute;left:50%;top:8%;transform:translateX(-50%);color:#7be9ff;letter-spacing:.55em;font:600 18px Arial;pointer-events:none;z-index:20;text-shadow:0 0 25px #14c6ff";
-layout.appendChild(introText);
 let materialDiagnosticMode: "masked" | "original" | "standard" = "masked";
 function applyMaterialDiagnostic() {
   const carabell = teamData.find(t => t.config.id === "carabell");
@@ -844,14 +839,14 @@ for (const m of billboards) {
     }catch(e){console.error("INTRO PART FAILED:",file,e);}
   }
   introFinished=!SETTINGS.introEnabled;
-  if(introFinished){introText.style.display="none";for(const m of roofMeshes)m.setEnabled(false);}
+  if(introFinished){for(const m of roofMeshes)m.setEnabled(false);}
   else {
     // Wait, then sweep 0 -> 1; the mask reveals the stadium without camera motion.
     const start=performance.now()+SETTINGS.introHoldMs;
     const tick=()=>{
       const t=Math.min(1,Math.max(0,(performance.now()-start)/SETTINGS.introWipeMs));
       if(t<1) requestAnimationFrame(tick);
-      else {introFinished=true;introText.style.display="none";for(const m of roofMeshes)m.setEnabled(false);}
+      else {introFinished=true;for(const m of roofMeshes)m.setEnabled(false);}
     };
     requestAnimationFrame(tick);
   }
@@ -1098,16 +1093,14 @@ function updateCameraTransition(dt:number) {
   }
 }
 
+// Back to the overview: one site-style pill at the bottom of the widget, together with
+// the club link. (The MVP's separate "← К СТАДИОНУ" button is not used on the site.)
 const backButton=document.createElement("button");
 backButton.type = "button";
-backButton.textContent = bare ? "Back to stadium" : "← К СТАДИОНУ";
-backButton.style.cssText="position:absolute;top:24px;right:24px;z-index:1001;display:none;padding:12px 18px;background:#050a12e8;color:#a7efff;border:1px solid #29647a;border-radius:6px;font:600 13px Arial;letter-spacing:.1em;cursor:pointer";
-if (bare) {
-  backButton.style.cssText = "display:none";
-  actions.append(backButton, teamLink);
-} else {
-  layout.appendChild(backButton);
-}
+backButton.textContent = "Back to stadium";
+backButton.style.display = "none";
+actions.append(backButton, teamLink);
+layout.appendChild(actions);
 
 // One diagnostic switch: isolate the house spotlight from all other lighting.
 // Only visible during close-up; it never changes the overview.
@@ -1189,11 +1182,11 @@ function openTeam(team:LoadedTeam) {
   spotlightCenter.copyFrom(team.center);
   spotlightActive=true;
   teamLabel.style.display="none";
-  backButton.style.display = bare ? "" : "block";
+  backButton.style.display = "";
   lightingPanel.style.display="none"; // hidden in visual test
   actions.classList.add("isOpen");
   const href = options.teamHref?.(team.config.id) ?? null;
-  teamLink.style.display = href && bare ? "" : "none";
+  teamLink.style.display = href ? "" : "none";
   if (href) teamLink.href = href;
   materialDiagnosticMode = "masked";
   // Use the pitch center for azimuth and a fixed upward angle for every house.
