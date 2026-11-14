@@ -1,6 +1,6 @@
 // Manifesto copy for the About page. One entry = one stand around the pitch.
 // angle: where the stand sits (0 = far side / top of the sketch, 90 = right).
-window.TRIBUNE_MANIFESTO = [
+export const MANIFESTO = [
   {
     id: "tribune",
     title: "tribune",
@@ -40,23 +40,3 @@ window.TRIBUNE_MANIFESTO = [
     ],
   },
 ];
-
-// Plain-text version for the "Read as text" dialog (works without WebGL).
-document.addEventListener("DOMContentLoaded", () => {
-  const box = document.querySelector(".about-text");
-  if (!box) return;
-  window.TRIBUNE_MANIFESTO.forEach((stand, i) => {
-    // The dialog headline already says "tribune", so the first section goes without its own title.
-    if (i > 0) {
-      const h = document.createElement("h3");
-      h.id = `text-${stand.id}`;
-      h.textContent = stand.title;
-      box.append(h);
-    }
-    stand.paragraphs.forEach((text) => {
-      const p = document.createElement("p");
-      p.textContent = text;
-      box.append(p);
-    });
-  });
-});

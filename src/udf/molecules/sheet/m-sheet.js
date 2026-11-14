@@ -1,6 +1,5 @@
 // Read-more dialogs: any [data-opens="<dialog id>"] opens a .sheet dialog.
-(() => {
-  "use strict";
+export function initSheets() {
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -37,4 +36,4 @@
   }
 
   initDialogs();
-})();
+}

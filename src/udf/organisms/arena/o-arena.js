@@ -1,9 +1,10 @@
 // About page: the manifesto as a stadium. Each stand is a curved, sloped
 // surface with text printed on it, arranged around a pitch.
 import * as THREE from "three";
+import { MANIFESTO } from "../../../data/manifesto.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
-const STANDS = window.TRIBUNE_MANIFESTO || [];
+const STANDS = MANIFESTO;
 
 const COLORS = {
   bg: "#f0f0f0",
@@ -343,7 +344,9 @@ function start() {
 }
 
 // Canvas text needs the web fonts before drawing.
-Promise.all([
-  document.fonts.load('500 150px "Youth"'),
-  document.fonts.load('450 40px "Suisse Intl"'),
-]).catch(() => {}).finally(start);
+export function initArena() {
+  Promise.all([
+    document.fonts.load('500 150px "Youth"'),
+    document.fonts.load('450 40px "Suisse Intl"'),
+  ]).catch(() => {}).finally(start);
+}

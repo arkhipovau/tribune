@@ -1,8 +1,9 @@
-// Team page: fills the panel from window.TRIBUNE using ?id=<team-id>.
-(() => {
-  "use strict";
+// Team page: fills the panel from src/data/teams.js using ?id=<team-id>.
+import { TRIBUNE } from "../../../data/teams.js";
 
-  const data = window.TRIBUNE;
+export function initTeamPage() {
+
+  const data = TRIBUNE;
   if (!data) return;
 
   const params = new URLSearchParams(window.location.search);
@@ -165,4 +166,4 @@
   const drawing = $(".tp-patron__drawing");
   if (team.drawing) drawing.src = team.drawing;
   else drawing.remove();
-})();
+}

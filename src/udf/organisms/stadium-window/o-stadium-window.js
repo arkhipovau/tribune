@@ -1,14 +1,15 @@
 // Loads the interactive stadium (Babylon.js) only when its section is about to
 // be seen, or right away when the hero arrow is used.
-(() => {
-  "use strict";
+import { TRIBUNE } from "../../../data/teams.js";
+
+export function initStadiumWindow() {
 
   const section = document.getElementById("stadium");
   if (!section) return;
   const mount = section.querySelector(".stadium__mount");
   const fallback = section.querySelector(".stadium__fallback");
   const base = new URL("assets/stadium/", document.baseURI);
-  const teams = window.TRIBUNE;
+  const teams = TRIBUNE;
 
   const hasWebGL = () => {
     try {
@@ -141,4 +142,4 @@
     else window.scrollTo({ top: target, behavior: "smooth" });
     history.replaceState(null, "", "#stadium");
   }));
-})();
+}

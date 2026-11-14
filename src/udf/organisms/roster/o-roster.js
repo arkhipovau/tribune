@@ -1,10 +1,11 @@
-// Teams page: one bento grid from window.TRIBUNE data.
+// Teams page: one bento grid from src/data/teams.js.
 // Every tile has the same anatomy: a surface (photo, logo or quote) and a
 // caption underneath in the same two-line type. No text sits on the photos.
-(() => {
-  "use strict";
+import { TRIBUNE } from "../../../data/teams.js";
 
-  const data = window.TRIBUNE;
+export function initRoster() {
+
+  const data = TRIBUNE;
   const grid = document.querySelector(".bento");
   if (!data || !grid) return;
 
@@ -99,4 +100,4 @@
   ];
   data.teams.slice(5).forEach((t) => layout.push(teamTile(t)));
   grid.append(...layout.filter(Boolean));
-})();
+}

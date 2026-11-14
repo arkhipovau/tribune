@@ -1,7 +1,6 @@
 // Partner marquee: repeats the logo set until the track is at least twice the
 // viewport, so the loop never shows an empty tail on wide screens.
-(() => {
-  "use strict";
+export function initPartners() {
 
   const SPEED = 50; // px per second
 
@@ -35,4 +34,4 @@
     let t;
     window.addEventListener("resize", () => { clearTimeout(t); t = setTimeout(build, 200); });
   });
-})();
+}

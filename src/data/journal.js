@@ -1,6 +1,6 @@
 // Latest posts from instagram.com/tribune_kids.space (images stored locally).
 // To refresh: re-run the export and replace this list.
-window.TRIBUNE_JOURNAL = [
+export const JOURNAL = [
   {
     "url": "https://www.instagram.com/p/Da7im4SogWo/",
     "images": [

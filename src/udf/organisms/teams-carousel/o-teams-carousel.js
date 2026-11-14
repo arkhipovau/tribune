@@ -2,10 +2,11 @@
 // Every team is a real card on one track. Side cards are the same card scaled
 // down (508 → 265px, as in the Figma frame) with only the photo blurred, so the
 // rounded edges stay crisp. Changing team slides and scales the cards together.
-(() => {
-  "use strict";
+import { TRIBUNE } from "../../../data/teams.js";
 
-  const TEAMS = (window.TRIBUNE && window.TRIBUNE.teams) || [];
+export function initTeamsCarousel() {
+
+  const TEAMS = TRIBUNE.teams || [];
   const root = document.querySelector(".teams");
   if (!root || TEAMS.length === 0) return;
 
@@ -16,7 +17,7 @@
   const track = root.querySelector(".teams__track");
   const ticks = root.querySelector(".teams__ticks");
   const arrows = root.querySelectorAll(".teams__arrows .round-btn");
-  const { foundations, designers } = window.TRIBUNE;
+  const { foundations, designers } = TRIBUNE;
 
   const el = (tag, className, text) => {
     const node = document.createElement(tag);
@@ -179,4 +180,4 @@
   });
 
   render();
-})();
+}
