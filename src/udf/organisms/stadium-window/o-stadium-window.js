@@ -55,6 +55,8 @@ export function initStadiumWindow() {
   const CARD = { left: 37, right: 39, radius: 30, ratio: 791 / 1364, zoom: 1.12 };
   // The closed card sits centred in the sticky frame. The frame locks the moment the card
   // reaches the centre of the screen; only then the window opens, holds, and closes again.
+  // Scale of the stadium when the window is fully open (1 = edge to edge; a bit smaller reads better).
+  const OPEN_ZOOM = 0.9;
   const OPEN_SPAN = 0.9;  // scroll (in viewport heights) spent opening, and again closing
   // On approach the card starts a little lower and rides up into place as you scroll.
   const RISE = 0.4;        // start this many viewport heights lower…
@@ -95,7 +97,7 @@ export function initStadiumWindow() {
     frame.style.setProperty("--clip-b", `${(offset * closed + shrinkY).toFixed(2)}px`);
     frame.style.setProperty("--clip-rad", `${(CARD.radius * closed).toFixed(2)}px`);
     // A touch of scale inside the window sells the "flying into it" feeling.
-    frame.style.setProperty("--zoom", (1 + (CARD.zoom - 1) * closed).toFixed(4));
+    frame.style.setProperty("--zoom", (OPEN_ZOOM + (CARD.zoom - OPEN_ZOOM) * closed).toFixed(4));
     frame.style.setProperty("--zoom-y", "50%");
   }
   /* Settling into the open stadium is left to the browser: a native scroll-snap point
