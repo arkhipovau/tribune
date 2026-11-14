@@ -1,18 +1,18 @@
-.page-teams { background: var(--bg-white); }
-.roster { padding: 140px var(--gutter) var(--section-pad); }
-.roster__title { margin: 0 0 56px; text-align: center; }
-.bento {
+.o-page-teams { background: var(--bg-white); }
+.o-roster { padding: 140px var(--gutter) var(--section-pad); }
+.o-roster__title { margin: 0 0 56px; text-align: center; }
+.o-bento {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 40px 24px;
 }
 @media (max-width: 1024px) {
-  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .o-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 900px) {
-  .roster { padding: 110px 16px 64px; }
-  .roster__title { margin-bottom: 32px; }
+  .o-roster { padding: 110px 16px 64px; }
+  .o-roster__title { margin-bottom: 32px; }
 }
 @media (max-width: 560px) {
-  .bento { grid-template-columns: minmax(0, 1fr); }
+  .o-bento { grid-template-columns: minmax(0, 1fr); }
 }

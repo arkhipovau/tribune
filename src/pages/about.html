@@ -9,33 +9,33 @@
   <link rel="preload" href="assets/fonts/SuisseIntl-Book.otf" as="font" type="font/otf" crossorigin>
   <link rel="stylesheet" href="../udf/bundles/about.css">
 </head>
-<body class="page-about">
+<body class="o-page-about">
 
 {{> s-header}}
 
-<main class="arena">
-  <canvas class="arena__canvas" aria-label="3D stadium made of the Tribune manifesto. Drag to rotate, scroll or pinch to zoom."></canvas>
+<main class="o-arena">
+  <canvas class="o-arena__canvas" aria-label="3D stadium made of the Tribune manifesto. Drag to rotate, scroll or pinch to zoom."></canvas>
 
-  <div class="arena__loading" role="status">Building the stadium…</div>
+  <div class="o-arena__loading" role="status">Building the stadium…</div>
 
-  <nav class="arena__stands" aria-label="Stands"></nav>
+  <nav class="o-arena__stands" aria-label="Stands"></nav>
 
 
-  <button class="link-under arena__read" type="button" data-opens="manifesto-text" aria-haspopup="dialog">Read as text</button>
+  <button class="a-link-under o-arena__read" type="button" data-opens="manifesto-text" aria-haspopup="dialog">Read as text</button>
 </main>
 
-<dialog class="sheet" id="manifesto-text" aria-labelledby="manifesto-text-title">
-  <article class="sheet__card" tabindex="-1" autofocus>
-    <span class="sheet__handle" aria-hidden="true"></span>
-    <div class="sheet__top">
-      <p class="sheet__heading">Manifesto</p>
-      <button class="expand-btn expand-btn--close sheet__close" type="button" data-closes>
-        <span class="expand-btn__label"><span>Close</span></span>
-        <span class="expand-btn__icon"><svg viewBox="0 0 16 16" width="10" height="10" aria-hidden="true"><rect y="7" width="16" height="2" fill="currentColor"/><rect x="7" width="2" height="16" fill="currentColor"/></svg></span>
+<dialog class="m-sheet" id="manifesto-text" aria-labelledby="manifesto-text-title">
+  <article class="m-sheet__card" tabindex="-1" autofocus>
+    <span class="m-sheet__handle" aria-hidden="true"></span>
+    <div class="m-sheet__top">
+      <p class="m-sheet__heading">Manifesto</p>
+      <button class="m-expand-btn m-expand-btn--close m-sheet__close" type="button" data-closes>
+        <span class="m-expand-btn__label"><span>Close</span></span>
+        <span class="m-expand-btn__icon"><svg viewBox="0 0 16 16" width="10" height="10" aria-hidden="true"><rect y="7" width="16" height="2" fill="currentColor"/><rect x="7" width="2" height="16" fill="currentColor"/></svg></span>
       </button>
     </div>
-    <h2 class="display sheet__headline" id="manifesto-text-title">tribune</h2>
-    <div class="sheet__body about-text"></div>
+    <h2 class="a-display m-sheet__headline" id="manifesto-text-title">tribune</h2>
+    <div class="m-sheet__body o-about-text"></div>
   </article>
 </dialog>
 

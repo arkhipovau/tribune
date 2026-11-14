@@ -29,10 +29,10 @@ const TEX = { w: 3072, h: 1566, pad: 100, title: 150, titleGap: 70, body: 40, le
 const FOCUS_MS = 1200;
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-const canvas = document.querySelector(".arena__canvas");
-const arena = document.querySelector(".arena");
-const loading = document.querySelector(".arena__loading");
-const standNav = document.querySelector(".arena__stands");
+const canvas = document.querySelector(".o-arena__canvas");
+const arena = document.querySelector(".o-arena");
+const loading = document.querySelector(".o-arena__loading");
+const standNav = document.querySelector(".o-arena__stands");
 
 /** Unit vector pointing from the centre to a stand. 0° = far side, 90° = right. */
 const dirOf = (deg) => {
@@ -227,7 +227,7 @@ function start() {
   try {
     renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
   } catch (error) {
-    arena.classList.add("arena--no-webgl");
+    arena.classList.add("o-arena--no-webgl");
     loading.textContent = "3D is not available in this browser — read the manifesto as text.";
     return;
   }
@@ -282,7 +282,7 @@ function start() {
 
   const overview = document.createElement("button");
   overview.type = "button";
-  overview.className = "pill__item";
+  overview.className = "a-pill__item";
   overview.textContent = "Overview";
   overview.addEventListener("click", () => {
     flyTo(OVERVIEW);
@@ -292,7 +292,7 @@ function start() {
   STANDS.forEach((stand) => {
     const b = document.createElement("button");
     b.type = "button";
-    b.className = "pill__item";
+    b.className = "a-pill__item";
     b.textContent = stand.title.charAt(0).toUpperCase() + stand.title.slice(1);
     b.setAttribute("aria-pressed", "false");
     b.addEventListener("click", () => focusStand(stand));

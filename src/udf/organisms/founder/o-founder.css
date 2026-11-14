@@ -1,12 +1,12 @@
-.founder__text {
+.o-founder__text {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;
   overflow: hidden;
 }
-.founder__video { position: absolute !important; left: 50%; top: 222px; transform: translateX(-50%); }
+.o-founder__video { position: absolute !important; left: 50%; top: 222px; transform: translateX(-50%); }
 @media (max-width: 900px) {
-  .founder__video { position: relative !important; left: auto; top: auto; transform: none; margin: 32px auto 0; }
+  .o-founder__video { position: relative !important; left: auto; top: auto; transform: none; margin: 32px auto 0; }
 }
-.founder__more { margin-top: 24px; font: inherit; cursor: pointer; }
-[data-opens].founder__text { cursor: pointer; }
+.o-founder__more { margin-top: 24px; font: inherit; cursor: pointer; }
+[data-opens].o-founder__text { cursor: pointer; }

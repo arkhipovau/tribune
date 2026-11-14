@@ -1,4 +1,4 @@
-.pill-img {
+.a-pill-img {
   position: relative;
   display: inline-block;
   width: 1em;
@@ -9,4 +9,4 @@
   box-shadow: var(--shadow);
   transform: translateZ(0);
 }
-.pill-img > img { width: 100%; height: 100%; object-fit: cover; transition: filter var(--dur) var(--ease), transform var(--dur) var(--ease); }
+.a-pill-img > img { width: 100%; height: 100%; object-fit: cover; transition: filter var(--dur) var(--ease), transform var(--dur) var(--ease); }

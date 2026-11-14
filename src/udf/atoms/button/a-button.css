@@ -1,4 +1,4 @@
-.btn {
+.a-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -9,10 +9,10 @@
   box-shadow: var(--shadow);
   transition: transform 250ms var(--ease), box-shadow 250ms var(--ease);
 }
-.btn:active { transform: scale(0.97); }
-.btn--white:hover { background: #f5f5f4; }
-.btn--green:hover { background: #bde6b0; }
-.btn--sm { height: 36px; padding: 0 32px; font-size: 14px; line-height: 18px; }
-.btn--lg { height: 60px; padding: 0 40px; font-size: 17px; line-height: 18px; }
-.btn--white { background: var(--bg-white); }
-.btn--green { background: var(--green); border: 1px solid rgba(255, 255, 255, 0.2); }
+.a-button:active { transform: scale(0.97); }
+.a-button--white:hover { background: #f5f5f4; }
+.a-button--green:hover { background: #bde6b0; }
+.a-button--sm { height: 36px; padding: 0 32px; font-size: 14px; line-height: 18px; }
+.a-button--lg { height: 60px; padding: 0 40px; font-size: 17px; line-height: 18px; }
+.a-button--white { background: var(--bg-white); }
+.a-button--green { background: var(--green); border: 1px solid rgba(255, 255, 255, 0.2); }

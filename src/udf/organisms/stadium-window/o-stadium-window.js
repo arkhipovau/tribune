@@ -6,8 +6,8 @@ export function initStadiumWindow() {
 
   const section = document.getElementById("stadium");
   if (!section) return;
-  const mount = section.querySelector(".stadium__mount");
-  const fallback = section.querySelector(".stadium__fallback");
+  const mount = section.querySelector(".o-stadium__mount");
+  const fallback = section.querySelector(".o-stadium__fallback");
   const base = new URL("assets/stadium/", document.baseURI);
   const teams = TRIBUNE;
 
@@ -51,7 +51,7 @@ export function initStadiumWindow() {
 
   /* ---------- Window zoom: card → full screen → card while scrolling through ---------- */
 
-  const frame = section.querySelector(".stadium");
+  const frame = section.querySelector(".o-stadium");
   const CARD = { left: 37, right: 39, radius: 30, ratio: 791 / 1364, zoom: 1.12 };
   // The closed card sits centred in the sticky frame. The frame locks the moment the card
   // reaches the centre of the screen; only then the window opens, holds, and closes again.

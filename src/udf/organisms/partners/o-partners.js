@@ -4,8 +4,8 @@ export function initPartners() {
 
   const SPEED = 50; // px per second
 
-  document.querySelectorAll(".marquee").forEach((marquee) => {
-    const track = marquee.querySelector(".marquee__track");
+  document.querySelectorAll(".o-marquee").forEach((marquee) => {
+    const track = marquee.querySelector(".o-marquee__track");
     if (!track) return;
     const set = [...track.children].slice(0, 2).map((n) => n.cloneNode(true));
 

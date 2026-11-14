@@ -13,9 +13,9 @@ const easeInOut = (t) => (1 - Math.cos(Math.PI * t)) / 2;
 export function initHow() {
   const section = document.getElementById("how");
   if (!section) return;
-  const steps = [...section.querySelectorAll(".step")];
-  const slides = [...section.querySelectorAll(".how__slide")];
-  const bars = [...section.querySelectorAll(".how__bars i")];
+  const steps = [...section.querySelectorAll(".m-step")];
+  const slides = [...section.querySelectorAll(".o-how__slide")];
+  const bars = [...section.querySelectorAll(".o-how__bars i")];
   const last = steps.length - 1;
   const pinQuery = matchMedia("(min-width: 901px) and (prefers-reduced-motion: no-preference)");
   let active = -1;
@@ -25,7 +25,7 @@ export function initHow() {
     active = index;
     steps.forEach((s, i) => {
       s.classList.toggle("is-active", i === index);
-      s.querySelector(".step__head").setAttribute("aria-expanded", String(i === index));
+      s.querySelector(".m-step__head").setAttribute("aria-expanded", String(i === index));
     });
   };
 
@@ -66,13 +66,13 @@ export function initHow() {
   };
 
   const applyMode = () => {
-    section.classList.toggle("how--pinned", pinQuery.matches);
+    section.classList.toggle("o-how--pinned", pinQuery.matches);
     if (pinQuery.matches) renderPinned();
     else renderStatic(Math.max(0, active));
   };
 
   steps.forEach((step, i) => {
-    step.querySelector(".step__head").addEventListener("click", () => {
+    step.querySelector(".m-step__head").addEventListener("click", () => {
       if (!pinQuery.matches) { renderStatic(i); return; }
       const top = section.getBoundingClientRect().top + scrollY;
       scrollTo({ top: top + (i / last) * range(), behavior: "smooth" });

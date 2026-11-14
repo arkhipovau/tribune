@@ -7,16 +7,16 @@ import { TRIBUNE } from "../../../data/teams.js";
 export function initTeamsCarousel() {
 
   const TEAMS = TRIBUNE.teams || [];
-  const root = document.querySelector(".teams");
+  const root = document.querySelector(".o-teams");
   if (!root || TEAMS.length === 0) return;
 
   const SIDE_SCALE = 265 / 508;
   const SIDE_TOP = 122; // side cards sit lower: 294 - 172 in the frame
   const POSITIONS = { 1: 426.5, 2: 731.5 }; // centre-to-centre distances
 
-  const track = root.querySelector(".teams__track");
-  const ticks = root.querySelector(".teams__ticks");
-  const arrows = root.querySelectorAll(".teams__arrows .round-btn");
+  const track = root.querySelector(".o-teams__track");
+  const ticks = root.querySelector(".o-teams__ticks");
+  const arrows = root.querySelectorAll(".o-teams__arrows .a-round-btn");
   const { foundations, designers } = TRIBUNE;
 
   const el = (tag, className, text) => {
@@ -32,37 +32,37 @@ export function initTeamsCarousel() {
     return node;
   };
   const glass = (src, alt, className) => {
-    const g = el("span", "glass");
+    const g = el("span", "a-glass");
     g.append(img(src, alt, className));
     return g;
   };
 
   function buildSlide(team) {
-    const slide = el("article", "slide");
+    const slide = el("article", "m-team-slide");
     const href = `team.html?id=${encodeURIComponent(team.id)}`;
 
-    const media = el("a", "team-card__media");
+    const media = el("a", "m-team-card__media");
     media.href = href;
-    media.append(img(team.house, `${team.name} — team house`, "team-card__photo"));
-    if (team.crest) media.append(Object.assign(glass(team.crest, `${team.name} crest`), { className: "glass team-card__crest" }));
+    media.append(img(team.house, `${team.name} — team house`, "m-team-card__photo"));
+    if (team.crest) media.append(Object.assign(glass(team.crest, `${team.name} crest`), { className: "a-glass m-team-card__crest" }));
     if (team.foundation) {
-      const partners = el("span", "team-card__partners");
+      const partners = el("span", "m-team-card__partners");
       partners.append(glass(foundations[team.foundation].logo, foundations[team.foundation].name));
-      if (team.designer) partners.append(glass(designers[team.designer].logo, designers[team.designer].name, "team-card__do"));
+      if (team.designer) partners.append(glass(designers[team.designer].logo, designers[team.designer].name, "m-team-card__do"));
       media.append(partners);
     }
 
-    const bar = el("a", "team-card__bar");
+    const bar = el("a", "m-team-card__bar");
     bar.href = href;
-    const text = el("span", "team-card__text");
+    const text = el("span", "m-team-card__text");
     text.append(
-      el("span", "team-card__name", team.country ? `${team.name}  •  ${team.country}` : team.name),
-      el("span", "team-card__tagline", team.tagline),
+      el("span", "m-team-card__name", team.country ? `${team.name}  •  ${team.country}` : team.name),
+      el("span", "m-team-card__tagline", team.tagline),
     );
     bar.append(text);
     if (team.drawing) {
-      const count = el("span", "team-card__count");
-      count.append(img(team.drawing, "", "team-card__drawing"), el("span", "", `(${team.drawings})`));
+      const count = el("span", "m-team-card__count");
+      count.append(img(team.drawing, "", "m-team-card__drawing"), el("span", "", `(${team.drawings})`));
       bar.append(count);
     }
     slide.append(media, bar);
@@ -139,7 +139,7 @@ export function initTeamsCarousel() {
   }
 
   const tickButtons = TEAMS.map((team, i) => {
-    const b = el("button", "tick");
+    const b = el("button", "a-tick");
     b.type = "button";
     b.setAttribute("role", "tab");
     b.setAttribute("aria-label", team.name);

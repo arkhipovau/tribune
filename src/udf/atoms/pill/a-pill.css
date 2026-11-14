@@ -1,4 +1,4 @@
-.pill {
+.a-pill {
   display: flex;
   align-items: center;
   height: 44px;
@@ -7,11 +7,11 @@
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
-.pill__item {
+.a-pill__item {
   padding: 10px 14px;
   border-radius: 1000px;
   white-space: nowrap;
   transition: background 200ms;
 }
-.pill__item:hover { background: var(--tint); }
-.pill__item:focus-visible { background: var(--tint); }
+.a-pill__item:hover { background: var(--tint); }
+.a-pill__item:focus-visible { background: var(--tint); }

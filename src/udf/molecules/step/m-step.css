@@ -1,12 +1,12 @@
-.step__head { display: flex; align-items: center; gap: 24px; height: 72px; text-align: left; border-radius: 1000px; }
-.step__img { font-size: 80px; flex: none; transition: opacity var(--dur) var(--ease), filter var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
-.step__title { white-space: nowrap; transition: opacity var(--dur) var(--ease); }
-.step:not(.is-active) .step__img { box-shadow: none; opacity: 0.4; filter: grayscale(1); }
-.step:not(.is-active) .step__title { opacity: 0.32; }
-.step:not(.is-active) .step__head:hover .step__title { opacity: 0.6; }
-.step__body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--dur) var(--ease); }
-.step.is-active .step__body { grid-template-rows: 1fr; }
-.step__text {
+.m-step__head { display: flex; align-items: center; gap: 24px; height: 72px; text-align: left; border-radius: 1000px; }
+.m-step__img { font-size: 80px; flex: none; transition: opacity var(--dur) var(--ease), filter var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
+.m-step__title { white-space: nowrap; transition: opacity var(--dur) var(--ease); }
+.m-step:not(.is-active) .m-step__img { box-shadow: none; opacity: 0.4; filter: grayscale(1); }
+.m-step:not(.is-active) .m-step__title { opacity: 0.32; }
+.m-step:not(.is-active) .m-step__head:hover .m-step__title { opacity: 0.6; }
+.m-step__body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--dur) var(--ease); }
+.m-step.is-active .m-step__body { grid-template-rows: 1fr; }
+.m-step__text {
   min-height: 0;
   overflow: hidden;
   max-width: 440px;
@@ -14,13 +14,13 @@
   opacity: 0;
   transition: opacity var(--dur) var(--ease);
 }
-.step.is-active .step__text { padding-top: 16px; opacity: 1; }
+.m-step.is-active .m-step__text { padding-top: 16px; opacity: 1; }
 @media (max-width: 1280px) {
-  .step__img { font-size: var(--display); }
+  .m-step__img { font-size: var(--display); }
 }
 @media (max-width: 900px) {
-  .step__head { height: auto; min-height: 56px; gap: 16px; }
-  .step__title { white-space: normal; font-size: 40px; }
-  .step__img { font-size: 56px; }
-  .step__text, .how__progress { margin-left: 0; }
+  .m-step__head { height: auto; min-height: 56px; gap: 16px; }
+  .m-step__title { white-space: normal; font-size: 40px; }
+  .m-step__img { font-size: 56px; }
+  .m-step__text, .o-how__progress { margin-left: 0; }
 }

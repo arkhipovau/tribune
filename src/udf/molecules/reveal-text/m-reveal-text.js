@@ -12,13 +12,13 @@ function splitWords(container) {
       node.textContent.split(/(\s+)/).forEach((part) => {
         if (!part) return;
         if (/^\s+$/.test(part)) { frag.append(" "); return; }
-        const w = el("span", "w", part);
+        const w = el("span", "m-reveal-word", part);
         units.push(w);
         frag.append(w);
       });
       node.replaceWith(frag);
     } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName !== "BR") {
-      node.classList.add("w");
+      node.classList.add("m-reveal-word");
       units.push(node);
     }
   });

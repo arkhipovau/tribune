@@ -1,4 +1,4 @@
-.header {
+.s-header {
   position: fixed;
   z-index: 50;
   top: 20px;
@@ -9,14 +9,14 @@
   justify-content: space-between;
   pointer-events: none;
 }
-.header > * { pointer-events: auto; }
-.header__nav, .header__cta { padding: 4px; gap: 0; }
-.header .pill__item { display: inline-flex; align-items: center; height: 36px; padding: 0 16px; }
-.header__logo { position: absolute; left: 50%; top: 11px; transform: translateX(-50%); }
+.s-header > * { pointer-events: auto; }
+.s-header__nav, .s-header__cta { padding: 4px; gap: 0; }
+.s-header .a-pill__item { display: inline-flex; align-items: center; height: 36px; padding: 0 16px; }
+.s-header__logo { position: absolute; left: 50%; top: 11px; transform: translateX(-50%); }
 @media (max-width: 900px) {
-  .header { left: 16px; right: 16px; top: 12px; }
-  .header__nav { display: none; }
-  .header__logo { position: static; transform: none; }
-  .header__cta .pill__item { display: none; }
-  .header__cta { padding: 4px; }
+  .s-header { left: 16px; right: 16px; top: 12px; }
+  .s-header__nav { display: none; }
+  .s-header__logo { position: static; transform: none; }
+  .s-header__cta .a-pill__item { display: none; }
+  .s-header__cta { padding: 4px; }
 }

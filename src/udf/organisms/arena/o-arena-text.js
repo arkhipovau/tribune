@@ -2,7 +2,7 @@ import { MANIFESTO } from "../../../data/manifesto.js";
 
 // Plain-text version for the "Read as text" dialog (works without WebGL).
 export function initArenaText() {
-  const box = document.querySelector(".about-text");
+  const box = document.querySelector(".o-about-text");
   if (!box) return;
   MANIFESTO.forEach((stand, i) => {
     // The dialog headline already says "tribune", so the first section goes without its own title.

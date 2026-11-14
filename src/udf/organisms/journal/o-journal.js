@@ -17,31 +17,31 @@ const ago = (iso) => {
 };
 
 export function renderPost(p) {
-  const post = el("a", "post");
+  const post = el("a", "m-post");
   post.href = p.url;
   post.target = "_blank";
   post.rel = "noopener";
   post.setAttribute("aria-label", "Open this post on Instagram");
 
-  const head = el("div", "post__head");
-  const avatar = el("span", "post__avatar");
+  const head = el("div", "m-post__head");
+  const avatar = el("span", "m-post__avatar");
   avatar.append(img(IG_AVATAR));
-  const who = el("span", "post__who");
-  who.append(el("span", "post__user", IG_USER));
-  if (p.location) who.append(el("span", "post__place", p.location));
-  head.append(avatar, who, img("assets/svg/ig-more.svg", "post__more"));
+  const who = el("span", "m-post__who");
+  who.append(el("span", "m-post__user", IG_USER));
+  if (p.location) who.append(el("span", "m-post__place", p.location));
+  head.append(avatar, who, img("assets/svg/ig-more.svg", "m-post__more"));
 
   // Media: a small carousel when the post has several images.
-  const media = el("div", "post__media");
-  const track = el("div", "post__track");
-  p.images.forEach((src, i) => track.append(img(src, "post__img", i === 0 ? "Instagram post" : "")));
+  const media = el("div", "m-post__media");
+  const track = el("div", "m-post__track");
+  p.images.forEach((src, i) => track.append(img(src, "m-post__img", i === 0 ? "Instagram post" : "")));
   media.append(track);
   if (p.images.length > 1) {
     let index = 0;
-    const dots = el("div", "post__dots");
+    const dots = el("div", "m-post__dots");
     const dotEls = p.images.map(() => dots.appendChild(el("span")));
     const arrow = (dir) => {
-      const b = el("button", `post__arrow post__arrow--${dir < 0 ? "prev" : "next"}`);
+      const b = el("button", `m-post__arrow m-post__arrow--${dir < 0 ? "prev" : "next"}`);
       b.type = "button";
       b.setAttribute("aria-label", dir < 0 ? "Previous image" : "Next image");
       b.append(img("assets/svg/arrow.svg"));
@@ -61,27 +61,27 @@ export function renderPost(p) {
     go(0);
   }
 
-  const icons = el("div", "post__icons");
+  const icons = el("div", "m-post__icons");
   icons.append(
     img("assets/svg/ig-like.svg", "", "Like"),
     img("assets/svg/ig-comment.svg", "", "Comment"),
     img("assets/svg/ig-share.svg", "", "Share"),
-    img("assets/svg/ig-save.svg", "post__save", "Save"),
+    img("assets/svg/ig-save.svg", "m-post__save", "Save"),
   );
 
-  const body = el("div", "post__body");
-  const caption = el("p", "post__caption");
-  caption.append(el("b", "", IG_USER), el("span", "post__caption-text", p.caption), el("span", "post__grey", "more"));
+  const body = el("div", "m-post__body");
+  const caption = el("p", "m-post__caption");
+  caption.append(el("b", "", IG_USER), el("span", "m-post__caption-text", p.caption), el("span", "m-post__grey", "more"));
   body.append(el("b", "", `${p.likes} like${p.likes === 1 ? "" : "s"}`), caption);
-  if (p.comments > 0) body.append(el("span", "post__grey", `View all ${p.comments} comment${p.comments === 1 ? "" : "s"}`));
-  body.append(el("span", "post__time", ago(p.date)));
+  if (p.comments > 0) body.append(el("span", "m-post__grey", `View all ${p.comments} comment${p.comments === 1 ? "" : "s"}`));
+  body.append(el("span", "m-post__time", ago(p.date)));
 
   post.append(head, media, icons, body);
   return post;
 }
 
 export function initJournal() {
-  const list = document.querySelector(".posts");
+  const list = document.querySelector(".o-posts");
   const posts = JOURNAL;
   if (!list || posts.length === 0) return;
   posts.slice(0, 4).forEach((p) => list.append(renderPost(p)));

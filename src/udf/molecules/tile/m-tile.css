@@ -1,4 +1,4 @@
-.tile {
+.m-tile {
   --inset: 8px;
   display: flex;
   flex-direction: column;
@@ -7,9 +7,9 @@
   background: var(--tint);
   transition: background 250ms;
 }
-a.tile:hover { background: rgba(23, 16, 14, 0.08); }
-.tile--wide { grid-column: span 2; }
-.tile__surface {
+a.m-tile:hover { background: rgba(23, 16, 14, 0.08); }
+.m-tile--wide { grid-column: span 2; }
+.m-tile__surface {
   position: relative;
   flex: 1;
   min-height: 0;
@@ -17,22 +17,22 @@ a.tile:hover { background: rgba(23, 16, 14, 0.08); }
   overflow: hidden;
   background: var(--bg-white);
 }
-.tile__surface--photo { flex: none; aspect-ratio: 385 / 462; }
-.tile__surface--photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 900ms var(--ease); }
-a.tile:hover .tile__surface--photo img { transform: scale(1.03); }
-.tile__surface--photo.is-soon img { filter: saturate(0.6); }
-.tile__surface--logo { display: grid; place-items: center; }
-.tile__surface--logo img { width: 52%; max-width: 200px; height: auto; }
-.tile__surface--quote, .tile__surface--invite { padding: 24px; }
-.tile__surface--quote.is-green { background: var(--green); }
-.tile__surface--quote.is-sky { background: #e4ecf3; }
-.tile__surface--invite { background: var(--ink); color: #fff; transition: background 250ms; }
-a.tile:hover .tile__surface--invite { background: #2a2220; }
-.tile__quote { display: block; margin: 0; max-width: 32ch; font-size: 17px; line-height: 20px; }
-.tile__caption { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 60px; padding: 8px 8px 8px 16px; }
-.tile__text { display: flex; flex-direction: column; gap: 4px; font-size: 12px; line-height: 1.2; }
-.tile__text .muted { color: var(--ink-muted); }
-.tile__count {
+.m-tile__surface--photo { flex: none; aspect-ratio: 385 / 462; }
+.m-tile__surface--photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 900ms var(--ease); }
+a.m-tile:hover .m-tile__surface--photo img { transform: scale(1.03); }
+.m-tile__surface--photo.is-soon img { filter: saturate(0.6); }
+.m-tile__surface--logo { display: grid; place-items: center; }
+.m-tile__surface--logo img { width: 52%; max-width: 200px; height: auto; }
+.m-tile__surface--quote, .m-tile__surface--invite { padding: 24px; }
+.m-tile__surface--quote.is-green { background: var(--green); }
+.m-tile__surface--quote.is-sky { background: #e4ecf3; }
+.m-tile__surface--invite { background: var(--ink); color: #fff; transition: background 250ms; }
+a.m-tile:hover .m-tile__surface--invite { background: #2a2220; }
+.m-tile__quote { display: block; margin: 0; max-width: 32ch; font-size: 17px; line-height: 20px; }
+.m-tile__caption { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 60px; padding: 8px 8px 8px 16px; }
+.m-tile__text { display: flex; flex-direction: column; gap: 4px; font-size: 12px; line-height: 1.2; }
+.m-tile__text .a-muted { color: var(--ink-muted); }
+.m-tile__count {
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -43,10 +43,10 @@ a.tile:hover .tile__surface--invite { background: #2a2220; }
   font-size: 12px;
   white-space: nowrap;
 }
-.tile__count img { width: 16px; height: 16px; object-fit: contain; }
-.tile__crests { display: flex; gap: 4px; }
-.tile__crests img { width: 28px; height: 28px; padding: 3px; border-radius: 50%; background: var(--bg-white); object-fit: contain; }
+.m-tile__count img { width: 16px; height: 16px; object-fit: contain; }
+.m-tile__crests { display: flex; gap: 4px; }
+.m-tile__crests img { width: 28px; height: 28px; padding: 3px; border-radius: 50%; background: var(--bg-white); object-fit: contain; }
 @media (max-width: 560px) {
-  .tile--wide { grid-column: auto; }
-  .tile__surface--logo, .tile__surface--quote, .tile__surface--invite { min-height: 240px; }
+  .m-tile--wide { grid-column: auto; }
+  .m-tile__surface--logo, .m-tile__surface--quote, .m-tile__surface--invite { min-height: 240px; }
 }

@@ -1,4 +1,4 @@
-.round-btn {
+.a-round-btn {
   display: inline-grid;
   place-items: center;
   flex: none;
@@ -9,7 +9,7 @@
   color: var(--ink);
   transition: transform 250ms var(--ease), opacity 200ms;
 }
-.round-btn img { width: 9px; height: auto; }
-.round-btn--prev img { transform: rotate(180deg); }
-button.round-btn:hover { background: #f5f5f4; }
-button.round-btn:active { transform: scale(0.94); }
+.a-round-btn img { width: 9px; height: auto; }
+.a-round-btn--prev img { transform: rotate(180deg); }
+button.a-round-btn:hover { background: #f5f5f4; }
+button.a-round-btn:active { transform: scale(0.94); }

@@ -1,4 +1,4 @@
-.glass {
+.a-glass {
   display: grid;
   place-items: center;
   width: 86px;
@@ -9,4 +9,4 @@
   -webkit-backdrop-filter: blur(4.7px);
   backdrop-filter: blur(4.7px);
 }
-.glass img { width: 64px; height: 64px; object-fit: contain; }
+.a-glass img { width: 64px; height: 64px; object-fit: contain; }

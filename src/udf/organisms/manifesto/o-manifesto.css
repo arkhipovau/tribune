@@ -1,7 +1,7 @@
-.manifesto, .founder { text-align: center; }
-.manifesto .display, .founder .display { max-width: calc(1185px + 32px); margin: 0 auto; padding: 0 16px; }
-.manifesto .display { min-height: 5.4em; }
-.manifesto__more, .founder__more { display: inline-block; margin-top: 24px; }
+.o-manifesto, .o-founder { text-align: center; }
+.o-manifesto .a-display, .o-founder .a-display { max-width: calc(1185px + 32px); margin: 0 auto; padding: 0 16px; }
+.o-manifesto .a-display { min-height: 5.4em; }
+.o-manifesto__more, .o-founder__more { display: inline-block; margin-top: 24px; }
 @media (max-width: 900px) {
-  .manifesto .display { min-height: 0; }
+  .o-manifesto .a-display { min-height: 0; }
 }

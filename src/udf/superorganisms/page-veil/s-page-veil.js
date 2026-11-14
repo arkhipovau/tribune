@@ -8,7 +8,7 @@ const VEIL_IN_MS = 180;
 
 export function initPageVeil() {
   const reduce = matchMedia("(prefers-reduced-motion: reduce)");
-  const veil = el("div", "page-veil");
+  const veil = el("div", "s-page-veil");
   veil.setAttribute("aria-hidden", "true");
   document.body.append(veil);
 

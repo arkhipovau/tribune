@@ -1,4 +1,4 @@
-.hero {
+.o-hero {
   --video-h: 205.7px;
   --video-top: max(430px, calc(100vh - var(--gutter) - var(--video-h)));
   position: relative;
@@ -7,26 +7,26 @@
   background: var(--bg-grey);
   text-align: center;
 }
-.hero__bg {
+.o-hero__bg {
   position: absolute;
   inset: 0 0 auto;
   height: calc(100% + 265px + 40vh); 
   background: var(--bg-hero) url("/assets/img/hero.webp") center top / cover no-repeat;
 }
-.hero > *:not(.hero__bg) { position: relative; }
-.hero__title { margin: 0; white-space: nowrap; }
-.hero__lead { margin-top: 24px; font-size: 17px; line-height: 20px; }
-.hero .hero__actions { position: absolute; left: 0; right: 0; top: calc(var(--video-top) + 55px); display: flex; flex-direction: column; align-items: center; gap: 19px; }
-.hero__buttons { display: flex; gap: 8px; }
-.hero__video { position: absolute !important; left: var(--gutter); top: var(--video-top); }
+.o-hero > *:not(.o-hero__bg) { position: relative; }
+.o-hero__title { margin: 0; white-space: nowrap; }
+.o-hero__lead { margin-top: 24px; font-size: 17px; line-height: 20px; }
+.o-hero .o-hero__actions { position: absolute; left: 0; right: 0; top: calc(var(--video-top) + 55px); display: flex; flex-direction: column; align-items: center; gap: 19px; }
+.o-hero__buttons { display: flex; gap: 8px; }
+.o-hero__video { position: absolute !important; left: var(--gutter); top: var(--video-top); }
 @media (max-width: 900px) {
-  .hero { padding-top: 120px; }
-  .hero__title { white-space: normal; padding: 0 16px; }
-  .hero__lead { padding: 0 16px; }
-  .hero__bg { height: 820px; }
-  .hero { min-height: 0; }
-  .hero .hero__actions { position: relative; top: auto; margin-top: 260px; }
-  .hero__buttons { flex-direction: column; width: calc(100% - 32px); max-width: 360px; }
-  .hero__video { position: relative !important; left: auto; top: auto; margin: 40px auto 0; }
-  .hero { padding-bottom: 40px; }
+  .o-hero { padding-top: 120px; }
+  .o-hero__title { white-space: normal; padding: 0 16px; }
+  .o-hero__lead { padding: 0 16px; }
+  .o-hero__bg { height: 820px; }
+  .o-hero { min-height: 0; }
+  .o-hero .o-hero__actions { position: relative; top: auto; margin-top: 260px; }
+  .o-hero__buttons { flex-direction: column; width: calc(100% - 32px); max-width: 360px; }
+  .o-hero__video { position: relative !important; left: auto; top: auto; margin: 40px auto 0; }
+  .o-hero { padding-bottom: 40px; }
 }
