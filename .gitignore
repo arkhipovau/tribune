@@ -2,7 +2,3 @@
 node_modules/
 .tmp-preview/
 
-# Dev-only symlinks into assets/stadium (used by `npm run dev` in stadium-src)
-stadium-src/public/models-opt
-stadium-src/public/env
-stadium-src/public/meshopt_decoder.js
