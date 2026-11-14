@@ -56,6 +56,10 @@ export type StadiumOptions = {
   panels?: boolean;
   /** Overview clay tone, linear RGB 0..1. Default: the MVP graphite blue [0.087, 0.114, 0.180]. */
   overviewTint?: [number, number, number];
+  /** Field line colour, linear RGB (values above 1 glow). Default: white [1.25, 1.25, 1.25]. */
+  fieldLineTint?: [number, number, number];
+  /** Hardware scaling (Babylon): >1 = fewer pixels. Default 1.25 (MVP). The site passes 1/devicePixelRatio for a crisp Retina image; adaptive resolution still lowers it when FPS drops. */
+  hardwareScaling?: number;
 };
 export type StadiumHandle = { dispose: () => void };
 
@@ -63,6 +67,8 @@ export function mountStadium(root: HTMLElement, options: StadiumOptions): Stadiu
 MeshoptCompression.Configuration = { decoder: { url: options.meshoptDecoderUrl } };
 // GLSL literal for the overview clay tone (see StadiumOptions.overviewTint).
 const OVERVIEW_TINT = (options.overviewTint ?? [0.087, 0.114, 0.180]).map((v) => v.toFixed(4)).join(", ");
+const BASE_SCALE = options.hardwareScaling ?? 1.25;
+const FIELD_LINE_TINT = (options.fieldLineTint ?? [1.25, 1.25, 1.25]).map((v) => v.toFixed(4)).join(", ");
 // TRIBUNE / AXONOMETRIC EDITION
 // Models must exist in public/models/. All exported GLBs must share one origin and scale.
 const SETTINGS = {
@@ -186,15 +192,15 @@ canvas.id = "renderCanvas";
 viewport.appendChild(canvas);
 const engine = new Engine(canvas, true, { premultipliedAlpha: false });
 // Larger hardware scaling = fewer physical pixels; 1.25 is a conservative starting point.
-engine.setHardwareScalingLevel(1.25);
+engine.setHardwareScalingLevel(BASE_SCALE);
 // V9: conservative adaptive render resolution. Never changes geometry, materials,
 // spotlight logic, or the camera. Hardware scaling > 1 means fewer render pixels.
 const adaptiveResolution = {
   enabled: true,
-  baseScale: 1.25,
-  currentScale: 1.25,
-  minScale: 1.0,
-  maxScale: 2.0,
+  baseScale: BASE_SCALE,
+  currentScale: BASE_SCALE,
+  minScale: BASE_SCALE * 0.8,
+  maxScale: BASE_SCALE * 1.6,
   targetFPS: 45,
   samples: [] as number[],
   lastAdjustment: performance.now(),
@@ -519,7 +525,7 @@ class AtmospherePlugin extends MaterialPluginBase {
         vec3 toned = graphite * mix(0.65, 1.3, clamp(luminance, 0.0, 1.0));
         // Both luminous surfaces use the same team color and spotlight mask.
         if (tribuneFieldMarkings > 0.5 || tribuneHoverStrength > 0.5) {
-          toned = mix(vec3(1.25), tribuneHoverColor * 1.65, tribuneHoverStrength);
+          toned = mix(vec3(${FIELD_LINE_TINT}), tribuneHoverColor * 1.65, tribuneHoverStrength);
         }
         // The overview tint reaches zero wherever the spotlight fully reveals the surface.
         float tintWeight = tribuneShade * (1.0 - spotCoverage);

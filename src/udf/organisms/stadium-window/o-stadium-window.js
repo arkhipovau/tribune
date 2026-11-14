@@ -2,8 +2,10 @@
 // be seen, or right away when the hero arrow is used.
 import { TRIBUNE } from "../../../data/teams.js";
 
-// Beige overview clay (linear RGB), reads as ~#cfc6b6 on screen.
-const STADIUM_TINT = [0.514, 0.468, 0.386];
+// Overview clay (linear RGB) tuned to the About stands (#f7f6f3) on screen.
+const STADIUM_TINT = [0.859, 0.842, 0.807];
+// Field lines in a pitch green (linear RGB), so they read on the light stands.
+const FIELD_LINE_TINT = [0.30, 0.61, 0.24];
 
 export function initStadiumWindow() {
 
@@ -39,7 +41,9 @@ export function initStadiumWindow() {
         teamHref: (id) => (teams && teams.teams.some((t) => t.id === id) ? `team.html?id=${encodeURIComponent(id)}` : null),
         reducedMotion: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
         panels: false, // the card shows the model only
-        overviewTint: STADIUM_TINT, // beige clay, in tune with the About arena
+        overviewTint: STADIUM_TINT, // light warm clay, like the About stands
+        fieldLineTint: FIELD_LINE_TINT,
+        hardwareScaling: 1 / Math.min(window.devicePixelRatio || 1, 2), // crisp on Retina
       });
     } catch (error) {
       console.error("Stadium failed to load", error);
