@@ -1,0 +1,17 @@
+{{!-- s-footer: site footer (superorganism). Params: home (bool) --}}
+<footer class="footer">
+  <img class="footer__logo" src="assets/svg/logo-footer.svg" width="1366" height="259" alt="tribune">
+  <div class="footer__row">
+    <nav class="footer__nav" aria-label="Footer">
+      <a href="about.html">Manifesto</a>
+      <a href="teams.html">Teams</a>
+      <a href="{{#unless home}}index.html{{/unless}}#journal">Journal</a>
+      <a href="https://www.instagram.com/tribune_kids.space/" aria-label="Instagram" rel="noopener"><img src="assets/svg/instagram.svg" width="17" height="18" alt=""></a>
+    </nav>
+    <a class="footer__collab" href="mailto:?subject=Collab%20with%20Tribune"><span class="dot"></span>Email us to collab</a>
+  </div>
+  <div class="footer__row footer__meta">
+    <span>A world imagined by children. We’re just listening.</span>
+    <span>All rights reserved © Tribune Kids Space 2025</span>
+  </div>
+</footer>

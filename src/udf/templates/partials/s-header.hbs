@@ -1,0 +1,15 @@
+{{!-- s-header: site header (superorganism). Params: home (bool), current ("about"|"teams") --}}
+<header class="header">
+  <nav class="pill header__nav" aria-label="Main">
+    <a class="pill__item" href="about.html"{{#if (eq current "about")}} aria-current="page"{{/if}}>Manifesto</a>
+    <a class="pill__item" href="teams.html"{{#if (eq current "teams")}} aria-current="page"{{/if}}>Teams</a>
+    <a class="pill__item" href="{{#unless home}}index.html{{/unless}}#journal">Journal</a>
+  </nav>
+  <a class="header__logo" href="{{#if home}}#top{{else}}index.html{{/if}}" aria-label="Tribune — home">
+    <img src="assets/svg/logo-header.svg" width="113" height="23" alt="tribune">
+  </a>
+  <div class="pill header__cta">
+    <a class="pill__item" href="{{#unless home}}index.html{{/unless}}#participate">Participate</a>
+    <a class="btn btn--white btn--sm" href="{{#unless home}}index.html{{/unless}}#participate">Partner with us</a>
+  </div>
+</header>
