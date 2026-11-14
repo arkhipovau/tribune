@@ -29,6 +29,8 @@ import { MeshBuilder } from "@babylonjs/core/Meshes/meshBuilder";
 import { VertexBuffer } from "@babylonjs/core/Buffers/buffer";
 import { MeshoptCompression } from "@babylonjs/core/Meshes/Compression/meshoptCompression";
 import { SceneLoader } from "@babylonjs/core/Loading/sceneLoader";
+import type { BaseTexture } from "@babylonjs/core/Materials/Textures/baseTexture";
+import "@babylonjs/core/assetContainer";
 // Side-effect modules the scene relies on (picking, glow, shadows, .env, glTF).
 import "@babylonjs/core/Culling/ray";
 import "@babylonjs/core/Rendering/outlineRenderer";
@@ -68,6 +70,9 @@ export type StadiumOptions = {
   overviewSheen?: { color: [number, number, number]; range: [number, number]; direction: [number, number]; radius: number };
   /** Camera zoom-out of the overview: 1 = MVP framing, 1.1 = 10% more scene around the stadium. */
   overviewZoomOut?: number;
+  /** Folder with light copies of the team houses (small textures) for the first view. When set, houses
+   *  load from here and the full textures are swapped in when a house is opened. Default: off. */
+  liteModelsUrl?: string;
 };
 export type StadiumHandle = { dispose: () => void };
 
@@ -740,8 +745,8 @@ function applyMaterialDiagnostic() {
 // Load renderable meshes from an exported GLB; keep the original material setup.
 let loadedModelCount = 0;
 let worldLoaded = false;
-async function importModel(file: string): Promise<Mesh[]> {
-  const result = await SceneLoader.ImportMeshAsync("", options.modelsUrl, file, scene);
+async function importModel(file: string, folder: string = options.modelsUrl): Promise<Mesh[]> {
+  const result = await SceneLoader.ImportMeshAsync("", folder, file, scene);
   const meshes = result.meshes.filter((mesh): mesh is Mesh =>
     mesh instanceof Mesh && mesh.getTotalVertices() > 0
   );
@@ -819,10 +824,11 @@ async function loadWorld() {
    } catch(e) { console.error("FIELD FAILED:", e); }
    // Blank houses deliberately not loaded in this experiment.
 
-  for(const config of TEAMS) {
+  // All houses are requested at once (they used to load one after another); each appears as it arrives.
+  await Promise.all(TEAMS.map(async (config) => {
     try {
-      const meshes=await importModel(config.file);
-      if(!meshes.length) continue;
+      const meshes=await importModel(config.file, options.liteModelsUrl ?? options.modelsUrl);
+      if(!meshes.length) return;
       let min=new Vector3(Infinity,Infinity,Infinity),max=new Vector3(-Infinity,-Infinity,-Infinity);
       for(const m of meshes){
         m.computeWorldMatrix(true);
@@ -841,7 +847,9 @@ async function loadWorld() {
       teamData.push(loadedTeam);
       for (const mesh of meshes) teamByMesh.set(mesh, loadedTeam);
     } catch(e){console.error("TEAM FAILED:",config.file,e);}
-  }
+  }));
+  // Keep the original team order regardless of arrival order.
+  teamData.sort((a, b) => TEAMS.indexOf(a.config) - TEAMS.indexOf(b.config));
 
   // billboard: separate luminous surface, ready for later animated content.
   try {
@@ -1194,8 +1202,43 @@ lightingPanel.appendChild(materialDiagnosticControls);
 lightingPanel.appendChild(materialDiagnosticStatus);
 if (diagnosticsEnabled) document.body.appendChild(lightingPanel);
 
+// Lite houses → full textures when a house is opened (see StadiumOptions.liteModelsUrl).
+// glTF textures are named "<material> (<slot>)", identical in both copies, so they are matched by name.
+const TEXTURE_SLOTS = ["albedoTexture", "bumpTexture", "metallicTexture", "emissiveTexture", "ambientTexture",
+  "opacityTexture", "reflectivityTexture", "microSurfaceTexture", "lightmapTexture", "metallicReflectanceTexture", "reflectanceTexture"];
+const upgradedTeams = new Set<string>();
+async function upgradeTeamTextures(team: LoadedTeam) {
+  if (!options.liteModelsUrl || upgradedTeams.has(team.config.id)) return;
+  upgradedTeams.add(team.config.id);
+  try {
+    const container = await SceneLoader.LoadAssetContainerAsync(options.modelsUrl, team.config.file, scene);
+    const full = new Map(container.textures.map((t) => [t.name, t] as const));
+    const lite = new Set<BaseTexture>();
+    for (const mesh of team.meshes) mesh.material?.getActiveTextures().forEach((t) => lite.add(t));
+    const used = new Set<BaseTexture>();
+    const swap = (owner: Record<string, unknown> | null | undefined, slot: string) => {
+      const current = owner?.[slot] as BaseTexture | null | undefined;
+      if (!owner || !current || !lite.has(current)) return;
+      const replacement = full.get(current.name);
+      if (replacement) { owner[slot] = replacement; used.add(replacement); }
+    };
+    // Every material that shares these textures (clones made for the atmosphere shader included).
+    for (const material of scene.materials) {
+      const m = material as unknown as Record<string, unknown>;
+      for (const slot of TEXTURE_SLOTS) swap(m, slot);
+      const clearCoat = m.clearCoat as Record<string, unknown> | undefined;
+      for (const slot of ["texture", "textureRoughness", "bumpTexture"]) swap(clearCoat, slot);
+    }
+    container.textures = container.textures.filter((t) => !used.has(t));
+    container.dispose();
+  } catch (e) {
+    upgradedTeams.delete(team.config.id);
+    console.error("FULL TEXTURES FAILED:", team.config.file, e);
+  }
+}
 function openTeam(team:LoadedTeam) {
   if(detailMode || cameraTransition) return;
+  void upgradeTeamTextures(team);
   savedOverview={alpha:camera.alpha,beta:camera.beta,radius:camera.radius,height:currentOrthoHalfHeight,target:camera.target.clone()};
   savedOverviewSpot.center.copyFrom(spotlightCenter);
   savedOverviewSpot.active = spotlightActive;

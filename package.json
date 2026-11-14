@@ -7,7 +7,8 @@
     "build": "vite build",
     "preview": "vite preview --port 4173 --strictPort",
     "test:visual": "playwright test tests/visual",
-    "test:visual:update": "playwright test tests/visual --update-snapshots"
+    "test:visual:update": "playwright test tests/visual --update-snapshots",
+    "models": "node scripts/build-stadium-models.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.56.0",

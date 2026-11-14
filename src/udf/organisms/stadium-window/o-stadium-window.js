@@ -39,6 +39,7 @@ export function initStadiumWindow() {
       const { mountStadium } = await import(new URL("js/stadium.js", base).href);
       mountStadium(mount, {
         modelsUrl: new URL("models/", base).href,
+        liteModelsUrl: new URL("models-lite/", base).href, // small textures first; full ones on opening a house
         envUrl: new URL("env/environmentSpecular.env", base).href,
         meshoptDecoderUrl: new URL("meshopt_decoder.js", base).href,
         // Only clubs that already have a page get the "open club page" link.

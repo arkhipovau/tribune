@@ -7,6 +7,7 @@ import { initJournal } from "../organisms/journal/o-journal.js";
 import { initStadiumWindow } from "../organisms/stadium-window/o-stadium-window.js";
 import { initSheets } from "../molecules/sheet/m-sheet.js";
 import { initPartners } from "../organisms/partners/o-partners.js";
+import { registerServiceWorker } from "../runtime/service-worker.js";
 
 initTeamsCarousel();
 initHow();
@@ -16,3 +17,4 @@ initJournal();
 initStadiumWindow();
 initSheets();
 initPartners();
+registerServiceWorker();
