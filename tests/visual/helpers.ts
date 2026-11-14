@@ -9,8 +9,7 @@ export function watchErrors(page: Page): string[] {
     if (m.type() === "error" && !m.text().startsWith("Failed to load resource")) errors.push(m.text().slice(0, 300));
   });
   page.on("response", (r) => {
-    // The site has no favicon yet (added in the optimisation task); every other 4xx/5xx counts.
-    if (r.status() >= 400 && !r.url().endsWith("/favicon.ico")) errors.push(`${r.status()} ${r.url()}`);
+    if (r.status() >= 400) errors.push(`${r.status()} ${r.url()}`);
   });
   page.on("pageerror", (e) => errors.push(String(e).slice(0, 300)));
   return errors;

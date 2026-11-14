@@ -1,12 +1,12 @@
 @font-face { font-family: "Youth";
-  src: url("/assets/fonts/Youth-Medium.ttf") format("truetype");
+  src: url("/assets/fonts/Youth-Medium.woff2") format("woff2");
   font-weight: 500;
   font-display: swap; }
 @font-face { font-family: "Suisse Intl";
-  src: url("/assets/fonts/SuisseIntl-Book.otf") format("opentype");
+  src: url("/assets/fonts/SuisseIntl-Book.woff2") format("woff2");
   font-weight: 450;
   font-display: swap; }
 @font-face { font-family: "Suisse Intl";
-  src: url("/assets/fonts/SuisseIntl-SemiBold.otf") format("opentype");
+  src: url("/assets/fonts/SuisseIntl-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-display: swap; }
