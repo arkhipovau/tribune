@@ -2,8 +2,8 @@ import { n as e } from "./math.color.pure-CtEB7h4A.js";
 import { t } from "./logger-DQIzSR_y.js";
 import { t as n } from "./internalTexture-Ppl-MSD4.js";
 import { a as r, i, t as a } from "./thinEngine.pure-DqiSVI2K.js";
-import { t as o } from "./texture.pure-CyjSzzn4.js";
-import { n as s } from "./renderTargetTexture.pure-DR3VSWmN.js";
+import { n as o } from "./texture.pure-iyEOZQH6.js";
+import { n as s } from "./renderTargetTexture.pure-CI3R--jx.js";
 //#region node_modules/@babylonjs/core/Meshes/GaussianSplatting/gaussianSplatting.functions.js
 function c(e) {
 	return e === "GaussianSplattingMesh" || e === "GaussianSplattingStream";

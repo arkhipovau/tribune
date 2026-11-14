@@ -1,17 +1,17 @@
 import { S as e, i as t, x as n } from "./decorators-BI9FueCZ.js";
 import { n as r } from "./engineStore-D0BoPdea.js";
 import { a as i, c as a, u as o } from "./math.color.pure-CtEB7h4A.js";
-import { t as s } from "./typeStore-pENEWnX2.js";
-import { S as c, o as l } from "./tools.functions-tHn4_qrB.js";
-import { t as u } from "./decorators.serialization-BUseKv3G.js";
-import { C as d, i as f } from "./tools.pure-HxVNGKAP.js";
-import { t as p } from "./math.plane-ZOwE4iaR.js";
-import { t as m } from "./baseTexture.pure-Dyh4n-Ut.js";
+import { n as s, t as c } from "./typeStore-pENEWnX2.js";
+import { S as l, o as u } from "./tools.functions-tHn4_qrB.js";
+import { t as d } from "./decorators.serialization-BUseKv3G.js";
+import { C as f, i as p } from "./tools.pure-HxVNGKAP.js";
+import { t as m } from "./math.plane-ZOwE4iaR.js";
+import { t as h } from "./baseTexture.pure-Dyh4n-Ut.js";
 //#region node_modules/@babylonjs/core/Compat/compatibilityOptions.js
-var h = !1;
+var g = !1;
 //#endregion
 //#region node_modules/@babylonjs/core/Misc/copyTools.js
-function g(e, t, n = !1) {
+function _(e, t, n = !1) {
 	let r = t.width, i = t.height;
 	if (e instanceof Float32Array) {
 		let t = e.byteLength / e.BYTES_PER_ELEMENT, n = new Uint8Array(t);
@@ -34,26 +34,26 @@ function g(e, t, n = !1) {
 	}
 	return a.toDataURL("image/png");
 }
-function _(e, t = 0, n = 0) {
+function v(e, t = 0, n = 0) {
 	let r = e.getInternalTexture();
 	if (!r) return null;
 	let i = e._readPixelsSync(t, n);
-	return i ? g(i, e.getSize(), r.invertY) : null;
+	return i ? _(i, e.getSize(), r.invertY) : null;
 }
-async function v(e, t = 0, n = 0) {
+async function y(e, t = 0, n = 0) {
 	let r = e.getInternalTexture();
 	if (!r) return null;
 	let i = await e.readPixels(t, n);
-	return i ? g(i, e.getSize(), r.invertY) : null;
+	return i ? _(i, e.getSize(), r.invertY) : null;
 }
 //#endregion
 //#region node_modules/@babylonjs/core/Materials/Textures/texture.pure.js
-var y = (() => {
-	var h;
-	let g = m, y = [], b, x = [], S = [], C, w = [], T = [], E, D = [], O = [], k, A = [], j = [], M, N = [], P = [], F, I = [], L = [], R, z = [], B = [], V, H = [], U = [], W, G = [], K = [], q, J = [], Y = [], X, Z = [], Q = [], $, ee = [], te = [], ne;
-	return h = class extends g {
-		static _CreateVideoTexture(e, t, n, r = !1, i = !1, a = h.TRILINEAR_SAMPLINGMODE, o = {}, s, l = 5) {
-			throw c("VideoTexture");
+var b = (() => {
+	var s;
+	let g = h, _ = [], b, x = [], S = [], C, w = [], T = [], E, D = [], O = [], k, A = [], j = [], M, N = [], P = [], F, I = [], L = [], R, z = [], B = [], V, H = [], U = [], W, G = [], K = [], q, J = [], Y = [], X, Z = [], Q = [], $, ee = [], te = [], ne;
+	return s = class extends g {
+		static _CreateVideoTexture(e, t, n, r = !1, i = !1, a = s.TRILINEAR_SAMPLINGMODE, o = {}, c, u = 5) {
+			throw l("VideoTexture");
 		}
 		get noMipmap() {
 			return this._noMipmap;
@@ -70,35 +70,35 @@ var y = (() => {
 		get invertY() {
 			return this._invertY;
 		}
-		constructor(t, n, i, a, o = h.TRILINEAR_SAMPLINGMODE, s = null, c = null, u = null, d = !1, f, p, m, g, _) {
-			super(n), this.url = (e(this, y), e(this, x, null)), this.uOffset = (e(this, S), e(this, w, 0)), this.vOffset = (e(this, T), e(this, D, 0)), this.uScale = (e(this, O), e(this, A, 1)), this.vScale = (e(this, j), e(this, N, 1)), this.uAng = (e(this, P), e(this, I, 0)), this.vAng = (e(this, L), e(this, z, 0)), this.wAng = (e(this, B), e(this, H, 0)), this.uRotationCenter = (e(this, U), e(this, G, .5)), this.vRotationCenter = (e(this, K), e(this, J, .5)), this.wRotationCenter = (e(this, Y), e(this, Z, .5)), this.homogeneousRotationInUVTransform = (e(this, Q), e(this, ee, !1)), this.inspectableCustomProperties = (e(this, te), null), this._noMipmap = !1, this._invertY = !1, this._rowGenerationMatrix = null, this._cachedTextureMatrix = null, this._projectionModeMatrix = null, this._t0 = null, this._t1 = null, this._t2 = null, this._cachedUOffset = -1, this._cachedVOffset = -1, this._cachedUScale = 0, this._cachedVScale = 0, this._cachedUAng = -1, this._cachedVAng = -1, this._cachedWAng = -1, this._cachedReflectionProjectionMatrixId = -1, this._cachedURotationCenter = -1, this._cachedVRotationCenter = -1, this._cachedWRotationCenter = -1, this._cachedHomogeneousRotationInUVTransform = !1, this._cachedIdentity3x2 = !0, this._cachedReflectionTextureMatrix = null, this._cachedReflectionUOffset = -1, this._cachedReflectionVOffset = -1, this._cachedReflectionUScale = 0, this._cachedReflectionVScale = 0, this._cachedReflectionCoordinatesMode = -1, this._buffer = null, this._deleteBuffer = !1, this._format = null, this._delayedOnLoad = null, this._delayedOnError = null, this.onLoadObservable = new r(), this._isBlocking = !0, this.name = t || "", this.url = t;
-			let v, b = !1, C = null, E = !0;
-			typeof i == "object" && i ? (v = i.noMipmap ?? !1, a = i.invertY ?? !0, o = i.samplingMode ?? h.TRILINEAR_SAMPLINGMODE, s = i.onLoad ?? null, c = i.onError ?? null, u = i.buffer ?? null, d = i.deleteBuffer ?? !1, f = i.format, p = i.mimeType, m = i.loaderOptions, g = i.creationFlags, b = i.useSRGBBuffer ?? !1, C = i.internalTexture ?? null, E = i.gammaSpace ?? E, _ = i.forcedExtension ?? _) : v = !!i, this._gammaSpace = E, this._noMipmap = v, this._invertY = a === void 0 || a, this._initialSamplingMode = o, this._buffer = u, this._deleteBuffer = d, this._mimeType = p, this._loaderOptions = m, this._creationFlags = g, this._useSRGBBuffer = b, this._forcedExtension = _, f !== void 0 && (this._format = f);
+		constructor(t, n, i, a, o = s.TRILINEAR_SAMPLINGMODE, c = null, l = null, d = null, f = !1, p, m, h, g, v) {
+			super(n), this.url = (e(this, _), e(this, x, null)), this.uOffset = (e(this, S), e(this, w, 0)), this.vOffset = (e(this, T), e(this, D, 0)), this.uScale = (e(this, O), e(this, A, 1)), this.vScale = (e(this, j), e(this, N, 1)), this.uAng = (e(this, P), e(this, I, 0)), this.vAng = (e(this, L), e(this, z, 0)), this.wAng = (e(this, B), e(this, H, 0)), this.uRotationCenter = (e(this, U), e(this, G, .5)), this.vRotationCenter = (e(this, K), e(this, J, .5)), this.wRotationCenter = (e(this, Y), e(this, Z, .5)), this.homogeneousRotationInUVTransform = (e(this, Q), e(this, ee, !1)), this.inspectableCustomProperties = (e(this, te), null), this._noMipmap = !1, this._invertY = !1, this._rowGenerationMatrix = null, this._cachedTextureMatrix = null, this._projectionModeMatrix = null, this._t0 = null, this._t1 = null, this._t2 = null, this._cachedUOffset = -1, this._cachedVOffset = -1, this._cachedUScale = 0, this._cachedVScale = 0, this._cachedUAng = -1, this._cachedVAng = -1, this._cachedWAng = -1, this._cachedReflectionProjectionMatrixId = -1, this._cachedURotationCenter = -1, this._cachedVRotationCenter = -1, this._cachedWRotationCenter = -1, this._cachedHomogeneousRotationInUVTransform = !1, this._cachedIdentity3x2 = !0, this._cachedReflectionTextureMatrix = null, this._cachedReflectionUOffset = -1, this._cachedReflectionVOffset = -1, this._cachedReflectionUScale = 0, this._cachedReflectionVScale = 0, this._cachedReflectionCoordinatesMode = -1, this._buffer = null, this._deleteBuffer = !1, this._format = null, this._delayedOnLoad = null, this._delayedOnError = null, this.onLoadObservable = new r(), this._isBlocking = !0, this.name = t || "", this.url = t;
+			let y, b = !1, C = null, E = !0;
+			typeof i == "object" && i ? (y = i.noMipmap ?? !1, a = i.invertY ?? !0, o = i.samplingMode ?? s.TRILINEAR_SAMPLINGMODE, c = i.onLoad ?? null, l = i.onError ?? null, d = i.buffer ?? null, f = i.deleteBuffer ?? !1, p = i.format, m = i.mimeType, h = i.loaderOptions, g = i.creationFlags, b = i.useSRGBBuffer ?? !1, C = i.internalTexture ?? null, E = i.gammaSpace ?? E, v = i.forcedExtension ?? v) : y = !!i, this._gammaSpace = E, this._noMipmap = y, this._invertY = a === void 0 || a, this._initialSamplingMode = o, this._buffer = d, this._deleteBuffer = f, this._mimeType = m, this._loaderOptions = h, this._creationFlags = g, this._useSRGBBuffer = b, this._forcedExtension = v, p !== void 0 && (this._format = p);
 			let k = this.getScene(), M = this._getEngine();
 			if (!M) return;
 			M.onBeforeTextureInitObservable.notifyObservers(this);
 			let F = () => {
-				this._texture && (this._texture._invertVScale && (this.vScale *= -1, this.vOffset += 1), this._texture._cachedWrapU !== null && (this.wrapU = this._texture._cachedWrapU, this._texture._cachedWrapU = null), this._texture._cachedWrapV !== null && (this.wrapV = this._texture._cachedWrapV, this._texture._cachedWrapV = null), this._texture._cachedWrapR !== null && (this.wrapR = this._texture._cachedWrapR, this._texture._cachedWrapR = null)), this.onLoadObservable.hasObservers() && this.onLoadObservable.notifyObservers(this), s && s(), !this.isBlocking && k && k.resetCachedMaterial();
+				this._texture && (this._texture._invertVScale && (this.vScale *= -1, this.vOffset += 1), this._texture._cachedWrapU !== null && (this.wrapU = this._texture._cachedWrapU, this._texture._cachedWrapU = null), this._texture._cachedWrapV !== null && (this.wrapV = this._texture._cachedWrapV, this._texture._cachedWrapV = null), this._texture._cachedWrapR !== null && (this.wrapR = this._texture._cachedWrapR, this._texture._cachedWrapR = null)), this.onLoadObservable.hasObservers() && this.onLoadObservable.notifyObservers(this), c && c(), !this.isBlocking && k && k.resetCachedMaterial();
 			}, R = (e, t) => {
 				this._loadingError = !0, this._errorObject = {
 					message: e,
 					exception: t
-				}, c && c(e, t), h.OnTextureLoadErrorObservable.notifyObservers(this);
+				}, l && l(e, t), s.OnTextureLoadErrorObservable.notifyObservers(this);
 			};
 			if (!this.url && !C) {
 				this._delayedOnLoad = F, this._delayedOnError = R;
 				return;
 			}
-			if (this._texture = C ?? this._getFromCache(this.url, v, o, this._invertY, b, this.isCube), !this._texture) {
+			if (this._texture = C ?? this._getFromCache(this.url, y, o, this._invertY, b, this.isCube), !this._texture) {
 				if (!k || !k.useDelayedTextureLoading) {
 					try {
-						this._texture = M.createTexture(this.url, v, this._invertY, k, o, F, R, this._buffer, void 0, this._format, this._forcedExtension, p, m, g, b);
+						this._texture = M.createTexture(this.url, y, this._invertY, k, o, F, R, this._buffer, void 0, this._format, this._forcedExtension, m, h, g, b);
 					} catch (e) {
 						throw R("error loading", e), e;
 					}
-					d && (this._buffer = null);
+					f && (this._buffer = null);
 				} else this.delayLoadState = 4, this._delayedOnLoad = F, this._delayedOnError = R;
-			} else if (this._texture.isReady) l.SetImmediate(() => F());
+			} else if (this._texture.isReady) u.SetImmediate(() => F());
 			else {
 				let e = this._texture.onLoadedObservable.add(F);
 				this._texture.onErrorObservable.add((t) => {
@@ -118,7 +118,7 @@ var y = (() => {
 			let e = this.getScene();
 			if (!e) return;
 			let t = this.url;
-			!t && (this.name.indexOf("://") > 0 || this.name.startsWith("data:")) && (t = this.name), this.delayLoadState = 1, this._texture = this._getFromCache(t, this._noMipmap, this.samplingMode, this._invertY, this._useSRGBBuffer, this.isCube), this._texture ? this._delayedOnLoad && (this._texture.isReady ? l.SetImmediate(this._delayedOnLoad) : this._texture.onLoadedObservable.add(this._delayedOnLoad)) : (this._texture = e.getEngine().createTexture(t, this._noMipmap, this._invertY, e, this.samplingMode, this._delayedOnLoad, this._delayedOnError, this._buffer, null, this._format, this._forcedExtension, this._mimeType, this._loaderOptions, this._creationFlags, this._useSRGBBuffer), this._deleteBuffer && (this._buffer = null)), this._delayedOnLoad = null, this._delayedOnError = null;
+			!t && (this.name.indexOf("://") > 0 || this.name.startsWith("data:")) && (t = this.name), this.delayLoadState = 1, this._texture = this._getFromCache(t, this._noMipmap, this.samplingMode, this._invertY, this._useSRGBBuffer, this.isCube), this._texture ? this._delayedOnLoad && (this._texture.isReady ? u.SetImmediate(this._delayedOnLoad) : this._texture.onLoadedObservable.add(this._delayedOnLoad)) : (this._texture = e.getEngine().createTexture(t, this._noMipmap, this._invertY, e, this.samplingMode, this._delayedOnLoad, this._delayedOnError, this._buffer, null, this._format, this._forcedExtension, this._mimeType, this._loaderOptions, this._creationFlags, this._useSRGBBuffer), this._deleteBuffer && (this._buffer = null)), this._delayedOnLoad = null, this._delayedOnError = null;
 		}
 		_prepareRowForTextureGeneration(e, t, n, r) {
 			e *= this._cachedUScale, t *= this._cachedVScale, e -= this.uRotationCenter * this._cachedUScale, t -= this.vRotationCenter * this._cachedVScale, n -= this.wRotationCenter, o.TransformCoordinatesFromFloatsToRef(e, t, n, this._rowGenerationMatrix, r), r.x += this.uRotationCenter * this._cachedUScale + this._cachedUOffset, r.y += this.vRotationCenter * this._cachedVScale + this._cachedVOffset, r.z += this.wRotationCenter;
@@ -135,17 +135,17 @@ var y = (() => {
 			let e = this.getScene();
 			if (!e) return this._cachedReflectionTextureMatrix;
 			if (this.uOffset === this._cachedReflectionUOffset && this.vOffset === this._cachedReflectionVOffset && this.uScale === this._cachedReflectionUScale && this.vScale === this._cachedReflectionVScale && this.coordinatesMode === this._cachedReflectionCoordinatesMode) {
-				if (this.coordinatesMode === h.PROJECTION_MODE) {
+				if (this.coordinatesMode === s.PROJECTION_MODE) {
 					if (this._cachedReflectionProjectionMatrixId === e.getProjectionMatrix().updateFlag) return this._cachedReflectionTextureMatrix;
 				} else return this._cachedReflectionTextureMatrix;
 			}
 			this._cachedReflectionTextureMatrix || (this._cachedReflectionTextureMatrix = i.Zero()), this._projectionModeMatrix || (this._projectionModeMatrix = i.Zero());
 			let t = this._cachedReflectionCoordinatesMode !== this.coordinatesMode;
 			switch (this._cachedReflectionUOffset = this.uOffset, this._cachedReflectionVOffset = this.vOffset, this._cachedReflectionUScale = this.uScale, this._cachedReflectionVScale = this.vScale, this._cachedReflectionCoordinatesMode = this.coordinatesMode, this.coordinatesMode) {
-				case h.PLANAR_MODE:
+				case s.PLANAR_MODE:
 					i.IdentityToRef(this._cachedReflectionTextureMatrix), this._cachedReflectionTextureMatrix[0] = this.uScale, this._cachedReflectionTextureMatrix[5] = this.vScale, this._cachedReflectionTextureMatrix[12] = this.uOffset, this._cachedReflectionTextureMatrix[13] = this.vOffset;
 					break;
-				case h.PROJECTION_MODE: {
+				case s.PROJECTION_MODE: {
 					i.FromValuesToRef(.5, 0, 0, 0, 0, -.5, 0, 0, 0, 0, 0, 0, .5, .5, 1, 1, this._projectionModeMatrix);
 					let t = e.getProjectionMatrix();
 					this._cachedReflectionProjectionMatrixId = t.updateFlag, t.multiplyToRef(this._projectionModeMatrix, this._cachedReflectionTextureMatrix);
@@ -170,13 +170,13 @@ var y = (() => {
 				creationFlags: this._creationFlags,
 				useSRGBBuffer: this._useSRGBBuffer
 			};
-			return u.Clone(() => new h(this._texture ? this._texture.url : null, this.getScene(), e), this);
+			return d.Clone(() => new s(this._texture ? this._texture.url : null, this.getScene(), e), this);
 		}
 		serialize() {
 			let e = this.name;
-			h.SerializeBuffers || this.name.startsWith("data:") && (this.name = ""), this.name.startsWith("data:") && this.url === this.name && (this.url = "");
-			let t = super.serialize(h._SerializeInternalTextureUniqueId);
-			return t ? ((h.SerializeBuffers || h.ForceSerializeBuffers) && (typeof this._buffer == "string" && this._buffer.startsWith("data:") ? (t.base64String = this._buffer, t.name = t.name.replace("data:", "")) : this.url && this.url.startsWith("data:") && this._buffer instanceof Uint8Array ? t.base64String = `data:${this.mimeType || "image/png"};base64,${d(this._buffer)}` : (h.ForceSerializeBuffers || this.url && this.url.startsWith("blob:") || this._forceSerialize) && (t.base64String = !this._engine || this._engine._features.supportSyncTextureRead ? _(this) : v(this))), t.invertY = this._invertY, t.samplingMode = this.samplingMode, t._creationFlags = this._creationFlags, t._useSRGBBuffer = this._useSRGBBuffer, h._SerializeInternalTextureUniqueId && (t.internalTextureUniqueId = this._texture?.uniqueId), t.internalTextureLabel = this._texture?.label, t.noMipmap = this._noMipmap, this.name = e, t) : null;
+			s.SerializeBuffers || this.name.startsWith("data:") && (this.name = ""), this.name.startsWith("data:") && this.url === this.name && (this.url = "");
+			let t = super.serialize(s._SerializeInternalTextureUniqueId);
+			return t ? ((s.SerializeBuffers || s.ForceSerializeBuffers) && (typeof this._buffer == "string" && this._buffer.startsWith("data:") ? (t.base64String = this._buffer, t.name = t.name.replace("data:", "")) : this.url && this.url.startsWith("data:") && this._buffer instanceof Uint8Array ? t.base64String = `data:${this.mimeType || "image/png"};base64,${f(this._buffer)}` : (s.ForceSerializeBuffers || this.url && this.url.startsWith("blob:") || this._forceSerialize) && (t.base64String = !this._engine || this._engine._features.supportSyncTextureRead ? v(this) : y(this))), t.invertY = this._invertY, t.samplingMode = this.samplingMode, t._creationFlags = this._creationFlags, t._useSRGBBuffer = this._useSRGBBuffer, s._SerializeInternalTextureUniqueId && (t.internalTextureUniqueId = this._texture?.uniqueId), t.internalTextureLabel = this._texture?.label, t.noMipmap = this._noMipmap, this.name = e, t) : null;
 		}
 		getClassName() {
 			return "Texture";
@@ -186,10 +186,10 @@ var y = (() => {
 		}
 		static Parse(e, t, n) {
 			if (e.customType) {
-				let r = f.Instantiate(e.customType).Parse(e, t, n);
+				let r = p.Instantiate(e.customType).Parse(e, t, n);
 				return e.samplingMode && r.updateSamplingMode && r._samplingMode && r._samplingMode !== e.samplingMode && r.updateSamplingMode(e.samplingMode), r;
 			}
-			if (e.isCube && !e.isRenderTarget) return h._CubeTextureParser(e, t, n);
+			if (e.isCube && !e.isRenderTarget) return s._CubeTextureParser(e, t, n);
 			let r = e.internalTextureUniqueId !== void 0;
 			if (!e.name && !e.isRenderTarget && !r) return null;
 			let i;
@@ -206,16 +206,16 @@ var y = (() => {
 					t && t.samplingMode !== n && t.updateSamplingMode(n);
 				}
 				if (t && e.animations) for (let n = 0; n < e.animations.length; n++) {
-					let r = e.animations[n], i = s("BABYLON.Animation");
+					let r = e.animations[n], i = c("BABYLON.Animation");
 					i && t.animations.push(i.Parse(r));
 				}
 				t && t._texture && (r && !i && t._texture._setUniqueId(e.internalTextureUniqueId), t._texture.label = e.internalTextureLabel);
 			};
-			return u.Parse(() => {
+			return d.Parse(() => {
 				let r = !0;
 				if (e.noMipmap && (r = !1), e.mirrorPlane) {
-					let n = h._CreateMirror(e.name, e.renderTargetSize, t, r);
-					return n._waitingRenderList = e.renderList, n.mirrorPlane = p.FromArray(e.mirrorPlane), a(n), n;
+					let n = s._CreateMirror(e.name, e.renderTargetSize, t, r);
+					return n._waitingRenderList = e.renderList, n.mirrorPlane = m.FromArray(e.mirrorPlane), a(n), n;
 				}
 				if (e.isRenderTarget && !e.base64String) {
 					let n = null;
@@ -224,11 +224,11 @@ var y = (() => {
 							let r = t.reflectionProbes[n];
 							if (r.name === e.name) return r.cubeTexture;
 						}
-					} else n = h._CreateRenderTargetTexture(e.name, e.renderTargetSize, t, r, e._creationFlags ?? 0), n._waitingRenderList = e.renderList;
+					} else n = s._CreateRenderTargetTexture(e.name, e.renderTargetSize, t, r, e._creationFlags ?? 0), n._waitingRenderList = e.renderList;
 					return a(n), n;
 				}
 				if (e.isVideo) {
-					let i = h._CreateVideoTexture(n + (e.url || e.name), n + (e.src || e.url), t, r, e.invertY, e.samplingMode, e.settings || {});
+					let i = s._CreateVideoTexture(n + (e.url || e.name), n + (e.src || e.url), t, r, e.invertY, e.samplingMode, e.settings || {});
 					return a(i), i;
 				}
 				{
@@ -244,12 +244,12 @@ var y = (() => {
 							onLoad: () => {
 								a(o);
 							}
-						}, i = e.base64String, s = i.startsWith("data:") ? i.substring(5) : i;
-						o = h.CreateFromBase64String("", s, t, n), o.name = e.name;
+						}, i = e.base64String, c = i.startsWith("data:") ? i.substring(5) : i;
+						o = s.CreateFromBase64String("", c, t, n), o.name = e.name;
 					} else {
-						let s;
-						s = e.name && (e.name.indexOf("://") > 0 || e.name.startsWith("data:")) ? e.name : n + e.name, e.url && (e.url.startsWith("data:") || h.UseSerializedUrlIfAny) && (s = e.url);
-						let c = {
+						let c;
+						c = e.name && (e.name.indexOf("://") > 0 || e.name.startsWith("data:")) ? e.name : n + e.name, e.url && (e.url.startsWith("data:") || s.UseSerializedUrlIfAny) && (c = e.url);
+						let l = {
 							noMipmap: !r,
 							invertY: e.invertY,
 							samplingMode: e.samplingMode,
@@ -260,21 +260,21 @@ var y = (() => {
 							},
 							internalTexture: i
 						};
-						o = new h(s, t, c);
+						o = new s(c, t, l);
 					}
 					return o;
 				}
 			}, e, t);
 		}
-		static CreateFromBase64String(e, t, n, r, i, a = h.TRILINEAR_SAMPLINGMODE, o = null, s = null, c = 5, l, u) {
-			return new h("data:" + t, n, r, i, a, o, s, e, !1, c, void 0, void 0, l, u);
+		static CreateFromBase64String(e, t, n, r, i, a = s.TRILINEAR_SAMPLINGMODE, o = null, c = null, l = 5, u, d) {
+			return new s("data:" + t, n, r, i, a, o, c, e, !1, l, void 0, void 0, u, d);
 		}
-		static LoadFromDataString(e, t, n, r = !1, i, a = !0, o = h.TRILINEAR_SAMPLINGMODE, s = null, c = null, l = 5, u, d) {
-			return e.substring(0, 5) !== "data:" && (e = "data:" + e), new h(e, n, i, a, o, s, c, t, r, l, void 0, void 0, u, d);
+		static LoadFromDataString(e, t, n, r = !1, i, a = !0, o = s.TRILINEAR_SAMPLINGMODE, c = null, l = null, u = 5, d, f) {
+			return e.substring(0, 5) !== "data:" && (e = "data:" + e), new s(e, n, i, a, o, c, l, t, r, u, void 0, void 0, d, f);
 		}
 	}, (() => {
 		let e = typeof Symbol == "function" && Symbol.metadata ? Object.create(g[Symbol.metadata] ?? null) : void 0;
-		b = [t()], C = [t()], E = [t()], k = [t()], M = [t()], F = [t()], R = [t()], V = [t()], W = [t()], q = [t()], X = [t()], $ = [t()], ne = [t()], n(h, null, ne, {
+		b = [t()], C = [t()], E = [t()], k = [t()], M = [t()], F = [t()], R = [t()], V = [t()], W = [t()], q = [t()], X = [t()], $ = [t()], ne = [t()], n(s, null, ne, {
 			kind: "getter",
 			name: "isBlocking",
 			static: !1,
@@ -284,7 +284,7 @@ var y = (() => {
 				get: (e) => e.isBlocking
 			},
 			metadata: e
-		}, null, y), n(null, null, b, {
+		}, null, _), n(null, null, b, {
 			kind: "field",
 			name: "url",
 			static: !1,
@@ -440,19 +440,22 @@ var y = (() => {
 				}
 			},
 			metadata: e
-		}, ee, te), e && Object.defineProperty(h, Symbol.metadata, {
+		}, ee, te), e && Object.defineProperty(s, Symbol.metadata, {
 			enumerable: !0,
 			configurable: !0,
 			writable: !0,
 			value: e
 		});
-	})(), h.SerializeBuffers = !0, h.ForceSerializeBuffers = !1, h.OnTextureLoadErrorObservable = new r(), h._SerializeInternalTextureUniqueId = !1, h._CubeTextureParser = (e, t, n) => {
-		throw c("CubeTexture");
-	}, h._CreateMirror = (e, t, n, r) => {
-		throw c("MirrorTexture");
-	}, h._CreateRenderTargetTexture = (e, t, n, r, i) => {
-		throw c("RenderTargetTexture");
-	}, h.NEAREST_SAMPLINGMODE = 1, h.NEAREST_NEAREST_MIPLINEAR = 8, h.BILINEAR_SAMPLINGMODE = 2, h.LINEAR_LINEAR_MIPNEAREST = 11, h.TRILINEAR_SAMPLINGMODE = 3, h.LINEAR_LINEAR_MIPLINEAR = 3, h.NEAREST_NEAREST_MIPNEAREST = 4, h.NEAREST_LINEAR_MIPNEAREST = 5, h.NEAREST_LINEAR_MIPLINEAR = 6, h.NEAREST_LINEAR = 7, h.NEAREST_NEAREST = 1, h.LINEAR_NEAREST_MIPNEAREST = 9, h.LINEAR_NEAREST_MIPLINEAR = 10, h.LINEAR_LINEAR = 2, h.LINEAR_NEAREST = 12, h.EXPLICIT_MODE = 0, h.SPHERICAL_MODE = 1, h.PLANAR_MODE = 2, h.CUBIC_MODE = 3, h.PROJECTION_MODE = 4, h.SKYBOX_MODE = 5, h.INVCUBIC_MODE = 6, h.EQUIRECTANGULAR_MODE = 7, h.FIXED_EQUIRECTANGULAR_MODE = 8, h.FIXED_EQUIRECTANGULAR_MIRRORED_MODE = 9, h.CLAMP_ADDRESSMODE = 0, h.WRAP_ADDRESSMODE = 1, h.MIRROR_ADDRESSMODE = 2, h.UseSerializedUrlIfAny = !1, h;
-})();
+	})(), s.SerializeBuffers = !0, s.ForceSerializeBuffers = !1, s.OnTextureLoadErrorObservable = new r(), s._SerializeInternalTextureUniqueId = !1, s._CubeTextureParser = (e, t, n) => {
+		throw l("CubeTexture");
+	}, s._CreateMirror = (e, t, n, r) => {
+		throw l("MirrorTexture");
+	}, s._CreateRenderTargetTexture = (e, t, n, r, i) => {
+		throw l("RenderTargetTexture");
+	}, s.NEAREST_SAMPLINGMODE = 1, s.NEAREST_NEAREST_MIPLINEAR = 8, s.BILINEAR_SAMPLINGMODE = 2, s.LINEAR_LINEAR_MIPNEAREST = 11, s.TRILINEAR_SAMPLINGMODE = 3, s.LINEAR_LINEAR_MIPLINEAR = 3, s.NEAREST_NEAREST_MIPNEAREST = 4, s.NEAREST_LINEAR_MIPNEAREST = 5, s.NEAREST_LINEAR_MIPLINEAR = 6, s.NEAREST_LINEAR = 7, s.NEAREST_NEAREST = 1, s.LINEAR_NEAREST_MIPNEAREST = 9, s.LINEAR_NEAREST_MIPLINEAR = 10, s.LINEAR_LINEAR = 2, s.LINEAR_NEAREST = 12, s.EXPLICIT_MODE = 0, s.SPHERICAL_MODE = 1, s.PLANAR_MODE = 2, s.CUBIC_MODE = 3, s.PROJECTION_MODE = 4, s.SKYBOX_MODE = 5, s.INVCUBIC_MODE = 6, s.EQUIRECTANGULAR_MODE = 7, s.FIXED_EQUIRECTANGULAR_MODE = 8, s.FIXED_EQUIRECTANGULAR_MIRRORED_MODE = 9, s.CLAMP_ADDRESSMODE = 0, s.WRAP_ADDRESSMODE = 1, s.MIRROR_ADDRESSMODE = 2, s.UseSerializedUrlIfAny = !1, s;
+})(), x = !1;
+function S() {
+	x || (x = !0, s("BABYLON.Texture", b), d._TextureParser = b.Parse);
+}
 //#endregion
-export { h as i, _ as n, v as r, y as t };
+export { g as a, y as i, b as n, v as r, S as t };

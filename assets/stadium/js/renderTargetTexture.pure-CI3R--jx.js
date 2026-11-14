@@ -4,7 +4,7 @@ import { a as i, s as a, t as o, x as s } from "./tools.functions-tHn4_qrB.js";
 import { t as c } from "./logger-DQIzSR_y.js";
 import { t as l } from "./smartArray-cjjaK9ER.js";
 import { r as u, t as d } from "./abstractEngine.pure-CCvGJkky.js";
-import { t as f } from "./texture.pure-CyjSzzn4.js";
+import { n as f } from "./texture.pure-iyEOZQH6.js";
 import { n as p, t as m } from "./lightConstants-D1Nu2reT.js";
 import { n as h, t as g } from "./renderingManager-CncqLtHP.js";
 //#region node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.texture.pure.js

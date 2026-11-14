@@ -1,7 +1,7 @@
 import { t as e } from "./logger-DQIzSR_y.js";
 import { r as t } from "./tools.pure-HxVNGKAP.js";
 import { t as n } from "./internalTexture-Ppl-MSD4.js";
-import { t as r } from "./texture.pure-CyjSzzn4.js";
+import { n as r } from "./texture.pure-iyEOZQH6.js";
 //#region node_modules/@babylonjs/core/Misc/basisWorker.js
 function i() {
 	let e = {

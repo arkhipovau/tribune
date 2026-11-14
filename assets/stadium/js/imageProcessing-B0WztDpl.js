@@ -1,7 +1,7 @@
 import { g as e } from "./decorators-BI9FueCZ.js";
 import { a as t } from "./math.color.pure-CtEB7h4A.js";
 import { t as n } from "./material.pure-CoCp9PG4.js";
-import { t as r } from "./texture.pure-CyjSzzn4.js";
+import { n as r } from "./texture.pure-iyEOZQH6.js";
 import { t as i } from "./postProcess.pure-Do7I869D.js";
 //#region node_modules/@babylonjs/core/Materials/materialHelper.geometryrendering.js
 function a(e, t, n = 16777215) {
