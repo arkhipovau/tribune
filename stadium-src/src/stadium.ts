@@ -35,6 +35,8 @@ import "@babylonjs/core/Rendering/outlineRenderer";
 import "@babylonjs/core/Layers/effectLayerSceneComponent";
 import "@babylonjs/core/Lights/Shadows/shadowGeneratorSceneComponent";
 import "@babylonjs/core/Materials/Textures/Loaders/envTextureLoader";
+// Texture registers itself as a side effect; glTF materials (e.g. field.glb) need it before loading.
+import "@babylonjs/core/Materials/Textures/texture";
 import "@babylonjs/core/Helpers/sceneHelpers";
 import "@babylonjs/loaders/glTF/2.0";
 import { logBenchmarkReadiness, PerformanceBenchmark } from "./diagnostics/performanceBenchmark";

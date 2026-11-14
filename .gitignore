@@ -2,3 +2,8 @@
 node_modules/
 .tmp-preview/
 
+.superpowers/
+dist/
+node_modules/.vite
+test-results/
+playwright-report/
