@@ -2,10 +2,8 @@
 // be seen, or right away when the hero arrow is used.
 import { TRIBUNE } from "../../../data/teams.js";
 
-// Overview clay (linear RGB) tuned to the About stands (#f7f6f3) on screen.
-const STADIUM_TINT = [0.859, 0.842, 0.807];
-// Field lines in a pitch green (linear RGB), so they read on the light stands.
-const FIELD_LINE_TINT = [0.30, 0.61, 0.24];
+// Overview clay (linear RGB) tuned to read as #AEBDC2 on screen.
+const STADIUM_TINT = [0.412, 0.494, 0.524];
 
 export function initStadiumWindow() {
 
@@ -41,8 +39,7 @@ export function initStadiumWindow() {
         teamHref: (id) => (teams && teams.teams.some((t) => t.id === id) ? `team.html?id=${encodeURIComponent(id)}` : null),
         reducedMotion: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
         panels: false, // the card shows the model only
-        overviewTint: STADIUM_TINT, // light warm clay, like the About stands
-        fieldLineTint: FIELD_LINE_TINT,
+        overviewTint: STADIUM_TINT, // #AEBDC2 clay on the dark #080B10 stage
         hardwareScaling: 1 / Math.min(window.devicePixelRatio || 1, 2), // crisp on Retina
       });
     } catch (error) {
@@ -90,6 +87,8 @@ export function initStadiumWindow() {
     const closing = ease(clamp01((vh + span - rect.bottom) / span));
     const open = Math.min(opening, 1 - closing);
     const closed = 1 - open;
+    // The header sits over the dark stage while the window is open: switch it to its light variant.
+    document.documentElement.classList.toggle("is-stage-dark", open > 0.35);
 
     const cardH = (vw - CARD.left - CARD.right) * CARD.ratio;
     const offset = Math.max(0, (vh - cardH) / 2);

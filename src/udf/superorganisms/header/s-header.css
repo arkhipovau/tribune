@@ -20,3 +20,10 @@
   .s-header__cta .a-pill__item { display: none; }
   .s-header__cta { padding: 4px; }
 }
+
+/* Over the dark stadium stage (class set by o-stadium-window while the window is open). */
+.s-header .a-pill, .s-header .a-pill__item, .s-header__logo img { transition: background 300ms var(--ease), color 300ms var(--ease), filter 300ms var(--ease); }
+.is-stage-dark .s-header .a-pill { background: rgba(255, 255, 255, 0.12); }
+.is-stage-dark .s-header .a-pill__item { color: var(--bg-white); }
+.is-stage-dark .s-header .a-pill__item:hover { background: rgba(255, 255, 255, 0.12); }
+.is-stage-dark .s-header__logo img { filter: invert(1); }
