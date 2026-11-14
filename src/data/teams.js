@@ -6,7 +6,7 @@ const FOUNDATIONS = {
   ffh: {
     id: "ffh",
     name: "Football for Humanity",
-    logo: "assets/img/logo-ffh.webp",
+    logo: "assets/img/logo-ffh.avif",
     // TODO: replace with a real quote from the foundation.
     quote: "A few words from Football for Humanity about the kids, the labs and the teams will live here.",
     author: "Football for Humanity",
@@ -16,7 +16,7 @@ const FOUNDATIONS = {
   spring: {
     id: "spring",
     name: "The Spring Ubud",
-    logo: "assets/img/logo-spring.webp",
+    logo: "assets/img/logo-spring.avif",
     // TODO: replace with a real quote from the foundation.
     quote: "A few words from The Spring Ubud about drawing sessions with the children will live here.",
     author: "The Spring Ubud",
@@ -35,10 +35,10 @@ const TEAMS = [
     name: "Carabell Club",
     country: "Philippines",
     tagline: "Forged in myth. Ringing with pride.",
-    house: "assets/img/team-carabell.webp",
-    crest: "assets/img/logo-carabell.webp",
-    drawing: "assets/img/draw-bull.webp",
-    gallery: ["assets/img/mascot-bull.webp", "assets/img/logo-carabell.webp", "assets/img/draw-bull.webp"],
+    house: "assets/img/team-carabell.avif",
+    crest: "assets/img/logo-carabell.avif",
+    drawing: "assets/img/draw-bull.avif",
+    gallery: ["assets/img/mascot-bull.avif", "assets/img/logo-carabell.avif", "assets/img/draw-bull.avif"],
     drawings: 14,
     foundation: "ffh",
     designer: "do",
@@ -48,18 +48,18 @@ const TEAMS = [
     name: "Kids Football Club",
     country: "Philippines",
     tagline: "Brave. Bright. Born to kick.",
-    house: "assets/img/team-ffk.webp",
-    crest: "assets/img/logo-ffk.webp",
-    drawing: "assets/img/draw-kids.webp",
-    gallery: ["assets/img/logo-ffk.webp", "assets/img/draw-kids.webp"],
+    house: "assets/img/team-ffk.avif",
+    crest: "assets/img/logo-ffk.avif",
+    drawing: "assets/img/draw-kids.avif",
+    gallery: ["assets/img/logo-ffk.avif", "assets/img/draw-kids.avif"],
     drawings: 12,
     foundation: "ffh",
     designer: "do",
   },
   // TODO: names, countries, crests and drawings for the houses below.
-  { id: "lantern", name: null, house: "assets/img/house-lantern.webp" },
-  { id: "tree", name: null, house: "assets/img/house-tree.webp" },
-  { id: "arch", name: null, house: "assets/img/house-arch.webp" },
+  { id: "lantern", name: null, house: "assets/img/house-lantern.avif" },
+  { id: "tree", name: null, house: "assets/img/house-tree.avif" },
+  { id: "arch", name: null, house: "assets/img/house-arch.avif" },
 ];
 
 const PLACEHOLDER = { name: "New club", tagline: "Name and story coming soon", country: "" };

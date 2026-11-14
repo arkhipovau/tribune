@@ -8,10 +8,13 @@
     "preview": "vite preview --port 4173 --strictPort",
     "test:visual": "playwright test tests/visual",
     "test:visual:update": "playwright test tests/visual --update-snapshots",
-    "models": "node scripts/build-stadium-models.mjs"
+    "models": "node scripts/build-stadium-models.mjs",
+    "images": "node scripts/build-images.mjs",
+    "fonts": "node scripts/build-fonts.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.56.0",
+    "sharp": "^0.35.5",
     "vite": "^8.3.8",
     "vite-plugin-handlebars": "^2.0.3"
   },

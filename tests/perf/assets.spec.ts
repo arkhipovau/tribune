@@ -15,7 +15,7 @@ test("favicon exists", async ({ request, baseURL }) => {
   expect(res.headers()["content-type"]).toContain("image/svg");
 });
 
-test("stadium first load stays light: lite houses, under 14 MB of model files (~4.5 MB gzipped on Pages)", async ({ page }) => {
+test("stadium first load stays light: lite houses, under 7 MB of model files", async ({ page }) => {
   test.setTimeout(120_000);
   const glb: { url: string; bytes: number }[] = [];
   page.on("response", async (r) => {
@@ -27,7 +27,7 @@ test("stadium first load stays light: lite houses, under 14 MB of model files (~
   await page.waitForTimeout(2000);
   const total = glb.reduce((s, g) => s + g.bytes, 0);
   expect(glb.filter((g) => g.url.includes("/carabell") || g.url.includes("/Carabell")).every((g) => g.url.includes("/models-lite/"))).toBe(true);
-  expect(total).toBeLessThan(14 * 1024 * 1024);
+  expect(total).toBeLessThan(7 * 1024 * 1024);
 });
 
 test("repeat visit serves stadium models from the service worker cache", async ({ page }) => {
@@ -40,4 +40,13 @@ test("repeat visit serves stadium models from the service worker cache", async (
   await page.reload({ waitUntil: "load" });
   await expect.poll(() => fromCache.length, { timeout: 60_000 }).toBeGreaterThanOrEqual(10);
   expect(fromCache.every(Boolean)).toBe(true);
+});
+
+test("photos are served as AVIF", async ({ page }) => {
+  const images: string[] = [];
+  page.on("response", (r) => { if (r.request().resourceType() === "image" && r.url().includes("/assets/img/")) images.push(r.url()); });
+  await page.goto("index.html", { waitUntil: "load" });
+  await page.evaluate(() => document.fonts.ready);
+  expect(images.length).toBeGreaterThan(0);
+  expect(images.filter((u) => !u.endsWith(".avif"))).toEqual([]);
 });

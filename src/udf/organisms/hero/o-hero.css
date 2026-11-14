@@ -12,6 +12,7 @@
   inset: 0 0 auto;
   height: calc(100% + 265px + 40vh); 
   background: var(--bg-hero) url("/assets/img/hero.webp") center top / cover no-repeat;
+  background-image: image-set(url("/assets/img/hero.avif") type("image/avif"), url("/assets/img/hero.webp") type("image/webp"));
 }
 .o-hero > *:not(.o-hero__bg) { position: relative; }
 .o-hero__title { margin: 0; white-space: nowrap; }

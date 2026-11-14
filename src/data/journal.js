@@ -4,7 +4,7 @@ export const JOURNAL = [
   {
     "url": "https://www.instagram.com/p/Da7im4SogWo/",
     "images": [
-      "assets/img/journal/Da7im4SogWo_0.webp"
+      "assets/img/journal/Da7im4SogWo_0.avif"
     ],
     "likes": 5,
     "comments": 0,
@@ -15,7 +15,7 @@ export const JOURNAL = [
   {
     "url": "https://www.instagram.com/p/Da2F68iIvMO/",
     "images": [
-      "assets/img/journal/Da2F68iIvMO_0.webp"
+      "assets/img/journal/Da2F68iIvMO_0.avif"
     ],
     "likes": 3,
     "comments": 1,
@@ -26,9 +26,9 @@ export const JOURNAL = [
   {
     "url": "https://www.instagram.com/p/DavpYCjCH6L/",
     "images": [
-      "assets/img/journal/DavpYCjCH6L_0.webp",
-      "assets/img/journal/DavpYCjCH6L_1.webp",
-      "assets/img/journal/DavpYCjCH6L_2.webp"
+      "assets/img/journal/DavpYCjCH6L_0.avif",
+      "assets/img/journal/DavpYCjCH6L_1.avif",
+      "assets/img/journal/DavpYCjCH6L_2.avif"
     ],
     "likes": 6,
     "comments": 2,
@@ -39,8 +39,8 @@ export const JOURNAL = [
   {
     "url": "https://www.instagram.com/p/DaieaK4CIeX/",
     "images": [
-      "assets/img/journal/DaieaK4CIeX_0.webp",
-      "assets/img/journal/DaieaK4CIeX_1.webp"
+      "assets/img/journal/DaieaK4CIeX_0.avif",
+      "assets/img/journal/DaieaK4CIeX_1.avif"
     ],
     "likes": 18,
     "comments": 0,

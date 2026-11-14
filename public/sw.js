@@ -1,8 +1,8 @@
-// Caches the heavy 3D stadium files on the visitor's device.
+// Caches the heavy 3D stadium files and the brand fonts on the visitor's device.
 // Stale-while-revalidate: a repeat visit gets the stadium instantly from the cache,
 // and a fresh copy is fetched in the background, so model updates arrive on the next visit.
-const CACHE = "tribune-stadium-v1";
-const CACHED_PATH = "/assets/stadium/";
+const CACHE = "tribune-assets-v2";
+const CACHED_PATHS = ["/assets/stadium/", "/assets/fonts/"];
 
 self.addEventListener("install", () => self.skipWaiting());
 self.addEventListener("activate", (event) => {
@@ -14,7 +14,8 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   const { request } = event;
-  if (request.method !== "GET" || !new URL(request.url).pathname.includes(CACHED_PATH)) return;
+  const path = new URL(request.url).pathname;
+  if (request.method !== "GET" || !CACHED_PATHS.some((p) => path.includes(p))) return;
   event.respondWith((async () => {
     const cache = await caches.open(CACHE);
     const cached = await cache.match(request);

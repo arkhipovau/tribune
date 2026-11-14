@@ -4,7 +4,7 @@ import { JOURNAL } from "../../../data/journal.js";
 /* ---------- Journal: Instagram-style cards (Figma), real posts ---------- */
 
 const IG_USER = "tribune_kids.space";
-const IG_AVATAR = "assets/img/journal/avatar.webp";
+const IG_AVATAR = "assets/img/journal/avatar.avif";
 
 const ago = (iso) => {
   if (!iso) return "";

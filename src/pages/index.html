@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <!-- Brand fonts load with the first screen (small Latin subsets, font-display: block). -->
+  <link rel="preload" href="assets/fonts/Youth-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/SuisseIntl-Book.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/SuisseIntl-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- AVIF photos fall back to the WebP copy where AVIF is not supported. -->
+  <script>addEventListener("error",function(e){var t=e.target;if(t&&t.tagName==="IMG"&&/\.avif$/.test(t.src)){t.src=t.src.replace(/\.avif$/,".webp")}},true)</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tribune — where the game begins</title>
   <meta name="description" content="Children sketch the vision. We shape it — together. Tribune turns children's drawings of their own football clubs into a shared virtual stadium.">
-  <link rel="preload" href="assets/fonts/Youth-Medium.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/SuisseIntl-Book.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../udf/bundles/home.css">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
@@ -31,7 +35,7 @@
     </div>
 
     <figure class="m-video-card o-hero__video">
-      <img src="assets/img/stadium-preview.webp" alt="Preview of the interactive stadium">
+      <img src="assets/img/stadium-preview.avif" alt="Preview of the interactive stadium">
       <a class="a-round-btn m-video-card__play" href="#stadium" aria-label="Go to the interactive stadium">
         <img src="assets/svg/arrow.svg" width="12" height="11" alt="">
       </a>
@@ -54,11 +58,11 @@
   <section class="a-section a-section--grey o-manifesto" id="manifesto">
     <p class="a-display m-reveal" data-reveal>
       a place
-      <span class="a-pill-img"><img src="assets/img/estadio.webp" alt=""></span>
+      <span class="a-pill-img"><img src="assets/img/estadio.avif" alt=""></span>
       where children speak first — then ideas
-      <span class="a-pill-img"><img src="assets/img/pill-ideas.webp" alt="A child’s drawing"></span>
+      <span class="a-pill-img"><img src="assets/img/pill-ideas.avif" alt="A child’s drawing"></span>
       find form
-      <span class="a-pill-img"><img src="assets/img/pill-form.webp" alt="A team house render"></span> .<br>
+      <span class="a-pill-img"><img src="assets/img/pill-form.avif" alt="A team house render"></span> .<br>
       football as common ground.<br>
       architecture as shared care.
     </p>
@@ -88,14 +92,14 @@
     <p class="a-label">Made in collaborations with</p>
     <div class="o-marquee">
       <div class="o-marquee__track">
-        <img src="assets/img/logo-ffh.webp" alt="Football for Humanity">
-        <img src="assets/img/logo-spring.webp" alt="The Spring Ubud">
-        <img src="assets/img/logo-ffh.webp" alt="">
-        <img src="assets/img/logo-spring.webp" alt="">
-        <img src="assets/img/logo-ffh.webp" alt="">
-        <img src="assets/img/logo-spring.webp" alt="">
-        <img src="assets/img/logo-ffh.webp" alt="">
-        <img src="assets/img/logo-spring.webp" alt="">
+        <img src="assets/img/logo-ffh.avif" alt="Football for Humanity">
+        <img src="assets/img/logo-spring.avif" alt="The Spring Ubud">
+        <img src="assets/img/logo-ffh.avif" alt="">
+        <img src="assets/img/logo-spring.avif" alt="">
+        <img src="assets/img/logo-ffh.avif" alt="">
+        <img src="assets/img/logo-spring.avif" alt="">
+        <img src="assets/img/logo-ffh.avif" alt="">
+        <img src="assets/img/logo-spring.avif" alt="">
       </div>
     </div>
   </section>
@@ -109,21 +113,21 @@
       <ol class="o-steps">
         <li class="m-step is-active">
           <button class="m-step__head" type="button" aria-expanded="true">
-            <span class="a-pill-img m-step__img"><img src="assets/img/pill-ideas.webp" alt="A child’s drawing of a club"></span>
+            <span class="a-pill-img m-step__img"><img src="assets/img/pill-ideas.avif" alt="A child’s drawing of a club"></span>
             <span class="a-display m-step__title">children lead</span>
           </button>
           <div class="m-step__body"><p class="m-step__text">In workshops and after-school labs, children imagine their own clubs. They choose a name, colours and crest, sketch players, and write short rituals or chants. We listen first. Consent, care and safeguarding sit at the centre.</p></div>
         </li>
         <li class="m-step">
           <button class="m-step__head" type="button" aria-expanded="false">
-            <span class="a-pill-img m-step__img"><img src="assets/img/pill-form.webp" alt="A team house render"></span>
+            <span class="a-pill-img m-step__img"><img src="assets/img/pill-form.avif" alt="A team house render"></span>
             <span class="a-display m-step__title">we co-design</span>
           </button>
           <div class="m-step__body"><p class="m-step__text">Designers and mentors translate the sketches into models—paper, clay, then digital. Nothing is “corrected”; we follow the child’s intent and check back for approval. Each team receives a small visual toolkit (badge, palette, type, textures).</p></div>
         </li>
         <li class="m-step">
           <button class="m-step__head" type="button" aria-expanded="false">
-            <span class="a-pill-img m-step__img"><img src="assets/img/estadio.webp" alt="The shared stadium"></span>
+            <span class="a-pill-img m-step__img"><img src="assets/img/estadio.avif" alt="The shared stadium"></span>
             <span class="a-display m-step__title">the stadium grows</span>
           </button>
           <div class="m-step__body"><p class="m-step__text">Every team’s “house” is placed in a shared virtual stadium. Profiles open on the site; some clubs pair with ambassadors and develop limited kits based on the drawings. Funds raised support partner foundations using football for social good, and progress is shared in the Journal.</p></div>
@@ -135,11 +139,11 @@
       </div>
       <figure class="o-how__media">
         <div class="o-how__slide is-shown">
-          <img src="assets/img/workshop.webp" alt="Children drawing their club at a workshop table" loading="lazy">
-          <span class="a-glass o-how__crest"><img src="assets/img/logo-carabell.webp" alt=""></span>
+          <img src="assets/img/workshop.avif" alt="Children drawing their club at a workshop table" loading="lazy">
+          <span class="a-glass o-how__crest"><img src="assets/img/logo-carabell.avif" alt=""></span>
         </div>
-        <div class="o-how__slide"><img src="assets/img/house-tree.webp" alt="A team house designed from a child’s drawing" loading="lazy"></div>
-        <div class="o-how__slide"><img src="assets/img/how-stadium.webp" alt="A team house placed in the shared stadium" loading="lazy"></div>
+        <div class="o-how__slide"><img src="assets/img/house-tree.avif" alt="A team house designed from a child’s drawing" loading="lazy"></div>
+        <div class="o-how__slide"><img src="assets/img/how-stadium.avif" alt="A team house placed in the shared stadium" loading="lazy"></div>
       </figure>
     </div>
     </div>
@@ -151,7 +155,7 @@
     <div class="o-roles">
       <a class="m-role-card" href="mailto:?subject=Tribune%20%E2%80%94%20Foundation">
         <span class="m-role-card__title">As Foundation</span>
-        <img class="m-role-card__mascot m-role-card__mascot--1" src="assets/img/mascot-treeboy.webp" alt="" loading="lazy">
+        <img class="m-role-card__mascot m-role-card__mascot--1" src="assets/img/mascot-treeboy.avif" alt="" loading="lazy">
         <span class="m-role-card__foot">
           <span class="m-role-card__text">
             <span>For teams, community centres and NGOs.</span>
@@ -162,7 +166,7 @@
       </a>
       <a class="m-role-card" href="mailto:?subject=Tribune%20%E2%80%94%20Creator">
         <span class="m-role-card__title">As Creator</span>
-        <img class="m-role-card__mascot m-role-card__mascot--2" src="assets/img/mascot-monkey.webp" alt="" loading="lazy">
+        <img class="m-role-card__mascot m-role-card__mascot--2" src="assets/img/mascot-monkey.avif" alt="" loading="lazy">
         <span class="m-role-card__foot">
           <span class="m-role-card__text">
             <span>For designers, architects, illustrators, 3D artists.</span>
@@ -173,7 +177,7 @@
       </a>
       <a class="m-role-card m-role-card--wide" href="mailto:?subject=Tribune%20%E2%80%94%20Patron">
         <span class="m-role-card__title">As Patron</span>
-        <img class="m-role-card__mascot m-role-card__mascot--3" src="assets/img/mascot-shark.webp" alt="" loading="lazy">
+        <img class="m-role-card__mascot m-role-card__mascot--3" src="assets/img/mascot-shark.avif" alt="" loading="lazy">
         <span class="m-role-card__foot">
           <span class="m-role-card__text">
             <span>For individuals and partners who wish to fund the work.</span>
@@ -214,7 +218,7 @@
     </p>
     <button class="a-link-under a-link-under--muted o-founder__more" type="button" data-opens="manifesto-dialog" aria-haspopup="dialog">More about the founder</button>
     <figure class="m-video-card o-founder__video">
-      <img src="assets/img/founder.webp" alt="Tribune founder" loading="lazy">
+      <img src="assets/img/founder.avif" alt="Tribune founder" loading="lazy">
       <button class="a-round-btn m-video-card__play" type="button" aria-label="Play founder video">
         <img src="assets/svg/arrow.svg" width="12" height="11" alt="">
       </button>

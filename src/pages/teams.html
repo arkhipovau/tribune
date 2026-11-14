@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <!-- Brand fonts load with the first screen (small Latin subsets, font-display: block). -->
+  <link rel="preload" href="assets/fonts/Youth-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/SuisseIntl-Book.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/SuisseIntl-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- AVIF photos fall back to the WebP copy where AVIF is not supported. -->
+  <script>addEventListener("error",function(e){var t=e.target;if(t&&t.tagName==="IMG"&&/\.avif$/.test(t.src)){t.src=t.src.replace(/\.avif$/,".webp")}},true)</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Teams — Tribune</title>
   <meta name="description" content="Clubs imagined by children, and the foundations they play with.">
-  <link rel="preload" href="assets/fonts/Youth-Medium.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../udf/bundles/teams.css">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
