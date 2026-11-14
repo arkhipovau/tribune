@@ -2,7 +2,7 @@ import { defineConfig } from "@playwright/test";
 
 // The site under test. Task 1: the current static site; later tasks point this
 // at `vite preview` (base /tribune/) without touching the specs.
-const BASE_URL = process.env.SITE_URL ?? "http://localhost:4173/";
+const BASE_URL = process.env.SITE_URL ?? "http://localhost:4173/tribune/";
 
 export default defineConfig({
   testDir: "tests",
@@ -18,8 +18,8 @@ export default defineConfig({
     { name: "mobile", use: { viewport: { width: 375, height: 812 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true } },
   ],
   webServer: process.env.SITE_URL ? undefined : {
-    command: "python3 -m http.server 4173",
-    url: "http://localhost:4173/index.html",
+    command: "npm run build && npm run preview",
+    url: "http://localhost:4173/tribune/index.html",
     reuseExistingServer: true,
   },
 });

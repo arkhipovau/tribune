@@ -1,7 +1,7 @@
 // About page: the manifesto as a stadium. Each stand is a curved, sloped
 // surface with text printed on it, arranged around a pitch.
 import * as THREE from "three";
-import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 const STANDS = window.TRIBUNE_MANIFESTO || [];
 

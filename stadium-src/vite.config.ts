@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 export default defineConfig(({ command }) => ({
   publicDir: command === "build" ? false : "public",
   build: {
-    outDir: "../assets/stadium/js",
+    outDir: "../public/assets/stadium/js",
     emptyOutDir: true,
     target: "es2020",
     lib: {
