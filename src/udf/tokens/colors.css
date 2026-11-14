@@ -7,8 +7,6 @@
   --bg-grey: #f0f0f0;
   --bg-white: #ffffff;
   --bg-stadium: #080b10;
-  /* Stage behind the 3D stadium: dark at the top (under the header), light at the bottom. */
-  --bg-stadium-gradient: linear-gradient(180deg, #080b10 0%, #0d111a 18%, #3c547a 39%, #617ea6 55%, #b9d0e4 75%, #dbe8f2 89%, #eef3f7 100%);
   --green: #c8edbd;
   --dot: #2e933f;
   --shadow: 0 4.7px 18.8px rgba(0, 0, 0, 0.16);

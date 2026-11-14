@@ -60,6 +60,14 @@ export type StadiumOptions = {
   fieldLineTint?: [number, number, number];
   /** Hardware scaling (Babylon): >1 = fewer pixels. Default 1.25 (MVP). The site passes 1/devicePixelRatio for a crisp Retina image; adaptive resolution still lowers it when FPS drops. */
   hardwareScaling?: number;
+  /** Overview clay brightness in shadow and in full light, e.g. [0.65, 1.3] (MVP default). A wider range reads as more volume. */
+  overviewShading?: [number, number];
+  /** Brightness of side faces vs faces turned up, e.g. [0.45, 1.15]. Default [1, 1] = off (MVP look). */
+  overviewFacets?: [number, number];
+  /** Soft light sweep across the stadium: brightness range from the shadow side to the lit side, an added colour on the lit side (linear RGB), sweep direction in world XZ and its half-width in world units. Default: off. */
+  overviewSheen?: { color: [number, number, number]; range: [number, number]; direction: [number, number]; radius: number };
+  /** Camera zoom-out of the overview: 1 = MVP framing, 1.1 = 10% more scene around the stadium. */
+  overviewZoomOut?: number;
 };
 export type StadiumHandle = { dispose: () => void };
 
@@ -68,6 +76,14 @@ MeshoptCompression.Configuration = { decoder: { url: options.meshoptDecoderUrl }
 // GLSL literal for the overview clay tone (see StadiumOptions.overviewTint).
 const OVERVIEW_TINT = (options.overviewTint ?? [0.087, 0.114, 0.180]).map((v) => v.toFixed(4)).join(", ");
 const BASE_SCALE = options.hardwareScaling ?? 1.25;
+// Shadow/light range of the overview clay (see StadiumOptions.overviewShading).
+// Facet shading of the overview clay: brightness of side faces vs top faces (see overviewFacets).
+const FACET_SHADING = (options.overviewFacets ?? [1, 1]).map((v) => v.toFixed(4)).join(", ");
+// Light sweep over the overview clay (see StadiumOptions.overviewSheen). Default: off.
+const SHEEN = options.overviewSheen ?? { color: [0, 0, 0], range: [1, 1], direction: [-1, -1], radius: 160 };
+const glsl = (v: number[]) => v.map((x) => x.toFixed(4)).join(", ");
+const SHEEN_COLOR = glsl(SHEEN.color), SHEEN_RANGE = glsl(SHEEN.range), SHEEN_DIR = glsl(SHEEN.direction), SHEEN_RADIUS = SHEEN.radius.toFixed(1);
+const OVERVIEW_SHADING = (options.overviewShading ?? [0.65, 1.3]).map((v) => v.toFixed(4)).join(", ");
 const FIELD_LINE_TINT = (options.fieldLineTint ?? [1.25, 1.25, 1.25]).map((v) => v.toFixed(4)).join(", ");
 // TRIBUNE / AXONOMETRIC EDITION
 // Models must exist in public/models/. All exported GLBs must share one origin and scale.
@@ -266,7 +282,8 @@ const camera = new ArcRotateCamera("fixedAxonometric", SETTINGS.cameraAlpha, SET
   SETTINGS.cameraRadius, Vector3.Zero(), scene);
 camera.mode = Camera.ORTHOGRAPHIC_CAMERA;
 // No attachControl: fixed architectural view; cursor moves the spotlight, not the camera.
-let currentOrthoHalfHeight = SETTINGS.orthoHalfHeight;
+// overviewZoomOut > 1 shows more of the scene around the stadium (the canvas itself stays full size).
+let currentOrthoHalfHeight = SETTINGS.orthoHalfHeight * (options.overviewZoomOut ?? 1);
 camera.fov = SETTINGS.teamCameraFov;
 function updateOrtho() {
   const halfH = currentOrthoHalfHeight;
@@ -522,7 +539,13 @@ class AtmospherePlugin extends MaterialPluginBase {
         }
         vec3 graphite = vec3(${OVERVIEW_TINT});
         float luminance = dot(max(finalColor.rgb, vec3(0.0)), vec3(0.2126, 0.7152, 0.0722));
-        vec3 toned = graphite * mix(0.65, 1.3, clamp(luminance, 0.0, 1.0));
+        vec3 toned = graphite * mix(${OVERVIEW_SHADING}, clamp(luminance, 0.0, 1.0));
+        // Facet shading: faces turned to a soft top light read lighter, sides darker (volume).
+        float tribuneFacing = clamp(dot(normalize(vNormalW), normalize(vec3(-0.35, 1.0, -0.25))), 0.0, 1.0);
+        toned *= mix(${FACET_SHADING}, tribuneFacing);
+        // Sheen: a soft light sweep across the whole stadium (world space), with a colour tint on the lit side.
+        float tribuneSweep = smoothstep(-1.0, 1.0, dot(normalize(vec2(${SHEEN_DIR})), vPositionW.xz) / ${SHEEN_RADIUS});
+        toned = toned * mix(${SHEEN_RANGE}, tribuneSweep) + vec3(${SHEEN_COLOR}) * tribuneSweep * tribuneSweep;
         // Both luminous surfaces use the same team color and spotlight mask.
         if (tribuneFieldMarkings > 0.5 || tribuneHoverStrength > 0.5) {
           toned = mix(vec3(${FIELD_LINE_TINT}), tribuneHoverColor * 1.65, tribuneHoverStrength);

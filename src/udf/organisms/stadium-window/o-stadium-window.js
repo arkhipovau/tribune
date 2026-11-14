@@ -2,8 +2,14 @@
 // be seen, or right away when the hero arrow is used.
 import { TRIBUNE } from "../../../data/teams.js";
 
-// Overview clay (linear RGB) tuned to read as #AEBDC2 on screen.
-const STADIUM_TINT = [0.412, 0.494, 0.524];
+// Overview clay (linear RGB): matte graphite, like a dark anodised device.
+const STADIUM_TINT = [0.034, 0.036, 0.041];
+// Wider light/shadow range than the MVP default, so the dark stadium reads as a solid object.
+const STADIUM_SHADING = [0.35, 2.2];
+// Facets: sides darker, tops lighter, like light falling on a solid device.
+const STADIUM_FACETS = [0.28, 1.45];
+// Sheen: light sweeps across the body from one corner, with a cool blue-grey glint on the lit side.
+const STADIUM_SHEEN = { color: [0.07, 0.085, 0.115], range: [0.45, 1.9], direction: [-1, -1], radius: 170 };
 
 export function initStadiumWindow() {
 
@@ -39,7 +45,11 @@ export function initStadiumWindow() {
         teamHref: (id) => (teams && teams.teams.some((t) => t.id === id) ? `team.html?id=${encodeURIComponent(id)}` : null),
         reducedMotion: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
         panels: false, // the card shows the model only
-        overviewTint: STADIUM_TINT, // #AEBDC2 clay on the dark #080B10 stage
+        overviewTint: STADIUM_TINT, // matte graphite
+        overviewShading: STADIUM_SHADING,
+        overviewFacets: STADIUM_FACETS,
+        overviewSheen: STADIUM_SHEEN,
+        overviewZoomOut: 1.12, // a bit smaller in the open window, with room around it
         hardwareScaling: 1 / Math.min(window.devicePixelRatio || 1, 2), // crisp on Retina
       });
     } catch (error) {
@@ -60,8 +70,9 @@ export function initStadiumWindow() {
   const CARD = { left: 37, right: 39, radius: 30, ratio: 791 / 1364, zoom: 1.12 };
   // The closed card sits centred in the sticky frame. The frame locks the moment the card
   // reaches the centre of the screen; only then the window opens, holds, and closes again.
-  // Scale of the stadium when the window is fully open (1 = edge to edge; a bit smaller reads better).
-  const OPEN_ZOOM = 0.9;
+  // CSS scale of the scene when the window is fully open. Keep 1: scaling the canvas down crops the
+  // stadium at the canvas edges. The stadium is made smaller by the camera instead (overviewZoomOut).
+  const OPEN_ZOOM = 1;
   const OPEN_SPAN = 0.9;  // scroll (in viewport heights) spent opening, and again closing
   // On approach the card starts a little lower and rides up into place as you scroll.
   const RISE = 0.4;        // start this many viewport heights lower…
@@ -87,8 +98,6 @@ export function initStadiumWindow() {
     const closing = ease(clamp01((vh + span - rect.bottom) / span));
     const open = Math.min(opening, 1 - closing);
     const closed = 1 - open;
-    // The header sits over the dark stage while the window is open: switch it to its light variant.
-    document.documentElement.classList.toggle("is-stage-dark", open > 0.35);
 
     const cardH = (vw - CARD.left - CARD.right) * CARD.ratio;
     const offset = Math.max(0, (vh - cardH) / 2);
@@ -102,6 +111,12 @@ export function initStadiumWindow() {
     frame.style.setProperty("--clip-l", `${(CARD.left * closed + shrinkX).toFixed(2)}px`);
     frame.style.setProperty("--clip-r", `${(CARD.right * closed + shrinkX).toFixed(2)}px`);
     frame.style.setProperty("--clip-b", `${(offset * closed + shrinkY).toFixed(2)}px`);
+    // The header sits over the dark stage while the window is open: switch it to its light variant
+    // only while the dark stage is actually behind it.
+    const HEADER_BOTTOM = 64; // px; the fixed header's lower edge
+    const stageTop = offset * closed + shrinkY; // visible top edge of the window inside the sticky frame
+    const stageUnderHeader = rect.top <= 1 && rect.bottom >= HEADER_BOTTOM && stageTop < HEADER_BOTTOM / 2;
+    document.documentElement.classList.toggle("is-stage-dark", stageUnderHeader);
     frame.style.setProperty("--clip-rad", `${(CARD.radius * closed).toFixed(2)}px`);
     // A touch of scale inside the window sells the "flying into it" feeling.
     frame.style.setProperty("--zoom", (OPEN_ZOOM + (CARD.zoom - OPEN_ZOOM) * closed).toFixed(4));
