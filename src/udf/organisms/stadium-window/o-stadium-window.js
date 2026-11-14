@@ -2,6 +2,9 @@
 // be seen, or right away when the hero arrow is used.
 import { TRIBUNE } from "../../../data/teams.js";
 
+// Beige overview clay (linear RGB), reads as ~#cfc6b6 on screen.
+const STADIUM_TINT = [0.514, 0.468, 0.386];
+
 export function initStadiumWindow() {
 
   const section = document.getElementById("stadium");
@@ -36,6 +39,7 @@ export function initStadiumWindow() {
         teamHref: (id) => (teams && teams.teams.some((t) => t.id === id) ? `team.html?id=${encodeURIComponent(id)}` : null),
         reducedMotion: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
         panels: false, // the card shows the model only
+        overviewTint: STADIUM_TINT, // beige clay, in tune with the About arena
       });
     } catch (error) {
       console.error("Stadium failed to load", error);

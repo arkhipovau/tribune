@@ -16,7 +16,7 @@
 .o-stadium {
   position: absolute;
   inset: 0;
-  background: #2f3847; 
+  background: var(--bg-stadium);
   text-align: left;
   clip-path: inset(var(--clip-t, var(--card-offset)) var(--clip-r, 39px) var(--clip-b, var(--card-offset)) var(--clip-l, 37px) round var(--clip-rad, 30px));
   transform: translateY(var(--rise, 0px));
@@ -28,3 +28,6 @@
   .o-stadium-scroll__sticky { position: relative; height: auto; overflow: visible; }
   .o-stadium { position: relative; aspect-ratio: 1 / 1.1; clip-path: none; border-radius: var(--radius-card); overflow: hidden; }
 }
+
+/* The stadium module paints its own layout background; let the site token show through. */
+.o-stadium #tribuneLayout { background: transparent; }

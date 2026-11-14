@@ -54,11 +54,15 @@ export type StadiumOptions = {
   reducedMotion?: boolean;
   /** Side column (team list). Off = the model alone, for embedding. Default: true. */
   panels?: boolean;
+  /** Overview clay tone, linear RGB 0..1. Default: the MVP graphite blue [0.087, 0.114, 0.180]. */
+  overviewTint?: [number, number, number];
 };
 export type StadiumHandle = { dispose: () => void };
 
 export function mountStadium(root: HTMLElement, options: StadiumOptions): StadiumHandle {
 MeshoptCompression.Configuration = { decoder: { url: options.meshoptDecoderUrl } };
+// GLSL literal for the overview clay tone (see StadiumOptions.overviewTint).
+const OVERVIEW_TINT = (options.overviewTint ?? [0.087, 0.114, 0.180]).map((v) => v.toFixed(4)).join(", ");
 // TRIBUNE / AXONOMETRIC EDITION
 // Models must exist in public/models/. All exported GLBs must share one origin and scale.
 const SETTINGS = {
@@ -510,7 +514,7 @@ class AtmospherePlugin extends MaterialPluginBase {
           spotCoverage = 1.0 - smoothstep(inner, max(inner + 0.001, tribuneRadius), d);
         }
         }
-        vec3 graphite = vec3(0.087, 0.114, 0.180);
+        vec3 graphite = vec3(${OVERVIEW_TINT});
         float luminance = dot(max(finalColor.rgb, vec3(0.0)), vec3(0.2126, 0.7152, 0.0722));
         vec3 toned = graphite * mix(0.65, 1.3, clamp(luminance, 0.0, 1.0));
         // Both luminous surfaces use the same team color and spotlight mask.
