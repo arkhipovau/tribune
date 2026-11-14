@@ -1,4 +1,8 @@
-// Deep imports keep the bundle to the parts of Babylon this scene actually uses.
+// Embedded build of the Tribune stadium MVP (tribune-web/src/main.ts, 13.11.2026).
+// Scene, materials, lighting, adaptive resolution and models are the author's, unchanged.
+// Only the embedding is adapted: mount into a given element instead of <body>,
+// configurable asset URLs, no page-level styles, site-style controls, render pause off-screen.
+// Deep imports keep the bundle to the parts of Babylon this scene uses.
 import { ArcRotateCamera } from "@babylonjs/core/Cameras/arcRotateCamera";
 import { Camera } from "@babylonjs/core/Cameras/camera";
 import { Engine } from "@babylonjs/core/Engines/engine";
@@ -14,20 +18,18 @@ import { HemisphericLight } from "@babylonjs/core/Lights/hemisphericLight";
 import { SpotLight } from "@babylonjs/core/Lights/spotLight";
 import { ShadowGenerator } from "@babylonjs/core/Lights/Shadows/shadowGenerator";
 import { HighlightLayer } from "@babylonjs/core/Layers/highlightLayer";
-import { Effect } from "@babylonjs/core/Materials/effect";
 import { Material } from "@babylonjs/core/Materials/material";
 import { MaterialPluginBase } from "@babylonjs/core/Materials/materialPluginBase";
 import { PBRMaterial } from "@babylonjs/core/Materials/PBR/pbrMaterial";
 import { StandardMaterial } from "@babylonjs/core/Materials/standardMaterial";
-import { ShaderMaterial } from "@babylonjs/core/Materials/shaderMaterial";
 import { UniformBuffer } from "@babylonjs/core/Materials/uniformBuffer";
 import { Mesh } from "@babylonjs/core/Meshes/mesh";
 import { SubMesh } from "@babylonjs/core/Meshes/subMesh";
-import { CreateLineSystem } from "@babylonjs/core/Meshes/Builders/linesBuilder";
-import { CreateSphere } from "@babylonjs/core/Meshes/Builders/sphereBuilder";
+import { MeshBuilder } from "@babylonjs/core/Meshes/meshBuilder";
+import { VertexBuffer } from "@babylonjs/core/Buffers/buffer";
 import { MeshoptCompression } from "@babylonjs/core/Meshes/Compression/meshoptCompression";
 import { SceneLoader } from "@babylonjs/core/Loading/sceneLoader";
-// Side-effect modules the scene relies on (picking, outlines, glow, shadows, .env, glTF).
+// Side-effect modules the scene relies on (picking, glow, shadows, .env, glTF).
 import "@babylonjs/core/Culling/ray";
 import "@babylonjs/core/Rendering/outlineRenderer";
 import "@babylonjs/core/Layers/effectLayerSceneComponent";
@@ -35,20 +37,20 @@ import "@babylonjs/core/Lights/Shadows/shadowGeneratorSceneComponent";
 import "@babylonjs/core/Materials/Textures/Loaders/envTextureLoader";
 import "@babylonjs/core/Helpers/sceneHelpers";
 import "@babylonjs/loaders/glTF/2.0";
-
+import { logBenchmarkReadiness, PerformanceBenchmark } from "./diagnostics/performanceBenchmark";
 
 export type StadiumOptions = {
   /** Folder with the GLB files, ending with "/". */
   modelsUrl: string;
   /** Prefiltered environment (.env) used for reflections. */
   envUrl: string;
-  /** Self-hosted meshoptimizer decoder (UMD) for the compressed GLBs. */
+  /** Self-hosted meshoptimizer decoder, used only if a GLB is meshopt-compressed. */
   meshoptDecoderUrl: string;
   /** Link for a team page, or null when the team has no page yet. */
   teamHref?: (teamId: string) => string | null;
-  /** Skip the intro wipe (prefers-reduced-motion). */
+  /** Kept for API compatibility (the MVP intro is disabled). */
   reducedMotion?: boolean;
-  /** Side columns (title, team list). Off = the model alone, for embedding. Default: true. */
+  /** Side column (team list). Off = the model alone, for embedding. Default: true. */
   panels?: boolean;
 };
 export type StadiumHandle = { dispose: () => void };
@@ -60,14 +62,16 @@ MeshoptCompression.Configuration = { decoder: { url: options.meshoptDecoderUrl }
 const SETTINGS = {
   stadiumFile: "stadium.glb", roofFile: "roof.glb", columnsFile: "columns.glb",
   fieldFile: "field.glb", billboardFile: "billboard.glb", blankFile: "blank_1.glb",
-  background: "#050910", outlineColor: new Color3(0.02, 0.58, 0.78),
-  outlineBrightness: 1.9, edgeThreshold: 0.90,
+  background: "#2f3847",
+  overviewShadeStrength: 0.97, // 0 = original GLB, 1 = full overview tint
+  detailSurroundRadius: 48, // retained for reference; close-up now follows spotlight footprint // world-space radius of visible environment around the selected house
+  detailSurroundFeather: 0.36, // retained for reference // fraction of radius used for soft edge
   spotlightRadius: 24, // world units; adjust to the stadium scale
-  spotlightSoftness: 0.1, // fraction of radius
+  spotlightSoftness: 0.20, // softer reveal edge // fraction of radius
   triggerRadiusMultiplier: 1.35,
   teamGlowFadeIn: 0.12, teamGlowFadeOut: 0.30,
   introHoldMs: 900, introWipeMs: 2200,
-  introEnabled: true,
+  introEnabled: false, // no roof wipe: reveal the stadium immediately
   orthoHalfHeight: 140, cameraAlpha: -Math.PI / 2.8,
   cameraBeta: 0.55, cameraRadius: 450,
   cameraRotationDegreesPerSecond: 2.0, // full revolution in 3 minutes
@@ -77,6 +81,8 @@ const SETTINGS = {
   teamTransitionSeconds: 1.8,
   // Transition profiling: disable costly detail shadow rendering while flying.
   detailShadowsDuringFlight: false,
+  // V5: keep shader-affecting image-processing/fog features stable during flight.
+  stableShaderFeatures: true,
   // Turn this off temporarily to test whether the shadow map is the bottleneck.
   detailShadowsEnabled: true, // Low-resolution spotlight shadows, selected house only
   detailSpotIntensity: 3.0, // key light for the close-up; adjust 2–4
@@ -88,9 +94,9 @@ const SETTINGS = {
   debugSpotDistanceFromHouse: 24, // diagnostic source: 24 units toward the pitch
   debugSpotHeightAboveHouse: 14, // diagnostic source: 14 units above house center
   detailFogDensity: 0.002, // subtle cool atmospheric depth in close-up
-  teamCameraHeightOffset: 2.0, // eye is 2 world units above HOUSE center, as in the original version
+  detailCameraLookUpDegrees: 5,
   teamCameraPreferredDistance: 35, // original Carabell framing; increase only for larger houses
-  detailCameraSideAngleDegrees: 18, // reveal two facades, still approach from the pitch
+  detailCameraSideAngleDegrees: -10, // reveal two facades, still approach from the pitch
   detailHouseFrameFraction: 0.72, // desired fraction of viewport height
   detailSunIntensity: 0.35, // ambient daylight only; spotlight is the key light
   detailAmbientIntensity: 0.55,
@@ -100,106 +106,138 @@ const SETTINGS = {
 };
 
 const TEAMS = [
-  { id:"carabell", name:"Carabell Club", file:"Carabell.glb", country:"Philippines", info:"Football for Humanity", color:"#FF591A" },
-  { id:"brave_eagles", name:"Brave Eagles", file:"brave_eagles.glb", country:"", info:"", color:"#F2C35B" },
-  { id:"dreamchasers", name:"Dreamchasers", file:"dreamchasers.glb", country:"", info:"", color:"#9C85FF" },
-  { id:"ffk", name:"FFK", file:"ffk.glb", country:"", info:"", color:"#7CE2CC" },
-  { id:"firetails", name:"Firetails", file:"firetails.glb", country:"", info:"", color:"#FF773D" },
-  { id:"hanoman", name:"Hanoman", file:"hanoman.glb", country:"Indonesia", info:"Bali", color:"#FFD447" },
-  { id:"lwf", name:"Life With Football", file:"lwf.glb", country:"Philippines", info:"Malabon", color:"#48A7FF" },
-  { id:"mathare", name:"Mathare", file:"mathare.glb", country:"", info:"", color:"#72D7A2" },
-  { id:"redwoods", name:"Red Woods", file:"redwoods.glb", country:"Philippines", info:"", color:"#E54848" },
-  { id:"we", name:"WE", file:"we.glb", country:"", info:"", color:"#F3A6DA" },
+  { id:"carabell", name:"Carabell Club", file:"Carabell.glb", country:"Philippines", info:"Football for Humanity", color:"#F23C38" },
+  { id:"brave_eagles", name:"Brave Eagles", file:"brave_eagles.glb", country:"", info:"", color:"#FFB515" },
+  { id:"dreamchasers", name:"Dreamchasers", file:"dreamchasers.glb", country:"", info:"", color:"#F58224" },
+  { id:"ffk", name:"FFK", file:"ffk.glb", country:"", info:"", color:"#36C8F3" },
+  { id:"firetails", name:"Firetails", file:"firetails.glb", country:"", info:"", color:"#F45B9C" },
+  { id:"hanoman", name:"Hanoman", file:"hanoman.glb", country:"Indonesia", info:"Bali", color:"#FFD429" },
+  { id:"lwf", name:"Life With Football", file:"lwf.glb", country:"Philippines", info:"Malabon", color:"#3477DF" },
+  { id:"mathare", name:"Mathare", file:"mathare.glb", country:"", info:"", color:"#F6A521" },
+  { id:"redwoods", name:"Red Woods", file:"redwoods.glb", country:"Philippines", info:"", color:"#CF352D" },
+  { id:"we", name:"WE", file:"we.glb", country:"", info:"", color:"#8A59C6" },
 ];
 type TeamConfig = typeof TEAMS[number];
 type LoadedTeam = { config: TeamConfig; meshes: Mesh[]; center: Vector3; radius: number };
 
 // TRIBUNE / SEAMLESS OVERVIEW -> CIRCULAR DETAIL
 // Fill the available frame with the canvas; the circular aperture is sized from its width.
+const diagnosticsEnabled = new URLSearchParams(window.location.search).get("diagnostics") === "1";
 const STYLE_ID = "tribune-stadium-style";
 const pageStyle = (document.getElementById(STYLE_ID) as HTMLStyleElement | null) ?? document.createElement("style");
 pageStyle.id = STYLE_ID;
 pageStyle.textContent = `
   #tribuneLayout { position:absolute; inset:0; display:grid; grid-template-columns:minmax(190px,1fr) minmax(0,1000px) minmax(190px,1fr); align-items:stretch; gap:clamp(12px,2.2vw,40px); padding:clamp(16px,3vw,48px); box-sizing:border-box; background:#2f3847; color:#d6e8ed; font-family:Arial,sans-serif; }
-  #tribuneViewport { width:100%; height:100%; min-height:0; max-width:100%; border-radius:0; clip-path:circle(var(--tribune-overview-radius, 400px) at 50% 50%); overflow:hidden; position:relative; justify-self:center; background:#2f3847; border:0; box-shadow:none; transition:clip-path 1.8s cubic-bezier(0.45,0,0.55,1); }
-  #tribuneViewport.tribuneDetail { clip-path:circle(var(--tribune-detail-radius, 336px) at 50% 50%); background:#2f3847; }
+  #tribuneViewport { grid-column:2; width:100%; height:100%; min-height:0; max-width:100%; border-radius:0; clip-path:none; overflow:hidden; position:relative; justify-self:center; background:transparent; border:0; box-shadow:none; transition:none; }
+  #tribuneViewport.tribuneDetail { clip-path:none; background:transparent; }
   #renderCanvas { position:absolute !important; inset:0 !important; display:block !important; width:100% !important; height:100% !important; max-width:none !important; max-height:none !important; border:0 !important; outline:0 !important; touch-action:none; }
   .tribuneSide { min-width:0; max-width:300px; display:flex; flex-direction:column; gap:18px; }
-  .tribuneEyebrow { font-size:10px; letter-spacing:.22em; color:#78b7c6; }
-  .tribuneTitle { font-size:clamp(20px,2.4vw,35px); font-weight:600; letter-spacing:.12em; margin:0; color:#e7f8fa; }
-  .tribuneText { color:#91aeb9; font-size:13px; line-height:1.65; margin:0; }
-  .tribuneRule { height:1px; background:#284150; }
-  #tribuneSelectedName { font-size:clamp(17px,1.7vw,26px); font-weight:600; color:#e7f8fa; }
-  #tribuneSelectedMeta { font-size:12px; color:#9ab8c5; }
   #tribuneTeamList { display:flex; flex-wrap:wrap; gap:7px; }
   .tribuneTeamButton { border:1px solid #294857; color:#9bbbc7; background:#10202d; border-radius:4px; padding:7px 9px; font-size:11px; cursor:pointer; }
   .tribuneTeamButton:hover { color:#d7f9ff; border-color:#66c8db; }
-  #tribuneTeamLink { display:none; align-self:flex-start; padding:9px 14px; border:1px solid #66c8db; border-radius:999px; color:#d7f9ff; font-size:12px; letter-spacing:.12em; text-decoration:none; }
-  #tribuneTeamLink:hover { background:#10202d; }
-  #tribuneStatus { font-size:11px; letter-spacing:.18em; color:#78b7c6; }
-  /* Embedded mode: only the model; the club link floats over the scene. */
+  #tribuneRight { grid-column:3; }
+  /* Embedded mode: only the model; controls float over the scene. */
   #tribuneLayout.tribuneBare { position:absolute; inset:0; min-height:0; grid-template-columns:1fr; padding:0; gap:0; }
   #tribuneLayout.tribuneBare .tribuneSide { display:none; }
-  #tribuneLayout.tribuneBare #tribuneViewport,
-  #tribuneLayout.tribuneBare #tribuneViewport.tribuneDetail { width:100%; height:100%; grid-row:auto; clip-path:none; } /* no circular aperture when embedded */
+  #tribuneLayout.tribuneBare #tribuneViewport { grid-column:1; width:100%; height:100%; }
   /* Site-style controls, centred at the bottom of the widget (embedded mode). */
   #tribuneLayout .tribuneActions { position:absolute; left:50%; bottom:24px; transform:translateX(-50%); z-index:5; display:none; gap:0; padding:4px; border-radius:1000px; background:rgba(255,255,255,.6); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); }
   #tribuneLayout .tribuneActions.isOpen { display:flex; }
   #tribuneLayout .tribuneActions > * { display:inline-flex; align-items:center; height:36px; padding:0 16px; border:0; border-radius:1000px; background:transparent; color:#17100e; font:450 14px/1.1 "Suisse Intl", system-ui, sans-serif; letter-spacing:0; text-decoration:none; white-space:nowrap; cursor:pointer; transition:background .2s, transform .15s; }
   #tribuneLayout .tribuneActions > *:hover { background:rgba(23,16,14,.05); }
   #tribuneLayout .tribuneActions > *:active { transform:scale(.97); }
-  #tribuneLayout .tribuneActions > #tribuneTeamLink { background:#fff; box-shadow:0 2px 8px rgba(0,0,0,.06); font-weight:600; }
-  #tribuneLayout.tribuneBare .tribuneTip { padding:8px 14px !important; background:#fff !important; color:#17100e !important; border:0 !important; border-radius:1000px !important; font:450 14px/1.1 "Suisse Intl", system-ui, sans-serif !important; box-shadow:0 2px 8px rgba(0,0,0,.12); }
+  #tribuneLayout .tribuneActions > .tribuneTeamLink { background:#fff; box-shadow:0 2px 8px rgba(0,0,0,.06); font-weight:600; }
   @media (max-width:950px) {
     #tribuneLayout { position:relative; min-height:100%; grid-template-columns:1fr; justify-items:center; padding:22px 16px 60px; gap:20px; }
-    #tribuneViewport { width:min(85vw, 650px); height:min(85vw, 650px); grid-row:2; }
+    #tribuneViewport { grid-column:1; width:min(85vw, 650px); height:min(85vw, 650px); }
     .tribuneSide { max-width:min(85vw,650px); width:100%; }
-    #tribuneRight { grid-row:3; }
+    #tribuneRight { grid-column:1; }
   }
 `;
 if (!pageStyle.isConnected) document.head.appendChild(pageStyle);
 const layout = document.createElement("main");
 layout.id = "tribuneLayout";
 layout.innerHTML = `
-  <section class="tribuneSide" id="tribuneLeft">
-    <div class="tribuneEyebrow">TRIBUNE / KIDS.SPACE</div>
-    <h1 class="tribuneTitle">THE STADIUM</h1>
-    <div class="tribuneRule"></div>
-    <p class="tribuneText">A digital stadium built from children's imagination. Explore the clubhouses created for football teams around the world.</p>
-    <div class="tribuneEyebrow">INTERACTIVE ARCHITECTURE · 001</div>
-    <div id="tribuneStatus">LOADING THE STADIUM…</div>
-  </section>
   <div id="tribuneViewport" aria-label="Interactive 3D stadium"></div>
   <section class="tribuneSide" id="tribuneRight">
-    <div class="tribuneEyebrow">SELECTED TEAM</div>
-    <div id="tribuneSelectedName">EXPLORE THE TEAMS</div>
-    <div id="tribuneSelectedMeta">Move the cursor over the stadium</div>
-    <a id="tribuneTeamLink" href="#">OPEN CLUB PAGE →</a>
-    <div class="tribuneRule"></div>
-    <div class="tribuneEyebrow">10 CLUBHOUSES</div>
     <div id="tribuneTeamList"></div>
   </section>`;
 root.appendChild(layout);
 const bare = options.panels === false;
 if (bare) layout.classList.add("tribuneBare");
-const viewport = document.getElementById("tribuneViewport")!;
-const selectedName = document.getElementById("tribuneSelectedName")!;
-const selectedMeta = document.getElementById("tribuneSelectedMeta")!;
-const teamList = document.getElementById("tribuneTeamList")!;
-const teamLink = document.getElementById("tribuneTeamLink") as HTMLAnchorElement;
-const statusLine = document.getElementById("tribuneStatus")!;
 // Embedded mode: "Back to stadium" + "Open club page" share one pill at the bottom.
 const actions = document.createElement("div");
 actions.className = "tribuneActions";
+const teamLink = document.createElement("a");
+teamLink.className = "tribuneTeamLink";
+teamLink.textContent = "Open club page";
+teamLink.style.display = "none";
 if (bare) layout.appendChild(actions);
+const viewport = document.getElementById("tribuneViewport")!;
+const teamList = document.getElementById("tribuneTeamList")!;
 const canvas = document.createElement("canvas");
 canvas.id = "renderCanvas";
 viewport.appendChild(canvas);
-// Render at the screen's real pixel density, capped at 2x for speed.
-// (The MVP used a fixed 1.25 downscale without DPR support: soft and jagged on Retina.)
-const MAX_PIXEL_RATIO = 2;
-const engine = new Engine(canvas, true, { antialias: true }, true);
-engine.setHardwareScalingLevel(1 / Math.min(window.devicePixelRatio || 1, MAX_PIXEL_RATIO));
+const engine = new Engine(canvas, true, { premultipliedAlpha: false });
+// Larger hardware scaling = fewer physical pixels; 1.25 is a conservative starting point.
+engine.setHardwareScalingLevel(1.25);
+// V9: conservative adaptive render resolution. Never changes geometry, materials,
+// spotlight logic, or the camera. Hardware scaling > 1 means fewer render pixels.
+const adaptiveResolution = {
+  enabled: true,
+  baseScale: 1.25,
+  currentScale: 1.25,
+  minScale: 1.0,
+  maxScale: 2.0,
+  targetFPS: 45,
+  samples: [] as number[],
+  lastAdjustment: performance.now(),
+  cooldownMs: 3500,
+  lowFPSWindows: 0,
+  highFPSWindows: 0,
+};
+function updateAdaptiveResolution(frameMs: number, now: number, isFlying: boolean) {
+  if (!adaptiveResolution.enabled || document.hidden) return;
+  // Avoid measuring stalled tabs and shader-compilation outliers as steady load.
+  if (frameMs < 1 || frameMs > 250) return;
+  adaptiveResolution.samples.push(frameMs);
+  if (adaptiveResolution.samples.length < 90) return;
+  const sorted = adaptiveResolution.samples.slice().sort((a, b) => a - b);
+  adaptiveResolution.samples.length = 0;
+  const medianMs = sorted[Math.floor(sorted.length / 2)];
+  const estimatedFPS = 1000 / medianMs;
+  // The transition itself is expensive; allow downscaling but avoid upscaling
+  // in the middle of the flight.
+  if (estimatedFPS < adaptiveResolution.targetFPS - 7) {
+    adaptiveResolution.lowFPSWindows++;
+    adaptiveResolution.highFPSWindows = 0;
+  } else if (estimatedFPS > adaptiveResolution.targetFPS + 12 && !isFlying) {
+    adaptiveResolution.highFPSWindows++;
+    adaptiveResolution.lowFPSWindows = 0;
+  } else {
+    adaptiveResolution.lowFPSWindows = 0;
+    adaptiveResolution.highFPSWindows = 0;
+  }
+  if (now - adaptiveResolution.lastAdjustment < adaptiveResolution.cooldownMs) return;
+  let next = adaptiveResolution.currentScale;
+  if (adaptiveResolution.lowFPSWindows >= 2) {
+    next = Math.min(adaptiveResolution.maxScale, next + 0.15);
+  } else if (adaptiveResolution.highFPSWindows >= 3) {
+    next = Math.max(adaptiveResolution.baseScale, next - 0.10);
+  }
+  if (Math.abs(next - adaptiveResolution.currentScale) > 0.001) {
+    adaptiveResolution.currentScale = Math.round(next * 100) / 100;
+    engine.setHardwareScalingLevel(adaptiveResolution.currentScale);
+    console.info("[Tribune adaptive resolution]", {
+      scale: adaptiveResolution.currentScale,
+      sampledFPS: Math.round(estimatedFPS),
+      transition: isFlying
+    });
+    adaptiveResolution.lastAdjustment = now;
+    adaptiveResolution.lowFPSWindows = 0;
+    adaptiveResolution.highFPSWindows = 0;
+  }
+}
 const scene = new Scene(engine);
 // TEST: use Babylon Standard light attenuation for every PBR material.
 // This also applies to PBR materials created later (including masked clones).
@@ -210,7 +248,8 @@ function forceStandardLightFalloff(material: Material): void {
 }
 scene.onNewMaterialAddedObservable.add(forceStandardLightFalloff);
 scene.materials.forEach(forceStandardLightFalloff);
-scene.clearColor = Color4.FromHexString("#050910FF");
+// Transparent WebGL clear: the actual page (including future website backgrounds) shows through.
+scene.clearColor = new Color4(0, 0, 0, 0);
 const camera = new ArcRotateCamera("fixedAxonometric", SETTINGS.cameraAlpha, SETTINGS.cameraBeta,
   SETTINGS.cameraRadius, Vector3.Zero(), scene);
 camera.mode = Camera.ORTHOGRAPHIC_CAMERA;
@@ -225,12 +264,6 @@ function updateOrtho() {
 }
 updateOrtho();
 const resizeViewport = () => {
-  // The aperture radius follows the smaller side so the circle always fits the frame
-  // (a wide embedded card would otherwise crop it top and bottom).
-  const box = viewport.getBoundingClientRect();
-  const size = Math.min(box.width, box.height || box.width);
-  viewport.style.setProperty("--tribune-overview-radius", `${size * 0.5}px`);
-  viewport.style.setProperty("--tribune-detail-radius", `${size * 0.42}px`);
   engine.resize();
   updateOrtho();
 };
@@ -255,14 +288,24 @@ sun.position = new Vector3(100, 240, 120);
 sun.autoCalcShadowZBounds = true;
 // Shadows are rendered only in the close-up and during its transition.
 sun.shadowEnabled = false;
+// Babylon takes the full opening angle. The mask uses its half-angle.
+const spotlight = {
+  position: new Vector3(0, 100, 0),
+  direction: new Vector3(0, -1, 0),
+  angle: SETTINGS.detailSpotAngle,
+  range: 250,
+  softness: SETTINGS.spotlightSoftness,
+  intensity: 0,
+  coneLimits: new Vector3(),
+};
 const detailSpot = new SpotLight(
-  "teamDetailSpot", new Vector3(0, 100, 0), new Vector3(0, -1, 0),
-  SETTINGS.detailSpotAngle, 2, scene
+  "teamDetailSpot", spotlight.position.clone(), spotlight.direction.clone(),
+  spotlight.angle, 2, scene
 );
 detailSpot.diffuse = new Color3(1, 0.94, 0.85);
 detailSpot.specular = new Color3(1, 0.94, 0.85);
-detailSpot.intensity = 0;
-detailSpot.range = 250;
+detailSpot.intensity = spotlight.intensity;
+detailSpot.range = spotlight.range;
 // Independent shadow map for the selected-house spotlight. No roof or stadium
 // casters are added here: the light should reach the house through the roof.
 const detailSpotShadows = new ShadowGenerator(512, detailSpot);
@@ -275,7 +318,7 @@ scene.environmentTexture = CubeTexture.CreateFromPrefilteredData(
 scene.environmentIntensity = 0.5;
 const overviewEnvironmentIntensity = scene.environmentIntensity;
 scene.fogMode = Scene.FOGMODE_NONE;
-scene.fogColor = new Color3(0.66, 0.75, 0.88);
+scene.fogColor = Color3.FromHexString("#2f3847");
 // Reproduce the original architectural grade in detail mode only.
 const imageProcessing = scene.imageProcessingConfiguration;
 const detailCurves = new ColorCurves();
@@ -291,37 +334,37 @@ imageProcessing.colorCurves = detailCurves;
 imageProcessing.colorCurvesEnabled = false;
 imageProcessing.vignetteEnabled = false;
 imageProcessing.colorGradingEnabled = false;
+// V5: choose one shader feature set for both camera states. This changes the
+// close-up grade (no ACES/curves/fog) intentionally, for an isolated FPS test.
+if (SETTINGS.stableShaderFeatures) {
+  imageProcessing.toneMappingEnabled = false;
+  imageProcessing.colorCurvesEnabled = false;
+  scene.fogMode = Scene.FOGMODE_NONE;
+}
 const overviewExposure = imageProcessing.exposure;
 const overviewContrast = imageProcessing.contrast;
 // Compare fill lighting against sun-only lighting without touching the overview.
 let spotlightOnlyTest = false;
 const pipeline = new DefaultRenderingPipeline("post", true, scene, [camera]);
 pipeline.fxaaEnabled = true;
-pipeline.samples = 1; // FXAA is enabled; MSAA can be tested separately
+// Smooth thin pitch markings before bloom and FXAA sample the scene.
+const effectsSamples = Math.min(2, engine.getCaps().maxMSAASamples);
+pipeline.samples = effectsSamples;
 pipeline.bloomEnabled = true;
 pipeline.bloomThreshold = 0.65;
 pipeline.bloomWeight = 0.08;
 pipeline.bloomKernel = 48;
 
-const glow = new HighlightLayer("teamOutlines", scene);
-glow.innerGlow = false;
-glow.outerGlow = true;
-
-glow.blurHorizontalSize = 0.5;
-glow.blurVerticalSize = 0.5;
-
-glow.isEnabled = false;
-
-// These material plugins keep the ORIGINAL imported PBR/Standard materials and textures.
-// The reveal plugin clips pixels outside the world-space spotlight, with a soft dither edge.
-// The wipe plugin clips roof/columns by angle around the stadium centre.
-let spotlightCenter = new Vector3(0,-10000,0);
+// ONE GEOMETRY PASS PER OBJECT: no extracted edge lines or depth-only clones.
+// Original imported materials are preserved; a shader plugin applies the clay
+// treatment outside the cursor spotlight, then clips the close-up environment.
+let unifiedSpotlight = true;
+let spotlightCenter = new Vector3(0, -10000, 0);
 let spotlightActive = false;
-let wipeProgress = 0;
+const savedOverviewSpot = { center: Vector3.Zero(), active: false };
 let introFinished = false;
 let detailMode = false;
 let selectedDetailTeam: LoadedTeam | null = null;
-// 0 = stadium linework, 1 = fully revealed architectural close-up.
 let detailBlend = 0;
 let roofDetailMeshes: Mesh[] = [];
 let columnDetailMeshes: Mesh[] = [];
@@ -339,291 +382,303 @@ let cameraTransition: null | {
   onComplete?: () => void;
 } = null;
 let savedOverview: null | {alpha: number; beta: number; radius: number; height: number; target: Vector3} = null;
-let projectionBlend = 0; // 0 = orthographic, 1 = perspective
-const plugins: MaskPlugin[] = [];
-class MaskPlugin extends MaterialPluginBase {
-  private kind: "spot"|"wipe"|"inverseSpot"|"roof"|"columns";
-  constructor(material: Material, kind: "spot"|"wipe"|"inverseSpot"|"roof"|"columns") {
-    super(material, "TribuneMask_" + kind, 210, { TRIBUNE_MASK: true });
+let projectionBlend = 0;
+
+// Each GLB material clone owns its own shader uniforms, but never extra geometry.
+// For the selected team the plugin keeps the house fully visible in detail view.
+// Shader diagnostic modes are uniforms: switching them does not clone materials
+// or request new shader variants. 0 full; 1 no distance; 2 no clay;
+// 3 no dither; 4 bypass all atmosphere fragment logic.
+let spotlightShaderTest = 0;
+let activeTeamAccentColor: Color3 | null = null;
+const inactiveTeamAccentColor = Color3.Black();
+class AtmospherePlugin extends MaterialPluginBase {
+  selected = false;
+  role: AtmosphereRole = "normal";
+  private readonly kind: "architecture" | "roof";
+  constructor(material: Material, kind: "architecture" | "roof") {
+    super(material, "TribuneAtmosphere_" + kind, 210, { TRIBUNE_ATMOSPHERE: true });
     this.kind = kind;
     this._enable(true);
   }
-  getClassName() { return "TribuneMask"; }
+  getClassName() { return "TribuneAtmosphere"; }
   getUniforms() {
     return { ubo: [
       { name: "tribuneCenter", size: 3, type: "vec3" },
+      { name: "tribuneDetailCenter", size: 3, type: "vec3" },
+      { name: "tribuneConePosition", size: 3, type: "vec3" },
+      { name: "tribuneConeDirection", size: 3, type: "vec3" },
+      { name: "tribuneConeLimits", size: 3, type: "vec3" },
+      { name: "tribuneUseCone", size: 1, type: "float" },
       { name: "tribuneRadius", size: 1, type: "float" },
       { name: "tribuneSoftness", size: 1, type: "float" },
-      { name: "tribuneWipe", size: 1, type: "float" },
       { name: "tribuneDetailBlend", size: 1, type: "float" },
-      { name: "tribuneViewportWidth", size: 1, type: "float" },
+      { name: "tribuneSelected", size: 1, type: "float" },
+      { name: "tribuneShade", size: 1, type: "float" },
+      { name: "tribuneFieldMarkings", size: 1, type: "float" },
+      { name: "tribuneSurroundRadius", size: 1, type: "float" },
+      { name: "tribuneSurroundFeather", size: 1, type: "float" },
+      { name: "tribuneHoverColor", size: 3, type: "vec3" },
+      { name: "tribuneHoverStrength", size: 1, type: "float" },
+       { name: "tribuneShaderTest", size: 1, type: "float" },
     ],
-    // Declarations for the non-UBO path; without them some materials fail to compile.
-    fragment: `#ifdef TRIBUNE_MASK
+    // Declarations for the non-UBO shader path (embedded build). Without them some
+    // materials fail to compile ("undeclared identifier") and the stadium does not draw.
+    fragment: `#ifdef TRIBUNE_ATMOSPHERE
       uniform vec3 tribuneCenter;
+      uniform vec3 tribuneDetailCenter;
+      uniform vec3 tribuneConePosition;
+      uniform vec3 tribuneConeDirection;
+      uniform vec3 tribuneConeLimits;
+      uniform float tribuneUseCone;
       uniform float tribuneRadius;
       uniform float tribuneSoftness;
-      uniform float tribuneWipe;
       uniform float tribuneDetailBlend;
-      uniform float tribuneViewportWidth;
+      uniform float tribuneSelected;
+      uniform float tribuneShade;
+      uniform float tribuneFieldMarkings;
+      uniform float tribuneSurroundRadius;
+      uniform float tribuneSurroundFeather;
+      uniform vec3 tribuneHoverColor;
+      uniform float tribuneHoverStrength;
+      uniform float tribuneShaderTest;
     #endif` };
   }
   bindForSubMesh(ubo: UniformBuffer, _scene: Scene, _engine: Engine, _subMesh: SubMesh) {
-    ubo.updateVector3("tribuneCenter", spotlightCenter);
-    ubo.updateFloat("tribuneRadius", spotlightActive ? SETTINGS.spotlightRadius : -1);
+    const useCone = unifiedSpotlight && selectedDetailTeam !== null;
+    const overviewActive = useCone ? savedOverviewSpot.active : spotlightActive;
+    ubo.updateVector3("tribuneCenter", useCone ? savedOverviewSpot.center : spotlightCenter);
+    ubo.updateFloat("tribuneUseCone", useCone ? 1 : 0);
+    if (useCone) {
+      ubo.updateVector3("tribuneConePosition", spotlight.position);
+      ubo.updateVector3("tribuneConeDirection", spotlight.direction);
+      ubo.updateVector3("tribuneConeLimits", spotlight.coneLimits);
+    }
+    ubo.updateVector3("tribuneDetailCenter", selectedDetailTeam?.center ?? spotlightCenter);
+    ubo.updateFloat("tribuneRadius", overviewActive ? SETTINGS.spotlightRadius : -1);
     ubo.updateFloat("tribuneSoftness", SETTINGS.spotlightSoftness);
-    ubo.updateFloat("tribuneWipe", wipeProgress);
     ubo.updateFloat("tribuneDetailBlend", detailBlend);
-    ubo.updateFloat("tribuneViewportWidth", Math.max(1, engine.getRenderWidth()));
+    ubo.updateFloat("tribuneSelected", this.selected ? 1 : 0);
+    ubo.updateFloat("tribuneShade", SETTINGS.overviewShadeStrength);
+    ubo.updateFloat("tribuneFieldMarkings", this.role === "fieldMarkings" ? 1 : 0);
+    ubo.updateFloat("tribuneSurroundRadius", SETTINGS.detailSurroundRadius);
+    ubo.updateFloat("tribuneSurroundFeather", SETTINGS.detailSurroundFeather);
+    const accentColor = this.role === "fieldMarkings" || this.role === "billboard"
+      ? activeTeamAccentColor : null;
+    ubo.updateColor3("tribuneHoverColor", accentColor ?? inactiveTeamAccentColor);
+    ubo.updateFloat("tribuneHoverStrength", accentColor ? 1 : 0);
+    ubo.updateFloat("tribuneShaderTest", spotlightShaderTest);
   }
   getCustomCode(shaderType: string) {
     if (shaderType !== "fragment") return null;
-    // Clean screen-space wipe: no stochastic pixels scattered over the stadium.
-    // The transition boundary moves left-to-right during the 1.8s camera flight.
-    const wipeCode = `
-      float screenX = gl_FragCoord.x / max(1.0, tribuneViewportWidth);
-      float revealed = step(screenX, tribuneDetailBlend);
+    const coneCoverage = `
+      float tribuneConeCoverage(vec3 worldPosition) {
+        vec3 offset = worldPosition - tribuneConePosition;
+        float distanceSquared = dot(offset, offset);
+        float axial = dot(offset, tribuneConeDirection);
+        if (axial < 0.0 || distanceSquared >= tribuneConeLimits.z) return 0.0;
+        // Compare squared cosines to skip normalizing the offset per fragment.
+        float cosSquared = axial * axial / max(distanceSquared, 1e-8);
+        return smoothstep(tribuneConeLimits.x, tribuneConeLimits.y, cosSquared);
+      }
     `;
-    // The roof must be visible BEFORE the intro wipe, and disappear as it sweeps.
-    // On close-up it reappears only inside the screen-space reveal.
     if (this.kind === "roof") return {
+      CUSTOM_FRAGMENT_DEFINITIONS: coneCoverage,
       CUSTOM_FRAGMENT_BEFORE_FRAGCOLOR: `
-        ${wipeCode}
-        if (tribuneDetailBlend > 0.00001) {
-          if (revealed < 0.5) discard;
-        } else {
-          float a = atan(vPositionW.z - tribuneCenter.z, vPositionW.x - tribuneCenter.x);
-          float normalizedAngle = fract((a + 3.14159265) / 6.2831853);
-          if (normalizedAngle < tribuneWipe) discard;
+        // Hide the roof/columns in overview; show only nearby parts in detail.
+        if (tribuneShaderTest < 3.5) {
+          if (tribuneDetailBlend < 0.999) discard;
+          if (tribuneUseCone > 0.5) {
+            if (tribuneConeCoverage(vPositionW) <= 0.0) discard;
+          } else if (distance(vPositionW.xz, tribuneDetailCenter.xz) > tribuneSurroundRadius) {
+            discard;
+          }
         }
-      `,
-    };
-    // Columns share the intro wipe but return with the roof in architectural view.
-    if (this.kind === "columns") return {
-      CUSTOM_FRAGMENT_BEFORE_FRAGCOLOR: `
-        ${wipeCode}
-        if (tribuneDetailBlend > 0.00001) {
-          if (revealed < 0.5) discard;
-        } else {
-          float a = atan(vPositionW.z - tribuneCenter.z, vPositionW.x - tribuneCenter.x);
-          float normalizedAngle = fract((a + 3.14159265) / 6.2831853);
-          if (normalizedAngle < tribuneWipe) discard;
-        }
-      `,
-    };
-    if (this.kind === "inverseSpot") return {
-      CUSTOM_FRAGMENT_BEFORE_FRAGCOLOR: `
-        ${wipeCode}
-        float coverage = 0.0;
-        if (tribuneRadius > 0.0) {
-          float d = distance(vPositionW.xz, tribuneCenter.xz);
-          float inner = tribuneRadius * (1.0 - tribuneSoftness);
-          coverage = 1.0 - smoothstep(inner, tribuneRadius, d);
-        }
-        // During close-up the blank-house occluders vanish behind the wipe.
-        if (revealed > 0.5 || coverage > 0.5) discard;
-      `,
-    };
-    if (this.kind === "spot") return {
-      CUSTOM_FRAGMENT_BEFORE_FRAGCOLOR: `
-        ${wipeCode}
-        float coverage = 0.0;
-        if (tribuneRadius > 0.0) {
-          float d = distance(vPositionW.xz, tribuneCenter.xz);
-          float inner = tribuneRadius * (1.0 - tribuneSoftness);
-          coverage = 1.0 - smoothstep(inner, max(inner + 0.001, tribuneRadius), d);
-        }
-        // Fully visible in revealed portion; otherwise only under spotlight.
-        if (revealed < 0.5 && coverage < 0.5) discard;
       `,
     };
     return {
+      CUSTOM_FRAGMENT_DEFINITIONS: coneCoverage,
       CUSTOM_FRAGMENT_BEFORE_FRAGCOLOR: `
-        ${wipeCode}
-        // Intro angular wipe when overview is active; screen wipe for close-up.
-        if (tribuneDetailBlend > 0.0) {
-          if (revealed < 0.5) discard;
-        } else {
-          float a = atan(vPositionW.z - tribuneCenter.z, vPositionW.x - tribuneCenter.x);
-          float normalizedAngle = fract((a + 3.14159265) / 6.2831853);
-          if (normalizedAngle < tribuneWipe) discard;
+        if (tribuneShaderTest < 3.5) {
+        float spotCoverage = tribuneShaderTest > 0.5 && tribuneShaderTest < 1.5 ? 1.0 : 0.0;
+        if (tribuneShaderTest < 0.5 || tribuneShaderTest > 1.5) {
+        if (tribuneRadius > 0.0 && (tribuneUseCone < 0.5 || tribuneDetailBlend < 1.0)) {
+          float d = distance(vPositionW.xz, tribuneCenter.xz);
+          float inner = tribuneRadius * (1.0 - tribuneSoftness);
+          spotCoverage = 1.0 - smoothstep(inner, max(inner + 0.001, tribuneRadius), d);
         }
+        }
+        vec3 graphite = vec3(0.087, 0.114, 0.180);
+        float luminance = dot(max(finalColor.rgb, vec3(0.0)), vec3(0.2126, 0.7152, 0.0722));
+        vec3 toned = graphite * mix(0.65, 1.3, clamp(luminance, 0.0, 1.0));
+        // Both luminous surfaces use the same team color and spotlight mask.
+        if (tribuneFieldMarkings > 0.5 || tribuneHoverStrength > 0.5) {
+          toned = mix(vec3(1.25), tribuneHoverColor * 1.65, tribuneHoverStrength);
+        }
+        // The overview tint reaches zero wherever the spotlight fully reveals the surface.
+        float tintWeight = tribuneShade * (1.0 - spotCoverage);
+        vec3 overviewColor = (tribuneShaderTest > 1.5 && tribuneShaderTest < 2.5)
+          ? finalColor.rgb : mix(finalColor.rgb, toned, tintWeight);
+        // Overview: architectural clay remains visible; only the empty WebGL background is transparent.
+        // Detail: selected house always stays visible, all other geometry only inside
+        // the WORLD-SPACE spotlight. No circular CSS frame or rectangular cutoff.
+        if (tribuneShaderTest < 2.5 &&
+            tribuneDetailBlend > 0.0001 && tribuneSelected < 0.5) {
+          bool skipDistance = tribuneShaderTest > 0.5 && tribuneShaderTest < 1.5;
+          float detailCoverage = spotCoverage;
+          if (tribuneUseCone > 0.5 && !skipDistance) {
+            detailCoverage = tribuneConeCoverage(vPositionW);
+          }
+          float visibility = mix(1.0, detailCoverage, tribuneDetailBlend);
+          // Ordered Bayer dithering: avoids expensive alpha blending and sorting.
+          vec2 pixel = mod(floor(gl_FragCoord.xy), 4.0);
+          float index = pixel.x + pixel.y * 4.0;
+          float threshold = 0.0;
+          if (index < 0.5) threshold = 0.03125;
+          else if (index < 1.5) threshold = 0.53125;
+          else if (index < 2.5) threshold = 0.15625;
+          else if (index < 3.5) threshold = 0.65625;
+          else if (index < 4.5) threshold = 0.78125;
+          else if (index < 5.5) threshold = 0.28125;
+          else if (index < 6.5) threshold = 0.90625;
+          else if (index < 7.5) threshold = 0.40625;
+          else if (index < 8.5) threshold = 0.21875;
+          else if (index < 9.5) threshold = 0.71875;
+          else if (index < 10.5) threshold = 0.09375;
+          else if (index < 11.5) threshold = 0.59375;
+          else if (index < 12.5) threshold = 0.96875;
+          else if (index < 13.5) threshold = 0.46875;
+          else if (index < 14.5) threshold = 0.84375;
+          else threshold = 0.34375;
+          if (visibility < threshold) discard;
+        }
+        finalColor.rgb = mix(overviewColor, finalColor.rgb, tribuneDetailBlend);
+        } // shader test 4: bypass the entire atmosphere fragment code
       `,
     };
   }
 }
-function addMask(meshes: Mesh[], kind: "spot"|"wipe"|"roof"|"columns") {
-  const unique = new Set<Material>();
+const atmosphereByMesh = new Map<Mesh, AtmospherePlugin>();
+// Keep imported materials for an isolated plugin-on/off performance comparison.
+const importedMaterialByMesh = new Map<Mesh, Material>();
+// V5: separate hover highlight from the clay/spotlight fragment shader.
+const teamHighlight = new HighlightLayer("tribuneTeamHighlight", scene, { blurHorizontalSize: 0.7, blurVerticalSize: 0.7 });
+let lastGlowTeam: LoadedTeam | null = null;
+// V10: A GLB is an independent selection domain. Sharing a material *within*
+// one import preserves per-team selected state and per-role accent behavior.
+// Never deduplicate by name: materials with equal names can have different data.
+const materialOptimization = {
+  enabled: true,
+  importedMeshes: 0,
+  uniqueOriginalMaterials: new Set<Material>(),
+  originalClones: 0,
+  optimizedClones: 0,
+  actualClones: 0,
+  sharedMeshCount: 0,
+};
+const unoptimizedMaterialByMesh = new Map<Mesh, Material>();
+const optimizedMaterialByMesh = new Map<Mesh, Material>();
+const pluginByMaterial = new Map<Material, AtmospherePlugin>();
+const materialKindByMesh = new Map<Mesh, "architecture" | "roof">();
+type AtmosphereRole = "normal" | "billboard" | "field" | "fieldMarkings";
+function addAtmosphere(meshes: Mesh[], kind: "architecture" | "roof" = "architecture", role: AtmosphereRole = "normal") {
+  // Local cache is deliberate: each call is a separate team/architectural domain.
+  const sharedByOriginal = new Map<Material, Material>();
   for (const mesh of meshes) {
-    // Clone material per mesh: a material shared by stadium/roof must not share mask behavior.
-    if (!mesh.material) {
-      mesh.material = new StandardMaterial("fallback_" + mesh.name, scene);
-    }
+    if (!mesh.material) mesh.material = new StandardMaterial("fallback_" + mesh.name, scene);
     const original = mesh.material;
-    const cloned = original.clone(original.name + "_" + kind + "_" + mesh.uniqueId);
-    if (!cloned) continue;
-    mesh.material = cloned;
-    if (unique.has(cloned)) continue;
-    unique.add(cloned);
-    plugins.push(new MaskPlugin(cloned, kind));
-  }
-}
-
-// Permanent cyan outlines from meaningful mesh edges (not triangle diagonals).
-// World-space line vertices remain fixed in the axonometric view.
-function extractEdges(mesh: Mesh): Vector3[][] {
-  const positions = mesh.getVerticesData("position");
-  const indices = mesh.getIndices();
-  if (!positions || !indices) return [];
-  mesh.computeWorldMatrix(true);
-  const world = mesh.getWorldMatrix();
-  const vertices: Vector3[] = [];
-  for (let i=0; i<positions.length; i+=3)
-    vertices.push(Vector3.TransformCoordinates(new Vector3(positions[i],positions[i+1],positions[i+2]), world));
-  const edges = new Map<string,{a:number;b:number;normals:Vector3[]}>();
-  const add = (a:number,b:number,n:Vector3) => {
-    const key = Math.min(a,b)+":"+Math.max(a,b);
-    const existing = edges.get(key);
-    if (existing) existing.normals.push(n);
-    else edges.set(key,{a,b,normals:[n]});
-  };
-  for (let i=0;i+2<indices.length;i+=3) {
-    const a=Number(indices[i]),b=Number(indices[i+1]),c=Number(indices[i+2]);
-    const n=Vector3.Cross(vertices[b].subtract(vertices[a]),vertices[c].subtract(vertices[a]));
-    if (n.lengthSquared()<1e-10) continue;
-    n.normalize(); add(a,b,n); add(b,c,n); add(c,a,n);
-  }
-  const lines: Vector3[][]=[];
-  for (const e of edges.values())
-    if (e.normals.length===1 || e.normals.some(n=>Vector3.Dot(n,e.normals[0])<SETTINGS.edgeThreshold))
-      lines.push([vertices[e.a],vertices[e.b]]);
-  return lines;
-}
-Effect.ShadersStore["tribuneLinesVertexShader"] = `
-  precision highp float;
-
-  attribute vec3 position;
-
-  uniform mat4 worldViewProjection;
-  uniform mat4 world;
-
-  varying vec3 vWorldPosition;
-
-  void main() {
-    vWorldPosition = (world * vec4(position, 1.0)).xyz;
-    gl_Position = worldViewProjection * vec4(position, 1.0);
-  }
-`;
-Effect.ShadersStore["tribuneLinesFragmentShader"] = `
-  precision highp float;
-
-  uniform vec3 lineColor;
-  uniform float lineBrightness;
-
-  uniform vec3 spotCenter;
-  uniform float spotRadius;
-  uniform float spotSoftness;
-  uniform float hideInSpot;
-  uniform float detailBlend;
-
-  varying vec3 vWorldPosition;
-
-  void main() {
-    float brightness = 1.0;
-
-    if (hideInSpot > 0.5 && spotRadius > 0.0) {
-      float d = distance(vWorldPosition.xz, spotCenter.xz);
-
-      float inner = spotRadius * (1.0 - spotSoftness);
-
-      brightness = smoothstep(
-        inner,
-        spotRadius,
-        d
-      );
-
-      if (brightness < 0.01) discard;
+    importedMaterialByMesh.set(mesh, original);
+    materialKindByMesh.set(mesh, kind);
+    materialOptimization.importedMeshes++;
+    materialOptimization.uniqueOriginalMaterials.add(original);
+    materialOptimization.originalClones++;
+    const existing = sharedByOriginal.get(original);
+    let optimized: Material;
+    if (!existing) {
+      const cloned = original.clone(original.name + "_atmosphere_" + mesh.uniqueId);
+      if (!cloned) continue;
+      const plugin = new AtmospherePlugin(cloned, kind);
+      plugin.role = role;
+      pluginByMaterial.set(cloned, plugin);
+      sharedByOriginal.set(original, cloned);
+      optimized = cloned;
+      unoptimizedMaterialByMesh.set(mesh, cloned);
+      materialOptimization.optimizedClones++;
+    } else {
+      optimized = existing;
+      materialOptimization.sharedMeshCount++;
+      // Create the old per-mesh material lazily, only if baseline is requested.
     }
-
-    if (hideInSpot > 0.5) brightness *= (1.0 - detailBlend);
-    if (brightness < 0.01) discard;
-    gl_FragColor = vec4(
-      lineColor * lineBrightness * brightness,
-      1.0
-    );
+    optimizedMaterialByMesh.set(mesh, optimized);
+    mesh.material = optimized;
+    atmosphereByMesh.set(mesh, pluginByMaterial.get(optimized)!);
   }
-`;
-const outlineMaterial = new ShaderMaterial("cyanLines", scene,
-  {vertex:"tribuneLines",fragment:"tribuneLines"},
-  {attributes:["position"],uniforms:["worldViewProjection","world","lineColor","lineBrightness","spotCenter","spotRadius","spotSoftness","hideInSpot","detailBlend"]});
-outlineMaterial.setColor3("lineColor",SETTINGS.outlineColor);
-outlineMaterial.setFloat("lineBrightness",SETTINGS.outlineBrightness);
-outlineMaterial.disableDepthWrite = true;
-outlineMaterial.backFaceCulling = false;
-outlineMaterial.depthFunction = Engine.LEQUAL;
-
-// The field is always visible. Stadium and blank lines disappear under the spotlight.
-outlineMaterial.setFloat("hideInSpot", 0);
-outlineMaterial.setFloat("detailBlend", 0);
-const revealOutlineMaterial = outlineMaterial.clone("revealOutlineMaterial")!;
-revealOutlineMaterial.setFloat("hideInSpot", 1);
-revealOutlineMaterial.setFloat("detailBlend", 0);
-revealOutlineMaterial.setVector3("spotCenter", spotlightCenter);
-revealOutlineMaterial.setFloat("spotRadius", -1);
-revealOutlineMaterial.setFloat("spotSoftness", SETTINGS.spotlightSoftness);
-
-// Invisible depth geometry occludes rear edges; it writes Z but not color.
-const depthMaterial = new StandardMaterial("occlusionOnly",scene);
-depthMaterial.disableColorWrite = true;
-depthMaterial.disableDepthWrite = false;
-depthMaterial.backFaceCulling = true;
-// Lines draw in group 1, after all depth occluders in group 0.
-scene.setRenderingAutoClearDepthStencil(1,false);
-
-const stadiumDepthMaterial = depthMaterial.clone("stadiumDepthMaterial")!;
-new MaskPlugin(stadiumDepthMaterial, "inverseSpot");
-
-const blankDepthMaterial = depthMaterial.clone(
-  "blankDepthMaterial"
-)!;
-
-new MaskPlugin(blankDepthMaterial, "inverseSpot");
-
-async function importModel(file:string): Promise<Mesh[]> {
-  const result = await SceneLoader.ImportMeshAsync("",options.modelsUrl,file,scene);
-  return result.meshes.filter((m):m is Mesh=>m instanceof Mesh && m.getTotalVertices()>0);
+  refreshMaterialOptimizerPanel();
 }
-function createOutlines(label:string, meshes:Mesh[], occlude:boolean) {
-const lines: Vector3[][] = [];
-
-for (const mesh of meshes) {
-  const edges = extractEdges(mesh);
-
-  for (const edge of edges) {
-    lines.push(edge);
+function applyMaterialOptimization() {
+  // Switch material ownership only when not in the Flat/GLB substitution test.
+  // Shared material instances remain scoped to one GLB import, so team selection
+  // and role uniforms do not leak between teams.
+  if (perfMode === "C" || perfMode === "D") {
+    console.info("[Tribune materials] Switch to A, B, E or F before comparing optimization");
+    return;
   }
+  for (const [mesh, optimized] of optimizedMaterialByMesh) {
+    if (mesh.isDisposed()) continue;
+    let material = materialOptimization.enabled ? optimized : unoptimizedMaterialByMesh.get(mesh);
+    if (!material && !materialOptimization.enabled) {
+      const original = importedMaterialByMesh.get(mesh);
+      if (!original) continue;
+      const cloned = original.clone(original.name + "_baseline_" + mesh.uniqueId);
+      if (!cloned) continue;
+      const basePlugin = pluginByMaterial.get(optimized);
+      const plugin = new AtmospherePlugin(cloned, materialKindByMesh.get(mesh) ?? "architecture");
+      plugin.role = basePlugin?.role ?? "normal";
+      plugin.selected = basePlugin?.selected ?? false;
+      pluginByMaterial.set(cloned, plugin);
+      unoptimizedMaterialByMesh.set(mesh, cloned);
+      material = cloned;
+    }
+    if (!material) continue;
+    mesh.material = material;
+    atmosphereByMesh.set(mesh, pluginByMaterial.get(material)!);
+  }
+  updateSelectedAtmosphere(selectedDetailTeam);
+  refreshMaterialOptimizerPanel();
 }
-  if (lines.length) {
-    const outline = CreateLineSystem(label+"_outlines",{lines},scene);
-    outline.isPickable=false;
-    outline.applyFog=false;
-    outline.renderingGroupId=1;
-    outline.material=(label === "blank" || label === "stadium")
-      ? revealOutlineMaterial : outlineMaterial;
+function logMaterialAudit() {
+  const activeMaterials = new Set<Material>();
+  for (const mesh of atmosphereByMesh.keys()) if (!mesh.isDisposed() && mesh.material) activeMaterials.add(mesh.material);
+  const report = {
+    importedMeshes: materialOptimization.importedMeshes,
+    uniqueOriginalMaterialObjects: materialOptimization.uniqueOriginalMaterials.size,
+    baselineAtmosphereMaterials: materialOptimization.originalClones,
+    optimizedAtmosphereMaterials: materialOptimization.optimizedClones,
+    potentialSavedMaterials: materialOptimization.originalClones - materialOptimization.optimizedClones,
+    activeAtmosphereMaterials: activeMaterials.size,
+    enabled: materialOptimization.enabled,
+  };
+  console.table(report);
+  return report;
+}
+let materialOptimizerLabel: HTMLElement | null = null;
+function refreshMaterialOptimizerPanel() {
+  if (!materialOptimizerLabel) return;
+  materialOptimizerLabel.textContent = `Materials: ${materialOptimization.enabled ? "SHARED" : "BASELINE"} · ${materialOptimization.optimizedClones}/${materialOptimization.originalClones} clones`;
+}
+
+function updateSelectedAtmosphere(team: LoadedTeam | null) {
+  for (const plugin of pluginByMaterial.values()) plugin.selected = false;
+  if (team) for (const mesh of team.meshes) {
+    for (const material of [optimizedMaterialByMesh.get(mesh), unoptimizedMaterialByMesh.get(mesh)]) {
+      const plugin = material && pluginByMaterial.get(material);
+      if (plugin) plugin.selected = true;
+    }
   }
-  if (occlude) for (const m of meshes) {
-    m.material =
-  label === "blank"
-    ? blankDepthMaterial
-    : depthMaterial;
-    m.isPickable=false;
-    m.renderingGroupId=0;
-    m.receiveShadows=false;
-  }
-  
 }
 
 let stadiumMeshes: Mesh[]=[];
+let highlightAmount = 0;
 let teamData:LoadedTeam[]=[];
 // Constant-time mesh-to-team lookup for scene picking.
 const teamByMesh = new Map<Mesh, LoadedTeam>();
@@ -631,52 +686,73 @@ let stadiumCenter = Vector3.Zero();
 const worldPointer = new Vector3(0,-10000,0);
 const pointer = new Vector2(-9999,-9999);
 let pointerInside=false;
-let activeTeam:LoadedTeam|null=null;
-let currentGlowStrength=0;
-let desiredGlowStrength=0;
+
 // HighlightLayer uses original team meshes. The former depth-only proxy material
 // suppressed its color output, making the glow practically invisible.
 const teamLabel=document.createElement("div");
-teamLabel.className="tribuneTip";
-teamLabel.style.cssText="position:absolute;display:none;padding:12px 16px;background:rgba(5,10,18,.92);color:white;border:1px solid #29647a;border-radius:8px;font:14px Arial,sans-serif;pointer-events:none;z-index:1000";
-layout.appendChild(teamLabel);
+teamLabel.style.cssText="position:fixed;display:none;padding:12px 16px;background:rgba(5,10,18,.92);color:white;border:1px solid #29647a;border-radius:8px;font:14px Arial,sans-serif;pointer-events:none;z-index:1000";
+if (diagnosticsEnabled) document.body.appendChild(teamLabel);
 const introText=document.createElement("div");
 introText.textContent="TRIBUNE";
-introText.hidden = bare; // the intro caption belongs to the standalone page only
+introText.hidden = bare;
 introText.style.cssText="position:absolute;left:50%;top:8%;transform:translateX(-50%);color:#7be9ff;letter-spacing:.55em;font:600 18px Arial;pointer-events:none;z-index:20;text-shadow:0 0 25px #14c6ff";
 layout.appendChild(introText);
-// Diagnostic: preserve untouched GLB materials before adding the reveal plugin.
-const originalTeamMaterials = new Map<Mesh, Material | null>();
 let materialDiagnosticMode: "masked" | "original" | "standard" = "masked";
-let diagnosticStandardMesh: Mesh | null = null;
-const diagnosticStandardMaterial = new StandardMaterial("DEBUG_Carabell_standard", scene);
-diagnosticStandardMaterial.diffuseColor = new Color3(0.8, 0.8, 0.8);
-diagnosticStandardMaterial.specularColor = new Color3(0.04, 0.04, 0.04);
 function applyMaterialDiagnostic() {
   const carabell = teamData.find(t => t.config.id === "carabell");
   if (!carabell) return;
-  // Only replace materials after the flight finishes; restore before flying back.
-  const active = detailMode && !returningToOverview && !cameraTransition &&
-    selectedDetailTeam?.config.id === "carabell";
-  const mode = active ? materialDiagnosticMode : "masked";
-  if (!diagnosticStandardMesh) {
-    const candidates = carabell.meshes.filter(m => m.getTotalVertices() > 0 && m.getVerticesData("normal"));
-    diagnosticStandardMesh = candidates.reduce<Mesh | null>((best, m) =>
-      !best || m.getTotalVertices() > best.getTotalVertices() ? m : best, null);
-  }
+  // Keep the architectural shader active in this edition.
   for (const mesh of carabell.meshes) {
-    const masked = maskedTeamMaterials.get(mesh);
-    const original = originalTeamMaterials.get(mesh);
-    if (mode === "masked") mesh.material = masked ?? mesh.material;
-    else if (mode === "standard" && mesh === diagnosticStandardMesh) mesh.material = diagnosticStandardMaterial;
-    else mesh.material = original ?? masked ?? mesh.material;
+    mesh.material = maskedTeamMaterials.get(mesh) ?? mesh.material;
   }
-  materialDiagnosticStatus.textContent =
-    `Материалы Carabell: ${mode === "masked" ? "с маской" : mode === "original" ? "оригинальные GLB" : "StandardMaterial на одном меше"}` +
-    (mode === "standard" && diagnosticStandardMesh ? ` · ${diagnosticStandardMesh.name}` : "");
+  materialDiagnosticStatus.textContent = "????????? Carabell: ? ??????";
 }
+// Load renderable meshes from an exported GLB; keep the original material setup.
+let loadedModelCount = 0;
+let worldLoaded = false;
+async function importModel(file: string): Promise<Mesh[]> {
+  const result = await SceneLoader.ImportMeshAsync("", options.modelsUrl, file, scene);
+  const meshes = result.meshes.filter((mesh): mesh is Mesh =>
+    mesh instanceof Mesh && mesh.getTotalVertices() > 0
+  );
+  if (meshes.length) loadedModelCount++;
+  return meshes;
+}
+
 const maskedTeamMaterials = new Map<Mesh, Material | null>();
 let billboardMeshes: Mesh[] = [];
+
+function widenFieldMarkings(mesh: Mesh) {
+  const positions = mesh.getVerticesData(VertexBuffer.PositionKind, true, true);
+  const normals = mesh.getVerticesData(VertexBuffer.NormalKind);
+  if (!positions || !normals) return;
+
+  // The GLB splits vertices between the top and side faces. Move coincident
+  // vertices together, using the horizontal normals from the sides.
+  const vertexKey = (i: number) =>
+    `${Math.round(positions[i] * 10000)},${Math.round(positions[i + 2] * 10000)}`;
+  const outwardByVertex = new Map<string, Vector3>();
+  for (let i = 0; i < positions.length; i += 3) {
+    if (Math.abs(normals[i + 1]) > 0.5) continue;
+    const key = vertexKey(i);
+    const outward = outwardByVertex.get(key) ?? Vector3.Zero();
+    outward.x += normals[i];
+    outward.z += normals[i + 2];
+    outwardByVertex.set(key, outward);
+  }
+  // Add 0.225 m on each side of the original 0.15 m strip.
+  const edgeOffset = 0.225;
+  for (let i = 0; i < positions.length; i += 3) {
+    const outward = outwardByVertex.get(vertexKey(i));
+    if (!outward) continue;
+    outward.normalize();
+    positions[i] += outward.x * edgeOffset;
+    positions[i + 2] += outward.z * edgeOffset;
+  }
+  mesh.makeGeometryUnique();
+  mesh.setVerticesData(VertexBuffer.PositionKind, positions);
+}
+
 async function loadWorld() {
   try {
     stadiumMeshes=await importModel(SETTINGS.stadiumFile);
@@ -691,33 +767,27 @@ async function loadWorld() {
     camera.setTarget(stadiumCenter);
     spotlightCenter=stadiumCenter.clone();
     spotlightCenter.y=-10000;
-    addMask(stadiumMeshes,"spot");
+    addAtmosphere(stadiumMeshes);
     for(const m of stadiumMeshes) {m.receiveShadows=true;shadows.addShadowCaster(m);m.isPickable=false;}
-    // Separate depth-only copies for edge occlusion. Their source materials remain intact.
-    const stadiumOccluders=stadiumMeshes.map(m=>{
-      const clone=m.clone("depth_"+m.name,null,false)!;
-      clone.material=stadiumDepthMaterial;clone.isPickable=false;clone.renderingGroupId=0;
-      clone.receiveShadows=false;
-      return clone;
-    });
-    void stadiumOccluders;
+  } catch(e) {console.error("STADIUM FAILED:",e);}
 
-    createOutlines("stadium",stadiumMeshes,false);  } catch(e) {console.error("STADIUM FAILED:",e);}
-
-  // field: cyan lines only; stadium surface already provides the pitch.
-  try {
-    const fieldMeshes = await importModel(SETTINGS.fieldFile);
-    // Pitch surface reference: unlike stadiumCenter.y, this is near the actual field level.
-    let minFieldY = Infinity;
-    for (const mesh of fieldMeshes) {
-      mesh.computeWorldMatrix(true);
-      minFieldY = Math.min(minFieldY, mesh.getBoundingInfo().boundingBox.minimumWorld.y);
-    }
-    if (Number.isFinite(minFieldY)) pitchGroundY = minFieldY;
-    createOutlines("field", fieldMeshes, true);
-  } catch(e){console.error("FIELD FAILED:",e);}
-  // blanks: cyan lines only; invisible depth geometry hides rear edges.
-  try {createOutlines("blank",await importModel(SETTINGS.blankFile),true);} catch(e){console.error("BLANK FAILED:",e);}
+   // Field and blank structures now use the same clay/reveal shader as the stadium.
+   try {
+     const fieldMeshes = await importModel(SETTINGS.fieldFile);
+     let minFieldY = Infinity;
+     for (const mesh of fieldMeshes) {
+       mesh.computeWorldMatrix(true);
+       minFieldY = Math.min(minFieldY, mesh.getBoundingInfo().boundingBox.minimumWorld.y);
+       mesh.isPickable = false;
+     }
+     if (Number.isFinite(minFieldY)) pitchGroundY = minFieldY;
+     // Circle009 is the painted line geometry in field.glb. The other meshes are the goals.
+     const markings = fieldMeshes.filter(mesh => mesh.name === "Circle009");
+     for (const mesh of markings) widenFieldMarkings(mesh);
+     addAtmosphere(fieldMeshes.filter(mesh => !markings.includes(mesh)), "architecture", "field");
+     if (markings.length) addAtmosphere(markings, "architecture", "fieldMarkings");
+   } catch(e) { console.error("FIELD FAILED:", e); }
+   // Blank houses deliberately not loaded in this experiment.
 
   for(const config of TEAMS) {
     try {
@@ -733,8 +803,7 @@ async function loadWorld() {
         shadows.addShadowCaster(m);
         // Detail shadow casters are assigned only for the selected team.
       }
-      if (config.id === "carabell") for (const mesh of meshes) originalTeamMaterials.set(mesh, mesh.material);
-      addMask(meshes,"spot");
+      addAtmosphere(meshes);
       if (config.id === "carabell") for (const mesh of meshes) maskedTeamMaterials.set(mesh, mesh.material);
       const center=min.add(max).scale(.5);
       const radius=max.subtract(min).length()*.5;
@@ -749,7 +818,7 @@ async function loadWorld() {
     const billboards = await importModel(SETTINGS.billboardFile);
 billboardMeshes = billboards;
 lastBillboardEnabled = null;
-addMask(billboards, "spot");
+addAtmosphere(billboards, "architecture", "billboard");
 
 for (const m of billboards) {
   m.isPickable = false;
@@ -764,7 +833,7 @@ for (const m of billboards) {
       roofMeshes.push(...meshes);
       if (file === SETTINGS.roofFile) roofDetailMeshes.push(...meshes);
       else columnDetailMeshes.push(...meshes);
-      addMask(meshes, file === SETTINGS.roofFile ? "roof" : "columns");
+      addAtmosphere(meshes, "roof");
       for(const m of meshes){
         m.isPickable=false;
         m.receiveShadows=true;
@@ -774,22 +843,19 @@ for (const m of billboards) {
       }
     }catch(e){console.error("INTRO PART FAILED:",file,e);}
   }
-  statusLine.style.display="none";
-  await whenVisible();
-  introFinished=!SETTINGS.introEnabled || !!options.reducedMotion;
-  if(introFinished){wipeProgress=1;introText.style.display="none";for(const m of roofMeshes)m.setEnabled(false);}
+  introFinished=!SETTINGS.introEnabled;
+  if(introFinished){introText.style.display="none";for(const m of roofMeshes)m.setEnabled(false);}
   else {
     // Wait, then sweep 0 -> 1; the mask reveals the stadium without camera motion.
     const start=performance.now()+SETTINGS.introHoldMs;
     const tick=()=>{
       const t=Math.min(1,Math.max(0,(performance.now()-start)/SETTINGS.introWipeMs));
-      wipeProgress=t*t*(3-2*t);
       if(t<1) requestAnimationFrame(tick);
       else {introFinished=true;introText.style.display="none";for(const m of roofMeshes)m.setEnabled(false);}
     };
     requestAnimationFrame(tick);
   }
-  
+  console.log("TRIBUNE READY; teams:",teamData.length);
 }
 
 // The spotlight follows the intersection of the pointer ray with the horizontal
@@ -824,7 +890,7 @@ function getHoveredTeam(): LoadedTeam | null {
   return teamByMesh.get(hit.pickedMesh as Mesh) ?? null;
 }
 
-function updateTeamHighlight(dt:number) {
+function updateTeamHighlight() {
   let nearest: LoadedTeam | null = null;
   let best = Infinity;
   if (!detailMode && spotlightActive) for (const team of teamData) {
@@ -837,55 +903,121 @@ function updateTeamHighlight(dt:number) {
     }
   }
 
-  // Only spotlight proximity controls the team outline.
-  if (nearest !== activeTeam) {
-    if (activeTeam) for (const mesh of activeTeam.meshes) {
-      glow.removeMesh(mesh);
-      mesh.renderOutline = false;
-    }
-    activeTeam = nearest;
-    if (activeTeam) {
-      const color = Color3.FromHexString(activeTeam.config.color);
-      for (const mesh of activeTeam.meshes) {
-        mesh.outlineColor = color;
-        mesh.outlineWidth = 0.08;
-        mesh.renderOutline = true;
-      }
-    }
-    currentGlowStrength = 0;
-    if (activeTeam) {
-      const glowColor = Color3.FromHexString(activeTeam.config.color).scale(2.5);
-      for (const mesh of activeTeam.meshes) glow.addMesh(mesh, glowColor);
-    }
-  }
-
-  desiredGlowStrength = activeTeam ? 1 : 0;
-  const speed = dt / Math.max(.001, desiredGlowStrength ? SETTINGS.teamGlowFadeIn : SETTINGS.teamGlowFadeOut);
-  currentGlowStrength += (desiredGlowStrength - currentGlowStrength) * Math.min(1, speed);
-  glow.blurHorizontalSize = 2 + currentGlowStrength * 2;
-  glow.blurVerticalSize = 2 + currentGlowStrength * 2;
 
   // Re-evaluate picking every frame because the camera rotates even with a still pointer.
   const hoveredTeam = getHoveredTeam();
-  teamLabel.style.display = hoveredTeam ? "block" : "none";
-  if (hoveredTeam) {
+  if (diagnosticsEnabled) teamLabel.style.display = hoveredTeam ? "block" : "none";
+  if (diagnosticsEnabled && hoveredTeam) {
     teamLabel.textContent = [
       hoveredTeam.config.name.toUpperCase(),
       hoveredTeam.config.country,
       hoveredTeam.config.info
     ].filter(Boolean).join(" · ");
     const rect = canvas.getBoundingClientRect();
-    const box = layout.getBoundingClientRect();
-    teamLabel.style.left = (rect.left - box.left + pointer.x + 18) + "px";
-    teamLabel.style.top = (rect.top - box.top + pointer.y + 18) + "px";
+    teamLabel.style.left = (rect.left + pointer.x + 18) + "px";
+    teamLabel.style.top = (rect.top + pointer.y + 18) + "px";
   }
   canvas.style.cursor = hoveredTeam ? "pointer" : "default";
-  const shownTeam = selectedDetailTeam ?? hoveredTeam;
-  selectedName.textContent = shownTeam?.config.name.toUpperCase() ?? "EXPLORE THE TEAMS";
-  selectedMeta.textContent = shownTeam
-    ? [shownTeam.config.country, shownTeam.config.info].filter(Boolean).join(" · ") || "Football club"
-    : "Move the cursor over the stadium";
+  // Resolve one color for the house outline and both luminous surfaces.
+  const accentTeam = detailMode ? null : (hoveredTeam ?? nearest);
+  if (accentTeam !== lastGlowTeam) {
+    if (lastGlowTeam) {
+      for (const mesh of lastGlowTeam.meshes) teamHighlight.removeMesh(mesh);
+    }
+    activeTeamAccentColor = accentTeam ? Color3.FromHexString(accentTeam.config.color) : null;
+    if (accentTeam && activeTeamAccentColor) {
+      for (const mesh of accentTeam.meshes) teamHighlight.addMesh(mesh, activeTeamAccentColor);
+    }
+    lastGlowTeam = accentTeam;
+  }
+  highlightAmount = accentTeam ? 1 : 0;
 }
+// SPOTLIGHT SHADER PROFILER: choose A (Full) or E (Plugin) in the right panel.
+// D (GLB) bypasses the plugin completely, so this control has no effect in D.
+const shaderPanel = document.createElement("div");
+shaderPanel.style.cssText = "position:fixed;left:12px;top:98px;z-index:2100;background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:10px;font:12px/1.5 monospace;max-width:310px";
+const shaderTitle = document.createElement("div");
+shaderTitle.textContent = "TRIBUNE · SPOTLIGHT PROFILER";
+shaderTitle.style.cssText = "font-weight:bold;margin-bottom:6px";
+shaderPanel.appendChild(shaderTitle);
+const shaderHelp = document.createElement("div");
+shaderHelp.style.cssText = "font-size:11px;color:#9fc7d4;margin-bottom:7px";
+shaderHelp.textContent = "Выбери E · Plugin справа. Сравни FPS при одинаковом ракурсе. Режимы меняют внешний вид намеренно.";
+shaderPanel.appendChild(shaderHelp);
+const shaderButtons = document.createElement("div");
+shaderButtons.style.cssText = "display:grid;grid-template-columns:1fr 1fr;gap:5px";
+shaderPanel.appendChild(shaderButtons);
+const shaderStatus = document.createElement("div");
+shaderStatus.style.cssText = "font-size:11px;margin-top:7px;color:#9fc7d4";
+shaderPanel.appendChild(shaderStatus);
+if (diagnosticsEnabled) document.body.appendChild(shaderPanel);
+const shaderButtonMap = new Map<number, HTMLButtonElement>();
+function chooseShaderTest(mode: number) {
+  spotlightShaderTest = mode;
+  for (const [id, button] of shaderButtonMap) {
+    button.style.background = id === mode ? "#27728a" : "#122b39";
+    button.style.color = id === mode ? "white" : "#a9c6d3";
+  }
+  shaderStatus.textContent = ["0 · Full mask", "1 · No distance", "2 · No clay",
+    "3 · No dither/discard", "4 · Plugin bypass"][mode];
+  console.log("TRIBUNE SPOTLIGHT SHADER TEST", mode);
+}
+for (const [mode, label] of [
+  [0, "0 · Full mask"], [1, "1 · No distance"],
+  [2, "2 · No clay"], [3, "3 · No discard"],
+  [4, "4 · Bypass plugin"]
+] as const) {
+  const button = document.createElement("button");
+  button.textContent = label;
+  button.style.cssText = "cursor:pointer;padding:7px 5px;border:1px solid #39768b;border-radius:4px;background:#122b39;color:#a9c6d3;font:11px Arial";
+  button.addEventListener("click", () => chooseShaderTest(mode));
+  shaderButtons.appendChild(button);
+  shaderButtonMap.set(mode, button);
+}
+chooseShaderTest(0);
+// TRANSITION ISOLATION: each option changes only the flight, not steady-state rendering.
+type FlightTest = "NORMAL" | "NO_MORPH" | "FIXED_LIGHT" | "DEFER_MASK";
+let flightTest: FlightTest = "NORMAL";
+const flightTestPanel = document.createElement("div");
+flightTestPanel.style.cssText = "position:fixed;left:12px;bottom:12px;z-index:2100;background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:10px;font:12px/1.5 monospace;max-width:340px";
+flightTestPanel.innerHTML = "<b>TRIBUNE · FLIGHT ISOLATION</b><div style='font-size:11px;color:#a7c6d2;margin:5px 0'>Тестируй в режиме D · GLB, затем в A · Full</div>";
+const flightTestButtons = document.createElement("div");
+flightTestButtons.style.cssText = "display:grid;grid-template-columns:1fr 1fr;gap:5px";
+flightTestPanel.appendChild(flightTestButtons);
+const flightTestStatus = document.createElement("div");
+flightTestStatus.style.cssText = "font-size:11px;margin-top:6px;color:#9fc7d4";
+flightTestPanel.appendChild(flightTestStatus);
+if (diagnosticsEnabled) document.body.appendChild(flightTestPanel);
+const flightTestButtonMap = new Map<FlightTest, HTMLButtonElement>();
+function chooseFlightTest(mode: FlightTest) {
+  if (cameraTransition) return; // do not change a test mid-flight
+  flightTest = mode;
+  for (const [id, button] of flightTestButtonMap) {
+    button.style.background = id === mode ? "#27728a" : "#122b39";
+    button.style.color = id === mode ? "#fff" : "#a9c6d3";
+  }
+  flightTestStatus.textContent = "Flight: " + mode;
+  console.log("TRIBUNE FLIGHT TEST", mode);
+}
+for (const [mode, label] of [
+  ["NORMAL", "1 · Normal"], ["NO_MORPH", "2 · No morph"],
+  ["FIXED_LIGHT", "3 · Fixed light"], ["DEFER_MASK", "4 · Deferred mask"]
+] as const) {
+  const button = document.createElement("button");
+  button.textContent = label;
+  button.style.cssText = "cursor:pointer;padding:7px 5px;border:1px solid #39768b;border-radius:4px;background:#122b39;color:#a9c6d3;font:11px Arial";
+  button.title = ({
+    NORMAL:"Current camera, lighting and masking",
+    NO_MORPH:"Camera flies normally; projection switches at the endpoint",
+    FIXED_LIGHT:"Hold overview lighting until arrival, then restore detail lighting",
+    DEFER_MASK:"Do not update selected-house masking until arrival"
+  })[mode];
+  button.addEventListener("click", () => chooseFlightTest(mode));
+  flightTestButtons.appendChild(button);
+  flightTestButtonMap.set(mode, button);
+}
+chooseFlightTest("NORMAL");
+let deferredMaskPending = false;
 // Smooth projection morph: interpolate the projection matrices over the same 1.8s.
 // At both ends the camera uses Babylon's native projection (no frozen matrix).
 function updateProjectionMorph(blend: number) {
@@ -949,17 +1081,29 @@ function updateCameraTransition(dt:number) {
   camera.fov = Math.max(0.05, Math.min(2.5, 2 * Math.atan(currentOrthoHalfHeight / distance)));
   // Smoother quintic easing for projection, with zero velocity and acceleration at endpoints.
   const projectionEase = k*k*k*(k*(k*6-15)+10);
-  updateProjectionMorph(a.fromProjectionBlend + (a.toProjectionBlend-a.fromProjectionBlend)*projectionEase);
-  if(t>=1){ cameraTransition=null; a.onComplete?.(); }
+  if (flightTest === "NO_MORPH") {
+    // Intentional projection jump at the endpoint; isolate the morph cost.
+    updateProjectionMorph(a.fromProjectionBlend);
+  } else {
+    updateProjectionMorph(a.fromProjectionBlend + (a.toProjectionBlend-a.fromProjectionBlend)*projectionEase);
+  }
+  if(t>=1){
+    if (flightTest === "NO_MORPH") updateProjectionMorph(a.toProjectionBlend);
+    cameraTransition=null;
+    if (deferredMaskPending && selectedDetailTeam && !returningToOverview) {
+      updateSelectedAtmosphere(selectedDetailTeam);
+      deferredMaskPending = false;
+    }
+    a.onComplete?.();
+  }
 }
 
 const backButton=document.createElement("button");
-backButton.textContent = bare ? "Back to stadium" : "← BACK TO STADIUM";
 backButton.type = "button";
+backButton.textContent = bare ? "Back to stadium" : "← К СТАДИОНУ";
 backButton.style.cssText="position:absolute;top:24px;right:24px;z-index:1001;display:none;padding:12px 18px;background:#050a12e8;color:#a7efff;border:1px solid #29647a;border-radius:6px;font:600 13px Arial;letter-spacing:.1em;cursor:pointer";
 if (bare) {
   backButton.style.cssText = "display:none";
-  teamLink.textContent = "Open club page";
   actions.append(backButton, teamLink);
 } else {
   layout.appendChild(backButton);
@@ -986,14 +1130,14 @@ spotlightTestButton.addEventListener("click", () => {
 const debugLampMaterial = new StandardMaterial("debugLampEmissive", scene);
 debugLampMaterial.disableLighting = true;
 debugLampMaterial.emissiveColor = new Color3(1, 0.25, 0.08);
-const debugLamp = CreateSphere("DEBUG_spot_source", { diameter: 2.2, segments: 12 }, scene);
+const debugLamp = MeshBuilder.CreateSphere("DEBUG_spot_source", { diameter: 2.2, segments: 12 }, scene);
 debugLamp.material = debugLampMaterial;
 debugLamp.isPickable = false;
 debugLamp.setEnabled(false);
 const debugTargetMaterial = new StandardMaterial("debugSpotTargetLit", scene);
 debugTargetMaterial.diffuseColor = new Color3(1, 1, 1);
 debugTargetMaterial.specularColor = new Color3(0, 0, 0);
-const debugTarget = CreateSphere("DEBUG_spot_target", { diameter: 3, segments: 16 }, scene);
+const debugTarget = MeshBuilder.CreateSphere("DEBUG_spot_target", { diameter: 3, segments: 16 }, scene);
 debugTarget.material = debugTargetMaterial;
 debugTarget.isPickable = false;
 debugTarget.receiveShadows = false;
@@ -1020,13 +1164,15 @@ for (const [mode, label] of [
 }
 lightingPanel.appendChild(materialDiagnosticControls);
 lightingPanel.appendChild(materialDiagnosticStatus);
-
+if (diagnosticsEnabled) document.body.appendChild(lightingPanel);
 
 function openTeam(team:LoadedTeam) {
   if(detailMode || cameraTransition) return;
   savedOverview={alpha:camera.alpha,beta:camera.beta,radius:camera.radius,height:currentOrthoHalfHeight,target:camera.target.clone()};
+  savedOverviewSpot.center.copyFrom(spotlightCenter);
+  savedOverviewSpot.active = spotlightActive;
   detailMode=true;
-  // The circular aperture shrinks from 50% to 42% of the viewport width during the flight.
+  // Seamless rectangular viewport: no CSS aperture in either mode.
   viewport.classList.add("tribuneDetail");
   selectedDetailTeam=team;
   returningToOverview=false;
@@ -1036,21 +1182,22 @@ function openTeam(team:LoadedTeam) {
     spotCasters.length = 0;
     for (const mesh of team.meshes) spotCasters.push(mesh);
   }
-  // Keep the roof loaded; its shader fades it in as detailBlend increases.
-  for (const mesh of [...roofDetailMeshes, ...columnDetailMeshes]) mesh.setEnabled(true);
+  // The roof remains hidden to keep the selected house unobstructed.
+  for (const mesh of [...roofDetailMeshes, ...columnDetailMeshes]) mesh.setEnabled(false);
+  if (flightTest === "DEFER_MASK") deferredMaskPending = true;
+  else updateSelectedAtmosphere(team);
   spotlightCenter.copyFrom(team.center);
   spotlightActive=true;
   teamLabel.style.display="none";
   backButton.style.display = bare ? "" : "block";
+  lightingPanel.style.display="none"; // hidden in visual test
   actions.classList.add("isOpen");
   const href = options.teamHref?.(team.config.id) ?? null;
-  teamLink.style.display = href ? (bare ? "" : "inline-block") : "none";
+  teamLink.style.display = href && bare ? "" : "none";
   if (href) teamLink.href = href;
   materialDiagnosticMode = "masked";
-  // Restore the original Carabell camera geometry for EVERY house:
-  // position lies toward the pitch, just above the HOUSE centre (not pitch level).
-  const towardPitch = stadiumCenter.subtract(team.center);
-  towardPitch.y = 0;
+  // Use the pitch center for azimuth and a fixed upward angle for every house.
+  const towardPitch = new Vector3(-team.center.x, 0, -team.center.z);
   if (towardPitch.lengthSquared() > 0.001) towardPitch.normalize();
   else towardPitch.set(0, 0, 1);
   const aspect = engine.getRenderWidth() / Math.max(1, engine.getRenderHeight());
@@ -1078,92 +1225,36 @@ function openTeam(team:LoadedTeam) {
   const fitHeightDistance = houseHeight / (2 * Math.tan(halfVerticalFov) * SETTINGS.detailHouseFrameFraction);
   const fitWidthDistance = team.radius / Math.max(0.1, Math.sin(halfHorizontalFov)) * 0.90;
   const framedDistance = Math.max(SETTINGS.teamCameraPreferredDistance * 0.6, fitHeightDistance, fitWidthDistance);
-  const eye = team.center.add(rotatedDirection.scale(framedDistance));
-  eye.y = team.center.y + SETTINGS.teamCameraHeightOffset;
-  const offset = eye.subtract(team.center);
+  const lookUpAngle = SETTINGS.detailCameraLookUpDegrees * Math.PI / 180;
+  const offset = rotatedDirection.scale(framedDistance * Math.cos(lookUpAngle));
+  offset.y = -framedDistance * Math.sin(lookUpAngle);
   const radius = offset.length();
   const beta = Math.acos(Math.max(-1, Math.min(1, offset.y / radius)));
   const alpha = Math.atan2(offset.z, offset.x);
   const height = radius * Math.tan(halfVerticalFov);
-  animateCamera({alpha, beta, radius, height, target:team.center}, enableFreeDetailCamera);
+  animateCamera({alpha, beta, radius, height, target:team.center});
 }
 function closeTeam() {
   if(!detailMode || !savedOverview) return;
   const previous=savedOverview;
-  disableFreeDetailCamera();
   materialDiagnosticMode = "masked";
   applyMaterialDiagnostic();
   returningToOverview=true;
-  // Expand the circular aperture back to 50% of the viewport width during return.
+  // Restore overview mode without introducing a frame boundary.
   viewport.classList.remove("tribuneDetail");
   backButton.style.display="none";
+  lightingPanel.style.display="none";
   teamLink.style.display="none";
   actions.classList.remove("isOpen");
   debugLamp.setEnabled(false);
   debugTarget.setEnabled(false);
   animateCamera(previous,()=>{
     detailMode=false; selectedDetailTeam=null; savedOverview=null; returningToOverview=false;
+    deferredMaskPending = false;
+    updateSelectedAtmosphere(null);
     for (const mesh of [...roofDetailMeshes, ...columnDetailMeshes]) mesh.setEnabled(false);
   });
 }
-// TEMPORARY DETAIL CAMERA DEBUG: orbit, pan, zoom and fly around the house.
-// Controls are enabled ONLY after the 1.8-second close-up flight completes.
-let freeDetailCamera = false;
-const freeMoveKeys = new Set<string>();
-const freeCameraHelp = document.createElement("div");
-freeCameraHelp.textContent = "КАМЕРА: ЛКМ — вращение · ПКМ — панорама · колесо — масштаб · WASD — движение · Q/E — вниз/вверх";
-freeCameraHelp.style.cssText = "position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:1003;display:none;padding:9px 13px;background:#050a12dc;border:1px solid #29647a;border-radius:6px;color:#bcefff;font:12px Arial;pointer-events:none;white-space:nowrap";
-
-function enableFreeDetailCamera() {
-  if (!detailMode || returningToOverview || cameraTransition || freeDetailCamera) return;
-  freeDetailCamera = true;
-  camera.lowerRadiusLimit = 1;
-  camera.upperRadiusLimit = 1000;
-  camera.lowerBetaLimit = 0.05;
-  camera.upperBetaLimit = Math.PI - 0.05;
-  camera.wheelPrecision = 25;
-  camera.panningSensibility = 120;
-  camera.angularSensibilityX = 1100;
-  camera.angularSensibilityY = 1100;
-  camera.attachControl(canvas, true);
-}
-function disableFreeDetailCamera() {
-  freeDetailCamera = false;
-  freeMoveKeys.clear();
-  camera.detachControl();
-  freeCameraHelp.style.display = "none";
-}
-window.addEventListener("keydown", e => {
-  if (!freeDetailCamera || e.altKey || e.ctrlKey || e.metaKey) return;
-  const key = e.key.toLowerCase();
-  if (["w","a","s","d","q","e"].includes(key)) {
-    freeMoveKeys.add(key);
-    e.preventDefault();
-  }
-});
-window.addEventListener("keyup", e => freeMoveKeys.delete(e.key.toLowerCase()));
-window.addEventListener("blur", () => freeMoveKeys.clear());
-function updateFreeDetailCamera(dt: number) {
-  if (!freeDetailCamera || cameraTransition) return;
-  // Translate the camera AND its target, preserving the current view direction.
-  const forward = camera.target.subtract(camera.position);
-  forward.y = 0;
-  if (forward.lengthSquared() < 1e-6) return;
-  forward.normalize();
-  const right = new Vector3(-forward.z, 0, forward.x);
-  const delta = Vector3.Zero();
-  if (freeMoveKeys.has("w")) delta.addInPlace(forward);
-  if (freeMoveKeys.has("s")) delta.subtractInPlace(forward);
-  if (freeMoveKeys.has("d")) delta.addInPlace(right);
-  if (freeMoveKeys.has("a")) delta.subtractInPlace(right);
-  if (freeMoveKeys.has("e")) delta.y += 1;
-  if (freeMoveKeys.has("q")) delta.y -= 1;
-  if (delta.lengthSquared() < 1e-6) return;
-  delta.normalize().scaleInPlace(18 * dt);
-  camera.setTarget(camera.target.add(delta));
-  camera.setPosition(camera.position.add(delta));
-}
-
 // The side list reuses the same guided camera transition as clicking a house.
 for (const config of TEAMS) {
   const button = document.createElement("button");
@@ -1177,6 +1268,8 @@ for (const config of TEAMS) {
   teamList.appendChild(button);
 }
 backButton.addEventListener("click",closeTeam);
+const onKeyEscape = (e: KeyboardEvent) => { if (e.key === "Escape") closeTeam(); };
+window.addEventListener("keydown", onKeyEscape);
 
 canvas.addEventListener("pointermove", e => {
   const rect = canvas.getBoundingClientRect();
@@ -1194,23 +1287,247 @@ canvas.addEventListener("click",()=>{
   if(clickedTeam) openTeam(clickedTeam);
 });
 
+// TRIBUNE PERFORMANCE A-F — reversible rendering diagnostics.
+// A: full scene; B: no post FX; C: flat unlit;
+// D: imported GLB materials, no plugin/FX/highlight;
+// E: atmosphere plugin, no FX/highlight; F: plugin + FX, no highlight.
+// Compare D/E for plugin cost, E/B for highlight, E/F for post FX.
+type PerfMode = "A" | "B" | "C" | "D" | "E" | "F";
+let perfMode: PerfMode = "A";
+const perfOriginalMaterials = new Map<Mesh, Material | null>();
+const perfFlatMaterial = new StandardMaterial("TRIBUNE_PERF_FLAT", scene);
+perfFlatMaterial.disableLighting = true;
+perfFlatMaterial.diffuseColor = new Color3(0.65, 0.72, 0.79);
+perfFlatMaterial.emissiveColor = new Color3(0.65, 0.72, 0.79);
+perfFlatMaterial.specularColor = Color3.Black();
+const perfPanel = document.createElement("div");
+perfPanel.style.cssText = "position:fixed;right:12px;bottom:12px;z-index:2000;min-width:275px;max-width:calc(100vw - 24px);background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:11px;font:12px/1.5 monospace;box-shadow:0 4px 18px #0005";
+const perfTitle = document.createElement("div");
+perfTitle.textContent = "TRIBUNE · ISOLATION TEST A–F";
+perfTitle.style.cssText = "font-weight:bold;letter-spacing:.08em;margin-bottom:8px";
+perfPanel.appendChild(perfTitle);
+const perfButtons = document.createElement("div");
+perfButtons.style.cssText = "display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin-bottom:9px";
+perfPanel.appendChild(perfButtons);
+const perfReadout = document.createElement("div");
+perfReadout.style.whiteSpace = "pre-line";
+perfPanel.appendChild(perfReadout);
+const perfHelp = document.createElement("div");
+perfHelp.style.cssText = "color:#86a8b8;margin-top:7px;font:11px/1.4 Arial";
+perfHelp.textContent = "Тестируй в общем виде: D ↔ E = плагин, E ↔ B = highlight, E ↔ F = FX. После смены жди 5–10 сек, затем сравни FPS.";
+perfPanel.appendChild(perfHelp);
+if (diagnosticsEnabled) document.body.appendChild(perfPanel);
+const perfModeButtons = new Map<PerfMode, HTMLButtonElement>();
+function setPerfMode(next: PerfMode) {
+  if (next === perfMode) return;
+  // Restore atmosphere materials after any material-substitution test.
+  for (const [mesh, material] of perfOriginalMaterials) {
+    if (!mesh.isDisposed()) mesh.material = material;
+  }
+  perfOriginalMaterials.clear();
+  perfMode = next;
+  pipeline.bloomEnabled = next === "A" || next === "F";
+  pipeline.fxaaEnabled = next === "A" || next === "F";
+  pipeline.samples = pipeline.fxaaEnabled ? effectsSamples : 1;
+  teamHighlight.isEnabled = next === "A" || next === "B";
+  if (next === "C" || next === "D") {
+    for (const mesh of atmosphereByMesh.keys()) {
+      if (mesh.isDisposed()) continue;
+      perfOriginalMaterials.set(mesh, mesh.material);
+      mesh.material = next === "C" ? perfFlatMaterial :
+        (importedMaterialByMesh.get(mesh) ?? mesh.material);
+    }
+  }
+  for (const [mode, button] of perfModeButtons) {
+    button.style.background = mode === next ? "#27728a" : "#122b39";
+    button.style.color = mode === next ? "white" : "#a9c6d3";
+  }
+  perfSamples = 0;
+  perfTotalRenderMs = 0;
+  perfMaxRenderMs = 0;
+  perfTotalDrawCalls = 0;
+  perfLastReport = performance.now();
+  console.log("TRIBUNE PERF MODE", next, "substituted meshes:", perfOriginalMaterials.size);
+}
+for (const [mode, label] of [
+  ["A", "A · Full"], ["B", "B · No FX"], ["C", "C · Flat"],
+  ["D", "D · GLB"], ["E", "E · Plugin"], ["F", "F · FX"]
+] as const) {
+  const button = document.createElement("button");
+  button.textContent = label;
+  button.title = ({ A: "Full rendering", B: "No bloom/FXAA, highlight ON",
+    C: "Flat unlit, no bloom/FXAA/highlight", D: "Original GLB, no plugin/FX/highlight",
+    E: "Plugin, no FX/highlight", F: "Plugin and FX, no highlight" })[mode];
+  button.style.cssText = "cursor:pointer;padding:7px 4px;border:1px solid #39768b;border-radius:4px;background:#122b39;color:#a9c6d3;font:11px Arial";
+  button.addEventListener("click", () => setPerfMode(mode));
+  perfButtons.appendChild(button);
+  perfModeButtons.set(mode, button);
+}
+perfModeButtons.get("A")!.style.background = "#27728a";
+perfModeButtons.get("A")!.style.color = "white";
+let perfSamples = 0;
+let perfTotalRenderMs = 0;
+let perfMaxRenderMs = 0;
+let perfTotalDrawCalls = 0;
+let perfLastReport = performance.now();
+function recordPerfFrame(renderMs: number, drawCalls: number) {
+  perfSamples++;
+  perfTotalRenderMs += renderMs;
+  perfMaxRenderMs = Math.max(perfMaxRenderMs, renderMs);
+  perfTotalDrawCalls += drawCalls;
+  const now = performance.now();
+  if (now - perfLastReport < 1000) return;
+  const average = perfTotalRenderMs / Math.max(1, perfSamples);
+  const drawText = (perfTotalDrawCalls / perfSamples).toFixed(0);
+  perfReadout.textContent =
+    `MODE ${perfMode} / ${flightTest} / shader ${spotlightShaderTest} | FPS ${engine.getFps().toFixed(0)}\n` +
+    `scene.render avg: ${average.toFixed(1)} ms\n` +
+    `scene.render max: ${perfMaxRenderMs.toFixed(1)} ms\n` +
+    `draw calls/frame: ${drawText}\n` +
+    `active meshes: ${scene.getActiveMeshes().length}\n` +
+    `shadows: ${detailSpot.shadowEnabled ? "ON" : "OFF"}`;
+  console.log("TRIBUNE PERF SAMPLE", {
+    mode: perfMode, fps: Math.round(engine.getFps()),
+    renderAvgMs: Number(average.toFixed(2)), renderMaxMs: Number(perfMaxRenderMs.toFixed(2)),
+    drawCallsPerFrame: Number(drawText), activeMeshes: scene.getActiveMeshes().length,
+    spotlightShadows: detailSpot.shadowEnabled,
+  });
+  perfSamples = 0;
+  perfTotalRenderMs = 0;
+  perfMaxRenderMs = 0;
+  perfTotalDrawCalls = 0;
+  perfLastReport = now;
+}
+
 const fpsCounter=document.createElement("div");
 fpsCounter.style.cssText="position:fixed;top:16px;left:16px;padding:8px 12px;background:#0009;color:#66ffaa;font:14px monospace;pointer-events:none;z-index:100";
-
+if (diagnosticsEnabled) document.body.appendChild(fpsCounter);
+const materialOptimizerPanel = document.createElement("div");
+materialOptimizerPanel.style.cssText = "position:fixed;right:12px;bottom:62px;z-index:2200;background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:9px;font:12px monospace";
+const materialOptimizerButton = document.createElement("button");
+materialOptimizerButton.style.cssText = "cursor:pointer;background:#164457;color:#fff;border:1px solid #39768b;border-radius:4px;padding:6px 9px";
+materialOptimizerLabel = materialOptimizerButton;
+materialOptimizerButton.addEventListener("click", () => {
+  if (perfMode === "C" || perfMode === "D") {
+    console.warn("Material comparison requires A, B, E or F");
+    return;
+  }
+  materialOptimization.enabled = !materialOptimization.enabled;
+  applyMaterialOptimization();
+  logMaterialAudit();
+});
+materialOptimizerPanel.appendChild(materialOptimizerButton);
+const materialOptimizerAuditButton = document.createElement("button");
+materialOptimizerAuditButton.textContent = "Audit → Console";
+materialOptimizerAuditButton.style.cssText = "cursor:pointer;margin-left:6px;background:#122b39;color:#d9f6ff;border:1px solid #39768b;border-radius:4px;padding:6px 9px";
+materialOptimizerAuditButton.addEventListener("click", () => logMaterialAudit());
+materialOptimizerPanel.appendChild(materialOptimizerAuditButton);
+if (diagnosticsEnabled) document.body.appendChild(materialOptimizerPanel);
+refreshMaterialOptimizerPanel();
+const adaptivePanel = document.createElement("div");
+adaptivePanel.style.cssText="position:fixed;right:12px;bottom:12px;z-index:2200;background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:9px;font:12px monospace";
+const adaptiveToggle = document.createElement("button");
+adaptiveToggle.style.cssText="cursor:pointer;background:#164457;color:#fff;border:1px solid #39768b;border-radius:4px;padding:6px 9px";
+function refreshAdaptivePanel() {
+  adaptiveToggle.textContent = `Adaptive ${adaptiveResolution.enabled ? "ON" : "OFF"} · ${adaptiveResolution.currentScale.toFixed(2)}x`;
+}
+adaptiveToggle.addEventListener("click", () => {
+  adaptiveResolution.enabled = !adaptiveResolution.enabled;
+  adaptiveResolution.samples.length = 0;
+  adaptiveResolution.lowFPSWindows = 0;
+  adaptiveResolution.highFPSWindows = 0;
+  if (!adaptiveResolution.enabled) {
+    adaptiveResolution.currentScale = adaptiveResolution.baseScale;
+    engine.setHardwareScalingLevel(adaptiveResolution.baseScale);
+  }
+  refreshAdaptivePanel();
+});
+adaptivePanel.appendChild(adaptiveToggle);
+if (diagnosticsEnabled) document.body.appendChild(adaptivePanel);
+refreshAdaptivePanel();
+let lastAdaptivePanelRefresh=0;
 let lastBillboardEnabled: boolean | null = null;
 let lastAppliedDiagnosticMode = "";
 let lastAppliedDiagnosticActive = false;
 let last=performance.now();
+let lastFpsUpdate = 0;
+let lastTransitionDiagnostic = 0;
 // Lightweight, always-visible diagnostics during flight (no Inspector required).
 const flightStats = document.createElement("div");
 flightStats.style.cssText = "position:fixed;left:16px;top:54px;z-index:1100;background:#050a12dd;color:#a8f3ff;padding:8px 10px;border:1px solid #29647a;border-radius:5px;font:12px monospace;pointer-events:none;display:none";
+if (diagnosticsEnabled) document.body.appendChild(flightStats);
+let lastFlightStats = 0;
+const spotlightModeButton = document.createElement("button");
+spotlightModeButton.type = "button";
+spotlightModeButton.className = "tribuneTeamButton";
+spotlightModeButton.textContent = "Unified Spotlight";
+spotlightModeButton.setAttribute("aria-pressed", "true");
+spotlightModeButton.addEventListener("click", () => {
+  unifiedSpotlight = !unifiedSpotlight;
+  spotlightModeButton.textContent = unifiedSpotlight ? "Unified Spotlight" : "Legacy Spotlight";
+  spotlightModeButton.setAttribute("aria-pressed", String(unifiedSpotlight));
+});
+if (diagnosticsEnabled) teamList.appendChild(spotlightModeButton);
 
+const benchmark = diagnosticsEnabled ? new PerformanceBenchmark(engine, scene, teamList, (settings) => {
+  settings.team = selectedDetailTeam?.config.id ?? null;
+  settings.perfMode = perfMode;
+  settings.flightTest = flightTest;
+  settings.spotlightShaderTest = spotlightShaderTest;
+  settings.spotlightMode = unifiedSpotlight ? "unified" : "legacy";
+  settings.spotlightOnlyTest = spotlightOnlyTest;
+  settings.materialDiagnosticMode = materialDiagnosticMode;
+  settings.materialSharing = materialOptimization.enabled;
+  settings.adaptive = adaptiveResolution.enabled;
+  settings.hardwareScaling = engine.getHardwareScalingLevel();
+  settings.renderWidth = engine.getRenderWidth();
+  settings.renderHeight = engine.getRenderHeight();
+  settings.devicePixelRatio = window.devicePixelRatio;
+  settings.bloom = pipeline.bloomEnabled;
+  settings.fxaa = pipeline.fxaaEnabled;
+  settings.msaaSamples = pipeline.samples;
+  settings.highlight = teamHighlight.isEnabled;
+  settings.stableShaderFeatures = SETTINGS.stableShaderFeatures;
+  settings.spotlightShadows = detailSpot.shadowEnabled;
+  settings.billboard = lastBillboardEnabled;
+  settings.spotlight = spotlightActive;
+  settings.pointerX = !detailMode && pointerInside ? pointer.x : null;
+  settings.pointerY = !detailMode && pointerInside ? pointer.y : null;
+  settings.camera = scene.activeCamera?.name ?? null;
+  settings.cameraAlpha = camera.alpha;
+  settings.cameraBeta = camera.beta;
+  settings.cameraRadius = camera.radius;
+  settings.cameraTargetX = camera.target.x;
+  settings.cameraTargetY = camera.target.y;
+  settings.cameraTargetZ = camera.target.z;
+  settings.cameraFov = camera.fov;
+  settings.freeDetailCamera = false;
+  settings.warmingMaterials = warmingMaterials;
+  return cameraTransition ? "flight" : detailMode ? "detail" : "overview";
+}, () => {
+  if (!worldLoaded || !introFinished) return "Wait for the scene to load.";
+  if (loadedModelCount !== TEAMS.length + 5) return "Benchmark requires all stadium and team GLBs.";
+  if (cameraTransition || warmingMaterials) return "Wait for the flight or warmup to finish.";
+  const environmentReady = scene.environmentTexture?.isReady() ?? false;
+  if (!environmentReady || !scene.isReady(true)) {
+    logBenchmarkReadiness(scene, environmentReady);
+    return "Wait for textures and shaders to finish loading.";
+  }
+  return null;
+}) : null;
 const frame = ()=>{
-  const now=performance.now(),dt=Math.min(.1,(now-last)/1000);last=now;
+  const now=performance.now();
+  const rawFrameMs = now-last;
+  const dt=Math.min(.1,rawFrameMs/1000);
+  last=now;
+  updateAdaptiveResolution(rawFrameMs, now, !!cameraTransition);
+  if (diagnosticsEnabled && now-lastAdaptivePanelRefresh>1000) {
+    refreshAdaptivePanel();
+    lastAdaptivePanelRefresh=now;
+  }
   // Orbit the camera slowly around the stadium after the intro.
   if (introFinished && !detailMode && !cameraTransition) camera.alpha += SETTINGS.cameraRotationDegreesPerSecond * Math.PI / 180 * dt;
   updateCameraTransition(dt);
-  updateFreeDetailCamera(dt);
   // Smoothstep blends visual modes in sync with the camera animation.
   if (cameraTransition) {
     const t = Math.min(1, cameraTransition.elapsed / cameraTransition.duration);
@@ -1228,31 +1545,35 @@ const frame = ()=>{
   detailSpot.shadowEnabled = SETTINGS.detailShadowsEnabled && !spotlightOnlyTest &&
     detailBlend > 0.001 && !returningToOverview &&
     (SETTINGS.detailShadowsDuringFlight || !cameraTransition);
+  const flightLightingBlend = flightTest === "FIXED_LIGHT" && cameraTransition
+    ? (returningToOverview ? 1 : 0) : detailBlend;
   const detailSun = spotlightOnlyTest ? 0 : SETTINGS.detailSunIntensity;
   const detailAmbient = spotlightOnlyTest ? 0 : SETTINGS.detailAmbientIntensity;
   const detailEnvironment = spotlightOnlyTest ? 0 : SETTINGS.detailEnvironmentIntensity;
-  sun.intensity = overviewSunIntensity + (detailSun - overviewSunIntensity) * detailBlend;
-  ambient.intensity = overviewAmbientIntensity + (detailAmbient - overviewAmbientIntensity) * detailBlend;
-  scene.environmentIntensity = overviewEnvironmentIntensity + (detailEnvironment - overviewEnvironmentIntensity) * detailBlend;
-  // Restore original tone/contrast/curves as the camera enters architectural view.
-  // ACES is enabled for detail only; exposure and contrast blend continuously.
+  sun.intensity = overviewSunIntensity + (detailSun - overviewSunIntensity) * flightLightingBlend;
+  ambient.intensity = overviewAmbientIntensity + (detailAmbient - overviewAmbientIntensity) * flightLightingBlend;
+  scene.environmentIntensity = overviewEnvironmentIntensity + (detailEnvironment - overviewEnvironmentIntensity) * flightLightingBlend;
   // Delay the abrupt ACES switch until the close-up is mostly revealed.
-  imageProcessing.toneMappingEnabled = detailBlend > 0.90;
+  if (!SETTINGS.stableShaderFeatures) imageProcessing.toneMappingEnabled = detailBlend > 0.90;
   imageProcessing.toneMappingType = ImageProcessingConfiguration.TONEMAPPING_ACES;
-  imageProcessing.exposure = overviewExposure + (SETTINGS.detailExposure - overviewExposure) * detailBlend;
-  imageProcessing.contrast = overviewContrast + (SETTINGS.detailContrast - overviewContrast) * detailBlend;
-  imageProcessing.colorCurvesEnabled = detailBlend > 0.98;
+  // Hold the previous grade during flight to avoid invalidating materials each frame.
+  if (!cameraTransition) {
+    imageProcessing.exposure = detailMode ? SETTINGS.detailExposure : overviewExposure;
+    imageProcessing.contrast = detailMode ? SETTINGS.detailContrast : overviewContrast;
+  }
+  if (!SETTINGS.stableShaderFeatures) imageProcessing.colorCurvesEnabled = detailBlend > 0.98;
   // Aerial perspective is used only for the realistic close-up.
   // Avoid switching fog shader variants at the start of the camera flight.
-  scene.fogMode = detailBlend > 0.90 ? Scene.FOGMODE_EXP2 : Scene.FOGMODE_NONE;
-  scene.fogDensity = SETTINGS.detailFogDensity * Math.max(0, (detailBlend - 0.90) / 0.10);
+  if (!SETTINGS.stableShaderFeatures) scene.fogMode = detailBlend > 0.90 ? Scene.FOGMODE_EXP2 : Scene.FOGMODE_NONE;
+  if (!SETTINGS.stableShaderFeatures) scene.fogDensity = SETTINGS.detailFogDensity * Math.max(0, (detailBlend - 0.90) / 0.10);
   // Keep a focused light on the chosen house. Fade it together with the camera transition.
-  detailSpot.intensity = (spotlightOnlyTest ? 100 : SETTINGS.detailSpotIntensity) * detailBlend;
+  spotlight.intensity = (spotlightOnlyTest ? 100 : SETTINGS.detailSpotIntensity) * flightLightingBlend;
+  detailSpot.intensity = spotlight.intensity;
   if (selectedDetailTeam) {
     const center = selectedDetailTeam.center;
     // Place the actual Babylon SpotLight over the middle of the PITCH,
     // not over the roof and not behind the selected house.
-    const lightPosition = new Vector3(
+    const lightPosition = spotlight.position.set(
       stadiumCenter.x,
       pitchGroundY + SETTINGS.detailSpotHeightAbovePitch,
       stadiumCenter.z
@@ -1267,20 +1588,27 @@ const frame = ()=>{
       lightPosition.copyFrom(center.add(towardPitch.scale(SETTINGS.debugSpotDistanceFromHouse)));
       lightPosition.y = center.y + SETTINGS.debugSpotHeightAboveHouse;
     }
-    detailSpot.position.copyFrom(lightPosition);
-    detailSpot.direction.copyFrom(center.subtract(lightPosition).normalize());
-
-    const beamDistance = Vector3.Distance(lightPosition, center);
+    const direction = center.subtractToRef(lightPosition, spotlight.direction);
+    const beamDistance = direction.length();
+    if (beamDistance > 1e-6) direction.scaleInPlace(1 / beamDistance);
+    else direction.set(0, -1, 0);
     const halfWidth = selectedDetailTeam.radius * SETTINGS.detailSpotFocusMargin;
     const targetAngle = Math.max(
       SETTINGS.detailSpotMinAngle,
       Math.min(SETTINGS.detailSpotMaxAngle, 2 * Math.atan2(halfWidth, beamDistance))
     );
     const easedFocus = detailBlend * detailBlend * (3 - 2 * detailBlend);
-    detailSpot.angle = spotlightOnlyTest ? 2.4 :
+    spotlight.angle = spotlightOnlyTest ? 2.4 :
       SETTINGS.detailSpotAngle + (targetAngle - SETTINGS.detailSpotAngle) * easedFocus;
-    detailSpot.range = spotlightOnlyTest ? 1000 :
+    spotlight.range = spotlightOnlyTest ? 1000 :
       Math.max(250, beamDistance + selectedDetailTeam.radius * 3);
+    detailSpot.position.copyFrom(spotlight.position);
+    detailSpot.direction.copyFrom(spotlight.direction);
+    detailSpot.angle = spotlight.angle;
+    detailSpot.range = spotlight.range;
+    const outerCos = Math.cos(spotlight.angle * 0.5);
+    const innerCos = Math.cos(spotlight.angle * 0.5 * (1 - spotlight.softness));
+    spotlight.coneLimits.set(outerCos * outerCos, innerCos * innerCos, spotlight.range * spotlight.range);
     if (spotlightOnlyTest) {
       debugLamp.position.copyFrom(lightPosition);
       debugTarget.position.copyFrom(center.add(towardPitch.scale(Math.max(5, selectedDetailTeam.radius * 0.65))));
@@ -1293,28 +1621,62 @@ const frame = ()=>{
     }
 
   }
-  revealOutlineMaterial.setVector3("spotCenter", spotlightCenter);
-  revealOutlineMaterial.setFloat("detailBlend", detailBlend);
-  revealOutlineMaterial.setFloat("spotRadius", spotlightActive ? SETTINGS.spotlightRadius : -1);
-  const billboardEnabled = detailMode || spotlightActive;
+  const billboardEnabled = detailMode || spotlightActive || highlightAmount > 0.01;
   if (billboardEnabled !== lastBillboardEnabled) {
     for (const mesh of billboardMeshes) mesh.setEnabled(billboardEnabled);
     lastBillboardEnabled = billboardEnabled;
   }
-  updateTeamHighlight(dt);
+  updateTeamHighlight();
   // Apply only when the active test/transition changes (no shader rebuild each frame).
   if (lastAppliedDiagnosticMode !== materialDiagnosticMode || lastAppliedDiagnosticActive !== (detailMode && !returningToOverview && !cameraTransition && selectedDetailTeam?.config.id === "carabell")) {
     applyMaterialDiagnostic();
     lastAppliedDiagnosticMode = materialDiagnosticMode;
     lastAppliedDiagnosticActive = !!(detailMode && !returningToOverview && !cameraTransition && selectedDetailTeam?.config.id === "carabell");
   }
+  // Keep substituted materials when the Carabell diagnostic changes them.
+  if (perfMode === "C" || perfMode === "D") {
+    for (const mesh of perfOriginalMaterials.keys()) {
+      const expected = perfMode === "C" ? perfFlatMaterial : importedMaterialByMesh.get(mesh);
+      if (!mesh.isDisposed() && expected && mesh.material !== expected) mesh.material = expected;
+    }
+  }
+  const perfRenderStart = diagnosticsEnabled ? performance.now() : 0;
   scene.render();
+  if (!benchmark) return;
+  const renderMs = performance.now() - perfRenderStart;
+  const drawCalls = benchmark.drawCalls;
+  benchmark.recordFrame(now, rawFrameMs, renderMs, drawCalls);
+  recordPerfFrame(renderMs, drawCalls);
+  if (cameraTransition && now-lastFlightStats > 250) {
+    flightStats.textContent = `FLIGHT ${engine.getFps().toFixed(0)} FPS | ${scene.getActiveMeshes().length} meshes | shadows ${detailSpot.shadowEnabled ? "on" : "off"}`;
+    lastFlightStats = now;
+  }
+  flightStats.style.display = cameraTransition ? "block" : "none";
+  if (cameraTransition && now - lastTransitionDiagnostic > 1000) {
+    console.log("TRIBUNE TRANSITION PERF", {
+      fps: Math.round(engine.getFps()),
+      frameMs: Number((1000 / Math.max(1, engine.getFps())).toFixed(1)),
+      drawCalls,
+      activeMeshes: scene.getActiveMeshes().length,
+      spotlightShadows: detailSpot.shadowEnabled,
+      spotlightCasters: detailSpotShadows.getShadowMap()?.renderList?.length ?? 0,
+      projectionBlend: Number(projectionBlend.toFixed(2)),
+      detailBlend: Number(detailBlend.toFixed(2)),
+      shaderFeaturesFixed: SETTINGS.stableShaderFeatures,
+      toneMapping: imageProcessing.toneMappingEnabled,
+      fogMode: scene.fogMode,
+    });
+    lastTransitionDiagnostic = now;
+  }
+  // The FPS counter does not need a DOM update on every rendered frame.
+  if (now - lastFpsUpdate >= 250) {
+    fpsCounter.textContent="FPS: "+engine.getFps().toFixed(0);
+    lastFpsUpdate = now;
+  }
 };
 // Render only while the stadium is on screen and the tab is visible.
 let onScreen = false;
 let running = false;
-const visibleWaiters: Array<() => void> = [];
-const whenVisible = () => new Promise<void>(resolve => onScreen ? resolve() : visibleWaiters.push(resolve));
 const syncLoop = () => {
   const shouldRun = onScreen && !document.hidden;
   if (shouldRun && !running) { last = performance.now(); engine.runRenderLoop(frame); running = true; }
@@ -1322,13 +1684,48 @@ const syncLoop = () => {
 };
 const visibility = new IntersectionObserver(entries => {
   onScreen = entries.some(e => e.isIntersecting);
-  if (onScreen) visibleWaiters.splice(0).forEach(r => r());
   syncLoop();
 }, { threshold: 0.05 });
 visibility.observe(root);
 document.addEventListener("visibilitychange", syncLoop);
-const onKeyEscape = (e: KeyboardEvent) => { if (e.key === "Escape") closeTeam(); };
-window.addEventListener("keydown", onKeyEscape);
+// Press P to compile visible model materials before repeating a flight.
+// This is optional because forcing compilation of hundreds of materials can
+// itself cause a noticeable one-off pause. Compare first and second flights.
+let warmingMaterials = false;
+window.addEventListener("keydown", async (event) => {
+  if (!diagnosticsEnabled || event.key.toLowerCase() !== "p" || event.repeat || warmingMaterials) return;
+  warmingMaterials = true;
+  const materialMeshes = new Map<Material, Mesh>();
+  for (const mesh of atmosphereByMesh.keys()) if (mesh.material && !materialMeshes.has(mesh.material)) materialMeshes.set(mesh.material, mesh);
+  const candidates = [...materialMeshes.keys()];
+  let completed = 0;
+  const started = performance.now();
+  console.log("TRIBUNE WARMUP START", candidates.length, "materials");
+  for (const material of candidates) {
+    const mesh = materialMeshes.get(material);
+    if (!mesh) continue;
+    try {
+      // Babylon materials may support forceCompilationAsync; skip if unavailable.
+      const compilable = material as Material & { forceCompilationAsync?: (mesh: Mesh) => Promise<unknown> };
+      if (compilable.forceCompilationAsync) await compilable.forceCompilationAsync(mesh);
+    } catch (error) { console.warn("TRIBUNE WARMUP MATERIAL FAILED", material.name, error); }
+    completed++;
+    if (completed % 25 === 0) {
+      console.log("TRIBUNE WARMUP", completed, "/", candidates.length);
+      await new Promise<void>(resolve => requestAnimationFrame(() => resolve()));
+    }
+  }
+  console.log("TRIBUNE WARMUP DONE", completed, "materials", Math.round(performance.now() - started), "ms");
+  warmingMaterials = false;
+});
+void loadWorld().then(() => {
+  logMaterialAudit();
+  // Reapply after all GLBs and MaskPlugin material clones have been created.
+  scene.materials.forEach(forceStandardLightFalloff);
+  worldLoaded = true;
+  console.log("TRIBUNE V5 READY — P: optional shader warmup; fixed shader features:", SETTINGS.stableShaderFeatures);
+  console.log("STANDARD LIGHT FALLOFF:", scene.materials.filter(m => m instanceof PBRMaterial && !m.usePhysicalLightFalloff).length, "PBR materials configured");
+});
 function dispose() {
   visibility.disconnect();
   document.removeEventListener("visibilitychange", syncLoop);
@@ -1338,11 +1735,5 @@ function dispose() {
   engine.dispose();
   layout.remove();
 }
-void loadWorld().then(() => {
-  // Reapply after all GLBs and MaskPlugin material clones have been created.
-  scene.materials.forEach(forceStandardLightFalloff);
-  
-});
-
-  return { dispose };
+return { dispose };
 }
