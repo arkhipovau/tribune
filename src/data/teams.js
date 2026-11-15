@@ -23,9 +23,12 @@ const FOUNDATIONS = {
     role: "Foundation partner",
     tone: "sky",
   },
-  // From the Tribune Instagram (posts of Nov 2026). Logos and quotes still to come.
-  wefootball: { id: "wefootball", name: "WeFootball Academy", logo: null, role: "Foundation partner" },
-  wifu: { id: "wifu", name: "Women in Football Uganda", logo: null, role: "Foundation partner" },
+  // From the Tribune Instagram (partner posts 2025–2026). Logos and quotes still to come.
+  wefootball: { id: "wefootball", name: "WeFootball Academy", logo: null, role: "Foundation partner" }, // @wefootballacademy, Kenya
+  wifu: { id: "wifu", name: "Women in Football Uganda", logo: null, role: "Foundation partner" }, // @womeninfootballugandawifu
+  weunited: { id: "weunited", name: "The WE United Project", logo: null, role: "Foundation partner" }, // @theweunitedproject, Nepal
+  abuorg: { id: "abuorg", name: "Abu Org", logo: null, role: "Foundation partner" }, // @abuorg8, Accra, Ghana
+  csg: { id: "csg", name: "Center for Sports and Growth", logo: null, role: "Foundation partner" }, // @centerforsportsandgrowth, Nairobi
 };
 
 const DESIGNERS = {
@@ -81,26 +84,31 @@ const TEAMS = [
     id: "dreamchasers", name: "Dream Chasers", country: "Ghana",
     tagline: "Lion hearts. Superhero dreams.",
     description: "With the heart of a lion and the spirit of a superhero, Dream Chasers believe that every child has the power to achieve something extraordinary. Dressed in deep green and blazing orange, the team turns courage, imagination, and teamwork into a superpower — proving that no dream is too big to chase.",
+    foundation: "abuorg",
   },
   {
     id: "firetails", name: "Firetails", country: "Nepal",
     tagline: "Fox-fast girls in neon pink.",
     description: "Fueled by the fiery spirit of a fox, Firetails bring speed, creativity, and unstoppable energy to the pitch. With glowing pink jerseys, neon colors, and a futuristic clubhouse, this fearless girls’ team turns every match into a dazzling adventure where passion burns bright and imagination knows no limits.",
+    foundation: "weunited",
   },
   {
     id: "lwf", name: "Life With Football", country: "Philippines",
     tagline: "Riding the wave, together.",
     description: "Inspired by the power of the ocean, Life With Football rides a wave of courage, unity, and determination. With a fearless shark as its emblem, striking blue-and-yellow colors, and a wave-shaped clubhouse, the team celebrates resilience, friendship, and the belief that football can bring people together.",
+    foundation: "ffh",
   },
   {
     id: "mathare", name: "Mathare Stars", country: "Kenya",
     tagline: "Young heroes who shine together.",
     description: "Born from the vibrant spirit of Mathare, the Stars are a team of fearless young heroes powered by courage, creativity, and ambition. With their fiery red-and-gold identity, armored superhero mascot, and striking futuristic clubhouse, they turn every challenge into an opportunity to shine. Their greatest superpower is growing stronger together, on and off the pitch.",
+    foundation: "csg",
   },
   {
     id: "redwoods", name: "Red Woods", country: "Philippines",
     tagline: "Rooted in magic. Growing together.",
     description: "Rooted in the spirit of nature, Red Woods is a team where strength, unity, and imagination grow together. Inspired by enchanted forests and a mysterious tree guardian, their deep red and vibrant green identity brings the magic of the woods onto the football pitch. Their treehouse-inspired clubhouse is a place where young players can explore, dream, and grow stronger together.",
+    foundation: "ffh",
   },
 ].map((t) => ({ ...media(t.id), gallery: [], ...t })).map((t) => ({ ...t, gallery: [t.photo, t.poster, t.crest] }));
 
