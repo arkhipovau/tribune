@@ -33,12 +33,12 @@
 /* The stadium module paints its own layout background; let the site token show through. */
 .o-stadium #tribuneLayout { background: transparent; }
 
-/* Look 3 (?look=3): a dark navy space. The palette gradient (080B10 → 0D111A → 3C547A → 617EA6) runs
-   from the dark "wall" at the top down to a lit "floor", stopping short of the light end; a soft
-   pool of light under the stadium makes it read as a room and lets the contact shadow show. */
+/* Look 3 (?look=3): a dark navy studio lit by one spotlight from above, like a product shot:
+   blue-black walls, a cool pool of light on the floor around the stadium (where its shadow falls),
+   and edges falling off into the dark. */
 #stadium[data-look="3"] .o-stadium {
   background: #080b10;
   background-image:
-    radial-gradient(ellipse 50% 40% at 50% 62%, rgba(150, 175, 215, 0.22) 0%, transparent 72%),
-    linear-gradient(180deg, #080b10 0%, #0d111a 24%, #1f2c44 46%, #3c547a 70%, #536d96 88%, #617ea6 100%);
+    radial-gradient(ellipse 72% 70% at 55% 56%, rgba(178, 192, 212, 0.8) 0%, rgba(140, 158, 186, 0.6) 38%, rgba(84, 104, 138, 0.3) 62%, transparent 84%),
+    radial-gradient(ellipse 90% 100% at 50% 40%, #1d2a3f 0%, #111927 55%, #080b10 100%);
 }
