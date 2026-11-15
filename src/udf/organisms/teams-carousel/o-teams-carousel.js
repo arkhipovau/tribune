@@ -43,7 +43,7 @@ export function initTeamsCarousel() {
 
     const media = el("a", "m-team-card__media");
     media.href = href;
-    media.append(img(team.house, `${team.name} — team house`, "m-team-card__photo"));
+    media.append(img(team.houseCard || team.house, `${team.name} — team house`, "m-team-card__photo"));
     if (team.crest) media.append(Object.assign(glass(team.crest, `${team.name} crest`), { className: "a-glass m-team-card__crest" }));
     if (team.foundation) {
       const partners = el("span", "m-team-card__partners");

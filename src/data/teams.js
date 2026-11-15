@@ -23,44 +23,86 @@ const FOUNDATIONS = {
     role: "Foundation partner",
     tone: "sky",
   },
+  // From the Tribune Instagram (posts of Nov 2026). Logos and quotes still to come.
+  wefootball: { id: "wefootball", name: "WeFootball Academy", logo: null, role: "Foundation partner" },
+  wifu: { id: "wifu", name: "Women in Football Uganda", logo: null, role: "Foundation partner" },
 };
 
 const DESIGNERS = {
   do: { name: "Do buro", logo: "assets/svg/do-logo.svg", logoDark: "assets/svg/do-logo-dark.svg" },
 };
 
+/** Images of a team, made by `npm run team-images` from the team content pack. */
+const media = (id) => {
+  const dir = `assets/img/teams/${id}`;
+  return {
+    house: `${dir}/house.avif`,
+    houseCard: `${dir}/house-card.avif`,
+    crest: `${dir}/logo.avif`,
+    photo: `${dir}/photo.avif`,
+    poster: `${dir}/poster.avif`,
+    kit: { front: `${dir}/kit-front.avif`, back: `${dir}/kit-back.avif` },
+  };
+};
+
+// Ids match the 3D stadium (stadium-src TEAMS), so each house links to its club page.
+// Names, countries and descriptions: team content pack (Nov 2026). Taglines: written from them.
 const TEAMS = [
   {
-    id: "carabell",
-    name: "Carabell Club",
-    country: "Philippines",
+    id: "carabell", name: "Carabell Club", country: "Philippines",
     tagline: "Forged in myth. Ringing with pride.",
-    house: "assets/img/team-carabell.avif",
-    crest: "assets/img/logo-carabell.avif",
-    drawing: "assets/img/draw-bull.avif",
-    gallery: ["assets/img/mascot-bull.avif", "assets/img/logo-carabell.avif", "assets/img/draw-bull.avif"],
-    drawings: 14,
-    foundation: "ffh",
-    designer: "do",
+    description: "Born from the imagination of young Filipino footballers, Carabell Club takes its spirit from the mighty carabao — a symbol of strength, resilience, and determination. Its bold red, blue, and yellow identity celebrates Filipino heritage, transforming a familiar national symbol into a fearless football mascot.",
+    drawing: "assets/img/draw-bull.avif", drawings: 14, foundation: "ffh", designer: "do",
   },
   {
-    id: "ffk",
-    name: "Kids Football Club",
-    country: "Philippines",
+    id: "ffk", name: "Kids Football Club", country: "Philippines",
     tagline: "Brave. Bright. Born to kick.",
-    house: "assets/img/team-ffk.avif",
-    crest: "assets/img/logo-ffk.avif",
-    drawing: "assets/img/draw-kids.avif",
-    gallery: ["assets/img/logo-ffk.avif", "assets/img/draw-kids.avif"],
-    drawings: 12,
-    foundation: "ffh",
-    designer: "do",
+    description: "Led by a fierce dragon and powered by boundless imagination, Kids Football Club brings a world of color, energy, and adventure to the pitch. With bold blue and magenta jerseys, playful characters, and a futuristic clubhouse, the team celebrates friendship, creativity, and the joy of bringing kids together through football.",
+    drawing: "assets/img/draw-kids.avif", drawings: 12, foundation: "ffh", designer: "do",
   },
-  // TODO: names, countries, crests and drawings for the houses below.
-  { id: "lantern", name: null, house: "assets/img/house-lantern.avif" },
-  { id: "tree", name: null, house: "assets/img/house-tree.avif" },
-  { id: "arch", name: null, house: "assets/img/house-arch.avif" },
-];
+  {
+    id: "hanoman", name: "Hanoman", country: "Bali, Indonesia",
+    tagline: "An ancient legend. A team of young heroes.",
+    description: "Inspired by Bali’s legendary monkey hero Hanoman, this team brings the strength of ancient mythology into a world of young superheroes. Dressed in striking yellow and black, Hanoman combines Balinese cultural heritage with comic-book imagination, turning every young footballer into a hero of their own adventure.",
+  },
+  {
+    id: "brave_eagles", name: "Brave Eagles", country: "Uganda",
+    tagline: "Girls who fly without fear.",
+    description: "Inspired by the fearless spirit of the eagle, Brave Eagles soar with courage, ambition, and pride. Dressed in Uganda’s vibrant yellow, red, and black, the team celebrates the power of girls in football, turning young dreams into a bold symbol of strength, freedom, and possibility.",
+    foundation: "wifu",
+  },
+  {
+    id: "we", name: "WE Football Kisumu", country: "Kenya",
+    tagline: "Everyone belongs in WE.",
+    description: "United by the power of football, WE Football Kisumu is a team built on friendship, teamwork, and the belief that everyone belongs. Their bold purple-and-white stripes, vibrant green accents, and wave-inspired clubhouse reflect a playful spirit and a strong sense of identity. Together, these young players prove that the greatest victories begin with the power of WE.",
+    foundation: "wefootball",
+  },
+  {
+    id: "dreamchasers", name: "Dream Chasers", country: "Ghana",
+    tagline: "Lion hearts. Superhero dreams.",
+    description: "With the heart of a lion and the spirit of a superhero, Dream Chasers believe that every child has the power to achieve something extraordinary. Dressed in deep green and blazing orange, the team turns courage, imagination, and teamwork into a superpower — proving that no dream is too big to chase.",
+  },
+  {
+    id: "firetails", name: "Firetails", country: "Nepal",
+    tagline: "Fox-fast girls in neon pink.",
+    description: "Fueled by the fiery spirit of a fox, Firetails bring speed, creativity, and unstoppable energy to the pitch. With glowing pink jerseys, neon colors, and a futuristic clubhouse, this fearless girls’ team turns every match into a dazzling adventure where passion burns bright and imagination knows no limits.",
+  },
+  {
+    id: "lwf", name: "Life With Football", country: "Philippines",
+    tagline: "Riding the wave, together.",
+    description: "Inspired by the power of the ocean, Life With Football rides a wave of courage, unity, and determination. With a fearless shark as its emblem, striking blue-and-yellow colors, and a wave-shaped clubhouse, the team celebrates resilience, friendship, and the belief that football can bring people together.",
+  },
+  {
+    id: "mathare", name: "Mathare Stars", country: "Kenya",
+    tagline: "Young heroes who shine together.",
+    description: "Born from the vibrant spirit of Mathare, the Stars are a team of fearless young heroes powered by courage, creativity, and ambition. With their fiery red-and-gold identity, armored superhero mascot, and striking futuristic clubhouse, they turn every challenge into an opportunity to shine. Their greatest superpower is growing stronger together, on and off the pitch.",
+  },
+  {
+    id: "redwoods", name: "Red Woods", country: "Philippines",
+    tagline: "Rooted in magic. Growing together.",
+    description: "Rooted in the spirit of nature, Red Woods is a team where strength, unity, and imagination grow together. Inspired by enchanted forests and a mysterious tree guardian, their deep red and vibrant green identity brings the magic of the woods onto the football pitch. Their treehouse-inspired clubhouse is a place where young players can explore, dream, and grow stronger together.",
+  },
+].map((t) => ({ ...media(t.id), gallery: [], ...t })).map((t) => ({ ...t, gallery: [t.photo, t.poster, t.crest] }));
 
 const PLACEHOLDER = { name: "New club", tagline: "Name and story coming soon", country: "" };
 

@@ -1,0 +1,7 @@
+/* Team kit: front and back of the jersey, side by side in the team panel. */
+.m-kit { padding: 20px 14px 14px; background: var(--bg-white); border-radius: var(--radius-card); }
+.m-kit__label { display: block; margin: 0 0 12px 10px; font-size: 12px; }
+.m-kit__shirts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.m-kit__shirt { margin: 0; padding: 8px 8px 10px; background: var(--tint); border-radius: calc(var(--radius-card) - 14px); text-align: center; }
+.m-kit__shirt img { display: block; width: 100%; aspect-ratio: 1; object-fit: contain; }
+.m-kit__shirt figcaption { margin-top: 4px; font-size: 12px; }

@@ -10,7 +10,8 @@
     "test:visual:update": "playwright test tests/visual --update-snapshots",
     "models": "node scripts/build-stadium-models.mjs",
     "images": "node scripts/build-images.mjs",
-    "fonts": "node scripts/build-fonts.mjs"
+    "fonts": "node scripts/build-fonts.mjs",
+    "team-images": "node scripts/build-team-images.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.56.0",

@@ -71,3 +71,8 @@
   .o-tp-row { height: auto; min-height: 96px; }
   .o-tp-credits { flex-wrap: wrap; }
 }
+
+/* About grows with the team description (tagline + 2–3 sentences). */
+.o-tp-about { height: auto; min-height: 112px; align-items: flex-start; padding-top: 20px; padding-bottom: 20px; }
+.o-tp-about__tagline { font-size: 14px; }
+.o-tp-about__description { line-height: 1.35; }

@@ -47,7 +47,7 @@ export function initRoster() {
     return tile({
       href: `team.html?id=${encodeURIComponent(team.id)}`,
       surfaceClass: `m-tile__surface--photo${team.isPlaceholder ? " is-soon" : ""}`,
-      surface: [img(team.house, `${team.name} — team house`)],
+      surface: [img(team.houseCard || team.house, `${team.name} — team house`)],
       title: team.country ? `${team.name}  •  ${team.country}` : team.name,
       note: team.tagline,
       extra: count,

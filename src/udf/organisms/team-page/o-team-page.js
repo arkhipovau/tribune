@@ -135,6 +135,17 @@ export function initTeamPage() {
 
   /* About row */
   $(".o-tp-about__tagline").textContent = team.tagline;
+  $(".o-tp-about__description").textContent = team.description || "";
+
+  /* Kit: front and back of the team jersey */
+  if (team.kit) {
+    const kit = $(".m-kit");
+    $(".m-kit__front").src = team.kit.front;
+    $(".m-kit__front").alt = `${team.name} kit, front`;
+    $(".m-kit__back").src = team.kit.back;
+    $(".m-kit__back").alt = `${team.name} kit, back`;
+    kit.hidden = false;
+  }
   if (team.crest) $(".o-tp-about__crest").append(img(team.crest, `${team.name} crest`));
 
   /* Credits row: foundation, country, designer */
@@ -151,7 +162,7 @@ export function initTeamPage() {
   if (designer) credits.append(line("Designer", designer.name));
 
   const tiles = $(".o-tp-credits__tiles");
-  if (foundation) {
+  if (foundation && foundation.logo) {
     const t = el("span", "a-glass");
     t.append(img(foundation.logo, foundation.name));
     tiles.append(t);
