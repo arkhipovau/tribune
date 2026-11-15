@@ -55650,7 +55650,7 @@ function rE(e, t) {
 		let m = (512 - u) / 2 - p, h = (s - d) / 2;
 		l.beginPath(), l.roundRect(m, h, u, d, f), l.fill(), c.update();
 		let g = new wc("tribuneGroundShadowMat", D);
-		g.disableLighting = !0, g.emissiveColor = L.Black(), g.diffuseColor = L.Black(), g.specularColor = L.Black(), g.opacityTexture = c, g.backFaceCulling = !1;
+		g.disableLighting = !0, g.emissiveColor = n.color ? L.FromArray(n.color) : L.Black(), g.diffuseColor = L.Black(), g.specularColor = L.Black(), g.opacityTexture = c, g.backFaceCulling = !1;
 		let _ = Hu.CreateGround("tribuneGroundShadow", {
 			width: r * o,
 			height: i * o

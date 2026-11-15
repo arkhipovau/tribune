@@ -76,10 +76,10 @@ export type StadiumOptions = {
   liteModelsUrl?: string;
   /** Soft contact shadow under the stadium: a flat plane with a pre-blurred texture of the stadium
    *  footprint (one quad, no shadow maps). opacity 0..1, offset in world XZ (away from the light).
-   *  size: footprint scale vs the stadium (default 1).
+   *  size: footprint scale vs the stadium (default 1). color: shadow tint, 0..1 RGB (default black).
    *  blur: softness as a share of the footprint (default 0.22; smaller = crisper, denser shadow).
    *  Default: off. */
-  groundShadow?: { opacity: number; offset?: [number, number]; blur?: number; size?: number };
+  groundShadow?: { opacity: number; offset?: [number, number]; blur?: number; size?: number; color?: [number, number, number] };
 };
 export type StadiumHandle = { dispose: () => void };
 
@@ -798,7 +798,7 @@ function widenFieldMarkings(mesh: Mesh) {
 // Soft contact shadow (StadiumOptions.groundShadow): a quad under the stadium with a blurred
 // rounded-rectangle footprint drawn once into a canvas. Costs one draw call, no shadow maps.
 let groundShadowPlane: Mesh | null = null;
-function createGroundShadow(min: Vector3, max: Vector3, cfg: { opacity: number; offset?: [number, number]; blur?: number; size?: number }): Mesh {
+function createGroundShadow(min: Vector3, max: Vector3, cfg: { opacity: number; offset?: [number, number]; blur?: number; size?: number; color?: [number, number, number] }): Mesh {
   const sizeX = max.x - min.x, sizeZ = max.z - min.z;
   const grow = cfg.size ?? 1;
   const spread = 1.5 * grow; // plane is larger than the footprint so the blur has room
@@ -822,7 +822,7 @@ function createGroundShadow(min: Vector3, max: Vector3, cfg: { opacity: number; 
   tex.update();
   const mat = new StandardMaterial("tribuneGroundShadowMat", scene);
   mat.disableLighting = true;
-  mat.emissiveColor = Color3.Black();
+  mat.emissiveColor = cfg.color ? Color3.FromArray(cfg.color) : Color3.Black(); // unlit: emissive is the shadow colour
   mat.diffuseColor = Color3.Black();
   mat.specularColor = Color3.Black();
   mat.opacityTexture = tex;

@@ -39,6 +39,6 @@
 #stadium[data-look="3"] .o-stadium {
   background: #080b10;
   background-image:
-    radial-gradient(ellipse 72% 70% at 55% 56%, rgba(178, 192, 212, 0.8) 0%, rgba(140, 158, 186, 0.6) 38%, rgba(84, 104, 138, 0.3) 62%, transparent 84%),
-    radial-gradient(ellipse 90% 100% at 50% 40%, #1d2a3f 0%, #111927 55%, #080b10 100%);
+    radial-gradient(ellipse 70% 68% at 55% 58%, rgba(205, 216, 230, 0.95) 0%, rgba(160, 178, 204, 0.75) 34%, rgba(92, 114, 150, 0.38) 60%, transparent 82%),
+    radial-gradient(ellipse 90% 100% at 50% 40%, #1f2d44 0%, #101827 55%, #06080d 100%);
 }
