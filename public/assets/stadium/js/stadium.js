@@ -1,52 +1,52 @@
 import { a as e, d as t, i as n, l as r, r as i, s as a, t as o, u as s } from "./math.scalar.functions-D7lyzZPV.js";
-import { S as c, a as l, b as u, d, f, h as p, i as m, l as h, m as g, n as _, o as v, p as y, r as b, s as x, u as S, v as C, x as w, y as T } from "./decorators-B6_tn27L.js";
-import { n as E, t as D } from "./engineStore-y6UaeQ2T.js";
-import { _ as O, a as k, c as A, d as j, g as M, i as N, l as P, m as ee, n as F, o as I, r as te, s as ne, t as L, u as R, v as re } from "./math.color.pure-BjlDo6FV.js";
-import { n as ie, t as ae } from "./typeStore-CdTKSRrI.js";
-import { S as oe, _ as se, b as ce, d as le, n as ue, o as de, r as fe, s as pe, u as me, v as he, x as ge, y as _e } from "./tools.functions-1r5DtfAd.js";
-import { n as ve, t as ye } from "./decorators.serialization-J1JMMFrb.js";
-import { t as be } from "./node-BB4HoqR2.js";
-import { i as xe, n as Se } from "./domManagement-CEHN-We7.js";
-import { t as z } from "./logger-EXzqzgex.js";
-import { C as Ce, D as we, E as Te, S as Ee, T as De, a as Oe, b as ke, f as Ae, g as je, l as Me, m as Ne, n as Pe, o as Fe, r as B, s as Ie, t as Le, u as Re, w as ze, x as Be, y as Ve } from "./tools.pure-CzA8-lxD.js";
-import { r as He, t as Ue } from "./halfFloat-Yr6S56yE.js";
-import { t as We } from "./guid-CWhmG3_d.js";
-import { t as Ge } from "./smartArray-C1OnitMC.js";
-import { n as Ke, r as qe } from "./effectRenderer.pure-ByBPK_aa.js";
-import { t as Je } from "./math.plane-BrXpSj8e.js";
-import { a as Ye, c as Xe, d as Ze, f as Qe, i as $e, l as et, n as tt, o as nt, r as rt, s as it, t as at, u as ot } from "./scene.pure-DyruzWU3.js";
-import { t as st } from "./shaderStore-BwDsKZsu.js";
-import { r as ct, t as V } from "./abstractEngine.pure-Ch8YWre1.js";
-import { t as lt } from "./internalTexture-CzVKfQMf.js";
-import { c as ut, o as dt, r as ft, s as pt, t as mt } from "./thinEngine.pure-CL2lxZqU.js";
-import { a as ht, i as gt, n as _t, o as vt, r as H, s as yt, t as bt } from "./buffer.pure-AnNyDhiC.js";
-import { A as xt, B as St, C as Ct, D as wt, E as Tt, F as Et, I as Dt, L as Ot, M as U, N as kt, O as At, P as jt, R as Mt, S as Nt, T as Pt, V as Ft, _ as It, a as Lt, b as Rt, c as zt, d as Bt, f as Vt, g as Ht, h as Ut, i as Wt, j as Gt, k as Kt, l as qt, m as Jt, n as Yt, o as Xt, p as Zt, r as Qt, s as $t, t as en, u as tn, v as nn, w as rn, x as an, y as on, z as sn } from "./material.pure-BIsn8WrG.js";
-import { t as cn } from "./drawWrapper-zpisHb2P.js";
-import { a as ln, i as un, n as W, r as dn, t as fn } from "./texture.pure-CJZQGNXT.js";
-import { n as pn, t as mn } from "./lightConstants-BS-PFhBz.js";
-import { a as hn, o as gn, r as _n, t as vn } from "./renderingManager-bC8uR1C_.js";
-import { a as yn, c as bn, d as xn, f as Sn, g as Cn, h as wn, i as Tn, l as En, n as Dn, o as On, r as kn, s as An, t as jn, u as Mn } from "./imageProcessing-DO7v4Dg0.js";
-import { n as Nn, t as Pn } from "./pointerEvents-kZWEv2nT.js";
-import { c as Fn, d as In, f as Ln, i as Rn, l as zn, o as Bn, p as Vn, t as Hn, u as Un } from "./easing-D_0Lkm95.js";
-import { d as Wn, i as Gn, r as Kn, t as G } from "./animation.pure-B5fUKqsi.js";
-import { t as qn } from "./keyboardEvents-DsPRDt8M.js";
-import { n as Jn, r as Yn, t as Xn } from "./cubemapToSphericalPolynomial-Dpe7YkMH.js";
-import { t as Zn } from "./baseTexture.pure-D8S7YGDB.js";
-import { i as Qn, n as $n, r as er, t as tr } from "./renderTargetTexture.pure-ByFdAyqA.js";
-import { t as nr } from "./postProcess.pure-rjLRPUgt.js";
-import { n as rr, t as ir } from "./multiRenderTarget.pure-BJPnywrH.js";
-import { n as ar, t as or } from "./animatable.pure-EDxL5PNV.js";
-import { n as sr } from "./timer-D7NjnbJt.js";
-import { t as cr } from "./constants-NyZpzVfZ.js";
-import { n as lr, t as ur } from "./flowGraphInteger.pure-UOMJdnLo.js";
-import { t as dr } from "./workerPool-BT8SeyLO.js";
-import { i as fr, o as pr, r as mr, t as hr } from "./flowGraphBlock-BYbFoCIo.js";
-import { t as gr } from "./flowGraphCoordinator-Cj34AH8_.js";
-import { t as _r } from "./flowGraphExecutionBlock-DoA7XtCo.js";
-import { t as vr } from "./flowGraphEventBlock-DPEcyVGm.js";
-import { g as yr, m as br, t as xr } from "./flowGraphRichTypes.pure-DNAa84YP.js";
-import { t as Sr } from "./flowGraphDelayRegistry-B7YJVawk.js";
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Misc/coroutine.js
+import { S as c, a as l, b as u, d, f, h as p, i as m, l as h, m as g, n as _, o as v, p as y, r as b, s as x, u as S, v as C, x as w, y as T } from "./decorators-BI9FueCZ.js";
+import { n as E, t as D } from "./engineStore-D0BoPdea.js";
+import { _ as O, a as k, c as A, d as j, g as M, i as N, l as P, m as ee, n as F, o as I, r as te, s as ne, t as L, u as R, v as re } from "./math.color.pure-CtEB7h4A.js";
+import { n as ie, t as ae } from "./typeStore-pENEWnX2.js";
+import { S as oe, _ as se, b as ce, d as le, n as ue, o as de, r as fe, s as pe, u as me, v as he, x as ge, y as _e } from "./tools.functions-tHn4_qrB.js";
+import { n as ve, t as ye } from "./decorators.serialization-BUseKv3G.js";
+import { t as be } from "./node-BpPYC1hr.js";
+import { i as xe, n as Se } from "./domManagement-BZa7OPDn.js";
+import { t as z } from "./logger-DQIzSR_y.js";
+import { C as Ce, D as we, E as Te, S as Ee, T as De, a as Oe, b as ke, f as Ae, g as je, l as Me, m as Ne, n as Pe, o as Fe, r as B, s as Ie, t as Le, u as Re, w as ze, x as Be, y as Ve } from "./tools.pure-HxVNGKAP.js";
+import { r as He, t as Ue } from "./halfFloat-CieD0yV9.js";
+import { t as We } from "./guid-DXeovnrE.js";
+import { t as Ge } from "./smartArray-cjjaK9ER.js";
+import { n as Ke, r as qe } from "./effectRenderer.pure-B9-NV3pK.js";
+import { t as Je } from "./math.plane-ZOwE4iaR.js";
+import { a as Ye, c as Xe, d as Ze, f as Qe, i as $e, l as et, n as tt, o as nt, r as rt, s as it, t as at, u as ot } from "./scene.pure-BhUCYJSS.js";
+import { t as st } from "./shaderStore-CXjvw9c2.js";
+import { r as ct, t as V } from "./abstractEngine.pure-CCvGJkky.js";
+import { t as lt } from "./internalTexture-Ppl-MSD4.js";
+import { c as ut, o as dt, r as ft, s as pt, t as mt } from "./thinEngine.pure-DqiSVI2K.js";
+import { a as ht, i as gt, n as _t, o as vt, r as H, s as yt, t as bt } from "./buffer.pure-CxrY6H03.js";
+import { A as xt, B as St, C as Ct, D as wt, E as Tt, F as Et, I as Dt, L as Ot, M as U, N as kt, O as At, P as jt, R as Mt, S as Nt, T as Pt, V as Ft, _ as It, a as Lt, b as Rt, c as zt, d as Bt, f as Vt, g as Ht, h as Ut, i as Wt, j as Gt, k as Kt, l as qt, m as Jt, n as Yt, o as Xt, p as Zt, r as Qt, s as $t, t as en, u as tn, v as nn, w as rn, x as an, y as on, z as sn } from "./material.pure-CoCp9PG4.js";
+import { t as cn } from "./drawWrapper-COw0ol4V.js";
+import { a as ln, i as un, n as W, r as dn, t as fn } from "./texture.pure-iyEOZQH6.js";
+import { n as pn, t as mn } from "./lightConstants-D1Nu2reT.js";
+import { a as hn, o as gn, r as _n, t as vn } from "./renderingManager-CncqLtHP.js";
+import { a as yn, c as bn, d as xn, f as Sn, g as Cn, h as wn, i as Tn, l as En, n as Dn, o as On, r as kn, s as An, t as jn, u as Mn } from "./imageProcessing-B0WztDpl.js";
+import { n as Nn, t as Pn } from "./pointerEvents-DNtNNecm.js";
+import { c as Fn, d as In, f as Ln, i as Rn, l as zn, o as Bn, p as Vn, t as Hn, u as Un } from "./easing-ByPnIoiB.js";
+import { d as Wn, i as Gn, r as Kn, t as G } from "./animation.pure-byfEYye0.js";
+import { t as qn } from "./keyboardEvents-BnzTAWpo.js";
+import { n as Jn, r as Yn, t as Xn } from "./cubemapToSphericalPolynomial-hVWL4rOO.js";
+import { t as Zn } from "./baseTexture.pure-Dyh4n-Ut.js";
+import { i as Qn, n as $n, r as er, t as tr } from "./renderTargetTexture.pure-CI3R--jx.js";
+import { t as nr } from "./postProcess.pure-Do7I869D.js";
+import { n as rr, t as ir } from "./multiRenderTarget.pure-XMN23xnj.js";
+import { n as ar, t as or } from "./animatable.pure-D5BxUxJm.js";
+import { n as sr } from "./timer-BQvpnS4m.js";
+import { t as cr } from "./constants-GiSaWNVD.js";
+import { n as lr, t as ur } from "./flowGraphInteger.pure-C2wx5rjC.js";
+import { t as dr } from "./workerPool-CbvEbM2K.js";
+import { i as fr, o as pr, r as mr, t as hr } from "./flowGraphBlock-CHSjh6ND.js";
+import { t as gr } from "./flowGraphCoordinator-DY51xnTq.js";
+import { t as _r } from "./flowGraphExecutionBlock-C4MtmIFr.js";
+import { t as vr } from "./flowGraphEventBlock-nfqiUBHl.js";
+import { g as yr, m as br, t as xr } from "./flowGraphRichTypes.pure-xYLpVk__.js";
+import { t as Sr } from "./flowGraphDelayRegistry-DO7wtljZ.js";
+//#region node_modules/@babylonjs/core/Misc/coroutine.js
 function Cr(e, t, n) {
 	try {
 		let r = e.next();
@@ -92,7 +92,7 @@ function Or(e, t) {
 	return (...n) => Er(e(...n), t);
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.renderPass.pure.js
+//#region node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.renderPass.pure.js
 var kr = !1;
 function Ar() {
 	kr || (kr = !0, V.prototype.getRenderPassNames = function() {
@@ -115,7 +115,7 @@ function Ar() {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Cameras/camera.pure.js
+//#region node_modules/@babylonjs/core/Cameras/camera.pure.js
 var jr = (() => {
 	var e;
 	let t = be, n = [], r, i = [], a = [], o, s = [], l = [], u, d, f, h, g, _ = [], v = [], y, b = [], x = [], S, C = [], T = [], D, O = [], A = [], j, M, N, P = [], ee = [], F, te = [], ne = [], L, re = [], ie = [], ae, se = [], ce = [], le, ue = [], de = [], fe, pe = [], me = [];
@@ -687,7 +687,7 @@ function Pr() {
 	Nr || (Nr = !0, jr.Parse = Mr);
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/mesh.vertexData.js
+//#region node_modules/@babylonjs/core/Meshes/mesh.vertexData.js
 var Fr = class {}, K = (() => {
 	var e;
 	let t = [], n, r, i, a;
@@ -1159,7 +1159,7 @@ var Fr = class {}, K = (() => {
 };
 Ir._ForceFullSceneLoadingForIncremental = !1, Ir._ShowLoadingScreen = !0, Ir._CleanBoneMatrixWeights = !1, Ir._LoggingLevel = 0;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/geometry.js
+//#region node_modules/@babylonjs/core/Meshes/geometry.js
 var Lr = class e {
 	get boundingBias() {
 		return this._boundingBias;
@@ -2170,7 +2170,7 @@ var Lr = class e {
 })();
 (Rr = Hr.prototype).getPhysicsBody ?? (Rr.getPhysicsBody = ce("TransformNode", "getPhysicsBody")), (zr = Hr.prototype).applyImpulse ?? (zr.applyImpulse = ce("TransformNode", "applyImpulse")), (Br = Hr.prototype).applyAngularImpulse ?? (Br.applyAngularImpulse = ce("TransformNode", "applyAngularImpulse")), (Vr = Hr.prototype).applyTorque ?? (Vr.applyTorque = ce("TransformNode", "applyTorque")), Object.getOwnPropertyDescriptor(Hr.prototype, "physicsBody") || Object.defineProperty(Hr.prototype, "physicsBody", ge("TransformNode", "physicsBody"));
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Collisions/meshCollisionData.js
+//#region node_modules/@babylonjs/core/Collisions/meshCollisionData.js
 var Ur = class {
 	constructor() {
 		this._checkCollisions = !1, this._collisionMask = -1, this._collisionGroup = -1, this._surroundingMeshes = null, this._collider = null, this._oldPositionForCollisions = new R(0, 0, 0), this._diffPositionForCollisions = new R(0, 0, 0), this._collisionResponse = !0;
@@ -2186,7 +2186,7 @@ var Kr;
 	e[e.X = 0] = "X", e[e.Y = 1] = "Y", e[e.Z = 2] = "Z";
 })(Kr || (Kr = {}));
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/abstractMesh.pure.js
+//#region node_modules/@babylonjs/core/Meshes/abstractMesh.pure.js
 var qr, Jr, Yr;
 function Xr(e, t, n) {
 	let r;
@@ -2999,7 +2999,7 @@ var ni = class {
 		async optimizeIndicesAsync() {
 			let e = this.getIndices();
 			if (!e) return this;
-			let { OptimizeIndices: t } = await import("./mesh.vertexData.functions-D7u8WOCq.js");
+			let { OptimizeIndices: t } = await import("./mesh.vertexData.functions-BCSCkO4f.js");
 			return t(e), this.setIndices(e, this.getTotalVertices()), this;
 		}
 		alignWithNormal(e, t) {
@@ -3041,7 +3041,7 @@ var ni = class {
 })();
 (qr = ii.prototype).createOrUpdateSubmeshesOctree ?? (qr.createOrUpdateSubmeshesOctree = ce("AbstractMesh", "createOrUpdateSubmeshesOctree")), (Jr = ii.prototype).getPhysicsImpostor ?? (Jr.getPhysicsImpostor = ce("AbstractMesh", "getPhysicsImpostor")), (Yr = ii.prototype).setPhysicsLinkWith ?? (Yr.setPhysicsLinkWith = ce("AbstractMesh", "setPhysicsLinkWith")), Object.getOwnPropertyDescriptor(ii.prototype, "occlusionRetryCount") || Object.defineProperty(ii.prototype, "occlusionRetryCount", ge("AbstractMesh", "occlusionRetryCount")), Object.getOwnPropertyDescriptor(ii.prototype, "occlusionType") || Object.defineProperty(ii.prototype, "occlusionType", ge("AbstractMesh", "occlusionType")), Object.getOwnPropertyDescriptor(ii.prototype, "occlusionQueryAlgorithmType") || Object.defineProperty(ii.prototype, "occlusionQueryAlgorithmType", ge("AbstractMesh", "occlusionQueryAlgorithmType")), Object.getOwnPropertyDescriptor(ii.prototype, "isOccluded") || Object.defineProperty(ii.prototype, "isOccluded", ge("AbstractMesh", "isOccluded")), Object.getOwnPropertyDescriptor(ii.prototype, "isOcclusionQueryInProgress") || Object.defineProperty(ii.prototype, "isOcclusionQueryInProgress", ge("AbstractMesh", "isOcclusionQueryInProgress")), Object.getOwnPropertyDescriptor(ii.prototype, "forceRenderingWhenOccluded") || Object.defineProperty(ii.prototype, "forceRenderingWhenOccluded", ge("AbstractMesh", "forceRenderingWhenOccluded")), Object.getOwnPropertyDescriptor(ii.prototype, "occlusionForRenderPassId") || Object.defineProperty(ii.prototype, "occlusionForRenderPassId", ge("AbstractMesh", "occlusionForRenderPassId")), Object.getOwnPropertyDescriptor(ii.prototype, "decalMap") || Object.defineProperty(ii.prototype, "decalMap", ge("AbstractMesh", "decalMap")), Object.getOwnPropertyDescriptor(ii.prototype, "instancedBuffers") || Object.defineProperty(ii.prototype, "instancedBuffers", ge("AbstractMesh", "instancedBuffers")), Object.getOwnPropertyDescriptor(ii.prototype, "physicsImpostor") || Object.defineProperty(ii.prototype, "physicsImpostor", ge("AbstractMesh", "physicsImpostor")), Object.getOwnPropertyDescriptor(ii.prototype, "showBoundingBox") || Object.defineProperty(ii.prototype, "showBoundingBox", ge("AbstractMesh", "showBoundingBox")), Object.getOwnPropertyDescriptor(ii.prototype, "edgesRenderer") || Object.defineProperty(ii.prototype, "edgesRenderer", ge("AbstractMesh", "edgesRenderer")), Object.getOwnPropertyDescriptor(ii.prototype, "renderOutline") || Object.defineProperty(ii.prototype, "renderOutline", ge("AbstractMesh", "renderOutline")), Object.getOwnPropertyDescriptor(ii.prototype, "renderOverlay") || Object.defineProperty(ii.prototype, "renderOverlay", ge("AbstractMesh", "renderOverlay"));
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/multiMaterial.pure.js
+//#region node_modules/@babylonjs/core/Materials/multiMaterial.pure.js
 var ai = class e extends en {
 	get subMaterials() {
 		return this._subMaterials;
@@ -3132,7 +3132,7 @@ function ci() {
 	oi || (oi = !0, ai.ParseMultiMaterial = si, ie("BABYLON.MultiMaterial", ai));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/meshLODLevel.js
+//#region node_modules/@babylonjs/core/Meshes/meshLODLevel.js
 var li = class {
 	constructor(e, t) {
 		this.distanceOrScreenCoverage = e, this.mesh = t;
@@ -4595,7 +4595,7 @@ function Mi() {
 }
 (ui = q.prototype).registerInstancedBuffer ?? (ui.registerInstancedBuffer = ce("Mesh", "registerInstancedBuffer")), (di = q.prototype).simplify ?? (di.simplify = ce("Mesh", "simplify")), (fi = q.prototype).thinInstanceAdd ?? (fi.thinInstanceAdd = ce("Mesh", "thinInstanceAdd")), (pi = q.prototype).thinInstanceAddSelf ?? (pi.thinInstanceAddSelf = ce("Mesh", "thinInstanceAddSelf")), (mi = q.prototype).thinInstanceRegisterAttribute ?? (mi.thinInstanceRegisterAttribute = ce("Mesh", "thinInstanceRegisterAttribute")), (hi = q.prototype).thinInstanceSetMatrixAt ?? (hi.thinInstanceSetMatrixAt = ce("Mesh", "thinInstanceSetMatrixAt")), (gi = q.prototype).thinInstanceSetAttributeAt ?? (gi.thinInstanceSetAttributeAt = ce("Mesh", "thinInstanceSetAttributeAt")), (_i = q.prototype).thinInstanceSetBuffer ?? (_i.thinInstanceSetBuffer = ce("Mesh", "thinInstanceSetBuffer")), (vi = q.prototype).thinInstanceGetWorldMatrices ?? (vi.thinInstanceGetWorldMatrices = ce("Mesh", "thinInstanceGetWorldMatrices")), (yi = q.prototype).thinInstanceBufferUpdated ?? (yi.thinInstanceBufferUpdated = ce("Mesh", "thinInstanceBufferUpdated")), (bi = q.prototype).thinInstancePartialBufferUpdate ?? (bi.thinInstancePartialBufferUpdate = ce("Mesh", "thinInstancePartialBufferUpdate")), (xi = q.prototype).thinInstanceRefreshBoundingInfo ?? (xi.thinInstanceRefreshBoundingInfo = ce("Mesh", "thinInstanceRefreshBoundingInfo")), (Si = q.prototype).getEmittedParticleSystems ?? (Si.getEmittedParticleSystems = ce("Mesh", "getEmittedParticleSystems")), (Ci = q.prototype).getHierarchyEmittedParticleSystems ?? (Ci.getHierarchyEmittedParticleSystems = ce("Mesh", "getHierarchyEmittedParticleSystems")), Object.getOwnPropertyDescriptor(q.prototype, "edgesShareWithInstances") || Object.defineProperty(q.prototype, "edgesShareWithInstances", ge("Mesh", "edgesShareWithInstances")), Object.getOwnPropertyDescriptor(q.prototype, "thinInstanceEnablePicking") || Object.defineProperty(q.prototype, "thinInstanceEnablePicking", ge("Mesh", "thinInstanceEnablePicking")), Object.getOwnPropertyDescriptor(q.prototype, "thinInstanceAllowAutomaticStaticBufferRecreation") || Object.defineProperty(q.prototype, "thinInstanceAllowAutomaticStaticBufferRecreation", ge("Mesh", "thinInstanceAllowAutomaticStaticBufferRecreation")), Object.getOwnPropertyDescriptor(q.prototype, "thinInstanceCount") || Object.defineProperty(q.prototype, "thinInstanceCount", ge("Mesh", "thinInstanceCount"));
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Behaviors/Cameras/autoRotationBehavior.js
+//#region node_modules/@babylonjs/core/Behaviors/Cameras/autoRotationBehavior.js
 var Ni = class {
 	constructor() {
 		this._zoomStopsAnimation = !1, this._idleRotationSpeed = .05, this._idleRotationWaitTime = 2e3, this._idleRotationSpinupTime = 2e3, this.targetAlpha = null, this._attachedCamera = null, this._isPointerDown = !1, this._lastFrameTime = null, this._lastInteractionTime = -Infinity, this._cameraRotationSpeed = 0, this._lastFrameRadius = 0;
@@ -4727,7 +4727,7 @@ var Ni = class {
 };
 Pi.EasingFunction = new Hn(.3), Pi.EasingMode = Bn.EASINGMODE_EASEOUT;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Behaviors/Cameras/framingBehavior.js
+//#region node_modules/@babylonjs/core/Behaviors/Cameras/framingBehavior.js
 var Fi = class e {
 	constructor() {
 		this.onTargetFramingAnimationEndObservable = new E(), this._mode = e.FitFrustumSidesMode, this._radiusScale = 1, this._positionScale = .5, this._defaultElevation = .3, this._elevationReturnTime = 1500, this._elevationReturnWaitTime = 1e3, this._zoomStopsAnimation = !1, this._framingTime = 1500, this.autoCorrectCameraLimitsAndSensibility = !0, this._attachedCamera = null, this._isPointerDown = !1, this._lastInteractionTime = -Infinity, this._animatables = [], this._betaIsAnimating = !1;
@@ -4885,7 +4885,7 @@ var Fi = class e {
 };
 Fi.EasingFunction = new Fn(), Fi.EasingMode = Bn.EASINGMODE_EASEINOUT, Fi.IgnoreBoundsSizeMode = 0, Fi.FitFrustumSidesMode = 1;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Cameras/cameraMovement.js
+//#region node_modules/@babylonjs/core/Cameras/cameraMovement.js
 var Ii = 60, Li = class {
 	constructor(e, t, n) {
 		this._cameraPosition = t, this._behavior = n, this.activeInput = !1, this.speed = 1, this.zoomSpeed = 1, this.panSpeed = 1, this.rotationXSpeed = 1, this.rotationYSpeed = 1, this._zoomSpeedMultiplier = 1, this._panSpeedMultiplier = 1, this.zoomInertia = .9, this.panInertia = .9, this.rotationInertia = .9, this.zoomAccumulatedPixels = 0, this.panAccumulatedPixels = new R(), this.rotationAccumulatedPixels = new R(), this.zoomDeltaCurrentFrame = 0, this.panDeltaCurrentFrame = R.Zero(), this.rotationDeltaCurrentFrame = R.Zero(), this._zoomVelocity = 0, this._panVelocity = new R(), this.referenceFrameRate = Ii, this._rotationVelocity = new R(), this._prevFrameTimeMs = 0, this._scene = e;
@@ -5708,7 +5708,7 @@ var Ii = 60, Li = class {
 })();
 Ui.ArcRotateCameraPointersInput = qi;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Cameras/Inputs/arcRotateCameraKeyboardMoveInput.js
+//#region node_modules/@babylonjs/core/Cameras/Inputs/arcRotateCameraKeyboardMoveInput.js
 var Ji = (() => {
 	var e;
 	let t = [], n, r = [], i = [], a, o = [], s = [], l, u = [], d = [], f, p = [], h = [], g, _ = [], v = [], y, b = [], x = [], S, C = [], T = [], E, D = [], O = [], k, A = [], j = [], M, N = [], ee = [], F;
@@ -5931,7 +5931,7 @@ var Ji = (() => {
 })();
 Ui.ArcRotateCameraKeyboardMoveInput = Ji;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Cameras/Inputs/arcRotateCameraMouseWheelInput.js
+//#region node_modules/@babylonjs/core/Cameras/Inputs/arcRotateCameraMouseWheelInput.js
 var Yi = 40, Xi = (() => {
 	var e;
 	let t, n = [], r = [], i, a = [], s = [], l, u = [], d = [];
@@ -6053,7 +6053,7 @@ var Yi = 40, Xi = (() => {
 })();
 Ui.ArcRotateCameraMouseWheelInput = Xi;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Cameras/arcRotateCameraInputsManager.pure.js
+//#region node_modules/@babylonjs/core/Cameras/arcRotateCameraInputsManager.pure.js
 var Zi, Qi, $i = class extends Wi {
 	constructor(e) {
 		super(e);
@@ -6070,7 +6070,7 @@ var Zi, Qi, $i = class extends Wi {
 };
 (Zi = $i.prototype).addVRDeviceOrientation ?? (Zi.addVRDeviceOrientation = ce("ArcRotateCameraInputsManager", "addVRDeviceOrientation")), (Qi = $i.prototype).addGamepad ?? (Qi.addGamepad = ce("ArcRotateCameraInputsManager", "addGamepad"));
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Cameras/arcRotateCameraMovement.js
+//#region node_modules/@babylonjs/core/Cameras/arcRotateCameraMovement.js
 var ea = class extends Li {
 	constructor(e, t, n) {
 		super(e, t, n), this.input = new Ri({
@@ -6135,7 +6135,7 @@ var ea = class extends Li {
 	}
 };
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Cameras/arcRotateCamera.pure.js
+//#region node_modules/@babylonjs/core/Cameras/arcRotateCamera.pure.js
 function ta(e) {
 	let t = Math.PI / 2;
 	return (e.x !== 0 || e.z !== 0) && (t = Math.acos(e.x / Math.sqrt(e.x ** 2 + e.z ** 2))), e.z < 0 && (t = 2 * Math.PI - t), t;
@@ -6947,10 +6947,10 @@ function oa() {
 	aa || (aa = !0, be.AddNodeConstructor("ArcRotateCamera", (e, t) => () => new ia(e, 0, 0, 1, R.Zero(), t)), ie("BABYLON.ArcRotateCamera", ia));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Cameras/camera.js
+//#region node_modules/@babylonjs/core/Cameras/camera.js
 oa(), Pr();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Misc/performanceMonitor.js
+//#region node_modules/@babylonjs/core/Misc/performanceMonitor.js
 var sa = class {
 	constructor(e = 30) {
 		this._enabled = !0, this._rollingFrameTime = new ca(e);
@@ -7024,7 +7024,7 @@ var sa = class {
 	}
 };
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/engine.common.js
+//#region node_modules/@babylonjs/core/Engines/engine.common.js
 function la(e) {
 	e && e.setAttribute && (e.setAttribute("touch-action", "none"), e.style.touchAction = "none", e.style.webkitTapHighlightColor = "transparent");
 }
@@ -7152,7 +7152,7 @@ function Ca() {
 	document.exitPointerLock && document.exitPointerLock();
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.dom.pure.js
+//#region node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.dom.pure.js
 var wa = !1;
 function Ta() {
 	wa || (wa = !0, V.prototype.getInputElement = function() {
@@ -7171,7 +7171,7 @@ function Ta() {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/engine.pure.js
+//#region node_modules/@babylonjs/core/Engines/engine.pure.js
 var J = class e extends mt {
 	static get NpmPackage() {
 		return V.NpmPackage;
@@ -7387,7 +7387,7 @@ var J = class e extends mt {
 };
 J.ALPHA_DISABLE = 0, J.ALPHA_ADD = 1, J.ALPHA_COMBINE = 2, J.ALPHA_SUBTRACT = 3, J.ALPHA_MULTIPLY = 4, J.ALPHA_MAXIMIZED = 5, J.ALPHA_ONEONE = 6, J.ALPHA_PREMULTIPLIED = 7, J.ALPHA_PREMULTIPLIED_PORTERDUFF = 8, J.ALPHA_INTERPOLATE = 9, J.ALPHA_SCREENMODE = 10, J.DELAYLOADSTATE_NONE = 0, J.DELAYLOADSTATE_LOADED = 1, J.DELAYLOADSTATE_LOADING = 2, J.DELAYLOADSTATE_NOTLOADED = 4, J.NEVER = 512, J.ALWAYS = 519, J.LESS = 513, J.EQUAL = 514, J.LEQUAL = 515, J.GREATER = 516, J.GEQUAL = 518, J.NOTEQUAL = 517, J.KEEP = 7680, J.REPLACE = 7681, J.INCR = 7682, J.DECR = 7683, J.INVERT = 5386, J.INCR_WRAP = 34055, J.DECR_WRAP = 34056, J.TEXTURE_CLAMP_ADDRESSMODE = 0, J.TEXTURE_WRAP_ADDRESSMODE = 1, J.TEXTURE_MIRROR_ADDRESSMODE = 2, J.TEXTUREFORMAT_ALPHA = 0, J.TEXTUREFORMAT_LUMINANCE = 1, J.TEXTUREFORMAT_LUMINANCE_ALPHA = 2, J.TEXTUREFORMAT_RGB = 4, J.TEXTUREFORMAT_RGBA = 5, J.TEXTUREFORMAT_RED = 6, J.TEXTUREFORMAT_R = 6, J.TEXTUREFORMAT_R16_UNORM = 33322, J.TEXTUREFORMAT_RG16_UNORM = 33324, J.TEXTUREFORMAT_RGB16_UNORM = 32852, J.TEXTUREFORMAT_RGBA16_UNORM = 32859, J.TEXTUREFORMAT_R16_SNORM = 36760, J.TEXTUREFORMAT_RG16_SNORM = 36761, J.TEXTUREFORMAT_RGB16_SNORM = 36762, J.TEXTUREFORMAT_RGBA16_SNORM = 36763, J.TEXTUREFORMAT_RG = 7, J.TEXTUREFORMAT_RED_INTEGER = 8, J.TEXTUREFORMAT_R_INTEGER = 8, J.TEXTUREFORMAT_RG_INTEGER = 9, J.TEXTUREFORMAT_RGB_INTEGER = 10, J.TEXTUREFORMAT_RGBA_INTEGER = 11, J.TEXTURETYPE_UNSIGNED_BYTE = 0, J.TEXTURETYPE_UNSIGNED_INT = 0, J.TEXTURETYPE_FLOAT = 1, J.TEXTURETYPE_HALF_FLOAT = 2, J.TEXTURETYPE_BYTE = 3, J.TEXTURETYPE_SHORT = 4, J.TEXTURETYPE_UNSIGNED_SHORT = 5, J.TEXTURETYPE_INT = 6, J.TEXTURETYPE_UNSIGNED_INTEGER = 7, J.TEXTURETYPE_UNSIGNED_SHORT_4_4_4_4 = 8, J.TEXTURETYPE_UNSIGNED_SHORT_5_5_5_1 = 9, J.TEXTURETYPE_UNSIGNED_SHORT_5_6_5 = 10, J.TEXTURETYPE_UNSIGNED_INT_2_10_10_10_REV = 11, J.TEXTURETYPE_UNSIGNED_INT_24_8 = 12, J.TEXTURETYPE_UNSIGNED_INT_10F_11F_11F_REV = 13, J.TEXTURETYPE_UNSIGNED_INT_5_9_9_9_REV = 14, J.TEXTURETYPE_FLOAT_32_UNSIGNED_INT_24_8_REV = 15, J.TEXTURE_NEAREST_SAMPLINGMODE = 1, J.TEXTURE_BILINEAR_SAMPLINGMODE = 2, J.TEXTURE_TRILINEAR_SAMPLINGMODE = 3, J.TEXTURE_NEAREST_NEAREST_MIPLINEAR = 8, J.TEXTURE_LINEAR_LINEAR_MIPNEAREST = 11, J.TEXTURE_LINEAR_LINEAR_MIPLINEAR = 3, J.TEXTURE_NEAREST_NEAREST_MIPNEAREST = 4, J.TEXTURE_NEAREST_LINEAR_MIPNEAREST = 5, J.TEXTURE_NEAREST_LINEAR_MIPLINEAR = 6, J.TEXTURE_NEAREST_LINEAR = 7, J.TEXTURE_NEAREST_NEAREST = 1, J.TEXTURE_LINEAR_NEAREST_MIPNEAREST = 9, J.TEXTURE_LINEAR_NEAREST_MIPLINEAR = 10, J.TEXTURE_LINEAR_LINEAR = 2, J.TEXTURE_LINEAR_NEAREST = 12, J.TEXTURE_EXPLICIT_MODE = 0, J.TEXTURE_SPHERICAL_MODE = 1, J.TEXTURE_PLANAR_MODE = 2, J.TEXTURE_CUBIC_MODE = 3, J.TEXTURE_PROJECTION_MODE = 4, J.TEXTURE_SKYBOX_MODE = 5, J.TEXTURE_INVCUBIC_MODE = 6, J.TEXTURE_EQUIRECTANGULAR_MODE = 7, J.TEXTURE_FIXED_EQUIRECTANGULAR_MODE = 8, J.TEXTURE_FIXED_EQUIRECTANGULAR_MIRRORED_MODE = 9, J.SCALEMODE_FLOOR = 1, J.SCALEMODE_NEAREST = 2, J.SCALEMODE_CEILING = 3;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/Extensions/engine.alpha.pure.js
+//#region node_modules/@babylonjs/core/Engines/Extensions/engine.alpha.pure.js
 var Ea = !1;
 function Da() {
 	Ea || (Ea = !0, mt.prototype.setAlphaMode = function(e, t = !1, n = 0) {
@@ -7403,10 +7403,10 @@ function Da() {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/Extensions/engine.alpha.js
+//#region node_modules/@babylonjs/core/Engines/Extensions/engine.alpha.js
 Da();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/Extensions/engine.alphaToCoverage.pure.js
+//#region node_modules/@babylonjs/core/Engines/Extensions/engine.alphaToCoverage.pure.js
 var Oa = !1;
 function ka() {
 	if (Oa) return;
@@ -7425,10 +7425,10 @@ function ka() {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/Extensions/engine.alphaToCoverage.js
+//#region node_modules/@babylonjs/core/Engines/Extensions/engine.alphaToCoverage.js
 ka();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/Extensions/engine.rawTexture.pure.js
+//#region node_modules/@babylonjs/core/Engines/Extensions/engine.rawTexture.pure.js
 var Aa = !1;
 function ja() {
 	if (Aa) return;
@@ -7523,10 +7523,10 @@ function ja() {
 	}, mt.prototype.createRawTexture2DArray = t(!1), mt.prototype.createRawTexture3D = t(!0), mt.prototype.updateRawTexture2DArray = n(!1), mt.prototype.updateRawTexture3D = n(!0);
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/Extensions/engine.rawTexture.js
+//#region node_modules/@babylonjs/core/Engines/Extensions/engine.rawTexture.js
 ja();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/Extensions/engine.readTexture.pure.js
+//#region node_modules/@babylonjs/core/Engines/Extensions/engine.readTexture.pure.js
 var Ma = !1;
 function Na() {
 	Ma || (Ma = !0, mt.prototype._readTexturePixelsSync = function(e, t, n, r = -1, i = 0, a = null, o = !0, s = !1, c = 0, l = 0) {
@@ -7552,10 +7552,10 @@ function Na() {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/Extensions/engine.dynamicBuffer.js
+//#region node_modules/@babylonjs/core/Engines/Extensions/engine.dynamicBuffer.js
 Na(), yt();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/Extensions/engine.cubeTexture.pure.js
+//#region node_modules/@babylonjs/core/Engines/Extensions/engine.cubeTexture.pure.js
 var Pa = !1;
 function Fa() {
 	Pa || (Pa = !0, mt.prototype._createDepthStencilCubeTexture = function(e, t) {
@@ -7604,10 +7604,10 @@ function Fa() {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/Extensions/engine.cubeTexture.js
+//#region node_modules/@babylonjs/core/Engines/Extensions/engine.cubeTexture.js
 Fa();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/renderTargetWrapper.js
+//#region node_modules/@babylonjs/core/Engines/renderTargetWrapper.js
 var Ia = class {
 	get depthStencilTexture() {
 		return this._depthStencilTexture;
@@ -7921,10 +7921,10 @@ function za() {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/Extensions/engine.renderTarget.js
+//#region node_modules/@babylonjs/core/Engines/Extensions/engine.renderTarget.js
 za();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/Extensions/engine.renderTargetTexture.pure.js
+//#region node_modules/@babylonjs/core/Engines/Extensions/engine.renderTargetTexture.pure.js
 var Ba = !1;
 function Va() {
 	Ba || (Ba = !0, mt.prototype.setDepthStencilTexture = function(e, t, n, r) {
@@ -7932,10 +7932,10 @@ function Va() {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/Extensions/engine.renderTargetTexture.js
+//#region node_modules/@babylonjs/core/Engines/Extensions/engine.renderTargetTexture.js
 Va();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/Extensions/engine.renderTargetCube.pure.js
+//#region node_modules/@babylonjs/core/Engines/Extensions/engine.renderTargetCube.pure.js
 var Ha = !1;
 function Ua() {
 	Ha || (Ha = !0, mt.prototype.createRenderTargetCubeTexture = function(e, t) {
@@ -7959,10 +7959,10 @@ function Ua() {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/Extensions/engine.renderTargetCube.js
+//#region node_modules/@babylonjs/core/Engines/Extensions/engine.renderTargetCube.js
 Ua();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/Extensions/engine.prefilteredCubeTexture.pure.js
+//#region node_modules/@babylonjs/core/Engines/Extensions/engine.prefilteredCubeTexture.pure.js
 var Wa = !1;
 function Ga() {
 	Wa || (Wa = !0, mt.prototype.createPrefilteredCubeTexture = function(e, t, n, r, i = null, a = null, o, s = null, c = !0, l = null) {
@@ -7978,7 +7978,7 @@ function Ga() {
 			}
 			let o = this._gl, s = e.width;
 			if (!s) return;
-			let { DDSTools: l } = await import("./dds.pure-BIX5XD4L.js"), u = [];
+			let { DDSTools: l } = await import("./dds.pure-DP7AjtUc.js"), u = [];
 			for (let i = 0; i < 3; i++) {
 				let c = 1 - i / 2, d = r, f = Math.log2(s) * n + r, p = d + (f - d) * c, m = Math.round(Math.min(Math.max(p, 0), f)), h = new lt(this, 2);
 				if (h.type = a.type, h.format = a.format, h.width = 2 ** Math.max(Math.log2(s) - m, 0), h.height = h.width, h.isCube = !0, h._cachedWrapU = 0, h._cachedWrapV = 0, this._bindTextureDirectly(o.TEXTURE_CUBE_MAP, h, !0), h.samplingMode = 2, o.texParameteri(o.TEXTURE_CUBE_MAP, o.TEXTURE_MAG_FILTER, o.LINEAR), o.texParameteri(o.TEXTURE_CUBE_MAP, o.TEXTURE_MIN_FILTER, o.LINEAR), o.texParameteri(o.TEXTURE_CUBE_MAP, o.TEXTURE_WRAP_S, o.CLAMP_TO_EDGE), o.texParameteri(o.TEXTURE_CUBE_MAP, o.TEXTURE_WRAP_T, o.CLAMP_TO_EDGE), e.isDDS) {
@@ -7994,10 +7994,10 @@ function Ga() {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/Extensions/engine.prefilteredCubeTexture.js
+//#region node_modules/@babylonjs/core/Engines/Extensions/engine.prefilteredCubeTexture.js
 Ga();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/Extensions/engine.uniformBuffer.pure.js
+//#region node_modules/@babylonjs/core/Engines/Extensions/engine.uniformBuffer.pure.js
 var Ka = !1;
 function qa() {
 	Ka || (Ka = !0, mt.prototype.createUniformBuffer = function(e, t) {
@@ -8022,10 +8022,10 @@ function qa() {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/Extensions/engine.uniformBuffer.js
+//#region node_modules/@babylonjs/core/Engines/Extensions/engine.uniformBuffer.js
 qa();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.loadingScreen.pure.js
+//#region node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.loadingScreen.pure.js
 var Ja = !1;
 function Ya() {
 	Ja || (Ja = !0, V.prototype.displayLoadingUI = function() {
@@ -8060,10 +8060,10 @@ function Ya() {
 	}));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.dom.js
+//#region node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.dom.js
 Ya(), Ta();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.states.pure.js
+//#region node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.states.pure.js
 var Xa = !1;
 function Za() {
 	Xa || (Xa = !0, V.prototype.getInputElement = function() {
@@ -8093,10 +8093,10 @@ function Za() {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.states.js
+//#region node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.states.js
 Za();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.stencil.pure.js
+//#region node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.stencil.pure.js
 var Qa = !1;
 function $a() {
 	Qa || (Qa = !0, V.prototype.getStencilBuffer = function() {
@@ -8154,10 +8154,10 @@ function $a() {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.texture.js
+//#region node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.texture.js
 $a(), Ar(), Qn();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.loadFile.pure.js
+//#region node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.loadFile.pure.js
 var eo = !1;
 function to() {
 	eo || (eo = !0, Ae(), V.prototype._loadFileAsync = async function(e, t, n) {
@@ -8171,10 +8171,10 @@ function to() {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.loadFile.js
+//#region node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.loadFile.js
 to();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/Textures/Loaders/textureLoaderManager.js
+//#region node_modules/@babylonjs/core/Materials/Textures/Loaders/textureLoaderManager.js
 var no = /* @__PURE__ */ new Map();
 function ro(e, t) {
 	io(e) && z.Warn(`Extension with the name '${e}' already exists`), no.set(e, t);
@@ -8183,21 +8183,21 @@ function io(e) {
 	return no.delete(e);
 }
 function ao(e, t) {
-	(t === "image/ktx" || t === "image/ktx2") && (e = ".ktx"), no.has(e) || (e.endsWith(".ies") && ro(".ies", async () => await import("./iesTextureLoader-DIre8FVq.js").then((e) => new e._IESTextureLoader())), e.endsWith(".dds") && ro(".dds", async () => await import("./ddsTextureLoader-DdjWEYTV.js").then((e) => new e._DDSTextureLoader())), e.endsWith(".basis") && ro(".basis", async () => await import("./basisTextureLoader-BcaTQemm.js").then((e) => new e._BasisTextureLoader())), e.endsWith(".env") && ro(".env", async () => await Promise.resolve().then(() => mf).then((e) => new e._ENVTextureLoader())), e.endsWith(".hdr") && ro(".hdr", async () => await import("./hdrTextureLoader-hBp-AM-g.js").then((e) => new e._HDRTextureLoader())), (e.endsWith(".ktx") || e.endsWith(".ktx2")) && (ro(".ktx", async () => await import("./ktxTextureLoader-Dz1rlGep.js").then((e) => new e._KTXTextureLoader())), ro(".ktx2", async () => await import("./ktxTextureLoader-Dz1rlGep.js").then((e) => new e._KTXTextureLoader()))), e.endsWith(".tga") && ro(".tga", async () => await import("./tgaTextureLoader-D3bK00mm.js").then((e) => new e._TGATextureLoader())), e.endsWith(".exr") && ro(".exr", async () => await import("./exrTextureLoader-C2F_RnYP.js").then((e) => new e._ExrTextureLoader())));
+	(t === "image/ktx" || t === "image/ktx2") && (e = ".ktx"), no.has(e) || (e.endsWith(".ies") && ro(".ies", async () => await import("./iesTextureLoader-BWMgqgkK.js").then((e) => new e._IESTextureLoader())), e.endsWith(".dds") && ro(".dds", async () => await import("./ddsTextureLoader-BDPVoDIT.js").then((e) => new e._DDSTextureLoader())), e.endsWith(".basis") && ro(".basis", async () => await import("./basisTextureLoader-BGSIyxqY.js").then((e) => new e._BasisTextureLoader())), e.endsWith(".env") && ro(".env", async () => await Promise.resolve().then(() => _f).then((e) => new e._ENVTextureLoader())), e.endsWith(".hdr") && ro(".hdr", async () => await import("./hdrTextureLoader-BsWqGkUi.js").then((e) => new e._HDRTextureLoader())), (e.endsWith(".ktx") || e.endsWith(".ktx2")) && (ro(".ktx", async () => await import("./ktxTextureLoader-D61vdj2H.js").then((e) => new e._KTXTextureLoader())), ro(".ktx2", async () => await import("./ktxTextureLoader-D61vdj2H.js").then((e) => new e._KTXTextureLoader()))), e.endsWith(".tga") && ro(".tga", async () => await import("./tgaTextureLoader-BzYgQgvv.js").then((e) => new e._TGATextureLoader())), e.endsWith(".exr") && ro(".exr", async () => await import("./exrTextureLoader-CR_eklLw.js").then((e) => new e._ExrTextureLoader())));
 	let n = no.get(e);
 	return n ? Promise.resolve(n(t)) : null;
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.textureLoaders.pure.js
+//#region node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.textureLoaders.pure.js
 var oo = !1;
 function so() {
 	oo || (oo = !0, V.GetCompatibleTextureLoader = ao);
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.textureLoaders.js
+//#region node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.textureLoaders.js
 so();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/thinEngine.scissor.pure.js
+//#region node_modules/@babylonjs/core/Engines/thinEngine.scissor.pure.js
 var co = !1;
 function lo() {
 	co || (co = !0, mt.prototype.enableScissor = function(e, t, n, r) {
@@ -8209,16 +8209,16 @@ function lo() {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Maths/math.vector.js
+//#region node_modules/@babylonjs/core/Maths/math.vector.js
 lo(), at(), te(), ne();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Misc/urlTools.js
+//#region node_modules/@babylonjs/core/Misc/urlTools.js
 function uo(e) {
 	let t = e.split("?")[0], n = t.lastIndexOf(".");
 	return n > -1 ? t.substring(n).toLowerCase() : "";
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.cubeTexture.pure.js
+//#region node_modules/@babylonjs/core/Engines/AbstractEngine/abstractEngine.cubeTexture.pure.js
 var fo = !1;
 function po() {
 	fo || (fo = !0, V.prototype._partialLoadFile = function(e, t, n, r, i = null) {
@@ -8270,7 +8270,7 @@ function po() {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/Textures/cubeTexture.pure.js
+//#region node_modules/@babylonjs/core/Materials/Textures/cubeTexture.pure.js
 var mo = .8, ho = (() => {
 	var e;
 	let t = Zn, n = [], r, i = [], a = [], o, s = [], l = [], u, d, f, h = [], g = [], _, v = [], y = [], b, x = [], C = [], T, D = [], O = [], j, M = [], N = [];
@@ -8504,13 +8504,13 @@ function bo() {
 	go || (go = !0, ho.CreateFromImages = _o, ho.CreateFromPrefilteredData = vo, ho.Parse = yo, W._CubeTextureParser = yo, ie("BABYLON.CubeTexture", ho));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/Textures/cubeTexture.js
+//#region node_modules/@babylonjs/core/Materials/Textures/cubeTexture.js
 bo();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/PostProcesses/thinBlurPostProcess.js
+//#region node_modules/@babylonjs/core/PostProcesses/thinBlurPostProcess.js
 var xo = class e extends Ke {
 	_gatherImports(e, t) {
-		e ? (this._webGPUReady = !0, t.push(Promise.all([import("./kernelBlur.fragment-CY02PKNd.js"), import("./kernelBlur.vertex-vcltFOl1.js")]))) : t.push(Promise.all([import("./kernelBlur.fragment-8VmJZQUF.js"), import("./kernelBlur.vertex-B6WxmUQE.js")]));
+		e ? (this._webGPUReady = !0, t.push(Promise.all([import("./kernelBlur.fragment-txdPr4ie.js"), import("./kernelBlur.vertex-Ds4ZOFVf.js")]))) : t.push(Promise.all([import("./kernelBlur.fragment-BN0jy8jn.js"), import("./kernelBlur.vertex-CSddBH8b.js")]));
 	}
 	constructor(t, n = null, r, i, a) {
 		let o = !!a?.blockCompilation;
@@ -8606,7 +8606,7 @@ var xo = class e extends Ke {
 };
 xo.VertexUrl = "kernelBlur", xo.FragmentUrl = "kernelBlur", xo.Uniforms = ["delta", "direction"], xo.Samplers = ["circleOfConfusionSampler"];
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/PostProcesses/blurPostProcess.pure.js
+//#region node_modules/@babylonjs/core/PostProcesses/blurPostProcess.pure.js
 var So = (() => {
 	var e;
 	let t = nr, n = [], r, i, a;
@@ -8721,7 +8721,7 @@ var So = (() => {
 		}), this.direction = r, this.kernel = i, this.textureWidth = 0, this.textureHeight = 0;
 	}
 	_gatherImports(e, t) {
-		e ? (this._webGPUReady = !0, t.push(import("./glowBlurPostProcess.fragment-BBOI8mL9.js"))) : t.push(import("./glowBlurPostProcess.fragment-ClDBzeNM.js")), super._gatherImports(e, t);
+		e ? (this._webGPUReady = !0, t.push(import("./glowBlurPostProcess.fragment-DiYooIc2.js"))) : t.push(import("./glowBlurPostProcess.fragment-Cq-ym-AH.js")), super._gatherImports(e, t);
 	}
 	bind() {
 		super.bind(), this._drawWrapper.effect.setFloat2("screenSize", this.textureWidth, this.textureHeight), this._drawWrapper.effect.setVector2("direction", this.direction), this._drawWrapper.effect.setFloat("blurWidth", this.kernel);
@@ -8914,7 +8914,7 @@ var wo = class e {
 		return this._internalIsSubMeshReady(e, t, n);
 	}
 	async _importShadersAsync() {
-		this._shaderLanguage === 1 ? await Promise.all([import("./glowMapGeneration.vertex-CcRq9kE3.js"), import("./glowMapGeneration.fragment-Cn8UTx7O.js")]) : await Promise.all([import("./glowMapGeneration.vertex-BrC3HL5V.js"), import("./glowMapGeneration.fragment-6Ft3ndrR.js")]), this._additionalImportShadersAsync?.();
+		this._shaderLanguage === 1 ? await Promise.all([import("./glowMapGeneration.vertex-C6IP3cR0.js"), import("./glowMapGeneration.fragment-DauMdo3u.js")]) : await Promise.all([import("./glowMapGeneration.vertex-CO9KXQ0r.js"), import("./glowMapGeneration.fragment-4fQva75D.js")]), this._additionalImportShadersAsync?.();
 	}
 	_internalIsLayerReady() {
 		let e = !0;
@@ -9016,7 +9016,7 @@ var wo = class e {
 };
 wo.ForceGLSL = !1;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Layers/thinGlowLayer.js
+//#region node_modules/@babylonjs/core/Layers/thinGlowLayer.js
 var To = class e extends wo {
 	get ldrMerge() {
 		return this._options.ldrMerge;
@@ -9056,13 +9056,13 @@ var To = class e extends wo {
 	}
 	async _importShadersAsync() {
 		this._shaderLanguage === 1 ? await Promise.all([
-			import("./glowMapMerge.fragment-BNhXKXyK.js"),
-			import("./glowMapMerge.vertex-CH1-TGrK.js"),
-			import("./glowBlurPostProcess.fragment-BBOI8mL9.js")
+			import("./glowMapMerge.fragment-ZDqbFpv8.js"),
+			import("./glowMapMerge.vertex-O-s_nEyR.js"),
+			import("./glowBlurPostProcess.fragment-DiYooIc2.js")
 		]) : await Promise.all([
-			import("./glowMapMerge.fragment-D3z_lmNg.js"),
-			import("./glowMapMerge.vertex-ok_TR3Mw.js"),
-			import("./glowBlurPostProcess.fragment-ClDBzeNM.js")
+			import("./glowMapMerge.fragment-BO1PIfHA.js"),
+			import("./glowMapMerge.vertex-DZJ-J_3U.js"),
+			import("./glowBlurPostProcess.fragment-Cq-ym-AH.js")
 		]), await super._importShadersAsync();
 	}
 	getEffectName() {
@@ -9156,13 +9156,13 @@ var To = class e extends wo {
 };
 To.EffectName = "GlowLayer", To.DefaultBlurKernelSize = 32;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Loading/Plugins/babylonFileParser.function.js
+//#region node_modules/@babylonjs/core/Loading/Plugins/babylonFileParser.function.js
 var Eo = {};
 function Do(e, t) {
 	Eo[e] = t;
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Layers/effectLayerSceneComponent.pure.js
+//#region node_modules/@babylonjs/core/Layers/effectLayerSceneComponent.pure.js
 var Oo = class {
 	constructor(e) {
 		this.name = _n.NAME_EFFECTLAYER, this._renderEffects = !1, this._needStencil = !1, this._previousStencilState = !1, this.scene = e || D.LastCreatedScene, this.scene && (this._engine = this.scene.getEngine());
@@ -9252,7 +9252,7 @@ function Ao(e) {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Layers/effectLayer.js
+//#region node_modules/@babylonjs/core/Layers/effectLayer.js
 var jo = (() => {
 	var e;
 	let t = [], n, r, i, a, o, s;
@@ -9765,7 +9765,7 @@ var jo = (() => {
 	})(), e.DefaultBlurKernelSize = 32, e.DefaultTextureRatio = .5, e;
 })(), No = class e extends Ke {
 	_gatherImports(e, t) {
-		e ? (this._webGPUReady = !0, t.push(import("./sharpen.fragment-I0lnPXkK.js"))) : t.push(import("./sharpen.fragment-uAjorRZZ.js"));
+		e ? (this._webGPUReady = !0, t.push(import("./sharpen.fragment-Ds4-dvbl.js"))) : t.push(import("./sharpen.fragment-CRpKhqB-.js"));
 	}
 	constructor(t, n = null, r) {
 		super({
@@ -9786,7 +9786,7 @@ var jo = (() => {
 };
 No.FragmentUrl = "sharpen", No.Uniforms = ["sharpnessAmounts", "screenSize"];
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/PostProcesses/sharpenPostProcess.pure.js
+//#region node_modules/@babylonjs/core/PostProcesses/sharpenPostProcess.pure.js
 var Po = (() => {
 	var e;
 	let t = nr, n = [], r, i;
@@ -9859,13 +9859,13 @@ var Po = (() => {
 	})(), e;
 })();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/PostProcesses/thinImageProcessingPostProcess.js
+//#region node_modules/@babylonjs/core/PostProcesses/thinImageProcessingPostProcess.js
 function Fo(e, t) {
 	t && typeof t != "number" && (t.temperature !== void 0 || t.tint !== void 0) && (t.temperature !== void 0 && (e.temperature = t.temperature), t.tint !== void 0 && (e.tint = t.tint), e.whiteBalanceEnabled = !0);
 }
 var Io = class e extends Ke {
 	_gatherImports(e, t) {
-		e ? (this._webGPUReady = !0, t.push(import("./imageProcessing.fragment-B4h6N1yN.js"))) : t.push(import("./imageProcessing.fragment-8UKJgM5f.js"));
+		e ? (this._webGPUReady = !0, t.push(import("./imageProcessing.fragment-RKugbuht.js"))) : t.push(import("./imageProcessing.fragment-DWpIeNM0.js"));
 	}
 	get imageProcessingConfiguration() {
 		return this._imageProcessingConfiguration;
@@ -10103,7 +10103,7 @@ var Io = class e extends Ke {
 };
 Io.FragmentUrl = "imageProcessing";
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/PostProcesses/imageProcessingPostProcess.js
+//#region node_modules/@babylonjs/core/PostProcesses/imageProcessingPostProcess.js
 var Lo = (() => {
 	var e;
 	let t = nr, n = [], r;
@@ -10315,7 +10315,7 @@ var Lo = (() => {
 	})(), e;
 })(), Ro = class e extends Ke {
 	_gatherImports(e, t) {
-		e ? (this._webGPUReady = !0, t.push(import("./chromaticAberration.fragment-CDKYq4he.js"))) : t.push(import("./chromaticAberration.fragment-CtKfwsfd.js"));
+		e ? (this._webGPUReady = !0, t.push(import("./chromaticAberration.fragment-RKj-G5h5.js"))) : t.push(import("./chromaticAberration.fragment-DcxGPF7w.js"));
 	}
 	constructor(t, n = null, r) {
 		super({
@@ -10343,7 +10343,7 @@ Ro.FragmentUrl = "chromaticAberration", Ro.Uniforms = [
 	"centerPosition"
 ];
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/PostProcesses/chromaticAberrationPostProcess.pure.js
+//#region node_modules/@babylonjs/core/PostProcesses/chromaticAberrationPostProcess.pure.js
 var zo = (() => {
 	var e;
 	let t = nr, n = [], r, i, a, o, s, l;
@@ -10478,7 +10478,7 @@ var zo = (() => {
 	})(), e;
 })(), Bo = class e extends Ke {
 	_gatherImports(e, t) {
-		e ? (this._webGPUReady = !0, t.push(import("./grain.fragment-CSZ7_Ojn.js"))) : t.push(import("./grain.fragment-DOP8_Nln.js"));
+		e ? (this._webGPUReady = !0, t.push(import("./grain.fragment-CMpFN7n6.js"))) : t.push(import("./grain.fragment-oJb0dDnx.js"));
 	}
 	constructor(t, n = null, r) {
 		super({
@@ -10497,7 +10497,7 @@ var zo = (() => {
 };
 Bo.FragmentUrl = "grain", Bo.Uniforms = ["intensity", "animatedSeed"];
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/PostProcesses/grainPostProcess.pure.js
+//#region node_modules/@babylonjs/core/PostProcesses/grainPostProcess.pure.js
 var Vo = (() => {
 	var e;
 	let t = nr, n = [], r, i;
@@ -10571,7 +10571,7 @@ var Vo = (() => {
 		return e && e.extractDriverInfo().toLowerCase().indexOf("mali") > -1 ? "#define MALI 1\n" : null;
 	}
 	_gatherImports(e, t) {
-		e ? (this._webGPUReady = !0, t.push(Promise.all([import("./fxaa.fragment-BEkpUApt.js"), import("./fxaa.vertex-CmrGEXVh.js")]))) : t.push(Promise.all([import("./fxaa.fragment-D4FUGdLk.js"), import("./fxaa.vertex-DnnwVoHY.js")]));
+		e ? (this._webGPUReady = !0, t.push(Promise.all([import("./fxaa.fragment-0HASiHVj.js"), import("./fxaa.vertex-BVqmbiGG.js")]))) : t.push(Promise.all([import("./fxaa.fragment-TdJtR4If.js"), import("./fxaa.vertex-BxwLIKpF.js")]));
 	}
 	constructor(t, n = null, r) {
 		let i = {
@@ -10595,7 +10595,7 @@ var Vo = (() => {
 };
 Ho.VertexUrl = "fxaa", Ho.FragmentUrl = "fxaa", Ho.Uniforms = ["texelSize"];
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/PostProcesses/fxaaPostProcess.pure.js
+//#region node_modules/@babylonjs/core/PostProcesses/fxaaPostProcess.pure.js
 var Uo = class e extends nr {
 	getClassName() {
 		return "FxaaPostProcess";
@@ -10652,7 +10652,7 @@ function qo(e) {
 	}));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/PostProcesses/RenderPipeline/postProcessRenderPipelineManager.js
+//#region node_modules/@babylonjs/core/PostProcesses/RenderPipeline/postProcessRenderPipelineManager.js
 var Jo = class e {
 	constructor() {
 		this._renderPipelines = {}, this._onNewPipelineAddedObservable = new E(), this._onPipelineRemovedObservable = new E(), qo(e);
@@ -10873,7 +10873,7 @@ var Jo = class e {
 	}
 }, Zo = class e extends Ke {
 	_gatherImports(e, t) {
-		e ? (this._webGPUReady = !0, t.push(import("./circleOfConfusion.fragment-CBlCdTTw.js"))) : t.push(import("./circleOfConfusion.fragment-DUexhaOn.js"));
+		e ? (this._webGPUReady = !0, t.push(import("./circleOfConfusion.fragment-D7sn46MP.js"))) : t.push(import("./circleOfConfusion.fragment-B2YPIFF7.js"));
 	}
 	constructor(t, n = null, r) {
 		super({
@@ -10902,7 +10902,7 @@ Zo.FragmentUrl = "circleOfConfusion", Zo.Uniforms = [
 	"cocPrecalculation"
 ], Zo.Samplers = ["depthSampler"], Zo.DefinesDepthNotNormalized = "#define COC_DEPTH_NOT_NORMALIZED";
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/PostProcesses/circleOfConfusionPostProcess.pure.js
+//#region node_modules/@babylonjs/core/PostProcesses/circleOfConfusionPostProcess.pure.js
 var Qo = (() => {
 	var e;
 	let t = nr, n = [], r, i, a, o;
@@ -11044,7 +11044,7 @@ var Qo = (() => {
 	}
 }, ts = class e extends Ke {
 	_gatherImports(e, t) {
-		e ? (this._webGPUReady = !0, t.push(import("./depthOfFieldMerge.fragment-Drf1qB7O.js"))) : t.push(import("./depthOfFieldMerge.fragment-BiEVWuKO.js"));
+		e ? (this._webGPUReady = !0, t.push(import("./depthOfFieldMerge.fragment-B9Gjmz7n.js"))) : t.push(import("./depthOfFieldMerge.fragment-DsuQ6n8g.js"));
 	}
 	constructor(t, n = null, r) {
 		super({
@@ -11065,7 +11065,7 @@ ts.FragmentUrl = "depthOfFieldMerge", ts.Samplers = [
 	"blurStep2"
 ];
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/PostProcesses/depthOfFieldMergePostProcess.js
+//#region node_modules/@babylonjs/core/PostProcesses/depthOfFieldMergePostProcess.js
 var ns = class extends nr {
 	getClassName() {
 		return "DepthOfFieldMergePostProcess";
@@ -11241,7 +11241,7 @@ var os = class extends Xo {
 	}
 }, ss = class e extends Ke {
 	_gatherImports(e, t) {
-		e ? (this._webGPUReady = !0, t.push(import("./extractHighlights.fragment-CIiHrIit.js"))) : t.push(import("./extractHighlights.fragment-fNhf70sd.js"));
+		e ? (this._webGPUReady = !0, t.push(import("./extractHighlights.fragment-ChUSJEfD.js"))) : t.push(import("./extractHighlights.fragment-C-V2fH85.js"));
 	}
 	constructor(t, n = null, r) {
 		super({
@@ -11262,7 +11262,7 @@ var os = class extends Xo {
 };
 ss.FragmentUrl = "extractHighlights", ss.Uniforms = ["threshold", "exposure"];
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/PostProcesses/extractHighlightsPostProcess.pure.js
+//#region node_modules/@babylonjs/core/PostProcesses/extractHighlightsPostProcess.pure.js
 var cs = (() => {
 	var e;
 	let t = nr, n = [], r;
@@ -11322,7 +11322,7 @@ var cs = (() => {
 	})(), e;
 })(), ls = class e extends Ke {
 	_gatherImports(e, t) {
-		e ? (this._webGPUReady = !0, t.push(import("./bloomMerge.fragment-xWWgCjcI.js"))) : t.push(import("./bloomMerge.fragment-D7AShUL2.js"));
+		e ? (this._webGPUReady = !0, t.push(import("./bloomMerge.fragment-CgHC4W_J.js"))) : t.push(import("./bloomMerge.fragment-DOOVr1N7.js"));
 	}
 	constructor(t, n = null, r) {
 		super({
@@ -11342,7 +11342,7 @@ var cs = (() => {
 };
 ls.FragmentUrl = "bloomMerge", ls.Uniforms = ["bloomWeight"], ls.Samplers = ["bloomBlur"];
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/PostProcesses/bloomMergePostProcess.pure.js
+//#region node_modules/@babylonjs/core/PostProcesses/bloomMergePostProcess.pure.js
 var us = (() => {
 	var e;
 	let t = nr, n = [], r;
@@ -11538,7 +11538,7 @@ function hs(e) {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Rendering/depthRenderer.pure.js
+//#region node_modules/@babylonjs/core/Rendering/depthRenderer.pure.js
 var gs = class e {
 	get shaderLanguage() {
 		return this._shaderLanguage;
@@ -11628,7 +11628,7 @@ var gs = class e {
 		};
 	}
 	async _initShaderSourceAsync(t = !1) {
-		this._scene.getEngine().isWebGPU && !t && !e.ForceGLSL ? (this._shaderLanguage = 1, await Promise.all([import("./depth.vertex-DCdcHawX.js"), import("./depth.fragment-nJXfhHZD.js")])) : await Promise.all([import("./depth.vertex-CQUzu7yO.js"), import("./depth.fragment-DUcYsXqc.js")]), this._shadersLoaded = !0;
+		this._scene.getEngine().isWebGPU && !t && !e.ForceGLSL ? (this._shaderLanguage = 1, await Promise.all([import("./depth.vertex-DBS7sfmv.js"), import("./depth.fragment-CdMLj3lP.js")])) : await Promise.all([import("./depth.vertex-Dv-BDIdK.js"), import("./depth.fragment-6JWmDc1C.js")]), this._shadersLoaded = !0;
 	}
 	isReady(e, t) {
 		if (!this._shadersLoaded) return !1;
@@ -11704,7 +11704,7 @@ gs.ForceGLSL = !1, gs._SceneComponentInitialization = (e) => {
 	throw oe("DepthRendererSceneComponent");
 };
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/PostProcesses/RenderPipeline/Pipelines/defaultRenderingPipeline.pure.js
+//#region node_modules/@babylonjs/core/PostProcesses/RenderPipeline/Pipelines/defaultRenderingPipeline.pure.js
 var _s = (() => {
 	var e;
 	let t = Yo, n = [], r, i, a, o = [], s = [], l, u = [], d = [], f, p = [], h = [], g, _, v, y, b, x, S, C, T, O, k, A;
@@ -12083,10 +12083,10 @@ function bs() {
 	vs || (vs = !0, _s.Parse = ys, ie("BABYLON.DefaultRenderingPipeline", _s));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/imageProcessingConfiguration.js
+//#region node_modules/@babylonjs/core/Materials/imageProcessingConfiguration.js
 bs(), Xe(), nt();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Lights/light.js
+//#region node_modules/@babylonjs/core/Lights/light.js
 var xs = (() => {
 	var e, t;
 	let n = be, r = [], i, a = [], o = [], s, l = [], d = [], f, p = [], h = [], g, y = [], b = [], x, S, C, E, D = [], O = [], k, A = [], j = [], M, P = [], ee = [], F, I = [], te = [], ne, re = [], ie = [], oe, se = [], ce = [];
@@ -12862,10 +12862,10 @@ function Ts() {
 	ws || (ws = !0, be.AddNodeConstructor("Light_Type_1", (e, t) => () => new Cs(e, R.Zero(), t)), ie("BABYLON.DirectionalLight", Cs));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Lights/directionalLight.js
+//#region node_modules/@babylonjs/core/Lights/directionalLight.js
 Ts();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Lights/hemisphericLight.pure.js
+//#region node_modules/@babylonjs/core/Lights/hemisphericLight.pure.js
 var Es = (() => {
 	var e;
 	let t = xs, n, r = [], i = [], a, o = [], s = [];
@@ -12942,10 +12942,10 @@ function Os() {
 	Ds || (Ds = !0, be.AddNodeConstructor("Light_Type_3", (e, t) => () => new Es(e, R.Zero(), t)), ie("BABYLON.HemisphericLight", Es));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Lights/hemisphericLight.js
+//#region node_modules/@babylonjs/core/Lights/hemisphericLight.js
 Os();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Lights/spotLight.pure.js
+//#region node_modules/@babylonjs/core/Lights/spotLight.pure.js
 var ks = (() => {
 	var e;
 	let t = Ss, n = [], r, i, a, o, s = [], l = [], u, d, f, p, h = [], g = [];
@@ -13190,10 +13190,10 @@ function js() {
 	As || (As = !0, be.AddNodeConstructor("Light_Type_2", (e, t) => () => new ks(e, R.Zero(), R.Zero(), 0, 0, t)), ie("BABYLON.SpotLight", ks));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Lights/spotLight.js
+//#region node_modules/@babylonjs/core/Lights/spotLight.js
 js();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Lights/Shadows/shadowGeneratorSceneComponent.pure.js
+//#region node_modules/@babylonjs/core/Lights/Shadows/shadowGeneratorSceneComponent.pure.js
 var Ms = class {
 	constructor(e) {
 		this.name = _n.NAME_SHADOWGENERATOR, this.scene = e;
@@ -13246,7 +13246,7 @@ function Ps(e) {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Lights/Shadows/shadowGenerator.js
+//#region node_modules/@babylonjs/core/Lights/Shadows/shadowGenerator.js
 var Fs = class e {
 	get bias() {
 		return this._bias;
@@ -13513,15 +13513,15 @@ var Fs = class e {
 	}
 	async _initShaderSourceAsync(t = !1) {
 		this._scene.getEngine().isWebGPU && !t && !e.ForceGLSL ? (this._shaderLanguage = 1, await Promise.all([
-			import("./shadowMap.fragment-B-E_iysF.js"),
-			import("./shadowMap.vertex-CrTEFH3I.js"),
-			import("./depthBoxBlur.fragment-DOrD7y5c.js"),
-			import("./shadowMapFragmentSoftTransparentShadow-BRUno_2m.js")
+			import("./shadowMap.fragment-JXSgKwAg.js"),
+			import("./shadowMap.vertex-CCK65kgW.js"),
+			import("./depthBoxBlur.fragment-BxB3mKV6.js"),
+			import("./shadowMapFragmentSoftTransparentShadow-DwHvn_n5.js")
 		])) : await Promise.all([
-			import("./shadowMap.fragment-BEEZ43Ma.js"),
-			import("./shadowMap.vertex-BzRWlvik.js"),
-			import("./depthBoxBlur.fragment-DgmsFmzG.js"),
-			import("./shadowMapFragmentSoftTransparentShadow-gljXQzQi.js")
+			import("./shadowMap.fragment-Do6PQDr4.js"),
+			import("./shadowMap.vertex-D0tWtiPO.js"),
+			import("./depthBoxBlur.fragment-DSeUx996.js"),
+			import("./shadowMapFragmentSoftTransparentShadow-GAGsl4Cs.js")
 		]), this._shadersLoaded = !0;
 	}
 	_initializeBlurRTTAndPostProcesses() {
@@ -13793,10 +13793,10 @@ Fs.CLASSNAME = "ShadowGenerator", Fs.ForceGLSL = !1, Fs.FILTER_NONE = 0, Fs.FILT
 	throw oe("ShadowGeneratorSceneComponent");
 }, Fs._CascadedShadowGeneratorParser = null;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/PostProcesses/thinPassPostProcess.js
+//#region node_modules/@babylonjs/core/PostProcesses/thinPassPostProcess.js
 var Is = class e extends Ke {
 	_gatherImports(e, t) {
-		e ? (this._webGPUReady = !0, t.push(Promise.all([import("./pass.fragment-OHGVFgx5.js")]))) : t.push(Promise.all([import("./pass.fragment-by2GdWLW.js")])), super._gatherImports(e, t);
+		e ? (this._webGPUReady = !0, t.push(Promise.all([import("./pass.fragment-DModQby-.js")]))) : t.push(Promise.all([import("./pass.fragment-DUzd5yX2.js")])), super._gatherImports(e, t);
 	}
 	constructor(t, n = null, r) {
 		let i = {
@@ -13813,7 +13813,7 @@ var Is = class e extends Ke {
 Is.FragmentUrl = "pass";
 var Ls = class e extends Ke {
 	_gatherImports(e, t) {
-		e ? (this._webGPUReady = !0, t.push(Promise.all([import("./passCube.fragment-DPQXxffB.js")]))) : t.push(Promise.all([import("./passCube.fragment-BaGxdoPa.js")])), super._gatherImports(e, t);
+		e ? (this._webGPUReady = !0, t.push(Promise.all([import("./passCube.fragment-BukVk-Dy.js")]))) : t.push(Promise.all([import("./passCube.fragment-Ajj0ucFp.js")])), super._gatherImports(e, t);
 	}
 	constructor(t, n = null, r) {
 		super({
@@ -13852,7 +13852,7 @@ var Ls = class e extends Ke {
 };
 Ls.FragmentUrl = "passCube";
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/PostProcesses/passPostProcess.pure.js
+//#region node_modules/@babylonjs/core/PostProcesses/passPostProcess.pure.js
 var Rs = class e extends nr {
 	getClassName() {
 		return "PassPostProcess";
@@ -13930,7 +13930,7 @@ var Rs = class e extends nr {
 	})(), e;
 })();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Layers/thinHighlightLayer.js
+//#region node_modules/@babylonjs/core/Layers/thinHighlightLayer.js
 var zs = class e extends wo {
 	set blurHorizontalSize(e) {
 		this._horizontalBlurPostprocess.kernel = e, this._options.blurHorizontalSize = e;
@@ -13969,13 +13969,13 @@ var zs = class e extends wo {
 	}
 	async _importShadersAsync() {
 		this._shaderLanguage === 1 ? await Promise.all([
-			import("./glowMapMerge.fragment-BNhXKXyK.js"),
-			import("./glowMapMerge.vertex-CH1-TGrK.js"),
-			import("./glowBlurPostProcess.fragment-BBOI8mL9.js")
+			import("./glowMapMerge.fragment-ZDqbFpv8.js"),
+			import("./glowMapMerge.vertex-O-s_nEyR.js"),
+			import("./glowBlurPostProcess.fragment-DiYooIc2.js")
 		]) : await Promise.all([
-			import("./glowMapMerge.fragment-D3z_lmNg.js"),
-			import("./glowMapMerge.vertex-ok_TR3Mw.js"),
-			import("./glowBlurPostProcess.fragment-ClDBzeNM.js")
+			import("./glowMapMerge.fragment-BO1PIfHA.js"),
+			import("./glowMapMerge.vertex-DZJ-J_3U.js"),
+			import("./glowBlurPostProcess.fragment-Cq-ym-AH.js")
 		]), await super._importShadersAsync();
 	}
 	getEffectName() {
@@ -14109,7 +14109,7 @@ var zs = class e extends wo {
 };
 zs.EffectName = "HighlightLayer", zs.NeutralColor = new F(0, 0, 0, 0), zs.GlowingMeshStencilReference = 2, zs.NormalMeshStencilReference = 1;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Layers/highlightLayer.pure.js
+//#region node_modules/@babylonjs/core/Layers/highlightLayer.pure.js
 var Bs = class extends nr {
 	constructor(e, t, n, r, i = null, a = W.BILINEAR_SAMPLINGMODE, o, s) {
 		let c = {
@@ -14129,7 +14129,7 @@ var Bs = class extends nr {
 		});
 	}
 	_gatherImports(e, t) {
-		e ? (this._webGPUReady = !0, t.push(import("./glowBlurPostProcess.fragment-BBOI8mL9.js"))) : t.push(import("./glowBlurPostProcess.fragment-ClDBzeNM.js")), super._gatherImports(e, t);
+		e ? (this._webGPUReady = !0, t.push(import("./glowBlurPostProcess.fragment-DiYooIc2.js"))) : t.push(import("./glowBlurPostProcess.fragment-Cq-ym-AH.js")), super._gatherImports(e, t);
 	}
 }, Vs = (() => {
 	var e;
@@ -14420,10 +14420,10 @@ function Us() {
 	}, ie("BABYLON.HighlightLayer", Vs));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Layers/highlightLayer.js
+//#region node_modules/@babylonjs/core/Layers/highlightLayer.js
 Us();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/materialPluginManager.pure.js
+//#region node_modules/@babylonjs/core/Materials/materialPluginManager.pure.js
 var Ws = /*#__PURE__*/ RegExp("^([gimus]+)!"), Gs = class e {
 	constructor(e) {
 		this._plugins = [], this._activePlugins = [], this._activePluginsForExtraEvents = [], this._material = e, this._scene = e.getScene(), this._engine = this._scene.getEngine();
@@ -14604,7 +14604,7 @@ function Ks(e, t) {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/materialPluginBase.pure.js
+//#region node_modules/@babylonjs/core/Materials/materialPluginBase.pure.js
 var qs = (() => {
 	var e;
 	let t, n = [], r = [], i, a = [], o = [], s, l = [], u = [], d, f = [], p = [];
@@ -14740,10 +14740,10 @@ function Ys() {
 	Js || (Js = !0, ie("BABYLON.MaterialPluginBase", qs));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/materialPluginBase.js
+//#region node_modules/@babylonjs/core/Materials/materialPluginBase.js
 Ys();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/PBR/pbrBRDFConfiguration.js
+//#region node_modules/@babylonjs/core/Materials/PBR/pbrBRDFConfiguration.js
 var Xs = class extends xn {
 	constructor() {
 		super(...arguments), this.BRDF_V_HEIGHT_CORRELATED = !1, this.MS_BRDF_ENERGY_CONSERVATION = !1, this.SPHERICAL_HARMONICS = !1, this.SPECULAR_GLOSSINESS_ENERGY_CONSERVATION = !1, this.MIX_IBL_RADIANCE_WITH_IRRADIANCE = !0, this.LEGACY_SPECULAR_ENERGY_CONSERVATION = !1, this.BASE_DIFFUSE_MODEL = 0, this.DIELECTRIC_SPECULAR_MODEL = 0, this.CONDUCTOR_SPECULAR_MODEL = 0;
@@ -17100,11 +17100,11 @@ var Xs = class extends xn {
 			writable: !0,
 			value: t
 		});
-	})(), e.PBRMATERIAL_OPAQUE = en.MATERIAL_OPAQUE, e.PBRMATERIAL_ALPHATEST = en.MATERIAL_ALPHATEST, e.PBRMATERIAL_ALPHABLEND = en.MATERIAL_ALPHABLEND, e.PBRMATERIAL_ALPHATESTANDBLEND = en.MATERIAL_ALPHATESTANDBLEND, e.DEFAULT_AO_ON_ANALYTICAL_LIGHTS = 0, e.LIGHTFALLOFF_PHYSICAL = 0, e.LIGHTFALLOFF_GLTF = 1, e.LIGHTFALLOFF_STANDARD = 2, e.ForceGLSL = !1, e._ShaderLoader = new Tn(() => [import("./pbr.vertex-CKfKbg5c.js"), import("./pbr.fragment-jNtt_hpZ.js")], () => [import("./pbr.vertex-DHJZzaKq.js"), import("./pbr.fragment-BQZZZfFe.js")]), e;
+	})(), e.PBRMATERIAL_OPAQUE = en.MATERIAL_OPAQUE, e.PBRMATERIAL_ALPHATEST = en.MATERIAL_ALPHATEST, e.PBRMATERIAL_ALPHABLEND = en.MATERIAL_ALPHABLEND, e.PBRMATERIAL_ALPHATESTANDBLEND = en.MATERIAL_ALPHATESTANDBLEND, e.DEFAULT_AO_ON_ANALYTICAL_LIGHTS = 0, e.LIGHTFALLOFF_PHYSICAL = 0, e.LIGHTFALLOFF_GLTF = 1, e.LIGHTFALLOFF_STANDARD = 2, e.ForceGLSL = !1, e._ShaderLoader = new Tn(() => [import("./pbr.vertex-Bv-O3dr6.js"), import("./pbr.fragment-C5nB9XHd.js")], () => [import("./pbr.vertex-DFoqd7-c.js"), import("./pbr.fragment-Bz_tTcCI.js")]), e;
 })();
 Object.getOwnPropertyDescriptor(mc.prototype, "decalMap") || Object.defineProperty(mc.prototype, "decalMap", ge("PBRBaseMaterial", "decalMap"));
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/PBR/pbrMaterial.pure.js
+//#region node_modules/@babylonjs/core/Materials/PBR/pbrMaterial.pure.js
 var hc = /* @__PURE__ */ t({
 	PBRMaterial: () => gc,
 	RegisterPBRMaterial: () => yc,
@@ -18458,10 +18458,10 @@ function yc() {
 	vc();
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/PBR/pbrMaterial.js
+//#region node_modules/@babylonjs/core/Materials/PBR/pbrMaterial.js
 vc();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/standardMaterial.pure.js
+//#region node_modules/@babylonjs/core/Materials/standardMaterial.pure.js
 var bc = {
 	effect: null,
 	subMesh: null
@@ -19956,17 +19956,113 @@ var bc = {
 			writable: !0,
 			value: t
 		});
-	})(), e.ForceGLSL = !1, e._ShaderLoader = new Tn(() => [import("./default.vertex-DzJK_M9i.js"), import("./default.fragment-C-BM0AZW.js")], () => [import("./default.vertex-BIPo2aJD.js"), import("./default.fragment-D7LbAINa.js")]), e;
+	})(), e.ForceGLSL = !1, e._ShaderLoader = new Tn(() => [import("./default.vertex--Z5FowcS.js"), import("./default.fragment-BrW0HvIz.js")], () => [import("./default.vertex-C8xlrLsf.js"), import("./default.fragment-DittwjHf.js")]), e;
 })(), Tc = !1;
 function Ec() {
 	Tc || (Tc = !0, nt(), ie("BABYLON.StandardMaterial", wc), tt.DefaultMaterialFactory = (e) => new wc("default material", e));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/mesh.js
-Object.getOwnPropertyDescriptor(wc.prototype, "decalMap") || Object.defineProperty(wc.prototype, "decalMap", ge("StandardMaterial", "decalMap")), Ec(), Mi();
+//#region node_modules/@babylonjs/core/Materials/standardMaterial.js
+Object.getOwnPropertyDescriptor(wc.prototype, "decalMap") || Object.defineProperty(wc.prototype, "decalMap", ge("StandardMaterial", "decalMap")), Ec();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/ribbonBuilder.pure.js
-function Dc(e) {
+//#region node_modules/@babylonjs/core/Engines/Extensions/engine.dynamicTexture.pure.js
+var Dc = !1;
+function Oc() {
+	Dc || (Dc = !0, mt.prototype.createDynamicTexture = function(e, t, n, r) {
+		let i = new lt(this, 4);
+		return i.baseWidth = e, i.baseHeight = t, n && (e = this.needPOTTextures ? ue(e, this._caps.maxTextureSize) : e, t = this.needPOTTextures ? ue(t, this._caps.maxTextureSize) : t), i.width = e, i.height = t, i.isReady = !1, i.generateMipMaps = n, i.samplingMode = r, this.updateTextureSamplingMode(r, i), this._internalTexturesCache.push(i), i;
+	}, mt.prototype.updateDynamicTexture = function(e, t, n, r = !1, i, a = !1, o = !1) {
+		if (!e) return;
+		let s = this._gl, c = s.TEXTURE_2D, l = this._bindTextureDirectly(c, e, !0, a);
+		this._unpackFlipY(n === void 0 ? e.invertY : n), r && s.pixelStorei(s.UNPACK_PREMULTIPLY_ALPHA_WEBGL, 1);
+		let u = this._getWebGLTextureType(e.type), d = this._getInternalFormat(i || e.format), f = this._getRGBABufferInternalSizedFormat(e.type, d);
+		s.texImage2D(c, 0, f, d, u, t), e.generateMipMaps && s.generateMipmap(c), l || this._bindTextureDirectly(c, null), r && s.pixelStorei(s.UNPACK_PREMULTIPLY_ALPHA_WEBGL, 0), i && (e.format = i), e._dynamicTextureSource = t, e._premulAlpha = r, e.invertY = n || !1, e.isReady = !0;
+	});
+}
+//#endregion
+//#region node_modules/@babylonjs/core/Materials/Textures/dynamicTexture.pure.js
+var kc = class e extends W {
+	constructor(e, t, n, r = !1, i = 3, a = 5, o) {
+		let s = !n || n._isScene, c = s ? n : n?.scene;
+		super(null, c, s ? !r : n, o, i, void 0, void 0, void 0, void 0, a), Oc(), this.name = e, this.wrapU = W.CLAMP_ADDRESSMODE, this.wrapV = W.CLAMP_ADDRESSMODE, this._generateMipMaps = r;
+		let l = this._getEngine();
+		if (!l) return;
+		if (t.getContext) this._canvas = t, this._ownCanvas = !1, this._texture = l.createDynamicTexture(this._canvas.width, this._canvas.height, r, i);
+		else {
+			this._canvas = l.createCanvas(1, 1), this._ownCanvas = !0;
+			let e = t;
+			this._texture = e.width || e.width === 0 ? l.createDynamicTexture(e.width, e.height, r, i) : l.createDynamicTexture(t, t, r, i);
+		}
+		let u = this.getSize();
+		this._canvas.width !== u.width && (this._canvas.width = u.width), this._canvas.height !== u.height && (this._canvas.height = u.height), this._context = this._canvas.getContext("2d");
+	}
+	getClassName() {
+		return "DynamicTexture";
+	}
+	get canRescale() {
+		return !0;
+	}
+	_recreate(e) {
+		this._canvas.width = e.width, this._canvas.height = e.height, this.releaseInternalTexture(), this._texture = this._getEngine().createDynamicTexture(e.width, e.height, this._generateMipMaps, this.samplingMode);
+	}
+	scale(e) {
+		let t = this.getSize();
+		t.width *= e, t.height *= e, this._recreate(t);
+	}
+	scaleTo(e, t) {
+		let n = this.getSize();
+		n.width = e, n.height = t, this._recreate(n);
+	}
+	getContext() {
+		return this._context;
+	}
+	clear(e) {
+		let t = this.getSize();
+		e && (this._context.fillStyle = e), this._context.clearRect(0, 0, t.width, t.height);
+	}
+	update(e, t = !1, n = !1) {
+		this._texture && this._getEngine().updateDynamicTexture(this._texture, this._canvas, e === void 0 || e, t, this._format || void 0, void 0, n);
+	}
+	drawText(e, t, n, r, i, a, o, s = !0) {
+		let c = this.getSize();
+		if (a && (this._context.fillStyle = a, this._context.fillRect(0, 0, c.width, c.height)), this._context.font = r, t == null) {
+			let n = this._context.measureText(e);
+			t = (c.width - n.width) / 2;
+		}
+		if (n == null) {
+			let e = parseInt(r.replace(/\D/g, ""));
+			n = c.height / 2 + e / 3.65;
+		}
+		this._context.fillStyle = i || "", this._context.fillText(e, t, n), s && this.update(o);
+	}
+	dispose() {
+		super.dispose(), this._ownCanvas && this._canvas?.remove?.(), this._canvas = null, this._context = null;
+	}
+	clone() {
+		let t = this.getScene();
+		if (!t) return this;
+		let n = this.getSize(), r = new e(this.name, n, t, this._generateMipMaps);
+		return r.hasAlpha = this.hasAlpha, r.level = this.level, r.wrapU = this.wrapU, r.wrapV = this.wrapV, r;
+	}
+	serialize() {
+		let t = this.getScene();
+		t && !t.isReady() && z.Warn("The scene must be ready before serializing the dynamic texture");
+		let n = super.serialize();
+		return e._IsCanvasElement(this._canvas) && (n.base64String = this._canvas.toDataURL()), n.invertY = this._invertY, n.samplingMode = this.samplingMode, n;
+	}
+	static _IsCanvasElement(e) {
+		return e.toDataURL !== void 0;
+	}
+	_rebuild() {
+		this.update();
+	}
+};
+//#endregion
+//#region node_modules/@babylonjs/core/Meshes/mesh.js
+Mi();
+//#endregion
+//#region node_modules/@babylonjs/core/Meshes/Builders/ribbonBuilder.pure.js
+function Ac(e) {
 	let t = e.pathArray, n = e.closeArray || !1, r = e.closePath || !1, i = e.invertUV || !1, a = Math.floor(t[0].length / 2), o = e.offset || a;
 	o = o > a ? a : Math.floor(o);
 	let s = e.sideOrientation === 0 ? 0 : e.sideOrientation || K.DEFAULTSIDE, c = e.uvs, l = e.colors, u = [], d = [], f = [], p = [], m = [], h = [], g = [], _ = [], v, y = [], b = [], x, S, C;
@@ -20015,7 +20111,7 @@ function Dc(e) {
 	let ae = new K(), oe = new Float32Array(u), se = new Float32Array(f), ce = new Float32Array(p);
 	return ae.indices = d, ae.positions = oe, ae.normals = se, ae.uvs = ce, ie && ae.set(ie, H.ColorKind), r && (ae._idx = b), ae;
 }
-function Oc(e, t, n = null) {
+function jc(e, t, n = null) {
 	let r = t.pathArray, i = t.closeArray, a = t.closePath, o = q._GetDefaultSideOrientation(t.sideOrientation), s = t.instance, c = t.updatable;
 	if (s) {
 		let e = A.Vector3[0].setAll(Number.MAX_VALUE), n = A.Vector3[1].setAll(-Number.MAX_VALUE), i = (t) => {
@@ -20059,13 +20155,13 @@ function Oc(e, t, n = null) {
 	{
 		let r = new q(e, n);
 		r._originalBuilderSideOrientation = o, r._creationDataStorage = new wi();
-		let s = Dc(t);
+		let s = Ac(t);
 		return a && (r._creationDataStorage.idx = s._idx), r._creationDataStorage.closePath = a, r._creationDataStorage.closeArray = i, s.applyToMesh(r, c), r;
 	}
 }
-var kc = !1;
-function Ac() {
-	kc || (kc = !0, K.CreateRibbon = Dc, q.CreateRibbon = (e, t, n = !1, r, i, a, o = !1, s, c) => Oc(e, {
+var Mc = !1;
+function Nc() {
+	Mc || (Mc = !0, K.CreateRibbon = Ac, q.CreateRibbon = (e, t, n = !1, r, i, a, o = !1, s, c) => jc(e, {
 		pathArray: t,
 		closeArray: n,
 		closePath: r,
@@ -20076,8 +20172,8 @@ function Ac() {
 	}, a));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/discBuilder.pure.js
-function jc(e) {
+//#region node_modules/@babylonjs/core/Meshes/Builders/discBuilder.pure.js
+function Pc(e) {
 	let t = [], n = [], r = [], i = [], a = e.radius || .5, o = e.tessellation || 64, s = e.arc && (e.arc <= 0 || e.arc > 1) ? 1 : e.arc || 1, c = e.sideOrientation === 0 ? 0 : e.sideOrientation || K.DEFAULTSIDE;
 	t.push(0, 0, 0), i.push(.5, .5);
 	let l = Math.PI * 2 * s, u = s === 1 ? l / o : l / (o - 1), d = 0;
@@ -20092,13 +20188,13 @@ function jc(e) {
 	let p = new K();
 	return p.indices = n, p.positions = t, p.normals = r, p.uvs = i, p;
 }
-function Mc(e, t = {}, n = null) {
+function Fc(e, t = {}, n = null) {
 	let r = new q(e, n);
-	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, jc(t).applyToMesh(r, t.updatable), r;
+	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, Pc(t).applyToMesh(r, t.updatable), r;
 }
-var Nc = !1;
-function Pc() {
-	Nc || (Nc = !0, K.CreateDisc = jc, q.CreateDisc = (e, t, n, r = null, i, a) => Mc(e, {
+var Ic = !1;
+function Lc() {
+	Ic || (Ic = !0, K.CreateDisc = Pc, q.CreateDisc = (e, t, n, r = null, i, a) => Fc(e, {
 		radius: t,
 		tessellation: n,
 		sideOrientation: a,
@@ -20106,8 +20202,8 @@ function Pc() {
 	}, r));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/groundMesh.pure.js
-var Fc = class e extends q {
+//#region node_modules/@babylonjs/core/Meshes/groundMesh.pure.js
+var Rc = class e extends q {
 	constructor(e, t) {
 		super(e, t), this.generateOctree = !1;
 	}
@@ -20190,8 +20286,8 @@ var Fc = class e extends q {
 	}
 };
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/groundBuilder.pure.js
-function Ic(e) {
+//#region node_modules/@babylonjs/core/Meshes/Builders/groundBuilder.pure.js
+function zc(e) {
 	let t = [], n = [], r = [], i = [], a, o, s = e.width || e.size || 1, c = e.height || e.size || 1, l = (e.subdivisionsX || e.subdivisions || 1) | 0, u = (e.subdivisionsY || e.subdivisions || 1) | 0;
 	for (a = 0; a <= u; a++) for (o = 0; o <= l; o++) {
 		let e = new R(o * s / l - s / 2, 0, (u - a) * c / u - c / 2), t = new R(0, 1, 0);
@@ -20201,7 +20297,7 @@ function Ic(e) {
 	let d = new K();
 	return d.indices = t, d.positions = n, d.normals = r, d.uvs = i, d;
 }
-function Lc(e) {
+function Bc(e) {
 	let t = e.xmin !== void 0 && e.xmin !== null ? e.xmin : -1, n = e.zmin !== void 0 && e.zmin !== null ? e.zmin : -1, r = e.xmax !== void 0 && e.xmax !== null ? e.xmax : 1, i = e.zmax !== void 0 && e.zmax !== null ? e.zmax : 1, a = e.subdivisions || {
 		w: 1,
 		h: 1
@@ -20232,7 +20328,7 @@ function Lc(e) {
 	let _ = new K();
 	return _.indices = s, _.positions = c, _.normals = l, _.uvs = u, _;
 }
-function Rc(e) {
+function Vc(e) {
 	let t = [], n = [], r = [], i = [], a, o, s = e.colorFilter || new L(.3, .59, .11), c = e.alphaFilter || 0, l = !1;
 	if (e.minHeight > e.maxHeight) {
 		l = !0;
@@ -20253,23 +20349,23 @@ function Rc(e) {
 	let u = new K();
 	return u.indices = t, u.positions = n, u.normals = r, u.uvs = i, u;
 }
-function zc(e, t = {}, n) {
-	let r = new Fc(e, n);
-	return r._setReady(!1), r._subdivisionsX = t.subdivisionsX || t.subdivisions || 1, r._subdivisionsY = t.subdivisionsY || t.subdivisions || 1, r._width = t.width || 1, r._height = t.height || 1, r._maxX = r._width / 2, r._maxZ = r._height / 2, r._minX = -r._maxX, r._minZ = -r._maxZ, Ic(t).applyToMesh(r, t.updatable), r._setReady(!0), r;
+function Hc(e, t = {}, n) {
+	let r = new Rc(e, n);
+	return r._setReady(!1), r._subdivisionsX = t.subdivisionsX || t.subdivisions || 1, r._subdivisionsY = t.subdivisionsY || t.subdivisions || 1, r._width = t.width || 1, r._height = t.height || 1, r._maxX = r._width / 2, r._maxZ = r._height / 2, r._minX = -r._maxX, r._minZ = -r._maxZ, zc(t).applyToMesh(r, t.updatable), r._setReady(!0), r;
 }
-function Bc(e, t, n = null) {
+function Uc(e, t, n = null) {
 	let r = new q(e, n);
-	return Lc(t).applyToMesh(r, t.updatable), r;
+	return Bc(t).applyToMesh(r, t.updatable), r;
 }
-function Vc(e, t, n = {}, r = null) {
+function Wc(e, t, n = {}, r = null) {
 	let i = n.width || 10, a = n.height || 10, o = n.subdivisions || 1, s = n.minHeight || 0, c = n.maxHeight || 1, l = n.colorFilter || new L(.3, .59, .11), u = n.alphaFilter || 0, d = n.updatable, f = n.onReady;
 	r = r || D.LastCreatedScene;
-	let p = new Fc(e, r);
+	let p = new Rc(e, r);
 	p._subdivisionsX = o, p._subdivisionsY = o, p._width = i, p._height = a, p._maxX = p._width / 2, p._maxZ = p._height / 2, p._minX = -p._maxX, p._minZ = -p._maxZ, p._setReady(!1);
 	let m;
 	n.passHeightBufferInCallback && (m = new Float32Array((o + 1) * (o + 1)));
 	let h = (e, t, n) => {
-		Rc({
+		Vc({
 			width: i,
 			height: a,
 			subdivisions: o,
@@ -20295,14 +20391,14 @@ function Vc(e, t, n = {}, r = null) {
 		r.removePendingData(p), n.onError && n.onError(e, t);
 	}, r.offlineProvider)) : h(t.data, t.width, t.height), p;
 }
-var Hc = !1;
-function Uc() {
-	Hc || (Hc = !0, K.CreateGround = Ic, K.CreateTiledGround = Lc, K.CreateGroundFromHeightMap = Rc, q.CreateGround = (e, t, n, r, i, a) => zc(e, {
+var Gc = !1;
+function Kc() {
+	Gc || (Gc = !0, K.CreateGround = zc, K.CreateTiledGround = Bc, K.CreateGroundFromHeightMap = Vc, q.CreateGround = (e, t, n, r, i, a) => Hc(e, {
 		width: t,
 		height: n,
 		subdivisions: r,
 		updatable: a
-	}, i), q.CreateTiledGround = (e, t, n, r, i, a, o, s, c) => Bc(e, {
+	}, i), q.CreateTiledGround = (e, t, n, r, i, a, o, s, c) => Uc(e, {
 		xmin: t,
 		zmin: n,
 		xmax: r,
@@ -20310,7 +20406,7 @@ function Uc() {
 		subdivisions: a,
 		precision: o,
 		updatable: c
-	}, s), q.CreateGroundFromHeightMap = (e, t, n, r, i, a, o, s, c, l, u) => Vc(e, t, {
+	}, s), q.CreateGroundFromHeightMap = (e, t, n, r, i, a, o, s, c, l, u) => Wc(e, t, {
 		width: n,
 		height: r,
 		subdivisions: i,
@@ -20322,8 +20418,8 @@ function Uc() {
 	}, s));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/boxBuilder.pure.js
-function Wc(e) {
+//#region node_modules/@babylonjs/core/Meshes/Builders/boxBuilder.pure.js
+function qc(e) {
 	let t = [
 		0,
 		1,
@@ -20671,21 +20767,21 @@ function Wc(e) {
 	let x = new K();
 	return x.indices = t, x.positions = g, x.normals = n, x.uvs = r, y && (x.colors = _ === K.DOUBLESIDE ? b.concat(b) : b), x;
 }
-function Gc(e, t = {}, n = null) {
+function Jc(e, t = {}, n = null) {
 	let r = new q(e, n);
-	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, Wc(t).applyToMesh(r, t.updatable), r;
+	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, qc(t).applyToMesh(r, t.updatable), r;
 }
-var Kc = !1;
-function qc() {
-	Kc || (Kc = !0, K.CreateBox = Wc, q.CreateBox = (e, t, n = null, r, i) => Gc(e, {
+var Yc = !1;
+function Xc() {
+	Yc || (Yc = !0, K.CreateBox = qc, q.CreateBox = (e, t, n = null, r, i) => Jc(e, {
 		size: t,
 		sideOrientation: i,
 		updatable: r
 	}, n));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/tiledPlaneBuilder.pure.js
-function Jc(e) {
+//#region node_modules/@babylonjs/core/Meshes/Builders/tiledPlaneBuilder.pure.js
+function Zc(e) {
 	let t = e.pattern || q.NO_FLIP, n = e.tileWidth || e.tileSize || 1, r = e.tileHeight || e.tileSize || 1, i = e.alignHorizontal || 0, a = e.alignVertical || 0, o = e.width || e.size || 1, s = Math.floor(o / n), c = o - s * n, l = e.height || e.size || 1, u = Math.floor(l / r), d = l - u * r, f = n * s / 2, p = r * u / 2, m = 0, h = 0, g = 0, _ = 0, v = 0, y = 0;
 	if (c > 0 || d > 0) {
 		switch (g = -f, _ = -p, v = f, y = p, i) {
@@ -21108,18 +21204,18 @@ function Jc(e) {
 	let O = new K();
 	return O.indices = T, O.positions = b, O.normals = x, O.uvs = C, O.colors = D === K.DOUBLESIDE ? w.concat(w) : w, O;
 }
-function Yc(e, t, n = null) {
+function Qc(e, t, n = null) {
 	let r = new q(e, n);
-	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, Jc(t).applyToMesh(r, t.updatable), r;
+	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, Zc(t).applyToMesh(r, t.updatable), r;
 }
-var Xc = !1;
-function Zc() {
-	Xc || (Xc = !0, K.CreateTiledPlane = Jc);
+var $c = !1;
+function el() {
+	$c || ($c = !0, K.CreateTiledPlane = Zc);
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/tiledBoxBuilder.pure.js
-var Qc = 1, $c = -1;
-function el(e) {
+//#region node_modules/@babylonjs/core/Meshes/Builders/tiledBoxBuilder.pure.js
+var tl = 1, nl = -1;
+function rl(e) {
 	let t = e.faceUV || [
 		,
 		,
@@ -21130,7 +21226,7 @@ function el(e) {
 	], n = e.faceColors, r = e.pattern || q.NO_FLIP, i = e.width || e.size || 1, a = e.height || e.size || 1, o = e.depth || e.size || 1, s = e.tileWidth || e.tileSize || 1, c = e.tileHeight || e.tileSize || 1, l = e.alignHorizontal || 0, u = e.alignVertical || 0, d = e.sideOrientation === 0 ? 0 : e.sideOrientation || K.DEFAULTSIDE;
 	for (let e = 0; e < 6; e++) t[e] === void 0 && (t[e] = new j(0, 0, 1, 1)), n && n[e] === void 0 && (n[e] = new F(1, 1, 1, 1));
 	let f = i / 2, p = a / 2, m = o / 2, h = [];
-	for (let e = 0; e < 2; e++) h[e] = Jc({
+	for (let e = 0; e < 2; e++) h[e] = Zc({
 		pattern: r,
 		tileWidth: s,
 		tileHeight: c,
@@ -21140,7 +21236,7 @@ function el(e) {
 		alignHorizontal: l,
 		sideOrientation: d
 	});
-	for (let e = 2; e < 4; e++) h[e] = Jc({
+	for (let e = 2; e < 4; e++) h[e] = Zc({
 		pattern: r,
 		tileWidth: s,
 		tileHeight: c,
@@ -21152,7 +21248,7 @@ function el(e) {
 	});
 	let g = u;
 	u === q.BOTTOM ? g = q.TOP : u === q.TOP && (g = q.BOTTOM);
-	for (let e = 4; e < 6; e++) h[e] = Jc({
+	for (let e = 4; e < 6; e++) h[e] = Zc({
 		pattern: r,
 		tileWidth: s,
 		tileHeight: c,
@@ -21178,38 +21274,38 @@ function el(e) {
 		{
 			m: k.RotationY(Math.PI),
 			t: new R(0, 0, m),
-			op: Qc
+			op: tl
 		},
 		{
 			m: k.Identity(),
 			t: new R(0, 0, m),
-			op: $c
+			op: nl
 		},
 		{
 			m: k.RotationY(-Math.PI / 2),
 			t: new R(f, 0, 0),
-			op: Qc
+			op: tl
 		},
 		{
 			m: k.RotationY(Math.PI / 2),
 			t: new R(f, 0, 0),
-			op: $c
+			op: nl
 		},
 		{
 			m: k.RotationX(Math.PI / 2),
 			t: new R(0, p, 0),
-			op: Qc
+			op: tl
 		},
 		{
 			m: k.RotationX(-Math.PI / 2),
 			t: new R(0, p, 0),
-			op: $c
+			op: nl
 		}
 	];
 	for (let e = 0; e < 6; e++) {
 		let { m: t, t: n, op: r } = D[e];
 		for (let i of S[e]) {
-			let e = R.TransformCoordinates(i, t), a = r === Qc ? e.add(n) : e.subtract(n);
+			let e = R.TransformCoordinates(i, t), a = r === tl ? e.add(n) : e.subtract(n);
 			_.push(a.x, a.y, a.z);
 		}
 		for (let n of C[e]) {
@@ -21220,17 +21316,17 @@ function el(e) {
 	let O = new K();
 	return O.indices = b, O.positions = _, O.normals = v, O.uvs = y, n && (O.colors = d === K.DOUBLESIDE ? x.concat(x) : x), O;
 }
-function tl(e, t, n = null) {
+function il(e, t, n = null) {
 	let r = new q(e, n);
-	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, el(t).applyToMesh(r, t.updatable), r;
+	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, rl(t).applyToMesh(r, t.updatable), r;
 }
-var nl = !1;
-function rl() {
-	nl || (nl = !0, Zc(), K.CreateTiledBox = el);
+var al = !1;
+function ol() {
+	al || (al = !0, el(), K.CreateTiledBox = rl);
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/sphereBuilder.pure.js
-function il(e) {
+//#region node_modules/@babylonjs/core/Meshes/Builders/sphereBuilder.pure.js
+function sl(e) {
 	let t = (e.segments || 32) | 0, n = e.diameterX || e.diameter || 1, r = e.diameterY || e.diameter || 1, i = e.diameterZ || e.diameter || 1, a = e.arc && (e.arc <= 0 || e.arc > 1) ? 1 : e.arc || 1, o = e.slice && e.slice <= 0 ? 1 : e.slice || 1, s = e.sideOrientation === 0 ? 0 : e.sideOrientation || K.DEFAULTSIDE, c = !!e.dedupTopBottomIndices, l = new R(n / 2, r / 2, i / 2), u = 2 + t, d = 2 * u, f = [], p = [], m = [], h = [];
 	for (let e = 0; e <= u; e++) {
 		let t = e / u, n = t * Math.PI * o;
@@ -21247,13 +21343,13 @@ function il(e) {
 	let g = new K();
 	return g.indices = f, g.positions = p, g.normals = m, g.uvs = h, g;
 }
-function al(e, t = {}, n = null) {
+function cl(e, t = {}, n = null) {
 	let r = new q(e, n);
-	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, il(t).applyToMesh(r, t.updatable), r;
+	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, sl(t).applyToMesh(r, t.updatable), r;
 }
-var ol = !1;
-function sl() {
-	ol || (ol = !0, K.CreateSphere = il, q.CreateSphere = (e, t, n, r, i, a) => al(e, {
+var ll = !1;
+function ul() {
+	ll || (ll = !0, K.CreateSphere = sl, q.CreateSphere = (e, t, n, r, i, a) => cl(e, {
 		segments: t,
 		diameterX: n,
 		diameterY: n,
@@ -21263,8 +21359,8 @@ function sl() {
 	}, r));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/cylinderBuilder.pure.js
-function cl(e) {
+//#region node_modules/@babylonjs/core/Meshes/Builders/cylinderBuilder.pure.js
+function dl(e) {
 	let t = e.height || 2, n = e.diameterTop === 0 ? 0 : e.diameterTop || e.diameter || 1, r = e.diameterBottom === 0 ? 0 : e.diameterBottom || e.diameter || 1;
 	n = n || 1e-5, r = r || 1e-5;
 	let i = (e.tessellation || 24) | 0, a = (e.subdivisions || 1) | 0, o = !!e.hasRings, s = !!e.enclose, c = e.cap === 0 ? 0 : e.cap || q.CAP_ALL, l = e.arc && (e.arc <= 0 || e.arc > 1) ? 1 : e.arc || 1, u = e.sideOrientation === 0 ? 0 : e.sideOrientation || K.DEFAULTSIDE, d = e.faceUV || [
@@ -21310,13 +21406,13 @@ function cl(e) {
 	let se = new K();
 	return se.indices = _, se.positions = v, se.normals = y, se.uvs = b, f && (se.colors = x), se;
 }
-function ll(e, t = {}, n) {
+function fl(e, t = {}, n) {
 	let r = new q(e, n);
-	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, cl(t).applyToMesh(r, t.updatable), r;
+	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, dl(t).applyToMesh(r, t.updatable), r;
 }
-var ul = !1;
-function dl() {
-	ul || (ul = !0, K.CreateCylinder = cl, q.CreateCylinder = (e, t, n, r, i, a, o, s, c) => ((o === void 0 || !(o instanceof tt)) && (o !== void 0 && (c = s || q.DEFAULTSIDE, s = o), o = a, a = 1), ll(e, {
+var pl = !1;
+function ml() {
+	pl || (pl = !0, K.CreateCylinder = dl, q.CreateCylinder = (e, t, n, r, i, a, o, s, c) => ((o === void 0 || !(o instanceof tt)) && (o !== void 0 && (c = s || q.DEFAULTSIDE, s = o), o = a, a = 1), fl(e, {
 		height: t,
 		diameterTop: n,
 		diameterBottom: r,
@@ -21327,8 +21423,8 @@ function dl() {
 	}, o)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/torusBuilder.pure.js
-function fl(e) {
+//#region node_modules/@babylonjs/core/Meshes/Builders/torusBuilder.pure.js
+function hl(e) {
 	let t = [], n = [], r = [], i = [], a = e.diameter || 1, o = e.thickness || .5, s = (e.tessellation || 16) | 0, c = e.sideOrientation === 0 ? 0 : e.sideOrientation || K.DEFAULTSIDE, l = s + 1;
 	for (let e = 0; e <= s; e++) {
 		let c = e / s, u = e * Math.PI * 2 / s - Math.PI / 2, d = k.Translation(a / 2, 0, 0).multiply(k.RotationY(u));
@@ -21343,13 +21439,13 @@ function fl(e) {
 	let u = new K();
 	return u.indices = t, u.positions = n, u.normals = r, u.uvs = i, u;
 }
-function pl(e, t = {}, n) {
+function gl(e, t = {}, n) {
 	let r = new q(e, n);
-	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, fl(t).applyToMesh(r, t.updatable), r;
+	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, hl(t).applyToMesh(r, t.updatable), r;
 }
-var ml = !1;
-function hl() {
-	ml || (ml = !0, K.CreateTorus = fl, q.CreateTorus = (e, t, n, r, i, a, o) => pl(e, {
+var _l = !1;
+function vl() {
+	_l || (_l = !0, K.CreateTorus = hl, q.CreateTorus = (e, t, n, r, i, a, o) => gl(e, {
 		diameter: t,
 		thickness: n,
 		tessellation: r,
@@ -21358,8 +21454,8 @@ function hl() {
 	}, i));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/torusKnotBuilder.pure.js
-function gl(e) {
+//#region node_modules/@babylonjs/core/Meshes/Builders/torusKnotBuilder.pure.js
+function yl(e) {
 	let t = [], n = [], r = [], i = [], a = e.radius || 2, o = e.tube || .5, s = e.radialSegments || 32, c = e.tubularSegments || 32, l = e.p || 2, u = e.q || 3, d = e.sideOrientation === 0 ? 0 : e.sideOrientation || K.DEFAULTSIDE, f = (e) => {
 		let t = Math.cos(e), n = Math.sin(e), r = u / l * e, i = Math.cos(r), o = a * (2 + i) * .5 * t, s = a * (2 + i) * n * .5, c = a * Math.sin(r) * .5;
 		return new R(o, s, c);
@@ -21379,13 +21475,13 @@ function gl(e) {
 	let h = new K();
 	return h.indices = t, h.positions = n, h.normals = r, h.uvs = i, h;
 }
-function _l(e, t = {}, n) {
+function bl(e, t = {}, n) {
 	let r = new q(e, n);
-	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, gl(t).applyToMesh(r, t.updatable), r;
+	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, yl(t).applyToMesh(r, t.updatable), r;
 }
-var vl = !1;
-function yl() {
-	vl || (vl = !0, K.CreateTorusKnot = gl, q.CreateTorusKnot = (e, t, n, r, i, a, o, s, c, l) => _l(e, {
+var xl = !1;
+function Sl() {
+	xl || (xl = !0, K.CreateTorusKnot = yl, q.CreateTorusKnot = (e, t, n, r, i, a, o, s, c, l) => bl(e, {
 		radius: t,
 		tube: n,
 		radialSegments: r,
@@ -21397,8 +21493,8 @@ function yl() {
 	}, s));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/instancedMesh.pure.js
-var bl = class extends ii {
+//#region node_modules/@babylonjs/core/Meshes/instancedMesh.pure.js
+var Cl = class extends ii {
 	constructor(e, t) {
 		super(e, t.getScene()), this._indexInSourceMeshInstanceArray = -1, this._distanceToCamera = 0, t.addInstance(this), this._sourceMesh = t, this._unIndexed = t._unIndexed, this.position.copyFrom(t.position), this.rotation.copyFrom(t.rotation), this.scaling.copyFrom(t.scaling), t.rotationQuaternion && (this.rotationQuaternion = t.rotationQuaternion.clone()), this.animations = t.animations.slice();
 		for (let e of t.getAnimationRanges()) e != null && this.createAnimationRange(e.name, e.from, e.to);
@@ -21577,10 +21673,10 @@ var bl = class extends ii {
 		for (let e of this.getChildTransformNodes(!0)) e.instantiateHierarchy(r, t, n);
 		return r;
 	}
-}, xl = !1;
-function Sl() {
-	xl || (xl = !0, q._instancedMeshFactory = (e, t) => {
-		let n = new bl(e, t);
+}, wl = !1;
+function Tl() {
+	wl || (wl = !0, q._instancedMeshFactory = (e, t) => {
+		let n = new Cl(e, t);
 		if (t.instancedBuffers) {
 			n.instancedBuffers = {};
 			for (let e in t.instancedBuffers) n.instancedBuffers[e] = t.instancedBuffers[e];
@@ -21635,14 +21731,14 @@ function Sl() {
 		for (this._instanceDataStorage.renderPasses = {}, this._instanceDataStorage.dataStorageRenderPass?.instancesBuffer?.dispose(); this.instances.length;) this.instances[0].dispose();
 		for (let e in this.instancedBuffers) this._userInstancedBuffersStorage.vertexBuffers[e] && this._userInstancedBuffersStorage.vertexBuffers[e].dispose();
 		this._invalidateInstanceVertexArrayObject(), this.instancedBuffers = {};
-	}, ie("BABYLON.InstancedMesh", bl));
+	}, ie("BABYLON.InstancedMesh", Cl));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/shaderMaterial.pure.js
-var Cl = {
+//#region node_modules/@babylonjs/core/Materials/shaderMaterial.pure.js
+var El = {
 	effect: null,
 	subMesh: null
-}, wl = class e extends An {
+}, Dl = class e extends An {
 	constructor(e, t, n, r = {}, i = !0) {
 		super(e, t, i), this._textures = {}, this._internalTextures = {}, this._textureArrays = {}, this._externalTextures = {}, this._floats = {}, this._ints = {}, this._uints = {}, this._floatsArrays = {}, this._colors3 = {}, this._colors3Arrays = {}, this._colors4 = {}, this._colors4Arrays = {}, this._vectors2 = {}, this._vectors3 = {}, this._vectors4 = {}, this._quaternions = {}, this._quaternionsArrays = {}, this._matrices = {}, this._matrixArrays = {}, this._matrices3x3 = {}, this._matrices2x2 = {}, this._vectors2Arrays = {}, this._vectors3Arrays = {}, this._vectors4Arrays = {}, this._uniformBuffers = {}, this._textureSamplers = {}, this._storageBuffers = {}, this._cachedWorldViewMatrix = new k(), this._cachedWorldViewProjectionMatrix = new k(), this._multiview = !1, this._vertexPullingMetadata = null, this._materialHelperNeedsPreviousMatrices = !1, this._shaderPath = n, this._options = {
 			needAlphaBlending: !1,
@@ -21834,7 +21930,7 @@ var Cl = {
 			indexParameters: { maxSimultaneousMorphTargets: p },
 			shaderLanguage: this._options.shaderLanguage,
 			extraInitializationsAsync: this._options.extraInitializationsAsync
-		}, a), r ? n.setEffect(b, y, this._materialContext) : g && g.setEffect(b, y), this._onEffectCreatedObservable && (Cl.effect = b, Cl.subMesh = n ?? e?.subMeshes[0] ?? null, this._onEffectCreatedObservable.notifyObservers(Cl))), g._wasPreviouslyUsingInstances = !!t, b?.isReady() ? (_ !== b && i.resetCachedMaterial(), g._wasPreviouslyReady = !0, !0) : !1;
+		}, a), r ? n.setEffect(b, y, this._materialContext) : g && g.setEffect(b, y), this._onEffectCreatedObservable && (El.effect = b, El.subMesh = n ?? e?.subMeshes[0] ?? null, this._onEffectCreatedObservable.notifyObservers(El))), g._wasPreviouslyUsingInstances = !!t, b?.isReady() ? (_ !== b && i.resetCachedMaterial(), g._wasPreviouslyReady = !0, !0) : !1;
 	}
 	bindOnlyWorldMatrix(e, t) {
 		let n = t ?? this.getEffect();
@@ -22046,10 +22142,10 @@ var Cl = {
 		return e;
 	}
 };
-wl.SnippetUrl = "https://snippet.babylonjs.com";
+Dl.SnippetUrl = "https://snippet.babylonjs.com";
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/linesMesh.pure.js
-var Tl, El, Dl = class e extends q {
+//#region node_modules/@babylonjs/core/Meshes/linesMesh.pure.js
+var Ol, kl, Al = class e extends q {
 	_isShaderMaterial(e) {
 		return e ? e.getClassName() === "ShaderMaterial" : !1;
 	}
@@ -22066,9 +22162,9 @@ var Tl, El, Dl = class e extends q {
 		if (this.useVertexAlpha ? l.defines.push("#define VERTEXALPHA") : l.needAlphaBlending = !1, this.useVertexColor ? (l.defines.push("#define VERTEXCOLOR"), l.attributes.push(H.ColorKind)) : (l.uniforms.push("color"), this._color4 = new F()), c) this.material = c;
 		else {
 			this.getScene().getEngine().isWebGPU && !e.ForceGLSL && (this._shaderLanguage = 1), l.shaderLanguage = this._shaderLanguage, l.extraInitializationsAsync = async () => {
-				this._shaderLanguage === 1 ? await Promise.all([import("./color.vertex-CWGb8XOY.js"), import("./color.fragment-DJ61qhIQ.js")]) : await Promise.all([import("./color.vertex-D1DwRQsW.js"), import("./color.fragment-tAw4fhrF.js")]);
+				this._shaderLanguage === 1 ? await Promise.all([import("./color.vertex-8Izsv8jF.js"), import("./color.fragment-BgaKOH0E.js")]) : await Promise.all([import("./color.vertex-DyPLGEkT.js"), import("./color.fragment-CvHm9emg.js")]);
 			};
-			let t = new wl("colorShader", this.getScene(), "color", l, !1);
+			let t = new Dl("colorShader", this.getScene(), "color", l, !1);
 			t.doNotSerialize = !0, this._ownsMaterial = !0, this._setInternalMaterial(t);
 		}
 	}
@@ -22116,7 +22212,7 @@ var Tl, El, Dl = class e extends q {
 		return new e(t, this.getScene(), n, this, r);
 	}
 	createInstance(e) {
-		let t = new Ol(e, this);
+		let t = new jl(e, this);
 		if (this.instancedBuffers) {
 			t.instancedBuffers = {};
 			for (let e in this.instancedBuffers) t.instancedBuffers[e] = this.instancedBuffers[e];
@@ -22131,8 +22227,8 @@ var Tl, El, Dl = class e extends q {
 		return r.color = L.FromArray(t.color), r.alpha = t.alpha, r;
 	}
 };
-Dl.ForceGLSL = !1;
-var Ol = class extends bl {
+Al.ForceGLSL = !1;
+var jl = class extends Cl {
 	constructor(e, t) {
 		super(e, t), this.intersectionThreshold = t.intersectionThreshold;
 	}
@@ -22140,10 +22236,10 @@ var Ol = class extends bl {
 		return "InstancedLinesMesh";
 	}
 };
-(Tl = Dl.prototype).enableEdgesRendering ?? (Tl.enableEdgesRendering = ce("LinesMesh", "enableEdgesRendering")), (El = Ol.prototype).enableEdgesRendering ?? (El.enableEdgesRendering = ce("InstancedLinesMesh", "enableEdgesRendering"));
+(Ol = Al.prototype).enableEdgesRendering ?? (Ol.enableEdgesRendering = ce("LinesMesh", "enableEdgesRendering")), (kl = jl.prototype).enableEdgesRendering ?? (kl.enableEdgesRendering = ce("InstancedLinesMesh", "enableEdgesRendering"));
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/linesBuilder.pure.js
-function kl(e) {
+//#region node_modules/@babylonjs/core/Meshes/Builders/linesBuilder.pure.js
+function Ml(e) {
 	let t = [], n = [], r = e.lines, i = e.colors, a = [], o = 0;
 	for (let e = 0; e < r.length; e++) {
 		let s = r[e];
@@ -22159,7 +22255,7 @@ function kl(e) {
 	let s = new K();
 	return s.indices = t, s.positions = n, i && (s.colors = a), s;
 }
-function Al(e) {
+function Nl(e) {
 	let t = e.dashSize || 3, n = e.gapSize || 1, r = e.dashNb || 200, i = e.points, a = [], o = [], s = R.Zero(), c = 0, l, u, d = 0, f = 0;
 	for (; f < i.length - 1; f++) i[f + 1].subtractToRef(i[f], s), c += s.length();
 	let p = c / r, m = t * p / (t + n);
@@ -22170,7 +22266,7 @@ function Al(e) {
 	let h = new K();
 	return h.positions = a, h.indices = o, h;
 }
-function jl(e, t, n = null) {
+function Pl(e, t, n = null) {
 	let r = t.instance, i = t.lines, a = t.colors;
 	if (r) {
 		let e = r.getVerticesData(H.PositionKind), t, n;
@@ -22182,12 +22278,12 @@ function jl(e, t, n = null) {
 		}
 		return r.updateVerticesData(H.PositionKind, e, !1, !1), a && t && r.updateVerticesData(H.ColorKind, t, !1, !1), r.refreshBoundingInfo(), r;
 	}
-	let o = new Dl(e, n, null, void 0, void 0, !!a, t.useVertexAlpha, t.material);
-	return kl(t).applyToMesh(o, t.updatable), o;
+	let o = new Al(e, n, null, void 0, void 0, !!a, t.useVertexAlpha, t.material);
+	return Ml(t).applyToMesh(o, t.updatable), o;
 }
-function Ml(e, t, n = null) {
+function Fl(e, t, n = null) {
 	let r = t.colors ? [t.colors] : null;
-	return jl(e, {
+	return Pl(e, {
 		lines: [t.points],
 		updatable: t.updatable,
 		instance: t.instance,
@@ -22196,7 +22292,7 @@ function Ml(e, t, n = null) {
 		material: t.material
 	}, n);
 }
-function Nl(e, t, n = null) {
+function Il(e, t, n = null) {
 	let r = t.points, i = t.instance, a = t.gapSize || 1, o = t.dashSize || 3;
 	if (i) return (t.dashNb || t.dashSize || t.gapSize || t.useVertexAlpha || t.material) && z.Warn("You have used an option other than points with the instance option. Please be aware that these other options will be ignored."), i.updateMeshPositions((e) => {
 		let t = R.Zero(), n = e.length / 6, a = 0, o, s, c = 0, l, u;
@@ -22205,16 +22301,16 @@ function Nl(e, t, n = null) {
 		for (l = 0; l < r.length - 1; l++) for (r[l + 1].subtractToRef(r[l], t), o = Math.floor(t.length() / d), t.normalize(), u = 0; u < o && c < e.length;) s = d * u, e[c] = r[l].x + s * t.x, e[c + 1] = r[l].y + s * t.y, e[c + 2] = r[l].z + s * t.z, e[c + 3] = r[l].x + (s + m) * t.x, e[c + 4] = r[l].y + (s + m) * t.y, e[c + 5] = r[l].z + (s + m) * t.z, c += 6, u++;
 		for (; c < e.length;) e[c] = r[l].x, e[c + 1] = r[l].y, e[c + 2] = r[l].z, c += 3;
 	}, !1), i;
-	let s = new Dl(e, n, null, void 0, void 0, void 0, t.useVertexAlpha, t.material);
-	return Al(t).applyToMesh(s, t.updatable), s._creationDataStorage = new wi(), s._creationDataStorage.dashSize = o, s._creationDataStorage.gapSize = a, s;
+	let s = new Al(e, n, null, void 0, void 0, void 0, t.useVertexAlpha, t.material);
+	return Nl(t).applyToMesh(s, t.updatable), s._creationDataStorage = new wi(), s._creationDataStorage.dashSize = o, s._creationDataStorage.gapSize = a, s;
 }
-var Pl = !1;
-function Fl() {
-	Pl || (Pl = !0, K.CreateLineSystem = kl, K.CreateDashedLines = Al, q.CreateLines = (e, t, n = null, r = !1, i = null) => Ml(e, {
+var Ll = !1;
+function Rl() {
+	Ll || (Ll = !0, K.CreateLineSystem = Ml, K.CreateDashedLines = Nl, q.CreateLines = (e, t, n = null, r = !1, i = null) => Fl(e, {
 		points: t,
 		updatable: r,
 		instance: i
-	}, n), q.CreateDashedLines = (e, t, n, r, i, a = null, o, s) => Nl(e, {
+	}, n), q.CreateDashedLines = (e, t, n, r, i, a = null, o, s) => Il(e, {
 		points: t,
 		dashSize: n,
 		gapSize: r,
@@ -22224,19 +22320,19 @@ function Fl() {
 	}, a));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/polygonMesh.js
-var Il = class extends P {
+//#region node_modules/@babylonjs/core/Meshes/polygonMesh.js
+var zl = class extends P {
 	constructor(e, t) {
 		super(e.x, e.y), this.index = t;
 	}
-}, Ll = class {
+}, Bl = class {
 	constructor() {
 		this.elements = [];
 	}
 	add(e) {
 		let t = [];
 		for (let n of e) {
-			let e = new Il(n, this.elements.length);
+			let e = new zl(n, this.elements.length);
 			t.push(e), this.elements.push(e);
 		}
 		return t;
@@ -22251,18 +22347,18 @@ var Il = class extends P {
 			height: t.y - e.y
 		};
 	}
-}, Rl = class {
+}, Vl = class {
 	_addToepoint(e) {
 		for (let t of e) this._epoints.push(t.x, t.y);
 	}
 	constructor(e, t, n, r = earcut) {
-		this._points = new Ll(), this._outlinepoints = new Ll(), this._holes = [], this._epoints = [], this._eholes = [], this.bjsEarcut = r, this._name = e, this._scene = n || D.LastCreatedScene;
+		this._points = new Bl(), this._outlinepoints = new Bl(), this._holes = [], this._epoints = [], this._eholes = [], this.bjsEarcut = r, this._name = e, this._scene = n || D.LastCreatedScene;
 		let i;
 		i = t instanceof Ln ? t.getPoints() : t, this._addToepoint(i), this._points.add(i), this._outlinepoints.add(i), this.bjsEarcut === void 0 && z.Warn("Earcut was not found, the polygon will not be built.");
 	}
 	addHole(e) {
 		this._points.add(e);
-		let t = new Ll();
+		let t = new Bl();
 		return t.add(e), this._holes.push(t), this._eholes.push(this._epoints.length / 2), this._addToepoint(e), this;
 	}
 	build(e = !1, t = 0, n = 2) {
@@ -22302,8 +22398,8 @@ var Il = class extends P {
 	}
 };
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/polygonBuilder.pure.js
-function zl(e, t, n, r, i, a, o) {
+//#region node_modules/@babylonjs/core/Meshes/Builders/polygonBuilder.pure.js
+function Hl(e, t, n, r, i, a, o) {
 	let s = n || [
 		,
 		,
@@ -22318,31 +22414,31 @@ function zl(e, t, n, r, i, a, o) {
 	let w = new K();
 	return w.indices = m, w.positions = d, w.normals = f, w.uvs = p, c && (w.colors = t === K.DOUBLESIDE ? l.concat(l) : l), w;
 }
-function Bl(e, t, n = null, r = earcut) {
+function Ul(e, t, n = null, r = earcut) {
 	t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation);
 	let i = t.shape, a = t.holes || [], o = t.depth || 0, s = t.smoothingThreshold ?? 2, c = [], l;
 	for (let e = 0; e < i.length; e++) c[e] = new P(i[e].x, i[e].z);
 	c[0].equalsWithEpsilon(c[c.length - 1], 1e-8) && c.pop();
-	let u = new Rl(e, c, n || D.LastCreatedScene, r);
+	let u = new Vl(e, c, n || D.LastCreatedScene, r);
 	for (let e = 0; e < a.length; e++) {
 		l = [];
 		for (let t = 0; t < a[e].length; t++) l.push(new P(a[e][t].x, a[e][t].z));
 		u.addHole(l);
 	}
 	let d = u.build(!1, o, s);
-	return d._originalBuilderSideOrientation = t.sideOrientation, zl(d, t.sideOrientation, t.faceUV, t.faceColors, t.frontUVs, t.backUVs, t.wrap).applyToMesh(d, t.updatable), d;
+	return d._originalBuilderSideOrientation = t.sideOrientation, Hl(d, t.sideOrientation, t.faceUV, t.faceColors, t.frontUVs, t.backUVs, t.wrap).applyToMesh(d, t.updatable), d;
 }
-function Vl(e, t, n = null, r = earcut) {
-	return Bl(e, t, n, r);
+function Wl(e, t, n = null, r = earcut) {
+	return Ul(e, t, n, r);
 }
-var Hl = !1;
-function Ul() {
-	Hl || (Hl = !0, K.CreatePolygon = zl, q.CreatePolygon = (e, t, n, r, i, a, o = earcut) => Bl(e, {
+var Gl = !1;
+function Kl() {
+	Gl || (Gl = !0, K.CreatePolygon = Hl, q.CreatePolygon = (e, t, n, r, i, a, o = earcut) => Ul(e, {
 		shape: t,
 		holes: r,
 		updatable: i,
 		sideOrientation: a
-	}, n, o), q.ExtrudePolygon = (e, t, n, r, i, a, o, s = earcut) => Vl(e, {
+	}, n, o), q.ExtrudePolygon = (e, t, n, r, i, a, o, s = earcut) => Wl(e, {
 		shape: t,
 		holes: i,
 		depth: n,
@@ -22351,19 +22447,19 @@ function Ul() {
 	}, r, s));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/shapeBuilder.pure.js
-function Wl(e, t, n = null) {
+//#region node_modules/@babylonjs/core/Meshes/Builders/shapeBuilder.pure.js
+function ql(e, t, n = null) {
 	let r = t.path, i = t.shape, a = t.scale || 1, o = t.rotation || 0, s = t.cap === 0 ? 0 : t.cap || q.NO_CAP, c = t.updatable, l = q._GetDefaultSideOrientation(t.sideOrientation), u = t.instance || null, d = t.invertUV || !1, f = t.closeShape || !1, p = t.closePath || !1, m = t.capFunction || null;
-	return Kl(e, i, r, a, o, null, null, p, f, s, !1, n, !!c, l, u, d, t.frontUVs || null, t.backUVs || null, t.firstNormal || null, !!t.adjustFrame, m);
+	return Yl(e, i, r, a, o, null, null, p, f, s, !1, n, !!c, l, u, d, t.frontUVs || null, t.backUVs || null, t.firstNormal || null, !!t.adjustFrame, m);
 }
-function Gl(e, t, n = null) {
+function Jl(e, t, n = null) {
 	let r = t.path, i = t.shape, a = R.Zero(), o = (e, n) => {
 		let r = t.scaleFunction?.(e, n) ?? 1;
 		return a.copyFromFloats(r, r, r);
 	}, s = t.rotationFunction || (() => 0), c = t.closePath || t.ribbonCloseArray || !1, l = t.closeShape || t.ribbonClosePath || !1, u = t.cap === 0 ? 0 : t.cap || q.NO_CAP, d = t.updatable, f = t.firstNormal || null, p = t.adjustFrame || !1, m = q._GetDefaultSideOrientation(t.sideOrientation), h = t.instance, g = t.invertUV || !1, _ = t.capFunction || null;
-	return Kl(e, i, r, null, null, t.scaleVectorFunction ?? o, s, c, l, u, !0, n, !!d, m, h || null, g, t.frontUVs || null, t.backUVs || null, f, p, _ || null);
+	return Yl(e, i, r, null, null, t.scaleVectorFunction ?? o, s, c, l, u, !0, n, !!d, m, h || null, g, t.frontUVs || null, t.backUVs || null, f, p, _ || null);
 }
-function Kl(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g, _, v, y, b) {
+function Yl(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g, _, v, y, b) {
 	let x = (e, t, n, r, i, a, o, s, c, l, u) => {
 		let d = n.getTangents(), f = n.getNormals(), p = n.getBinormals(), m = n.getDistances();
 		if (u) {
@@ -22402,7 +22498,7 @@ function Kl(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g, _, v, y, b) {
 	}, S = r === null ? null : new R(r, r, r), C;
 	if (m) {
 		let e = m._creationDataStorage;
-		return v ? e.path3D.update(n, v) : e.path3D.update(n), C = x(t, n, e.path3D, e.pathArray, S, i, a, o, e.cap, u, y), m = Oc("", {
+		return v ? e.path3D.update(n, v) : e.path3D.update(n), C = x(t, n, e.path3D, e.pathArray, S, i, a, o, e.cap, u, y), m = jc("", {
 			pathArray: C,
 			closeArray: !1,
 			closePath: !1,
@@ -22414,7 +22510,7 @@ function Kl(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g, _, v, y, b) {
 	}
 	let w = v ? new Vn(n, v) : new Vn(n);
 	l = l < 0 || l > 3 ? 0 : l, C = x(t, n, w, [], S, i, a, o, l, u, y);
-	let T = Oc(e, {
+	let T = jc(e, {
 		pathArray: C,
 		closeArray: s,
 		closePath: c,
@@ -22426,9 +22522,9 @@ function Kl(e, t, n, r, i, a, o, s, c, l, u, d, f, p, m, h, g, _, v, y, b) {
 	}, d);
 	return T._creationDataStorage.pathArray = C, T._creationDataStorage.path3D = w, T._creationDataStorage.cap = l, T;
 }
-var ql = !1;
-function Jl() {
-	ql || (ql = !0, q.ExtrudeShape = (e, t, n, r, i, a, o = null, s, c, l) => Wl(e, {
+var Xl = !1;
+function Zl() {
+	Xl || (Xl = !0, q.ExtrudeShape = (e, t, n, r, i, a, o = null, s, c, l) => ql(e, {
 		shape: t,
 		path: n,
 		scale: r,
@@ -22437,7 +22533,7 @@ function Jl() {
 		sideOrientation: c,
 		instance: l,
 		updatable: s
-	}, o), q.ExtrudeShapeCustom = (e, t, n, r, i, a, o, s, c, l, u, d) => Gl(e, {
+	}, o), q.ExtrudeShapeCustom = (e, t, n, r, i, a, o, s, c, l, u, d) => Jl(e, {
 		shape: t,
 		path: n,
 		scaleFunction: r,
@@ -22451,14 +22547,14 @@ function Jl() {
 	}, c));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/latheBuilder.pure.js
-function Yl(e, t, n = null) {
+//#region node_modules/@babylonjs/core/Meshes/Builders/latheBuilder.pure.js
+function Ql(e, t, n = null) {
 	let r = t.arc ? t.arc <= 0 || t.arc > 1 ? 1 : t.arc : 1, i = t.closed === void 0 || t.closed, a = t.shape, o = t.radius || 1, s = t.tessellation || 64, c = t.clip || 0, l = t.updatable, u = q._GetDefaultSideOrientation(t.sideOrientation), d = t.cap || q.NO_CAP, f = Math.PI * 2, p = [], m = t.invertUV || !1, h, g, _ = f / s * r, v, y;
 	for (h = 0; h <= s - c; h++) {
 		for (y = [], (d == q.CAP_START || d == q.CAP_ALL) && (y.push(new R(0, a[0].y, 0)), y.push(new R(Math.cos(h * _) * a[0].x * o, a[0].y, Math.sin(h * _) * a[0].x * o))), g = 0; g < a.length; g++) v = new R(Math.cos(h * _) * a[g].x * o, a[g].y, Math.sin(h * _) * a[g].x * o), y.push(v);
 		(d == q.CAP_END || d == q.CAP_ALL) && (y.push(new R(Math.cos(h * _) * a[a.length - 1].x * o, a[a.length - 1].y, Math.sin(h * _) * a[a.length - 1].x * o)), y.push(new R(0, a[a.length - 1].y, 0))), p.push(y);
 	}
-	return Oc(e, {
+	return jc(e, {
 		pathArray: p,
 		closeArray: i,
 		sideOrientation: u,
@@ -22468,9 +22564,9 @@ function Yl(e, t, n = null) {
 		backUVs: t.backUVs
 	}, n);
 }
-var Xl = !1;
-function Zl() {
-	Xl || (Xl = !0, q.CreateLathe = (e, t, n, r, i, a, o) => Yl(e, {
+var $l = !1;
+function eu() {
+	$l || ($l = !0, q.CreateLathe = (e, t, n, r, i, a, o) => Ql(e, {
 		shape: t,
 		radius: n,
 		tessellation: r,
@@ -22479,20 +22575,20 @@ function Zl() {
 	}, i));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/planeBuilder.pure.js
-function Ql(e) {
+//#region node_modules/@babylonjs/core/Meshes/Builders/planeBuilder.pure.js
+function tu(e) {
 	let t = [], n = [], r = [], i = [], a = e.width === void 0 ? e.size === void 0 ? 1 : e.size : e.width, o = e.height === void 0 ? e.size === void 0 ? 1 : e.size : e.height, s = e.sideOrientation === 0 ? 0 : e.sideOrientation || K.DEFAULTSIDE, c = a / 2, l = o / 2;
 	n.push(-c, -l, 0), r.push(0, 0, -1), i.push(0, +!!ln), n.push(c, -l, 0), r.push(0, 0, -1), i.push(1, +!!ln), n.push(c, l, 0), r.push(0, 0, -1), i.push(1, +!ln), n.push(-c, l, 0), r.push(0, 0, -1), i.push(0, +!ln), t.push(0), t.push(1), t.push(2), t.push(0), t.push(2), t.push(3), K._ComputeSides(s, n, t, r, i, e.frontUVs, e.backUVs);
 	let u = new K();
 	return u.indices = t, u.positions = n, u.normals = r, u.uvs = i, u;
 }
-function $l(e, t = {}, n = null) {
+function nu(e, t = {}, n = null) {
 	let r = new q(e, n);
-	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, Ql(t).applyToMesh(r, t.updatable), t.sourcePlane && (r.translate(t.sourcePlane.normal, -t.sourcePlane.d), r.setDirection(t.sourcePlane.normal.scale(-1))), r;
+	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, tu(t).applyToMesh(r, t.updatable), t.sourcePlane && (r.translate(t.sourcePlane.normal, -t.sourcePlane.d), r.setDirection(t.sourcePlane.normal.scale(-1))), r;
 }
-var eu = !1;
-function tu() {
-	eu || (eu = !0, K.CreatePlane = Ql, q.CreatePlane = (e, t, n, r, i) => $l(e, {
+var ru = !1;
+function iu() {
+	ru || (ru = !0, K.CreatePlane = tu, q.CreatePlane = (e, t, n, r, i) => nu(e, {
 		size: t,
 		width: t,
 		height: t,
@@ -22501,8 +22597,8 @@ function tu() {
 	}, n));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/tubeBuilder.pure.js
-function nu(e, t, n = null) {
+//#region node_modules/@babylonjs/core/Meshes/Builders/tubeBuilder.pure.js
+function au(e, t, n = null) {
 	let r = t.path, i = t.instance, a = 1;
 	t.radius === void 0 ? i && (a = i._creationDataStorage.radius) : a = t.radius;
 	let o = t.tessellation || 64, s = t.radiusFunction || null, c = t.cap || q.NO_CAP, l = t.invertUV || !1, u = t.updatable, d = q._GetDefaultSideOrientation(t.sideOrientation);
@@ -22533,13 +22629,13 @@ function nu(e, t, n = null) {
 	}, p, m;
 	if (i) {
 		let e = i._creationDataStorage, n = t.arc || e.arc;
-		return p = e.path3D.update(r), m = f(r, p, e.pathArray, a, e.tessellation, s, e.cap, n), i = Oc("", {
+		return p = e.path3D.update(r), m = f(r, p, e.pathArray, a, e.tessellation, s, e.cap, n), i = jc("", {
 			pathArray: m,
 			instance: i
 		}), e.path3D = p, e.pathArray = m, e.arc = n, e.radius = a, i;
 	}
 	p = new Vn(r), c = c < 0 || c > 3 ? 0 : c, m = f(r, p, [], a, o, s, c, t.arc);
-	let h = Oc(e, {
+	let h = jc(e, {
 		pathArray: m,
 		closePath: !0,
 		closeArray: !1,
@@ -22551,9 +22647,9 @@ function nu(e, t, n = null) {
 	}, n);
 	return h._creationDataStorage.pathArray = m, h._creationDataStorage.path3D = p, h._creationDataStorage.tessellation = o, h._creationDataStorage.cap = c, h._creationDataStorage.arc = t.arc, h._creationDataStorage.radius = a, h;
 }
-var ru = !1;
-function iu() {
-	ru || (ru = !0, q.CreateTube = (e, t, n, r, i, a, o, s, c, l) => nu(e, {
+var ou = !1;
+function su() {
+	ou || (ou = !0, q.CreateTube = (e, t, n, r, i, a, o, s, c, l) => au(e, {
 		path: t,
 		radius: n,
 		tessellation: r,
@@ -22566,8 +22662,8 @@ function iu() {
 	}, o));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/polyhedronBuilder.pure.js
-function au(e) {
+//#region node_modules/@babylonjs/core/Meshes/Builders/polyhedronBuilder.pure.js
+function cu(e) {
 	let t = [];
 	t[0] = {
 		vertex: [
@@ -24413,17 +24509,17 @@ function au(e) {
 	let k = new K();
 	return k.positions = p, k.indices = m, k.normals = h, k.uvs = g, u && d && (k.colors = _), k;
 }
-function ou(e, t = {}, n = null) {
+function lu(e, t = {}, n = null) {
 	let r = new q(e, n);
-	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, au(t).applyToMesh(r, t.updatable), r;
+	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, cu(t).applyToMesh(r, t.updatable), r;
 }
-var su = !1;
-function cu() {
-	su || (su = !0, K.CreatePolyhedron = au, q.CreatePolyhedron = (e, t, n) => ou(e, t, n));
+var uu = !1;
+function du() {
+	uu || (uu = !0, K.CreatePolyhedron = cu, q.CreatePolyhedron = (e, t, n) => lu(e, t, n));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/icoSphereBuilder.pure.js
-function lu(e) {
+//#region node_modules/@babylonjs/core/Meshes/Builders/icoSphereBuilder.pure.js
+function fu(e) {
 	let t = e.sideOrientation || K.DEFAULTSIDE, n = e.radius || 1, r = e.flat === void 0 || e.flat, i = (e.subdivisions || 4) | 0, a = e.radiusX || n, o = e.radiusY || n, s = e.radiusZ || n, c = (1 + Math.sqrt(5)) / 2, l = [
 		-1,
 		c,
@@ -24650,17 +24746,17 @@ function lu(e) {
 	let S = new K();
 	return S.indices = m, S.positions = h, S.normals = g, S.uvs = _, S;
 }
-function uu(e, t = {}, n = null) {
+function pu(e, t = {}, n = null) {
 	let r = new q(e, n);
-	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, lu(t).applyToMesh(r, t.updatable), r;
+	return t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), r._originalBuilderSideOrientation = t.sideOrientation, fu(t).applyToMesh(r, t.updatable), r;
 }
-var du = !1;
-function fu() {
-	du || (du = !0, K.CreateIcoSphere = lu, q.CreateIcoSphere = (e, t, n) => uu(e, t, n));
+var mu = !1;
+function hu() {
+	mu || (mu = !0, K.CreateIcoSphere = fu, q.CreateIcoSphere = (e, t, n) => pu(e, t, n));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/decalBuilder.pure.js
-var pu = /*#__PURE__*/ new R(1, 0, 0), mu = /*#__PURE__*/ new R(-1, 0, 0), hu = /*#__PURE__*/ new R(0, 1, 0), gu = /*#__PURE__*/ new R(0, -1, 0), _u = /*#__PURE__*/ new R(0, 0, 1), vu = /*#__PURE__*/ new R(0, 0, -1), yu = class e {
+//#region node_modules/@babylonjs/core/Meshes/Builders/decalBuilder.pure.js
+var gu = /*#__PURE__*/ new R(1, 0, 0), _u = /*#__PURE__*/ new R(-1, 0, 0), vu = /*#__PURE__*/ new R(0, 1, 0), yu = /*#__PURE__*/ new R(0, -1, 0), bu = /*#__PURE__*/ new R(0, 0, 1), xu = /*#__PURE__*/ new R(0, 0, -1), Su = class e {
 	constructor(e = R.Zero(), t = R.Up(), n = P.Zero(), r = 0, i = 0, a = null, o = null, s = null, c = null) {
 		this.position = e, this.normal = t, this.uv = n, this.vertexIdx = r, this.vertexIdxForBones = i, this.localPositionOverride = a, this.localNormalOverride = o, this.matrixIndicesOverride = s, this.matrixWeightsOverride = c;
 	}
@@ -24668,7 +24764,7 @@ var pu = /*#__PURE__*/ new R(1, 0, 0), mu = /*#__PURE__*/ new R(-1, 0, 0), hu = 
 		return new e(this.position.clone(), this.normal.clone(), this.uv.clone(), this.vertexIdx, this.vertexIdxForBones, this.localPositionOverride?.slice(), this.localNormalOverride?.slice(), this.matrixIndicesOverride?.slice(), this.matrixWeightsOverride?.slice());
 	}
 };
-function bu(t, n, r) {
+function Cu(t, n, r) {
 	let i = !!n.skeleton, a = !!n.morphTargetManager?.numTargets, o = r.localMode || i, s = n.getIndices(), c = i || a ? n.getPositionData(!0, !0) : n.getVerticesData(H.PositionKind), l = i || a ? n.getNormalsData(!0, !0) : n.getVerticesData(H.NormalKind), u = o ? i ? n.getVerticesData(H.PositionKind) : c : null, d = o ? i ? n.getVerticesData(H.NormalKind) : l : null, f = n.getVerticesData(H.UVKind), p = i ? n.getVerticesData(H.MatricesIndicesKind) : null, m = i ? n.getVerticesData(H.MatricesWeightsKind) : null, h = i ? n.getVerticesData(H.MatricesIndicesExtraKind) : null, g = i ? n.getVerticesData(H.MatricesWeightsExtraKind) : null, _ = r.position || R.Zero(), v = r.normal || R.Up(), y = r.size || R.One(), b = r.angle || 0;
 	if (!v) {
 		let e = new R(0, 0, 1), t = n.getScene().activeCamera, r = R.TransformCoordinates(e, t.getWorldMatrix());
@@ -24677,7 +24773,7 @@ function bu(t, n, r) {
 	let x = -Math.atan2(v.z, v.x) - Math.PI / 2, S = Math.sqrt(v.x * v.x + v.z * v.z), C = Math.atan2(v.y, S), w = new K();
 	w.indices = [], w.positions = [], w.normals = [], w.uvs = [], w.matricesIndices = i ? [] : null, w.matricesWeights = i ? [] : null, w.matricesIndicesExtra = h ? [] : null, w.matricesWeightsExtra = g ? [] : null;
 	let T = 0, E = (e, t) => {
-		let n = new yu();
+		let n = new Su();
 		if (!s || !c || !l) return n;
 		let i = s[e];
 		if (n.vertexIdx = i * 3, n.vertexIdxForBones = i * 4, n.position = new R(c[i * 3], c[i * 3 + 1], c[i * 3 + 2]), R.TransformCoordinatesToRef(n.position, t, n.position), n.normal = new R(l[i * 3], l[i * 3 + 1], l[i * 3 + 2]), R.TransformNormalToRef(n.normal, t, n.normal), r.captureUVS && f) {
@@ -24723,7 +24819,7 @@ function bu(t, n, r) {
 				c[0] /= g, c[1] /= g, c[2] /= g, c[3] /= g;
 			}
 			let l = t.localPositionOverride ? t.localPositionOverride[0] : u?.[t.vertexIdx] ?? 0, f = t.localPositionOverride ? t.localPositionOverride[1] : u?.[t.vertexIdx + 1] ?? 0, h = t.localPositionOverride ? t.localPositionOverride[2] : u?.[t.vertexIdx + 2] ?? 0, g = a.localPositionOverride ? a.localPositionOverride[0] : u?.[a.vertexIdx] ?? 0, _ = a.localPositionOverride ? a.localPositionOverride[1] : u?.[a.vertexIdx + 1] ?? 0, v = a.localPositionOverride ? a.localPositionOverride[2] : u?.[a.vertexIdx + 2] ?? 0, y = t.localNormalOverride ? t.localNormalOverride[0] : d?.[t.vertexIdx] ?? 0, b = t.localNormalOverride ? t.localNormalOverride[1] : d?.[t.vertexIdx + 1] ?? 0, x = t.localNormalOverride ? t.localNormalOverride[2] : d?.[t.vertexIdx + 2] ?? 0, S = a.localNormalOverride ? a.localNormalOverride[0] : d?.[a.vertexIdx] ?? 0, C = a.localNormalOverride ? a.localNormalOverride[1] : d?.[a.vertexIdx + 1] ?? 0, w = a.localNormalOverride ? a.localNormalOverride[2] : d?.[a.vertexIdx + 2] ?? 0, T = y + (S - y) * o, E = b + (C - b) * o, O = x + (w - x) * o, k = Math.sqrt(T * T + E * E + O * O);
-			return new yu(R.Lerp(t.position, a.position, o), R.Lerp(t.normal, a.normal, o).normalize(), P.Lerp(t.uv, a.uv, o), -1, -1, u ? [
+			return new Su(R.Lerp(t.position, a.position, o), R.Lerp(t.normal, a.normal, o).normalize(), P.Lerp(t.uv, a.uv, o), -1, -1, u ? [
 				l + (g - l) * o,
 				f + (_ - f) * o,
 				h + (v - h) * o
@@ -24765,7 +24861,7 @@ function bu(t, n, r) {
 		];
 		for (let e = 0; e < s.length; e += 3) {
 			let t = l;
-			if (t[0] = E(e, c), t[1] = E(e + 1, c), t[2] = E(e + 2, c), !(r.cullBackFaces && -t[0].normal.z <= 0 && -t[1].normal.z <= 0 && -t[2].normal.z <= 0) && (t = O(t, pu), t && (t = O(t, mu), t && (t = O(t, hu), t && (t = O(t, gu), t && (t = O(t, _u), t && (t = O(t, vu), t))))))) for (let e = 0; e < t.length; e++) {
+			if (t[0] = E(e, c), t[1] = E(e + 1, c), t[2] = E(e + 2, c), !(r.cullBackFaces && -t[0].normal.z <= 0 && -t[1].normal.z <= 0 && -t[2].normal.z <= 0) && (t = O(t, gu), t && (t = O(t, _u), t && (t = O(t, vu), t && (t = O(t, yu), t && (t = O(t, bu), t && (t = O(t, xu), t))))))) for (let e = 0; e < t.length; e++) {
 				let n = t[e];
 				if (w.indices.push(T), o ? (n.localPositionOverride ? (w.positions[T * 3] = n.localPositionOverride[0], w.positions[T * 3 + 1] = n.localPositionOverride[1], w.positions[T * 3 + 2] = n.localPositionOverride[2]) : u && (w.positions[T * 3] = u[n.vertexIdx], w.positions[T * 3 + 1] = u[n.vertexIdx + 1], w.positions[T * 3 + 2] = u[n.vertexIdx + 2]), n.localNormalOverride ? (w.normals[T * 3] = n.localNormalOverride[0], w.normals[T * 3 + 1] = n.localNormalOverride[1], w.normals[T * 3 + 2] = n.localNormalOverride[2]) : d && (w.normals[T * 3] = d[n.vertexIdx], w.normals[T * 3 + 1] = d[n.vertexIdx + 1], w.normals[T * 3 + 2] = d[n.vertexIdx + 2])) : (n.position.toArray(w.positions, T * 3), n.normal.toArray(w.normals, T * 3)), w.matricesIndices && w.matricesWeights && (n.matrixIndicesOverride ? (w.matricesIndices[T * 4] = n.matrixIndicesOverride[0], w.matricesIndices[T * 4 + 1] = n.matrixIndicesOverride[1], w.matricesIndices[T * 4 + 2] = n.matrixIndicesOverride[2], w.matricesIndices[T * 4 + 3] = n.matrixIndicesOverride[3]) : (p && (w.matricesIndices[T * 4] = p[n.vertexIdxForBones], w.matricesIndices[T * 4 + 1] = p[n.vertexIdxForBones + 1], w.matricesIndices[T * 4 + 2] = p[n.vertexIdxForBones + 2], w.matricesIndices[T * 4 + 3] = p[n.vertexIdxForBones + 3]), h && w.matricesIndicesExtra && (w.matricesIndicesExtra[T * 4] = h[n.vertexIdxForBones], w.matricesIndicesExtra[T * 4 + 1] = h[n.vertexIdxForBones + 1], w.matricesIndicesExtra[T * 4 + 2] = h[n.vertexIdxForBones + 2], w.matricesIndicesExtra[T * 4 + 3] = h[n.vertexIdxForBones + 3])), n.matrixWeightsOverride ? (w.matricesWeights[T * 4] = n.matrixWeightsOverride[0], w.matricesWeights[T * 4 + 1] = n.matrixWeightsOverride[1], w.matricesWeights[T * 4 + 2] = n.matrixWeightsOverride[2], w.matricesWeights[T * 4 + 3] = n.matrixWeightsOverride[3]) : (m && (w.matricesWeights[T * 4] = m[n.vertexIdxForBones], w.matricesWeights[T * 4 + 1] = m[n.vertexIdxForBones + 1], w.matricesWeights[T * 4 + 2] = m[n.vertexIdxForBones + 2], w.matricesWeights[T * 4 + 3] = m[n.vertexIdxForBones + 3]), g && w.matricesWeightsExtra && (w.matricesWeightsExtra[T * 4] = g[n.vertexIdxForBones], w.matricesWeightsExtra[T * 4 + 1] = g[n.vertexIdxForBones + 1], w.matricesWeightsExtra[T * 4 + 2] = g[n.vertexIdxForBones + 2], w.matricesWeightsExtra[T * 4 + 3] = g[n.vertexIdxForBones + 3]))), r.captureUVS) n.uv.toArray(w.uvs, T * 2);
 				else {
@@ -24781,9 +24877,9 @@ function bu(t, n, r) {
 	let F = new q(t, n.getScene());
 	return w.applyToMesh(F), o ? (F.skeleton = n.skeleton, F.parent = n) : (F.position = _.clone(), F.rotation = new R(C, x, b)), F.computeWorldMatrix(!0), F.refreshBoundingInfo(!0, !0), F;
 }
-var xu = !1;
-function Su() {
-	xu || (xu = !0, q.CreateDecal = (e, t, n, r, i, a) => bu(e, t, {
+var wu = !1;
+function Tu() {
+	wu || (wu = !0, q.CreateDecal = (e, t, n, r, i, a) => Cu(e, t, {
 		position: n,
 		normal: r,
 		size: i,
@@ -24791,8 +24887,8 @@ function Su() {
 	}));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/capsuleBuilder.pure.js
-function Cu(e = {
+//#region node_modules/@babylonjs/core/Meshes/Builders/capsuleBuilder.pure.js
+function Eu(e = {
 	subdivisions: 2,
 	tessellation: 16,
 	height: 1,
@@ -24844,7 +24940,7 @@ function Cu(e = {
 	let F = new K();
 	return F.positions = g, F.normals = _, F.uvs = v, F.indices = h, F;
 }
-function wu(e, t = {
+function Du(e, t = {
 	orientation: R.Up(),
 	subdivisions: 2,
 	tessellation: 16,
@@ -24854,15 +24950,15 @@ function wu(e, t = {
 	updatable: !1
 }, n = null) {
 	let r = new q(e, n);
-	return Cu(t).applyToMesh(r, t.updatable), r;
+	return Eu(t).applyToMesh(r, t.updatable), r;
 }
-var Tu = !1;
-function Eu() {
-	Tu || (Tu = !0, q.CreateCapsule = (e, t, n) => wu(e, t, n), K.CreateCapsule = Cu);
+var Ou = !1;
+function ku() {
+	Ou || (Ou = !0, q.CreateCapsule = (e, t, n) => Du(e, t, n), K.CreateCapsule = Eu);
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Maths/math.isovector.js
-var Du = class e {
+//#region node_modules/@babylonjs/core/Maths/math.isovector.js
+var Au = class e {
 	constructor(e = 0, t = 0) {
 		this.x = e, this.y = t, e !== Math.floor(e) && (e = Math.floor(e), z.Warn("x is not an integer, floor(x) used")), t !== Math.floor(t) && (t = Math.floor(t), z.Warn("y is not an integer, floor(y) used"));
 	}
@@ -24894,9 +24990,9 @@ var Du = class e {
 	static Zero() {
 		return new e(0, 0);
 	}
-}, Ou = class {
+}, ju = class {
 	constructor() {
-		this.cartesian = [], this.vertices = [], this.max = [], this.min = [], this.closestTo = [], this.innerFacets = [], this.isoVecsABOB = [], this.isoVecsOBOA = [], this.isoVecsBAOA = [], this.vertexTypes = [], this.IDATA = new ku("icosahedron", "Regular", [
+		this.cartesian = [], this.vertices = [], this.max = [], this.min = [], this.closestTo = [], this.innerFacets = [], this.isoVecsABOB = [], this.isoVecsOBOA = [], this.isoVecsBAOA = [], this.vertexTypes = [], this.IDATA = new Mu("icosahedron", "Regular", [
 			[
 				0,
 				O,
@@ -25063,7 +25159,7 @@ var Du = class e {
 	setIndices() {
 		let e = 12, t = {}, n = this.m, r = this.n, a = n;
 		r !== 0 && (a = i(n, r));
-		let o = n / a, s = r / a, c, l, u, d, f, p = Du.Zero(), m = new Du(n, r), h = new Du(-r, n + r), g = Du.Zero(), _ = Du.Zero(), v = Du.Zero(), y = [], b, x, S, C, w = [], T = this.vertByDist, E = (n, r, i, a) => {
+		let o = n / a, s = r / a, c, l, u, d, f, p = Au.Zero(), m = new Au(n, r), h = new Au(-r, n + r), g = Au.Zero(), _ = Au.Zero(), v = Au.Zero(), y = [], b, x, S, C, w = [], T = this.vertByDist, E = (n, r, i, a) => {
 			b = n + "|" + i, x = r + "|" + a, b in t || x in t ? b in t && !(x in t) ? t[x] = t[b] : x in t && !(b in t) && (t[b] = t[x]) : (t[b] = e, t[x] = e, e++), T[i][0] > 2 ? w[t[b]] = [
 				-T[i][0],
 				T[i][1],
@@ -25179,11 +25275,11 @@ var Du = class e {
 		]);
 	}
 	edgeVecsABOB() {
-		let e = this.m, t = this.n, n = new Du(-t, e + t);
+		let e = this.m, t = this.n, n = new Au(-t, e + t);
 		for (let r = 1; r < e + t; r++) {
-			let e = new Du(this.min[r], r), t = new Du(this.min[r - 1], r - 1), i = new Du(this.min[r + 1], r + 1), a = e.clone(), o = t.clone(), s = i.clone();
+			let e = new Au(this.min[r], r), t = new Au(this.min[r - 1], r - 1), i = new Au(this.min[r + 1], r + 1), a = e.clone(), o = t.clone(), s = i.clone();
 			a.rotate60About(n), o.rotate60About(n), s.rotate60About(n);
-			let c = new Du(this.max[a.y], a.y), l = new Du(this.max[a.y - 1], a.y - 1), u = new Du(this.max[a.y - 1] - 1, a.y - 1);
+			let c = new Au(this.max[a.y], a.y), l = new Au(this.max[a.y - 1], a.y - 1), u = new Au(this.max[a.y - 1] - 1, a.y - 1);
 			(a.x !== c.x || a.y !== c.y) && (a.x === l.x ? a.y === s.y ? (this.vertexTypes.push([
 				1,
 				1,
@@ -25236,7 +25332,7 @@ var Du = class e {
 		}
 	}
 	mapABOBtoOBOA() {
-		let e = new Du(0, 0);
+		let e = new Au(0, 0);
 		for (let t = 0; t < this.isoVecsABOB.length; t++) {
 			let n = [];
 			for (let r = 0; r < 3; r++) e.x = this.isoVecsABOB[t][r].x, e.y = this.isoVecsABOB[t][r].y, this.vertexTypes[t][r] === 0 && e.rotateNeg120(this.m, this.n), n.push(e.clone());
@@ -25244,7 +25340,7 @@ var Du = class e {
 		}
 	}
 	mapABOBtoBAOA() {
-		let e = new Du(0, 0);
+		let e = new Au(0, 0);
 		for (let t = 0; t < this.isoVecsABOB.length; t++) {
 			let n = [];
 			for (let r = 0; r < 3; r++) e.x = this.isoVecsABOB[t][r].x, e.y = this.isoVecsABOB[t][r].y, this.vertexTypes[t][r] === 1 && e.rotate120(this.m, this.n), n.push(e.clone());
@@ -25264,14 +25360,14 @@ var Du = class e {
 		];
 	}
 	build(e, t) {
-		let n = [], r = Du.Zero(), a = new Du(e, t), o = new Du(-t, e + t);
+		let n = [], r = Au.Zero(), a = new Au(e, t), o = new Au(-t, e + t);
 		n.push(r, a, o);
-		for (let r = t; r < e + 1; r++) for (let t = 0; t < e + 1 - r; t++) n.push(new Du(t, r));
+		for (let r = t; r < e + 1; r++) for (let t = 0; t < e + 1 - r; t++) n.push(new Au(t, r));
 		if (t > 0) {
 			let r = i(e, t), a = e / r, o = t / r;
-			for (let i = 1; i < r; i++) n.push(new Du(i * a, i * o)), n.push(new Du(-i * o, i * (a + o))), n.push(new Du(e - i * (a + o), t + i * a));
+			for (let i = 1; i < r; i++) n.push(new Au(i * a, i * o)), n.push(new Au(-i * o, i * (a + o))), n.push(new Au(e - i * (a + o), t + i * a));
 			let s = e / t;
-			for (let r = 1; r < t; r++) for (let i = 0; i < r * s; i++) n.push(new Du(i, r)), n.push(new Du(i, r).rotate120(e, t)), n.push(new Du(i, r).rotateNeg120(e, t));
+			for (let r = 1; r < t; r++) for (let i = 0; i < r * s; i++) n.push(new Au(i, r)), n.push(new Au(i, r).rotate120(e, t)), n.push(new Au(i, r).rotateNeg120(e, t));
 		}
 		n.sort((e, t) => e.x - t.x), n.sort((e, t) => e.y - t.y);
 		let s = Array(e + t + 1), c = Array(e + t + 1);
@@ -25282,7 +25378,7 @@ var Du = class e {
 			let i = n.clone();
 			return r === "A" && i.rotateNeg120(e, t), r === "B" && i.rotate120(e, t), i.x < 0 ? i.y : i.x + i.y;
 		}, p = [], m = [], h = [], g = [], _ = {}, v = [], y = -1, b = -1;
-		for (let e = 0; e < d; e++) p[e] = n[e].toCartesianOrigin(new Du(0, 0), .5), m[e] = f(n[e], "O"), h[e] = f(n[e], "A"), g[e] = f(n[e], "B"), m[e] === h[e] && h[e] === g[e] ? (y = 3, b = m[e]) : m[e] === h[e] ? (y = 4, b = m[e]) : h[e] === g[e] ? (y = 5, b = h[e]) : g[e] === m[e] && (y = 6, b = m[e]), m[e] < h[e] && m[e] < g[e] && (y = 2, b = m[e]), h[e] < m[e] && h[e] < g[e] && (y = 1, b = h[e]), g[e] < h[e] && g[e] < m[e] && (y = 0, b = g[e]), v.push([
+		for (let e = 0; e < d; e++) p[e] = n[e].toCartesianOrigin(new Au(0, 0), .5), m[e] = f(n[e], "O"), h[e] = f(n[e], "A"), g[e] = f(n[e], "B"), m[e] === h[e] && h[e] === g[e] ? (y = 3, b = m[e]) : m[e] === h[e] ? (y = 4, b = m[e]) : h[e] === g[e] ? (y = 5, b = h[e]) : g[e] === m[e] && (y = 6, b = m[e]), m[e] < h[e] && m[e] < g[e] && (y = 2, b = m[e]), h[e] < m[e] && h[e] < g[e] && (y = 1, b = h[e]), g[e] < h[e] && g[e] < m[e] && (y = 0, b = g[e]), v.push([
 			y,
 			b,
 			n[e].x,
@@ -25296,11 +25392,11 @@ var Du = class e {
 		];
 		return this.m = e, this.n = t, this.vertices = n, this.vertByDist = _, this.cartesian = p, this.min = s, this.max = c, this;
 	}
-}, ku = class {
+}, Mu = class {
 	constructor(e, t, n, r) {
 		this.name = e, this.category = t, this.vertex = n, this.face = r;
 	}
-}, Au = class e extends ku {
+}, Nu = class e extends Mu {
 	innerToData(e, t) {
 		for (let n = 0; n < t.innerFacets.length; n++) this.face.push(t.innerFacets[n].map((n) => t.vecToidx[e + n]));
 	}
@@ -25371,7 +25467,7 @@ var Du = class e {
 		return this.adjacentFaces.push(n), r;
 	}
 	toGoldbergPolyhedronData() {
-		let e = new ku("GeoDual", "Goldberg", [], []);
+		let e = new Mu("GeoDual", "Goldberg", [], []);
 		e.name = "GD dual";
 		let t = this.vertex.length, n = Array(t);
 		for (let e = 0; e < t; e++) n[e] = [];
@@ -25464,8 +25560,8 @@ var Du = class e {
 	}
 };
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/geodesicBuilder.js
-function ju(e, t, n = null) {
+//#region node_modules/@babylonjs/core/Meshes/Builders/geodesicBuilder.js
+function Pu(e, t, n = null) {
 	let r = t.m || 1;
 	r !== Math.floor(r) && (r = Math.floor(r), z.Warn("m not an integer only floor(m) used"));
 	let i = t.n || 0;
@@ -25473,9 +25569,9 @@ function ju(e, t, n = null) {
 		let e = i;
 		i = r, r = e, z.Warn("n > m therefore m and n swapped");
 	}
-	let a = new Ou();
-	return a.build(r, i), ou(e, {
-		custom: Au.BuildGeodesicData(a),
+	let a = new ju();
+	return a.build(r, i), lu(e, {
+		custom: Nu.BuildGeodesicData(a),
 		size: t.size,
 		sizeX: t.sizeX,
 		sizeY: t.sizeY,
@@ -25490,8 +25586,8 @@ function ju(e, t, n = null) {
 	}, n);
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/goldbergMesh.pure.js
-var Mu = class e extends q {
+//#region node_modules/@babylonjs/core/Meshes/goldbergMesh.pure.js
+var Fu = class e extends q {
 	constructor() {
 		super(...arguments), this.goldbergData = {
 			faceColors: [],
@@ -25582,8 +25678,8 @@ var Mu = class e extends q {
 	}
 };
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/goldbergBuilder.js
-function Nu(e, t) {
+//#region node_modules/@babylonjs/core/Meshes/Builders/goldbergBuilder.js
+function Iu(e, t) {
 	let n = e.size, r = e.sizeX || n || 1, i = e.sizeY || n || 1, a = e.sizeZ || n || 1, o = e.sideOrientation === 0 ? 0 : e.sideOrientation || K.DEFAULTSIDE, s = [], c = [], l = [], u = [], d = Infinity, f = -Infinity, p = Infinity, m = -Infinity;
 	for (let e = 0; e < t.vertex.length; e++) d = Math.min(d, t.vertex[e][0] * r), f = Math.max(f, t.vertex[e][0] * r), p = Math.min(p, t.vertex[e][1] * i), m = Math.max(m, t.vertex[e][1] * i);
 	let h = 0;
@@ -25603,7 +25699,7 @@ function Nu(e, t) {
 	let g = new K();
 	return g.positions = s, g.indices = c, g.normals = l, g.uvs = u, g;
 }
-function Pu(e, t, n = null) {
+function Lu(e, t, n = null) {
 	let r = t.size, i = t.sizeX || r || 1, a = t.sizeY || r || 1, o = t.sizeZ || r || 1, s = t.m || 1;
 	s !== Math.floor(s) && (s = Math.floor(s), z.Warn("m not an integer only floor(m) used"));
 	let c = t.n || 0;
@@ -25611,10 +25707,10 @@ function Pu(e, t, n = null) {
 		let e = c;
 		c = s, s = e, z.Warn("n > m therefore m and n swapped");
 	}
-	let l = new Ou();
+	let l = new ju();
 	l.build(s, c);
-	let u = Au.BuildGeodesicData(l), d = u.toGoldbergPolyhedronData(), f = new Mu(e, n);
-	t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), f._originalBuilderSideOrientation = t.sideOrientation, Nu(t, d).applyToMesh(f, t.updatable), f.goldbergData.nbSharedFaces = u.sharedNodes, f.goldbergData.nbUnsharedFaces = u.poleNodes, f.goldbergData.adjacentFaces = u.adjacentFaces, f.goldbergData.nbFaces = f.goldbergData.nbSharedFaces + f.goldbergData.nbUnsharedFaces, f.goldbergData.nbFacesAtPole = (f.goldbergData.nbUnsharedFaces - 12) / 12;
+	let u = Nu.BuildGeodesicData(l), d = u.toGoldbergPolyhedronData(), f = new Fu(e, n);
+	t.sideOrientation = q._GetDefaultSideOrientation(t.sideOrientation), f._originalBuilderSideOrientation = t.sideOrientation, Iu(t, d).applyToMesh(f, t.updatable), f.goldbergData.nbSharedFaces = u.sharedNodes, f.goldbergData.nbUnsharedFaces = u.poleNodes, f.goldbergData.adjacentFaces = u.adjacentFaces, f.goldbergData.nbFaces = f.goldbergData.nbSharedFaces + f.goldbergData.nbUnsharedFaces, f.goldbergData.nbFacesAtPole = (f.goldbergData.nbUnsharedFaces - 12) / 12;
 	for (let e = 0; e < u.vertex.length; e++) f.goldbergData.faceCenters.push(R.FromArray(u.vertex[e])), f.goldbergData.faceCenters[e].x *= i, f.goldbergData.faceCenters[e].y *= a, f.goldbergData.faceCenters[e].z *= o, f.goldbergData.faceColors.push(new F(1, 1, 1, 1));
 	for (let e = 0; e < d.face.length; e++) {
 		let t = d.face[e], n = R.FromArray(d.vertex[t[0]]), r = R.FromArray(d.vertex[t[2]]), i = R.FromArray(d.vertex[t[1]]), a = r.subtract(n), o = i.subtract(n), s = R.Cross(o, a).normalize(), c = R.Cross(o, s).normalize();
@@ -25623,8 +25719,8 @@ function Pu(e, t, n = null) {
 	return f;
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Builders/textBuilder.js
-var Fu = class {
+//#region node_modules/@babylonjs/core/Meshes/Builders/textBuilder.js
+var Ru = class {
 	constructor(e) {
 		this._paths = [], this._tempPaths = [], this._holes = [], this._resolution = e;
 	}
@@ -25655,10 +25751,10 @@ var Fu = class {
 		return this._holes;
 	}
 };
-function Iu(e, t, n, r, i, a) {
+function zu(e, t, n, r, i, a) {
 	let o = a.glyphs[e] || a.glyphs["?"];
 	if (!o) return null;
-	let s = new Fu(i);
+	let s = new Ru(i);
 	if (o.o) {
 		let e = o.o.split(" ");
 		for (let i = 0, a = e.length; i < a;) switch (e[i++]) {
@@ -25689,24 +25785,24 @@ function Iu(e, t, n, r, i, a) {
 		shapePath: s
 	};
 }
-function Lu(e, t, n, r) {
+function Bu(e, t, n, r) {
 	let i = Array.from(e), a = t / r.resolution, o = (r.boundingBox.yMax - r.boundingBox.yMin + r.underlineThickness) * a, s = [], c = 0, l = 0;
 	for (let e = 0; e < i.length; e++) {
 		let t = i[e];
 		if (t === "\n") c = 0, l -= o;
 		else {
-			let e = Iu(t, a, c, l, n, r);
+			let e = zu(t, a, c, l, n, r);
 			e && (c += e.offsetX, s.push(e.shapePath));
 		}
 	}
 	return s;
 }
-function Ru(e, t, n, r = {
+function Vu(e, t, n, r = {
 	size: 50,
 	resolution: 8,
 	depth: 1
 }, i = null, a = earcut) {
-	let o = Lu(t, r.size || 50, r.resolution || 8, n), s = [], c = 0;
+	let o = Bu(t, r.size || 50, r.resolution || 8, n), s = [], c = 0;
 	for (let t of o) {
 		if (!t.paths.length) continue;
 		let n = t.holes.slice();
@@ -25730,7 +25826,7 @@ function Ru(e, t, n, r = {
 				for (let e of n) r.push(new R(e.x, 0, e.y));
 				t.push(r);
 			}
-			let f = Vl(e, {
+			let f = Wl(e, {
 				shape: l,
 				holes: t.length ? t : void 0,
 				depth: r.depth || 1,
@@ -25751,44 +25847,44 @@ function Ru(e, t, n, r = {
 	return l;
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/meshBuilder.pure.js
-var zu = {
-	CreateBox: Gc,
-	CreateTiledBox: tl,
-	CreateSphere: al,
-	CreateDisc: Mc,
-	CreateIcoSphere: uu,
-	CreateRibbon: Oc,
-	CreateCylinder: ll,
-	CreateTorus: pl,
-	CreateTorusKnot: _l,
-	CreateLineSystem: jl,
-	CreateLines: Ml,
-	CreateDashedLines: Nl,
-	ExtrudeShape: Wl,
-	ExtrudeShapeCustom: Gl,
-	CreateLathe: Yl,
-	CreateTiledPlane: Yc,
-	CreatePlane: $l,
-	CreateGround: zc,
-	CreateTiledGround: Bc,
-	CreateGroundFromHeightMap: Vc,
-	CreatePolygon: Bl,
-	ExtrudePolygon: Vl,
-	CreateTube: nu,
-	CreatePolyhedron: ou,
-	CreateGeodesic: ju,
-	CreateGoldberg: Pu,
-	CreateDecal: bu,
-	CreateCapsule: wu,
-	CreateText: Ru
+//#region node_modules/@babylonjs/core/Meshes/meshBuilder.pure.js
+var Hu = {
+	CreateBox: Jc,
+	CreateTiledBox: il,
+	CreateSphere: cl,
+	CreateDisc: Fc,
+	CreateIcoSphere: pu,
+	CreateRibbon: jc,
+	CreateCylinder: fl,
+	CreateTorus: gl,
+	CreateTorusKnot: bl,
+	CreateLineSystem: Pl,
+	CreateLines: Fl,
+	CreateDashedLines: Il,
+	ExtrudeShape: ql,
+	ExtrudeShapeCustom: Jl,
+	CreateLathe: Ql,
+	CreateTiledPlane: Qc,
+	CreatePlane: nu,
+	CreateGround: Hc,
+	CreateTiledGround: Uc,
+	CreateGroundFromHeightMap: Wc,
+	CreatePolygon: Ul,
+	ExtrudePolygon: Wl,
+	CreateTube: au,
+	CreatePolyhedron: lu,
+	CreateGeodesic: Pu,
+	CreateGoldberg: Lu,
+	CreateDecal: Cu,
+	CreateCapsule: Du,
+	CreateText: Vu
 };
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Buffers/buffer.js
-Ac(), Pc(), qc(), rl(), sl(), dl(), hl(), yl(), Fl(), Ul(), Jl(), Zl(), tu(), Zc(), Uc(), iu(), cu(), fu(), Su(), Eu(), _t();
+//#region node_modules/@babylonjs/core/Buffers/buffer.js
+Nc(), Lc(), Xc(), ol(), ul(), ml(), vl(), Sl(), Rl(), Kl(), Zl(), eu(), iu(), el(), Kc(), su(), du(), hu(), Tu(), ku(), _t();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Compression/meshoptCompression.js
-var Bu = 0, Vu = null, Hu = class e {
+//#region node_modules/@babylonjs/core/Meshes/Compression/meshoptCompression.js
+var Uu = 0, Wu = null, Gu = class e {
 	static get Default() {
 		return e._Default || (e._Default = new e()), e._Default;
 	}
@@ -25800,17 +25896,17 @@ var Bu = 0, Vu = null, Hu = class e {
 		delete this._decoderModulePromise;
 	}
 	async decodeGltfBufferAsync(e, t, n, r, i) {
-		await this._decoderModulePromise, Bu === 0 && (MeshoptDecoder.useWorkers(1), Bu = 1);
+		await this._decoderModulePromise, Uu === 0 && (MeshoptDecoder.useWorkers(1), Uu = 1);
 		let a = await MeshoptDecoder.decodeGltfBufferAsync(t, n, e, r, i);
-		return Vu !== null && clearTimeout(Vu), Vu = setTimeout(() => {
-			MeshoptDecoder.useWorkers(0), Bu = 0, Vu = null;
+		return Wu !== null && clearTimeout(Wu), Wu = setTimeout(() => {
+			MeshoptDecoder.useWorkers(0), Uu = 0, Wu = null;
 		}, 1e3), a;
 	}
 };
-Hu.Configuration = { decoder: { url: `${B._DefaultCdnUrl}/meshopt_decoder.js` } }, Hu._Default = null;
+Gu.Configuration = { decoder: { url: `${B._DefaultCdnUrl}/meshopt_decoder.js` } }, Gu._Default = null;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Misc/webRequest.fetch.js
-async function Uu(e, t) {
+//#region node_modules/@babylonjs/core/Misc/webRequest.fetch.js
+async function Ku(e, t) {
 	let n = t.method || "GET";
 	return await new Promise((r, i) => {
 		let a = new Te();
@@ -25829,70 +25925,70 @@ async function Uu(e, t) {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Loading/sceneLoader.js
-var Wu;
+//#region node_modules/@babylonjs/core/Loading/sceneLoader.js
+var qu;
 (function(e) {
 	e[e.Clean = 0] = "Clean", e[e.Stop = 1] = "Stop", e[e.Sync = 2] = "Sync", e[e.NoSync = 3] = "NoSync";
-})(Wu || (Wu = {}));
-function Gu(e) {
+})(qu || (qu = {}));
+function Ju(e) {
 	return !!e.createPlugin;
 }
-function Ku(e) {
+function Yu(e) {
 	return !!e.name;
 }
-var qu = new E(), Ju = {}, Yu = !1;
-function Xu() {
-	return Ju[".babylon"];
+var Xu = new E(), Zu = {}, Qu = !1;
+function $u() {
+	return Zu[".babylon"];
 }
-function Zu(e) {
-	for (let t in Ju) {
-		let n = Ju[t];
+function ed(e) {
+	for (let t in Zu) {
+		let n = Zu[t];
 		if (n.mimeType === e) return n;
 	}
 }
-function Qu(e, t) {
-	return Ju[e] || (z.Warn("Unable to find a plugin to load " + e + " files. Trying to use .babylon default plugin. To load from a specific filetype (eg. gltf) see: https://doc.babylonjs.com/features/featuresDeepDive/importers/loadingFileTypes"), t ? Xu() : void 0);
+function td(e, t) {
+	return Zu[e] || (z.Warn("Unable to find a plugin to load " + e + " files. Trying to use .babylon default plugin. To load from a specific filetype (eg. gltf) see: https://doc.babylonjs.com/features/featuresDeepDive/importers/loadingFileTypes"), t ? $u() : void 0);
 }
-function $u(e) {
-	return !!Ju[e];
+function nd(e) {
+	return !!Zu[e];
 }
-function ed(e) {
-	for (let t in Ju) {
-		let n = Ju[t].plugin;
-		if (n.canDirectLoad && n.canDirectLoad(e)) return Ju[t];
+function rd(e) {
+	for (let t in Zu) {
+		let n = Zu[t].plugin;
+		if (n.canDirectLoad && n.canDirectLoad(e)) return Zu[t];
 	}
-	return Xu();
+	return $u();
 }
-function td(e) {
+function id(e) {
 	let t = e.indexOf("?");
 	t !== -1 && (e = e.substring(0, t));
 	let n = e.lastIndexOf(".");
 	return e.substring(n, e.length).toLowerCase();
 }
-function nd(e) {
+function ad(e) {
 	return e.substring(0, 5) === "data:" ? e.substring(5) : null;
 }
-function rd(e, t, n) {
+function od(e, t, n) {
 	let r = "Unable to load from " + (e.rawData ? "binary data" : e.url);
 	return t ? r += `: ${t}` : n && (r += `: ${n}`), r;
 }
-function id(e, t, n) {
-	let r = rd(e, t, n);
+function sd(e, t, n) {
+	let r = od(e, t, n);
 	return new De(r, ze.SceneLoaderError, n);
 }
-function ad(e) {
+function cd(e) {
 	return e instanceof Error ? e.message : String(e);
 }
-function od(e, t) {
-	return t instanceof De && t.errorCode === ze.SceneLoaderError ? t : id(e, ad(t), t);
+function ld(e, t) {
+	return t instanceof De && t.errorCode === ze.SceneLoaderError ? t : sd(e, cd(t), t);
 }
-var sd = "LoadAssetContainer is not supported by this plugin. Plugin did not provide a loadAssetContainer or loadAssetContainerAsync method.";
-function cd(e) {
+var ud = "LoadAssetContainer is not supported by this plugin. Plugin did not provide a loadAssetContainer or loadAssetContainerAsync method.";
+function dd(e) {
 	let t = e;
 	return !!t.importMesh || !!t.load || !!t.loadAssetContainer;
 }
-function ld(e, t) {
-	if (!cd(e)) return e;
+function fd(e, t) {
+	if (!dd(e)) return e;
 	let n = (e) => {
 		let n, r = e((e, t) => {
 			n = {
@@ -25900,7 +25996,7 @@ function ld(e, t) {
 				exception: t
 			};
 		});
-		if (!r) throw id(t, n?.message, n?.exception);
+		if (!r) throw sd(t, n?.message, n?.exception);
 		return r;
 	};
 	return {
@@ -25925,54 +26021,54 @@ function ld(e, t) {
 		loadAssetContainerAsync: async (t, r, i) => n((n) => e.loadAssetContainer(t, r, i, n))
 	};
 }
-function ud(e, t, n) {
-	let r = ad(n);
+function pd(e, t, n) {
+	let r = cd(n);
 	e && t ? e(t, r, n) : z.Error(r);
 }
-function dd(e) {
+function md(e) {
 	if (e) return (t) => {
 		try {
 			e(t);
 		} catch (e) {
-			z.Warn("Error in onProgress callback: " + ad(e));
+			z.Warn("Error in onProgress callback: " + cd(e));
 		}
 	};
 }
-async function fd(e, t, n, r, i, a) {
-	let o = nd(e.url);
+async function hd(e, t, n, r, i, a) {
+	let o = ad(e.url);
 	if (e.rawData && !r) throw Error("When using ArrayBufferView to load data the file extension must be provided.");
-	let s = !o && !r ? td(e.url) : "", c = r ? Qu(r, !0) : o ? ed(e.url) : Qu(s, !1);
+	let s = !o && !r ? id(e.url) : "", c = r ? td(r, !0) : o ? rd(e.url) : td(s, !1);
 	if (!c && s) {
 		if (e.url && !e.url.startsWith("blob:")) {
-			let t = await Uu(e.url, {
+			let t = await Ku(e.url, {
 				method: "HEAD",
 				responseHeaders: ["Content-Type"]
 			}), n = t.headerValues ? t.headerValues["Content-Type"] : "";
-			n && (c = Zu(n));
+			n && (c = ed(n));
 		}
-		c || (c = Xu());
+		c || (c = $u());
 	}
 	if (!c) throw Error(`No plugin or fallback for ${r ?? e.url}`);
 	if (a?.[c.plugin.name]?.enabled === !1) throw Error(`The '${c.plugin.name}' plugin is disabled via the loader options passed to the loading operation.`);
 	if (e.rawData && !c.isBinary) throw Error("Loading from ArrayBufferView can not be used with plugins that don't support binary loading.");
 	let l;
-	if (Gu(c.plugin)) {
+	if (Ju(c.plugin)) {
 		let t = c.plugin;
 		try {
 			let e = t.createPlugin(a ?? {});
 			l = e instanceof Promise ? await e : e;
 		} catch (t) {
-			throw id(e, "Error instantiating plugin.", t);
+			throw sd(e, "Error instantiating plugin.", t);
 		}
 	} else l = c.plugin;
 	if (!l) throw Error(`The loader plugin corresponding to the '${r}' file type has not been found. If using es6, please import the plugin you wish to use before.`);
-	if (qu.notifyObservers(l), o && (l.canDirectLoad && l.canDirectLoad(e.url) || !Ie(e.url))) {
+	if (Xu.notifyObservers(l), o && (l.canDirectLoad && l.canDirectLoad(e.url) || !Ie(e.url))) {
 		if (l.directLoad) {
 			let n;
 			try {
 				n = await l.directLoad(t, o);
 			} catch (t) {
-				throw id(e, "Error in directLoad of _loadData: " + t, t);
+				throw sd(e, "Error in directLoad of _loadData: " + t, t);
 			}
 			return {
 				plugin: l,
@@ -25987,7 +26083,7 @@ async function fd(e, t, n, r, i, a) {
 	let u = c.isBinary;
 	return await new Promise((r, a) => {
 		let o = null, s = !1, c = l.onDisposeObservable?.add(() => {
-			s = !0, o && (o.abort(), o = null), p(id(e, "Loading was aborted because the plugin was disposed."));
+			s = !0, o && (o.abort(), o = null), p(sd(e, "Loading was aborted because the plugin was disposed."));
 		}), d = () => {
 			c && l.onDisposeObservable?.remove(c);
 		}, f = (e) => {
@@ -25996,7 +26092,7 @@ async function fd(e, t, n, r, i, a) {
 			d(), a(e);
 		}, m = (n, r) => {
 			if (t.isDisposed) {
-				p(id(e, "Scene has been disposed"));
+				p(sd(e, "Scene has been disposed"));
 				return;
 			}
 			f({
@@ -26007,16 +26103,16 @@ async function fd(e, t, n, r, i, a) {
 		}, h = () => {
 			if (s) return;
 			let r = (t, n) => {
-				p(id(e, t?.statusText, n));
+				p(sd(e, t?.statusText, n));
 			};
 			if (!l.loadFile && e.rawData) {
-				p(id(e, "Plugin does not support loading ArrayBufferView."));
+				p(sd(e, "Plugin does not support loading ArrayBufferView."));
 				return;
 			}
 			try {
 				o = l.loadFile ? l.loadFile(t, e.rawData || e.file || e.url, e.rootUrl, m, n, u, r, i) : t._loadFile(e.file || e.url, m, n, !0, u, r);
 			} catch (t) {
-				p(id(e, void 0, t));
+				p(sd(e, void 0, t));
 			}
 		}, g = t.getEngine(), _ = !e.file && !e.rawData && g.enableOfflineSupport;
 		if (_) {
@@ -26030,15 +26126,15 @@ async function fd(e, t, n, r, i, a) {
 		if (_ && V.OfflineProviderFactory) try {
 			t.offlineProvider = V.OfflineProviderFactory(e.url, h, g.disableManifestCheck);
 		} catch (t) {
-			p(id(e, void 0, t));
+			p(sd(e, void 0, t));
 		}
 		else h();
 	});
 }
-function pd(e, t) {
+function gd(e, t) {
 	let n, r, i = null, a = null;
 	if (!t) n = e, r = B.GetFilename(e), e = B.GetFolderPath(e);
-	else if (Ku(t)) n = `file:${t.name}`, r = t.name, i = t;
+	else if (Yu(t)) n = `file:${t.name}`, r = t.name, i = t;
 	else if (ArrayBuffer.isView(t)) n = "", r = We(), a = t;
 	else if (t.startsWith("data:")) n = t, r = "";
 	else if (e) {
@@ -26054,100 +26150,100 @@ function pd(e, t) {
 		rawData: a
 	};
 }
-function md(e) {
+function _d(e) {
 	if (typeof e.extensions == "string") {
 		let t = e.extensions;
-		Ju[t.toLowerCase()] = {
+		Zu[t.toLowerCase()] = {
 			plugin: e,
 			isBinary: !1
 		};
 	} else {
 		let t = e.extensions, n = Object.keys(t);
-		for (let r of n) Ju[r.toLowerCase()] = {
+		for (let r of n) Zu[r.toLowerCase()] = {
 			plugin: e,
 			isBinary: t[r].isBinary,
 			mimeType: t[r].mimeType
 		};
 	}
 }
-async function hd(e, t, n) {
+async function vd(e, t, n) {
 	let { meshNames: r, rootUrl: i = "", onProgress: a, pluginExtension: o, name: s, pluginOptions: c } = n ?? {};
-	return await gd(r, i, e, t, a, o, s, c);
+	return await yd(r, i, e, t, a, o, s, c);
 }
-async function gd(e, t, n = "", r = D.LastCreatedScene, i, a, o = "", s = {}) {
+async function yd(e, t, n = "", r = D.LastCreatedScene, i, a, o = "", s = {}) {
 	if (!r) throw Error("No scene available to import mesh to");
-	let c = pd(t, n);
+	let c = gd(t, n);
 	if (!c) throw Error("Cannot load file: a valid scene filename or root url was not provided.");
 	let l = {};
 	r.addPendingData(l);
-	let u = dd(i);
+	let u = md(i);
 	try {
-		let { plugin: t, data: n, responseURL: i } = await fd(c, r, u, a ?? null, o, s);
+		let { plugin: t, data: n, responseURL: i } = await hd(c, r, u, a ?? null, o, s);
 		t.rewriteRootURL && (c.rootUrl = t.rewriteRootURL(c.rootUrl, i));
 		let l;
 		try {
-			l = await ld(t, c).importMeshAsync(e, r, n, c.rootUrl, u, c.name);
+			l = await fd(t, c).importMeshAsync(e, r, n, c.rootUrl, u, c.name);
 		} catch (e) {
-			throw od(c, e);
+			throw ld(c, e);
 		}
 		return r.loadingPluginName = t.name, r.importedMeshesFiles.push(c.url), l;
 	} finally {
 		r.removePendingData(l);
 	}
 }
-async function _d(e, t = "", n = D.LastCreatedEngine, r, i, a = "", o = {}) {
+async function bd(e, t = "", n = D.LastCreatedEngine, r, i, a = "", o = {}) {
 	if (!n) throw Error("No engine available");
 	let s = new tt(n);
 	try {
-		await vd(e, t, s, r, i, a, o);
+		await xd(e, t, s, r, i, a, o);
 	} catch (e) {
 		throw s.dispose(), e;
 	}
 	return s;
 }
-async function vd(e, t = "", n = D.LastCreatedScene, r, i, a = "", o = {}) {
+async function xd(e, t = "", n = D.LastCreatedScene, r, i, a = "", o = {}) {
 	if (!n) throw Error("No scene available to append to");
-	let s = pd(e, t);
+	let s = gd(e, t);
 	if (!s) throw Error("Cannot load file: a valid scene filename or root url was not provided.");
 	let c = {};
-	n.addPendingData(c), Ir.ShowLoadingScreen && !Yu && (Yu = !0, n.getEngine().displayLoadingUI(), n.executeWhenReady(() => {
-		n.getEngine().hideLoadingUI(), Yu = !1;
+	n.addPendingData(c), Ir.ShowLoadingScreen && !Qu && (Qu = !0, n.getEngine().displayLoadingUI(), n.executeWhenReady(() => {
+		n.getEngine().hideLoadingUI(), Qu = !1;
 	}));
-	let l = dd(r);
+	let l = md(r);
 	try {
-		let { plugin: e, data: t } = await fd(s, n, l, i ?? null, a, o);
+		let { plugin: e, data: t } = await hd(s, n, l, i ?? null, a, o);
 		try {
-			await ld(e, s).loadAsync(n, t, s.rootUrl, l, s.name);
+			await fd(e, s).loadAsync(n, t, s.rootUrl, l, s.name);
 		} catch (e) {
-			throw od(s, e);
+			throw ld(s, e);
 		}
 		return n.loadingPluginName = e.name, n;
 	} finally {
 		n.removePendingData(c);
 	}
 }
-async function yd(e, t = "", n = D.LastCreatedScene, r, i, a = "", o = {}) {
+async function Sd(e, t = "", n = D.LastCreatedScene, r, i, a = "", o = {}) {
 	if (!n) throw Error("No scene available to load asset container to");
-	let s = pd(e, t);
+	let s = gd(e, t);
 	if (!s) throw Error("Cannot load file: a valid scene filename or root url was not provided.");
 	let c = {};
 	n.addPendingData(c);
-	let l = dd(r);
+	let l = md(r);
 	try {
-		let { plugin: e, data: t } = await fd(s, n, l, i ?? null, a, o), r = ld(e, s);
-		if (!r.loadAssetContainerAsync) throw id(s, sd);
+		let { plugin: e, data: t } = await hd(s, n, l, i ?? null, a, o), r = fd(e, s);
+		if (!r.loadAssetContainerAsync) throw sd(s, ud);
 		let c;
 		try {
 			c = await r.loadAssetContainerAsync(n, t, s.rootUrl, l, s.name);
 		} catch (e) {
-			throw od(s, e);
+			throw ld(s, e);
 		}
 		return c.populateRootNodes(), n.loadingPluginName = e.name, c;
 	} finally {
 		n.removePendingData(c);
 	}
 }
-async function bd(e, t = "", n = D.LastCreatedScene, r = !0, i = 0, a = null, o, s, c = "", l = {}) {
+async function Cd(e, t = "", n = D.LastCreatedScene, r = !0, i = 0, a = null, o, s, c = "", l = {}) {
 	if (!n) throw Error("No scene available to load animations to");
 	if (r) {
 		for (let e of n.animatables) e.reset();
@@ -26170,10 +26266,10 @@ async function bd(e, t = "", n = D.LastCreatedScene, r = !0, i = 0, a = null, o,
 		case 3: break;
 		default: throw Error("Unknown animation group loading mode value '" + i + "'");
 	}
-	let u = n.animatables.length, d = await yd(e, t, n, o, s, c, l);
+	let u = n.animatables.length, d = await Sd(e, t, n, o, s, c, l);
 	d.mergeAnimationsTo(n, n.animatables.slice(u), a), d.dispose(), n.onAnimationFileImportedObservable.notifyObservers(n);
 }
-var xd = class {
+var wd = class {
 	static get ForceFullSceneLoadingForIncremental() {
 		return Ir.ForceFullSceneLoadingForIncremental;
 	}
@@ -26199,91 +26295,91 @@ var xd = class {
 		Ir.CleanBoneMatrixWeights = e;
 	}
 	static GetDefaultPlugin() {
-		return Xu();
+		return $u();
 	}
 	static GetPluginForExtension(e) {
-		return Qu(e, !0)?.plugin;
+		return td(e, !0)?.plugin;
 	}
 	static IsPluginForExtensionAvailable(e) {
-		return $u(e);
+		return nd(e);
 	}
 	static RegisterPlugin(e) {
-		md(e);
+		_d(e);
 	}
 	static ImportMesh(e, t, n, r, i, a, o, s, c, l) {
 		let u = r ?? D.LastCreatedScene;
 		(async () => {
 			try {
-				let o = await gd(e, t, n, r, a, s, c, l);
+				let o = await yd(e, t, n, r, a, s, c, l);
 				i?.(o.meshes, o.particleSystems, o.skeletons, o.animationGroups, o.transformNodes, o.geometries, o.lights, o.spriteManagers);
 			} catch (e) {
-				ud(o, u, e);
+				pd(o, u, e);
 			}
 		})();
 	}
 	static async ImportMeshAsync(e, t, n, r, i, a, o) {
-		return await gd(e, t, n, r, i, a, o);
+		return await yd(e, t, n, r, i, a, o);
 	}
 	static Load(e, t, n, r, i, a, o, s) {
 		(async () => {
 			try {
-				let a = await _d(e, t, n, i, o, s);
+				let a = await bd(e, t, n, i, o, s);
 				r?.(a);
 			} catch (e) {
-				ud(a, D.LastCreatedScene, e);
+				pd(a, D.LastCreatedScene, e);
 			}
 		})();
 	}
 	static async LoadAsync(e, t, n, r, i, a) {
-		return await _d(e, t, n, r, i, a);
+		return await bd(e, t, n, r, i, a);
 	}
 	static Append(e, t, n, r, i, a, o, s) {
 		let c = n ?? D.LastCreatedScene;
 		(async () => {
 			try {
-				let a = await vd(e, t, n, i, o, s);
+				let a = await xd(e, t, n, i, o, s);
 				r?.(a);
 			} catch (e) {
-				ud(a, c, e);
+				pd(a, c, e);
 			}
 		})();
 	}
 	static async AppendAsync(e, t, n, r, i, a) {
-		return await vd(e, t, n, r, i, a);
+		return await xd(e, t, n, r, i, a);
 	}
 	static LoadAssetContainer(e, t, n, r, i, a, o, s) {
 		let c = n ?? D.LastCreatedScene;
 		(async () => {
 			try {
-				let a = await yd(e, t, n, i, o, s);
+				let a = await Sd(e, t, n, i, o, s);
 				r?.(a);
 			} catch (e) {
-				ud(a, c, e);
+				pd(a, c, e);
 			}
 		})();
 	}
 	static async LoadAssetContainerAsync(e, t, n, r, i, a) {
-		return await yd(e, t, n, r, i, a);
+		return await Sd(e, t, n, r, i, a);
 	}
 	static ImportAnimations(e, t, n, r, i, a, o, s, c, l, u) {
 		let d = n ?? D.LastCreatedScene;
 		(async () => {
 			try {
-				await bd(e, t, n, r, i, a, s, l, u), o?.(d);
+				await Cd(e, t, n, r, i, a, s, l, u), o?.(d);
 			} catch (e) {
-				ud(c, d, e);
+				pd(c, d, e);
 			}
 		})();
 	}
 	static async ImportAnimationsAsync(e, t, n, r, i, a, o, s, c, l, u) {
 		let d = n ?? D.LastCreatedScene;
-		return await bd(e, t, d, r, i, a, s, l, u), d;
+		return await Cd(e, t, d, r, i, a, s, l, u), d;
 	}
 };
-xd.NO_LOGGING = 0, xd.MINIMAL_LOGGING = 1, xd.SUMMARY_LOGGING = 2, xd.DETAILED_LOGGING = 3, xd.OnPluginActivatedObservable = qu;
+wd.NO_LOGGING = 0, wd.MINIMAL_LOGGING = 1, wd.SUMMARY_LOGGING = 2, wd.DETAILED_LOGGING = 3, wd.OnPluginActivatedObservable = Xu;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/assetContainer.js
-var Sd = class {
+//#region node_modules/@babylonjs/core/assetContainer.js
+var Td = class {
 	constructor() {
 		this.rootNodes = [], this.cameras = [], this.lights = [], this.meshes = [], this.skeletons = [], this.particleSystems = [], this.animations = [], this.animationGroups = [], this.multiMaterials = [], this.materials = [], this.morphTargetManagers = [], this.geometries = [], this.transformNodes = [], this.actionManagers = [], this.textures = [], this._environmentTexture = null, this.postProcesses = [], this.sounds = null, this.effectLayers = [], this.layers = [], this.reflectionProbes = [], this.spriteManagers = [];
 	}
@@ -26299,7 +26395,7 @@ var Sd = class {
 		for (let t of this.skeletons) e = e.concat(t.bones);
 		return e;
 	}
-}, Cd = class extends Sd {}, wd = class {
+}, Ed = class extends Td {}, Dd = class {
 	constructor() {
 		this.rootNodes = [], this.skeletons = [], this.animationGroups = [];
 	}
@@ -26314,7 +26410,7 @@ var Sd = class {
 		for (let e of n) e.dispose();
 		n.length = 0;
 	}
-}, Td = class extends Sd {
+}, Od = class extends Td {
 	constructor(e) {
 		super(), this._wasAddedToScene = !1, e = e || D.LastCreatedScene, e && (this.scene = e, this.proceduralTextures = [], e.onDisposeObservable.add(() => {
 			this._wasAddedToScene || this.dispose();
@@ -26339,7 +26435,7 @@ var Sd = class {
 		}
 		for (let r of e) {
 			let e = r.uniqueId, i = n.dependsOn.get(e);
-			if (r instanceof bl) {
+			if (r instanceof Cl) {
 				let a = r.sourceMesh;
 				t.has(a.uniqueId) && (i.add(a.uniqueId), n.dependedBy.get(a.uniqueId).add(e));
 			}
@@ -26386,7 +26482,7 @@ var Sd = class {
 	}
 	instantiateModelsToScene(e, t = !1, n) {
 		this._isValidHierarchy() || B.Warn("SceneSerializer.InstantiateModelsToScene: The Asset Container hierarchy is not valid.");
-		let r = {}, i = {}, a = new wd(), o = [], s = [], c = {
+		let r = {}, i = {}, a = new Dd(), o = [], s = [], c = {
 			doNotInstantiate: !0,
 			...n
 		}, l = (t, n) => {
@@ -26572,7 +26668,7 @@ var Sd = class {
 		}
 	}
 	moveAllFromScene(e) {
-		this._wasAddedToScene = !1, e === void 0 && (e = new Cd());
+		this._wasAddedToScene = !1, e === void 0 && (e = new Ed());
 		for (let t in this) Object.prototype.hasOwnProperty.call(this, t) && (this[t] = this[t] || (t === "_environmentTexture" ? null : []), this._moveAssets(this.scene[t], this[t], e[t]));
 		this.environmentTexture = this.scene.environmentTexture, this.removeAllFromScene();
 	}
@@ -26633,7 +26729,7 @@ var Sd = class {
 		let t = [], n = /* @__PURE__ */ new Set();
 		for (t.push(e); t.length > 0;) {
 			let e = t.pop();
-			if (e instanceof q ? (e.geometry && this.geometries.indexOf(e.geometry) === -1 && this.geometries.push(e.geometry), this.meshes.push(e)) : e instanceof bl ? this.meshes.push(e) : e instanceof Hr ? this.transformNodes.push(e) : e instanceof xs ? this.lights.push(e) : e instanceof jr && this.cameras.push(e), e instanceof ii) {
+			if (e instanceof q ? (e.geometry && this.geometries.indexOf(e.geometry) === -1 && this.geometries.push(e.geometry), this.meshes.push(e)) : e instanceof Cl ? this.meshes.push(e) : e instanceof Hr ? this.transformNodes.push(e) : e instanceof xs ? this.lights.push(e) : e instanceof jr && this.cameras.push(e), e instanceof ii) {
 				if (e.material && this.materials.indexOf(e.material) === -1) {
 					this.materials.push(e.material);
 					for (let t of e.material.getActiveTextures()) this.textures.indexOf(t) === -1 && this.textures.push(t);
@@ -26669,7 +26765,7 @@ var Sd = class {
 	getTransformNodesByTags(e, t) {
 		return this._getByTags(this.transformNodes, e, t);
 	}
-}, Ed = { internalPickerForMesh: void 0 }, Dd = class e {
+}, kd = { internalPickerForMesh: void 0 }, Ad = class e {
 	constructor(e, t, n = Number.MAX_VALUE, r = M) {
 		this.origin = e, this.direction = t, this.length = n, this.epsilon = r;
 	}
@@ -26810,39 +26906,39 @@ var Sd = class {
 		R.TransformCoordinatesToRef(l, s, d), R.TransformCoordinatesToRef(u, s, f), this.origin.copyFrom(d), f.subtractToRef(d, this.direction), this.direction.normalize();
 	}
 };
-Dd._TmpVector3 = ee(6, R.Zero), Dd._RayDistant = Dd.Zero(), Dd._Smallnum = 1e-8, Dd._Rayl = 1e9;
-function Od(e, t, n, r, i, a = !1) {
-	let o = Dd.Zero();
-	return kd(e, t, n, r, o, i, a), o;
+Ad._TmpVector3 = ee(6, R.Zero), Ad._RayDistant = Ad.Zero(), Ad._Smallnum = 1e-8, Ad._Rayl = 1e9;
+function jd(e, t, n, r, i, a = !1) {
+	let o = Ad.Zero();
+	return Md(e, t, n, r, o, i, a), o;
 }
-function kd(e, t, n, r, i, a, o = !1, s = !1) {
+function Md(e, t, n, r, i, a, o = !1, s = !1) {
 	let c = e.getEngine();
 	if (!a && !(a = e.activeCamera) && !(a = e.cameraToUseForPointers)) return e;
 	let l = a.viewport, u = c.getRenderHeight(), { x: d, y: f, width: p, height: m } = l.toGlobal(c.getRenderWidth(), u), h = 1 / c.getHardwareScalingLevel();
 	return t = t * h - d, n = n * h - (u - f - m), i.update(t, n, p, m, r || k.IdentityReadOnly, o ? k.IdentityReadOnly : a.getViewMatrix(), a.getProjectionMatrix(), s), e;
 }
-function Ad(e, t, n, r) {
-	let i = Dd.Zero();
-	return jd(e, t, n, i, r), i;
+function Nd(e, t, n, r) {
+	let i = Ad.Zero();
+	return Pd(e, t, n, i, r), i;
 }
-function jd(e, t, n, r, i) {
+function Pd(e, t, n, r, i) {
 	if (!Ze) return e;
 	let a = e.getEngine();
 	if (!i && !(i = e.activeCamera) && !(i = e.cameraToUseForPointers)) throw Error("Active camera not set");
 	let o = i.viewport, s = a.getRenderHeight(), { x: c, y: l, width: u, height: d } = o.toGlobal(a.getRenderWidth(), s), f = k.Identity(), p = 1 / a.getHardwareScalingLevel();
 	return t = t * p - c, n = n * p - (s - l - d), r.update(t, n, u, d, f, f, i.getProjectionMatrix()), e;
 }
-function Md(e, t, n, r, i, a, o, s) {
-	return Nd(e, n, r, t(r, n.enableDistantPicking), i, a, o, s);
+function Fd(e, t, n, r, i, a, o, s) {
+	return Id(e, n, r, t(r, n.enableDistantPicking), i, a, o, s);
 }
-function Nd(e, t, n, r, i, a, o, s) {
+function Id(e, t, n, r, i, a, o, s) {
 	let c = t.intersects(r, i, o, a, n, s);
 	return !c || !c.hit || !i && e != null && c.distance >= e.distance ? null : c;
 }
-function Pd(e, t) {
+function Ld(e, t) {
 	return e === "InstancedLinesMesh" || e === "LinesMesh" ? t.intersectionThreshold : 0;
 }
-function Fd(e) {
+function Rd(e) {
 	let t = e.getClassName();
 	if (t === "GreasedLineMesh") return {
 		rawBoundingInfo: null,
@@ -26851,15 +26947,15 @@ function Fd(e) {
 	let n = e.rawBoundingInfo;
 	return {
 		rawBoundingInfo: n,
-		intersectionThreshold: n ? Pd(t, e) : 0
+		intersectionThreshold: n ? Ld(t, e) : 0
 	};
 }
-function Id(e, t, n, r, i) {
+function zd(e, t, n, r, i) {
 	let a = e(n, t.enableDistantPicking);
 	return !a.intersectsSphere(r.boundingSphere, i) || !a.intersectsBox(r.boundingBox, i) ? null : a;
 }
-function Ld(e, t, n, r, i, a) {
-	let o = null, s = !!(e.activeCameras && e.activeCameras.length > 1 && e.cameraToUseForPointers !== e.activeCamera), c = e.cameraToUseForPointers || e.activeCamera, l = Ed.internalPickerForMesh || Md, u = l === Md;
+function Bd(e, t, n, r, i, a) {
+	let o = null, s = !!(e.activeCameras && e.activeCameras.length > 1 && e.cameraToUseForPointers !== e.activeCamera), c = e.cameraToUseForPointers || e.activeCamera, l = kd.internalPickerForMesh || Fd, u = l === Fd;
 	for (let d = 0; d < e.meshes.length; d++) {
 		let f = e.meshes[d];
 		if (n) {
@@ -26870,15 +26966,15 @@ function Ld(e, t, n, r, i, a) {
 			let e = l(o, t, f, m, !0, !0, a);
 			if (e) {
 				if (i) return e;
-				let { rawBoundingInfo: s, intersectionThreshold: c } = Fd(f), d = f._thinInstanceDataStorage.matrixData;
+				let { rawBoundingInfo: s, intersectionThreshold: c } = Rd(f), d = f._thinInstanceDataStorage.matrixData;
 				if (d) {
 					let e = A.Matrix[0], p = A.Matrix[1], h = Math.min(f.thinInstanceCount, d.length >> 4);
 					for (let g = 0; g < h; g++) {
 						if (n && !n(f, g)) continue;
 						k.FromArrayToRef(d, g << 4, e), e.multiplyToRef(m, p);
-						let h = u && s ? Id(t, f, p, s, c) : null;
+						let h = u && s ? zd(t, f, p, s, c) : null;
 						if (u && s && !h) continue;
-						let _ = u && h ? Nd(o, f, p, h, r, i, a, !0) : l(o, t, f, p, r, i, a, !0);
+						let _ = u && h ? Id(o, f, p, h, r, i, a, !0) : l(o, t, f, p, r, i, a, !0);
 						if (_ && (o = _, o.thinInstanceIndex = g, r)) return o;
 					}
 				}
@@ -26890,9 +26986,9 @@ function Ld(e, t, n, r, i, a) {
 	}
 	return o || new Ze();
 }
-function Rd(e, t, n, r) {
+function Vd(e, t, n, r) {
 	if (!Ze) return null;
-	let i = [], a = !!(e.activeCameras && e.activeCameras.length > 1 && e.cameraToUseForPointers !== e.activeCamera), o = e.cameraToUseForPointers || e.activeCamera, s = Ed.internalPickerForMesh || Md, c = s === Md;
+	let i = [], a = !!(e.activeCameras && e.activeCameras.length > 1 && e.cameraToUseForPointers !== e.activeCamera), o = e.cameraToUseForPointers || e.activeCamera, s = kd.internalPickerForMesh || Fd, c = s === Fd;
 	for (let l = 0; l < e.meshes.length; l++) {
 		let u = e.meshes[l];
 		if (n) {
@@ -26901,15 +26997,15 @@ function Rd(e, t, n, r) {
 		let d = a && u.isWorldMatrixCameraDependent(), f = u.computeWorldMatrix(d, o);
 		if (u.hasThinInstances && u.thinInstanceEnablePicking) {
 			if (s(null, t, u, f, !0, !0, r)) {
-				let { rawBoundingInfo: e, intersectionThreshold: a } = Fd(u), o = u._thinInstanceDataStorage.matrixData;
+				let { rawBoundingInfo: e, intersectionThreshold: a } = Rd(u), o = u._thinInstanceDataStorage.matrixData;
 				if (o) {
 					let l = A.Matrix[0], d = A.Matrix[1], p = Math.min(u.thinInstanceCount, o.length >> 4);
 					for (let m = 0; m < p; m++) {
 						if (n && !n(u, m)) continue;
 						k.FromArrayToRef(o, m << 4, l), l.multiplyToRef(f, d);
-						let p = c && e ? Id(t, u, d, e, a) : null;
+						let p = c && e ? zd(t, u, d, e, a) : null;
 						if (c && e && !p) continue;
-						let h = c && p ? Nd(null, u, d, p, !1, !1, r, !0) : s(null, t, u, d, !1, !1, r, !0);
+						let h = c && p ? Id(null, u, d, p, !1, !1, r, !0) : s(null, t, u, d, !1, !1, r, !0);
 						h && (h.thinInstanceIndex = m, i.push(h));
 					}
 				}
@@ -26921,69 +27017,69 @@ function Rd(e, t, n, r) {
 	}
 	return i;
 }
-function zd(e, t, n, r, i, a) {
+function Hd(e, t, n, r, i, a) {
 	if (!Ze) return null;
-	let o = Ld(e, (r) => (e._tempPickingRay || (e._tempPickingRay = Dd.Zero()), kd(e, t, n, r, e._tempPickingRay, a || null), e._tempPickingRay), r, i, !0);
-	return o && (o.ray = Od(e, t, n, k.Identity(), a || null)), o;
+	let o = Bd(e, (r) => (e._tempPickingRay || (e._tempPickingRay = Ad.Zero()), Md(e, t, n, r, e._tempPickingRay, a || null), e._tempPickingRay), r, i, !0);
+	return o && (o.ray = jd(e, t, n, k.Identity(), a || null)), o;
 }
-function Bd(e, t, n, r, i, a, o, s = !1) {
-	let c = Ld(e, (r, i) => (e._tempPickingRay || (e._tempPickingRay = Dd.Zero()), kd(e, t, n, r, e._tempPickingRay, a || null, !1, i), e._tempPickingRay), r, i, !1, o);
-	return c && (c.ray = Od(e, t, n, k.Identity(), a || null)), c;
+function Ud(e, t, n, r, i, a, o, s = !1) {
+	let c = Bd(e, (r, i) => (e._tempPickingRay || (e._tempPickingRay = Ad.Zero()), Md(e, t, n, r, e._tempPickingRay, a || null, !1, i), e._tempPickingRay), r, i, !1, o);
+	return c && (c.ray = jd(e, t, n, k.Identity(), a || null)), c;
 }
-function Vd(e, t, n, r, i) {
-	let a = Ld(e, (n) => (e._pickWithRayInverseMatrix || (e._pickWithRayInverseMatrix = k.Identity()), n.invertToRef(e._pickWithRayInverseMatrix), e._cachedRayForTransform || (e._cachedRayForTransform = Dd.Zero()), Dd.TransformToRef(t, e._pickWithRayInverseMatrix, e._cachedRayForTransform), e._cachedRayForTransform), n, r, !1, i);
+function Wd(e, t, n, r, i) {
+	let a = Bd(e, (n) => (e._pickWithRayInverseMatrix || (e._pickWithRayInverseMatrix = k.Identity()), n.invertToRef(e._pickWithRayInverseMatrix), e._cachedRayForTransform || (e._cachedRayForTransform = Ad.Zero()), Ad.TransformToRef(t, e._pickWithRayInverseMatrix, e._cachedRayForTransform), e._cachedRayForTransform), n, r, !1, i);
 	return a && (a.ray = t), a;
 }
-function Hd(e, t, n, r, i, a) {
-	return Rd(e, (r) => Od(e, t, n, r, i || null), r, a);
+function Gd(e, t, n, r, i, a) {
+	return Vd(e, (r) => jd(e, t, n, r, i || null), r, a);
 }
-function Ud(e, t, n, r) {
-	return Rd(e, (n) => (e._pickWithRayInverseMatrix || (e._pickWithRayInverseMatrix = k.Identity()), n.invertToRef(e._pickWithRayInverseMatrix), e._cachedRayForTransform || (e._cachedRayForTransform = Dd.Zero()), Dd.TransformToRef(t, e._pickWithRayInverseMatrix, e._cachedRayForTransform), e._cachedRayForTransform), n, r);
+function Kd(e, t, n, r) {
+	return Vd(e, (n) => (e._pickWithRayInverseMatrix || (e._pickWithRayInverseMatrix = k.Identity()), n.invertToRef(e._pickWithRayInverseMatrix), e._cachedRayForTransform || (e._cachedRayForTransform = Ad.Zero()), Ad.TransformToRef(t, e._pickWithRayInverseMatrix, e._cachedRayForTransform), e._cachedRayForTransform), n, r);
 }
-function Wd(e, t, n = 100, r, i) {
+function qd(e, t, n = 100, r, i) {
 	r || (r = e.getWorldMatrix()), t.length = n, i ? t.origin.copyFrom(i) : t.origin.copyFrom(e.position);
 	let a = A.Vector3[2];
 	a.set(0, 0, e._scene.useRightHandedSystem ? -1 : 1);
 	let o = A.Vector3[3];
 	return R.TransformNormalToRef(a, r, o), R.NormalizeToRef(o, t.direction), t;
 }
-function Gd(e, t) {
+function Jd(e, t) {
 	t && (t.prototype.getForwardRay = function(e = 100, t, n) {
-		return Wd(this, new Dd(R.Zero(), R.Zero(), e), e, t, n);
+		return qd(this, new Ad(R.Zero(), R.Zero(), e), e, t, n);
 	}, t.prototype.getForwardRayToRef = function(e, t = 100, n, r) {
-		return Wd(this, e, t, n, r);
+		return qd(this, e, t, n, r);
 	}), e && ($e._IsPickingAvailable = !0, e.prototype.createPickingRay = function(e, t, n, r, i = !1) {
-		return Od(this, e, t, n, r, i);
+		return jd(this, e, t, n, r, i);
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Culling/ray.pure.js
-var Kd = !1;
-function qd() {
-	Kd || (Kd = !0, Gd(tt, jr), tt.prototype.createPickingRayToRef = function(e, t, n, r, i, a = !1, o = !1) {
-		return kd(this, e, t, n, r, i, a, o);
+//#region node_modules/@babylonjs/core/Culling/ray.pure.js
+var Yd = !1;
+function Xd() {
+	Yd || (Yd = !0, Jd(tt, jr), tt.prototype.createPickingRayToRef = function(e, t, n, r, i, a = !1, o = !1) {
+		return Md(this, e, t, n, r, i, a, o);
 	}, tt.prototype.createPickingRayInCameraSpace = function(e, t, n) {
-		return Ad(this, e, t, n);
+		return Nd(this, e, t, n);
 	}, tt.prototype.createPickingRayInCameraSpaceToRef = function(e, t, n, r) {
-		return jd(this, e, t, n, r);
+		return Pd(this, e, t, n, r);
 	}, tt.prototype.pickWithBoundingInfo = function(e, t, n, r, i) {
-		return zd(this, e, t, n, r, i);
-	}, tt.prototype.pick = function(e, t, n, r, i, a, o = !1) {
-		return Bd(this, e, t, n, r, i, a, o);
-	}, tt.prototype.pickWithRay = function(e, t, n, r) {
-		return Vd(this, e, t, n, r);
-	}, tt.prototype.multiPick = function(e, t, n, r, i) {
 		return Hd(this, e, t, n, r, i);
+	}, tt.prototype.pick = function(e, t, n, r, i, a, o = !1) {
+		return Ud(this, e, t, n, r, i, a, o);
+	}, tt.prototype.pickWithRay = function(e, t, n, r) {
+		return Wd(this, e, t, n, r);
+	}, tt.prototype.multiPick = function(e, t, n, r, i) {
+		return Gd(this, e, t, n, r, i);
 	}, tt.prototype.multiPickWithRay = function(e, t, n) {
-		return Ud(this, e, t, n);
+		return Kd(this, e, t, n);
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Culling/ray.js
-qd();
+//#region node_modules/@babylonjs/core/Culling/ray.js
+Xd();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Rendering/outlineRenderer.pure.js
-var Jd = class e {
+//#region node_modules/@babylonjs/core/Rendering/outlineRenderer.pure.js
+var Zd = class e {
 	get shaderLanguage() {
 		return this._shaderLanguage;
 	}
@@ -27071,7 +27167,7 @@ var Jd = class e {
 				indexParameters: { maxSimultaneousMorphTargets: d },
 				shaderLanguage: this._shaderLanguage,
 				extraInitializationsAsync: async () => {
-					this._shaderLanguage === 1 ? await Promise.all([import("./outline.fragment-CRReA6X0.js"), import("./outline.vertex-DICDRJhH.js")]) : await Promise.all([import("./outline.fragment-D4ILwChB.js"), import("./outline.vertex-D3i6u7S-.js")]);
+					this._shaderLanguage === 1 ? await Promise.all([import("./outline.fragment-C9vD2bdr.js"), import("./outline.vertex-Ml-nvFId.js")]) : await Promise.all([import("./outline.fragment-9nh3KgZQ.js"), import("./outline.vertex-DZLwTtI0.js")]);
 				}
 			}, this.scene.getEngine()), h);
 		}
@@ -27093,11 +27189,11 @@ var Jd = class e {
 		}
 	}
 };
-Jd._StencilReference = 4;
-var Yd = !1;
-function Xd() {
-	Yd || (Yd = !0, tt.prototype.getOutlineRenderer = function() {
-		return this._outlineRenderer || (this._outlineRenderer = new Jd(this)), this._outlineRenderer;
+Zd._StencilReference = 4;
+var Qd = !1;
+function $d() {
+	Qd || (Qd = !0, tt.prototype.getOutlineRenderer = function() {
+		return this._outlineRenderer || (this._outlineRenderer = new Zd(this)), this._outlineRenderer;
 	}, Object.defineProperty(q.prototype, "renderOutline", {
 		get: function() {
 			return this._renderOutline;
@@ -27119,11 +27215,11 @@ function Xd() {
 	}));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Layers/effectLayerSceneComponent.js
-Xd(), Ao(jo);
+//#region node_modules/@babylonjs/core/Layers/effectLayerSceneComponent.js
+$d(), Ao(jo);
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Misc/environmentTextureTools.pure.js
-var Zd = "image/png", Qd = 2, $d = [
+//#region node_modules/@babylonjs/core/Misc/environmentTextureTools.pure.js
+var ef = "image/png", tf = 2, nf = [
 	134,
 	22,
 	135,
@@ -27133,24 +27229,24 @@ var Zd = "image/png", Qd = 2, $d = [
 	150,
 	54
 ];
-function ef(e) {
+function rf(e) {
 	let t = new DataView(e.buffer, e.byteOffset, e.byteLength), n = 0;
-	for (let e = 0; e < $d.length; e++) if (t.getUint8(n++) !== $d[e]) return z.Error("Not a babylon environment map"), null;
+	for (let e = 0; e < nf.length; e++) if (t.getUint8(n++) !== nf[e]) return z.Error("Not a babylon environment map"), null;
 	let r = "", i;
 	for (; i = t.getUint8(n++);) r += String.fromCharCode(i);
 	let a = JSON.parse(r);
-	return a = tf(a), a.binaryDataPosition = n, a.specular && (a.specular.lodGenerationScale = a.specular.lodGenerationScale || .8), a;
+	return a = af(a), a.binaryDataPosition = n, a.specular && (a.specular.lodGenerationScale = a.specular.lodGenerationScale || .8), a;
 }
-function tf(e) {
-	if (e.version > Qd) throw Error(`Unsupported babylon environment map version "${e.version}". Latest supported version is "${Qd}".`);
+function af(e) {
+	if (e.version > tf) throw Error(`Unsupported babylon environment map version "${e.version}". Latest supported version is "${tf}".`);
 	return e.version === 2 || (e = {
 		...e,
 		version: 2,
-		imageType: Zd
+		imageType: ef
 	}), e;
 }
-function nf(e, t) {
-	t = tf(t);
+function of(e, t) {
+	t = af(t);
 	let n = t.specular, r = Math.log2(t.width);
 	if (r = Math.round(r) + 1, n.mipmaps.length !== 6 * r) throw Error(`Unsupported specular mipmaps number "${n.mipmaps.length}"`);
 	let i = Array(r);
@@ -27170,8 +27266,8 @@ function nf(e, t) {
 	}
 	return i;
 }
-function rf(e, t) {
-	t = tf(t);
+function sf(e, t) {
+	t = af(t);
 	let n = [
 		,
 		,
@@ -27189,21 +27285,21 @@ function rf(e, t) {
 	}
 	return n;
 }
-function af(e, t, n) {
-	n = tf(n);
+function cf(e, t, n) {
+	n = af(n);
 	let r = n.specular;
 	if (!r) return Promise.resolve([]);
 	e._lodGenerationScale = r.lodGenerationScale;
-	let i = [], a = nf(t, n);
-	i.push(sf(e, a, n.imageType));
+	let i = [], a = of(t, n);
+	i.push(uf(e, a, n.imageType));
 	let o = n.irradiance?.irradianceTexture;
 	if (o) {
-		let r = rf(t, n), a = null;
-		n.irradiance?.irradianceTexture?.dominantDirection && (a = R.FromArray(n.irradiance.irradianceTexture.dominantDirection)), i.push(cf(e, r, o.size, n.imageType, a));
+		let r = sf(t, n), a = null;
+		n.irradiance?.irradianceTexture?.dominantDirection && (a = R.FromArray(n.irradiance.irradianceTexture.dominantDirection)), i.push(df(e, r, o.size, n.imageType, a));
 	}
 	return Promise.all(i);
 }
-async function of(e, t, n, r, i, a, o, s, c, l, u) {
+async function lf(e, t, n, r, i, a, o, s, c, l, u) {
 	return await new Promise((d, f) => {
 		if (n) {
 			let n = t.createTexture(null, !0, !0, null, 1, null, (e) => {
@@ -27225,20 +27321,20 @@ async function of(e, t, n, r, i, a, o, s, c, l, u) {
 		}
 	});
 }
-async function sf(e, t, n = Zd) {
+async function uf(e, t, n = ef) {
 	let r = e.getEngine();
-	e.format = 5, e.type = 0, e.generateMipMaps = !0, e._cachedAnisotropicFilteringLevel = null, r.updateTextureSamplingMode(3, e), await lf(e, t, !0, n), e.isReady = !0;
+	e.format = 5, e.type = 0, e.generateMipMaps = !0, e._cachedAnisotropicFilteringLevel = null, r.updateTextureSamplingMode(3, e), await ff(e, t, !0, n), e.isReady = !0;
 }
-async function cf(e, t, n, r = Zd, i = null) {
+async function df(e, t, n, r = ef, i = null) {
 	let a = e.getEngine(), o = new lt(a, 5), s = new Zn(a, o);
-	e._irradianceTexture = s, s._dominantDirection = i, o.isCube = !0, o.format = 5, o.type = 0, o.generateMipMaps = !0, o._cachedAnisotropicFilteringLevel = null, o.generateMipMaps = !0, o.width = n, o.height = n, a.updateTextureSamplingMode(3, o), await lf(o, [t], !1, r), a.generateMipMapsForCubemap(o), o.isReady = !0;
+	e._irradianceTexture = s, s._dominantDirection = i, o.isCube = !0, o.format = 5, o.type = 0, o.generateMipMaps = !0, o._cachedAnisotropicFilteringLevel = null, o.generateMipMaps = !0, o.width = n, o.height = n, a.updateTextureSamplingMode(3, o), await ff(o, [t], !1, r), a.generateMipMapsForCubemap(o), o.isReady = !0;
 }
-async function lf(e, t, r, i = Zd) {
+async function ff(e, t, r, i = ef) {
 	if (!fe(e.width)) throw Error("Texture size must be a power of two");
 	let a = n(e.width) + 1, o = e.getEngine(), s = !1, c = !1, l = null, u = null, d = null, f = o.getCaps();
 	f.textureLOD ? o._features.supportRenderAndCopyToLodForFloatTextures ? f.textureHalfFloatRender && f.textureHalfFloatLinearFiltering ? (s = !0, e.type = 2) : f.textureFloatRender && f.textureFloatLinearFiltering && (s = !0, e.type = 1) : s = !1 : (s = !1, c = r);
 	let p = 0;
-	if (s) o.isWebGPU ? (p = 1, await import("./rgbdDecode.fragment-F1QDexeu.js")) : await import("./rgbdDecode.fragment-CzqPkVan.js"), l = new nr("rgbdDecode", "rgbdDecode", null, null, 1, null, 3, o, !1, void 0, e.type, void 0, null, !1, void 0, p), e._isRGBD = !1, e.invertY = !1, u = o.createRenderTargetCubeTexture(e.width, {
+	if (s) o.isWebGPU ? (p = 1, await import("./rgbdDecode.fragment-DSHFN_3F.js")) : await import("./rgbdDecode.fragment-z6ZXLE8R.js"), l = new nr("rgbdDecode", "rgbdDecode", null, null, 1, null, 3, o, !1, void 0, e.type, void 0, null, !1, void 0, p), e._isRGBD = !1, e.invertY = !1, u = o.createRenderTargetCubeTexture(e.width, {
 		generateDepthBuffer: !1,
 		generateMipMaps: !0,
 		generateStencilBuffer: !1,
@@ -27270,12 +27366,12 @@ async function lf(e, t, r, i = Zd) {
 		if (o._features.forceBitmapOverHTMLImageElement) g = o.createImageBitmap(p, {
 			premultiplyAlpha: "none",
 			colorSpaceConversion: "none"
-		}).then(async (t) => await of(t, o, s, l, h, r, n, c, d, u, e));
+		}).then(async (t) => await lf(t, o, s, l, h, r, n, c, d, u, e));
 		else {
 			let t = new Image();
 			t.src = h, g = new Promise((i, a) => {
 				t.onload = () => {
-					of(t, o, s, l, h, r, n, c, d, u, e).then(() => i()).catch((e) => {
+					lf(t, o, s, l, h, r, n, c, d, u, e).then(() => i()).catch((e) => {
 						a(e);
 					});
 				}, t.onerror = (e) => {
@@ -27304,26 +27400,26 @@ async function lf(e, t, r, i = Zd) {
 	}
 	l && l.dispose(), c && (e._lodTextureHigh && e._lodTextureHigh._texture && (e._lodTextureHigh._texture.isReady = !0), e._lodTextureMid && e._lodTextureMid._texture && (e._lodTextureMid._texture.isReady = !0), e._lodTextureLow && e._lodTextureLow._texture && (e._lodTextureLow._texture.isReady = !0));
 }
-function uf(e, t) {
-	t = tf(t);
+function pf(e, t) {
+	t = af(t);
 	let n = t.irradiance;
 	if (!n) return;
 	let r = new Yn();
 	R.FromArrayToRef(n.x, 0, r.x), R.FromArrayToRef(n.y, 0, r.y), R.FromArrayToRef(n.z, 0, r.z), R.FromArrayToRef(n.xx, 0, r.xx), R.FromArrayToRef(n.yy, 0, r.yy), R.FromArrayToRef(n.zz, 0, r.zz), R.FromArrayToRef(n.yz, 0, r.yz), R.FromArrayToRef(n.zx, 0, r.zx), R.FromArrayToRef(n.xy, 0, r.xy), e._sphericalPolynomial = r;
 }
-function df(e, t, n, r, i) {
-	let a = sf(e.getEngine().createRawCubeTexture(null, e.width, e.format, e.type, e.generateMipMaps, e.invertY, e.samplingMode, e._compression), t).then(() => e);
+function mf(e, t, n, r, i) {
+	let a = uf(e.getEngine().createRawCubeTexture(null, e.width, e.format, e.type, e.generateMipMaps, e.invertY, e.samplingMode, e._compression), t).then(() => e);
 	return e.onRebuildCallback = (e) => ({
 		proxy: a,
 		isReady: !0,
 		isAsync: !0
-	}), e._source = 13, e._bufferViewArrayArray = t, e._lodGenerationScale = r, e._lodGenerationOffset = i, e._sphericalPolynomial = n, sf(e, t).then(() => (e.isReady = !0, e));
+	}), e._source = 13, e._bufferViewArrayArray = t, e._lodGenerationScale = r, e._lodGenerationOffset = i, e._sphericalPolynomial = n, uf(e, t).then(() => (e.isReady = !0, e));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/Textures/baseTexture.polynomial.pure.js
-var ff = !1;
-function pf() {
-	ff || (ff = !0, Zn.prototype._sphericalPolynomialTargetSize = 0, Zn.prototype.forceSphericalPolynomialsRecompute = function() {
+//#region node_modules/@babylonjs/core/Materials/Textures/baseTexture.polynomial.pure.js
+var hf = !1;
+function gf() {
+	hf || (hf = !0, Zn.prototype._sphericalPolynomialTargetSize = 0, Zn.prototype.forceSphericalPolynomialsRecompute = function() {
 		this._texture && (this._texture._sphericalPolynomial = null, this._texture._sphericalPolynomialPromise = null, this._texture._sphericalPolynomialComputed = !1);
 	}, Object.defineProperty(Zn.prototype, "sphericalPolynomial", {
 		get: function() {
@@ -27343,18 +27439,18 @@ function pf() {
 	}));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/Textures/Loaders/envTextureLoader.js
-var mf = /* @__PURE__ */ t({ _ENVTextureLoader: () => hf }), hf = class {
+//#region node_modules/@babylonjs/core/Materials/Textures/Loaders/envTextureLoader.js
+var _f = /* @__PURE__ */ t({ _ENVTextureLoader: () => vf }), vf = class {
 	constructor() {
 		this.supportCascades = !1;
 	}
 	loadCubeData(e, t, n, r, i) {
 		if (Array.isArray(e)) return;
-		let a = ef(e);
+		let a = rf(e);
 		if (a) {
 			t.width = a.width, t.height = a.width;
 			try {
-				pf(), uf(t, a), af(t, e, a).then(() => {
+				gf(), pf(t, a), cf(t, e, a).then(() => {
 					t.isReady = !0, t.onLoadedObservable.notifyObservers(t), t.onLoadedObservable.clear(), r && r();
 				}, (e) => {
 					i?.("Can not upload environment levels", e);
@@ -27369,11 +27465,11 @@ var mf = /* @__PURE__ */ t({ _ENVTextureLoader: () => hf }), hf = class {
 	}
 };
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/Textures/texture.js
+//#region node_modules/@babylonjs/core/Materials/Textures/texture.js
 fn();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Cameras/Inputs/freeCameraKeyboardMoveInput.js
-var gf = (() => {
+//#region node_modules/@babylonjs/core/Cameras/Inputs/freeCameraKeyboardMoveInput.js
+var yf = (() => {
 	var e;
 	let t, n = [], r = [], i, a = [], o = [], s, l = [], u = [], d, f = [], p = [], h, g = [], _ = [], v, y = [], b = [], x, S = [], C = [], T, E = [], D = [], O, k = [], A = [], j, M = [], N = [], P, ee = [], F = [];
 	return e = class {
@@ -27576,10 +27672,10 @@ var gf = (() => {
 		});
 	})(), e;
 })();
-Ui.FreeCameraKeyboardMoveInput = gf;
+Ui.FreeCameraKeyboardMoveInput = yf;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Cameras/Inputs/freeCameraMouseInput.js
-var _f = (() => {
+//#region node_modules/@babylonjs/core/Cameras/Inputs/freeCameraMouseInput.js
+var bf = (() => {
 	var e;
 	let t, n = [], r = [], i, a = [], o = [];
 	return e = class {
@@ -27694,10 +27790,10 @@ var _f = (() => {
 		});
 	})(), e;
 })();
-Ui.FreeCameraMouseInput = _f;
+Ui.FreeCameraMouseInput = bf;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Cameras/Inputs/BaseCameraMouseWheelInput.js
-var vf = (() => {
+//#region node_modules/@babylonjs/core/Cameras/Inputs/BaseCameraMouseWheelInput.js
+var xf = (() => {
 	var e;
 	let t, n = [], r = [], i, a = [], o = [], s, l = [], u = [];
 	return e = class {
@@ -27775,73 +27871,73 @@ var vf = (() => {
 			value: c
 		});
 	})(), e;
-})(), yf;
+})(), Sf;
 (function(e) {
 	e[e.MoveRelative = 0] = "MoveRelative", e[e.RotateRelative = 1] = "RotateRelative", e[e.MoveScene = 2] = "MoveScene";
-})(yf || (yf = {}));
-var bf = (() => {
+})(Sf || (Sf = {}));
+var Cf = (() => {
 	var e;
-	let t = vf, n = [], r, i, a, o, s, l, u, d, f;
+	let t = xf, n = [], r, i, a, o, s, l, u, d, f;
 	return e = class extends t {
 		constructor() {
-			super(...arguments), this.camera = c(this, n), this._moveRelative = R.Zero(), this._rotateRelative = R.Zero(), this._moveScene = R.Zero(), this._wheelXAction = yf.MoveRelative, this._wheelXActionCoordinate = 0, this._wheelYAction = yf.MoveRelative, this._wheelYActionCoordinate = 2, this._wheelZAction = null, this._wheelZActionCoordinate = null;
+			super(...arguments), this.camera = c(this, n), this._moveRelative = R.Zero(), this._rotateRelative = R.Zero(), this._moveScene = R.Zero(), this._wheelXAction = Sf.MoveRelative, this._wheelXActionCoordinate = 0, this._wheelYAction = Sf.MoveRelative, this._wheelYActionCoordinate = 2, this._wheelZAction = null, this._wheelZActionCoordinate = null;
 		}
 		getClassName() {
 			return "FreeCameraMouseWheelInput";
 		}
 		set wheelXMoveRelative(e) {
-			(e !== null || this._wheelXAction === yf.MoveRelative) && (this._wheelXAction = yf.MoveRelative, this._wheelXActionCoordinate = e);
+			(e !== null || this._wheelXAction === Sf.MoveRelative) && (this._wheelXAction = Sf.MoveRelative, this._wheelXActionCoordinate = e);
 		}
 		get wheelXMoveRelative() {
-			return this._wheelXAction === yf.MoveRelative ? this._wheelXActionCoordinate : null;
+			return this._wheelXAction === Sf.MoveRelative ? this._wheelXActionCoordinate : null;
 		}
 		set wheelYMoveRelative(e) {
-			(e !== null || this._wheelYAction === yf.MoveRelative) && (this._wheelYAction = yf.MoveRelative, this._wheelYActionCoordinate = e);
+			(e !== null || this._wheelYAction === Sf.MoveRelative) && (this._wheelYAction = Sf.MoveRelative, this._wheelYActionCoordinate = e);
 		}
 		get wheelYMoveRelative() {
-			return this._wheelYAction === yf.MoveRelative ? this._wheelYActionCoordinate : null;
+			return this._wheelYAction === Sf.MoveRelative ? this._wheelYActionCoordinate : null;
 		}
 		set wheelZMoveRelative(e) {
-			(e !== null || this._wheelZAction === yf.MoveRelative) && (this._wheelZAction = yf.MoveRelative, this._wheelZActionCoordinate = e);
+			(e !== null || this._wheelZAction === Sf.MoveRelative) && (this._wheelZAction = Sf.MoveRelative, this._wheelZActionCoordinate = e);
 		}
 		get wheelZMoveRelative() {
-			return this._wheelZAction === yf.MoveRelative ? this._wheelZActionCoordinate : null;
+			return this._wheelZAction === Sf.MoveRelative ? this._wheelZActionCoordinate : null;
 		}
 		set wheelXRotateRelative(e) {
-			(e !== null || this._wheelXAction === yf.RotateRelative) && (this._wheelXAction = yf.RotateRelative, this._wheelXActionCoordinate = e);
+			(e !== null || this._wheelXAction === Sf.RotateRelative) && (this._wheelXAction = Sf.RotateRelative, this._wheelXActionCoordinate = e);
 		}
 		get wheelXRotateRelative() {
-			return this._wheelXAction === yf.RotateRelative ? this._wheelXActionCoordinate : null;
+			return this._wheelXAction === Sf.RotateRelative ? this._wheelXActionCoordinate : null;
 		}
 		set wheelYRotateRelative(e) {
-			(e !== null || this._wheelYAction === yf.RotateRelative) && (this._wheelYAction = yf.RotateRelative, this._wheelYActionCoordinate = e);
+			(e !== null || this._wheelYAction === Sf.RotateRelative) && (this._wheelYAction = Sf.RotateRelative, this._wheelYActionCoordinate = e);
 		}
 		get wheelYRotateRelative() {
-			return this._wheelYAction === yf.RotateRelative ? this._wheelYActionCoordinate : null;
+			return this._wheelYAction === Sf.RotateRelative ? this._wheelYActionCoordinate : null;
 		}
 		set wheelZRotateRelative(e) {
-			(e !== null || this._wheelZAction === yf.RotateRelative) && (this._wheelZAction = yf.RotateRelative, this._wheelZActionCoordinate = e);
+			(e !== null || this._wheelZAction === Sf.RotateRelative) && (this._wheelZAction = Sf.RotateRelative, this._wheelZActionCoordinate = e);
 		}
 		get wheelZRotateRelative() {
-			return this._wheelZAction === yf.RotateRelative ? this._wheelZActionCoordinate : null;
+			return this._wheelZAction === Sf.RotateRelative ? this._wheelZActionCoordinate : null;
 		}
 		set wheelXMoveScene(e) {
-			(e !== null || this._wheelXAction === yf.MoveScene) && (this._wheelXAction = yf.MoveScene, this._wheelXActionCoordinate = e);
+			(e !== null || this._wheelXAction === Sf.MoveScene) && (this._wheelXAction = Sf.MoveScene, this._wheelXActionCoordinate = e);
 		}
 		get wheelXMoveScene() {
-			return this._wheelXAction === yf.MoveScene ? this._wheelXActionCoordinate : null;
+			return this._wheelXAction === Sf.MoveScene ? this._wheelXActionCoordinate : null;
 		}
 		set wheelYMoveScene(e) {
-			(e !== null || this._wheelYAction === yf.MoveScene) && (this._wheelYAction = yf.MoveScene, this._wheelYActionCoordinate = e);
+			(e !== null || this._wheelYAction === Sf.MoveScene) && (this._wheelYAction = Sf.MoveScene, this._wheelYActionCoordinate = e);
 		}
 		get wheelYMoveScene() {
-			return this._wheelYAction === yf.MoveScene ? this._wheelYActionCoordinate : null;
+			return this._wheelYAction === Sf.MoveScene ? this._wheelYActionCoordinate : null;
 		}
 		set wheelZMoveScene(e) {
-			(e !== null || this._wheelZAction === yf.MoveScene) && (this._wheelZAction = yf.MoveScene, this._wheelZActionCoordinate = e);
+			(e !== null || this._wheelZAction === Sf.MoveScene) && (this._wheelZAction = Sf.MoveScene, this._wheelZActionCoordinate = e);
 		}
 		get wheelZMoveScene() {
-			return this._wheelZAction === yf.MoveScene ? this._wheelZActionCoordinate : null;
+			return this._wheelZAction === Sf.MoveScene ? this._wheelZActionCoordinate : null;
 		}
 		checkInputs() {
 			if (this._wheelDeltaX === 0 && this._wheelDeltaY === 0 && this._wheelDeltaZ == 0) return;
@@ -27858,13 +27954,13 @@ var bf = (() => {
 			if (e === 0 || t === null || n === null) return;
 			let r = null;
 			switch (t) {
-				case yf.MoveRelative:
+				case Sf.MoveRelative:
 					r = this._moveRelative;
 					break;
-				case yf.RotateRelative:
+				case Sf.RotateRelative:
 					r = this._rotateRelative;
 					break;
-				case yf.MoveScene: r = this._moveScene;
+				case Sf.MoveScene: r = this._moveScene;
 			}
 			switch (n) {
 				case 0:
@@ -27994,10 +28090,10 @@ var bf = (() => {
 		});
 	})(), e;
 })();
-Ui.FreeCameraMouseWheelInput = bf;
+Ui.FreeCameraMouseWheelInput = Cf;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Cameras/Inputs/freeCameraTouchInput.js
-var xf = (() => {
+//#region node_modules/@babylonjs/core/Cameras/Inputs/freeCameraTouchInput.js
+var wf = (() => {
 	var e;
 	let t, n = [], r = [], i, a = [], o = [];
 	return e = class {
@@ -28096,39 +28192,39 @@ var xf = (() => {
 		});
 	})(), e;
 })();
-Ui.FreeCameraTouchInput = xf;
+Ui.FreeCameraTouchInput = wf;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Cameras/freeCameraInputsManager.pure.js
-var Sf, Cf, wf, Tf = class extends Wi {
+//#region node_modules/@babylonjs/core/Cameras/freeCameraInputsManager.pure.js
+var Tf, Ef, Df, Of = class extends Wi {
 	constructor(e) {
 		super(e), this._mouseInput = null, this._mouseWheelInput = null;
 	}
 	addKeyboard() {
-		return this.add(new gf()), this;
+		return this.add(new yf()), this;
 	}
 	addMouse(e = !0) {
-		return this._mouseInput || (this._mouseInput = new _f(e), this.add(this._mouseInput)), this;
+		return this._mouseInput || (this._mouseInput = new bf(e), this.add(this._mouseInput)), this;
 	}
 	removeMouse() {
 		return this._mouseInput && this.remove(this._mouseInput), this;
 	}
 	addMouseWheel() {
-		return this._mouseWheelInput || (this._mouseWheelInput = new bf(), this.add(this._mouseWheelInput)), this;
+		return this._mouseWheelInput || (this._mouseWheelInput = new Cf(), this.add(this._mouseWheelInput)), this;
 	}
 	removeMouseWheel() {
 		return this._mouseWheelInput && this.remove(this._mouseWheelInput), this;
 	}
 	addTouch() {
-		return this.add(new xf()), this;
+		return this.add(new wf()), this;
 	}
 	clear() {
 		super.clear(), this._mouseInput = null;
 	}
 };
-(Sf = Tf.prototype).addDeviceOrientation ?? (Sf.addDeviceOrientation = ce("FreeCameraInputsManager", "addDeviceOrientation")), (Cf = Tf.prototype).addVirtualJoystick ?? (Cf.addVirtualJoystick = ce("FreeCameraInputsManager", "addVirtualJoystick")), (wf = Tf.prototype).addGamepad ?? (wf.addGamepad = ce("FreeCameraInputsManager", "addGamepad"));
+(Tf = Of.prototype).addDeviceOrientation ?? (Tf.addDeviceOrientation = ce("FreeCameraInputsManager", "addDeviceOrientation")), (Ef = Of.prototype).addVirtualJoystick ?? (Ef.addVirtualJoystick = ce("FreeCameraInputsManager", "addVirtualJoystick")), (Df = Of.prototype).addGamepad ?? (Df.addGamepad = ce("FreeCameraInputsManager", "addGamepad"));
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Cameras/freeCamera.pure.js
-var Ef = (() => {
+//#region node_modules/@babylonjs/core/Cameras/freeCamera.pure.js
+var kf = (() => {
 	var e;
 	let t = Hi, n, r = [], i = [], a, o = [], s = [], l, u = [], d = [], f, h = [], g = [];
 	return e = class extends t {
@@ -28223,7 +28319,7 @@ var Ef = (() => {
 		constructor(e, t, n, a = !0) {
 			super(e, t, n, a), this.ellipsoid = c(this, r, new R(.5, 1, .5)), this.ellipsoidOffset = (c(this, i), c(this, o, new R(0, 0, 0))), this.checkCollisions = (c(this, s), c(this, u, !1)), this.applyGravity = (c(this, d), c(this, h, !1)), this.inputs = c(this, g), this._needMoveForGravity = !1, this._oldPosition = R.Zero(), this._diffPosition = R.Zero(), this._newPosition = R.Zero(), this._collisionMask = -1, this._onCollisionPositionChange = (e, t, n = null) => {
 				this._newPosition.copyFrom(t), this._newPosition.subtractToRef(this._oldPosition, this._diffPosition), this._diffPosition.length() > V.CollisionsEpsilon && (this.position.addToRef(this._diffPosition, this._deferredPositionUpdate), this._deferOnly ? this._deferredUpdated = !0 : this.position.copyFrom(this._deferredPositionUpdate), this.onCollide && n && this.onCollide(n));
-			}, this.inputs = new Tf(this), this.inputs.addKeyboard().addMouse();
+			}, this.inputs = new Of(this), this.inputs.addKeyboard().addMouse();
 		}
 		attachControl(e, t) {
 			t = B.BackCompatCameraNoPreventDefault(arguments), this.inputs.attachElement(t);
@@ -28327,7 +28423,7 @@ var Ef = (() => {
 			value: c
 		});
 	})(), e;
-})(), Df = class e extends $n {
+})(), Af = class e extends $n {
 	set blurRatio(e) {
 		this._blurRatio !== e && (this._blurRatio = e, this._preparePostProcesses());
 	}
@@ -28402,13 +28498,13 @@ var Ef = (() => {
 		let e = this.getScene();
 		e && e.imageProcessingConfiguration.onUpdateParameters.remove(this._imageProcessingConfigChangeObserver), this._sceneUBO?.dispose();
 	}
-}, Of = class extends xn {}, kf = class extends En(Of) {
+}, jf = class extends xn {}, Mf = class extends En(jf) {
 	constructor() {
 		super(), this.DIFFUSE = !1, this.DIFFUSEDIRECTUV = 0, this.GAMMADIFFUSE = !1, this.DIFFUSEHASALPHA = !1, this.OPACITYFRESNEL = !1, this.REFLECTIONBLUR = !1, this.REFLECTIONFRESNEL = !1, this.REFLECTIONFALLOFF = !1, this.TEXTURELODSUPPORT = !1, this.PREMULTIPLYALPHA = !1, this.USERGBCOLOR = !1, this.USEHIGHLIGHTANDSHADOWCOLORS = !1, this.BACKMAT_SHADOWONLY = !1, this.NOISE = !1, this.REFLECTIONBGR = !1, this.PROJECTED_GROUND = !1, this.REFLECTION = !1, this.REFLECTIONMAP_3D = !1, this.REFLECTIONMAP_SPHERICAL = !1, this.REFLECTIONMAP_PLANAR = !1, this.REFLECTIONMAP_CUBIC = !1, this.REFLECTIONMAP_PROJECTION = !1, this.REFLECTIONMAP_SKYBOX = !1, this.REFLECTIONMAP_EXPLICIT = !1, this.REFLECTIONMAP_EQUIRECTANGULAR = !1, this.REFLECTIONMAP_EQUIRECTANGULAR_FIXED = !1, this.REFLECTIONMAP_MIRROREDEQUIRECTANGULAR_FIXED = !1, this.INVERTCUBICMAP = !1, this.REFLECTIONMAP_OPPOSITEZ = !1, this.LODINREFLECTIONALPHA = !1, this.GAMMAREFLECTION = !1, this.RGBDREFLECTION = !1, this.EQUIRECTANGULAR_RELFECTION_FOV = !1, this.MAINUV1 = !1, this.MAINUV2 = !1, this.UV1 = !1, this.UV2 = !1, this.CLIPPLANE = !1, this.CLIPPLANE2 = !1, this.CLIPPLANE3 = !1, this.CLIPPLANE4 = !1, this.CLIPPLANE5 = !1, this.CLIPPLANE6 = !1, this.POINTSIZE = !1, this.FOG = !1, this.NORMAL = !1, this.NUM_BONE_INFLUENCERS = 0, this.BonesPerMesh = 0, this.INSTANCES = !1, this.SHADOWFLOAT = !1, this.LOGARITHMICDEPTH = !1, this.NONUNIFORMSCALING = !1, this.ALPHATEST = !1, this.rebuild();
 	}
-}, Af = class extends jn(An) {}, jf = (() => {
+}, Nf = class extends jn(An) {}, Pf = (() => {
 	var e, t, n, r, i, a, o, s, l, d, f, h, g, b, x, S, C, E, D;
-	let O = Af, k, M = [], N = [], P, ee = [], F = [], I, te = [], ne = [], re, ie = [], ae = [], oe, se = [], ce = [], le, ue = [], de = [], fe, pe = [], me = [], he, ge = [], _e = [], ve, be = [], xe = [], Se, Ce = [], we = [], Te, Ee = [], De = [], Oe, ke = [], Ae = [], je, Me = [], Ne = [], Pe, Fe = [], B = [], Ie, Le = [], Re = [], ze, Be = [], Ve = [], He, Ue = [], We = [], Ke, qe = [], Je = [], Xe, Ze = [], Qe = [], $e, et = [], tt = [], nt, rt = [], it = [], at, ot = [], st = [], ct, V = [], lt = [], ut, dt = [], ft = [], pt, mt = [], ht = [], gt, _t = [], vt = [], yt, bt = [], St = [], wt, Tt = [], Et = [], Dt, Ot = [], Mt = [], Ft, It = [], Ht = [], Gt, qt = [], Zt = [], en, tn = [], on = [], sn, cn = [], ln = [], un, W = [], dn = [], fn, pn = [], mn = [], hn, gn = [], _n = [], vn, yn = [], bn = [], xn, Sn = [], Cn = [], En, Dn = [], On = [];
+	let O = Nf, k, M = [], N = [], P, ee = [], F = [], I, te = [], ne = [], re, ie = [], ae = [], oe, se = [], ce = [], le, ue = [], de = [], fe, pe = [], me = [], he, ge = [], _e = [], ve, be = [], xe = [], Se, Ce = [], we = [], Te, Ee = [], De = [], Oe, ke = [], Ae = [], je, Me = [], Ne = [], Pe, Fe = [], B = [], Ie, Le = [], Re = [], ze, Be = [], Ve = [], He, Ue = [], We = [], Ke, qe = [], Je = [], Xe, Ze = [], Qe = [], $e, et = [], tt = [], nt, rt = [], it = [], at, ot = [], st = [], ct, V = [], lt = [], ut, dt = [], ft = [], pt, mt = [], ht = [], gt, _t = [], vt = [], yt, bt = [], St = [], wt, Tt = [], Et = [], Dt, Ot = [], Mt = [], Ft, It = [], Ht = [], Gt, qt = [], Zt = [], en, tn = [], on = [], sn, cn = [], ln = [], un, W = [], dn = [], fn, pn = [], mn = [], hn, gn = [], _n = [], vn, yn = [], bn = [], xn, Sn = [], Cn = [], En, Dn = [], On = [];
 	return e = class extends O {
 		get primaryColor() {
 			return T(this, t, "f");
@@ -28561,7 +28657,7 @@ var Ef = (() => {
 		isReadyForSubMesh(t, n, r = !1) {
 			let i = n._drawWrapper;
 			if (i.effect && this.isFrozen && i._wasPreviouslyReady && i._wasPreviouslyUsingInstances === r) return !0;
-			n.materialDefines || (n.materialDefines = new kf());
+			n.materialDefines || (n.materialDefines = new Mf());
 			let a = this.getScene(), o = n.materialDefines;
 			if (this._isReadyForSubMesh(n)) return !0;
 			let s = a.getEngine();
@@ -29208,8 +29304,8 @@ var Ef = (() => {
 			writable: !0,
 			value: t
 		});
-	})(), e.StandardReflectance0 = .05, e.StandardReflectance90 = .5, e._ShaderLoader = new Tn(() => [import("./background.vertex-DmMyZ8ux.js"), import("./background.fragment-9KjC57Z9.js")], () => [import("./background.vertex-D7BEbE9_.js"), import("./background.fragment-C9K7GCnf.js")]), e;
-})(), Mf = class e {
+	})(), e.StandardReflectance0 = .05, e.StandardReflectance90 = .5, e._ShaderLoader = new Tn(() => [import("./background.vertex-zoBpcIgP.js"), import("./background.fragment-S_eq6Jin.js")], () => [import("./background.vertex-D3MjzB8d.js"), import("./background.fragment-BBhzgyEu.js")]), e;
+})(), Ff = class e {
 	static _GetDefaultOptions(e) {
 		return {
 			createGround: !0,
@@ -29330,12 +29426,12 @@ var Ef = (() => {
 		};
 	}
 	_setupGround(e) {
-		(!this._ground || this._ground.isDisposed()) && (this._ground = $l("BackgroundPlane", { size: e.groundSize }, this._scene), this._ground.rotation.x = Math.PI / 2, this._ground.isPickable = !1, this._ground.parent = this._rootMesh, this._ground.onDisposeObservable.add(() => {
+		(!this._ground || this._ground.isDisposed()) && (this._ground = nu("BackgroundPlane", { size: e.groundSize }, this._scene), this._ground.rotation.x = Math.PI / 2, this._ground.isPickable = !1, this._ground.parent = this._rootMesh, this._ground.onDisposeObservable.add(() => {
 			this._ground = null;
 		})), this._ground.receiveShadows = this._options.enableGroundShadow;
 	}
 	_setupGroundMaterial() {
-		this._groundMaterial || (this._groundMaterial = new jf("BackgroundPlaneMaterial", this._scene)), this._groundMaterial.alpha = this._options.groundOpacity, this._groundMaterial.alphaMode = 8, this._groundMaterial.shadowLevel = this._options.groundShadowLevel, this._groundMaterial.primaryColor = this._options.groundColor, this._groundMaterial.useRGBColor = !1, this._groundMaterial.enableNoise = !0, this._ground && (this._ground.material = this._groundMaterial);
+		this._groundMaterial || (this._groundMaterial = new Pf("BackgroundPlaneMaterial", this._scene)), this._groundMaterial.alpha = this._options.groundOpacity, this._groundMaterial.alphaMode = 8, this._groundMaterial.shadowLevel = this._options.groundShadowLevel, this._groundMaterial.primaryColor = this._options.groundColor, this._groundMaterial.useRGBColor = !1, this._groundMaterial.enableNoise = !0, this._ground && (this._ground.material = this._groundMaterial);
 	}
 	_setupGroundDiffuseTexture() {
 		if (this._groundMaterial && !this._groundTexture) {
@@ -29349,7 +29445,7 @@ var Ef = (() => {
 	_setupGroundMirrorTexture(e) {
 		let t = W.CLAMP_ADDRESSMODE;
 		if (!this._groundMirror) {
-			if (this._groundMirror = new Df("BackgroundPlaneMirrorTexture", { ratio: this._options.groundMirrorSizeRatio }, this._scene, !1, this._options.groundMirrorTextureType, W.BILINEAR_SAMPLINGMODE, !0), this._groundMirror.mirrorPlane = new Je(0, -1, 0, e.rootPosition.y), this._groundMirror.anisotropicFilteringLevel = 1, this._groundMirror.wrapU = t, this._groundMirror.wrapV = t, this._groundMirror.renderList) for (let e = 0; e < this._scene.meshes.length; e++) {
+			if (this._groundMirror = new Af("BackgroundPlaneMirrorTexture", { ratio: this._options.groundMirrorSizeRatio }, this._scene, !1, this._options.groundMirrorTextureType, W.BILINEAR_SAMPLINGMODE, !0), this._groundMirror.mirrorPlane = new Je(0, -1, 0, e.rootPosition.y), this._groundMirror.anisotropicFilteringLevel = 1, this._groundMirror.wrapU = t, this._groundMirror.wrapV = t, this._groundMirror.renderList) for (let e = 0; e < this._scene.meshes.length; e++) {
 				let t = this._scene.meshes[e];
 				t !== this._ground && t !== this._skybox && t !== this._rootMesh && this._groundMirror.renderList.push(t);
 			}
@@ -29362,7 +29458,7 @@ var Ef = (() => {
 		this._groundMaterial && (this._groundMaterial.reflectionTexture = this._groundMirror, this._groundMaterial.reflectionFresnel = !0, this._groundMaterial.reflectionAmount = this._options.groundMirrorAmount, this._groundMaterial.reflectionStandardFresnelWeight = this._options.groundMirrorFresnelWeight, this._groundMaterial.reflectionFalloffDistance = this._options.groundMirrorFallOffDistance);
 	}
 	_setupSkybox(e) {
-		(!this._skybox || this._skybox.isDisposed()) && (this._skybox = Gc("BackgroundSkybox", {
+		(!this._skybox || this._skybox.isDisposed()) && (this._skybox = Jc("BackgroundSkybox", {
 			size: e.skyboxSize,
 			sideOrientation: q.BACKSIDE
 		}, this._scene), this._skybox.isPickable = !1, this._skybox.onDisposeObservable.add(() => {
@@ -29370,7 +29466,7 @@ var Ef = (() => {
 		})), this._skybox.parent = this._rootMesh;
 	}
 	_setupSkyboxMaterial() {
-		this._skybox && (this._skyboxMaterial || (this._skyboxMaterial = new jf("BackgroundSkyboxMaterial", this._scene)), this._skyboxMaterial.useRGBColor = !1, this._skyboxMaterial.primaryColor = this._options.skyboxColor, this._skyboxMaterial.enableNoise = !0, this._skybox.material = this._skyboxMaterial);
+		this._skybox && (this._skyboxMaterial || (this._skyboxMaterial = new Pf("BackgroundSkyboxMaterial", this._scene)), this._skyboxMaterial.useRGBColor = !1, this._skyboxMaterial.primaryColor = this._options.skyboxColor, this._skyboxMaterial.enableNoise = !0, this._skybox.material = this._skyboxMaterial);
 	}
 	_setupSkyboxReflectionTexture() {
 		if (this._skyboxMaterial && !this._skyboxTexture) {
@@ -29385,10 +29481,10 @@ var Ef = (() => {
 		this._groundMaterial && this._groundMaterial.dispose(!0, !0), this._skyboxMaterial && this._skyboxMaterial.dispose(!0, !0), this._rootMesh.dispose(!1);
 	}
 };
-Mf._GroundTextureCDNUrl = "https://assets.babylonjs.com/core/environments/backgroundGround.png", Mf._SkyboxTextureCDNUrl = "https://assets.babylonjs.com/core/environments/backgroundSkybox.dds", Mf._EnvironmentTextureCDNUrl = "https://assets.babylonjs.com/core/environments/environmentSpecular.env";
+Ff._GroundTextureCDNUrl = "https://assets.babylonjs.com/core/environments/backgroundGround.png", Ff._SkyboxTextureCDNUrl = "https://assets.babylonjs.com/core/environments/backgroundSkybox.dds", Ff._EnvironmentTextureCDNUrl = "https://assets.babylonjs.com/core/environments/environmentSpecular.env";
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Cameras/deviceOrientationCamera.pure.js
-var Nf = class extends Ef {
+//#region node_modules/@babylonjs/core/Cameras/deviceOrientationCamera.pure.js
+var If = class extends kf {
 	constructor(e, t, n) {
 		super(e, t, n), this._tmpDragQuaternion = new I(), this._disablePointerInputWhenUsingDeviceOrientation = !0, this._dragFactor = 0, this._quaternionCache = new I(), this.inputs.addDeviceOrientation(), this.inputs._deviceOrientationInput && this.inputs._deviceOrientationInput._onDeviceOrientationChangedObservable.addOnce(() => {
 			this._disablePointerInputWhenUsingDeviceOrientation && this.inputs._mouseInput && (this.inputs._mouseInput._allowCameraRotation = !1, this.inputs._mouseInput.onPointerMovedObservable.add((e) => {
@@ -29422,7 +29518,7 @@ var Nf = class extends Ef {
 			this._initialQuaternion.normalize(), this._initialQuaternion.multiplyToRef(this.rotationQuaternion, this.rotationQuaternion);
 		}
 	}
-}, Pf = class e {
+}, Lf = class e {
 	constructor() {
 		this.compensateDistortion = !0, this.multiviewEnabled = !1;
 	}
@@ -29460,7 +29556,7 @@ var Nf = class extends Ef {
 			0
 		], t.postProcessScaleFactor = 1.714605507808412, t.lensCenterOffset = .151976421, t;
 	}
-}, Ff = class extends nr {
+}, Rf = class extends nr {
 	getClassName() {
 		return "VRDistortionCorrectionPostProcess";
 	}
@@ -29477,9 +29573,9 @@ var Nf = class extends Ef {
 		});
 	}
 	_gatherImports(e, t) {
-		e ? (this._webGPUReady = !0, t.push(import("./vrDistortionCorrection.fragment-CMQYEtlB.js"))) : t.push(import("./vrDistortionCorrection.fragment-YN4ErHIm.js")), super._gatherImports(e, t);
+		e ? (this._webGPUReady = !0, t.push(import("./vrDistortionCorrection.fragment-CdDWTkGx.js"))) : t.push(import("./vrDistortionCorrection.fragment-CehOKUy-.js")), super._gatherImports(e, t);
 	}
-}, If = class extends $n {
+}, zf = class extends $n {
 	set samples(e) {
 		this._samples = e;
 	}
@@ -29495,10 +29591,10 @@ var Nf = class extends Ef {
 	getViewCount() {
 		return 2;
 	}
-}, Lf = !1;
-function Rf() {
-	if (Lf) return;
-	Lf = !0;
+}, Bf = !1;
+function Vf() {
+	if (Bf) return;
+	Bf = !0;
 	function e(e, t, n) {
 		let r = new pn(e, void 0, !0, t, void 0, n);
 		return r.addUniform("viewProjection", 16), r.addUniform("viewProjectionR", 16), r.addUniform("view", 16), r.addUniform("projection", 16), r.addUniform("vEyePosition", 4), r.addUniform("inverseProjection", 16), r;
@@ -29523,10 +29619,10 @@ function Rf() {
 		if (this.bindFramebuffer(t, void 0, void 0, void 0, !0), n.bindFramebuffer(n.DRAW_FRAMEBUFFER, t._framebuffer), t._colorTextureArray && t._depthStencilTextureArray) r.framebufferTextureMultiviewOVR(n.DRAW_FRAMEBUFFER, n.COLOR_ATTACHMENT0, t._colorTextureArray, 0, 0, 2), r.framebufferTextureMultiviewOVR(n.DRAW_FRAMEBUFFER, n.DEPTH_ATTACHMENT, t._depthStencilTextureArray, 0, 0, 2);
 		else throw Error("Invalid Space Warp framebuffer");
 	}, jr.prototype._useMultiviewToSingleView = !1, jr.prototype._multiviewTexture = null, jr.prototype._resizeOrCreateMultiviewTexture = function(e, t) {
-		this._multiviewTexture ? (this._multiviewTexture.getRenderWidth() != e || this._multiviewTexture.getRenderHeight() != t) && (this._multiviewTexture.dispose(), this._multiviewTexture = new If(this.getScene(), {
+		this._multiviewTexture ? (this._multiviewTexture.getRenderWidth() != e || this._multiviewTexture.getRenderHeight() != t) && (this._multiviewTexture.dispose(), this._multiviewTexture = new zf(this.getScene(), {
 			width: e,
 			height: t
-		})) : this._multiviewTexture = new If(this.getScene(), {
+		})) : this._multiviewTexture = new zf(this.getScene(), {
 			width: e,
 			height: t
 		});
@@ -29549,13 +29645,13 @@ function Rf() {
 	};
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/PostProcesses/vrMultiviewToSingleviewPostProcess.pure.js
-var zf = class extends nr {
+//#region node_modules/@babylonjs/core/PostProcesses/vrMultiviewToSingleviewPostProcess.pure.js
+var Hf = class extends nr {
 	getClassName() {
 		return "VRMultiviewToSingleviewPostProcess";
 	}
 	constructor(e, t, n) {
-		super(e, "vrMultiviewToSingleview", ["imageIndex"], ["multiviewSampler"], n, t, W.BILINEAR_SAMPLINGMODE), Rf();
+		super(e, "vrMultiviewToSingleview", ["imageIndex"], ["multiviewSampler"], n, t, W.BILINEAR_SAMPLINGMODE), Vf();
 		let r = t ?? this.getCamera();
 		this.onSizeChangedObservable.add(() => {}), this.onApplyObservable.add((e) => {
 			r._scene.activeCamera && r._scene.activeCamera.isLeftCamera ? e.setInt("imageIndex", 0) : e.setInt("imageIndex", 1), e.setTexture("multiviewSampler", r._multiviewTexture);
@@ -29563,21 +29659,21 @@ var zf = class extends nr {
 	}
 };
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Cameras/RigModes/vrRigMode.js
-function Bf(e, t) {
-	let n = t.vrCameraMetrics || Pf.GetDefault();
-	e._rigCameras[0]._cameraRigParams.vrMetrics = n, e._rigCameras[0].viewport = new qe(0, 0, .5, 1), e._rigCameras[0]._cameraRigParams.vrWorkMatrix = new k(), e._rigCameras[0]._cameraRigParams.vrHMatrix = n.leftHMatrix, e._rigCameras[0]._cameraRigParams.vrPreViewMatrix = n.leftPreViewMatrix, e._rigCameras[0].getProjectionMatrix = e._rigCameras[0]._getVRProjectionMatrix, e._rigCameras[1]._cameraRigParams.vrMetrics = n, e._rigCameras[1].viewport = new qe(.5, 0, .5, 1), e._rigCameras[1]._cameraRigParams.vrWorkMatrix = new k(), e._rigCameras[1]._cameraRigParams.vrHMatrix = n.rightHMatrix, e._rigCameras[1]._cameraRigParams.vrPreViewMatrix = n.rightPreViewMatrix, e._rigCameras[1].getProjectionMatrix = e._rigCameras[1]._getVRProjectionMatrix, n.multiviewEnabled && (e.getScene().getEngine().getCaps().multiview ? (e._useMultiviewToSingleView = !0, e._rigPostProcess = new zf("VRMultiviewToSingleview", e, n.postProcessScaleFactor)) : (z.Warn("Multiview is not supported, falling back to standard rendering"), n.multiviewEnabled = !1)), n.compensateDistortion && (e._rigCameras[0]._rigPostProcess = new Ff("VR_Distort_Compensation_Left", e._rigCameras[0], !1, n), e._rigCameras[1]._rigPostProcess = new Ff("VR_Distort_Compensation_Right", e._rigCameras[1], !0, n));
+//#region node_modules/@babylonjs/core/Cameras/RigModes/vrRigMode.js
+function Uf(e, t) {
+	let n = t.vrCameraMetrics || Lf.GetDefault();
+	e._rigCameras[0]._cameraRigParams.vrMetrics = n, e._rigCameras[0].viewport = new qe(0, 0, .5, 1), e._rigCameras[0]._cameraRigParams.vrWorkMatrix = new k(), e._rigCameras[0]._cameraRigParams.vrHMatrix = n.leftHMatrix, e._rigCameras[0]._cameraRigParams.vrPreViewMatrix = n.leftPreViewMatrix, e._rigCameras[0].getProjectionMatrix = e._rigCameras[0]._getVRProjectionMatrix, e._rigCameras[1]._cameraRigParams.vrMetrics = n, e._rigCameras[1].viewport = new qe(.5, 0, .5, 1), e._rigCameras[1]._cameraRigParams.vrWorkMatrix = new k(), e._rigCameras[1]._cameraRigParams.vrHMatrix = n.rightHMatrix, e._rigCameras[1]._cameraRigParams.vrPreViewMatrix = n.rightPreViewMatrix, e._rigCameras[1].getProjectionMatrix = e._rigCameras[1]._getVRProjectionMatrix, n.multiviewEnabled && (e.getScene().getEngine().getCaps().multiview ? (e._useMultiviewToSingleView = !0, e._rigPostProcess = new Hf("VRMultiviewToSingleview", e, n.postProcessScaleFactor)) : (z.Warn("Multiview is not supported, falling back to standard rendering"), n.multiviewEnabled = !1)), n.compensateDistortion && (e._rigCameras[0]._rigPostProcess = new Rf("VR_Distort_Compensation_Left", e._rigCameras[0], !1, n), e._rigCameras[1]._rigPostProcess = new Rf("VR_Distort_Compensation_Right", e._rigCameras[1], !0, n));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Cameras/VR/vrDeviceOrientationFreeCamera.pure.js
-var Vf = class extends Nf {
-	constructor(e, t, n, r = !0, i = Pf.GetDefault()) {
-		super(e, t, n), this._setRigMode = (e) => Bf(this, e), i.compensateDistortion = r, this.setCameraRigMode(jr.RIG_MODE_VR, { vrCameraMetrics: i });
+//#region node_modules/@babylonjs/core/Cameras/VR/vrDeviceOrientationFreeCamera.pure.js
+var Wf = class extends If {
+	constructor(e, t, n, r = !0, i = Lf.GetDefault()) {
+		super(e, t, n), this._setRigMode = (e) => Uf(this, e), i.compensateDistortion = r, this.setCameraRigMode(jr.RIG_MODE_VR, { vrCameraMetrics: i });
 	}
 	getClassName() {
 		return "VRDeviceOrientationFreeCamera";
 	}
-}, Hf = class e {
+}, Gf = class e {
 	get isConnected() {
 		return this._isConnected;
 	}
@@ -29625,8 +29721,8 @@ var Vf = class extends Nf {
 	}
 	dispose() {}
 };
-Hf.GAMEPAD = 0, Hf.GENERIC = 1, Hf.XBOX = 2, Hf.POSE_ENABLED = 3, Hf.DUALSHOCK = 4;
-var Uf = class extends Hf {
+Gf.GAMEPAD = 0, Gf.GENERIC = 1, Gf.XBOX = 2, Gf.POSE_ENABLED = 3, Gf.DUALSHOCK = 4;
+var Kf = class extends Gf {
 	onbuttondown(e) {
 		this._onbuttondown = e;
 	}
@@ -29634,7 +29730,7 @@ var Uf = class extends Hf {
 		this._onbuttonup = e;
 	}
 	constructor(e, t, n) {
-		super(e, t, n), this.onButtonDownObservable = new E(), this.onButtonUpObservable = new E(), this.type = Hf.GENERIC, this._buttons = Array(n.buttons.length);
+		super(e, t, n), this.onButtonDownObservable = new E(), this.onButtonUpObservable = new E(), this.type = Gf.GENERIC, this._buttons = Array(n.buttons.length);
 	}
 	_setButtonValue(e, t, n) {
 		return e !== t && (e === 1 && (this._onbuttondown && this._onbuttondown(n), this.onButtonDownObservable.notifyObservers(n)), e === 0 && (this._onbuttonup && this._onbuttonup(n), this.onButtonUpObservable.notifyObservers(n))), e;
@@ -29645,96 +29741,6 @@ var Uf = class extends Hf {
 	}
 	dispose() {
 		super.dispose(), this.onButtonDownObservable.clear(), this.onButtonUpObservable.clear();
-	}
-}, Wf = !1;
-function Gf() {
-	Wf || (Wf = !0, mt.prototype.createDynamicTexture = function(e, t, n, r) {
-		let i = new lt(this, 4);
-		return i.baseWidth = e, i.baseHeight = t, n && (e = this.needPOTTextures ? ue(e, this._caps.maxTextureSize) : e, t = this.needPOTTextures ? ue(t, this._caps.maxTextureSize) : t), i.width = e, i.height = t, i.isReady = !1, i.generateMipMaps = n, i.samplingMode = r, this.updateTextureSamplingMode(r, i), this._internalTexturesCache.push(i), i;
-	}, mt.prototype.updateDynamicTexture = function(e, t, n, r = !1, i, a = !1, o = !1) {
-		if (!e) return;
-		let s = this._gl, c = s.TEXTURE_2D, l = this._bindTextureDirectly(c, e, !0, a);
-		this._unpackFlipY(n === void 0 ? e.invertY : n), r && s.pixelStorei(s.UNPACK_PREMULTIPLY_ALPHA_WEBGL, 1);
-		let u = this._getWebGLTextureType(e.type), d = this._getInternalFormat(i || e.format), f = this._getRGBABufferInternalSizedFormat(e.type, d);
-		s.texImage2D(c, 0, f, d, u, t), e.generateMipMaps && s.generateMipmap(c), l || this._bindTextureDirectly(c, null), r && s.pixelStorei(s.UNPACK_PREMULTIPLY_ALPHA_WEBGL, 0), i && (e.format = i), e._dynamicTextureSource = t, e._premulAlpha = r, e.invertY = n || !1, e.isReady = !0;
-	});
-}
-//#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/Textures/dynamicTexture.pure.js
-var Kf = class e extends W {
-	constructor(e, t, n, r = !1, i = 3, a = 5, o) {
-		let s = !n || n._isScene, c = s ? n : n?.scene;
-		super(null, c, s ? !r : n, o, i, void 0, void 0, void 0, void 0, a), Gf(), this.name = e, this.wrapU = W.CLAMP_ADDRESSMODE, this.wrapV = W.CLAMP_ADDRESSMODE, this._generateMipMaps = r;
-		let l = this._getEngine();
-		if (!l) return;
-		if (t.getContext) this._canvas = t, this._ownCanvas = !1, this._texture = l.createDynamicTexture(this._canvas.width, this._canvas.height, r, i);
-		else {
-			this._canvas = l.createCanvas(1, 1), this._ownCanvas = !0;
-			let e = t;
-			this._texture = e.width || e.width === 0 ? l.createDynamicTexture(e.width, e.height, r, i) : l.createDynamicTexture(t, t, r, i);
-		}
-		let u = this.getSize();
-		this._canvas.width !== u.width && (this._canvas.width = u.width), this._canvas.height !== u.height && (this._canvas.height = u.height), this._context = this._canvas.getContext("2d");
-	}
-	getClassName() {
-		return "DynamicTexture";
-	}
-	get canRescale() {
-		return !0;
-	}
-	_recreate(e) {
-		this._canvas.width = e.width, this._canvas.height = e.height, this.releaseInternalTexture(), this._texture = this._getEngine().createDynamicTexture(e.width, e.height, this._generateMipMaps, this.samplingMode);
-	}
-	scale(e) {
-		let t = this.getSize();
-		t.width *= e, t.height *= e, this._recreate(t);
-	}
-	scaleTo(e, t) {
-		let n = this.getSize();
-		n.width = e, n.height = t, this._recreate(n);
-	}
-	getContext() {
-		return this._context;
-	}
-	clear(e) {
-		let t = this.getSize();
-		e && (this._context.fillStyle = e), this._context.clearRect(0, 0, t.width, t.height);
-	}
-	update(e, t = !1, n = !1) {
-		this._texture && this._getEngine().updateDynamicTexture(this._texture, this._canvas, e === void 0 || e, t, this._format || void 0, void 0, n);
-	}
-	drawText(e, t, n, r, i, a, o, s = !0) {
-		let c = this.getSize();
-		if (a && (this._context.fillStyle = a, this._context.fillRect(0, 0, c.width, c.height)), this._context.font = r, t == null) {
-			let n = this._context.measureText(e);
-			t = (c.width - n.width) / 2;
-		}
-		if (n == null) {
-			let e = parseInt(r.replace(/\D/g, ""));
-			n = c.height / 2 + e / 3.65;
-		}
-		this._context.fillStyle = i || "", this._context.fillText(e, t, n), s && this.update(o);
-	}
-	dispose() {
-		super.dispose(), this._ownCanvas && this._canvas?.remove?.(), this._canvas = null, this._context = null;
-	}
-	clone() {
-		let t = this.getScene();
-		if (!t) return this;
-		let n = this.getSize(), r = new e(this.name, n, t, this._generateMipMaps);
-		return r.hasAlpha = this.hasAlpha, r.level = this.level, r.wrapU = this.wrapU, r.wrapV = this.wrapV, r;
-	}
-	serialize() {
-		let t = this.getScene();
-		t && !t.isReady() && z.Warn("The scene must be ready before serializing the dynamic texture");
-		let n = super.serialize();
-		return e._IsCanvasElement(this._canvas) && (n.base64String = this._canvas.toDataURL()), n.invertY = this._invertY, n.samplingMode = this.samplingMode, n;
-	}
-	static _IsCanvasElement(e) {
-		return e.toDataURL !== void 0;
-	}
-	_rebuild() {
-		this.update();
 	}
 }, qf = class {
 	get renderTargetTextureProvider() {
@@ -29769,7 +29775,7 @@ var Kf = class e extends W {
 		let r = {
 			width: e,
 			height: t
-		}, i = n ? new If(this._scene, r) : new $n("XR renderTargetTexture", r, this._scene);
+		}, i = n ? new zf(this._scene, r) : new $n("XR renderTargetTexture", r, this._scene);
 		return i.renderTarget._samples = i.samples, i;
 	}
 	_createRenderTargetTextureInternal(e, t, n, r, i) {
@@ -30210,9 +30216,9 @@ var pp;
 (function(e) {
 	e[e.Up = 12] = "Up", e[e.Down = 13] = "Down", e[e.Left = 14] = "Left", e[e.Right = 15] = "Right";
 })(pp || (pp = {}));
-var mp = class extends Hf {
+var mp = class extends Gf {
 	constructor(e, t, n, r = !1) {
-		super(e, t, n, 0, 1, 2, 3), this._leftTrigger = 0, this._rightTrigger = 0, this.onButtonDownObservable = new E(), this.onButtonUpObservable = new E(), this.onPadDownObservable = new E(), this.onPadUpObservable = new E(), this._buttonA = 0, this._buttonB = 0, this._buttonX = 0, this._buttonY = 0, this._buttonBack = 0, this._buttonStart = 0, this._buttonLb = 0, this._buttonRb = 0, this._buttonLeftStick = 0, this._buttonRightStick = 0, this._dPadUp = 0, this._dPadDown = 0, this._dPadLeft = 0, this._dPadRight = 0, this._isXboxOnePad = !1, this.type = Hf.XBOX, this._isXboxOnePad = r;
+		super(e, t, n, 0, 1, 2, 3), this._leftTrigger = 0, this._rightTrigger = 0, this.onButtonDownObservable = new E(), this.onButtonUpObservable = new E(), this.onPadDownObservable = new E(), this.onPadUpObservable = new E(), this._buttonA = 0, this._buttonB = 0, this._buttonX = 0, this._buttonY = 0, this._buttonBack = 0, this._buttonStart = 0, this._buttonLb = 0, this._buttonRb = 0, this._buttonLeftStick = 0, this._buttonRightStick = 0, this._dPadUp = 0, this._dPadDown = 0, this._dPadLeft = 0, this._dPadRight = 0, this._isXboxOnePad = !1, this.type = Gf.XBOX, this._isXboxOnePad = r;
 	}
 	onlefttriggerchanged(e) {
 		this._onlefttriggerchanged = e;
@@ -30348,9 +30354,9 @@ var gp;
 (function(e) {
 	e[e.Up = 12] = "Up", e[e.Down = 13] = "Down", e[e.Left = 14] = "Left", e[e.Right = 15] = "Right";
 })(gp || (gp = {}));
-var _p = class extends Hf {
+var _p = class extends Gf {
 	constructor(e, t, n) {
-		super(e.replace("STANDARD GAMEPAD", "SONY PLAYSTATION DUALSHOCK"), t, n, 0, 1, 2, 3), this._leftTrigger = 0, this._rightTrigger = 0, this.onButtonDownObservable = new E(), this.onButtonUpObservable = new E(), this.onPadDownObservable = new E(), this.onPadUpObservable = new E(), this._buttonCross = 0, this._buttonCircle = 0, this._buttonSquare = 0, this._buttonTriangle = 0, this._buttonShare = 0, this._buttonOptions = 0, this._buttonL1 = 0, this._buttonR1 = 0, this._buttonLeftStick = 0, this._buttonRightStick = 0, this._dPadUp = 0, this._dPadDown = 0, this._dPadLeft = 0, this._dPadRight = 0, this.type = Hf.DUALSHOCK;
+		super(e.replace("STANDARD GAMEPAD", "SONY PLAYSTATION DUALSHOCK"), t, n, 0, 1, 2, 3), this._leftTrigger = 0, this._rightTrigger = 0, this.onButtonDownObservable = new E(), this.onButtonUpObservable = new E(), this.onPadDownObservable = new E(), this.onPadUpObservable = new E(), this._buttonCross = 0, this._buttonCircle = 0, this._buttonSquare = 0, this._buttonTriangle = 0, this._buttonShare = 0, this._buttonOptions = 0, this._buttonL1 = 0, this._buttonR1 = 0, this._buttonLeftStick = 0, this._buttonRightStick = 0, this._dPadUp = 0, this._dPadDown = 0, this._dPadLeft = 0, this._dPadRight = 0, this.type = Gf.DUALSHOCK;
 	}
 	onlefttriggerchanged(e) {
 		this._onlefttriggerchanged = e;
@@ -30494,10 +30500,10 @@ var _p = class extends Hf {
 		attachControl() {
 			let e = this.camera.getScene().gamepadManager;
 			this._onGamepadConnectedObserver = e.onGamepadConnectedObservable.add((e) => {
-				e.type !== Hf.POSE_ENABLED && (!this.gamepad || e.type === Hf.XBOX) && (this.gamepad = e);
+				e.type !== Gf.POSE_ENABLED && (!this.gamepad || e.type === Gf.XBOX) && (this.gamepad = e);
 			}), this._onGamepadDisconnectedObserver = e.onGamepadDisconnectedObservable.add((e) => {
 				this.gamepad === e && (this.gamepad = null);
-			}), this.gamepad = e.getGamepadByType(Hf.XBOX), !this.gamepad && e.gamepads.length && (this.gamepad = e.gamepads[0]);
+			}), this.gamepad = e.getGamepadByType(Gf.XBOX), !this.gamepad && e.gamepads.length && (this.gamepad = e.gamepads[0]);
 		}
 		detachControl() {
 			this.camera.getScene().gamepadManager.onGamepadConnectedObservable.remove(this._onGamepadConnectedObserver), this.camera.getScene().gamepadManager.onGamepadDisconnectedObservable.remove(this._onGamepadDisconnectedObserver), this.gamepad = null;
@@ -30559,7 +30565,7 @@ var _p = class extends Hf {
 })();
 Ui.FreeCameraGamepadInput = vp;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Cameras/Inputs/arcRotateCameraGamepadInput.js
+//#region node_modules/@babylonjs/core/Cameras/Inputs/arcRotateCameraGamepadInput.js
 var yp = (() => {
 	var e;
 	let t, n = [], r = [], i, a = [], o = [];
@@ -30576,10 +30582,10 @@ var yp = (() => {
 		attachControl() {
 			let e = this.camera.getScene().gamepadManager;
 			this._onGamepadConnectedObserver = e.onGamepadConnectedObservable.add((e) => {
-				e.type !== Hf.POSE_ENABLED && (!this.gamepad || e.type === Hf.XBOX) && (this.gamepad = e);
+				e.type !== Gf.POSE_ENABLED && (!this.gamepad || e.type === Gf.XBOX) && (this.gamepad = e);
 			}), this._onGamepadDisconnectedObserver = e.onGamepadDisconnectedObservable.add((e) => {
 				this.gamepad === e && (this.gamepad = null);
-			}), this.gamepad = e.getGamepadByType(Hf.XBOX), !this.gamepad && e.gamepads.length && (this.gamepad = e.gamepads[0]);
+			}), this.gamepad = e.getGamepadByType(Gf.XBOX), !this.gamepad && e.gamepads.length && (this.gamepad = e.gamepads[0]);
 		}
 		detachControl() {
 			this.camera.getScene().gamepadManager.onGamepadConnectedObservable.remove(this._onGamepadConnectedObserver), this.camera.getScene().gamepadManager.onGamepadDisconnectedObservable.remove(this._onGamepadDisconnectedObserver), this.gamepad = null;
@@ -30648,7 +30654,7 @@ var yp = (() => {
 })();
 Ui.ArcRotateCameraGamepadInput = yp;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Gamepads/gamepadSceneComponent.pure.js
+//#region node_modules/@babylonjs/core/Gamepads/gamepadSceneComponent.pure.js
 var bp = class {
 	constructor(e) {
 		this.name = _n.NAME_GAMEPAD, this.scene = e;
@@ -30672,14 +30678,14 @@ function Sp(e) {
 		},
 		enumerable: !0,
 		configurable: !0
-	}), Tf.prototype.addGamepad = function() {
+	}), Of.prototype.addGamepad = function() {
 		return this.add(new vp()), this;
 	}, $i.prototype.addGamepad = function() {
 		return this.add(new yp()), this;
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Gamepads/gamepadManager.js
+//#region node_modules/@babylonjs/core/Gamepads/gamepadManager.js
 var Cp = class e {
 	constructor(t) {
 		if (this._scene = t, this._babylonGamepads = [], this._oneGamepadConnected = !1, this._isMonitoring = !1, this.onGamepadDisconnectedObservable = new E(), this._hostWindow = null, Sp(e), xe() ? (this._gamepadEventSupported = "GamepadEvent" in window, this._gamepadSupport = navigator && navigator.getGamepads) : this._gamepadEventSupported = !1, this.onGamepadConnectedObservable = new E((e) => {
@@ -30709,7 +30715,7 @@ var Cp = class e {
 	get gamepads() {
 		return this._babylonGamepads;
 	}
-	getGamepadByType(e = Hf.XBOX) {
+	getGamepadByType(e = Gf.XBOX) {
 		for (let t of this._babylonGamepads) if (t && t.type === e) return t;
 		return null;
 	}
@@ -30721,7 +30727,7 @@ var Cp = class e {
 	_addNewGamepad(e) {
 		this._oneGamepadConnected || (this._oneGamepadConnected = !0);
 		let t, n = e.id.search("054c") !== -1 && e.id.search("0ce6") === -1, r = e.id.search("Xbox One") !== -1;
-		return t = r || e.id.search("Xbox 360") !== -1 || e.id.search("xinput") !== -1 || e.id.search("045e") !== -1 && e.id.search("Surface Dock") === -1 ? new mp(e.id, e.index, e, r) : n ? new _p(e.id, e.index, e) : new Uf(e.id, e.index, e), this._babylonGamepads[t.index] = t, t;
+		return t = r || e.id.search("Xbox 360") !== -1 || e.id.search("xinput") !== -1 || e.id.search("045e") !== -1 && e.id.search("Surface Dock") === -1 ? new mp(e.id, e.index, e, r) : n ? new _p(e.id, e.index, e) : new Kf(e.id, e.index, e), this._babylonGamepads[t.index] = t, t;
 	}
 	_startMonitoringGamepads() {
 		this._isMonitoring || (this._isMonitoring = !0, this._checkGamepadsStatus());
@@ -30760,7 +30766,7 @@ var Cp = class e {
 	constructor(t, n = null) {
 		if (this.scene = t, this._pointerDownOnMeshAsked = !1, this._isActionableMesh = !1, this._teleportationRequestInitiated = !1, this._teleportationBackRequestInitiated = !1, this._rotationRightAsked = !1, this._rotationLeftAsked = !1, this._dpadPressed = !0, this._activePointer = !1, this._id = e._IdCounter++, n) this._gazeTracker = n.clone("gazeTracker");
 		else {
-			this._gazeTracker = pl("gazeTracker", {
+			this._gazeTracker = gl("gazeTracker", {
 				diameter: .0035,
 				thickness: .0025,
 				tessellation: 20,
@@ -30771,7 +30777,7 @@ var Cp = class e {
 		}
 	}
 	_getForwardRay(e) {
-		return new Dd(R.Zero(), new R(0, 0, e));
+		return new Ad(R.Zero(), new R(0, 0, e));
 	}
 	_selectionPointerDown() {
 		this._pointerDownOnMeshAsked = !0, this._currentHit && this.scene.simulatePointerDown(this._currentHit, { pointerId: this._id });
@@ -30797,7 +30803,7 @@ var Tp = class extends wp {
 	}
 	_getForwardRay(e) {
 		let t = this._getCamera();
-		return t ? t.getForwardRay(e) : new Dd(R.Zero(), R.Forward());
+		return t ? t.getForwardRay(e) : new Ad(R.Zero(), R.Forward());
 	}
 }, Ep = class e {
 	get onEnteringVR() {
@@ -30857,17 +30863,17 @@ var Tp = class extends wp {
 		}, this._beforeRender = () => {
 			this._scene.getEngine().isPointerLock || this.enableGazeEvenWhenNoPointerLock || (this._cameraGazer._gazeTracker.isVisible = !1);
 		}, this._onNewGamepadConnected = (e) => {
-			e.type !== Hf.POSE_ENABLED && (e.leftStick && e.onleftstickchanged((e) => {
+			e.type !== Gf.POSE_ENABLED && (e.leftStick && e.onleftstickchanged((e) => {
 				this._teleportationInitialized && this.teleportationEnabled && (this._checkTeleportWithRay(e, this._cameraGazer), this._checkTeleportBackwards(e, this._cameraGazer));
 			}), e.rightStick && e.onrightstickchanged((e) => {
 				this._teleportationInitialized && this._checkRotate(e, this._cameraGazer);
-			}), e.type === Hf.XBOX && (e.onbuttondown((e) => {
+			}), e.type === Gf.XBOX && (e.onbuttondown((e) => {
 				this._interactionsEnabled && e === 0 && this._cameraGazer._selectionPointerDown();
 			}), e.onbuttonup((e) => {
 				this._interactionsEnabled && e === 0 && this._cameraGazer._selectionPointerUp();
 			})));
 		}, this._workingVector = R.Zero(), this._workingQuaternion = I.Identity(), this._workingMatrix = k.Identity(), z.Warn("WebVR is deprecated. Please avoid using this experience helper and use the WebXR experience helper instead"), this._scene = t, Sp(Cp), or(), this._inputElement = t.getEngine().getInputElement(), !("getVRDisplays" in navigator) && n.useXR === void 0 && (n.useXR = !0), n.createFallbackVRDeviceOrientationFreeCamera === void 0 && (n.createFallbackVRDeviceOrientationFreeCamera = !0), n.createDeviceOrientationCamera === void 0 && (n.createDeviceOrientationCamera = !0), n.laserToggle === void 0 && (n.laserToggle = !0), this._hasEnteredVR = !1, this._position = this._scene.activeCamera ? this._scene.activeCamera.position.clone() : new R(0, this._defaultHeight, 0), n.createDeviceOrientationCamera || !this._scene.activeCamera) {
-			if (this._deviceOrientationCamera = new Nf("deviceOrientationVRHelper", this._position.clone(), t), this._scene.activeCamera && (this._deviceOrientationCamera.minZ = this._scene.activeCamera.minZ, this._deviceOrientationCamera.maxZ = this._scene.activeCamera.maxZ, this._scene.activeCamera instanceof Hi && this._scene.activeCamera.rotation)) {
+			if (this._deviceOrientationCamera = new If("deviceOrientationVRHelper", this._position.clone(), t), this._scene.activeCamera && (this._deviceOrientationCamera.minZ = this._scene.activeCamera.minZ, this._deviceOrientationCamera.maxZ = this._scene.activeCamera.maxZ, this._scene.activeCamera instanceof Hi && this._scene.activeCamera.rotation)) {
 				let e = this._scene.activeCamera;
 				e.rotationQuaternion ? this._deviceOrientationCamera.rotationQuaternion?.copyFrom(e.rotationQuaternion) : this._deviceOrientationCamera.rotationQuaternion?.copyFrom(I.RotationYawPitchRoll(e.rotation.y, e.rotation.x, e.rotation.z)), this._deviceOrientationCamera.rotation = e.rotation.clone();
 			}
@@ -30893,7 +30899,7 @@ var Tp = class extends wp {
 		}) : this._completeVRInit(t, n);
 	}
 	_completeVRInit(e, t) {
-		if (this.xrTestDone = !0, t.createFallbackVRDeviceOrientationFreeCamera && (this._vrDeviceOrientationCamera = new Vf("VRDeviceOrientationVRHelper", this._position, this._scene, !0, t.vrDeviceOrientationCameraMetrics), this._vrDeviceOrientationCamera.angularSensibility = Number.MAX_VALUE), this._cameraGazer = new Tp(() => this.currentVRCamera, e), !this._useCustomVRButton) {
+		if (this.xrTestDone = !0, t.createFallbackVRDeviceOrientationFreeCamera && (this._vrDeviceOrientationCamera = new Wf("VRDeviceOrientationVRHelper", this._position, this._scene, !0, t.vrDeviceOrientationCameraMetrics), this._vrDeviceOrientationCamera.angularSensibility = Number.MAX_VALUE), this._cameraGazer = new Tp(() => this.currentVRCamera, e), !this._useCustomVRButton) {
 			this._btnVR = document.createElement("BUTTON"), this._btnVR.className = "babylonVRicon", this._btnVR.id = "babylonVRiconbtn", this._btnVR.title = "Click to switch to VR";
 			let e = ".babylonVRicon { position: absolute; right: 20px; height: 50px; width: 80px; background-color: rgba(51,51,51,0.7); background-image: url(" + (window.SVGSVGElement ? "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%222048%22%20height%3D%221152%22%20viewBox%3D%220%200%202048%201152%22%20version%3D%221.1%22%3E%3Cpath%20transform%3D%22rotate%28180%201024%2C576.0000000000001%29%22%20d%3D%22m1109%2C896q17%2C0%2030%2C-12t13%2C-30t-12.5%2C-30.5t-30.5%2C-12.5l-170%2C0q-18%2C0%20-30.5%2C12.5t-12.5%2C30.5t13%2C30t30%2C12l170%2C0zm-85%2C256q59%2C0%20132.5%2C-1.5t154.5%2C-5.5t164.5%2C-11.5t163%2C-20t150%2C-30t124.5%2C-41.5q23%2C-11%2042%2C-24t38%2C-30q27%2C-25%2041%2C-61.5t14%2C-72.5l0%2C-257q0%2C-123%20-47%2C-232t-128%2C-190t-190%2C-128t-232%2C-47l-81%2C0q-37%2C0%20-68.5%2C14t-60.5%2C34.5t-55.5%2C45t-53%2C45t-53%2C34.5t-55.5%2C14t-55.5%2C-14t-53%2C-34.5t-53%2C-45t-55.5%2C-45t-60.5%2C-34.5t-68.5%2C-14l-81%2C0q-123%2C0%20-232%2C47t-190%2C128t-128%2C190t-47%2C232l0%2C257q0%2C68%2038%2C115t97%2C73q54%2C24%20124.5%2C41.5t150%2C30t163%2C20t164.5%2C11.5t154.5%2C5.5t132.5%2C1.5zm939%2C-298q0%2C39%20-24.5%2C67t-58.5%2C42q-54%2C23%20-122%2C39.5t-143.5%2C28t-155.5%2C19t-157%2C11t-148.5%2C5t-129.5%2C1.5q-59%2C0%20-130%2C-1.5t-148%2C-5t-157%2C-11t-155.5%2C-19t-143.5%2C-28t-122%2C-39.5q-34%2C-14%20-58.5%2C-42t-24.5%2C-67l0%2C-257q0%2C-106%2040.5%2C-199t110%2C-162.5t162.5%2C-109.5t199%2C-40l81%2C0q27%2C0%2052%2C14t50%2C34.5t51%2C44.5t55.5%2C44.5t63.5%2C34.5t74%2C14t74%2C-14t63.5%2C-34.5t55.5%2C-44.5t51%2C-44.5t50%2C-34.5t52%2C-14l14%2C0q37%2C0%2070%2C0.5t64.5%2C4.5t63.5%2C12t68%2C23q71%2C30%20128.5%2C78.5t98.5%2C110t63.5%2C133.5t22.5%2C149l0%2C257z%22%20fill%3D%22white%22%20/%3E%3C/svg%3E%0A" : "https://cdn.babylonjs.com/Assets/vrButton.png") + "); background-size: 80%; background-repeat:no-repeat; background-position: center; border: none; outline: none; transition: transform 0.125s ease-out } .babylonVRicon:hover { transform: scale(1.05) } .babylonVRicon:active {background-color: rgba(51,51,51,1) } .babylonVRicon:focus {background-color: rgba(51,51,51,1) }";
 			e += ".babylonVRicon.vrdisplaypresenting { display: none; }";
@@ -31023,25 +31029,25 @@ var Tp = class extends wp {
 					if (!this.currentVRCamera) return;
 					let e = I.FromRotationMatrix(this.currentVRCamera.getWorldMatrix().getRotationMatrix()), n = this.currentVRCamera.position;
 					e.toEulerAnglesToRef(this._workingVector), this._workingVector.z = 0, this._workingVector.x = 0, I.RotationYawPitchRollToRef(this._workingVector.y, this._workingVector.x, this._workingVector.z, this._workingQuaternion), this._workingQuaternion.toRotationMatrix(this._workingMatrix), R.TransformCoordinatesToRef(this._teleportBackwardsVector, this._workingMatrix, this._workingVector);
-					let r = new Dd(n, this._workingVector), i = this._scene.pickWithRay(r, this._raySelectionPredicate);
+					let r = new Ad(n, this._workingVector), i = this._scene.pickWithRay(r, this._raySelectionPredicate);
 					i && i.pickedPoint && i.pickedMesh && this._isTeleportationFloor(i.pickedMesh) && i.distance < 5 && this.teleportCamera(i.pickedPoint), t._teleportationBackRequestInitiated = !0;
 				}
 			} else t._teleportationBackRequestInitiated = !1;
 		}
 	}
 	_createTeleportationCircles() {
-		this._teleportationTarget = zc("teleportationTarget", {
+		this._teleportationTarget = Hc("teleportationTarget", {
 			width: 2,
 			height: 2,
 			subdivisions: 2
 		}, this._scene), this._teleportationTarget.isPickable = !1;
-		let e = new Kf("DynamicTexture", 512, this._scene, !0);
+		let e = new kc("DynamicTexture", 512, this._scene, !0);
 		e.hasAlpha = !0;
 		let t = e.getContext();
 		t.beginPath(), t.arc(256, 256, 200, 0, 2 * Math.PI, !1), t.fillStyle = this._teleportationFillColor, t.fill(), t.lineWidth = 10, t.strokeStyle = this._teleportationBorderColor, t.stroke(), t.closePath(), e.update();
 		let n = new wc("TextPlaneMaterial", this._scene);
 		n.diffuseTexture = e, this._teleportationTarget.material = n;
-		let r = pl("torusTeleportation", {
+		let r = gl("torusTeleportation", {
 			diameter: .75,
 			thickness: .1,
 			tessellation: 25,
@@ -31066,7 +31072,7 @@ var Tp = class extends wp {
 		this._teleportActive = !1, this._teleportationInitialized && (this._teleportationTarget.isVisible = !1, this._isDefaultTeleportationTarget && (this._teleportationTarget.getChildren()[0].isVisible = !1));
 	}
 	_rotateCamera(e) {
-		if (!(this.currentVRCamera instanceof Ef)) return;
+		if (!(this.currentVRCamera instanceof kf)) return;
 		e ? this._rotationAngle++ : this._rotationAngle--, this.currentVRCamera.animations = [];
 		let t = I.FromRotationMatrix(k.RotationY(Math.PI / 4 * this._rotationAngle)), n = new G("animationRotation", "rotationQuaternion", 90, G.ANIMATIONTYPE_QUATERNION, G.ANIMATIONLOOPMODE_CONSTANT), r = [];
 		r.push({
@@ -31100,7 +31106,7 @@ var Tp = class extends wp {
 		}), o.setKeys(s), o.setEasingFunction(this._circleEase), this._postProcessMove.animations.push(o), this._postProcessMove.imageProcessingConfiguration.vignetteWeight = 0, this._postProcessMove.imageProcessingConfiguration.vignetteStretch = 0, this._postProcessMove.samples = 4, this._scene.beginAnimation(this.currentVRCamera, 0, 6, !1, 1);
 	}
 	teleportCamera(t) {
-		if (!(this.currentVRCamera instanceof Ef)) return;
+		if (!(this.currentVRCamera instanceof kf)) return;
 		this._workingVector.copyFrom(t), this.isInVRMode || (this._workingVector.y += this._defaultHeight), this.onBeforeCameraTeleport.notifyObservers(this._workingVector);
 		let n, r;
 		if (this._teleportationMode == e.TELEPORTATIONMODE_CONSTANTSPEED) {
@@ -31164,8 +31170,8 @@ var Tp = class extends wp {
 };
 Ep.TELEPORTATIONMODE_CONSTANTTIME = 0, Ep.TELEPORTATIONMODE_CONSTANTSPEED = 1;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/XR/webXRCamera.js
-var Dp = class e extends Ef {
+//#region node_modules/@babylonjs/core/XR/webXRCamera.js
+var Dp = class e extends kf {
 	constructor(e, t, n) {
 		super(e, R.Zero(), t), this._xrSessionManager = n, this._firstFrame = !1, this._xrSessionInitObserver = null, this._xrFrameObserver = null, this._referenceQuaternion = I.Identity(), this._referencedPosition = new R(), this._trackingState = 0, this._onWorldScaleFactorChanged = () => {
 			this._xrSessionManager.currentFrame && this._updateDepthNearFar();
@@ -31275,7 +31281,7 @@ var Dp = class e extends Ef {
 };
 Dp._ScaleReadOnly = R.One();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/XR/webXRFeatureWarningRegistry.js
+//#region node_modules/@babylonjs/core/XR/webXRFeatureWarningRegistry.js
 var Op;
 function kp(e) {
 	(Op ?? (Op = /* @__PURE__ */ new WeakSet())).add(e);
@@ -31284,7 +31290,7 @@ function Ap(e) {
 	return Op?.delete(e) ?? !1;
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/XR/webXRFeaturesManager.js
+//#region node_modules/@babylonjs/core/XR/webXRFeaturesManager.js
 var jp = class {};
 jp.ANCHOR_SYSTEM = "xr-anchor-system", jp.BACKGROUND_REMOVER = "xr-background-remover", jp.HIT_TEST = "xr-hit-test", jp.MESH_DETECTION = "xr-mesh-detection", jp.PHYSICS_CONTROLLERS = "xr-physics-controller", jp.PLANE_DETECTION = "xr-plane-detection", jp.POINTER_SELECTION = "xr-controller-pointer-selection", jp.TELEPORTATION = "xr-controller-teleportation", jp.FEATURE_POINTS = "xr-feature-points", jp.HAND_TRACKING = "xr-hand-tracking", jp.IMAGE_TRACKING = "xr-image-tracking", jp.NEAR_INTERACTION = "xr-near-interaction", jp.DOM_OVERLAY = "xr-dom-overlay", jp.MOVEMENT = "xr-controller-movement", jp.LIGHT_ESTIMATION = "xr-light-estimation", jp.EYE_TRACKING = "xr-eye-tracking", jp.WALKING_LOCOMOTION = "xr-walking-locomotion", jp.LAYERS = "xr-layers", jp.DEPTH_SENSING = "xr-depth-sensing", jp.SPACE_WARP = "xr-space-warp", jp.RAW_CAMERA_ACCESS = "xr-raw-camera-access", jp.BODY_TRACKING = "xr-body-tracking", jp.TRACKED_SOURCES = "xr-tracked-sources";
 var Mp = class e {
@@ -31400,8 +31406,8 @@ Mp._AvailableFeatures = {}, Mp._ConflictingFeatures = {
 	[jp.MOVEMENT]: jp.TELEPORTATION
 };
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Cameras/touchCamera.pure.js
-var Np = class extends Ef {
+//#region node_modules/@babylonjs/core/Cameras/touchCamera.pure.js
+var Np = class extends kf {
 	get touchAngularSensibility() {
 		let e = this.inputs.attached.touch;
 		return e ? e.touchAngularSensibility : 0;
@@ -31618,7 +31624,7 @@ var Np = class extends Ef {
 };
 Ip.BUTTON_TYPE = "button", Ip.SQUEEZE_TYPE = "squeeze", Ip.THUMBSTICK_TYPE = "thumbstick", Ip.TOUCHPAD_TYPE = "touchpad", Ip.TRIGGER_TYPE = "trigger";
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/XR/motionController/webXRAbstractMotionController.js
+//#region node_modules/@babylonjs/core/XR/motionController/webXRAbstractMotionController.js
 var Lp = class {
 	constructor(e, t, n, r, i = !1, a) {
 		if (this.scene = e, this.layout = t, this.gamepadObject = n, this.handedness = r, this._doNotLoadControllerMesh = i, this._controllerCache = a, this._initComponent = (e) => {
@@ -31669,7 +31675,7 @@ var Lp = class {
 					return;
 				}
 			}
-			xd.ImportMesh("", t.path, t.filename, this.scene, (e) => {
+			wd.ImportMesh("", t.path, t.filename, this.scene, (e) => {
 				this._controllerCache && this._controllerCache.push({
 					...t,
 					meshes: e
@@ -31753,7 +31759,7 @@ var Lp = class {
 		};
 	}
 	_getModelLoadingConstraints() {
-		let e = xd.IsPluginForExtensionAvailable(".glb");
+		let e = wd.IsPluginForExtensionAvailable(".glb");
 		return e || z.Warn("glTF / glb loader was not registered, using generic controller instead"), e;
 	}
 	_processLoadedModel(e) {
@@ -31775,7 +31781,7 @@ var Lp = class {
 				else {
 					let i = t.type === Ip.TOUCHPAD_TYPE && t.touchPointNodeName ? t.touchPointNodeName : n.valueNodeName;
 					if (this._buttonMeshMapping[e].states[r] = { valueMesh: this._getChildByName(this.rootMesh, i) }, t.type === Ip.TOUCHPAD_TYPE && !this._touchDots[r]) {
-						let t = al(r + "dot", {
+						let t = cl(r + "dot", {
 							diameter: .0015,
 							segments: 8
 						}, this.scene);
@@ -31868,7 +31874,7 @@ var Lp = class {
 };
 Bp._AvailableControllers = {}, Bp._Fallbacks = {}, Bp._ProfileLoadingPromises = {}, Bp.BaseRepositoryUrl = "https://immersive-web.github.io/webxr-input-profiles/packages/viewer/dist", Bp.PrioritizeOnlineRepository = !0, Bp.UseOnlineRepository = !0, Bp.DisableControllerCache = !0;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/XR/webXRInputSource.js
+//#region node_modules/@babylonjs/core/XR/webXRInputSource.js
 var Vp = 0, Hp = class {
 	constructor(e, t, n = {}) {
 		this._scene = e, this.inputSource = t, this._options = n, this._tmpVector = new R(), this._disposed = !1, this.onDisposeObservable = new E(), this.onMeshLoadedObservable = new E(), this.onMotionControllerInitObservable = new E(), this._uniqueId = `controller-${Vp++}-${t.targetRayMode}-${t.handedness}`, this.pointer = new q(`${this._uniqueId}-pointer`, e), this.pointer.rotationQuaternion = new I(), this.inputSource.gripSpace && (this.grip = new q(`${this._uniqueId}-grip`, this._scene), this.grip.rotationQuaternion = new I()), this._tmpVector.set(0, 0, this._scene.useRightHandedSystem ? -1 : 1), this.inputSource.gamepad && this.inputSource.targetRayMode === "tracked-pointer" && Bp.GetMotionControllerWithXRInput(t, e, this._options.forceControllerProfile).then((e) => {
@@ -32081,7 +32087,7 @@ var Vp = 0, Hp = class {
 };
 Gp._DefaultUtilityLayer = null, Gp._DefaultKeepDepthUtilityLayer = null;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/XR/features/WebXRControllerPointerSelection.pure.js
+//#region node_modules/@babylonjs/core/XR/features/WebXRControllerPointerSelection.pure.js
 var Kp = class e extends Wp {
 	constructor(t, n) {
 		super(t), this._options = n, this._attachController = (t) => {
@@ -32093,7 +32099,7 @@ var Kp = class e extends Wp {
 				selectionMesh: r,
 				meshUnderPointer: null,
 				pick: null,
-				tmpRay: new Dd(new R(), new R()),
+				tmpRay: new Ad(new R(), new R()),
 				disabledByNearInteraction: !1,
 				id: e._IdCounter++
 			}, this._attachedController ? !this._options.enablePointerSelectionOnAllControllers && this._options.preferredHandedness && t.inputSource.handedness === this._options.preferredHandedness && (this._attachedController = t.uniqueId) : this._options.enablePointerSelectionOnAllControllers || (this._attachedController = t.uniqueId), t.inputSource.targetRayMode) {
@@ -32117,7 +32123,7 @@ var Kp = class e extends Wp {
 				selectionMesh: r,
 				meshUnderPointer: null,
 				pick: null,
-				tmpRay: new Dd(new R(), new R()),
+				tmpRay: new Ad(new R(), new R()),
 				disabledByNearInteraction: !1,
 				id: e._IdCounter++
 			}, this._attachGazeMode();
@@ -32221,7 +32227,7 @@ var Kp = class e extends Wp {
 		return this._options.customUtilityLayerScene || Gp.DefaultUtilityLayer.utilityLayerScene;
 	}
 	_attachGazeMode(e) {
-		let t = this._controllers[e && e.uniqueId || "camera"], n = this._options.timeToSelect || 3e3, r = this._options.useUtilityLayer ? this._utilityLayerScene : this._scene, i = new Ze(), a = pl("selection", {
+		let t = this._controllers[e && e.uniqueId || "camera"], n = this._options.timeToSelect || 3e3, r = this._options.useUtilityLayer ? this._utilityLayerScene : this._scene, i = new Ze(), a = gl("selection", {
 			diameter: .0525,
 			thickness: .015,
 			tessellation: 20
@@ -32337,7 +32343,7 @@ var Kp = class e extends Wp {
 		}
 	}
 	_generateNewMeshPair(e) {
-		let t = this._options.useUtilityLayer ? this._options.customUtilityLayerScene || Gp.DefaultUtilityLayer.utilityLayerScene : this._scene, n = this._options.customLasterPointerMeshGenerator ? this._options.customLasterPointerMeshGenerator() : ll("laserPointer", {
+		let t = this._options.useUtilityLayer ? this._options.customUtilityLayerScene || Gp.DefaultUtilityLayer.utilityLayerScene : this._scene, n = this._options.customLasterPointerMeshGenerator ? this._options.customLasterPointerMeshGenerator() : fl("laserPointer", {
 			height: 1,
 			diameterTop: 2e-4,
 			diameterBottom: .004,
@@ -32347,7 +32353,7 @@ var Kp = class e extends Wp {
 		n.parent = e;
 		let r = new wc("laserPointerMat", t);
 		r.emissiveColor = this.laserPointerDefaultColor, r.alpha = .7, n.material = r, n.rotation.x = Math.PI / 2, this._updatePointerDistance(n, 1), n.isPickable = !1, n.isVisible = !1;
-		let i = this._options.customSelectionMeshGenerator ? this._options.customSelectionMeshGenerator() : pl("gazeTracker", {
+		let i = this._options.customSelectionMeshGenerator ? this._options.customSelectionMeshGenerator() : gl("gazeTracker", {
 			diameter: .0105,
 			thickness: .0075,
 			tessellation: 20
@@ -32378,22 +32384,22 @@ var Kp = class e extends Wp {
 Kp._IdCounter = 200, Kp.Name = jp.POINTER_SELECTION, Kp.Version = 1;
 var qp = !1;
 function Jp() {
-	qp || (qp = !0, qd(), Mp.AddWebXRFeature(Kp.Name, (e, t) => () => new Kp(e, t), Kp.Version, !0));
+	qp || (qp = !0, Xd(), Mp.AddWebXRFeature(Kp.Name, (e, t) => () => new Kp(e, t), Kp.Version, !0));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/Node/Enums/nodeMaterialBlockConnectionPointTypes.js
+//#region node_modules/@babylonjs/core/Materials/Node/Enums/nodeMaterialBlockConnectionPointTypes.js
 var Y;
 (function(e) {
 	e[e.Float = 1] = "Float", e[e.Int = 2] = "Int", e[e.Vector2 = 4] = "Vector2", e[e.Vector3 = 8] = "Vector3", e[e.Vector4 = 16] = "Vector4", e[e.Color3 = 32] = "Color3", e[e.Color4 = 64] = "Color4", e[e.Matrix = 128] = "Matrix", e[e.Object = 256] = "Object", e[e.AutoDetect = 1024] = "AutoDetect", e[e.BasedOnInput = 2048] = "BasedOnInput", e[e.All = 4095] = "All";
 })(Y || (Y = {}));
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/Node/Enums/nodeMaterialBlockTargets.js
+//#region node_modules/@babylonjs/core/Materials/Node/Enums/nodeMaterialBlockTargets.js
 var X;
 (function(e) {
 	e[e.Vertex = 1] = "Vertex", e[e.Fragment = 2] = "Fragment", e[e.Neutral = 4] = "Neutral", e[e.VertexAndFragment = 3] = "VertexAndFragment";
 })(X || (X = {}));
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/Node/nodeMaterialBuildState.js
+//#region node_modules/@babylonjs/core/Materials/Node/nodeMaterialBuildState.js
 var Yp = class {
 	constructor() {
 		this.supportUniformBuffers = !1, this.attributes = [], this.uniforms = [], this.constants = [], this.samplers = [], this.functions = {}, this.extensions = {}, this.prePassOutput = {}, this.counters = {}, this._terminalBlocks = /* @__PURE__ */ new Set(), this._attributeDeclaration = "", this._uniformDeclaration = "", this._constantDeclaration = "", this._samplerDeclaration = "", this._varyingTransfer = "", this._injectAtEnd = "", this._injectAtTop = "", this._customEntryHeader = "", this._repeatableContentAnchorIndex = 0, this._builtCompilationString = "", this.compilationString = "";
@@ -33209,7 +33215,7 @@ var am = (() => {
 			e._excludeVariableName("logarithmicDepthConstant"), e._excludeVariableName("vFragmentDepth"), e._excludeVariableName("objectId"), e._excludeVariableName("meshBlendTag"), this._initShaderSourceAsync(e.shaderLanguage);
 		}
 		async _initShaderSourceAsync(e) {
-			this._codeIsReady = !1, e === 1 ? await Promise.all([import("./helperFunctions-BLgM1UTs.js"), import("./objectIdFunctions-BDsQ1Re_.js")]) : await Promise.all([import("./helperFunctions-BempXiLI.js"), import("./objectIdFunctions-ISoCi0FQ.js")]), this._codeIsReady = !0, this.onCodeIsReadyObservable.notifyObservers(this);
+			this._codeIsReady = !1, e === 1 ? await Promise.all([import("./helperFunctions-YVxfMgkt.js"), import("./objectIdFunctions-BUKURx0v.js")]) : await Promise.all([import("./helperFunctions-C_ZzvIUZ.js"), import("./objectIdFunctions-DFcWs5eK.js")]), this._codeIsReady = !0, this.onCodeIsReadyObservable.notifyObservers(this);
 		}
 		get rgba() {
 			return this._inputs[0];
@@ -33328,19 +33334,19 @@ var am = (() => {
 	e[e.Material = 0] = "Material", e[e.PostProcess = 1] = "PostProcess", e[e.Particle = 2] = "Particle", e[e.ProceduralTexture = 3] = "ProceduralTexture", e[e.GaussianSplatting = 4] = "GaussianSplatting", e[e.SFE = 5] = "SFE";
 })(om || (om = {}));
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/Node/Enums/nodeMaterialSystemValues.js
+//#region node_modules/@babylonjs/core/Materials/Node/Enums/nodeMaterialSystemValues.js
 var sm;
 (function(e) {
 	e[e.World = 1] = "World", e[e.View = 2] = "View", e[e.Projection = 3] = "Projection", e[e.ViewProjection = 4] = "ViewProjection", e[e.WorldView = 5] = "WorldView", e[e.WorldViewProjection = 6] = "WorldViewProjection", e[e.CameraPosition = 7] = "CameraPosition", e[e.FogColor = 8] = "FogColor", e[e.DeltaTime = 9] = "DeltaTime", e[e.CameraParameters = 10] = "CameraParameters", e[e.MaterialAlpha = 11] = "MaterialAlpha", e[e.ProjectionInverse = 12] = "ProjectionInverse", e[e.CameraForward = 13] = "CameraForward";
 })(sm || (sm = {}));
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/Node/Blocks/Input/animatedInputBlockTypes.js
+//#region node_modules/@babylonjs/core/Materials/Node/Blocks/Input/animatedInputBlockTypes.js
 var cm;
 (function(e) {
 	e[e.None = 0] = "None", e[e.Time = 1] = "Time", e[e.RealTime = 2] = "RealTime", e[e.MouseInfo = 3] = "MouseInfo";
 })(cm || (cm = {}));
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/Node/Blocks/Input/inputBlock.pure.js
+//#region node_modules/@babylonjs/core/Materials/Node/Blocks/Input/inputBlock.pure.js
 var lm = {
 	position2d: "position",
 	particle_uv: "vUV",
@@ -33759,7 +33765,7 @@ var lm = {
 			this._initShaderSourceAsync(e.shaderLanguage);
 		}
 		async _initShaderSourceAsync(e) {
-			this._codeIsReady = !1, e === 1 ? await import("./helperFunctions-BLgM1UTs.js") : await import("./helperFunctions-BempXiLI.js"), this._codeIsReady = !0, this.onCodeIsReadyObservable.notifyObservers(this);
+			this._codeIsReady = !1, e === 1 ? await import("./helperFunctions-YVxfMgkt.js") : await import("./helperFunctions-C_ZzvIUZ.js"), this._codeIsReady = !0, this.onCodeIsReadyObservable.notifyObservers(this);
 		}
 		get vector() {
 			return this._inputs[0];
@@ -33907,7 +33913,7 @@ var lm = {
 		e._excludeVariableName(this.samplerName), this._initShaderSourceAsync(e.shaderLanguage);
 	}
 	async _initShaderSourceAsync(e) {
-		this._codeIsReady = !1, e === 1 ? await import("./helperFunctions-BLgM1UTs.js") : await import("./helperFunctions-BempXiLI.js"), this._codeIsReady = !0, this.onCodeIsReadyObservable.notifyObservers(this);
+		this._codeIsReady = !1, e === 1 ? await import("./helperFunctions-YVxfMgkt.js") : await import("./helperFunctions-C_ZzvIUZ.js"), this._codeIsReady = !0, this.onCodeIsReadyObservable.notifyObservers(this);
 	}
 	get target() {
 		return !this.uv.isConnected || this.uv.sourceBlock.isInput ? X.VertexAndFragment : X.Fragment;
@@ -34009,7 +34015,7 @@ var lm = {
 		e._excludeVariableName("diffuseSampler"), this._initShaderSourceAsync(e.shaderLanguage);
 	}
 	async _initShaderSourceAsync(e) {
-		this._codeIsReady = !1, e === 1 ? await import("./helperFunctions-BLgM1UTs.js") : await import("./helperFunctions-BempXiLI.js"), this._codeIsReady = !0, this.onCodeIsReadyObservable.notifyObservers(this);
+		this._codeIsReady = !1, e === 1 ? await import("./helperFunctions-YVxfMgkt.js") : await import("./helperFunctions-C_ZzvIUZ.js"), this._codeIsReady = !0, this.onCodeIsReadyObservable.notifyObservers(this);
 	}
 	autoConfigure(e, t = () => !0) {
 		if (!this.uv.isConnected) {
@@ -34735,7 +34741,7 @@ var lm = {
 	}
 };
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Particles/particleSystem.functions.js
+//#region node_modules/@babylonjs/core/Particles/particleSystem.functions.js
 function Im(e, t) {
 	let n = new Dm();
 	return n.direction1 = e, n.direction2 = t, n;
@@ -34768,7 +34774,7 @@ function Gm(e = null) {
 	return new Fm(e);
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Particles/baseParticleSystem.pure.js
+//#region node_modules/@babylonjs/core/Particles/baseParticleSystem.pure.js
 var Km = class e {
 	get targetStopDuration() {
 		return this._targetStopDuration;
@@ -34996,7 +35002,7 @@ var Km = class e {
 };
 Km.BLENDMODE_ONEONE = 0, Km.BLENDMODE_STANDARD = 1, Km.BLENDMODE_ADD = 2, Km.BLENDMODE_MULTIPLY = 3, Km.BLENDMODE_MULTIPLYADD = 4, Km.BLENDMODE_SUBTRACT = -1;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/Node/Blocks/colorSplitterBlock.pure.js
+//#region node_modules/@babylonjs/core/Materials/Node/Blocks/colorSplitterBlock.pure.js
 var qm = class extends em {
 	constructor(e) {
 		super(e, X.Neutral), this.registerInput("rgba", Y.Color4, !0), this.registerInput("rgb ", Y.Color3, !0), this.registerOutput("rgb", Y.Color3), this.registerOutput("r", Y.Float), this.registerOutput("g", Y.Float), this.registerOutput("b", Y.Float), this.registerOutput("a", Y.Float), this.inputsAreExclusive = !0;
@@ -35151,7 +35157,7 @@ var qm = class extends em {
 			return this._cachedDefines !== t && (this._cachedDefines = t, this._drawWrapper.effect = e.createEffect(n, [H.PositionKind], this._uniforms, this._samplers, t, void 0, void 0, () => {
 				this._rtWrapper?.dispose(), this._rtWrapper = this._texture = null, this._contentData = null, this._contentUpdateId = -1, this._fallbackTexture && (this._texture = this._fallbackTexture._texture, this._texture && this._texture.incrementReferences()), this._fallbackTextureUsed = !0;
 			}, void 0, this._shaderLanguage, async () => {
-				this._options.extraInitializationsAsync ? this.shaderLanguage === 1 ? await Promise.all([import("./procedural.vertex-D4alk4hi.js"), this._options.extraInitializationsAsync()]) : await Promise.all([import("./procedural.vertex-BuYl5Azb.js"), this._options.extraInitializationsAsync()]) : this.shaderLanguage === 1 ? await import("./procedural.vertex-D4alk4hi.js") : await import("./procedural.vertex-BuYl5Azb.js");
+				this._options.extraInitializationsAsync ? this.shaderLanguage === 1 ? await Promise.all([import("./procedural.vertex-W1_NGzHb.js"), this._options.extraInitializationsAsync()]) : await Promise.all([import("./procedural.vertex-Dho_hH8_.js"), this._options.extraInitializationsAsync()]) : this.shaderLanguage === 1 ? await import("./procedural.vertex-W1_NGzHb.js") : await import("./procedural.vertex-Dho_hH8_.js");
 			})), this._drawWrapper.effect.isReady();
 		}
 		resetRefreshCounter() {
@@ -36391,7 +36397,7 @@ function lh(e, t) {
 	return n.setToDefault(), n.build(), n;
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/XR/features/WebXRNearInteraction.pure.js
+//#region node_modules/@babylonjs/core/XR/features/WebXRNearInteraction.pure.js
 var uh;
 (function(e) {
 	e[e.DEHYDRATED = 0] = "DEHYDRATED", e[e.HOVER = 1] = "HOVER", e[e.TOUCH = 2] = "TOUCH";
@@ -36407,7 +36413,7 @@ var fh = [
 	new R()
 ], ph = class e extends Wp {
 	constructor(t, n) {
-		super(t), this._options = n, this._tmpRay = new Dd(new R(), new R()), this._attachController = (t) => {
+		super(t), this._options = n, this._tmpRay = new Ad(new R(), new R()), this._attachController = (t) => {
 			if (this._controllers[t.uniqueId]) return;
 			let { touchCollisionMesh: n, touchCollisionMeshFunction: r, hydrateCollisionMeshFunction: i } = this._generateNewTouchPointMesh(), a = this._generateVisualCue();
 			switch (this._controllers[t.uniqueId] = {
@@ -36420,7 +36426,7 @@ var fh = [
 				touchCollisionMeshFunction: r,
 				hydrateCollisionMeshFunction: i,
 				currentAnimationState: uh.DEHYDRATED,
-				grabRay: new Dd(new R(), new R()),
+				grabRay: new Ad(new R(), new R()),
 				hoverInteraction: !1,
 				nearInteraction: !1,
 				grabInteraction: !1,
@@ -36548,7 +36554,7 @@ var fh = [
 		return this._options.customUtilityLayerScene || Gp.DefaultUtilityLayer.utilityLayerScene;
 	}
 	_generateVisualCue() {
-		let e = this._options.useUtilityLayer ? this._options.customUtilityLayerScene || Gp.DefaultUtilityLayer.utilityLayerScene : this._scene, t = al("nearInteraction", { diameter: .0105 * this._xrSessionManager.worldScalingFactor }, e);
+		let e = this._options.useUtilityLayer ? this._options.customUtilityLayerScene || Gp.DefaultUtilityLayer.utilityLayerScene : this._scene, t = cl("nearInteraction", { diameter: .0105 * this._xrSessionManager.worldScalingFactor }, e);
 		t.bakeCurrentTransformIntoVertices(), t.isPickable = !1, t.isVisible = !1, t.rotationQuaternion = I.Identity();
 		let n = new wc("targetMat", e);
 		return n.specularColor = L.Black(), n.emissiveColor = this.selectionMeshDefaultColor, n.backFaceCulling = !1, t.material = n, t;
@@ -36618,7 +36624,7 @@ var fh = [
 		}
 	}
 	_generateNewTouchPointMesh() {
-		let e = this._xrSessionManager.worldScalingFactor, t = this._options.useUtilityLayer ? this._options.customUtilityLayerScene || Gp.DefaultUtilityLayer.utilityLayerScene : this._scene, n = al("PickSphere", { diameter: 1 * e }, t);
+		let e = this._xrSessionManager.worldScalingFactor, t = this._options.useUtilityLayer ? this._options.customUtilityLayerScene || Gp.DefaultUtilityLayer.utilityLayerScene : this._scene, n = cl("PickSphere", { diameter: 1 * e }, t);
 		if (n.isVisible = !1, this._options.motionControllerOrbMaterial) n.material = this._options.motionControllerOrbMaterial;
 		else {
 			let e;
@@ -36717,9 +36723,9 @@ function mh(e, t, n = !1) {
 	if (!e._generatePointsArray() || !e.subMeshes || !a || !n && !sn.Intersects(a.boundingSphere, t)) return i;
 	let o = fh[0], s = fh[1];
 	fh[2].setAll(0), fh[3].setAll(0);
-	let c = new Dd(fh[2], fh[3], 1), l = Infinity, u, d, f, p, m = A.Vector3[2], h = A.Matrix[0];
+	let c = new Ad(fh[2], fh[3], 1), l = Infinity, u, d, f, p, m = A.Vector3[2], h = A.Matrix[0];
 	h.copyFrom(e.getWorldMatrix()), h.invert(), R.TransformCoordinatesToRef(t.center, h, m);
-	for (let n = 0; n < r.length; n++) r[n].projectToRef(m, e._positions, e.getIndices(), s), R.TransformCoordinatesToRef(s, e.getWorldMatrix(), s), u = R.Distance(s, t.center), f = R.DistanceSquared(s, e.getAbsolutePosition()), d = R.DistanceSquared(t.center, e.getAbsolutePosition()), d !== -1 && f !== -1 && f > d && (u = 0, s.copyFrom(t.center)), u !== -1 && u < l && (l = u, Dd.CreateFromToToRef(t.center, s, c), c.length = l * 2, p = c.intersectsMesh(e), o.copyFrom(s));
+	for (let n = 0; n < r.length; n++) r[n].projectToRef(m, e._positions, e.getIndices(), s), R.TransformCoordinatesToRef(s, e.getWorldMatrix(), s), u = R.Distance(s, t.center), f = R.DistanceSquared(s, e.getAbsolutePosition()), d = R.DistanceSquared(t.center, e.getAbsolutePosition()), d !== -1 && f !== -1 && f > d && (u = 0, s.copyFrom(t.center)), u !== -1 && u < l && (l = u, Ad.CreateFromToToRef(t.center, s, c), c.length = l * 2, p = c.intersectsMesh(e), o.copyFrom(s));
 	return l < t.radius && (i.hit = !0, i.distance = l, i.pickedMesh = e, i.pickedPoint = o.clone(), p && p.bu !== null && p.bv !== null && (i.faceId = p.faceId, i.subMeshId = p.subMeshId, i.bu = p.bu, i.bv = p.bv)), i;
 }
 var hh = !1;
@@ -36727,7 +36733,7 @@ function gh() {
 	hh || (hh = !0, ph.PickMeshWithSphere = mh, Mp.AddWebXRFeature(ph.Name, (e, t) => () => new ph(e, t), ph.Version, !0));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/XR/webXREnterExitUI.js
+//#region node_modules/@babylonjs/core/XR/webXREnterExitUI.js
 var _h = class {
 	constructor(e, t, n) {
 		this.element = e, this.sessionMode = t, this.referenceSpaceType = n;
@@ -36804,7 +36810,7 @@ var _h = class {
 		return this._options.teleportationTargetMesh || null;
 	}
 	constructor(e, t) {
-		super(e), this._options = t, this._controllers = {}, this._snappedToPoint = !1, this._cachedColor4White = new F(1, 1, 1, 1), this._tmpRay = new Dd(new R(), new R()), this._tmpVector = new R(), this._tmpQuaternion = new I(), this._worldScaleObserver = null, this.skipNextTeleportation = !1, this.backwardsMovementEnabled = !0, this.backwardsTeleportationDistance = .7, this.parabolicCheckRadius = 5, this.parabolicRayEnabled = !0, this.straightRayEnabled = !0, this.rotationAngle = Math.PI / 8, this.onTargetMeshPositionUpdatedObservable = new E(), this.teleportationEnabled = !0, this._rotationEnabled = !0, this.onBeforeCameraTeleportRotation = new E(), this.onAfterCameraTeleportRotation = new E(), this._attachController = (e) => {
+		super(e), this._options = t, this._controllers = {}, this._snappedToPoint = !1, this._cachedColor4White = new F(1, 1, 1, 1), this._tmpRay = new Ad(new R(), new R()), this._tmpVector = new R(), this._tmpQuaternion = new I(), this._worldScaleObserver = null, this.skipNextTeleportation = !1, this.backwardsMovementEnabled = !0, this.backwardsTeleportationDistance = .7, this.parabolicCheckRadius = 5, this.parabolicRayEnabled = !0, this.straightRayEnabled = !0, this.rotationAngle = Math.PI / 8, this.onTargetMeshPositionUpdatedObservable = new E(), this.teleportationEnabled = !0, this._rotationEnabled = !0, this.onBeforeCameraTeleportRotation = new E(), this.onAfterCameraTeleportRotation = new E(), this._attachController = (e) => {
 			if (this._controllers[e.uniqueId] || this._options.forceHandedness && e.inputSource.handedness !== this._options.forceHandedness) return;
 			this._controllers[e.uniqueId] = {
 				xrController: e,
@@ -37003,21 +37009,21 @@ var _h = class {
 	}
 	_createDefaultTargetMesh() {
 		this._options.defaultTargetMeshOptions = this._options.defaultTargetMeshOptions || {};
-		let e = this._options.useUtilityLayer ? this._options.customUtilityLayerScene || Gp.DefaultUtilityLayer.utilityLayerScene : this._xrSessionManager.scene, t = zc("teleportationTarget", {
+		let e = this._options.useUtilityLayer ? this._options.customUtilityLayerScene || Gp.DefaultUtilityLayer.utilityLayerScene : this._xrSessionManager.scene, t = Hc("teleportationTarget", {
 			width: 2,
 			height: 2,
 			subdivisions: 2
 		}, e);
 		if (t.isPickable = !1, this._options.defaultTargetMeshOptions.teleportationCircleMaterial) t.material = this._options.defaultTargetMeshOptions.teleportationCircleMaterial;
 		else {
-			let n = new Kf("teleportationPlaneDynamicTexture", 512, e, !0);
+			let n = new kc("teleportationPlaneDynamicTexture", 512, e, !0);
 			n.hasAlpha = !0;
 			let r = n.getContext();
 			r.beginPath(), r.arc(256, 256, 200, 0, 2 * Math.PI, !1), r.fillStyle = this._options.defaultTargetMeshOptions.teleportationFillColor || "#444444", r.fill(), r.lineWidth = 10, r.strokeStyle = this._options.defaultTargetMeshOptions.teleportationBorderColor || "#FFFFFF", r.stroke(), r.closePath(), n.update();
 			let i = new wc("teleportationPlaneMaterial", e);
 			i.diffuseTexture = n, t.material = i;
 		}
-		let n = pl("torusTeleportation", {
+		let n = gl("torusTeleportation", {
 			diameter: .75,
 			thickness: .1,
 			tessellation: 20
@@ -37037,7 +37043,7 @@ var _h = class {
 			let i = new Un();
 			i.setEasingMode(Bn.EASINGMODE_EASEINOUT), t.setEasingFunction(i), n.animations = [], n.animations.push(t), e.beginAnimation(n, 0, 60, !0);
 		}
-		let r = ll("rotationCone", {
+		let r = fl("rotationCone", {
 			diameterTop: 0,
 			tessellation: 4
 		}, e);
@@ -37088,7 +37094,7 @@ var _h = class {
 	_showParabolicPath(e) {
 		if (!e.pickedPoint || !this._currentTeleportationControllerId) return;
 		let t = this._options.useUtilityLayer ? this._options.customUtilityLayerScene || Gp.DefaultUtilityLayer.utilityLayerScene : this._xrSessionManager.scene, n = this._controllers[this._currentTeleportationControllerId], r = In.CreateQuadraticBezier(n.xrController.pointer.absolutePosition, e.ray.origin, e.pickedPoint, 25), i = n.teleportationState.blocked ? this._blockedRayColor : void 0, a = this._colorArray.fill(i || this._cachedColor4White), o = r.getPoints();
-		o.shift(), o.shift(), this._quadraticBezierCurve = this._options.generateRayPathMesh ? this._options.generateRayPathMesh(r.getPoints(), e) : Ml("teleportation path line", {
+		o.shift(), o.shift(), this._quadraticBezierCurve = this._options.generateRayPathMesh ? this._options.generateRayPathMesh(r.getPoints(), e) : Fl("teleportation path line", {
 			points: o,
 			instance: this._quadraticBezierCurve,
 			updatable: !0,
@@ -37112,10 +37118,10 @@ var _h = class {
 yh.Name = jp.TELEPORTATION, yh.Version = 1;
 var bh = !1;
 function xh() {
-	bh || (bh = !0, qd(), Mp.AddWebXRFeature(yh.Name, (e, t) => () => new yh(e, t), yh.Version, !0));
+	bh || (bh = !0, Xd(), Mp.AddWebXRFeature(yh.Name, (e, t) => () => new yh(e, t), yh.Version, !0));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Physics/v1/physicsJoint.js
+//#region node_modules/@babylonjs/core/Physics/v1/physicsJoint.js
 var Sh = class {
 	constructor(e, t) {
 		this.type = e, this.jointData = t, t.nativeParams = t.nativeParams || {};
@@ -37135,7 +37141,7 @@ var Sh = class {
 };
 Sh.DistanceJoint = 0, Sh.HingeJoint = 1, Sh.BallAndSocketJoint = 2, Sh.WheelJoint = 3, Sh.SliderJoint = 4, Sh.PrismaticJoint = 5, Sh.UniversalJoint = 6, Sh.Hinge2Joint = Sh.WheelJoint, Sh.PointToPointJoint = 8, Sh.SpringJoint = 9, Sh.LockJoint = 10;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Physics/v1/physicsImpostor.pure.js
+//#region node_modules/@babylonjs/core/Physics/v1/physicsImpostor.pure.js
 var Ch = class e {
 	get isDisposed() {
 		return this._isDisposed;
@@ -37404,7 +37410,7 @@ var Ch = class e {
 };
 Ch.DEFAULT_OBJECT_SIZE = /*#__PURE__*/ new R(1, 1, 1), Ch.IDENTITY_QUATERNION = /*#__PURE__*/ I.Identity(), Ch._TmpVecs = /*#__PURE__*/ ee(3, R.Zero), Ch._TmpQuat = /*#__PURE__*/ I.Identity(), Ch.NoImpostor = 0, Ch.SphereImpostor = 1, Ch.BoxImpostor = 2, Ch.PlaneImpostor = 3, Ch.MeshImpostor = 4, Ch.CapsuleImpostor = 6, Ch.CylinderImpostor = 7, Ch.ParticleImpostor = 8, Ch.HeightmapImpostor = 9, Ch.ConvexHullImpostor = 10, Ch.CustomImpostor = 100, Ch.RopeImpostor = 101, Ch.ClothImpostor = 102, Ch.SoftbodyImpostor = 103;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Physics/v2/IPhysicsEnginePlugin.js
+//#region node_modules/@babylonjs/core/Physics/v2/IPhysicsEnginePlugin.js
 var wh;
 (function(e) {
 	e[e.FREE = 0] = "FREE", e[e.LIMITED = 1] = "LIMITED", e[e.LOCKED = 2] = "LOCKED";
@@ -37442,7 +37448,7 @@ var Mh;
 	e[e.SIMULATION_CONTROLLED = 0] = "SIMULATION_CONTROLLED", e[e.ALWAYS_ACTIVE = 1] = "ALWAYS_ACTIVE", e[e.ALWAYS_INACTIVE = 2] = "ALWAYS_INACTIVE";
 })(Mh || (Mh = {}));
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Physics/v2/physicsBody.js
+//#region node_modules/@babylonjs/core/Physics/v2/physicsBody.js
 var Nh = class e {
 	get disablePreStep() {
 		return this._prestepType == jh.DISABLED;
@@ -37950,7 +37956,7 @@ var Rh = [
 		return await new Promise(async (i) => {
 			let a = {};
 			e._RightHandGLB?.meshes[1]?.isDisposed() && (e._RightHandGLB = null), e._LeftHandGLB?.meshes[1]?.isDisposed() && (e._LeftHandGLB = null);
-			let o = !!(e._RightHandGLB && e._LeftHandGLB), s = B.GetAssetUrl(e.DEFAULT_HAND_MODEL_BASE_URL), c = await Promise.all([e._RightHandGLB || xd.ImportMeshAsync("", s, e.DEFAULT_HAND_MODEL_RIGHT_FILENAME, r), e._LeftHandGLB || xd.ImportMeshAsync("", s, e.DEFAULT_HAND_MODEL_LEFT_FILENAME, r)]);
+			let o = !!(e._RightHandGLB && e._LeftHandGLB), s = B.GetAssetUrl(e.DEFAULT_HAND_MODEL_BASE_URL), c = await Promise.all([e._RightHandGLB || wd.ImportMeshAsync("", s, e.DEFAULT_HAND_MODEL_RIGHT_FILENAME, r), e._LeftHandGLB || wd.ImportMeshAsync("", s, e.DEFAULT_HAND_MODEL_LEFT_FILENAME, r)]);
 			e._RightHandGLB = c[0], e._LeftHandGLB = c[1];
 			let l = await sh("handShader", B.GetAssetUrl(e.DEFAULT_HAND_MODEL_SHADER_URL), r, void 0, !0);
 			l.needDepthPrePass = !0, l.transparencyMode = en.MATERIAL_ALPHABLEND, l.alphaMode = 2, l.build(!1);
@@ -38053,7 +38059,7 @@ var Rh = [
 	}
 	attach() {
 		if (!super.attach()) return !1;
-		this._handResources.jointMeshes || (this._originalMesh = this._originalMesh || this.options.jointMeshes?.sourceMesh || uu("jointParent", e._ICOSPHERE_PARAMS, this._xrSessionManager.scene), this._originalMesh.isVisible = !1, this._handResources.jointMeshes = e._GenerateTrackedJointMeshes(this.options, this._originalMesh)), this._handResources.handMeshes = this.options.handMeshes?.customMeshes || null, this._handResources.rigMappings = this.options.handMeshes?.customRigMappings || null, !this.options.handMeshes?.customMeshes && !this.options.handMeshes?.disableDefaultMeshes && (e._GenerateDefaultHandMeshesAsync(this._xrSessionManager, this.options).then((t) => {
+		this._handResources.jointMeshes || (this._originalMesh = this._originalMesh || this.options.jointMeshes?.sourceMesh || pu("jointParent", e._ICOSPHERE_PARAMS, this._xrSessionManager.scene), this._originalMesh.isVisible = !1, this._handResources.jointMeshes = e._GenerateTrackedJointMeshes(this.options, this._originalMesh)), this._handResources.handMeshes = this.options.handMeshes?.customMeshes || null, this._handResources.rigMappings = this.options.handMeshes?.customRigMappings || null, !this.options.handMeshes?.customMeshes && !this.options.handMeshes?.disableDefaultMeshes && (e._GenerateDefaultHandMeshesAsync(this._xrSessionManager, this.options).then((t) => {
 			this._handResources.handMeshes = t, this._handResources.rigMappings = {
 				left: e._GenerateDefaultHandMeshRigMapping("left"),
 				right: e._GenerateDefaultHandMeshRigMapping("right")
@@ -38109,10 +38115,10 @@ Vh.Name = jp.HAND_TRACKING, Vh.Version = 1, Vh.DEFAULT_HAND_MODEL_BASE_URL = "ht
 }, Vh._RightHandGLB = null, Vh._LeftHandGLB = null;
 var Hh = !1;
 function Uh() {
-	Hh || (Hh = !0, Sl(), Mp.AddWebXRFeature(Vh.Name, (e, t) => () => new Vh(e, t), Vh.Version, !1));
+	Hh || (Hh = !0, Tl(), Mp.AddWebXRFeature(Vh.Name, (e, t) => () => new Vh(e, t), Vh.Version, !1));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/XR/webXRDefaultExperience.js
+//#region node_modules/@babylonjs/core/XR/webXRDefaultExperience.js
 var Wh = class e {
 	constructor() {}
 	static async CreateAsync(t, n = {}) {
@@ -38180,7 +38186,7 @@ function Kh() {
 				let e = new ia("default camera", -(Math.PI / 2), Math.PI / 2, o, i, this);
 				e.lowerRadiusLimit = o * .01, e.wheelPrecision = 100 / o, a = e;
 			} else {
-				let e = new Ef("default camera", new R(i.x, i.y, -o), this);
+				let e = new kf("default camera", new R(i.x, i.y, -o), this);
 				e.setTarget(i), a = e;
 			}
 			a.minZ = o * .01, a.maxZ = o * 1e3, a.speed = o * .2, this.activeCamera = a, n && a.attachControl();
@@ -38190,7 +38196,7 @@ function Kh() {
 	}, tt.prototype.createDefaultSkybox = function(e, t = !1, n = 1e3, r = 0, i = !0) {
 		if (!e) return z.Warn("Can not create default skybox without environment texture."), null;
 		i && e && (this.environmentTexture = e);
-		let a = Gc("hdrSkyBox", { size: n }, this);
+		let a = Jc("hdrSkyBox", { size: n }, this);
 		if (t) {
 			let t = new gc("skyBox", this);
 			t.backFaceCulling = !1, t.reflectionTexture = e.clone(), t.reflectionTexture && (t.reflectionTexture.coordinatesMode = W.SKYBOX_MODE), t.microSurface = 1 - r, t.disableLighting = !0, t.twoSidedLighting = !0, a.material = t;
@@ -38200,7 +38206,7 @@ function Kh() {
 		}
 		return a.isPickable = !1, a.infiniteDistance = !0, a.ignoreCameraMaxZ = !0, a;
 	}, tt.prototype.createDefaultEnvironment = function(e) {
-		return Mf ? new Mf(e, this) : null;
+		return Ff ? new Ff(e, this) : null;
 	}, tt.prototype.createDefaultVRExperience = function(e = {}) {
 		return new Ep(this, e);
 	}, tt.prototype.createDefaultXRExperienceAsync = async function(e = {}) {
@@ -38208,10 +38214,10 @@ function Kh() {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Helpers/sceneHelpers.js
+//#region node_modules/@babylonjs/core/Helpers/sceneHelpers.js
 Kh();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Misc/deferred.js
+//#region node_modules/@babylonjs/core/Misc/deferred.js
 var qh = class {
 	get resolve() {
 		return this._resolve;
@@ -38906,7 +38912,7 @@ var qh = class {
 };
 Qh.EnableTextureStorage = !0, Qh.MaxActiveMorphTargetsInVertexAttributeMode = 8, Qh.ConstantTargetCountForTextureMode = 0;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Misc/dataReader.js
+//#region node_modules/@babylonjs/core/Misc/dataReader.js
 var $h = class {
 	constructor(e) {
 		this.byteOffset = 0, this.buffer = e;
@@ -38931,7 +38937,7 @@ var $h = class {
 	}
 };
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/glTFValidation.js
+//#region node_modules/@babylonjs/loaders/glTF/glTFValidation.js
 function eg(e, t, n, r) {
 	let i = { externalResourceFunction: r };
 	return n && (i.uri = t === "file:" ? n : t + n), ArrayBuffer.isView(e) ? GLTFValidator.validateBytes(e, i) : GLTFValidator.validateString(e, i);
@@ -39041,7 +39047,7 @@ var rg = {
 	}
 };
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/glTFFileLoader.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/glTFFileLoader.pure.js
 function ig(e, t, n) {
 	try {
 		return Promise.resolve(new Uint8Array(e, t, n));
@@ -39198,7 +39204,7 @@ var lg = (e) => Promise.resolve(e), ug = class {
 	loadAssetContainerAsync(e, t, n, r, i) {
 		return Promise.resolve().then(() => {
 			this.onParsedObservable.notifyObservers(t), this.onParsedObservable.clear(), this._log(`Loading ${i || ""}`), this._loader = this._getLoader(t);
-			let a = new Td(e), o = [];
+			let a = new Od(e), o = [];
 			this.onMaterialLoadedObservable.add((e) => {
 				o.push(e);
 			});
@@ -39407,10 +39413,10 @@ var lg = (e) => Promise.resolve(e), ug = class {
 pg.IncrementalLoading = !0, pg.HomogeneousCoordinates = !1, pg._logSpaces = "                                ";
 var mg = !1;
 function hg() {
-	mg || (mg = !0, md(new pg()));
+	mg || (mg = !0, _d(new pg()));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/glTFLoaderExtensionRegistry.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/glTFLoaderExtensionRegistry.js
 var gg = /* @__PURE__ */ new Map(), _g = gg;
 function vg(e, t, n) {
 	yg(e) && z.Warn(`Extension with the name '${e}' already exists`), gg.set(e, {
@@ -39422,7 +39428,7 @@ function yg(e) {
 	return gg.delete(e);
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/gltfPathToObjectConverter.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/gltfPathToObjectConverter.js
 var bg = [
 	{ regex: /* @__PURE__ */ RegExp("^/nodes/\\d+/extensions/") },
 	{ regex: /* @__PURE__ */ RegExp("^/animations/\\d+/extensions/") },
@@ -39471,7 +39477,7 @@ var bg = [
 	}
 };
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping.js
 function Sg(e, t) {
 	return {
 		type: "FlowGraphInteger",
@@ -40378,7 +40384,7 @@ function zg(e, t, n = Fg) {
 	Object.assign(i, t);
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Misc/deepMerger.js
+//#region node_modules/@babylonjs/core/Misc/deepMerger.js
 function Bg(...e) {
 	let t = (e) => !!e && typeof e == "object";
 	return e.reduce((e, n) => {
@@ -40391,7 +40397,7 @@ function Bg(...e) {
 	}, {});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Misc/lazy.js
+//#region node_modules/@babylonjs/core/Misc/lazy.js
 var Vg = class {
 	constructor(e) {
 		this._factory = e;
@@ -40399,7 +40405,7 @@ var Vg = class {
 	get value() {
 		return this._factory && (this._value = this._factory(), this._factory = void 0), this._value;
 	}
-}, Hg = /*#__PURE__*/ new Vg(() => import("./animationGroup.pure-CDQwlOUJ.js").then((e) => e.n)), Ug = /*#__PURE__*/ new Vg(() => Promise.resolve().then(() => Yg)), Wg = class {
+}, Hg = /*#__PURE__*/ new Vg(() => import("./animationGroup.pure-BEC_JaRl.js").then((e) => e.n)), Ug = /*#__PURE__*/ new Vg(() => Promise.resolve().then(() => Yg)), Wg = class {
 	static Get(e, t, n) {
 		if (!t || n == null || !t[n]) throw Error(`${e}: Failed to find index (${n})`);
 		return t[n];
@@ -40522,7 +40528,7 @@ var Kg = class e {
 				let e = this.parent.useOpenPBR || this.isExtensionUsed("KHR_materials_openpbr"), t = !1;
 				this.parent.useOpenPBR ? this._gltf.materials?.length && this._gltf.materials.some((e) => !e.extensions?.KHR_materials_openpbr) && (t = !0) : t = !0;
 				let n = [];
-				e && !this._pbrMaterialImpls.has("openpbr") && n.push(Promise.all([import("./openpbrMaterial.pure-CxoFE5C_.js"), Promise.resolve().then(() => N_)]).then(([{ OpenPBRMaterial: e, RegisterOpenpbrMaterial: t }, { OpenPBRMaterialLoadingAdapter: n }]) => {
+				e && !this._pbrMaterialImpls.has("openpbr") && n.push(Promise.all([import("./openpbrMaterial.pure-Czvdl6iV.js"), Promise.resolve().then(() => N_)]).then(([{ OpenPBRMaterial: e, RegisterOpenpbrMaterial: t }, { OpenPBRMaterialLoadingAdapter: n }]) => {
 					t(), this._pbrMaterialImpls.set("openpbr", {
 						materialClass: e,
 						adapterClass: n
@@ -40996,7 +41002,7 @@ var Kg = class e {
 		if (i) return i;
 		let a = [];
 		this.logOpen(`${t} ${n.name || ""}`);
-		let o = this._babylonScene._executeWithBlockedEntityCollection(!!this._assetContainer, () => new Ef(n.name || `camera${n.index}`, R.Zero(), this._babylonScene, !1));
+		let o = this._babylonScene._executeWithBlockedEntityCollection(!!this._assetContainer, () => new kf(n.name || `camera${n.index}`, R.Zero(), this._babylonScene, !1));
 		switch (o._parentContainer = this._assetContainer, n._babylonCamera = o, o.setTarget(new R(0, 0, -1)), n.type) {
 			case "perspective": {
 				let e = n.perspective;
@@ -41630,9 +41636,9 @@ var qg = !1;
 function Jg() {
 	qg || (qg = !0, pg._CreateGLTF2Loader = (e) => new Kg(e));
 }
-Sl(), Jg(), hg();
+Tl(), Jg(), hg();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation.pure.js
 var Yg = /* @__PURE__ */ t({
 	AnimationPropertyInfo: () => $g,
 	RegisterGLTFLoaderAnimation: () => r_,
@@ -41697,10 +41703,10 @@ function r_() {
 	n_ || (n_ = !0, Q("/nodes/{}/translation", [new e_(G.ANIMATIONTYPE_VECTOR3, "position", Xg, () => 3)]), Q("/nodes/{}/rotation", [new e_(G.ANIMATIONTYPE_QUATERNION, "rotationQuaternion", Zg, () => 4)]), Q("/nodes/{}/scale", [new e_(G.ANIMATIONTYPE_VECTOR3, "scaling", Xg, () => 3)]), Q("/nodes/{}/weights", [new t_(G.ANIMATIONTYPE_FLOAT, "influence", Qg, (e) => e._numMorphTargets)]));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation.js
 r_();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/Textures/textureProcessor.js
+//#region node_modules/@babylonjs/core/Materials/Textures/textureProcessor.js
 var i_ = "textureProcessor", a_;
 (function(e) {
 	e[e.Linear = 0] = "Linear", e[e.SRGB = 1] = "SRGB";
@@ -41811,7 +41817,7 @@ function E_(e, t, n, r, i = a_.Linear, a) {
 		gammaSpace: i === a_.SRGB,
 		shaderLanguage: +!!r.getEngine().isWebGPU,
 		extraInitializationsAsync: async () => {
-			r.getEngine().isWebGPU ? await Promise.all([import("./textureProcessor.fragment-DkUC1k3_.js")]) : await Promise.all([import("./textureProcessor.fragment-CWjUfSBi.js")]);
+			r.getEngine().isWebGPU ? await Promise.all([import("./textureProcessor.fragment-D1siJDyj.js")]) : await Promise.all([import("./textureProcessor.fragment-B6ZTGI77.js")]);
 		},
 		skipSceneRegistration: !0
 	});
@@ -41964,7 +41970,7 @@ async function M_(e, t, n, r, i, a, o) {
 	}, c_(new F(1, 1, 1, 1)), r, i, a, o);
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/openpbrMaterialLoadingAdapter.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/openpbrMaterialLoadingAdapter.js
 var N_ = /* @__PURE__ */ t({ OpenPBRMaterialLoadingAdapter: () => P_ }), P_ = class {
 	constructor(e) {
 		this._specWorkflow = !1, this._diffuseTransmissionTint = L.White(), this._diffuseTransmissionTintTexture = null, this._material = e;
@@ -42885,7 +42891,7 @@ var N_ = /* @__PURE__ */ t({ OpenPBRMaterialLoadingAdapter: () => P_ }), P_ = cl
 		this._texture.getEngine().updateRawCubeTexture(this._texture, e, t, n, r, i);
 	}
 	updateRGBDAsync(e, t = null, n = .8, r = 0) {
-		return df(this._texture, e, t, n, r).then(() => {});
+		return mf(this._texture, e, t, n, r).then(() => {});
 	}
 	clone() {
 		return ye.Clone(() => {
@@ -42955,10 +42961,10 @@ function V_() {
 	B_ || (B_ = !0, yg(R_), vg(R_, !0, (e) => new z_(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_image_based.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_image_based.js
 V_();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_mesh_gpu_instancing.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_mesh_gpu_instancing.pure.js
 var H_ = "EXT_mesh_gpu_instancing", U_ = class {
 	constructor(e) {
 		this.name = H_, this._loader = e, this.enabled = this._loader.isExtensionUsed(H_);
@@ -42994,7 +43000,7 @@ function G_() {
 	W_ || (W_ = !0, yg(H_), vg(H_, !0, (e) => new U_(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/thinInstanceMesh.pure.js
+//#region node_modules/@babylonjs/core/Meshes/thinInstanceMesh.pure.js
 var K_ = "bakedVertexAnimationSettingsInstanced";
 function q_(e) {
 	let t = e.bakedVertexAnimationManager?.texture?.getInternalTexture()?._bufferView;
@@ -43155,10 +43161,10 @@ function tv() {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_mesh_gpu_instancing.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_mesh_gpu_instancing.js
 tv(), G_();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_meshopt_compression.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_meshopt_compression.pure.js
 var nv = "EXT_meshopt_compression", rv = class {
 	constructor(e) {
 		this.name = nv, this.enabled = e.isExtensionUsed(nv), this._loader = e;
@@ -43171,7 +43177,7 @@ var nv = "EXT_meshopt_compression", rv = class {
 			let i = t;
 			if (i._meshOptData) return await i._meshOptData;
 			let a = Wg.Get(`${e}/buffer`, this._loader.gltf.buffers, r.buffer);
-			return i._meshOptData = this._loader.loadBufferAsync(`/buffers/${a.index}`, a, r.byteOffset || 0, r.byteLength).then(async (e) => await Hu.Default.decodeGltfBufferAsync(e, r.count, r.byteStride, r.mode, r.filter)), await i._meshOptData;
+			return i._meshOptData = this._loader.loadBufferAsync(`/buffers/${a.index}`, a, r.byteOffset || 0, r.byteLength).then(async (e) => await Gu.Default.decodeGltfBufferAsync(e, r.count, r.byteStride, r.mode, r.filter)), await i._meshOptData;
 		});
 	}
 }, iv = !1;
@@ -43179,10 +43185,10 @@ function av() {
 	iv || (iv = !0, yg(nv), vg(nv, !0, (e) => new rv(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_meshopt_compression.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_meshopt_compression.js
 av();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_texture_webp.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_texture_webp.pure.js
 var ov = "EXT_texture_webp", sv = class {
 	constructor(e) {
 		this.name = ov, this._loader = e, this.enabled = e.isExtensionUsed(ov);
@@ -43203,10 +43209,10 @@ function lv() {
 	cv || (cv = !0, yg(ov), vg(ov, !0, (e) => new sv(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_texture_webp.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_texture_webp.js
 lv();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_texture_avif.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_texture_avif.pure.js
 var uv = "EXT_texture_avif", dv = class {
 	constructor(e) {
 		this.name = uv, this._loader = e, this.enabled = e.isExtensionUsed(uv);
@@ -43227,10 +43233,10 @@ function pv() {
 	fv || (fv = !0, yg(uv), vg(uv, !0, (e) => new dv(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_texture_avif.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_texture_avif.js
 pv();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_ies.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_ies.pure.js
 var mv = "EXT_lights_ies", hv = class {
 	constructor(e) {
 		this.name = mv, this._loader = e, this.enabled = this._loader.isExtensionUsed(mv);
@@ -43266,10 +43272,10 @@ function _v() {
 	gv || (gv = !0, yg(mv), vg(mv, !0, (e) => new hv(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_ies.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_ies.js
 _v();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Compression/dracoCompressionWorker.js
+//#region node_modules/@babylonjs/core/Meshes/Compression/dracoCompressionWorker.js
 function vv(e, t, n, r, i) {
 	let a = e, o = null, s = null, c = null;
 	try {
@@ -43421,7 +43427,7 @@ async function bv(e, t, n) {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/Compression/dracoCodec.js
+//#region node_modules/@babylonjs/core/Meshes/Compression/dracoCodec.js
 function xv() {
 	return typeof navigator != "object" || !navigator.hardwareConcurrency ? 1 : Math.min(Math.floor(navigator.hardwareConcurrency * .5), 4);
 }
@@ -43567,7 +43573,7 @@ wv.DefaultConfiguration = {
 	fallbackUrl: `${B._DefaultCdnUrl}/draco_decoder_gltf.js`
 }, wv._Default = null;
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_draco_mesh_compression.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_draco_mesh_compression.pure.js
 var Tv = "KHR_draco_mesh_compression", Ev = class {
 	constructor(e) {
 		this.name = Tv, this.useNormalizedFlagFromAccessor = !0, this._loader = e, this.enabled = wv.DefaultAvailable && this._loader.isExtensionUsed(Tv);
@@ -43600,10 +43606,10 @@ function Ov() {
 	Dv || (Dv = !0, yg(Tv), vg(Tv, !0, (e) => new Ev(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_draco_mesh_compression.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_draco_mesh_compression.js
 Ov();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/shadowDepthWrapper.js
+//#region node_modules/@babylonjs/core/Materials/shadowDepthWrapper.js
 var kv = class {
 	constructor() {
 		this.mm = /* @__PURE__ */ new Map();
@@ -43706,7 +43712,7 @@ var kv = class {
 	}
 };
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Materials/GaussianSplatting/gaussianSplattingMaterial.pure.js
+//#region node_modules/@babylonjs/core/Materials/GaussianSplatting/gaussianSplattingMaterial.pure.js
 function jv(e) {
 	let t = e.getCaps().maxVertexUniformVectors, n = Math.max(t - 40, 0), r = Math.floor(n / 5);
 	return Math.min(Math.max(r, 1), 256);
@@ -43780,7 +43786,7 @@ var Mv = class extends Dn(xn) {}, Nv = class extends Mv {
 				multiTarget: i.PREPASS,
 				shaderLanguage: this._shaderLanguage,
 				extraInitializationsAsync: async () => {
-					this._shaderLanguage === 1 ? await Promise.all([import("./gaussianSplatting.fragment-Dv4FXiEC.js"), import("./gaussianSplatting.vertex-Ceui1thq.js")]) : await Promise.all([import("./gaussianSplatting.fragment-CMi2JOao.js"), import("./gaussianSplatting.vertex-CMVCLajb.js")]);
+					this._shaderLanguage === 1 ? await Promise.all([import("./gaussianSplatting.fragment-0hRNMWHG.js"), import("./gaussianSplatting.vertex-BPx6JSEH.js")]) : await Promise.all([import("./gaussianSplatting.fragment-CNtRUhiU.js"), import("./gaussianSplatting.vertex-CdLK7RYe.js")]);
 				}
 			}, o);
 			n.setEffect(d, i, this._materialContext);
@@ -43890,7 +43896,7 @@ var Mv = class extends Dn(xn) {}, Nv = class extends Mv {
 	makeVoxelRenderingMaterial(t, n, r, i = !1) {
 		let a = [`#define MAX_DRAW_BUFFERS ${r}`];
 		a.push("#define IS_FOR_VOXELIZATION"), i && (a.push("#define IS_COMPOUND 1"), a.push(`#define MAX_PART_COUNT ${jv(t.getEngine())}`));
-		let o = new wl("gaussianSplattingVoxelRender", t, {
+		let o = new Dl("gaussianSplattingVoxelRender", t, {
 			vertex: "gaussianSplattingVoxel",
 			fragment: "gaussianSplattingVoxel"
 		}, {
@@ -43903,7 +43909,7 @@ var Mv = class extends Dn(xn) {}, Nv = class extends Mv {
 			defines: a,
 			needAlphaBlending: !1,
 			extraInitializationsAsync: async () => {
-				n === 1 ? await Promise.all([import("./gaussianSplattingVoxel.vertex-DmxYtXij.js"), import("./gaussianSplattingVoxel.fragment-CGnLvsdZ.js")]) : await Promise.all([import("./gaussianSplattingVoxel.vertex-DwNyKnel.js"), import("./gaussianSplattingVoxel.fragment-BwkkJOnx.js")]);
+				n === 1 ? await Promise.all([import("./gaussianSplattingVoxel.vertex-Z7O5nFzV.js"), import("./gaussianSplattingVoxel.fragment-DNm8wfza.js")]) : await Promise.all([import("./gaussianSplattingVoxel.vertex-C59LdPii.js"), import("./gaussianSplattingVoxel.fragment-BCYjd12i.js")]);
 			}
 		});
 		return o.cullBackFaces = !1, o.backFaceCulling = !1, o.depthFunction = J.ALWAYS, o.onBindObservable.add((e) => {
@@ -43914,7 +43920,7 @@ var Mv = class extends Dn(xn) {}, Nv = class extends Mv {
 	makeDepthRenderingMaterial(t, n, r = !1, i = !1) {
 		let a = ["#define DEPTH_RENDER"];
 		r && a.push("#define ALPHA_BLENDED_DEPTH"), i && (a.push("#define IS_COMPOUND 1"), a.push(`#define MAX_PART_COUNT ${jv(t.getEngine())}`));
-		let o = new wl("gaussianSplattingDepthRender", t, {
+		let o = new Dl("gaussianSplattingDepthRender", t, {
 			vertex: "gaussianSplattingDepth",
 			fragment: "gaussianSplattingDepth"
 		}, {
@@ -43932,7 +43938,7 @@ var Mv = class extends Dn(xn) {}, Nv = class extends Mv {
 		}), o;
 	}
 	static _MakeGaussianSplattingShadowDepthWrapper(t, n) {
-		let r = new wl("gaussianSplattingDepth", t, {
+		let r = new Dl("gaussianSplattingDepth", t, {
 			vertex: "gaussianSplattingDepth",
 			fragment: "gaussianSplattingDepth"
 		}, {
@@ -44007,7 +44013,7 @@ Pv.KernelSize = .3, Pv.Compensation = !1, Pv.MinPixelSize = 0, Pv._Attribs = [
 	"partIndicesTexture"
 ], Pv._Uniforms = /* @__PURE__ */ "world.view.projection.inverseProjection.vFogInfos.vFogColor.logarithmicDepthConstant.invViewport.dataTextureSize.focal.eyePosition.kernelSize.minPixelSize.alpha.depthValues.geometryDepthRange.geometryZeroAlphaDiscard.partWorld.previousPartWorld.partVisibility.sogMeansMin.sogMeansMax.sogScalesMin.sogScalesMax.sogSh0Min.sogSh0Max.sogShnMin.sogShnMax.sogShCoeffCount".split(".");
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Maths/math.scalar.js
+//#region node_modules/@babylonjs/core/Maths/math.scalar.js
 var Fv = i, Iv = {
 	...s,
 	TwoPi: Math.PI * 2,
@@ -44991,7 +44997,7 @@ var Yv = class e extends q {
 		return await this.updateDataAsync(e);
 	}
 	async loadFileAsync(e, t) {
-		await hd(e, t || D.LastCreatedScene, { pluginOptions: { splat: { gaussianSplattingMesh: this } } });
+		await vd(e, t || D.LastCreatedScene, { pluginOptions: { splat: { gaussianSplattingMesh: this } } });
 	}
 	dispose(e) {
 		if (this._mrtAtlas ? (this._mrtAtlas.dispose(), this._mrtAtlas = null, this._covariancesATexture = this._covariancesBTexture = this._centersTexture = this._colorsTexture = null) : (this._covariancesATexture?.dispose(), this._covariancesBTexture?.dispose(), this._centersTexture?.dispose(), this._colorsTexture?.dispose()), this._shMrtAtlas) {
@@ -45418,7 +45424,7 @@ function Xv(e, t) {
 	return n;
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Meshes/GaussianSplatting/gaussianSplattingPartProxyMesh.pure.js
+//#region node_modules/@babylonjs/core/Meshes/GaussianSplatting/gaussianSplattingPartProxyMesh.pure.js
 var Zv = class e extends q {
 	get partIndex() {
 		return this._partIndex;
@@ -46291,10 +46297,10 @@ function py() {
 	fy || (fy = !0, yg(ry), vg(ry, !0, (e) => new dy(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_gaussian_splatting.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_gaussian_splatting.js
 py();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Lights/pointLight.pure.js
+//#region node_modules/@babylonjs/core/Lights/pointLight.pure.js
 var my = (() => {
 	var e;
 	let t = Ss, n = [], r;
@@ -46414,17 +46420,17 @@ function vy() {
 	_y || (_y = !0, yg(hy), vg(hy, !0, (e) => new gy(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_lights_punctual.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_lights_punctual.js
 vy();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Lights/LTC/ltcTextureTool.js
+//#region node_modules/@babylonjs/core/Lights/LTC/ltcTextureTool.js
 async function yy() {
 	let e = /* @__PURE__ */ new Uint16Array(16384), t = /* @__PURE__ */ new Uint16Array(16384), n = await B.LoadFileAsync(B.GetAssetUrl("https://assets.babylonjs.com/core/areaLights/areaLightsLTC.bin")), r = new Uint16Array(n), i = r.length / 8;
 	for (let n = 0; n < i; n++) e[n * 4] = r[n * 8], e[n * 4 + 1] = r[n * 8 + 1], e[n * 4 + 2] = r[n * 8 + 2], e[n * 4 + 3] = r[n * 8 + 3], t[n * 4] = r[n * 8 + 4], t[n * 4 + 1] = r[n * 8 + 5], t[n * 4 + 2] = r[n * 8 + 6], t[n * 4 + 3] = r[n * 8 + 7];
 	return [e, t];
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Lights/areaLight.pure.js
+//#region node_modules/@babylonjs/core/Lights/areaLight.pure.js
 function by(e) {
 	let t = e.useDelayedTextureLoading;
 	e.useDelayedTextureLoading = !1;
@@ -46632,10 +46638,10 @@ function Ey() {
 	Ty || (Ty = !0, yg(Cy), vg(Cy, !0, (e) => new wy(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_area.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_area.js
 Ey();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_pbrSpecularGlossiness.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_pbrSpecularGlossiness.pure.js
 var Dy = "KHR_materials_pbrSpecularGlossiness", Oy = class {
 	constructor(e) {
 		this.name = Dy, this.order = 200, this._loader = e, this.enabled = this._loader.isExtensionUsed(Dy);
@@ -46662,10 +46668,10 @@ function Ay() {
 	ky || (ky = !0, yg(Dy), vg(Dy, !0, (e) => new Oy(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_pbrSpecularGlossiness.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_pbrSpecularGlossiness.js
 Ay();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_unlit.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_unlit.pure.js
 var jy = "KHR_materials_unlit", My = class {
 	constructor(e) {
 		this.name = jy, this.order = 210, this._loader = e, this.enabled = this._loader.isExtensionUsed(jy);
@@ -46687,10 +46693,10 @@ function Py() {
 	Ny || (Ny = !0, yg(jy), vg(jy, !0, (e) => new My(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_unlit.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_unlit.js
 Py();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_clearcoat.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_clearcoat.pure.js
 var Fy = "KHR_materials_clearcoat", Iy = class {
 	constructor(e) {
 		this.name = Fy, this.order = 190, this._loader = e, this.enabled = this._loader.isExtensionUsed(Fy);
@@ -46719,10 +46725,10 @@ function Ry() {
 	Ly || (Ly = !0, yg(Fy), vg(Fy, !0, (e) => new Iy(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_clearcoat.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_clearcoat.js
 Ry();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_coat.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_coat.pure.js
 var zy = "KHR_materials_coat", By = class {
 	constructor(e) {
 		this.name = zy, this.order = 191, this.useOpenPBR = !1, this._loader = e, this.enabled = this._loader.isExtensionUsed(zy);
@@ -46759,10 +46765,10 @@ function Hy() {
 	Vy || (Vy = !0, yg(zy), vg(zy, !0, (e) => new By(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_coat.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_coat.js
 Hy();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_iridescence.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_iridescence.pure.js
 var Uy = "KHR_materials_iridescence", Wy = class {
 	constructor(e) {
 		this.name = Uy, this.order = 195, this._loader = e, this.enabled = this._loader.isExtensionUsed(Uy);
@@ -46789,10 +46795,10 @@ function Ky() {
 	Gy || (Gy = !0, yg(Uy), vg(Uy, !0, (e) => new Wy(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_iridescence.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_iridescence.js
 Ky();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_anisotropy.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_anisotropy.pure.js
 var qy = "KHR_materials_anisotropy", Jy = class {
 	constructor(e) {
 		this.name = qy, this.order = 195, this._loader = e, this.enabled = this._loader.isExtensionUsed(qy);
@@ -46819,10 +46825,10 @@ function Xy() {
 	Yy || (Yy = !0, yg(qy), vg(qy, !0, (e) => new Jy(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_anisotropy.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_anisotropy.js
 Xy();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_emissive_strength.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_emissive_strength.pure.js
 var Zy = "KHR_materials_emissive_strength", Qy = class {
 	constructor(e) {
 		this.name = Zy, this.order = 170, this._loader = e, this.enabled = this._loader.isExtensionUsed(Zy);
@@ -46844,10 +46850,10 @@ function eb() {
 	$y || ($y = !0, yg(Zy), vg(Zy, !0, (e) => new Qy(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_emissive_strength.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_emissive_strength.js
 eb();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_sheen.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_sheen.pure.js
 var tb = "KHR_materials_sheen", nb = class {
 	constructor(e) {
 		this.name = tb, this.order = 190, this._loader = e, this.enabled = this._loader.isExtensionUsed(tb);
@@ -46876,10 +46882,10 @@ function ib() {
 	rb || (rb = !0, yg(tb), vg(tb, !0, (e) => new nb(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_sheen.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_sheen.js
 ib();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_fuzz.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_fuzz.pure.js
 var ab = "KHR_materials_fuzz", ob = class {
 	constructor(e) {
 		this.name = ab, this.order = 190, this._loader = e, this.enabled = this._loader.isExtensionUsed(ab);
@@ -46908,10 +46914,10 @@ function cb() {
 	sb || (sb = !0, yg(ab), vg(ab, !0, (e) => new ob(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_fuzz.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_fuzz.js
 cb();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_specular.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_specular.pure.js
 var lb = "KHR_materials_specular", ub = class {
 	constructor(e) {
 		this.name = lb, this.order = 190, this._loader = e, this.enabled = this._loader.isExtensionUsed(lb);
@@ -46940,10 +46946,10 @@ function fb() {
 	db || (db = !0, yg(lb), vg(lb, !0, (e) => new ub(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_specular.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_specular.js
 fb();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_ior.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_ior.pure.js
 var pb = "KHR_materials_ior", mb = class e {
 	constructor(e) {
 		this.name = pb, this.order = 180, this._loader = e, this.enabled = this._loader.isExtensionUsed(pb);
@@ -46968,10 +46974,10 @@ function gb() {
 	hb || (hb = !0, yg(pb), vg(pb, !0, (e) => new mb(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_ior.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_ior.js
 gb();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_variants.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_variants.pure.js
 var _b = "KHR_materials_variants", vb = class e {
 	constructor(e) {
 		this.name = _b, this._loader = e, this.enabled = this._loader.isExtensionUsed(_b) && !this._loader.parent.skipMaterials;
@@ -47111,10 +47117,10 @@ function bb() {
 	yb || (yb = !0, yg(_b), vg(_b, !0, (e) => new vb(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Misc/tools.js
+//#region node_modules/@babylonjs/core/Misc/tools.js
 bb(), ci(), tr(), Pe();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper.js
 var xb = class e {
 	static _GetDefaultOptions() {
 		return {
@@ -47244,7 +47250,7 @@ function Sb(e, t) {
 	n && !n._isRenderTargetValid() && n._setupRenderTargets();
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_transmission.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_transmission.pure.js
 var Cb = "KHR_materials_transmission", wb = class {
 	constructor(e) {
 		this.name = Cb, this.order = 175, this._loader = e, this.enabled = this._loader.isExtensionUsed(Cb), this.enabled && (e.parent.transparencyAsCoverage = !0);
@@ -47272,10 +47278,10 @@ function Eb() {
 	Tb || (Tb = !0, yg(Cb), vg(Cb, !0, (e) => new wb(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_transmission.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_transmission.js
 Eb();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_diffuse_transmission.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_diffuse_transmission.pure.js
 var Db = "KHR_materials_diffuse_transmission", Ob = class {
 	constructor(e) {
 		this.name = Db, this.order = 174, this._loader = e, this.enabled = this._loader.isExtensionUsed(Db), this.enabled && (e.parent.transparencyAsCoverage = !0);
@@ -47304,10 +47310,10 @@ function Ab() {
 	kb || (kb = !0, yg(Db), vg(Db, !0, (e) => new Ob(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_diffuse_transmission.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_diffuse_transmission.js
 Ab();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_volume.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_volume.pure.js
 var jb = "KHR_materials_volume", Mb = class {
 	constructor(e) {
 		this.name = jb, this.order = 173, this._loader = e, this.enabled = this._loader.isExtensionUsed(jb), this.enabled && this._loader._disableInstancedMesh++;
@@ -47337,10 +47343,10 @@ function Pb() {
 	Nb || (Nb = !0, yg(jb), vg(jb, !0, (e) => new Mb(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_volume.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_volume.js
 Pb();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_volume_scatter.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_volume_scatter.pure.js
 var Fb = "KHR_materials_volume_scatter";
 function Ib(e) {
 	let t = new R(e.r, e.g, e.b), n = new R(4.09712, 4.09712, 4.09712);
@@ -47385,10 +47391,10 @@ function zb() {
 	Rb || (Rb = !0, yg(Fb), vg(Fb, !0, (e) => new Lb(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_volume_scatter.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_volume_scatter.js
 zb();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_dispersion.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_dispersion.pure.js
 var Bb = "KHR_materials_dispersion", Vb = class {
 	constructor(e) {
 		this.name = Bb, this.order = 174, this._loader = e, this.enabled = this._loader.isExtensionUsed(Bb);
@@ -47411,10 +47417,10 @@ function Ub() {
 	Hb || (Hb = !0, yg(Bb), vg(Bb, !0, (e) => new Vb(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_dispersion.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_dispersion.js
 Ub();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_diffuse_roughness.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_diffuse_roughness.pure.js
 var Wb = "KHR_materials_diffuse_roughness", Gb = class {
 	constructor(e) {
 		this.name = Wb, this.order = 190, this._loader = e, this.enabled = this._loader.isExtensionUsed(Wb);
@@ -47439,10 +47445,10 @@ function qb() {
 	Kb || (Kb = !0, yg(Wb), vg(Wb, !0, (e) => new Gb(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_diffuse_roughness.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_diffuse_roughness.js
 qb();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_mesh_quantization.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_mesh_quantization.pure.js
 var Jb = "KHR_mesh_quantization", Yb = class {
 	constructor(e) {
 		this.name = Jb, this.enabled = e.isExtensionUsed(Jb);
@@ -47453,10 +47459,10 @@ function Zb() {
 	Xb || (Xb = !0, yg(Jb), vg(Jb, !0, (e) => new Yb(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_mesh_quantization.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_mesh_quantization.js
 Zb();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_texture_basisu.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_texture_basisu.pure.js
 var Qb = "KHR_texture_basisu", $b = class {
 	constructor(e) {
 		this.name = Qb, this._loader = e, this.enabled = e.isExtensionUsed(Qb);
@@ -47477,10 +47483,10 @@ function tx() {
 	ex || (ex = !0, yg(Qb), vg(Qb, !0, (e) => new $b(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_texture_basisu.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_texture_basisu.js
 tx();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_texture_transform.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_texture_transform.pure.js
 var nx = "KHR_texture_transform", rx = class {
 	constructor(e) {
 		this.name = nx, this._loader = e, this.enabled = this._loader.isExtensionUsed(nx);
@@ -47499,10 +47505,10 @@ function ax() {
 	ix || (ix = !0, yg(nx), vg(nx, !0, (e) => new rx(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_texture_transform.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_texture_transform.js
 ax();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_xmp_json_ld.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_xmp_json_ld.pure.js
 var ox = "KHR_xmp_json_ld", sx = class {
 	constructor(e) {
 		this.name = ox, this.order = 100, this._loader = e, this.enabled = this._loader.isExtensionUsed(ox);
@@ -47523,10 +47529,10 @@ function lx() {
 	cx || (cx = !0, yg(ox), vg(ox, !0, (e) => new sx(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_xmp_json_ld.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_xmp_json_ld.js
 lx();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_animation_pointer.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_animation_pointer.pure.js
 var ux = "KHR_animation_pointer", dx = class {
 	constructor(e) {
 		this.name = ux, this._loader = e, this._pathToObjectConverter = Lg(this._loader.gltf);
@@ -47559,7 +47565,7 @@ function px() {
 	fx || (fx = !0, yg(ux), vg(ux, !0, (e) => new dx(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_animation_pointer.data.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_animation_pointer.data.pure.js
 function mx(e, t, n, r) {
 	return L.FromArray(t, n).scale(r);
 }
@@ -47660,7 +47666,7 @@ function Ex() {
 }
 Ex(), px();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Animations/animationEvent.js
+//#region node_modules/@babylonjs/core/Animations/animationEvent.js
 var Dx = class e {
 	constructor(e, t, n) {
 		this.frame = e, this.action = t, this.onlyOnce = n, this.isDone = !1;
@@ -47766,7 +47772,7 @@ function Rx(e, t) {
 	return Lx(e)?.[t] ?? Fx[t];
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractAudioAnalyzer.js
+//#region node_modules/@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractAudioAnalyzer.js
 var zx = {
 	fftSize: 2048,
 	minDecibels: -100,
@@ -47803,7 +47809,7 @@ function Kx(e, t, n) {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/AudioV2/abstractAudio/subProperties/audioAnalyzer.js
+//#region node_modules/@babylonjs/core/AudioV2/abstractAudio/subProperties/audioAnalyzer.js
 var qx = null, Jx = null;
 function Yx() {
 	return qx || (qx = /* @__PURE__ */ new Uint8Array()), qx;
@@ -47939,7 +47945,7 @@ function aS(e, t, n) {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/AudioV2/abstractAudio/subProperties/stereoAudio.js
+//#region node_modules/@babylonjs/core/AudioV2/abstractAudio/subProperties/stereoAudio.js
 var oS = class extends nS {
 	constructor(e) {
 		super(), this._pan = eS.pan, this._subGraph = e;
@@ -48019,7 +48025,7 @@ function uS(e, t, n) {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/AudioV2/audioUtils.js
+//#region node_modules/@babylonjs/core/AudioV2/audioUtils.js
 var dS = /* @__PURE__ */ RegExp("\\.(\\w{3,4})($|\\?)"), fS = 100, pS = new Float32Array([0, 0]), mS = null, hS = null, gS = null;
 function _S() {
 	if (!hS) {
@@ -48068,7 +48074,7 @@ async function SS(e) {
 	};
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/AudioV2/webAudio/components/webAudioParameterComponent.js
+//#region node_modules/@babylonjs/core/AudioV2/webAudio/components/webAudioParameterComponent.js
 var CS = 1e-6, wS = !0, TS = class {
 	constructor(e, t) {
 		this._rampEndTime = 0, this._engine = e, this._param = t, this._targetValue = t.value;
@@ -48246,7 +48252,7 @@ var jS = class extends cS {
 	}
 };
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/AudioV2/webAudio/subNodes/stereoWebAudioSubNode.js
+//#region node_modules/@babylonjs/core/AudioV2/webAudio/subNodes/stereoWebAudioSubNode.js
 async function MS(e) {
 	return new NS(e);
 }
@@ -48333,7 +48339,7 @@ var NS = class extends rS {
 	}
 };
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/AudioV2/webAudio/subNodes/volumeWebAudioSubNode.js
+//#region node_modules/@babylonjs/core/AudioV2/webAudio/subNodes/volumeWebAudioSubNode.js
 async function FS(e) {
 	return new IS(e);
 }
@@ -48372,7 +48378,7 @@ var IS = class extends Ix {
 	}
 };
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/AudioV2/webAudio/subNodes/webAudioAnalyzerSubNode.js
+//#region node_modules/@babylonjs/core/AudioV2/webAudio/subNodes/webAudioAnalyzerSubNode.js
 async function LS(e) {
 	return new RS(e);
 }
@@ -48710,7 +48716,7 @@ WS._SubGraph = class extends BS {
 	}
 };
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/AudioV2/abstractAudio/abstractSound.js
+//#region node_modules/@babylonjs/core/AudioV2/abstractAudio/abstractSound.js
 var GS = class extends $x {
 	constructor(e, t, n) {
 		super(e, t, n, 3), this._newestInstance = null, this._privateInstances = /* @__PURE__ */ new Set(), this._state = 1, this._instances = this._privateInstances, this.onEndedObservable = new E(), this._onInstanceEnded = (e) => {
@@ -49500,7 +49506,7 @@ function sC(e) {
 	});
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Audio/sound.pure.js
+//#region node_modules/@babylonjs/core/Audio/sound.pure.js
 var cC = {
 	duration: 0,
 	shape: "linear"
@@ -49846,7 +49852,7 @@ pC._SceneComponentInitialization = (e) => {
 	throw oe("AudioSceneComponent");
 };
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Audio/weightedsound.js
+//#region node_modules/@babylonjs/core/Audio/weightedsound.js
 var mC = class {
 	constructor(e, t, n) {
 		if (this.loop = !1, this._coneInnerAngle = 360, this._coneOuterAngle = 360, this._volume = 1, this.isPlaying = !1, this.isPaused = !1, this._sounds = [], this._weights = [], t.length !== n.length) throw Error("Sounds length does not equal weights length");
@@ -50030,10 +50036,10 @@ function vC() {
 	_C || (_C = !0, yg(hC), vg(hC, !0, (e) => new gC(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/MSFT_audio_emitter.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/MSFT_audio_emitter.js
 sC(pC), vC();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/MSFT_lod.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/MSFT_lod.pure.js
 var yC = "MSFT_lod", bC = class {
 	constructor(e) {
 		this.name = yC, this.order = 100, this.maxLODsToLoad = 10, this.onNodeLODsLoadedObservable = new E(), this.onMaterialLODsLoadedObservable = new E(), this._bufferLODs = [], this._nodeIndexLOD = null, this._nodeSignalLODs = [], this._nodePromiseLODs = [], this._nodeBufferLODs = [], this._materialIndexLOD = null, this._materialSignalLODs = [], this._materialPromiseLODs = [], this._materialBufferLODs = [], this._loader = e, this.maxLODsToLoad = this._loader.parent.extensionOptions[yC]?.maxLODsToLoad ?? this.maxLODsToLoad, this.enabled = this._loader.isExtensionUsed(yC);
@@ -50166,10 +50172,10 @@ function SC() {
 	xC || (xC = !0, yg(yC), vg(yC, !0, (e) => new bC(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/MSFT_lod.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/MSFT_lod.js
 SC();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/MSFT_minecraftMesh.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/MSFT_minecraftMesh.pure.js
 var CC = "MSFT_minecraftMesh", wC = class {
 	constructor(e) {
 		this.name = CC, this._loader = e, this.enabled = this._loader.isExtensionUsed(CC);
@@ -50191,10 +50197,10 @@ function EC() {
 	TC || (TC = !0, yg(CC), vg(CC, !0, (e) => new wC(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/MSFT_minecraftMesh.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/MSFT_minecraftMesh.js
 EC();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/MSFT_sRGBFactors.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/MSFT_sRGBFactors.pure.js
 var DC = "MSFT_sRGBFactors", OC = class {
 	constructor(e) {
 		this.name = DC, this._loader = e, this.enabled = this._loader.isExtensionUsed(DC);
@@ -50215,10 +50221,10 @@ function AC() {
 	kC || (kC = !0, yg(DC), vg(DC, !0, (e) => new OC(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/MSFT_sRGBFactors.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/MSFT_sRGBFactors.js
 AC();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/FlowGraph/Blocks/flowGraphBlockFactory.js
+//#region node_modules/@babylonjs/core/FlowGraph/Blocks/flowGraphBlockFactory.js
 var jC = {}, MC = {};
 function NC(e, t, n) {
 	let r = `${e}/${t}`;
@@ -50232,186 +50238,186 @@ async function $(e, t) {
 	for (let [e, a] of Object.entries(n)) e === t && PC(a) ? r = a : e.startsWith("RegisterFlowGraph") && typeof a == "function" && (i = a);
 	if (!r || !i) throw Error(`Invalid FlowGraph block module for ${t}`);
 	if (i(), t === "FlowGraphPlayAnimationBlock") {
-		let { RegisterAnimationGroup: e } = await import("./animationGroup.pure-CDQwlOUJ.js").then((e) => e.n);
+		let { RegisterAnimationGroup: e } = await import("./animationGroup.pure-BEC_JaRl.js").then((e) => e.n);
 		e();
 	}
 	return r;
 }
 function FC(e) {
 	switch (e) {
-		case "FlowGraphPlayAnimationBlock": return async () => await $(import("./flowGraphPlayAnimationBlock.pure-B2-MCSag.js"), "FlowGraphPlayAnimationBlock");
-		case "FlowGraphStopAnimationBlock": return async () => await $(import("./flowGraphStopAnimationBlock.pure-CT1jO8dD.js"), "FlowGraphStopAnimationBlock");
-		case "FlowGraphPauseAnimationBlock": return async () => await $(import("./flowGraphPauseAnimationBlock.pure-CPvQL4l6.js"), "FlowGraphPauseAnimationBlock");
-		case "FlowGraphInterpolationBlock": return async () => await $(import("./flowGraphInterpolationBlock.pure-DrQ_TcOG.js"), "FlowGraphInterpolationBlock");
-		case "FlowGraphSceneReadyEventBlock": return async () => await $(import("./flowGraphSceneReadyEventBlock.pure-B93UmI-f.js"), "FlowGraphSceneReadyEventBlock");
-		case "FlowGraphSceneTickEventBlock": return async () => await $(import("./flowGraphSceneTickEventBlock.pure-CIgKTQlX.js"), "FlowGraphSceneTickEventBlock");
-		case "FlowGraphSendCustomEventBlock": return async () => await $(import("./flowGraphSendCustomEventBlock.pure-DW-IxJq4.js"), "FlowGraphSendCustomEventBlock");
-		case "FlowGraphReceiveCustomEventBlock": return async () => await $(import("./flowGraphReceiveCustomEventBlock.pure-BVPfqr-q.js"), "FlowGraphReceiveCustomEventBlock");
-		case "FlowGraphStopEventPropagationBlock": return async () => await $(import("./flowGraphStopEventPropagationBlock.pure-DF16Pm4X.js"), "FlowGraphStopEventPropagationBlock");
-		case "FlowGraphMeshPickEventBlock": return async () => await $(import("./flowGraphMeshPickEventBlock.pure-BW-OCe9A.js"), "FlowGraphMeshPickEventBlock");
-		case "FlowGraphEBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphEBlock");
-		case "FlowGraphPIBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphPiBlock");
-		case "FlowGraphTauBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphTauBlock");
-		case "FlowGraphInfBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphInfBlock");
-		case "FlowGraphNaNBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphNaNBlock");
-		case "FlowGraphRandomBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphRandomBlock");
-		case "FlowGraphAddBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphAddBlock");
-		case "FlowGraphSubtractBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphSubtractBlock");
-		case "FlowGraphMultiplyBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphMultiplyBlock");
-		case "FlowGraphDivideBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphDivideBlock");
-		case "FlowGraphAbsBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphAbsBlock");
-		case "FlowGraphSignBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphSignBlock");
-		case "FlowGraphTruncBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphTruncBlock");
-		case "FlowGraphFloorBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphFloorBlock");
-		case "FlowGraphCeilBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphCeilBlock");
-		case "FlowGraphRoundBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphRoundBlock");
-		case "FlowGraphFractBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphFractionBlock");
-		case "FlowGraphNegationBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphNegationBlock");
-		case "FlowGraphModuloBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphModuloBlock");
-		case "FlowGraphMinBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphMinBlock");
-		case "FlowGraphMaxBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphMaxBlock");
-		case "FlowGraphClampBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphClampBlock");
-		case "FlowGraphSaturateBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphSaturateBlock");
-		case "FlowGraphMathInterpolationBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphMathInterpolationBlock");
-		case "FlowGraphMathSlerpBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphMathSlerpBlock");
-		case "FlowGraphSmoothStepBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphMathSmoothStepBlock");
-		case "FlowGraphRGBToOkLChBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphRGBToOkLChBlock");
-		case "FlowGraphRGBFromOkLChBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphRGBFromOkLChBlock");
-		case "FlowGraphEqualityBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphEqualityBlock");
-		case "FlowGraphLessThanBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphLessThanBlock");
-		case "FlowGraphLessThanOrEqualBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphLessThanOrEqualBlock");
-		case "FlowGraphGreaterThanBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphGreaterThanBlock");
-		case "FlowGraphGreaterThanOrEqualBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphGreaterThanOrEqualBlock");
-		case "FlowGraphIsNaNBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphIsNanBlock");
-		case "FlowGraphIsInfBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphIsInfinityBlock");
-		case "FlowGraphDegToRadBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphDegToRadBlock");
-		case "FlowGraphRadToDegBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphRadToDegBlock");
-		case "FlowGraphSinBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphSinBlock");
-		case "FlowGraphCosBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphCosBlock");
-		case "FlowGraphTanBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphTanBlock");
-		case "FlowGraphASinBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphAsinBlock");
-		case "FlowGraphACosBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphAcosBlock");
-		case "FlowGraphATanBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphAtanBlock");
-		case "FlowGraphATan2Block": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphAtan2Block");
-		case "FlowGraphSinhBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphSinhBlock");
-		case "FlowGraphCoshBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphCoshBlock");
-		case "FlowGraphTanhBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphTanhBlock");
-		case "FlowGraphASinhBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphAsinhBlock");
-		case "FlowGraphACoshBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphAcoshBlock");
-		case "FlowGraphATanhBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphAtanhBlock");
-		case "FlowGraphExponentialBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphExpBlock");
-		case "FlowGraphLogBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphLogBlock");
-		case "FlowGraphLog2Block": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphLog2Block");
-		case "FlowGraphLog10Block": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphLog10Block");
-		case "FlowGraphSquareRootBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphSquareRootBlock");
-		case "FlowGraphPowerBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphPowerBlock");
-		case "FlowGraphCubeRootBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphCubeRootBlock");
-		case "FlowGraphBitwiseAndBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphBitwiseAndBlock");
-		case "FlowGraphBitwiseOrBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphBitwiseOrBlock");
-		case "FlowGraphBitwiseNotBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphBitwiseNotBlock");
-		case "FlowGraphBitwiseXorBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphBitwiseXorBlock");
-		case "FlowGraphBitwiseLeftShiftBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphBitwiseLeftShiftBlock");
-		case "FlowGraphBitwiseRightShiftBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphBitwiseRightShiftBlock");
-		case "FlowGraphLengthBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-B07Md6HH.js"), "FlowGraphLengthBlock");
-		case "FlowGraphNormalizeBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-B07Md6HH.js"), "FlowGraphNormalizeBlock");
-		case "FlowGraphDotBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-B07Md6HH.js"), "FlowGraphDotBlock");
-		case "FlowGraphCrossBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-B07Md6HH.js"), "FlowGraphCrossBlock");
-		case "FlowGraphRotate2DBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-B07Md6HH.js"), "FlowGraphRotate2DBlock");
-		case "FlowGraphRotate3DBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-B07Md6HH.js"), "FlowGraphRotate3DBlock");
-		case "FlowGraphTransposeBlock": return async () => await $(import("./flowGraphMatrixMathBlocks.pure-P77QttNQ.js"), "FlowGraphTransposeBlock");
-		case "FlowGraphDeterminantBlock": return async () => await $(import("./flowGraphMatrixMathBlocks.pure-P77QttNQ.js"), "FlowGraphDeterminantBlock");
-		case "FlowGraphInvertMatrixBlock": return async () => await $(import("./flowGraphMatrixMathBlocks.pure-P77QttNQ.js"), "FlowGraphInvertMatrixBlock");
-		case "FlowGraphMatrixMultiplicationBlock": return async () => await $(import("./flowGraphMatrixMathBlocks.pure-P77QttNQ.js"), "FlowGraphMatrixMultiplicationBlock");
-		case "FlowGraphBranchBlock": return async () => await $(import("./flowGraphBranchBlock.pure-DunXRDHE.js"), "FlowGraphBranchBlock");
-		case "FlowGraphSetDelayBlock": return async () => await $(import("./flowGraphSetDelayBlock.pure-Cy6lZbYe.js"), "FlowGraphSetDelayBlock");
-		case "FlowGraphCancelDelayBlock": return async () => await $(import("./flowGraphCancelDelayBlock.pure-ko3feKpr.js"), "FlowGraphCancelDelayBlock");
-		case "FlowGraphCallCounterBlock": return async () => await $(import("./flowGraphCounterBlock.pure-9FsLOw4u.js"), "FlowGraphCallCounterBlock");
-		case "FlowGraphDebounceBlock": return async () => await $(import("./flowGraphDebounceBlock.pure-C6HTIFuo.js"), "FlowGraphDebounceBlock");
-		case "FlowGraphThrottleBlock": return async () => await $(import("./flowGraphThrottleBlock.pure-BiJ90exs.js"), "FlowGraphThrottleBlock");
-		case "FlowGraphDoNBlock": return async () => await $(import("./flowGraphDoNBlock.pure-D5Kcpk6i.js"), "FlowGraphDoNBlock");
-		case "FlowGraphFlipFlopBlock": return async () => await $(import("./flowGraphFlipFlopBlock.pure-Dtf29clK.js"), "FlowGraphFlipFlopBlock");
-		case "FlowGraphForLoopBlock": return async () => await $(import("./flowGraphForLoopBlock.pure-Bim-A2ub.js"), "FlowGraphForLoopBlock");
-		case "FlowGraphMultiGateBlock": return async () => await $(import("./flowGraphMultiGateBlock.pure-D9NqI8Rb.js"), "FlowGraphMultiGateBlock");
-		case "FlowGraphSequenceBlock": return async () => await $(import("./flowGraphSequenceBlock.pure-Br82pseV.js"), "FlowGraphSequenceBlock");
-		case "FlowGraphSwitchBlock": return async () => await $(import("./flowGraphSwitchBlock.pure-B33Gp0QS.js"), "FlowGraphSwitchBlock");
-		case "FlowGraphWaitAllBlock": return async () => await $(import("./flowGraphWaitAllBlock.pure-C_cdH3MC.js"), "FlowGraphWaitAllBlock");
-		case "FlowGraphWhileLoopBlock": return async () => await $(import("./flowGraphWhileLoopBlock.pure-O1AvtsJc.js"), "FlowGraphWhileLoopBlock");
-		case "FlowGraphConsoleLogBlock": return async () => await $(import("./flowGraphConsoleLogBlock.pure-DC-PJJD5.js"), "FlowGraphConsoleLogBlock");
-		case "FlowGraphConditionalBlock": return async () => await $(import("./flowGraphConditionalDataBlock.pure-CHQqCZbc.js"), "FlowGraphConditionalDataBlock");
-		case "FlowGraphConstantBlock": return async () => await $(import("./flowGraphConstantBlock.pure-DSXZ708b.js"), "FlowGraphConstantBlock");
-		case "FlowGraphTransformCoordinatesSystemBlock": return async () => await $(import("./flowGraphTransformCoordinatesSystemBlock.pure-CFVV9xwP.js"), "FlowGraphTransformCoordinatesSystemBlock");
-		case "FlowGraphGetAssetBlock": return async () => await $(import("./flowGraphGetAssetBlock.pure-CFDD5oKh.js"), "FlowGraphGetAssetBlock");
-		case "FlowGraphGetPropertyBlock": return async () => await $(import("./flowGraphGetPropertyBlock.pure-DbFfXQm9.js"), "FlowGraphGetPropertyBlock");
-		case "FlowGraphSetPropertyBlock": return async () => await $(import("./flowGraphSetPropertyBlock.pure-CcbXYQhr.js"), "FlowGraphSetPropertyBlock");
-		case "FlowGraphGetVariableBlock": return async () => await $(import("./flowGraphGetVariableBlock.pure-Ddbfwl9M.js"), "FlowGraphGetVariableBlock");
-		case "FlowGraphSetVariableBlock": return async () => await $(import("./flowGraphSetVariableBlock.pure-CUatqgl3.js"), "FlowGraphSetVariableBlock");
-		case "FlowGraphJsonPointerParserBlock": return async () => await $(import("./flowGraphJsonPointerParserBlock.pure-BYyQrHy7.js"), "FlowGraphJsonPointerParserBlock");
-		case "FlowGraphLeadingZerosBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphLeadingZerosBlock");
-		case "FlowGraphTrailingZerosBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphTrailingZerosBlock");
-		case "FlowGraphOneBitsCounterBlock": return async () => await $(import("./flowGraphMathBlocks.pure-NVNbBM6J.js"), "FlowGraphOneBitsCounterBlock");
-		case "FlowGraphCombineVector2Block": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-qqvRSjt3.js"), "FlowGraphCombineVector2Block");
-		case "FlowGraphCombineVector3Block": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-qqvRSjt3.js"), "FlowGraphCombineVector3Block");
-		case "FlowGraphCombineVector4Block": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-qqvRSjt3.js"), "FlowGraphCombineVector4Block");
-		case "FlowGraphCombineMatrixBlock": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-qqvRSjt3.js"), "FlowGraphCombineMatrixBlock");
-		case "FlowGraphCombineMatrix2DBlock": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-qqvRSjt3.js"), "FlowGraphCombineMatrix2DBlock");
-		case "FlowGraphCombineMatrix3DBlock": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-qqvRSjt3.js"), "FlowGraphCombineMatrix3DBlock");
-		case "FlowGraphExtractVector2Block": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-qqvRSjt3.js"), "FlowGraphExtractVector2Block");
-		case "FlowGraphExtractVector3Block": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-qqvRSjt3.js"), "FlowGraphExtractVector3Block");
-		case "FlowGraphExtractVector4Block": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-qqvRSjt3.js"), "FlowGraphExtractVector4Block");
-		case "FlowGraphExtractMatrixBlock": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-qqvRSjt3.js"), "FlowGraphExtractMatrixBlock");
-		case "FlowGraphExtractMatrix2DBlock": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-qqvRSjt3.js"), "FlowGraphExtractMatrix2DBlock");
-		case "FlowGraphExtractMatrix3DBlock": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-qqvRSjt3.js"), "FlowGraphExtractMatrix3DBlock");
-		case "FlowGraphTransformVectorBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-B07Md6HH.js"), "FlowGraphTransformBlock");
-		case "FlowGraphTransformCoordinatesBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-B07Md6HH.js"), "FlowGraphTransformCoordinatesBlock");
-		case "FlowGraphConjugateBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-B07Md6HH.js"), "FlowGraphConjugateBlock");
-		case "FlowGraphAngleBetweenBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-B07Md6HH.js"), "FlowGraphAngleBetweenBlock");
-		case "FlowGraphQuaternionFromAxisAngleBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-B07Md6HH.js"), "FlowGraphQuaternionFromAxisAngleBlock");
-		case "FlowGraphAxisAngleFromQuaternionBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-B07Md6HH.js"), "FlowGraphAxisAngleFromQuaternionBlock");
-		case "FlowGraphQuaternionFromDirectionsBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-B07Md6HH.js"), "FlowGraphQuaternionFromDirectionsBlock");
-		case "FlowGraphQuaternionFromUpForwardBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-B07Md6HH.js"), "FlowGraphQuaternionFromUpForwardBlock");
-		case "FlowGraphQuaternionFromAnglesBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-B07Md6HH.js"), "FlowGraphQuaternionFromAnglesBlock");
-		case "FlowGraphVectorSlerpBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-B07Md6HH.js"), "FlowGraphVectorSlerpBlock");
-		case "FlowGraphMatrixDecompose": return async () => await $(import("./flowGraphMatrixMathBlocks.pure-P77QttNQ.js"), "FlowGraphMatrixDecomposeBlock");
-		case "FlowGraphMatrixCompose": return async () => await $(import("./flowGraphMatrixMathBlocks.pure-P77QttNQ.js"), "FlowGraphMatrixComposeBlock");
-		case "FlowGraphBooleanToFloat": return async () => await $(import("./flowGraphTypeToTypeBlocks.pure-DbNvG6vG.js"), "FlowGraphBooleanToFloat");
-		case "FlowGraphBooleanToInt": return async () => await $(import("./flowGraphTypeToTypeBlocks.pure-DbNvG6vG.js"), "FlowGraphBooleanToInt");
-		case "FlowGraphFloatToBoolean": return async () => await $(import("./flowGraphTypeToTypeBlocks.pure-DbNvG6vG.js"), "FlowGraphFloatToBoolean");
-		case "FlowGraphIntToBoolean": return async () => await $(import("./flowGraphTypeToTypeBlocks.pure-DbNvG6vG.js"), "FlowGraphIntToBoolean");
-		case "FlowGraphIntToFloat": return async () => await $(import("./flowGraphTypeToTypeBlocks.pure-DbNvG6vG.js"), "FlowGraphIntToFloat");
-		case "FlowGraphFloatToInt": return async () => await $(import("./flowGraphTypeToTypeBlocks.pure-DbNvG6vG.js"), "FlowGraphFloatToInt");
-		case "FlowGraphEasingBlock": return async () => await $(import("./flowGraphEasingBlock.pure-VLWn6EIA.js"), "FlowGraphEasingBlock");
-		case "FlowGraphBezierCurveEasing": return async () => await $(import("./flowGraphBezierCurveEasingBlock.pure-BtUkkh1A.js"), "FlowGraphBezierCurveEasingBlock");
-		case "FlowGraphPointerOverEventBlock": return async () => await $(import("./flowGraphPointerOverEventBlock.pure-Bcn4DCzx.js"), "FlowGraphPointerOverEventBlock");
-		case "FlowGraphPointerOutEventBlock": return async () => await $(import("./flowGraphPointerOutEventBlock.pure-CAERy_nr.js"), "FlowGraphPointerOutEventBlock");
-		case "FlowGraphPointerDownEventBlock": return async () => await $(import("./flowGraphPointerDownEventBlock.pure-c-OVR4Pe.js"), "FlowGraphPointerDownEventBlock");
-		case "FlowGraphPointerUpEventBlock": return async () => await $(import("./flowGraphPointerUpEventBlock.pure-CrdO4izs.js"), "FlowGraphPointerUpEventBlock");
-		case "FlowGraphPointerMoveEventBlock": return async () => await $(import("./flowGraphPointerMoveEventBlock.pure-C8FDZAeI.js"), "FlowGraphPointerMoveEventBlock");
-		case "FlowGraphKeyDownEventBlock": return async () => await $(import("./flowGraphKeyDownEventBlock.pure-ElyE1i0q.js"), "FlowGraphKeyDownEventBlock");
-		case "FlowGraphKeyUpEventBlock": return async () => await $(import("./flowGraphKeyUpEventBlock.pure-ByL_EaK4.js"), "FlowGraphKeyUpEventBlock");
-		case "FlowGraphIsKeyPressedBlock": return async () => await $(import("./flowGraphIsKeyPressedBlock.pure-DLfc9FK9.js"), "FlowGraphIsKeyPressedBlock");
-		case "FlowGraphContextBlock": return async () => await $(import("./flowGraphContextBlock.pure-CSfVDATy.js"), "FlowGraphContextBlock");
-		case "FlowGraphArrayIndexBlock": return async () => await $(import("./flowGraphArrayIndexBlock.pure-ByADCbYl.js"), "FlowGraphArrayIndexBlock");
-		case "FlowGraphCodeExecutionBlock": return async () => (await import("./flowGraphCodeExecutionBlock-BgD3pGsr.js")).FlowGraphCodeExecutionBlock;
-		case "FlowGraphIndexOfBlock": return async () => await $(import("./flowGraphIndexOfBlock.pure-Vi1hodI7.js"), "FlowGraphIndexOfBlock");
-		case "FlowGraphFunctionReference": return async () => await $(import("./flowGraphFunctionReferenceBlock.pure-CyivjBI6.js"), "FlowGraphFunctionReferenceBlock");
-		case "FlowGraphDataSwitchBlock": return async () => await $(import("./flowGraphDataSwitchBlock.pure-DrTkfnuI.js"), "FlowGraphDataSwitchBlock");
-		case "FlowGraphDebugBlock": return async () => await $(import("./flowGraphDebugBlock.pure-B3Y5sxDb.js"), "FlowGraphDebugBlock");
-		case "FlowGraphPhysicsCollisionEventBlock": return async () => await $(import("./flowGraphPhysicsCollisionEventBlock.pure-fJuKrUt1.js"), "FlowGraphPhysicsCollisionEventBlock");
-		case "FlowGraphApplyForceBlock": return async () => await $(import("./flowGraphApplyForceBlock.pure-BckCfhxk.js"), "FlowGraphApplyForceBlock");
-		case "FlowGraphApplyImpulseBlock": return async () => await $(import("./flowGraphApplyImpulseBlock.pure-XFTlRSkR.js"), "FlowGraphApplyImpulseBlock");
-		case "FlowGraphSetLinearVelocityBlock": return async () => await $(import("./flowGraphSetLinearVelocityBlock.pure-B_tqKjrX.js"), "FlowGraphSetLinearVelocityBlock");
-		case "FlowGraphSetAngularVelocityBlock": return async () => await $(import("./flowGraphSetAngularVelocityBlock.pure-DuqSW0Nn.js"), "FlowGraphSetAngularVelocityBlock");
-		case "FlowGraphSetPhysicsMotionTypeBlock": return async () => await $(import("./flowGraphSetPhysicsMotionTypeBlock.pure-BBhtlKtO.js"), "FlowGraphSetPhysicsMotionTypeBlock");
-		case "FlowGraphGetLinearVelocityBlock": return async () => await $(import("./flowGraphGetLinearVelocityBlock.pure-Bw_CpA7z.js"), "FlowGraphGetLinearVelocityBlock");
-		case "FlowGraphGetAngularVelocityBlock": return async () => await $(import("./flowGraphGetAngularVelocityBlock.pure-BjEilbwk.js"), "FlowGraphGetAngularVelocityBlock");
-		case "FlowGraphGetPhysicsMassPropertiesBlock": return async () => await $(import("./flowGraphGetPhysicsMassPropertiesBlock.pure-jAKy19KR.js"), "FlowGraphGetPhysicsMassPropertiesBlock");
-		case "FlowGraphPlaySoundBlock": return async () => await $(import("./flowGraphPlaySoundBlock.pure-BjwK2svt.js"), "FlowGraphPlaySoundBlock");
-		case "FlowGraphStopSoundBlock": return async () => await $(import("./flowGraphStopSoundBlock.pure-BcKZqiXM.js"), "FlowGraphStopSoundBlock");
-		case "FlowGraphPauseSoundBlock": return async () => await $(import("./flowGraphPauseSoundBlock.pure-B4lYOfMd.js"), "FlowGraphPauseSoundBlock");
-		case "FlowGraphSetSoundVolumeBlock": return async () => await $(import("./flowGraphSetSoundVolumeBlock.pure-D3-q6Np9.js"), "FlowGraphSetSoundVolumeBlock");
-		case "FlowGraphSoundEndedEventBlock": return async () => await $(import("./flowGraphSoundEndedEventBlock.pure-BA4Sdk9K.js"), "FlowGraphSoundEndedEventBlock");
-		case "FlowGraphGetSoundVolumeBlock": return async () => await $(import("./flowGraphGetSoundVolumeBlock.pure-BX1HcpmM.js"), "FlowGraphGetSoundVolumeBlock");
-		case "FlowGraphIsSoundPlayingBlock": return async () => await $(import("./flowGraphIsSoundPlayingBlock.pure-osv1g9wi.js"), "FlowGraphIsSoundPlayingBlock");
+		case "FlowGraphPlayAnimationBlock": return async () => await $(import("./flowGraphPlayAnimationBlock.pure-oZWIjey1.js"), "FlowGraphPlayAnimationBlock");
+		case "FlowGraphStopAnimationBlock": return async () => await $(import("./flowGraphStopAnimationBlock.pure-D8d7zQPR.js"), "FlowGraphStopAnimationBlock");
+		case "FlowGraphPauseAnimationBlock": return async () => await $(import("./flowGraphPauseAnimationBlock.pure-DSGOdG7j.js"), "FlowGraphPauseAnimationBlock");
+		case "FlowGraphInterpolationBlock": return async () => await $(import("./flowGraphInterpolationBlock.pure-DFqMeEig.js"), "FlowGraphInterpolationBlock");
+		case "FlowGraphSceneReadyEventBlock": return async () => await $(import("./flowGraphSceneReadyEventBlock.pure-Dp3RyFI3.js"), "FlowGraphSceneReadyEventBlock");
+		case "FlowGraphSceneTickEventBlock": return async () => await $(import("./flowGraphSceneTickEventBlock.pure-7PY3IhXW.js"), "FlowGraphSceneTickEventBlock");
+		case "FlowGraphSendCustomEventBlock": return async () => await $(import("./flowGraphSendCustomEventBlock.pure-DMnpuIMA.js"), "FlowGraphSendCustomEventBlock");
+		case "FlowGraphReceiveCustomEventBlock": return async () => await $(import("./flowGraphReceiveCustomEventBlock.pure-DKY_A-I6.js"), "FlowGraphReceiveCustomEventBlock");
+		case "FlowGraphStopEventPropagationBlock": return async () => await $(import("./flowGraphStopEventPropagationBlock.pure-DTucLkdQ.js"), "FlowGraphStopEventPropagationBlock");
+		case "FlowGraphMeshPickEventBlock": return async () => await $(import("./flowGraphMeshPickEventBlock.pure-BM-PTCM_.js"), "FlowGraphMeshPickEventBlock");
+		case "FlowGraphEBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphEBlock");
+		case "FlowGraphPIBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphPiBlock");
+		case "FlowGraphTauBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphTauBlock");
+		case "FlowGraphInfBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphInfBlock");
+		case "FlowGraphNaNBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphNaNBlock");
+		case "FlowGraphRandomBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphRandomBlock");
+		case "FlowGraphAddBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphAddBlock");
+		case "FlowGraphSubtractBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphSubtractBlock");
+		case "FlowGraphMultiplyBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphMultiplyBlock");
+		case "FlowGraphDivideBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphDivideBlock");
+		case "FlowGraphAbsBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphAbsBlock");
+		case "FlowGraphSignBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphSignBlock");
+		case "FlowGraphTruncBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphTruncBlock");
+		case "FlowGraphFloorBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphFloorBlock");
+		case "FlowGraphCeilBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphCeilBlock");
+		case "FlowGraphRoundBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphRoundBlock");
+		case "FlowGraphFractBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphFractionBlock");
+		case "FlowGraphNegationBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphNegationBlock");
+		case "FlowGraphModuloBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphModuloBlock");
+		case "FlowGraphMinBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphMinBlock");
+		case "FlowGraphMaxBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphMaxBlock");
+		case "FlowGraphClampBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphClampBlock");
+		case "FlowGraphSaturateBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphSaturateBlock");
+		case "FlowGraphMathInterpolationBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphMathInterpolationBlock");
+		case "FlowGraphMathSlerpBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphMathSlerpBlock");
+		case "FlowGraphSmoothStepBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphMathSmoothStepBlock");
+		case "FlowGraphRGBToOkLChBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphRGBToOkLChBlock");
+		case "FlowGraphRGBFromOkLChBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphRGBFromOkLChBlock");
+		case "FlowGraphEqualityBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphEqualityBlock");
+		case "FlowGraphLessThanBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphLessThanBlock");
+		case "FlowGraphLessThanOrEqualBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphLessThanOrEqualBlock");
+		case "FlowGraphGreaterThanBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphGreaterThanBlock");
+		case "FlowGraphGreaterThanOrEqualBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphGreaterThanOrEqualBlock");
+		case "FlowGraphIsNaNBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphIsNanBlock");
+		case "FlowGraphIsInfBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphIsInfinityBlock");
+		case "FlowGraphDegToRadBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphDegToRadBlock");
+		case "FlowGraphRadToDegBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphRadToDegBlock");
+		case "FlowGraphSinBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphSinBlock");
+		case "FlowGraphCosBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphCosBlock");
+		case "FlowGraphTanBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphTanBlock");
+		case "FlowGraphASinBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphAsinBlock");
+		case "FlowGraphACosBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphAcosBlock");
+		case "FlowGraphATanBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphAtanBlock");
+		case "FlowGraphATan2Block": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphAtan2Block");
+		case "FlowGraphSinhBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphSinhBlock");
+		case "FlowGraphCoshBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphCoshBlock");
+		case "FlowGraphTanhBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphTanhBlock");
+		case "FlowGraphASinhBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphAsinhBlock");
+		case "FlowGraphACoshBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphAcoshBlock");
+		case "FlowGraphATanhBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphAtanhBlock");
+		case "FlowGraphExponentialBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphExpBlock");
+		case "FlowGraphLogBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphLogBlock");
+		case "FlowGraphLog2Block": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphLog2Block");
+		case "FlowGraphLog10Block": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphLog10Block");
+		case "FlowGraphSquareRootBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphSquareRootBlock");
+		case "FlowGraphPowerBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphPowerBlock");
+		case "FlowGraphCubeRootBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphCubeRootBlock");
+		case "FlowGraphBitwiseAndBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphBitwiseAndBlock");
+		case "FlowGraphBitwiseOrBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphBitwiseOrBlock");
+		case "FlowGraphBitwiseNotBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphBitwiseNotBlock");
+		case "FlowGraphBitwiseXorBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphBitwiseXorBlock");
+		case "FlowGraphBitwiseLeftShiftBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphBitwiseLeftShiftBlock");
+		case "FlowGraphBitwiseRightShiftBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphBitwiseRightShiftBlock");
+		case "FlowGraphLengthBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-DUTFM3nC.js"), "FlowGraphLengthBlock");
+		case "FlowGraphNormalizeBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-DUTFM3nC.js"), "FlowGraphNormalizeBlock");
+		case "FlowGraphDotBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-DUTFM3nC.js"), "FlowGraphDotBlock");
+		case "FlowGraphCrossBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-DUTFM3nC.js"), "FlowGraphCrossBlock");
+		case "FlowGraphRotate2DBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-DUTFM3nC.js"), "FlowGraphRotate2DBlock");
+		case "FlowGraphRotate3DBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-DUTFM3nC.js"), "FlowGraphRotate3DBlock");
+		case "FlowGraphTransposeBlock": return async () => await $(import("./flowGraphMatrixMathBlocks.pure-Dt2hmWHD.js"), "FlowGraphTransposeBlock");
+		case "FlowGraphDeterminantBlock": return async () => await $(import("./flowGraphMatrixMathBlocks.pure-Dt2hmWHD.js"), "FlowGraphDeterminantBlock");
+		case "FlowGraphInvertMatrixBlock": return async () => await $(import("./flowGraphMatrixMathBlocks.pure-Dt2hmWHD.js"), "FlowGraphInvertMatrixBlock");
+		case "FlowGraphMatrixMultiplicationBlock": return async () => await $(import("./flowGraphMatrixMathBlocks.pure-Dt2hmWHD.js"), "FlowGraphMatrixMultiplicationBlock");
+		case "FlowGraphBranchBlock": return async () => await $(import("./flowGraphBranchBlock.pure-T8oktAUj.js"), "FlowGraphBranchBlock");
+		case "FlowGraphSetDelayBlock": return async () => await $(import("./flowGraphSetDelayBlock.pure-C3ipvLUh.js"), "FlowGraphSetDelayBlock");
+		case "FlowGraphCancelDelayBlock": return async () => await $(import("./flowGraphCancelDelayBlock.pure-D-iomfZ6.js"), "FlowGraphCancelDelayBlock");
+		case "FlowGraphCallCounterBlock": return async () => await $(import("./flowGraphCounterBlock.pure-EfpZ97k6.js"), "FlowGraphCallCounterBlock");
+		case "FlowGraphDebounceBlock": return async () => await $(import("./flowGraphDebounceBlock.pure-y-IJQlan.js"), "FlowGraphDebounceBlock");
+		case "FlowGraphThrottleBlock": return async () => await $(import("./flowGraphThrottleBlock.pure-CYGZwbvB.js"), "FlowGraphThrottleBlock");
+		case "FlowGraphDoNBlock": return async () => await $(import("./flowGraphDoNBlock.pure-CDagE1La.js"), "FlowGraphDoNBlock");
+		case "FlowGraphFlipFlopBlock": return async () => await $(import("./flowGraphFlipFlopBlock.pure-CAFrLDyn.js"), "FlowGraphFlipFlopBlock");
+		case "FlowGraphForLoopBlock": return async () => await $(import("./flowGraphForLoopBlock.pure-C-o-Ygaw.js"), "FlowGraphForLoopBlock");
+		case "FlowGraphMultiGateBlock": return async () => await $(import("./flowGraphMultiGateBlock.pure-iJPVsDGF.js"), "FlowGraphMultiGateBlock");
+		case "FlowGraphSequenceBlock": return async () => await $(import("./flowGraphSequenceBlock.pure-BOLww-QT.js"), "FlowGraphSequenceBlock");
+		case "FlowGraphSwitchBlock": return async () => await $(import("./flowGraphSwitchBlock.pure-Lou0RqZM.js"), "FlowGraphSwitchBlock");
+		case "FlowGraphWaitAllBlock": return async () => await $(import("./flowGraphWaitAllBlock.pure-B_lVc4p3.js"), "FlowGraphWaitAllBlock");
+		case "FlowGraphWhileLoopBlock": return async () => await $(import("./flowGraphWhileLoopBlock.pure-tF1AsR_M.js"), "FlowGraphWhileLoopBlock");
+		case "FlowGraphConsoleLogBlock": return async () => await $(import("./flowGraphConsoleLogBlock.pure-CXFz8YC4.js"), "FlowGraphConsoleLogBlock");
+		case "FlowGraphConditionalBlock": return async () => await $(import("./flowGraphConditionalDataBlock.pure-gcVPd7Ka.js"), "FlowGraphConditionalDataBlock");
+		case "FlowGraphConstantBlock": return async () => await $(import("./flowGraphConstantBlock.pure-BPCF_hLd.js"), "FlowGraphConstantBlock");
+		case "FlowGraphTransformCoordinatesSystemBlock": return async () => await $(import("./flowGraphTransformCoordinatesSystemBlock.pure-COGOJbXw.js"), "FlowGraphTransformCoordinatesSystemBlock");
+		case "FlowGraphGetAssetBlock": return async () => await $(import("./flowGraphGetAssetBlock.pure-C-fy-zdm.js"), "FlowGraphGetAssetBlock");
+		case "FlowGraphGetPropertyBlock": return async () => await $(import("./flowGraphGetPropertyBlock.pure-vnydlNUn.js"), "FlowGraphGetPropertyBlock");
+		case "FlowGraphSetPropertyBlock": return async () => await $(import("./flowGraphSetPropertyBlock.pure-DnJk5c_s.js"), "FlowGraphSetPropertyBlock");
+		case "FlowGraphGetVariableBlock": return async () => await $(import("./flowGraphGetVariableBlock.pure-BKbmv43f.js"), "FlowGraphGetVariableBlock");
+		case "FlowGraphSetVariableBlock": return async () => await $(import("./flowGraphSetVariableBlock.pure-HwIYruOP.js"), "FlowGraphSetVariableBlock");
+		case "FlowGraphJsonPointerParserBlock": return async () => await $(import("./flowGraphJsonPointerParserBlock.pure-BnFuvf6A.js"), "FlowGraphJsonPointerParserBlock");
+		case "FlowGraphLeadingZerosBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphLeadingZerosBlock");
+		case "FlowGraphTrailingZerosBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphTrailingZerosBlock");
+		case "FlowGraphOneBitsCounterBlock": return async () => await $(import("./flowGraphMathBlocks.pure-B0qeylL9.js"), "FlowGraphOneBitsCounterBlock");
+		case "FlowGraphCombineVector2Block": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-D_kgqBzn.js"), "FlowGraphCombineVector2Block");
+		case "FlowGraphCombineVector3Block": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-D_kgqBzn.js"), "FlowGraphCombineVector3Block");
+		case "FlowGraphCombineVector4Block": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-D_kgqBzn.js"), "FlowGraphCombineVector4Block");
+		case "FlowGraphCombineMatrixBlock": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-D_kgqBzn.js"), "FlowGraphCombineMatrixBlock");
+		case "FlowGraphCombineMatrix2DBlock": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-D_kgqBzn.js"), "FlowGraphCombineMatrix2DBlock");
+		case "FlowGraphCombineMatrix3DBlock": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-D_kgqBzn.js"), "FlowGraphCombineMatrix3DBlock");
+		case "FlowGraphExtractVector2Block": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-D_kgqBzn.js"), "FlowGraphExtractVector2Block");
+		case "FlowGraphExtractVector3Block": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-D_kgqBzn.js"), "FlowGraphExtractVector3Block");
+		case "FlowGraphExtractVector4Block": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-D_kgqBzn.js"), "FlowGraphExtractVector4Block");
+		case "FlowGraphExtractMatrixBlock": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-D_kgqBzn.js"), "FlowGraphExtractMatrixBlock");
+		case "FlowGraphExtractMatrix2DBlock": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-D_kgqBzn.js"), "FlowGraphExtractMatrix2DBlock");
+		case "FlowGraphExtractMatrix3DBlock": return async () => await $(import("./flowGraphMathCombineExtractBlocks.pure-D_kgqBzn.js"), "FlowGraphExtractMatrix3DBlock");
+		case "FlowGraphTransformVectorBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-DUTFM3nC.js"), "FlowGraphTransformBlock");
+		case "FlowGraphTransformCoordinatesBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-DUTFM3nC.js"), "FlowGraphTransformCoordinatesBlock");
+		case "FlowGraphConjugateBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-DUTFM3nC.js"), "FlowGraphConjugateBlock");
+		case "FlowGraphAngleBetweenBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-DUTFM3nC.js"), "FlowGraphAngleBetweenBlock");
+		case "FlowGraphQuaternionFromAxisAngleBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-DUTFM3nC.js"), "FlowGraphQuaternionFromAxisAngleBlock");
+		case "FlowGraphAxisAngleFromQuaternionBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-DUTFM3nC.js"), "FlowGraphAxisAngleFromQuaternionBlock");
+		case "FlowGraphQuaternionFromDirectionsBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-DUTFM3nC.js"), "FlowGraphQuaternionFromDirectionsBlock");
+		case "FlowGraphQuaternionFromUpForwardBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-DUTFM3nC.js"), "FlowGraphQuaternionFromUpForwardBlock");
+		case "FlowGraphQuaternionFromAnglesBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-DUTFM3nC.js"), "FlowGraphQuaternionFromAnglesBlock");
+		case "FlowGraphVectorSlerpBlock": return async () => await $(import("./flowGraphVectorMathBlocks.pure-DUTFM3nC.js"), "FlowGraphVectorSlerpBlock");
+		case "FlowGraphMatrixDecompose": return async () => await $(import("./flowGraphMatrixMathBlocks.pure-Dt2hmWHD.js"), "FlowGraphMatrixDecomposeBlock");
+		case "FlowGraphMatrixCompose": return async () => await $(import("./flowGraphMatrixMathBlocks.pure-Dt2hmWHD.js"), "FlowGraphMatrixComposeBlock");
+		case "FlowGraphBooleanToFloat": return async () => await $(import("./flowGraphTypeToTypeBlocks.pure-CckeVGCF.js"), "FlowGraphBooleanToFloat");
+		case "FlowGraphBooleanToInt": return async () => await $(import("./flowGraphTypeToTypeBlocks.pure-CckeVGCF.js"), "FlowGraphBooleanToInt");
+		case "FlowGraphFloatToBoolean": return async () => await $(import("./flowGraphTypeToTypeBlocks.pure-CckeVGCF.js"), "FlowGraphFloatToBoolean");
+		case "FlowGraphIntToBoolean": return async () => await $(import("./flowGraphTypeToTypeBlocks.pure-CckeVGCF.js"), "FlowGraphIntToBoolean");
+		case "FlowGraphIntToFloat": return async () => await $(import("./flowGraphTypeToTypeBlocks.pure-CckeVGCF.js"), "FlowGraphIntToFloat");
+		case "FlowGraphFloatToInt": return async () => await $(import("./flowGraphTypeToTypeBlocks.pure-CckeVGCF.js"), "FlowGraphFloatToInt");
+		case "FlowGraphEasingBlock": return async () => await $(import("./flowGraphEasingBlock.pure-BTaajoc_.js"), "FlowGraphEasingBlock");
+		case "FlowGraphBezierCurveEasing": return async () => await $(import("./flowGraphBezierCurveEasingBlock.pure-DZWQdccg.js"), "FlowGraphBezierCurveEasingBlock");
+		case "FlowGraphPointerOverEventBlock": return async () => await $(import("./flowGraphPointerOverEventBlock.pure-Dp09ROHR.js"), "FlowGraphPointerOverEventBlock");
+		case "FlowGraphPointerOutEventBlock": return async () => await $(import("./flowGraphPointerOutEventBlock.pure-BDT2m9VG.js"), "FlowGraphPointerOutEventBlock");
+		case "FlowGraphPointerDownEventBlock": return async () => await $(import("./flowGraphPointerDownEventBlock.pure-CseYGHU0.js"), "FlowGraphPointerDownEventBlock");
+		case "FlowGraphPointerUpEventBlock": return async () => await $(import("./flowGraphPointerUpEventBlock.pure-CmXT7Jfi.js"), "FlowGraphPointerUpEventBlock");
+		case "FlowGraphPointerMoveEventBlock": return async () => await $(import("./flowGraphPointerMoveEventBlock.pure-E11Krgyo.js"), "FlowGraphPointerMoveEventBlock");
+		case "FlowGraphKeyDownEventBlock": return async () => await $(import("./flowGraphKeyDownEventBlock.pure-DzlRa8Zq.js"), "FlowGraphKeyDownEventBlock");
+		case "FlowGraphKeyUpEventBlock": return async () => await $(import("./flowGraphKeyUpEventBlock.pure-Bwwqgpj6.js"), "FlowGraphKeyUpEventBlock");
+		case "FlowGraphIsKeyPressedBlock": return async () => await $(import("./flowGraphIsKeyPressedBlock.pure-BTTQC1uB.js"), "FlowGraphIsKeyPressedBlock");
+		case "FlowGraphContextBlock": return async () => await $(import("./flowGraphContextBlock.pure-DfuHgjT2.js"), "FlowGraphContextBlock");
+		case "FlowGraphArrayIndexBlock": return async () => await $(import("./flowGraphArrayIndexBlock.pure-GJIwY_9o.js"), "FlowGraphArrayIndexBlock");
+		case "FlowGraphCodeExecutionBlock": return async () => (await import("./flowGraphCodeExecutionBlock-BT3O-D1-.js")).FlowGraphCodeExecutionBlock;
+		case "FlowGraphIndexOfBlock": return async () => await $(import("./flowGraphIndexOfBlock.pure-BbBkR0y9.js"), "FlowGraphIndexOfBlock");
+		case "FlowGraphFunctionReference": return async () => await $(import("./flowGraphFunctionReferenceBlock.pure-BhynXLKm.js"), "FlowGraphFunctionReferenceBlock");
+		case "FlowGraphDataSwitchBlock": return async () => await $(import("./flowGraphDataSwitchBlock.pure-CTmyz1YE.js"), "FlowGraphDataSwitchBlock");
+		case "FlowGraphDebugBlock": return async () => await $(import("./flowGraphDebugBlock.pure-Ejced0_A.js"), "FlowGraphDebugBlock");
+		case "FlowGraphPhysicsCollisionEventBlock": return async () => await $(import("./flowGraphPhysicsCollisionEventBlock.pure-BxtRqbD7.js"), "FlowGraphPhysicsCollisionEventBlock");
+		case "FlowGraphApplyForceBlock": return async () => await $(import("./flowGraphApplyForceBlock.pure-Cm7C_AYu.js"), "FlowGraphApplyForceBlock");
+		case "FlowGraphApplyImpulseBlock": return async () => await $(import("./flowGraphApplyImpulseBlock.pure-1BjzvNjh.js"), "FlowGraphApplyImpulseBlock");
+		case "FlowGraphSetLinearVelocityBlock": return async () => await $(import("./flowGraphSetLinearVelocityBlock.pure-DAYnokxr.js"), "FlowGraphSetLinearVelocityBlock");
+		case "FlowGraphSetAngularVelocityBlock": return async () => await $(import("./flowGraphSetAngularVelocityBlock.pure-DSuS21pv.js"), "FlowGraphSetAngularVelocityBlock");
+		case "FlowGraphSetPhysicsMotionTypeBlock": return async () => await $(import("./flowGraphSetPhysicsMotionTypeBlock.pure-iyqTA4RY.js"), "FlowGraphSetPhysicsMotionTypeBlock");
+		case "FlowGraphGetLinearVelocityBlock": return async () => await $(import("./flowGraphGetLinearVelocityBlock.pure-B8hi4aBz.js"), "FlowGraphGetLinearVelocityBlock");
+		case "FlowGraphGetAngularVelocityBlock": return async () => await $(import("./flowGraphGetAngularVelocityBlock.pure-DlDsUqwP.js"), "FlowGraphGetAngularVelocityBlock");
+		case "FlowGraphGetPhysicsMassPropertiesBlock": return async () => await $(import("./flowGraphGetPhysicsMassPropertiesBlock.pure-DRKUuHt9.js"), "FlowGraphGetPhysicsMassPropertiesBlock");
+		case "FlowGraphPlaySoundBlock": return async () => await $(import("./flowGraphPlaySoundBlock.pure-7jX8vIBH.js"), "FlowGraphPlaySoundBlock");
+		case "FlowGraphStopSoundBlock": return async () => await $(import("./flowGraphStopSoundBlock.pure-MJ2EOqGT.js"), "FlowGraphStopSoundBlock");
+		case "FlowGraphPauseSoundBlock": return async () => await $(import("./flowGraphPauseSoundBlock.pure-Bri-W8fI.js"), "FlowGraphPauseSoundBlock");
+		case "FlowGraphSetSoundVolumeBlock": return async () => await $(import("./flowGraphSetSoundVolumeBlock.pure-kFL5f9zb.js"), "FlowGraphSetSoundVolumeBlock");
+		case "FlowGraphSoundEndedEventBlock": return async () => await $(import("./flowGraphSoundEndedEventBlock.pure-CKYV-_iL.js"), "FlowGraphSoundEndedEventBlock");
+		case "FlowGraphGetSoundVolumeBlock": return async () => await $(import("./flowGraphGetSoundVolumeBlock.pure-BTwIfEQA.js"), "FlowGraphGetSoundVolumeBlock");
+		case "FlowGraphIsSoundPlayingBlock": return async () => await $(import("./flowGraphIsSoundPlayingBlock.pure-C2RwGYMe.js"), "FlowGraphIsSoundPlayingBlock");
 		default:
 			if (jC[e]) return jC[e];
 			if (!e.includes("/")) {
@@ -50422,7 +50428,7 @@ function FC(e) {
 	}
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/FlowGraph/flowGraphParser.js
+//#region node_modules/@babylonjs/core/FlowGraph/flowGraphParser.js
 function IC(e, t, n, r) {
 	let i = Object.create(null);
 	if (Array.isArray(e)) {
@@ -50586,10 +50592,10 @@ function BC(e, t, n) {
 	return o.metadata = e.metadata, o.deserialize && o.deserialize(e), o;
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/FlowGraph/flowGraphRichTypes.js
+//#region node_modules/@babylonjs/core/FlowGraph/flowGraphRichTypes.js
 xr();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/declarationMapper.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/declarationMapper.js
 var VC = 2e4;
 function HC(e) {
 	return e === "flow/waitAll" ? !1 : e.startsWith("flow/") || e.startsWith("animation/") || e === "pointer/set" || e === "pointer/interpolate" || e === "variable/set" || e === "variable/interpolate" || e === "event/send" || e === "event/stopPropagation" || e === "flow/log:BABYLON";
@@ -52514,7 +52520,7 @@ function ew(e, t = /* @__PURE__ */ new Set()) {
 	return { valid: !0 };
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityGraphModel.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityGraphModel.js
 var tw = "f798712c5685bc9223a628140fba707db8889300", nw = {
 	float: {
 		length: 1,
@@ -53096,7 +53102,7 @@ function Ow(e, t, n) {
 	};
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityReferences.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityReferences.js
 var kw = "/extensions/KHR_interactivity/events/", Aw = "/extensions/KHR_interactivity/delays/";
 function jw(e) {
 	return kw + e;
@@ -53108,7 +53114,7 @@ function Nw(e) {
 	return typeof e == "string" && e.startsWith("/extensions/KHR_interactivity/events/");
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityGraphParser.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityGraphParser.js
 function Pw(e, t) {
 	return e && Object.prototype.hasOwnProperty.call(e, t) ? e[t] : void 0;
 }
@@ -53793,10 +53799,10 @@ function Hw() {
 	};
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/FlowGraph/CustomTypes/flowGraphInteger.js
+//#region node_modules/@babylonjs/core/FlowGraph/CustomTypes/flowGraphInteger.js
 lr();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/interactivityRefPathToObjectConverter.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/interactivityRefPathToObjectConverter.js
 var Uw = { isKhrInteractivityRef: !0 }, Ww = class {
 	convert(e) {
 		let t = e === kw, n = e.endsWith("/") ? e.slice(0, -1) : e;
@@ -54070,17 +54076,17 @@ function rT(e, t, n) {
 }
 var iT = !1;
 function aT() {
-	iT || (iT = !0, NC(eT, "FlowGraphGLTFDataProvider", async () => (await import("./flowGraphGLTFDataProvider-Cw1afmaO.js")).FlowGraphGLTFDataProvider), NC(eT, "FlowGraphUnsupportedInteractivityBlock", async () => (await import("./flowGraphUnsupportedInteractivityBlock-hCxqHLGD.js")).FlowGraphUnsupportedInteractivityBlock), NC(eT, "FlowGraphObjectReferenceBlock", async () => (await import("./flowGraphObjectReferenceBlock-znCWnrQg.js")).FlowGraphObjectReferenceBlock), NC(eT, "FlowGraphEventReferenceBlock", async () => (await import("./flowGraphEventReferenceBlock-D6NuCcvJ.js")).FlowGraphEventReferenceBlock));
+	iT || (iT = !0, NC(eT, "FlowGraphGLTFDataProvider", async () => (await import("./flowGraphGLTFDataProvider-D6XXOrmJ.js")).FlowGraphGLTFDataProvider), NC(eT, "FlowGraphUnsupportedInteractivityBlock", async () => (await import("./flowGraphUnsupportedInteractivityBlock-BmQAI6wi.js")).FlowGraphUnsupportedInteractivityBlock), NC(eT, "FlowGraphObjectReferenceBlock", async () => (await import("./flowGraphObjectReferenceBlock-MmlYGp7u.js")).FlowGraphObjectReferenceBlock), NC(eT, "FlowGraphEventReferenceBlock", async () => (await import("./flowGraphEventReferenceBlock-Cxq0H7fr.js")).FlowGraphEventReferenceBlock));
 }
 var oT = !1;
 function sT() {
 	oT || (oT = !0, aT(), yg(eT), vg(eT, !0, (e) => new nT(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity.js
 sT();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_visibility.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_visibility.pure.js
 var cT = "KHR_node_visibility", lT = class {
 	constructor(e) {
 		this.name = cT, this._loader = e, this.enabled = e.isExtensionUsed(cT);
@@ -54122,10 +54128,10 @@ function pT() {
 	fT || (fT = !0, dT(), yg(cT), vg(cT, !0, (e) => new lT(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_visibility.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_visibility.js
 pT();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityNodeState.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityNodeState.js
 var mT = /*#__PURE__*/ new WeakMap(), hT = /*#__PURE__*/ new WeakMap(), gT = /*#__PURE__*/ new WeakMap();
 function _T(e) {
 	return e === "selectable" ? gT : hT;
@@ -54172,7 +54178,7 @@ function TT(e, t, n) {
 	for (let n of r) ST(n, e) && xT(n, t);
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityNodeReference.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityNodeReference.js
 function ET(e) {
 	let t = e?._babylonTransformNode;
 	return {
@@ -54182,7 +54188,7 @@ function ET(e) {
 	};
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_selectability.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_selectability.pure.js
 var DT = "KHR_node_selectability", OT = class {
 	constructor(e) {
 		this.name = DT, this.order = 100, this._loader = e, this.enabled = e.isExtensionUsed(DT);
@@ -54336,10 +54342,10 @@ function MT() {
 	jT || (jT = !0, AT(), yg(DT), vg(DT, !0, (e) => new OT(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_selectability.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_selectability.js
 MT();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_hoverability.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_hoverability.pure.js
 var NT = "KHR_node_hoverability", PT = "targetMeshPointerOver_", FT = "targetMeshPointerOut_", IT = class {
 	constructor(e) {
 		this.name = NT, this.order = 100, this._loader = e, this.enabled = e.isExtensionUsed(NT);
@@ -54571,10 +54577,10 @@ function BT() {
 	zT || (zT = !0, RT(), yg(NT), vg(NT, !0, (e) => new IT(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_hoverability.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_hoverability.js
 BT();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/ExtrasAsMetadata.pure.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/ExtrasAsMetadata.pure.js
 var VT = "ExtrasAsMetadata", HT = class {
 	_assignExtras(e, t) {
 		if (t.extras && Object.keys(t.extras).length > 0) {
@@ -54610,10 +54616,10 @@ function WT() {
 	UT || (UT = !0, yg(VT), vg(VT, !1, (e) => new HT(e)));
 }
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/loaders/glTF/2.0/Extensions/ExtrasAsMetadata.js
+//#region node_modules/@babylonjs/loaders/glTF/2.0/Extensions/ExtrasAsMetadata.js
 WT();
 //#endregion
-//#region ../../tribune/stadium-src/node_modules/@babylonjs/core/Instrumentation/engineInstrumentation.js
+//#region node_modules/@babylonjs/core/Instrumentation/engineInstrumentation.js
 var GT = class {
 	get gpuFrameTimeCounter() {
 		return this.engine.getGPUFrameTimeCounter();
@@ -55110,7 +55116,7 @@ var nE = class {
 //#endregion
 //#region src/stadium.ts
 function rE(e, t) {
-	Hu.Configuration = { decoder: { url: t.meshoptDecoderUrl } };
+	Gu.Configuration = { decoder: { url: t.meshoptDecoderUrl } };
 	let n = (t.overviewTint ?? [
 		.087,
 		.114,
@@ -55554,7 +55560,7 @@ function rE(e, t) {
 		Ge();
 	}
 	function He() {
-		if (Jt === "C" || Jt === "D") {
+		if (Xt === "C" || Xt === "D") {
 			console.info("[Tribune materials] Switch to A, B, E or F before comparing optimization");
 			return;
 		}
@@ -55605,12 +55611,12 @@ function rE(e, t) {
 		let e = Xe.find((e) => e.config.id === "carabell");
 		if (e) {
 			for (let t of e.meshes) t.material = lt.get(t) ?? t.material;
-			Vt.textContent = "????????? Carabell: ? ??????";
+			Ut.textContent = "????????? Carabell: ? ??????";
 		}
 	}
 	let st = 0, ct = !1;
 	async function V(e, n = t.modelsUrl) {
-		let r = (await xd.ImportMeshAsync("", n, e, D)).meshes.filter((e) => e instanceof q && e.getTotalVertices() > 0);
+		let r = (await wd.ImportMeshAsync("", n, e, D)).meshes.filter((e) => e instanceof q && e.getTotalVertices() > 0);
 		return r.length && st++, r;
 	}
 	let lt = /* @__PURE__ */ new Map(), ut = [];
@@ -55630,16 +55636,37 @@ function rE(e, t) {
 		}
 		e.makeGeometryUnique(), e.setVerticesData(H.PositionKind, t);
 	}
-	async function ft() {
+	let ft = null;
+	function pt(e, t, n) {
+		let r = t.x - e.x, i = t.z - e.z, a = 1.5, o = Math.max(64, Math.round(512 * i / r)), s = new kc("tribuneGroundShadowTex", {
+			width: 512,
+			height: o
+		}, D, !0);
+		s.hasAlpha = !0;
+		let c = s.getContext();
+		c.clearRect(0, 0, 512, o);
+		let l = 512 / a, u = o / a, d = Math.min(l, u) * .32;
+		c.shadowColor = `rgba(0,0,0,${n.opacity})`, c.shadowBlur = Math.min(l, u) * .22, c.shadowOffsetX = 2048, c.fillStyle = "#000";
+		let f = (o - u) / 2;
+		c.beginPath(), c.roundRect(-1962.6666666666667, f, l, u, d), c.fill(), s.update();
+		let p = new wc("tribuneGroundShadowMat", D);
+		p.disableLighting = !0, p.emissiveColor = L.Black(), p.diffuseColor = L.Black(), p.specularColor = L.Black(), p.opacityTexture = s, p.backFaceCulling = !1;
+		let m = Hu.CreateGround("tribuneGroundShadow", {
+			width: r * a,
+			height: i * a
+		}, D), [h, g] = n.offset ?? [0, 0];
+		return m.position.set((e.x + t.x) / 2 + h, e.y + .05, (e.z + t.z) / 2 + g), m.material = p, m.isPickable = !1, m.receiveShadows = !1, m;
+	}
+	async function mt() {
 		try {
 			if (qe = await V(p.stadiumFile), !qe.length) throw Error("stadium.glb contains no renderable meshes");
-			let e = new R(Infinity, Infinity, Infinity), t = new R(-Infinity, -Infinity, -Infinity);
-			for (let n of qe) {
-				n.computeWorldMatrix(!0);
-				let r = n.getBoundingInfo().boundingBox;
-				e = R.Minimize(e, r.minimumWorld), t = R.Maximize(t, r.maximumWorld);
+			let e = new R(Infinity, Infinity, Infinity), n = new R(-Infinity, -Infinity, -Infinity);
+			for (let t of qe) {
+				t.computeWorldMatrix(!0);
+				let r = t.getBoundingInfo().boundingBox;
+				e = R.Minimize(e, r.minimumWorld), n = R.Maximize(n, r.maximumWorld);
 			}
-			Qe = e.add(t).scale(.5), A.setTarget(Qe), ge = Qe.clone(), ge.y = -1e4, Ve(qe);
+			Qe = e.add(n).scale(.5), t.groundShadow && (ft = pt(e, n, t.groundShadow)), A.setTarget(Qe), ge = Qe.clone(), ge.y = -1e4, Ve(qe);
 			for (let e of qe) e.receiveShadows = !0, re.addShadowCaster(e), e.isPickable = !1;
 		} catch (e) {
 			console.error("STADIUM FAILED:", e);
@@ -55679,7 +55706,7 @@ function rE(e, t) {
 		})), Xe.sort((e, t) => m.indexOf(e.config) - m.indexOf(t.config));
 		try {
 			let e = await V(p.billboardFile);
-			ut = e, vn = null, Ve(e, "architecture", "billboard");
+			ut = e, bn = null, Ve(e, "architecture", "billboard");
 			for (let t of e) t.isPickable = !1, t.receiveShadows = !1;
 		} catch (e) {
 			console.error("BILLBOARD FAILED:", e);
@@ -55705,7 +55732,7 @@ function rE(e, t) {
 		}
 		console.log("TRIBUNE READY; teams:", Xe.length);
 	}
-	function pt() {
+	function ht() {
 		if (be && xe) {
 			ge.copyFrom(xe.center), _e = !0;
 			return;
@@ -55726,18 +55753,18 @@ function rE(e, t) {
 		}
 		$e.copyFrom(e.origin.add(e.direction.scale(n))), ge.copyFrom($e), _e = !0;
 	}
-	function mt() {
+	function gt() {
 		if (be || Ee || !nt || !ye) return null;
 		let e = D.pick(et.x, et.y, (e) => Ze.has(e));
 		return !e?.hit || !e.pickedMesh ? null : Ze.get(e.pickedMesh) ?? null;
 	}
-	function ht() {
+	function _t() {
 		let e = null, t = Infinity;
 		if (!be && _e) for (let n of Xe) {
 			let r = n.center.x - ge.x, i = n.center.z - ge.z, a = Math.hypot(r, i);
 			a < p.spotlightRadius * p.triggerRadiusMultiplier + n.radius && a < t && (e = n, t = a);
 		}
-		let n = mt();
+		let n = gt();
 		if (h && (rt.style.display = n ? "block" : "none"), h && n) {
 			rt.textContent = [
 				n.config.name.toUpperCase(),
@@ -55756,21 +55783,21 @@ function rE(e, t) {
 		}
 		Je = +!!r;
 	}
-	let gt = document.createElement("div");
-	gt.style.cssText = "position:fixed;left:12px;top:98px;z-index:2100;background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:10px;font:12px/1.5 monospace;max-width:310px";
-	let _t = document.createElement("div");
-	_t.textContent = "TRIBUNE · SPOTLIGHT PROFILER", _t.style.cssText = "font-weight:bold;margin-bottom:6px", gt.appendChild(_t);
 	let vt = document.createElement("div");
-	vt.style.cssText = "font-size:11px;color:#9fc7d4;margin-bottom:7px", vt.textContent = "Выбери E · Plugin справа. Сравни FPS при одинаковом ракурсе. Режимы меняют внешний вид намеренно.", gt.appendChild(vt);
+	vt.style.cssText = "position:fixed;left:12px;top:98px;z-index:2100;background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:10px;font:12px/1.5 monospace;max-width:310px";
 	let yt = document.createElement("div");
-	yt.style.cssText = "display:grid;grid-template-columns:1fr 1fr;gap:5px", gt.appendChild(yt);
+	yt.textContent = "TRIBUNE · SPOTLIGHT PROFILER", yt.style.cssText = "font-weight:bold;margin-bottom:6px", vt.appendChild(yt);
 	let bt = document.createElement("div");
-	bt.style.cssText = "font-size:11px;margin-top:7px;color:#9fc7d4", gt.appendChild(bt), h && document.body.appendChild(gt);
-	let xt = /* @__PURE__ */ new Map();
-	function St(e) {
+	bt.style.cssText = "font-size:11px;color:#9fc7d4;margin-bottom:7px", bt.textContent = "Выбери E · Plugin справа. Сравни FPS при одинаковом ракурсе. Режимы меняют внешний вид намеренно.", vt.appendChild(bt);
+	let xt = document.createElement("div");
+	xt.style.cssText = "display:grid;grid-template-columns:1fr 1fr;gap:5px", vt.appendChild(xt);
+	let St = document.createElement("div");
+	St.style.cssText = "font-size:11px;margin-top:7px;color:#9fc7d4", vt.appendChild(St), h && document.body.appendChild(vt);
+	let Ct = /* @__PURE__ */ new Map();
+	function wt(e) {
 		ke = e;
-		for (let [t, n] of xt) n.style.background = t === e ? "#27728a" : "#122b39", n.style.color = t === e ? "white" : "#a9c6d3";
-		bt.textContent = [
+		for (let [t, n] of Ct) n.style.background = t === e ? "#27728a" : "#122b39", n.style.color = t === e ? "white" : "#a9c6d3";
+		St.textContent = [
 			"0 · Full mask",
 			"1 · No distance",
 			"2 · No clay",
@@ -55786,21 +55813,21 @@ function rE(e, t) {
 		[4, "4 · Bypass plugin"]
 	]) {
 		let n = document.createElement("button");
-		n.textContent = t, n.style.cssText = "cursor:pointer;padding:7px 5px;border:1px solid #39768b;border-radius:4px;background:#122b39;color:#a9c6d3;font:11px Arial", n.addEventListener("click", () => St(e)), yt.appendChild(n), xt.set(e, n);
+		n.textContent = t, n.style.cssText = "cursor:pointer;padding:7px 5px;border:1px solid #39768b;border-radius:4px;background:#122b39;color:#a9c6d3;font:11px Arial", n.addEventListener("click", () => wt(e)), xt.appendChild(n), Ct.set(e, n);
 	}
-	St(0);
-	let Ct = "NORMAL", wt = document.createElement("div");
-	wt.style.cssText = "position:fixed;left:12px;bottom:12px;z-index:2100;background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:10px;font:12px/1.5 monospace;max-width:340px", wt.innerHTML = "<b>TRIBUNE · FLIGHT ISOLATION</b><div style='font-size:11px;color:#a7c6d2;margin:5px 0'>Тестируй в режиме D · GLB, затем в A · Full</div>";
-	let Tt = document.createElement("div");
-	Tt.style.cssText = "display:grid;grid-template-columns:1fr 1fr;gap:5px", wt.appendChild(Tt);
-	let Et = document.createElement("div");
-	Et.style.cssText = "font-size:11px;margin-top:6px;color:#9fc7d4", wt.appendChild(Et), h && document.body.appendChild(wt);
-	let Dt = /* @__PURE__ */ new Map();
-	function Ot(e) {
+	wt(0);
+	let Tt = "NORMAL", Et = document.createElement("div");
+	Et.style.cssText = "position:fixed;left:12px;bottom:12px;z-index:2100;background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:10px;font:12px/1.5 monospace;max-width:340px", Et.innerHTML = "<b>TRIBUNE · FLIGHT ISOLATION</b><div style='font-size:11px;color:#a7c6d2;margin:5px 0'>Тестируй в режиме D · GLB, затем в A · Full</div>";
+	let Dt = document.createElement("div");
+	Dt.style.cssText = "display:grid;grid-template-columns:1fr 1fr;gap:5px", Et.appendChild(Dt);
+	let Ot = document.createElement("div");
+	Ot.style.cssText = "font-size:11px;margin-top:6px;color:#9fc7d4", Et.appendChild(Ot), h && document.body.appendChild(Et);
+	let U = /* @__PURE__ */ new Map();
+	function kt(e) {
 		if (!Ee) {
-			Ct = e;
-			for (let [t, n] of Dt) n.style.background = t === e ? "#27728a" : "#122b39", n.style.color = t === e ? "#fff" : "#a9c6d3";
-			Et.textContent = "Flight: " + e, console.log("TRIBUNE FLIGHT TEST", e);
+			Tt = e;
+			for (let [t, n] of U) n.style.background = t === e ? "#27728a" : "#122b39", n.style.color = t === e ? "#fff" : "#a9c6d3";
+			Ot.textContent = "Flight: " + e, console.log("TRIBUNE FLIGHT TEST", e);
 		}
 	}
 	for (let [e, t] of [
@@ -55815,11 +55842,11 @@ function rE(e, t) {
 			NO_MORPH: "Camera flies normally; projection switches at the endpoint",
 			FIXED_LIGHT: "Hold overview lighting until arrival, then restore detail lighting",
 			DEFER_MASK: "Do not update selected-house masking until arrival"
-		}[e], n.addEventListener("click", () => Ot(e)), Tt.appendChild(n), Dt.set(e, n);
+		}[e], n.addEventListener("click", () => kt(e)), Dt.appendChild(n), U.set(e, n);
 	}
-	Ot("NORMAL");
-	let U = !1;
-	function kt(e) {
+	kt("NORMAL");
+	let At = !1;
+	function jt(e) {
 		if (Oe = Math.max(0, Math.min(1, e)), A.unfreezeProjectionMatrix(), Oe <= 1e-4) {
 			A.mode = jr.ORTHOGRAPHIC_CAMERA;
 			return;
@@ -55834,7 +55861,7 @@ function rE(e, t) {
 		let n = A.getProjectionMatrix(!0).clone();
 		A.freezeProjectionMatrix(k.Lerp(t, n, Oe));
 	}
-	function At(e, t) {
+	function Mt(e, t) {
 		let n = new R(e.target.x + Math.cos(e.alpha) * Math.sin(e.beta) * e.radius, e.target.y + Math.cos(e.beta) * e.radius, e.target.z + Math.sin(e.alpha) * Math.sin(e.beta) * e.radius), r = Math.atan2(Math.sin(e.alpha - A.alpha), Math.cos(e.alpha - A.alpha));
 		Ee = {
 			elapsed: 0,
@@ -55856,7 +55883,7 @@ function rE(e, t) {
 			onComplete: t
 		};
 	}
-	function jt(e) {
+	function Nt(e) {
 		let t = Ee;
 		if (!t) return;
 		t.elapsed += e;
@@ -55865,36 +55892,36 @@ function rE(e, t) {
 		let s = Math.max(.01, R.Distance(a, o));
 		A.fov = Math.max(.05, Math.min(2.5, 2 * Math.atan(j / s)));
 		let c = r * r * r * (r * (r * 6 - 15) + 10);
-		kt(Ct === "NO_MORPH" ? t.fromProjectionBlend : t.fromProjectionBlend + (t.toProjectionBlend - t.fromProjectionBlend) * c), n >= 1 && (Ct === "NO_MORPH" && kt(t.toProjectionBlend), Ee = null, U && xe && !Te && (Ke(xe), U = !1), t.onComplete?.());
+		jt(Tt === "NO_MORPH" ? t.fromProjectionBlend : t.fromProjectionBlend + (t.toProjectionBlend - t.fromProjectionBlend) * c), n >= 1 && (Tt === "NO_MORPH" && jt(t.toProjectionBlend), Ee = null, At && xe && !Te && (Ke(xe), At = !1), t.onComplete?.());
 	}
-	let Mt = document.createElement("button");
-	Mt.type = "button", Mt.textContent = "Back to stadium", Mt.style.display = "none", y.append(Mt, b), v.appendChild(y);
-	let Nt = document.createElement("div");
-	Nt.style.cssText = "position:fixed;left:16px;bottom:16px;z-index:1002;display:none;padding:10px;background:#050a12e8;border:1px solid #29647a;border-radius:7px;color:#bcefff;font:12px Arial";
 	let Pt = document.createElement("button");
-	Pt.textContent = "Только прожектор: ВЫКЛ", Pt.style.cssText = "padding:8px 12px;background:#132330;color:#bcefff;border:1px solid #29647a;border-radius:4px;cursor:pointer", Pt.addEventListener("click", () => {
-		fe = !fe, Pt.textContent = fe ? "Только прожектор: ВКЛ" : "Только прожектор: ВЫКЛ", Pt.style.background = fe ? "#27657c" : "#132330", It.setEnabled(fe && be), Rt.setEnabled(fe && be), zt.style.display = fe ? "block" : "none";
+	Pt.type = "button", Pt.textContent = "Back to stadium", Pt.style.display = "none", y.append(Pt, b), v.appendChild(y);
+	let Ft = document.createElement("div");
+	Ft.style.cssText = "position:fixed;left:16px;bottom:16px;z-index:1002;display:none;padding:10px;background:#050a12e8;border:1px solid #29647a;border-radius:7px;color:#bcefff;font:12px Arial";
+	let It = document.createElement("button");
+	It.textContent = "Только прожектор: ВЫКЛ", It.style.cssText = "padding:8px 12px;background:#132330;color:#bcefff;border:1px solid #29647a;border-radius:4px;cursor:pointer", It.addEventListener("click", () => {
+		fe = !fe, It.textContent = fe ? "Только прожектор: ВКЛ" : "Только прожектор: ВЫКЛ", It.style.background = fe ? "#27657c" : "#132330", Rt.setEnabled(fe && be), Bt.setEnabled(fe && be), Vt.style.display = fe ? "block" : "none";
 	});
-	let Ft = new wc("debugLampEmissive", D);
-	Ft.disableLighting = !0, Ft.emissiveColor = new L(1, .25, .08);
-	let It = zu.CreateSphere("DEBUG_spot_source", {
+	let Lt = new wc("debugLampEmissive", D);
+	Lt.disableLighting = !0, Lt.emissiveColor = new L(1, .25, .08);
+	let Rt = Hu.CreateSphere("DEBUG_spot_source", {
 		diameter: 2.2,
 		segments: 12
 	}, D);
-	It.material = Ft, It.isPickable = !1, It.setEnabled(!1);
-	let Lt = new wc("debugSpotTargetLit", D);
-	Lt.diffuseColor = new L(1, 1, 1), Lt.specularColor = new L(0, 0, 0);
-	let Rt = zu.CreateSphere("DEBUG_spot_target", {
+	Rt.material = Lt, Rt.isPickable = !1, Rt.setEnabled(!1);
+	let zt = new wc("debugSpotTargetLit", D);
+	zt.diffuseColor = new L(1, 1, 1), zt.specularColor = new L(0, 0, 0);
+	let Bt = Hu.CreateSphere("DEBUG_spot_target", {
 		diameter: 3,
 		segments: 16
 	}, D);
-	Rt.material = Lt, Rt.isPickable = !1, Rt.receiveShadows = !1, Rt.setEnabled(!1);
-	let zt = document.createElement("div");
-	zt.style.cssText = "margin-top:8px;max-width:320px;white-space:pre-line;line-height:1.45;color:#fff;font:12px monospace", Nt.appendChild(zt), zt.style.display = "none", Nt.appendChild(Pt);
-	let Bt = document.createElement("div");
-	Bt.style.cssText = "margin-top:10px;display:flex;gap:5px;flex-wrap:wrap";
+	Bt.material = zt, Bt.isPickable = !1, Bt.receiveShadows = !1, Bt.setEnabled(!1);
 	let Vt = document.createElement("div");
-	Vt.style.cssText = "margin-top:7px;max-width:330px;line-height:1.4";
+	Vt.style.cssText = "margin-top:8px;max-width:320px;white-space:pre-line;line-height:1.45;color:#fff;font:12px monospace", Ft.appendChild(Vt), Vt.style.display = "none", Ft.appendChild(It);
+	let Ht = document.createElement("div");
+	Ht.style.cssText = "margin-top:10px;display:flex;gap:5px;flex-wrap:wrap";
+	let Ut = document.createElement("div");
+	Ut.style.cssText = "margin-top:7px;max-width:330px;line-height:1.4";
 	for (let [e, t] of [
 		["masked", "1 · С маской"],
 		["original", "2 · Оригинал GLB"],
@@ -55903,10 +55930,10 @@ function rE(e, t) {
 		let n = document.createElement("button");
 		n.textContent = t, n.style.cssText = "padding:7px;background:#132330;color:#bcefff;border:1px solid #29647a;border-radius:4px;cursor:pointer", n.addEventListener("click", () => {
 			at = e, ot();
-		}), Bt.appendChild(n);
+		}), Ht.appendChild(n);
 	}
-	Nt.appendChild(Bt), Nt.appendChild(Vt), h && document.body.appendChild(Nt);
-	let Ht = [
+	Ft.appendChild(Ht), Ft.appendChild(Ut), h && document.body.appendChild(Ft);
+	let Wt = [
 		"albedoTexture",
 		"bumpTexture",
 		"metallicTexture",
@@ -55918,12 +55945,12 @@ function rE(e, t) {
 		"lightmapTexture",
 		"metallicReflectanceTexture",
 		"reflectanceTexture"
-	], Ut = /* @__PURE__ */ new Set();
-	async function Wt(e) {
-		if (t.liteModelsUrl && !Ut.has(e.config.id)) {
-			Ut.add(e.config.id);
+	], Gt = /* @__PURE__ */ new Set();
+	async function Kt(e) {
+		if (t.liteModelsUrl && !Gt.has(e.config.id)) {
+			Gt.add(e.config.id);
 			try {
-				let n = await xd.LoadAssetContainerAsync(t.modelsUrl, e.config.file, D), r = new Map(n.textures.map((e) => [e.name, e])), i = /* @__PURE__ */ new Set();
+				let n = await wd.LoadAssetContainerAsync(t.modelsUrl, e.config.file, D), r = new Map(n.textures.map((e) => [e.name, e])), i = /* @__PURE__ */ new Set();
 				for (let t of e.meshes) t.material?.getActiveTextures().forEach((e) => i.add(e));
 				let a = /* @__PURE__ */ new Set(), o = (e, t) => {
 					let n = e?.[t];
@@ -55933,7 +55960,7 @@ function rE(e, t) {
 				};
 				for (let e of D.materials) {
 					let t = e;
-					for (let e of Ht) o(t, e);
+					for (let e of Wt) o(t, e);
 					let n = t.clearCoat;
 					for (let e of [
 						"texture",
@@ -55943,13 +55970,13 @@ function rE(e, t) {
 				}
 				n.textures = n.textures.filter((e) => !a.has(e)), n.dispose();
 			} catch (t) {
-				Ut.delete(e.config.id), console.error("FULL TEXTURES FAILED:", e.config.file, t);
+				Gt.delete(e.config.id), console.error("FULL TEXTURES FAILED:", e.config.file, t);
 			}
 		}
 	}
-	function Gt(e) {
+	function qt(e) {
 		if (be || Ee) return;
-		Wt(e), De = {
+		ft?.setEnabled(!1), Kt(e), De = {
 			alpha: A.alpha,
 			beta: A.beta,
 			radius: A.radius,
@@ -55962,7 +55989,7 @@ function rE(e, t) {
 			for (let t of e.meshes) n.push(t);
 		}
 		for (let e of [...z, ...Ce]) e.setEnabled(!1);
-		Ct === "DEFER_MASK" ? U = !0 : Ke(e), ge.copyFrom(e.center), _e = !0, rt.style.display = "none", Mt.style.display = "", Nt.style.display = "none", y.classList.add("isOpen");
+		Tt === "DEFER_MASK" ? At = !0 : Ke(e), ge.copyFrom(e.center), _e = !0, rt.style.display = "none", Pt.style.display = "", Ft.style.display = "none", y.classList.add("isOpen");
 		let r = t.teamHref?.(e.config.id) ?? null;
 		b.style.display = r ? "" : "none", r && (b.href = r), at = "masked";
 		let i = new R(-e.center.x, 0, -e.center.z);
@@ -55976,7 +56003,7 @@ function rE(e, t) {
 		let f = Math.max(1, d - u) / (2 * Math.tan(o) * p.detailHouseFrameFraction), m = e.radius / Math.max(.1, Math.sin(s)) * .9, h = Math.max(p.teamCameraPreferredDistance * .6, f, m), g = p.detailCameraLookUpDegrees * Math.PI / 180, _ = l.scale(h * Math.cos(g));
 		_.y = -h * Math.sin(g);
 		let v = _.length(), S = Math.acos(Math.max(-1, Math.min(1, _.y / v)));
-		At({
+		Mt({
 			alpha: Math.atan2(_.z, _.x),
 			beta: S,
 			radius: v,
@@ -55984,11 +56011,11 @@ function rE(e, t) {
 			target: e.center
 		});
 	}
-	function Kt() {
+	function Jt() {
 		if (!be || !De) return;
 		let e = De;
-		at = "masked", ot(), Te = !0, x.classList.remove("tribuneDetail"), Mt.style.display = "none", Nt.style.display = "none", b.style.display = "none", y.classList.remove("isOpen"), It.setEnabled(!1), Rt.setEnabled(!1), At(e, () => {
-			be = !1, xe = null, De = null, Te = !1, U = !1, Ke(null);
+		at = "masked", ot(), Te = !0, x.classList.remove("tribuneDetail"), Pt.style.display = "none", Ft.style.display = "none", b.style.display = "none", y.classList.remove("isOpen"), Rt.setEnabled(!1), Bt.setEnabled(!1), Mt(e, () => {
+			be = !1, xe = null, De = null, Te = !1, ft?.setEnabled(!0), At = !1, Ke(null);
 			for (let e of [...z, ...Ce]) e.setEnabled(!1);
 		});
 	}
@@ -55997,41 +56024,41 @@ function rE(e, t) {
 		t.className = "tribuneTeamButton", t.textContent = e.name, t.addEventListener("click", () => {
 			if (be || Ee || !ye) return;
 			let t = Xe.find((t) => t.config.id === e.id);
-			t && Gt(t);
+			t && qt(t);
 		}), S.appendChild(t);
 	}
-	Mt.addEventListener("click", Kt);
-	let qt = (e) => {
-		e.key === "Escape" && Kt();
+	Pt.addEventListener("click", Jt);
+	let Yt = (e) => {
+		e.key === "Escape" && Jt();
 	};
-	window.addEventListener("keydown", qt), C.addEventListener("pointermove", (e) => {
+	window.addEventListener("keydown", Yt), C.addEventListener("pointermove", (e) => {
 		let t = C.getBoundingClientRect();
 		et.set((e.clientX - t.left) * C.clientWidth / t.width, (e.clientY - t.top) * C.clientHeight / t.height), nt = !0;
 	}), C.addEventListener("pointerleave", () => {
 		nt = !1, rt.style.display = "none";
 	}), C.addEventListener("click", () => {
-		let e = mt();
-		e && Gt(e);
+		let e = gt();
+		e && qt(e);
 	});
-	let Jt = "A", Yt = /* @__PURE__ */ new Map(), Xt = new wc("TRIBUNE_PERF_FLAT", D);
-	Xt.disableLighting = !0, Xt.diffuseColor = new L(.65, .72, .79), Xt.emissiveColor = new L(.65, .72, .79), Xt.specularColor = L.Black();
-	let Zt = document.createElement("div");
-	Zt.style.cssText = "position:fixed;right:12px;bottom:12px;z-index:2000;min-width:275px;max-width:calc(100vw - 24px);background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:11px;font:12px/1.5 monospace;box-shadow:0 4px 18px #0005";
-	let Qt = document.createElement("div");
-	Qt.textContent = "TRIBUNE · ISOLATION TEST A–F", Qt.style.cssText = "font-weight:bold;letter-spacing:.08em;margin-bottom:8px", Zt.appendChild(Qt);
+	let Xt = "A", Zt = /* @__PURE__ */ new Map(), Qt = new wc("TRIBUNE_PERF_FLAT", D);
+	Qt.disableLighting = !0, Qt.diffuseColor = new L(.65, .72, .79), Qt.emissiveColor = new L(.65, .72, .79), Qt.specularColor = L.Black();
 	let $t = document.createElement("div");
-	$t.style.cssText = "display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin-bottom:9px", Zt.appendChild($t);
+	$t.style.cssText = "position:fixed;right:12px;bottom:12px;z-index:2000;min-width:275px;max-width:calc(100vw - 24px);background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:11px;font:12px/1.5 monospace;box-shadow:0 4px 18px #0005";
 	let en = document.createElement("div");
-	en.style.whiteSpace = "pre-line", Zt.appendChild(en);
+	en.textContent = "TRIBUNE · ISOLATION TEST A–F", en.style.cssText = "font-weight:bold;letter-spacing:.08em;margin-bottom:8px", $t.appendChild(en);
 	let tn = document.createElement("div");
-	tn.style.cssText = "color:#86a8b8;margin-top:7px;font:11px/1.4 Arial", tn.textContent = "Тестируй в общем виде: D ↔ E = плагин, E ↔ B = highlight, E ↔ F = FX. После смены жди 5–10 сек, затем сравни FPS.", Zt.appendChild(tn), h && document.body.appendChild(Zt);
-	let nn = /* @__PURE__ */ new Map();
-	function rn(e) {
-		if (e !== Jt) {
-			for (let [e, t] of Yt) e.isDisposed() || (e.material = t);
-			if (Yt.clear(), Jt = e, pe.bloomEnabled = e === "A" || e === "F", pe.fxaaEnabled = e === "A" || e === "F", pe.samples = pe.fxaaEnabled ? me : 1, Fe.isEnabled = e === "A" || e === "B", e === "C" || e === "D") for (let t of Ne.keys()) t.isDisposed() || (Yt.set(t, t.material), t.material = e === "C" ? Xt : Pe.get(t) ?? t.material);
-			for (let [t, n] of nn) n.style.background = t === e ? "#27728a" : "#122b39", n.style.color = t === e ? "white" : "#a9c6d3";
-			an = 0, on = 0, sn = 0, cn = 0, ln = performance.now(), console.log("TRIBUNE PERF MODE", e, "substituted meshes:", Yt.size);
+	tn.style.cssText = "display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin-bottom:9px", $t.appendChild(tn);
+	let nn = document.createElement("div");
+	nn.style.whiteSpace = "pre-line", $t.appendChild(nn);
+	let rn = document.createElement("div");
+	rn.style.cssText = "color:#86a8b8;margin-top:7px;font:11px/1.4 Arial", rn.textContent = "Тестируй в общем виде: D ↔ E = плагин, E ↔ B = highlight, E ↔ F = FX. После смены жди 5–10 сек, затем сравни FPS.", $t.appendChild(rn), h && document.body.appendChild($t);
+	let an = /* @__PURE__ */ new Map();
+	function on(e) {
+		if (e !== Xt) {
+			for (let [e, t] of Zt) e.isDisposed() || (e.material = t);
+			if (Zt.clear(), Xt = e, pe.bloomEnabled = e === "A" || e === "F", pe.fxaaEnabled = e === "A" || e === "F", pe.samples = pe.fxaaEnabled ? me : 1, Fe.isEnabled = e === "A" || e === "B", e === "C" || e === "D") for (let t of Ne.keys()) t.isDisposed() || (Zt.set(t, t.material), t.material = e === "C" ? Qt : Pe.get(t) ?? t.material);
+			for (let [t, n] of an) n.style.background = t === e ? "#27728a" : "#122b39", n.style.color = t === e ? "white" : "#a9c6d3";
+			sn = 0, cn = 0, ln = 0, un = 0, W = performance.now(), console.log("TRIBUNE PERF MODE", e, "substituted meshes:", Zt.size);
 		}
 	}
 	for (let [e, t] of [
@@ -56050,69 +56077,69 @@ function rE(e, t) {
 			D: "Original GLB, no plugin/FX/highlight",
 			E: "Plugin, no FX/highlight",
 			F: "Plugin and FX, no highlight"
-		}[e], n.style.cssText = "cursor:pointer;padding:7px 4px;border:1px solid #39768b;border-radius:4px;background:#122b39;color:#a9c6d3;font:11px Arial", n.addEventListener("click", () => rn(e)), $t.appendChild(n), nn.set(e, n);
+		}[e], n.style.cssText = "cursor:pointer;padding:7px 4px;border:1px solid #39768b;border-radius:4px;background:#122b39;color:#a9c6d3;font:11px Arial", n.addEventListener("click", () => on(e)), tn.appendChild(n), an.set(e, n);
 	}
-	nn.get("A").style.background = "#27728a", nn.get("A").style.color = "white";
-	let an = 0, on = 0, sn = 0, cn = 0, ln = performance.now();
-	function un(e, t) {
-		an++, on += e, sn = Math.max(sn, e), cn += t;
+	an.get("A").style.background = "#27728a", an.get("A").style.color = "white";
+	let sn = 0, cn = 0, ln = 0, un = 0, W = performance.now();
+	function dn(e, t) {
+		sn++, cn += e, ln = Math.max(ln, e), un += t;
 		let n = performance.now();
-		if (n - ln < 1e3) return;
-		let r = on / Math.max(1, an), i = (cn / an).toFixed(0);
-		en.textContent = `MODE ${Jt} / ${Ct} / shader ${ke} | FPS ${w.getFps().toFixed(0)}\nscene.render avg: ${r.toFixed(1)} ms\nscene.render max: ${sn.toFixed(1)} ms\ndraw calls/frame: ${i}\nactive meshes: ${D.getActiveMeshes().length}\nshadows: ${ae.shadowEnabled ? "ON" : "OFF"}`, console.log("TRIBUNE PERF SAMPLE", {
-			mode: Jt,
+		if (n - W < 1e3) return;
+		let r = cn / Math.max(1, sn), i = (un / sn).toFixed(0);
+		nn.textContent = `MODE ${Xt} / ${Tt} / shader ${ke} | FPS ${w.getFps().toFixed(0)}\nscene.render avg: ${r.toFixed(1)} ms\nscene.render max: ${ln.toFixed(1)} ms\ndraw calls/frame: ${i}\nactive meshes: ${D.getActiveMeshes().length}\nshadows: ${ae.shadowEnabled ? "ON" : "OFF"}`, console.log("TRIBUNE PERF SAMPLE", {
+			mode: Xt,
 			fps: Math.round(w.getFps()),
 			renderAvgMs: Number(r.toFixed(2)),
-			renderMaxMs: Number(sn.toFixed(2)),
+			renderMaxMs: Number(ln.toFixed(2)),
 			drawCallsPerFrame: Number(i),
 			activeMeshes: D.getActiveMeshes().length,
 			spotlightShadows: ae.shadowEnabled
-		}), an = 0, on = 0, sn = 0, cn = 0, ln = n;
+		}), sn = 0, cn = 0, ln = 0, un = 0, W = n;
 	}
-	let W = document.createElement("div");
-	W.style.cssText = "position:fixed;top:16px;left:16px;padding:8px 12px;background:#0009;color:#66ffaa;font:14px monospace;pointer-events:none;z-index:100", h && document.body.appendChild(W);
-	let dn = document.createElement("div");
-	dn.style.cssText = "position:fixed;right:12px;bottom:62px;z-index:2200;background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:9px;font:12px monospace";
-	let fn = document.createElement("button");
-	fn.style.cssText = "cursor:pointer;background:#164457;color:#fff;border:1px solid #39768b;border-radius:4px;padding:6px 9px", We = fn, fn.addEventListener("click", () => {
-		if (Jt === "C" || Jt === "D") {
+	let fn = document.createElement("div");
+	fn.style.cssText = "position:fixed;top:16px;left:16px;padding:8px 12px;background:#0009;color:#66ffaa;font:14px monospace;pointer-events:none;z-index:100", h && document.body.appendChild(fn);
+	let pn = document.createElement("div");
+	pn.style.cssText = "position:fixed;right:12px;bottom:62px;z-index:2200;background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:9px;font:12px monospace";
+	let mn = document.createElement("button");
+	mn.style.cssText = "cursor:pointer;background:#164457;color:#fff;border:1px solid #39768b;border-radius:4px;padding:6px 9px", We = mn, mn.addEventListener("click", () => {
+		if (Xt === "C" || Xt === "D") {
 			console.warn("Material comparison requires A, B, E or F");
 			return;
 		}
 		Ie.enabled = !Ie.enabled, He(), Ue();
-	}), dn.appendChild(fn);
-	let pn = document.createElement("button");
-	pn.textContent = "Audit → Console", pn.style.cssText = "cursor:pointer;margin-left:6px;background:#122b39;color:#d9f6ff;border:1px solid #39768b;border-radius:4px;padding:6px 9px", pn.addEventListener("click", () => Ue()), dn.appendChild(pn), h && document.body.appendChild(dn), Ge();
-	let mn = document.createElement("div");
-	mn.style.cssText = "position:fixed;right:12px;bottom:12px;z-index:2200;background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:9px;font:12px monospace";
+	}), pn.appendChild(mn);
 	let hn = document.createElement("button");
-	hn.style.cssText = "cursor:pointer;background:#164457;color:#fff;border:1px solid #39768b;border-radius:4px;padding:6px 9px";
-	function gn() {
-		hn.textContent = `Adaptive ${T.enabled ? "ON" : "OFF"} · ${T.currentScale.toFixed(2)}x`;
+	hn.textContent = "Audit → Console", hn.style.cssText = "cursor:pointer;margin-left:6px;background:#122b39;color:#d9f6ff;border:1px solid #39768b;border-radius:4px;padding:6px 9px", hn.addEventListener("click", () => Ue()), pn.appendChild(hn), h && document.body.appendChild(pn), Ge();
+	let gn = document.createElement("div");
+	gn.style.cssText = "position:fixed;right:12px;bottom:12px;z-index:2200;background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:9px;font:12px monospace";
+	let _n = document.createElement("button");
+	_n.style.cssText = "cursor:pointer;background:#164457;color:#fff;border:1px solid #39768b;border-radius:4px;padding:6px 9px";
+	function vn() {
+		_n.textContent = `Adaptive ${T.enabled ? "ON" : "OFF"} · ${T.currentScale.toFixed(2)}x`;
 	}
-	hn.addEventListener("click", () => {
-		T.enabled = !T.enabled, T.samples.length = 0, T.lowFPSWindows = 0, T.highFPSWindows = 0, T.enabled || (T.currentScale = T.baseScale, w.setHardwareScalingLevel(T.baseScale)), gn();
-	}), mn.appendChild(hn), h && document.body.appendChild(mn), gn();
-	let _n = 0, vn = null, yn = "", bn = !1, xn = performance.now(), Sn = 0, Cn = 0, wn = document.createElement("div");
-	wn.style.cssText = "position:fixed;left:16px;top:54px;z-index:1100;background:#050a12dd;color:#a8f3ff;padding:8px 10px;border:1px solid #29647a;border-radius:5px;font:12px monospace;pointer-events:none;display:none", h && document.body.appendChild(wn);
-	let Tn = 0, En = document.createElement("button");
-	En.type = "button", En.className = "tribuneTeamButton", En.textContent = "Unified Spotlight", En.setAttribute("aria-pressed", "true"), En.addEventListener("click", () => {
-		he = !he, En.textContent = he ? "Unified Spotlight" : "Legacy Spotlight", En.setAttribute("aria-pressed", String(he));
-	}), h && S.appendChild(En);
-	let Dn = h ? new nE(w, D, S, (e) => (e.team = xe?.config.id ?? null, e.perfMode = Jt, e.flightTest = Ct, e.spotlightShaderTest = ke, e.spotlightMode = he ? "unified" : "legacy", e.spotlightOnlyTest = fe, e.materialDiagnosticMode = at, e.materialSharing = Ie.enabled, e.adaptive = T.enabled, e.hardwareScaling = w.getHardwareScalingLevel(), e.renderWidth = w.getRenderWidth(), e.renderHeight = w.getRenderHeight(), e.devicePixelRatio = window.devicePixelRatio, e.bloom = pe.bloomEnabled, e.fxaa = pe.fxaaEnabled, e.msaaSamples = pe.samples, e.highlight = Fe.isEnabled, e.stableShaderFeatures = p.stableShaderFeatures, e.spotlightShadows = ae.shadowEnabled, e.billboard = vn, e.spotlight = _e, e.pointerX = !be && nt ? et.x : null, e.pointerY = !be && nt ? et.y : null, e.camera = D.activeCamera?.name ?? null, e.cameraAlpha = A.alpha, e.cameraBeta = A.beta, e.cameraRadius = A.radius, e.cameraTargetX = A.target.x, e.cameraTargetY = A.target.y, e.cameraTargetZ = A.target.z, e.cameraFov = A.fov, e.freeDetailCamera = !1, e.warmingMaterials = Nn, Ee ? "flight" : be ? "detail" : "overview"), () => {
+	_n.addEventListener("click", () => {
+		T.enabled = !T.enabled, T.samples.length = 0, T.lowFPSWindows = 0, T.highFPSWindows = 0, T.enabled || (T.currentScale = T.baseScale, w.setHardwareScalingLevel(T.baseScale)), vn();
+	}), gn.appendChild(_n), h && document.body.appendChild(gn), vn();
+	let yn = 0, bn = null, xn = "", Sn = !1, Cn = performance.now(), wn = 0, Tn = 0, En = document.createElement("div");
+	En.style.cssText = "position:fixed;left:16px;top:54px;z-index:1100;background:#050a12dd;color:#a8f3ff;padding:8px 10px;border:1px solid #29647a;border-radius:5px;font:12px monospace;pointer-events:none;display:none", h && document.body.appendChild(En);
+	let Dn = 0, On = document.createElement("button");
+	On.type = "button", On.className = "tribuneTeamButton", On.textContent = "Unified Spotlight", On.setAttribute("aria-pressed", "true"), On.addEventListener("click", () => {
+		he = !he, On.textContent = he ? "Unified Spotlight" : "Legacy Spotlight", On.setAttribute("aria-pressed", String(he));
+	}), h && S.appendChild(On);
+	let kn = h ? new nE(w, D, S, (e) => (e.team = xe?.config.id ?? null, e.perfMode = Xt, e.flightTest = Tt, e.spotlightShaderTest = ke, e.spotlightMode = he ? "unified" : "legacy", e.spotlightOnlyTest = fe, e.materialDiagnosticMode = at, e.materialSharing = Ie.enabled, e.adaptive = T.enabled, e.hardwareScaling = w.getHardwareScalingLevel(), e.renderWidth = w.getRenderWidth(), e.renderHeight = w.getRenderHeight(), e.devicePixelRatio = window.devicePixelRatio, e.bloom = pe.bloomEnabled, e.fxaa = pe.fxaaEnabled, e.msaaSamples = pe.samples, e.highlight = Fe.isEnabled, e.stableShaderFeatures = p.stableShaderFeatures, e.spotlightShadows = ae.shadowEnabled, e.billboard = bn, e.spotlight = _e, e.pointerX = !be && nt ? et.x : null, e.pointerY = !be && nt ? et.y : null, e.camera = D.activeCamera?.name ?? null, e.cameraAlpha = A.alpha, e.cameraBeta = A.beta, e.cameraRadius = A.radius, e.cameraTargetX = A.target.x, e.cameraTargetY = A.target.y, e.cameraTargetZ = A.target.z, e.cameraFov = A.fov, e.freeDetailCamera = !1, e.warmingMaterials = Fn, Ee ? "flight" : be ? "detail" : "overview"), () => {
 		if (!ct || !ye) return "Wait for the scene to load.";
 		if (st !== m.length + 5) return "Benchmark requires all stadium and team GLBs.";
-		if (Ee || Nn) return "Wait for the flight or warmup to finish.";
+		if (Ee || Fn) return "Wait for the flight or warmup to finish.";
 		let e = D.environmentTexture?.isReady() ?? !1;
 		return !e || !D.isReady(!0) ? (QT(D, e), "Wait for textures and shaders to finish loading.") : null;
-	}) : null, On = () => {
-		let e = performance.now(), t = e - xn, n = Math.min(.1, t / 1e3);
-		if (xn = e, E(t, e, !!Ee), h && e - _n > 1e3 && (gn(), _n = e), ye && !be && !Ee && (A.alpha += p.cameraRotationDegreesPerSecond * Math.PI / 180 * n), jt(n), Ee) {
+	}) : null, An = () => {
+		let e = performance.now(), t = e - Cn, n = Math.min(.1, t / 1e3);
+		if (Cn = e, E(t, e, !!Ee), h && e - yn > 1e3 && (vn(), yn = e), ye && !be && !Ee && (A.alpha += p.cameraRotationDegreesPerSecond * Math.PI / 180 * n), Nt(n), Ee) {
 			let e = Math.min(1, Ee.elapsed / Ee.duration), t = e * e * (3 - 2 * e);
 			Se = Te ? 1 - t : t;
 		} else Se = +!!be;
-		pt(), te.shadowEnabled = !1, ae.shadowEnabled = p.detailShadowsEnabled && !fe && Se > .001 && !Te && (p.detailShadowsDuringFlight || !Ee);
-		let r = Ct === "FIXED_LIGHT" && Ee ? +!!Te : Se, i = fe ? 0 : p.detailSunIntensity, a = fe ? 0 : p.detailAmbientIntensity, o = fe ? 0 : p.detailEnvironmentIntensity;
+		ht(), te.shadowEnabled = !1, ae.shadowEnabled = p.detailShadowsEnabled && !fe && Se > .001 && !Te && (p.detailShadowsDuringFlight || !Ee);
+		let r = Tt === "FIXED_LIGHT" && Ee ? +!!Te : Se, i = fe ? 0 : p.detailSunIntensity, a = fe ? 0 : p.detailAmbientIntensity, o = fe ? 0 : p.detailEnvironmentIntensity;
 		if (te.intensity = ne + (i - ne) * r, ee.intensity = I + (a - I) * r, D.environmentIntensity = se + (o - se) * r, p.stableShaderFeatures || (ce.toneMappingEnabled = Se > .9), ce.toneMappingType = Ye.TONEMAPPING_ACES, Ee || (ce.exposure = be ? p.detailExposure : ue, ce.contrast = be ? p.detailContrast : de), p.stableShaderFeatures || (ce.colorCurvesEnabled = Se > .98), p.stableShaderFeatures || (D.fogMode = Se > .9 ? tt.FOGMODE_EXP2 : tt.FOGMODE_NONE), p.stableShaderFeatures || (D.fogDensity = p.detailFogDensity * Math.max(0, (Se - .9) / .1)), ie.intensity = (fe ? 100 : p.detailSpotIntensity) * r, ae.intensity = ie.intensity, xe) {
 			let e = xe.center, t = ie.position.set(Qe.x, we + p.detailSpotHeightAbovePitch, Qe.z), n = Qe.subtract(e);
 			n.y = 0, n.lengthSquared() < 1e-4 && n.set(0, 0, 1), n.normalize(), fe && (t.copyFrom(e.add(n.scale(p.debugSpotDistanceFromHouse))), t.y = e.y + p.debugSpotHeightAboveHouse);
@@ -56121,21 +56148,21 @@ function rE(e, t) {
 			let a = xe.radius * p.detailSpotFocusMargin, o = Math.max(p.detailSpotMinAngle, Math.min(p.detailSpotMaxAngle, 2 * Math.atan2(a, i))), s = Se * Se * (3 - 2 * Se);
 			ie.angle = fe ? 2.4 : p.detailSpotAngle + (o - p.detailSpotAngle) * s, ie.range = fe ? 1e3 : Math.max(250, i + xe.radius * 3), ae.position.copyFrom(ie.position), ae.direction.copyFrom(ie.direction), ae.angle = ie.angle, ae.range = ie.range;
 			let c = Math.cos(ie.angle * .5), l = Math.cos(ie.angle * .5 * (1 - ie.softness));
-			ie.coneLimits.set(c * c, l * l, ie.range * ie.range), fe && (It.position.copyFrom(t), Rt.position.copyFrom(e.add(n.scale(Math.max(5, xe.radius * .65)))), Rt.position.y = e.y + 2, zt.textContent = `Источник (оранжевый): ${t.x.toFixed(1)}, ${t.y.toFixed(1)}, ${t.z.toFixed(1)}\nДом: ${e.x.toFixed(1)}, ${e.y.toFixed(1)}, ${e.z.toFixed(1)}\nДистанция: ${i.toFixed(1)} · Угол: ${ae.angle.toFixed(2)} rad\nБелая сфера должна освещаться прожектором. Оранжевая светится сама.`);
+			ie.coneLimits.set(c * c, l * l, ie.range * ie.range), fe && (Rt.position.copyFrom(t), Bt.position.copyFrom(e.add(n.scale(Math.max(5, xe.radius * .65)))), Bt.position.y = e.y + 2, Vt.textContent = `Источник (оранжевый): ${t.x.toFixed(1)}, ${t.y.toFixed(1)}, ${t.z.toFixed(1)}\nДом: ${e.x.toFixed(1)}, ${e.y.toFixed(1)}, ${e.z.toFixed(1)}\nДистанция: ${i.toFixed(1)} · Угол: ${ae.angle.toFixed(2)} rad\nБелая сфера должна освещаться прожектором. Оранжевая светится сама.`);
 		}
 		let s = be || _e || Je > .01;
-		if (s !== vn) {
+		if (s !== bn) {
 			for (let e of ut) e.setEnabled(s);
-			vn = s;
+			bn = s;
 		}
-		if (ht(), (yn !== at || bn !== (be && !Te && !Ee && xe?.config.id === "carabell")) && (ot(), yn = at, bn = !(!be || Te || Ee || xe?.config.id !== "carabell")), Jt === "C" || Jt === "D") for (let e of Yt.keys()) {
-			let t = Jt === "C" ? Xt : Pe.get(e);
+		if (_t(), (xn !== at || Sn !== (be && !Te && !Ee && xe?.config.id === "carabell")) && (ot(), xn = at, Sn = !(!be || Te || Ee || xe?.config.id !== "carabell")), Xt === "C" || Xt === "D") for (let e of Zt.keys()) {
+			let t = Xt === "C" ? Qt : Pe.get(e);
 			!e.isDisposed() && t && e.material !== t && (e.material = t);
 		}
 		let c = h ? performance.now() : 0;
-		if (D.render(), !Dn) return;
-		let l = performance.now() - c, u = Dn.drawCalls;
-		Dn.recordFrame(e, t, l, u), un(l, u), Ee && e - Tn > 250 && (wn.textContent = `FLIGHT ${w.getFps().toFixed(0)} FPS | ${D.getActiveMeshes().length} meshes | shadows ${ae.shadowEnabled ? "on" : "off"}`, Tn = e), wn.style.display = Ee ? "block" : "none", Ee && e - Cn > 1e3 && (console.log("TRIBUNE TRANSITION PERF", {
+		if (D.render(), !kn) return;
+		let l = performance.now() - c, u = kn.drawCalls;
+		kn.recordFrame(e, t, l, u), dn(l, u), Ee && e - Dn > 250 && (En.textContent = `FLIGHT ${w.getFps().toFixed(0)} FPS | ${D.getActiveMeshes().length} meshes | shadows ${ae.shadowEnabled ? "on" : "off"}`, Dn = e), En.style.display = Ee ? "block" : "none", Ee && e - Tn > 1e3 && (console.log("TRIBUNE TRANSITION PERF", {
 			fps: Math.round(w.getFps()),
 			frameMs: Number((1e3 / Math.max(1, w.getFps())).toFixed(1)),
 			drawCalls: u,
@@ -56147,18 +56174,18 @@ function rE(e, t) {
 			shaderFeaturesFixed: p.stableShaderFeatures,
 			toneMapping: ce.toneMappingEnabled,
 			fogMode: D.fogMode
-		}), Cn = e), e - Sn >= 250 && (W.textContent = "FPS: " + w.getFps().toFixed(0), Sn = e);
-	}, kn = !1, An = !1, jn = () => {
-		let e = kn && !document.hidden;
-		e && !An && (xn = performance.now(), w.runRenderLoop(On), An = !0), !e && An && (w.stopRenderLoop(On), An = !1);
-	}, Mn = new IntersectionObserver((e) => {
-		kn = e.some((e) => e.isIntersecting), jn();
+		}), Tn = e), e - wn >= 250 && (fn.textContent = "FPS: " + w.getFps().toFixed(0), wn = e);
+	}, jn = !1, Mn = !1, Nn = () => {
+		let e = jn && !document.hidden;
+		e && !Mn && (Cn = performance.now(), w.runRenderLoop(An), Mn = !0), !e && Mn && (w.stopRenderLoop(An), Mn = !1);
+	}, Pn = new IntersectionObserver((e) => {
+		jn = e.some((e) => e.isIntersecting), Nn();
 	}, { threshold: .05 });
-	Mn.observe(e), document.addEventListener("visibilitychange", jn);
-	let Nn = !1;
+	Pn.observe(e), document.addEventListener("visibilitychange", Nn);
+	let Fn = !1;
 	window.addEventListener("keydown", async (e) => {
-		if (!h || e.key.toLowerCase() !== "p" || e.repeat || Nn) return;
-		Nn = !0;
+		if (!h || e.key.toLowerCase() !== "p" || e.repeat || Fn) return;
+		Fn = !0;
 		let t = /* @__PURE__ */ new Map();
 		for (let e of Ne.keys()) e.material && !t.has(e.material) && t.set(e.material, e);
 		let n = [...t.keys()], r = 0, i = performance.now();
@@ -56175,14 +56202,14 @@ function rE(e, t) {
 				r++, r % 25 == 0 && (console.log("TRIBUNE WARMUP", r, "/", n.length), await new Promise((e) => requestAnimationFrame(() => e())));
 			}
 		}
-		console.log("TRIBUNE WARMUP DONE", r, "materials", Math.round(performance.now() - i), "ms"), Nn = !1;
-	}), ft().then(() => {
+		console.log("TRIBUNE WARMUP DONE", r, "materials", Math.round(performance.now() - i), "ms"), Fn = !1;
+	}), mt().then(() => {
 		Ue(), D.materials.forEach(O), ct = !0, console.log("TRIBUNE V5 READY — P: optional shader warmup; fixed shader features:", p.stableShaderFeatures), console.log("STANDARD LIGHT FALLOFF:", D.materials.filter((e) => e instanceof gc && !e.usePhysicalLightFalloff).length, "PBR materials configured");
 	});
-	function Pn() {
-		Mn.disconnect(), document.removeEventListener("visibilitychange", jn), window.removeEventListener("keydown", qt), window.removeEventListener("resize", N), w.stopRenderLoop(), w.dispose(), v.remove();
+	function In() {
+		Pn.disconnect(), document.removeEventListener("visibilitychange", Nn), window.removeEventListener("keydown", Yt), window.removeEventListener("resize", N), w.stopRenderLoop(), w.dispose(), v.remove();
 	}
-	return { dispose: Pn };
+	return { dispose: In };
 }
 //#endregion
 export { rE as mountStadium };

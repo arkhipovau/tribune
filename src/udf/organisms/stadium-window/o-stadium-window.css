@@ -17,6 +17,7 @@
   position: absolute;
   inset: 0;
   background: var(--bg-stadium);
+  background-image: var(--bg-stadium-studio);
   text-align: left;
   clip-path: inset(var(--clip-t, var(--card-offset)) var(--clip-r, 39px) var(--clip-b, var(--card-offset)) var(--clip-l, 37px) round var(--clip-rad, 30px));
   transform: translateY(var(--rise, 0px));

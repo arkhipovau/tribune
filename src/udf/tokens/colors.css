@@ -6,7 +6,9 @@
   --bg-hero: #f2f2f2;
   --bg-grey: #f0f0f0;
   --bg-white: #ffffff;
-  --bg-stadium: #080b10;
+  --bg-stadium: #ececec;
+  /* Light studio backdrop behind the 3D stadium (palette greys: lighter centre, softer edges). */
+  --bg-stadium-studio: radial-gradient(ellipse 70% 65% at 50% 46%, #f4f4f4 0%, #ececec 58%, #e2e2e2 100%);
   --green: #c8edbd;
   --dot: #2e933f;
   --shadow: 0 4.7px 18.8px rgba(0, 0, 0, 0.16);

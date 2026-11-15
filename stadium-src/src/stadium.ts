@@ -22,6 +22,7 @@ import { Material } from "@babylonjs/core/Materials/material";
 import { MaterialPluginBase } from "@babylonjs/core/Materials/materialPluginBase";
 import { PBRMaterial } from "@babylonjs/core/Materials/PBR/pbrMaterial";
 import { StandardMaterial } from "@babylonjs/core/Materials/standardMaterial";
+import { DynamicTexture } from "@babylonjs/core/Materials/Textures/dynamicTexture";
 import { UniformBuffer } from "@babylonjs/core/Materials/uniformBuffer";
 import { Mesh } from "@babylonjs/core/Meshes/mesh";
 import { SubMesh } from "@babylonjs/core/Meshes/subMesh";
@@ -73,6 +74,10 @@ export type StadiumOptions = {
   /** Folder with light copies of the team houses (small textures) for the first view. When set, houses
    *  load from here and the full textures are swapped in when a house is opened. Default: off. */
   liteModelsUrl?: string;
+  /** Soft contact shadow under the stadium: a flat plane with a pre-blurred texture of the stadium
+   *  footprint (one quad, no shadow maps). opacity 0..1, offset in world XZ (away from the light).
+   *  Default: off. */
+  groundShadow?: { opacity: number; offset?: [number, number] };
 };
 export type StadiumHandle = { dispose: () => void };
 
@@ -788,6 +793,46 @@ function widenFieldMarkings(mesh: Mesh) {
   mesh.setVerticesData(VertexBuffer.PositionKind, positions);
 }
 
+// Soft contact shadow (StadiumOptions.groundShadow): a quad under the stadium with a blurred
+// rounded-rectangle footprint drawn once into a canvas. Costs one draw call, no shadow maps.
+let groundShadowPlane: Mesh | null = null;
+function createGroundShadow(min: Vector3, max: Vector3, cfg: { opacity: number; offset?: [number, number] }): Mesh {
+  const sizeX = max.x - min.x, sizeZ = max.z - min.z;
+  const spread = 1.5; // plane is larger than the footprint so the blur has room
+  const texW = 512, texH = Math.max(64, Math.round(512 * sizeZ / sizeX));
+  const tex = new DynamicTexture("tribuneGroundShadowTex", { width: texW, height: texH }, scene, true);
+  tex.hasAlpha = true;
+  const ctx = tex.getContext() as CanvasRenderingContext2D;
+  ctx.clearRect(0, 0, texW, texH);
+  const w = texW / spread, h = texH / spread, r = Math.min(w, h) * 0.32;
+  // Draw the footprint far outside the canvas and keep only its blurred shadow (works everywhere,
+  // unlike ctx.filter): shadowOffset brings the blur back to the centre.
+  const far = texW * 4;
+  ctx.shadowColor = `rgba(0,0,0,${cfg.opacity})`;
+  ctx.shadowBlur = Math.min(w, h) * 0.22;
+  ctx.shadowOffsetX = far;
+  ctx.fillStyle = "#000";
+  const x = (texW - w) / 2 - far, y = (texH - h) / 2;
+  ctx.beginPath();
+  ctx.roundRect(x, y, w, h, r);
+  ctx.fill();
+  tex.update();
+  const mat = new StandardMaterial("tribuneGroundShadowMat", scene);
+  mat.disableLighting = true;
+  mat.emissiveColor = Color3.Black();
+  mat.diffuseColor = Color3.Black();
+  mat.specularColor = Color3.Black();
+  mat.opacityTexture = tex;
+  mat.backFaceCulling = false;
+  const plane = MeshBuilder.CreateGround("tribuneGroundShadow", { width: sizeX * spread, height: sizeZ * spread }, scene);
+  const [ox, oz] = cfg.offset ?? [0, 0];
+  plane.position.set((min.x + max.x) / 2 + ox, min.y + 0.05, (min.z + max.z) / 2 + oz);
+  plane.material = mat;
+  plane.isPickable = false;
+  plane.receiveShadows = false;
+  return plane;
+}
+
 async function loadWorld() {
   try {
     stadiumMeshes=await importModel(SETTINGS.stadiumFile);
@@ -799,6 +844,7 @@ async function loadWorld() {
       min=Vector3.Minimize(min,b.minimumWorld);max=Vector3.Maximize(max,b.maximumWorld);
     }
     stadiumCenter=min.add(max).scale(.5);
+    if (options.groundShadow) groundShadowPlane = createGroundShadow(min, max, options.groundShadow);
     camera.setTarget(stadiumCenter);
     spotlightCenter=stadiumCenter.clone();
     spotlightCenter.y=-10000;
@@ -1238,6 +1284,7 @@ async function upgradeTeamTextures(team: LoadedTeam) {
 }
 function openTeam(team:LoadedTeam) {
   if(detailMode || cameraTransition) return;
+  groundShadowPlane?.setEnabled(false); // the close-up has its own lighting; no contact shadow there
   void upgradeTeamTextures(team);
   savedOverview={alpha:camera.alpha,beta:camera.beta,radius:camera.radius,height:currentOrthoHalfHeight,target:camera.target.clone()};
   savedOverviewSpot.center.copyFrom(spotlightCenter);
@@ -1321,6 +1368,7 @@ function closeTeam() {
   debugTarget.setEnabled(false);
   animateCamera(previous,()=>{
     detailMode=false; selectedDetailTeam=null; savedOverview=null; returningToOverview=false;
+    groundShadowPlane?.setEnabled(true);
     deferredMaskPending = false;
     updateSelectedAtmosphere(null);
     for (const mesh of [...roofDetailMeshes, ...columnDetailMeshes]) mesh.setEnabled(false);

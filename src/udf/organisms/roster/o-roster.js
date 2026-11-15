@@ -127,6 +127,7 @@ export function initRoster() {
   filterRoot.className = "m-filter";
   grid.before(filterRoot);
 
+  let animate = false;
   const apply = ({ key, value }) => {
     const matches = (tileNode) => {
       if (value === null) return true;
@@ -135,8 +136,12 @@ export function initRoster() {
       return key === "foundation" && tileNode.dataset.foundationTile === value;
     };
     const update = () => tiles.forEach((t) => { t.hidden = !matches(t); });
-    if (document.startViewTransition && !matchMedia("(prefers-reduced-motion: reduce)").matches) document.startViewTransition(update);
-    else update();
+    // First paint is instant; later changes reflow with a view transition (if supported and motion is on).
+    if (!animate || !document.startViewTransition || matchMedia("(prefers-reduced-motion: reduce)").matches) { update(); animate = true; return; }
+    const transition = document.startViewTransition(update);
+    // A transition can be skipped by the browser (e.g. during layout); the DOM update still applies.
+    transition.ready.catch(() => {});
+    transition.finished.catch(() => {});
   };
   initFilter(filterRoot, { facets, total: data.teams.length, onChange: apply });
 }

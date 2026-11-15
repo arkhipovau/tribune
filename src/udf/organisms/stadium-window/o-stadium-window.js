@@ -3,6 +3,7 @@
 import { TRIBUNE } from "../../../data/teams.js";
 
 // Overview clay (linear RGB): matte graphite, like a dark anodised device.
+const STAGE_IS_DARK = false;
 const STADIUM_TINT = [0.034, 0.036, 0.041];
 // Wider light/shadow range than the MVP default, so the dark stadium reads as a solid object.
 const STADIUM_SHADING = [0.35, 2.2];
@@ -51,6 +52,7 @@ export function initStadiumWindow() {
         overviewFacets: STADIUM_FACETS,
         overviewSheen: STADIUM_SHEEN,
         overviewZoomOut: 1.12, // a bit smaller in the open window, with room around it
+        groundShadow: { opacity: 0.38, offset: [10, 14] }, // soft contact shadow on the light studio floor
         hardwareScaling: 1 / Math.min(window.devicePixelRatio || 1, 2), // crisp on Retina
       });
     } catch (error) {
@@ -117,7 +119,8 @@ export function initStadiumWindow() {
     const HEADER_BOTTOM = 64; // px; the fixed header's lower edge
     const stageTop = offset * closed + shrinkY; // visible top edge of the window inside the sticky frame
     const stageUnderHeader = rect.top <= 1 && rect.bottom >= HEADER_BOTTOM && stageTop < HEADER_BOTTOM / 2;
-    document.documentElement.classList.toggle("is-stage-dark", stageUnderHeader);
+    // The stage is light now, so the header keeps its normal (dark) look. Flip STAGE_IS_DARK if the stage goes dark again.
+    document.documentElement.classList.toggle("is-stage-dark", STAGE_IS_DARK && stageUnderHeader);
     frame.style.setProperty("--clip-rad", `${(CARD.radius * closed).toFixed(2)}px`);
     // A touch of scale inside the window sells the "flying into it" feeling.
     frame.style.setProperty("--zoom", (OPEN_ZOOM + (CARD.zoom - OPEN_ZOOM) * closed).toFixed(4));
