@@ -2,20 +2,50 @@
 // be seen, or right away when the hero arrow is used.
 import { TRIBUNE } from "../../../data/teams.js";
 
-// Overview clay (linear RGB): matte graphite, like a dark anodised device.
-const STAGE_IS_DARK = false;
-const STADIUM_TINT = [0.034, 0.036, 0.041];
-// Wider light/shadow range than the MVP default, so the dark stadium reads as a solid object.
-const STADIUM_SHADING = [0.35, 2.2];
-// Facets: sides darker, tops lighter, like light falling on a solid device.
-const STADIUM_FACETS = [0.28, 1.45];
-// Sheen: light sweeps across the body from one corner, with a cool blue-grey glint on the lit side.
-const STADIUM_SHEEN = { color: [0.07, 0.085, 0.115], range: [0.45, 1.9], direction: [-1, -1], radius: 170 };
+// Looks of the overview (colours in linear RGB). "base" is the live look; the others are
+// variants to compare, picked with ?look=1 / ?look=2 / ?look=3 in the address bar.
+const LOOKS = {
+  // Light studio, matte graphite stadium with a cool sheen.
+  base: {
+    stageIsDark: false,
+    tint: [0.034, 0.036, 0.041],
+    shading: [0.35, 2.2], // wider light/shadow range, so the dark stadium reads as a solid object
+    facets: [0.28, 1.45], // sides darker, tops lighter
+    sheen: { color: [0.07, 0.085, 0.115], range: [0.45, 1.9], direction: [-1, -1], radius: 170 },
+    shadow: { opacity: 0.38, offset: [10, 14] },
+  },
+};
+// 1: same as base, deeper contact shadow.
+LOOKS["1"] = { ...LOOKS.base, shadow: { opacity: 0.5, offset: [-16, -10], blur: 0.26, size: 1.03 } };
+// 2: deeper shadow, stadium in clean neutral clay greys (no blue), so the houses read as the accents.
+LOOKS["2"] = {
+  ...LOOKS["1"],
+  tint: [0.52, 0.52, 0.52],
+  shading: [0.7, 1.35],
+  facets: [0.72, 1.1],
+  houseShade: 0, // houses keep their own colours
+  sheen: { color: [0.02, 0.02, 0.02], range: [0.86, 1.1], direction: [-1, -1], radius: 170 },
+  shadow: { opacity: 0.42, offset: [-16, -10], blur: 0.26, size: 1.03 },
+};
+// 3: dark navy space lit from above, a deep-blue solid stadium and a dense shadow; the houses glow.
+LOOKS["3"] = {
+  stageIsDark: true,
+  tint: [0.007, 0.012, 0.03],
+  houseShade: 0, // houses keep their own colours and glow against the dark stadium
+  shading: [0.4, 1.9],
+  facets: [0.3, 1.5],
+  sheen: { color: [0.012, 0.03, 0.075], range: [0.5, 1.7], direction: [-1, -1], radius: 170 },
+  shadow: { opacity: 0.75, offset: [-16, -10], blur: 0.26, size: 1.03 },
+};
+const LOOK_ID = new URLSearchParams(window.location.search).get("look");
+const LOOK = LOOKS[LOOK_ID] ?? LOOKS.base;
+const STAGE_IS_DARK = LOOK.stageIsDark;
 
 export function initStadiumWindow() {
 
   const section = document.getElementById("stadium");
   if (!section) return;
+  if (LOOKS[LOOK_ID]) section.dataset.look = LOOK_ID; // css: stage background per look
   const mount = section.querySelector(".o-stadium__mount");
   const fallback = section.querySelector(".o-stadium__fallback");
   const base = new URL("assets/stadium/", document.baseURI);
@@ -47,12 +77,13 @@ export function initStadiumWindow() {
         teamHref: (id) => (teams && teams.teams.some((t) => t.id === id) ? `team.html?id=${encodeURIComponent(id)}` : null),
         reducedMotion: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
         panels: false, // the card shows the model only
-        overviewTint: STADIUM_TINT, // matte graphite
-        overviewShading: STADIUM_SHADING,
-        overviewFacets: STADIUM_FACETS,
-        overviewSheen: STADIUM_SHEEN,
+        overviewTint: LOOK.tint,
+        overviewShading: LOOK.shading,
+        overviewFacets: LOOK.facets,
+        overviewSheen: LOOK.sheen,
+        overviewHouseShade: LOOK.houseShade, // undefined → author default
         overviewZoomOut: 1.12, // a bit smaller in the open window, with room around it
-        groundShadow: { opacity: 0.38, offset: [10, 14] }, // soft contact shadow on the light studio floor
+        groundShadow: LOOK.shadow, // soft contact shadow on the studio floor
         hardwareScaling: 1 / Math.min(window.devicePixelRatio || 1, 2), // crisp on Retina
       });
     } catch (error) {

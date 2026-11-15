@@ -19,10 +19,6 @@ jobs:
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with: { path: dist }
-      # Until Settings → Pages → Source is "GitHub Actions", GitHub also runs the legacy
-      # "deploy from branch" build, which publishes the repo root (no index.html → 404).
-      # Waiting makes this deploy land after it. Remove once the source is switched.
-      - run: sleep 120
   deploy:
     needs: build
     runs-on: ubuntu-latest

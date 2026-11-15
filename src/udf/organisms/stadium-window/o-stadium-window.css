@@ -32,3 +32,12 @@
 
 /* The stadium module paints its own layout background; let the site token show through. */
 .o-stadium #tribuneLayout { background: transparent; }
+
+/* Look 3 (?look=3): a dark navy space lit from above. A soft pool of light on the floor under the
+   stadium, falling off into deep blue walls, so the space reads as a room rather than a flat fill. */
+#stadium[data-look="3"] .o-stadium {
+  background: #080b10;
+  background-image:
+    radial-gradient(ellipse 46% 44% at 50% 56%, rgba(128, 156, 204, 0.5) 0%, rgba(78, 104, 150, 0.26) 48%, transparent 78%),
+    radial-gradient(ellipse 90% 80% at 50% 40%, #1c2a40 0%, #101a2a 55%, #080b10 100%);
+}

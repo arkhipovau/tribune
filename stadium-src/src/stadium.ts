@@ -76,8 +76,13 @@ export type StadiumOptions = {
   liteModelsUrl?: string;
   /** Soft contact shadow under the stadium: a flat plane with a pre-blurred texture of the stadium
    *  footprint (one quad, no shadow maps). opacity 0..1, offset in world XZ (away from the light).
+   *  size: footprint scale vs the stadium (default 1).
+   *  blur: softness as a share of the footprint (default 0.22; smaller = crisper, denser shadow).
    *  Default: off. */
-  groundShadow?: { opacity: number; offset?: [number, number] };
+  /** Overview tint on the team houses: 0 = houses keep their own colours, 1 = full clay tint.
+   *  Default: the MVP value (same as the stadium). */
+  overviewHouseShade?: number;
+  groundShadow?: { opacity: number; offset?: [number, number]; blur?: number; size?: number };
 };
 export type StadiumHandle = { dispose: () => void };
 
@@ -142,6 +147,8 @@ const SETTINGS = {
   detailExposure: 0.95,
   detailContrast: 1.40,
 };
+// Overview tint on team houses (see StadiumOptions.overviewHouseShade).
+const HOUSE_SHADE = options.overviewHouseShade ?? SETTINGS.overviewShadeStrength;
 
 const TEAMS = [
   { id:"carabell", name:"Carabell Club", file:"Carabell.glb", country:"Philippines", info:"Football for Humanity", color:"#F23C38" },
@@ -498,7 +505,7 @@ class AtmospherePlugin extends MaterialPluginBase {
     ubo.updateFloat("tribuneSoftness", SETTINGS.spotlightSoftness);
     ubo.updateFloat("tribuneDetailBlend", detailBlend);
     ubo.updateFloat("tribuneSelected", this.selected ? 1 : 0);
-    ubo.updateFloat("tribuneShade", SETTINGS.overviewShadeStrength);
+    ubo.updateFloat("tribuneShade", this.role === "house" ? HOUSE_SHADE : SETTINGS.overviewShadeStrength);
     ubo.updateFloat("tribuneFieldMarkings", this.role === "fieldMarkings" ? 1 : 0);
     ubo.updateFloat("tribuneSurroundRadius", SETTINGS.detailSurroundRadius);
     ubo.updateFloat("tribuneSurroundFeather", SETTINGS.detailSurroundFeather);
@@ -625,7 +632,7 @@ const unoptimizedMaterialByMesh = new Map<Mesh, Material>();
 const optimizedMaterialByMesh = new Map<Mesh, Material>();
 const pluginByMaterial = new Map<Material, AtmospherePlugin>();
 const materialKindByMesh = new Map<Mesh, "architecture" | "roof">();
-type AtmosphereRole = "normal" | "billboard" | "field" | "fieldMarkings";
+type AtmosphereRole = "normal" | "billboard" | "field" | "fieldMarkings" | "house";
 function addAtmosphere(meshes: Mesh[], kind: "architecture" | "roof" = "architecture", role: AtmosphereRole = "normal") {
   // Local cache is deliberate: each call is a separate team/architectural domain.
   const sharedByOriginal = new Map<Material, Material>();
@@ -796,20 +803,21 @@ function widenFieldMarkings(mesh: Mesh) {
 // Soft contact shadow (StadiumOptions.groundShadow): a quad under the stadium with a blurred
 // rounded-rectangle footprint drawn once into a canvas. Costs one draw call, no shadow maps.
 let groundShadowPlane: Mesh | null = null;
-function createGroundShadow(min: Vector3, max: Vector3, cfg: { opacity: number; offset?: [number, number] }): Mesh {
+function createGroundShadow(min: Vector3, max: Vector3, cfg: { opacity: number; offset?: [number, number]; blur?: number; size?: number }): Mesh {
   const sizeX = max.x - min.x, sizeZ = max.z - min.z;
-  const spread = 1.5; // plane is larger than the footprint so the blur has room
+  const grow = cfg.size ?? 1;
+  const spread = 1.5 * grow; // plane is larger than the footprint so the blur has room
   const texW = 512, texH = Math.max(64, Math.round(512 * sizeZ / sizeX));
   const tex = new DynamicTexture("tribuneGroundShadowTex", { width: texW, height: texH }, scene, true);
   tex.hasAlpha = true;
   const ctx = tex.getContext() as CanvasRenderingContext2D;
   ctx.clearRect(0, 0, texW, texH);
-  const w = texW / spread, h = texH / spread, r = Math.min(w, h) * 0.32;
+  const w = texW * grow / spread, h = texH * grow / spread, r = Math.min(w, h) * 0.32;
   // Draw the footprint far outside the canvas and keep only its blurred shadow (works everywhere,
   // unlike ctx.filter): shadowOffset brings the blur back to the centre.
   const far = texW * 4;
   ctx.shadowColor = `rgba(0,0,0,${cfg.opacity})`;
-  ctx.shadowBlur = Math.min(w, h) * 0.22;
+  ctx.shadowBlur = Math.min(w, h) * (cfg.blur ?? 0.22);
   ctx.shadowOffsetX = far;
   ctx.fillStyle = "#000";
   const x = (texW - w) / 2 - far, y = (texH - h) / 2;
@@ -885,7 +893,7 @@ async function loadWorld() {
         shadows.addShadowCaster(m);
         // Detail shadow casters are assigned only for the selected team.
       }
-      addAtmosphere(meshes);
+      addAtmosphere(meshes, "architecture", "house");
       if (config.id === "carabell") for (const mesh of meshes) maskedTeamMaterials.set(mesh, mesh.material);
       const center=min.add(max).scale(.5);
       const radius=max.subtract(min).length()*.5;
