@@ -73,6 +73,7 @@ const TEAMS = [
     tagline: "Girls who fly without fear.",
     description: "Inspired by the fearless spirit of the eagle, Brave Eagles soar with courage, ambition, and pride. Dressed in Uganda’s vibrant yellow, red, and black, the team celebrates the power of girls in football, turning young dreams into a bold symbol of strength, freedom, and possibility.",
     foundation: "wifu",
+    type: "girls", // the content pack describes it as a girls’ team
   },
   {
     id: "we", name: "WE Football Kisumu", country: "Kenya",
@@ -91,6 +92,7 @@ const TEAMS = [
     tagline: "Fox-fast girls in neon pink.",
     description: "Fueled by the fiery spirit of a fox, Firetails bring speed, creativity, and unstoppable energy to the pitch. With glowing pink jerseys, neon colors, and a futuristic clubhouse, this fearless girls’ team turns every match into a dazzling adventure where passion burns bright and imagination knows no limits.",
     foundation: "weunited",
+    type: "girls", // the content pack describes it as a girls’ team
   },
   {
     id: "lwf", name: "Life With Football", country: "Philippines",

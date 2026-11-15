@@ -2,6 +2,7 @@
 // Every tile has the same anatomy: a surface (photo, logo or quote) and a
 // caption underneath in the same two-line type. No text sits on the photos.
 import { TRIBUNE } from "../../../data/teams.js";
+import { initFilter } from "../../molecules/filter/m-filter.js";
 
 export function initRoster() {
 
@@ -38,13 +39,16 @@ export function initRoster() {
     return node;
   }
 
+  const countryOf = (team) => (team.country || "").split(",").pop().trim();
+  const slug = (text) => text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+
   function teamTile(team) {
     let count = null;
     if (team.drawing) {
       count = el("span", "m-tile__count");
       count.append(img(team.drawing, "Drawings"), `(${team.drawings})`);
     }
-    return tile({
+    const node = tile({
       href: `team.html?id=${encodeURIComponent(team.id)}`,
       surfaceClass: `m-tile__surface--photo${team.isPlaceholder ? " is-soon" : ""}`,
       surface: [img(team.houseCard || team.house, `${team.name} — team house`)],
@@ -52,15 +56,19 @@ export function initRoster() {
       note: team.tagline,
       extra: count,
     });
+    Object.assign(node.dataset, { team: team.id, country: slug(countryOf(team)), foundation: team.foundation || "", type: team.type || "" });
+    return node;
   }
 
   function foundationLogo(f) {
-    return tile({
+    const node = tile({
       surfaceClass: "m-tile__surface--logo",
       surface: [img(f.logo, f.name)],
       title: f.name,
       note: f.role,
     });
+    node.dataset.foundationTile = f.id;
+    return node;
   }
 
   function foundationQuote(f) {
@@ -77,6 +85,7 @@ export function initRoster() {
       extra: crests.childElementCount ? crests : null,
     });
     node.id = f.id;
+    node.dataset.foundationTile = f.id;
     return node;
   }
 
@@ -100,4 +109,34 @@ export function initRoster() {
   ];
   data.teams.slice(5).forEach((t) => layout.push(teamTile(t)));
   grid.append(...layout.filter(Boolean));
+  const tiles = [...grid.children];
+  tiles.forEach((t, i) => { t.style.viewTransitionName = `tile-${i}`; });
+
+  /* Filter: countries, foundations, girls' teams. */
+  const countBy = (list, keyOf, labelOf) => {
+    const map = new Map();
+    list.forEach((t) => { const k = keyOf(t); if (k) map.set(k, { value: k, label: labelOf(t), count: (map.get(k)?.count || 0) + 1 }); });
+    return [...map.values()].sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+  };
+  const facets = [
+    { key: "country", label: "Countries", tags: countBy(data.teams, (t) => slug(countryOf(t)), countryOf) },
+    { key: "foundation", label: "Foundations", tags: countBy(data.teams, (t) => t.foundation, (t) => data.foundations[t.foundation].name) },
+    { key: "type", label: "Girls’ teams", tags: countBy(data.teams, (t) => t.type, () => "Girls’ teams") },
+  ];
+  const filterRoot = document.createElement("div");
+  filterRoot.className = "m-filter";
+  grid.before(filterRoot);
+
+  const apply = ({ key, value }) => {
+    const matches = (tileNode) => {
+      if (value === null) return true;
+      if (tileNode.dataset.team) return tileNode.dataset[key] === value;
+      // Foundation tiles stay next to their teams when filtering by that foundation.
+      return key === "foundation" && tileNode.dataset.foundationTile === value;
+    };
+    const update = () => tiles.forEach((t) => { t.hidden = !matches(t); });
+    if (document.startViewTransition && !matchMedia("(prefers-reduced-motion: reduce)").matches) document.startViewTransition(update);
+    else update();
+  };
+  initFilter(filterRoot, { facets, total: data.teams.length, onChange: apply });
 }

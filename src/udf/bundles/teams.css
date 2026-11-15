@@ -2,3 +2,4 @@
 @import './shell.css';
 @import '../organisms/roster/o-roster.css';
 @import '../molecules/tile/m-tile.css';
+@import '../molecules/filter/m-filter.css';
