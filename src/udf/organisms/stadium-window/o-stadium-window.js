@@ -17,21 +17,19 @@ const LOOKS = {
 };
 // 1: same as base, deeper contact shadow.
 LOOKS["1"] = { ...LOOKS.base, shadow: { opacity: 0.5, offset: [-16, -10], blur: 0.26, size: 1.03 } };
-// 2: deeper shadow, stadium in clean neutral clay greys (no blue), so the houses read as the accents.
+// 2: deeper shadow, stadium in clean neutral clay greys (no blue), so the houses stand out under the spotlight.
 LOOKS["2"] = {
   ...LOOKS["1"],
   tint: [0.52, 0.52, 0.52],
   shading: [0.7, 1.35],
   facets: [0.72, 1.1],
-  houseShade: 0, // houses keep their own colours
   sheen: { color: [0.02, 0.02, 0.02], range: [0.86, 1.1], direction: [-1, -1], radius: 170 },
   shadow: { opacity: 0.42, offset: [-16, -10], blur: 0.26, size: 1.03 },
 };
-// 3: dark navy space lit from above, a deep-blue solid stadium and a dense shadow; the houses glow.
+// 3: dark navy space lit from above, a deep-blue solid stadium and a dense shadow; the spotlit house glows.
 LOOKS["3"] = {
   stageIsDark: true,
   tint: [0.007, 0.012, 0.03],
-  houseShade: 0, // houses keep their own colours and glow against the dark stadium
   shading: [0.4, 1.9],
   facets: [0.3, 1.5],
   sheen: { color: [0.012, 0.03, 0.075], range: [0.5, 1.7], direction: [-1, -1], radius: 170 },
@@ -81,7 +79,6 @@ export function initStadiumWindow() {
         overviewShading: LOOK.shading,
         overviewFacets: LOOK.facets,
         overviewSheen: LOOK.sheen,
-        overviewHouseShade: LOOK.houseShade, // undefined → author default
         overviewZoomOut: 1.12, // a bit smaller in the open window, with room around it
         groundShadow: LOOK.shadow, // soft contact shadow on the studio floor
         hardwareScaling: 1 / Math.min(window.devicePixelRatio || 1, 2), // crisp on Retina

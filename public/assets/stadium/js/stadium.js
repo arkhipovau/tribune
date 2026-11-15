@@ -55183,7 +55183,7 @@ function rE(e, t) {
 		detailEnvironmentIntensity: .4,
 		detailExposure: .95,
 		detailContrast: 1.4
-	}, m = t.overviewHouseShade ?? p.overviewShadeStrength, h = [
+	}, m = [
 		{
 			id: "carabell",
 			name: "Carabell Club",
@@ -55264,19 +55264,19 @@ function rE(e, t) {
 			info: "",
 			color: "#8A59C6"
 		}
-	], g = new URLSearchParams(window.location.search).get("diagnostics") === "1", _ = "tribune-stadium-style", v = document.getElementById(_) ?? document.createElement("style");
-	v.id = _, v.textContent = "\n  #tribuneLayout { position:absolute; inset:0; display:grid; grid-template-columns:minmax(190px,1fr) minmax(0,1000px) minmax(190px,1fr); align-items:stretch; gap:clamp(12px,2.2vw,40px); padding:clamp(16px,3vw,48px); box-sizing:border-box; background:#2f3847; color:#d6e8ed; font-family:Arial,sans-serif; }\n  #tribuneViewport { grid-column:2; width:100%; height:100%; min-height:0; max-width:100%; border-radius:0; clip-path:none; overflow:hidden; position:relative; justify-self:center; background:transparent; border:0; box-shadow:none; transition:none; }\n  #tribuneViewport.tribuneDetail { clip-path:none; background:transparent; }\n  #renderCanvas { position:absolute !important; inset:0 !important; display:block !important; width:100% !important; height:100% !important; max-width:none !important; max-height:none !important; border:0 !important; outline:0 !important; touch-action:none; }\n  .tribuneSide { min-width:0; max-width:300px; display:flex; flex-direction:column; gap:18px; }\n  #tribuneTeamList { display:flex; flex-wrap:wrap; gap:7px; }\n  .tribuneTeamButton { border:1px solid #294857; color:#9bbbc7; background:#10202d; border-radius:4px; padding:7px 9px; font-size:11px; cursor:pointer; }\n  .tribuneTeamButton:hover { color:#d7f9ff; border-color:#66c8db; }\n  #tribuneRight { grid-column:3; }\n  /* Embedded mode: only the model; controls float over the scene. */\n  #tribuneLayout.tribuneBare { position:absolute; inset:0; min-height:0; grid-template-columns:1fr; padding:0; gap:0; }\n  #tribuneLayout.tribuneBare .tribuneSide { display:none; }\n  #tribuneLayout.tribuneBare #tribuneViewport { grid-column:1; width:100%; height:100%; }\n  /* Site-style controls, centred at the bottom of the widget (embedded mode). */\n  #tribuneLayout .tribuneActions { position:absolute; left:50%; bottom:24px; transform:translateX(-50%); z-index:5; display:none; gap:0; padding:4px; border-radius:1000px; background:rgba(255,255,255,.6); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); }\n  #tribuneLayout .tribuneActions.isOpen { display:flex; }\n  #tribuneLayout .tribuneActions > * { display:inline-flex; align-items:center; height:36px; padding:0 16px; border:0; border-radius:1000px; background:transparent; color:#17100e; font:450 14px/1.1 \"Suisse Intl\", system-ui, sans-serif; letter-spacing:0; text-decoration:none; white-space:nowrap; cursor:pointer; transition:background .2s, transform .15s; }\n  #tribuneLayout .tribuneActions > *:hover { background:rgba(23,16,14,.05); }\n  #tribuneLayout .tribuneActions > *:active { transform:scale(.97); }\n  #tribuneLayout .tribuneActions > .tribuneTeamLink { background:#fff; box-shadow:0 2px 8px rgba(0,0,0,.06); font-weight:600; }\n  @media (max-width:950px) {\n    #tribuneLayout { position:relative; min-height:100%; grid-template-columns:1fr; justify-items:center; padding:22px 16px 60px; gap:20px; }\n    #tribuneViewport { grid-column:1; width:min(85vw, 650px); height:min(85vw, 650px); }\n    .tribuneSide { max-width:min(85vw,650px); width:100%; }\n    #tribuneRight { grid-column:1; }\n  }\n", v.isConnected || document.head.appendChild(v);
-	let y = document.createElement("main");
-	y.id = "tribuneLayout", y.innerHTML = "\n  <div id=\"tribuneViewport\" aria-label=\"Interactive 3D stadium\"></div>\n  <section class=\"tribuneSide\" id=\"tribuneRight\">\n    <div id=\"tribuneTeamList\"></div>\n  </section>", e.appendChild(y), t.panels === !1 && y.classList.add("tribuneBare");
-	let b = document.createElement("div");
-	b.className = "tribuneActions";
-	let x = document.createElement("a");
-	x.className = "tribuneTeamLink", x.textContent = "Open club page", x.style.display = "none";
-	let S = document.getElementById("tribuneViewport"), C = document.getElementById("tribuneTeamList"), w = document.createElement("canvas");
-	w.id = "renderCanvas", S.appendChild(w);
-	let T = new J(w, !0, { premultipliedAlpha: !1 });
-	T.setHardwareScalingLevel(r);
-	let E = {
+	], h = new URLSearchParams(window.location.search).get("diagnostics") === "1", g = "tribune-stadium-style", _ = document.getElementById(g) ?? document.createElement("style");
+	_.id = g, _.textContent = "\n  #tribuneLayout { position:absolute; inset:0; display:grid; grid-template-columns:minmax(190px,1fr) minmax(0,1000px) minmax(190px,1fr); align-items:stretch; gap:clamp(12px,2.2vw,40px); padding:clamp(16px,3vw,48px); box-sizing:border-box; background:#2f3847; color:#d6e8ed; font-family:Arial,sans-serif; }\n  #tribuneViewport { grid-column:2; width:100%; height:100%; min-height:0; max-width:100%; border-radius:0; clip-path:none; overflow:hidden; position:relative; justify-self:center; background:transparent; border:0; box-shadow:none; transition:none; }\n  #tribuneViewport.tribuneDetail { clip-path:none; background:transparent; }\n  #renderCanvas { position:absolute !important; inset:0 !important; display:block !important; width:100% !important; height:100% !important; max-width:none !important; max-height:none !important; border:0 !important; outline:0 !important; touch-action:none; }\n  .tribuneSide { min-width:0; max-width:300px; display:flex; flex-direction:column; gap:18px; }\n  #tribuneTeamList { display:flex; flex-wrap:wrap; gap:7px; }\n  .tribuneTeamButton { border:1px solid #294857; color:#9bbbc7; background:#10202d; border-radius:4px; padding:7px 9px; font-size:11px; cursor:pointer; }\n  .tribuneTeamButton:hover { color:#d7f9ff; border-color:#66c8db; }\n  #tribuneRight { grid-column:3; }\n  /* Embedded mode: only the model; controls float over the scene. */\n  #tribuneLayout.tribuneBare { position:absolute; inset:0; min-height:0; grid-template-columns:1fr; padding:0; gap:0; }\n  #tribuneLayout.tribuneBare .tribuneSide { display:none; }\n  #tribuneLayout.tribuneBare #tribuneViewport { grid-column:1; width:100%; height:100%; }\n  /* Site-style controls, centred at the bottom of the widget (embedded mode). */\n  #tribuneLayout .tribuneActions { position:absolute; left:50%; bottom:24px; transform:translateX(-50%); z-index:5; display:none; gap:0; padding:4px; border-radius:1000px; background:rgba(255,255,255,.6); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); }\n  #tribuneLayout .tribuneActions.isOpen { display:flex; }\n  #tribuneLayout .tribuneActions > * { display:inline-flex; align-items:center; height:36px; padding:0 16px; border:0; border-radius:1000px; background:transparent; color:#17100e; font:450 14px/1.1 \"Suisse Intl\", system-ui, sans-serif; letter-spacing:0; text-decoration:none; white-space:nowrap; cursor:pointer; transition:background .2s, transform .15s; }\n  #tribuneLayout .tribuneActions > *:hover { background:rgba(23,16,14,.05); }\n  #tribuneLayout .tribuneActions > *:active { transform:scale(.97); }\n  #tribuneLayout .tribuneActions > .tribuneTeamLink { background:#fff; box-shadow:0 2px 8px rgba(0,0,0,.06); font-weight:600; }\n  @media (max-width:950px) {\n    #tribuneLayout { position:relative; min-height:100%; grid-template-columns:1fr; justify-items:center; padding:22px 16px 60px; gap:20px; }\n    #tribuneViewport { grid-column:1; width:min(85vw, 650px); height:min(85vw, 650px); }\n    .tribuneSide { max-width:min(85vw,650px); width:100%; }\n    #tribuneRight { grid-column:1; }\n  }\n", _.isConnected || document.head.appendChild(_);
+	let v = document.createElement("main");
+	v.id = "tribuneLayout", v.innerHTML = "\n  <div id=\"tribuneViewport\" aria-label=\"Interactive 3D stadium\"></div>\n  <section class=\"tribuneSide\" id=\"tribuneRight\">\n    <div id=\"tribuneTeamList\"></div>\n  </section>", e.appendChild(v), t.panels === !1 && v.classList.add("tribuneBare");
+	let y = document.createElement("div");
+	y.className = "tribuneActions";
+	let b = document.createElement("a");
+	b.className = "tribuneTeamLink", b.textContent = "Open club page", b.style.display = "none";
+	let x = document.getElementById("tribuneViewport"), S = document.getElementById("tribuneTeamList"), C = document.createElement("canvas");
+	C.id = "renderCanvas", x.appendChild(C);
+	let w = new J(C, !0, { premultipliedAlpha: !1 });
+	w.setHardwareScalingLevel(r);
+	let T = {
 		enabled: !0,
 		baseScale: r,
 		currentScale: r,
@@ -55289,44 +55289,44 @@ function rE(e, t) {
 		lowFPSWindows: 0,
 		highFPSWindows: 0
 	};
-	function D(e, t, n) {
-		if (!E.enabled || document.hidden || e < 1 || e > 250 || (E.samples.push(e), E.samples.length < 90)) return;
-		let r = E.samples.slice().sort((e, t) => e - t);
-		E.samples.length = 0;
+	function E(e, t, n) {
+		if (!T.enabled || document.hidden || e < 1 || e > 250 || (T.samples.push(e), T.samples.length < 90)) return;
+		let r = T.samples.slice().sort((e, t) => e - t);
+		T.samples.length = 0;
 		let i = 1e3 / r[Math.floor(r.length / 2)];
-		if (i < E.targetFPS - 7 ? (E.lowFPSWindows++, E.highFPSWindows = 0) : i > E.targetFPS + 12 && !n ? (E.highFPSWindows++, E.lowFPSWindows = 0) : (E.lowFPSWindows = 0, E.highFPSWindows = 0), t - E.lastAdjustment < E.cooldownMs) return;
-		let a = E.currentScale;
-		E.lowFPSWindows >= 2 ? a = Math.min(E.maxScale, a + .15) : E.highFPSWindows >= 3 && (a = Math.max(E.baseScale, a - .1)), Math.abs(a - E.currentScale) > .001 && (E.currentScale = Math.round(a * 100) / 100, T.setHardwareScalingLevel(E.currentScale), console.info("[Tribune adaptive resolution]", {
-			scale: E.currentScale,
+		if (i < T.targetFPS - 7 ? (T.lowFPSWindows++, T.highFPSWindows = 0) : i > T.targetFPS + 12 && !n ? (T.highFPSWindows++, T.lowFPSWindows = 0) : (T.lowFPSWindows = 0, T.highFPSWindows = 0), t - T.lastAdjustment < T.cooldownMs) return;
+		let a = T.currentScale;
+		T.lowFPSWindows >= 2 ? a = Math.min(T.maxScale, a + .15) : T.highFPSWindows >= 3 && (a = Math.max(T.baseScale, a - .1)), Math.abs(a - T.currentScale) > .001 && (T.currentScale = Math.round(a * 100) / 100, w.setHardwareScalingLevel(T.currentScale), console.info("[Tribune adaptive resolution]", {
+			scale: T.currentScale,
 			sampledFPS: Math.round(i),
 			transition: n
-		}), E.lastAdjustment = t, E.lowFPSWindows = 0, E.highFPSWindows = 0);
+		}), T.lastAdjustment = t, T.lowFPSWindows = 0, T.highFPSWindows = 0);
 	}
-	let O = new tt(T);
-	function A(e) {
+	let D = new tt(w);
+	function O(e) {
 		e instanceof gc && (e.usePhysicalLightFalloff = !1);
 	}
-	O.onNewMaterialAddedObservable.add(A), O.materials.forEach(A), O.clearColor = new F(0, 0, 0, 0);
-	let j = new ia("fixedAxonometric", p.cameraAlpha, p.cameraBeta, p.cameraRadius, R.Zero(), O);
-	j.mode = jr.ORTHOGRAPHIC_CAMERA;
-	let M = p.orthoHalfHeight * (t.overviewZoomOut ?? 1);
-	j.fov = p.teamCameraFov;
-	function N() {
-		let e = M, t = e * T.getRenderWidth() / Math.max(1, T.getRenderHeight());
-		j.orthoLeft = -t, j.orthoRight = t, j.orthoTop = e, j.orthoBottom = -e;
+	D.onNewMaterialAddedObservable.add(O), D.materials.forEach(O), D.clearColor = new F(0, 0, 0, 0);
+	let A = new ia("fixedAxonometric", p.cameraAlpha, p.cameraBeta, p.cameraRadius, R.Zero(), D);
+	A.mode = jr.ORTHOGRAPHIC_CAMERA;
+	let j = p.orthoHalfHeight * (t.overviewZoomOut ?? 1);
+	A.fov = p.teamCameraFov;
+	function M() {
+		let e = j, t = e * w.getRenderWidth() / Math.max(1, w.getRenderHeight());
+		A.orthoLeft = -t, A.orthoRight = t, A.orthoTop = e, A.orthoBottom = -e;
 	}
-	N();
-	let ee = () => {
-		T.resize(), N();
+	M();
+	let N = () => {
+		w.resize(), M();
 	};
-	window.addEventListener("resize", ee), new ResizeObserver(ee).observe(S), requestAnimationFrame(ee);
-	let I = new Es("ambient", new R(0, 1, 0), O), te = .65;
-	I.intensity = .65, I.diffuse = new L(.65, .75, 1), I.groundColor = new L(.35, .4, .55);
-	let ne = new Cs("sun", new R(-1, -2, -1), O), re = 1.6;
-	ne.intensity = 1.6, ne.diffuse = new L(1, .86, .72);
-	let ie = new Fs(2048, ne);
-	ie.usePercentageCloserFiltering = !0, ie.normalBias = .012, ie.bias = 8e-4, ne.position = new R(100, 240, 120), ne.autoCalcShadowZBounds = !0, ne.shadowEnabled = !1;
-	let ae = {
+	window.addEventListener("resize", N), new ResizeObserver(N).observe(x), requestAnimationFrame(N);
+	let ee = new Es("ambient", new R(0, 1, 0), D), I = .65;
+	ee.intensity = .65, ee.diffuse = new L(.65, .75, 1), ee.groundColor = new L(.35, .4, .55);
+	let te = new Cs("sun", new R(-1, -2, -1), D), ne = 1.6;
+	te.intensity = 1.6, te.diffuse = new L(1, .86, .72);
+	let re = new Fs(2048, te);
+	re.usePercentageCloserFiltering = !0, re.normalBias = .012, re.bias = 8e-4, te.position = new R(100, 240, 120), te.autoCalcShadowZBounds = !0, te.shadowEnabled = !1;
+	let ie = {
 		position: new R(0, 100, 0),
 		direction: new R(0, -1, 0),
 		angle: p.detailSpotAngle,
@@ -55334,23 +55334,23 @@ function rE(e, t) {
 		softness: p.spotlightSoftness,
 		intensity: 0,
 		coneLimits: new R()
-	}, oe = new ks("teamDetailSpot", ae.position.clone(), ae.direction.clone(), ae.angle, 2, O);
-	oe.diffuse = new L(1, .94, .85), oe.specular = new L(1, .94, .85), oe.intensity = ae.intensity, oe.range = ae.range;
-	let se = new Fs(512, oe);
-	se.usePercentageCloserFiltering = !0, se.bias = 8e-4, se.normalBias = .015, oe.shadowEnabled = !1, O.environmentTexture = ho.CreateFromPrefilteredData(t.envUrl, O), O.environmentIntensity = .5;
-	let ce = O.environmentIntensity;
-	O.fogMode = tt.FOGMODE_NONE, O.fogColor = L.FromHexString("#2f3847");
-	let le = O.imageProcessingConfiguration, ue = new it();
-	ue.globalSaturation = 15, ue.globalDensity = 5, ue.shadowsHue = 230, ue.shadowsDensity = 40, ue.shadowsSaturation = 10, ue.highlightsHue = 35, ue.highlightsDensity = 8, ue.highlightsSaturation = 5, le.colorCurves = ue, le.colorCurvesEnabled = !1, le.vignetteEnabled = !1, le.colorGradingEnabled = !1, p.stableShaderFeatures && (le.toneMappingEnabled = !1, le.colorCurvesEnabled = !1, O.fogMode = tt.FOGMODE_NONE);
-	let de = le.exposure, fe = le.contrast, pe = !1, me = new _s("post", !0, O, [j]);
-	me.fxaaEnabled = !0;
-	let he = Math.min(2, T.getCaps().maxMSAASamples);
-	me.samples = he, me.bloomEnabled = !0, me.bloomThreshold = .65, me.bloomWeight = .08, me.bloomKernel = 48;
-	let ge = !0, _e = new R(0, -1e4, 0), ve = !1, ye = {
+	}, ae = new ks("teamDetailSpot", ie.position.clone(), ie.direction.clone(), ie.angle, 2, D);
+	ae.diffuse = new L(1, .94, .85), ae.specular = new L(1, .94, .85), ae.intensity = ie.intensity, ae.range = ie.range;
+	let oe = new Fs(512, ae);
+	oe.usePercentageCloserFiltering = !0, oe.bias = 8e-4, oe.normalBias = .015, ae.shadowEnabled = !1, D.environmentTexture = ho.CreateFromPrefilteredData(t.envUrl, D), D.environmentIntensity = .5;
+	let se = D.environmentIntensity;
+	D.fogMode = tt.FOGMODE_NONE, D.fogColor = L.FromHexString("#2f3847");
+	let ce = D.imageProcessingConfiguration, le = new it();
+	le.globalSaturation = 15, le.globalDensity = 5, le.shadowsHue = 230, le.shadowsDensity = 40, le.shadowsSaturation = 10, le.highlightsHue = 35, le.highlightsDensity = 8, le.highlightsSaturation = 5, ce.colorCurves = le, ce.colorCurvesEnabled = !1, ce.vignetteEnabled = !1, ce.colorGradingEnabled = !1, p.stableShaderFeatures && (ce.toneMappingEnabled = !1, ce.colorCurvesEnabled = !1, D.fogMode = tt.FOGMODE_NONE);
+	let ue = ce.exposure, de = ce.contrast, fe = !1, pe = new _s("post", !0, D, [A]);
+	pe.fxaaEnabled = !0;
+	let me = Math.min(2, w.getCaps().maxMSAASamples);
+	pe.samples = me, pe.bloomEnabled = !0, pe.bloomThreshold = .65, pe.bloomWeight = .08, pe.bloomKernel = 48;
+	let he = !0, ge = new R(0, -1e4, 0), _e = !1, ve = {
 		center: R.Zero(),
 		active: !1
-	}, be = !1, xe = !1, Se = null, z = 0, Ce = [], we = [], Te = 0, Ee = !1, De = null, Oe = null, ke = 0, Ae = 0, je = null, Me = L.Black();
-	class Ne extends qs {
+	}, ye = !1, be = !1, xe = null, Se = 0, z = [], Ce = [], we = 0, Te = !1, Ee = null, De = null, Oe = 0, ke = 0, Ae = null, je = L.Black();
+	class Me extends qs {
 		constructor(e, t) {
 			super(e, "TribuneAtmosphere_" + t, 210, { TRIBUNE_ATMOSPHERE: !0 }), XT(this, "selected", !1), XT(this, "role", "normal"), XT(this, "kind", void 0), this.kind = t, this._enable(!0);
 		}
@@ -55450,10 +55450,10 @@ function rE(e, t) {
 			};
 		}
 		bindForSubMesh(e, t, n, r) {
-			let i = ge && Se !== null, a = i ? ye.active : ve;
-			e.updateVector3("tribuneCenter", i ? ye.center : _e), e.updateFloat("tribuneUseCone", +!!i), i && (e.updateVector3("tribuneConePosition", ae.position), e.updateVector3("tribuneConeDirection", ae.direction), e.updateVector3("tribuneConeLimits", ae.coneLimits)), e.updateVector3("tribuneDetailCenter", Se?.center ?? _e), e.updateFloat("tribuneRadius", a ? p.spotlightRadius : -1), e.updateFloat("tribuneSoftness", p.spotlightSoftness), e.updateFloat("tribuneDetailBlend", z), e.updateFloat("tribuneSelected", +!!this.selected), e.updateFloat("tribuneShade", this.role === "house" ? m : p.overviewShadeStrength), e.updateFloat("tribuneFieldMarkings", +(this.role === "fieldMarkings")), e.updateFloat("tribuneSurroundRadius", p.detailSurroundRadius), e.updateFloat("tribuneSurroundFeather", p.detailSurroundFeather);
-			let o = this.role === "fieldMarkings" || this.role === "billboard" ? je : null;
-			e.updateColor3("tribuneHoverColor", o ?? Me), e.updateFloat("tribuneHoverStrength", +!!o), e.updateFloat("tribuneShaderTest", Ae);
+			let i = he && xe !== null, a = i ? ve.active : _e;
+			e.updateVector3("tribuneCenter", i ? ve.center : ge), e.updateFloat("tribuneUseCone", +!!i), i && (e.updateVector3("tribuneConePosition", ie.position), e.updateVector3("tribuneConeDirection", ie.direction), e.updateVector3("tribuneConeLimits", ie.coneLimits)), e.updateVector3("tribuneDetailCenter", xe?.center ?? ge), e.updateFloat("tribuneRadius", a ? p.spotlightRadius : -1), e.updateFloat("tribuneSoftness", p.spotlightSoftness), e.updateFloat("tribuneDetailBlend", Se), e.updateFloat("tribuneSelected", +!!this.selected), e.updateFloat("tribuneShade", p.overviewShadeStrength), e.updateFloat("tribuneFieldMarkings", +(this.role === "fieldMarkings")), e.updateFloat("tribuneSurroundRadius", p.detailSurroundRadius), e.updateFloat("tribuneSurroundFeather", p.detailSurroundFeather);
+			let o = this.role === "fieldMarkings" || this.role === "billboard" ? Ae : null;
+			e.updateColor3("tribuneHoverColor", o ?? je), e.updateFloat("tribuneHoverStrength", +!!o), e.updateFloat("tribuneShaderTest", ke);
 		}
 		getCustomCode(e) {
 			if (e !== "fragment") return null;
@@ -55529,10 +55529,10 @@ function rE(e, t) {
 			};
 		}
 	}
-	let Pe = /* @__PURE__ */ new Map(), Fe = /* @__PURE__ */ new Map(), B = new Vs("tribuneTeamHighlight", O, {
+	let Ne = /* @__PURE__ */ new Map(), Pe = /* @__PURE__ */ new Map(), Fe = new Vs("tribuneTeamHighlight", D, {
 		blurHorizontalSize: .7,
 		blurVerticalSize: .7
-	}), Ie = null, Le = {
+	}), B = null, Ie = {
 		enabled: !0,
 		importedMeshes: 0,
 		uniqueOriginalMaterials: /* @__PURE__ */ new Set(),
@@ -55540,87 +55540,87 @@ function rE(e, t) {
 		optimizedClones: 0,
 		actualClones: 0,
 		sharedMeshCount: 0
-	}, Re = /* @__PURE__ */ new Map(), ze = /* @__PURE__ */ new Map(), Be = /* @__PURE__ */ new Map(), Ve = /* @__PURE__ */ new Map();
-	function He(e, t = "architecture", n = "normal") {
+	}, Le = /* @__PURE__ */ new Map(), Re = /* @__PURE__ */ new Map(), ze = /* @__PURE__ */ new Map(), Be = /* @__PURE__ */ new Map();
+	function Ve(e, t = "architecture", n = "normal") {
 		let r = /* @__PURE__ */ new Map();
 		for (let i of e) {
-			i.material || (i.material = new wc("fallback_" + i.name, O));
+			i.material || (i.material = new wc("fallback_" + i.name, D));
 			let e = i.material;
-			Fe.set(i, e), Ve.set(i, t), Le.importedMeshes++, Le.uniqueOriginalMaterials.add(e), Le.originalClones++;
+			Pe.set(i, e), Be.set(i, t), Ie.importedMeshes++, Ie.uniqueOriginalMaterials.add(e), Ie.originalClones++;
 			let a = r.get(e), o;
-			if (a) o = a, Le.sharedMeshCount++;
+			if (a) o = a, Ie.sharedMeshCount++;
 			else {
 				let a = e.clone(e.name + "_atmosphere_" + i.uniqueId);
 				if (!a) continue;
-				let s = new Ne(a, t);
-				s.role = n, Be.set(a, s), r.set(e, a), o = a, Re.set(i, a), Le.optimizedClones++;
+				let s = new Me(a, t);
+				s.role = n, ze.set(a, s), r.set(e, a), o = a, Le.set(i, a), Ie.optimizedClones++;
 			}
-			ze.set(i, o), i.material = o, Pe.set(i, Be.get(o));
+			Re.set(i, o), i.material = o, Ne.set(i, ze.get(o));
 		}
-		Ke();
+		Ge();
 	}
-	function Ue() {
-		if (Zt === "C" || Zt === "D") {
+	function He() {
+		if (Xt === "C" || Xt === "D") {
 			console.info("[Tribune materials] Switch to A, B, E or F before comparing optimization");
 			return;
 		}
-		for (let [e, t] of ze) {
+		for (let [e, t] of Re) {
 			if (e.isDisposed()) continue;
-			let n = Le.enabled ? t : Re.get(e);
-			if (!n && !Le.enabled) {
-				let r = Fe.get(e);
+			let n = Ie.enabled ? t : Le.get(e);
+			if (!n && !Ie.enabled) {
+				let r = Pe.get(e);
 				if (!r) continue;
 				let i = r.clone(r.name + "_baseline_" + e.uniqueId);
 				if (!i) continue;
-				let a = Be.get(t), o = new Ne(i, Ve.get(e) ?? "architecture");
-				o.role = a?.role ?? "normal", o.selected = a?.selected ?? !1, Be.set(i, o), Re.set(e, i), n = i;
+				let a = ze.get(t), o = new Me(i, Be.get(e) ?? "architecture");
+				o.role = a?.role ?? "normal", o.selected = a?.selected ?? !1, ze.set(i, o), Le.set(e, i), n = i;
 			}
-			n && (e.material = n, Pe.set(e, Be.get(n)));
+			n && (e.material = n, Ne.set(e, ze.get(n)));
 		}
-		qe(Se), Ke();
+		Ke(xe), Ge();
 	}
-	function We() {
+	function Ue() {
 		let e = /* @__PURE__ */ new Set();
-		for (let t of Pe.keys()) !t.isDisposed() && t.material && e.add(t.material);
+		for (let t of Ne.keys()) !t.isDisposed() && t.material && e.add(t.material);
 		let t = {
-			importedMeshes: Le.importedMeshes,
-			uniqueOriginalMaterialObjects: Le.uniqueOriginalMaterials.size,
-			baselineAtmosphereMaterials: Le.originalClones,
-			optimizedAtmosphereMaterials: Le.optimizedClones,
-			potentialSavedMaterials: Le.originalClones - Le.optimizedClones,
+			importedMeshes: Ie.importedMeshes,
+			uniqueOriginalMaterialObjects: Ie.uniqueOriginalMaterials.size,
+			baselineAtmosphereMaterials: Ie.originalClones,
+			optimizedAtmosphereMaterials: Ie.optimizedClones,
+			potentialSavedMaterials: Ie.originalClones - Ie.optimizedClones,
 			activeAtmosphereMaterials: e.size,
-			enabled: Le.enabled
+			enabled: Ie.enabled
 		};
 		return console.table(t), t;
 	}
-	let Ge = null;
-	function Ke() {
-		Ge && (Ge.textContent = `Materials: ${Le.enabled ? "SHARED" : "BASELINE"} · ${Le.optimizedClones}/${Le.originalClones} clones`);
+	let We = null;
+	function Ge() {
+		We && (We.textContent = `Materials: ${Ie.enabled ? "SHARED" : "BASELINE"} · ${Ie.optimizedClones}/${Ie.originalClones} clones`);
 	}
-	function qe(e) {
-		for (let e of Be.values()) e.selected = !1;
-		if (e) for (let t of e.meshes) for (let e of [ze.get(t), Re.get(t)]) {
-			let t = e && Be.get(e);
+	function Ke(e) {
+		for (let e of ze.values()) e.selected = !1;
+		if (e) for (let t of e.meshes) for (let e of [Re.get(t), Le.get(t)]) {
+			let t = e && ze.get(e);
 			t && (t.selected = !0);
 		}
 	}
-	let Je = [], Xe = 0, Ze = [], Qe = /* @__PURE__ */ new Map(), $e = R.Zero(), et = new R(0, -1e4, 0), nt = new P(-9999, -9999), rt = !1, at = document.createElement("div");
-	at.style.cssText = "position:fixed;display:none;padding:12px 16px;background:rgba(5,10,18,.92);color:white;border:1px solid #29647a;border-radius:8px;font:14px Arial,sans-serif;pointer-events:none;z-index:1000", g && document.body.appendChild(at);
-	let ot = "masked";
-	function st() {
-		let e = Ze.find((e) => e.config.id === "carabell");
+	let qe = [], Je = 0, Xe = [], Ze = /* @__PURE__ */ new Map(), Qe = R.Zero(), $e = new R(0, -1e4, 0), et = new P(-9999, -9999), nt = !1, rt = document.createElement("div");
+	rt.style.cssText = "position:fixed;display:none;padding:12px 16px;background:rgba(5,10,18,.92);color:white;border:1px solid #29647a;border-radius:8px;font:14px Arial,sans-serif;pointer-events:none;z-index:1000", h && document.body.appendChild(rt);
+	let at = "masked";
+	function ot() {
+		let e = Xe.find((e) => e.config.id === "carabell");
 		if (e) {
-			for (let t of e.meshes) t.material = ut.get(t) ?? t.material;
-			Wt.textContent = "????????? Carabell: ? ??????";
+			for (let t of e.meshes) t.material = lt.get(t) ?? t.material;
+			Ut.textContent = "????????? Carabell: ? ??????";
 		}
 	}
-	let ct = 0, V = !1;
-	async function lt(e, n = t.modelsUrl) {
-		let r = (await wd.ImportMeshAsync("", n, e, O)).meshes.filter((e) => e instanceof q && e.getTotalVertices() > 0);
-		return r.length && ct++, r;
+	let st = 0, ct = !1;
+	async function V(e, n = t.modelsUrl) {
+		let r = (await wd.ImportMeshAsync("", n, e, D)).meshes.filter((e) => e instanceof q && e.getTotalVertices() > 0);
+		return r.length && st++, r;
 	}
-	let ut = /* @__PURE__ */ new Map(), dt = [];
-	function ft(e) {
+	let lt = /* @__PURE__ */ new Map(), ut = [];
+	function dt(e) {
 		let t = e.getVerticesData(H.PositionKind, !0, !0), n = e.getVerticesData(H.NormalKind);
 		if (!t || !n) return;
 		let r = (e) => `${Math.round(t[e] * 1e4)},${Math.round(t[e + 2] * 1e4)}`, i = /* @__PURE__ */ new Map();
@@ -55636,12 +55636,12 @@ function rE(e, t) {
 		}
 		e.makeGeometryUnique(), e.setVerticesData(H.PositionKind, t);
 	}
-	let pt = null;
-	function mt(e, t, n) {
+	let ft = null;
+	function pt(e, t, n) {
 		let r = t.x - e.x, i = t.z - e.z, a = n.size ?? 1, o = 1.5 * a, s = Math.max(64, Math.round(512 * i / r)), c = new kc("tribuneGroundShadowTex", {
 			width: 512,
 			height: s
-		}, O, !0);
+		}, D, !0);
 		c.hasAlpha = !0;
 		let l = c.getContext();
 		l.clearRect(0, 0, 512, s);
@@ -55649,155 +55649,155 @@ function rE(e, t) {
 		l.shadowColor = `rgba(0,0,0,${n.opacity})`, l.shadowBlur = Math.min(u, d) * (n.blur ?? .22), l.shadowOffsetX = p, l.fillStyle = "#000";
 		let m = (512 - u) / 2 - p, h = (s - d) / 2;
 		l.beginPath(), l.roundRect(m, h, u, d, f), l.fill(), c.update();
-		let g = new wc("tribuneGroundShadowMat", O);
+		let g = new wc("tribuneGroundShadowMat", D);
 		g.disableLighting = !0, g.emissiveColor = L.Black(), g.diffuseColor = L.Black(), g.specularColor = L.Black(), g.opacityTexture = c, g.backFaceCulling = !1;
 		let _ = Hu.CreateGround("tribuneGroundShadow", {
 			width: r * o,
 			height: i * o
-		}, O), [v, y] = n.offset ?? [0, 0];
+		}, D), [v, y] = n.offset ?? [0, 0];
 		return _.position.set((e.x + t.x) / 2 + v, e.y + .05, (e.z + t.z) / 2 + y), _.material = g, _.isPickable = !1, _.receiveShadows = !1, _;
 	}
-	async function ht() {
+	async function mt() {
 		try {
-			if (Je = await lt(p.stadiumFile), !Je.length) throw Error("stadium.glb contains no renderable meshes");
+			if (qe = await V(p.stadiumFile), !qe.length) throw Error("stadium.glb contains no renderable meshes");
 			let e = new R(Infinity, Infinity, Infinity), n = new R(-Infinity, -Infinity, -Infinity);
-			for (let t of Je) {
+			for (let t of qe) {
 				t.computeWorldMatrix(!0);
 				let r = t.getBoundingInfo().boundingBox;
 				e = R.Minimize(e, r.minimumWorld), n = R.Maximize(n, r.maximumWorld);
 			}
-			$e = e.add(n).scale(.5), t.groundShadow && (pt = mt(e, n, t.groundShadow)), j.setTarget($e), _e = $e.clone(), _e.y = -1e4, He(Je);
-			for (let e of Je) e.receiveShadows = !0, ie.addShadowCaster(e), e.isPickable = !1;
+			Qe = e.add(n).scale(.5), t.groundShadow && (ft = pt(e, n, t.groundShadow)), A.setTarget(Qe), ge = Qe.clone(), ge.y = -1e4, Ve(qe);
+			for (let e of qe) e.receiveShadows = !0, re.addShadowCaster(e), e.isPickable = !1;
 		} catch (e) {
 			console.error("STADIUM FAILED:", e);
 		}
 		try {
-			let e = await lt(p.fieldFile), t = Infinity;
+			let e = await V(p.fieldFile), t = Infinity;
 			for (let n of e) n.computeWorldMatrix(!0), t = Math.min(t, n.getBoundingInfo().boundingBox.minimumWorld.y), n.isPickable = !1;
-			Number.isFinite(t) && (Te = t);
+			Number.isFinite(t) && (we = t);
 			let n = e.filter((e) => e.name === "Circle009");
-			for (let e of n) ft(e);
-			He(e.filter((e) => !n.includes(e)), "architecture", "field"), n.length && He(n, "architecture", "fieldMarkings");
+			for (let e of n) dt(e);
+			Ve(e.filter((e) => !n.includes(e)), "architecture", "field"), n.length && Ve(n, "architecture", "fieldMarkings");
 		} catch (e) {
 			console.error("FIELD FAILED:", e);
 		}
-		await Promise.all(h.map(async (e) => {
+		await Promise.all(m.map(async (e) => {
 			try {
-				let n = await lt(e.file, t.liteModelsUrl ?? t.modelsUrl);
+				let n = await V(e.file, t.liteModelsUrl ?? t.modelsUrl);
 				if (!n.length) return;
 				let r = new R(Infinity, Infinity, Infinity), i = new R(-Infinity, -Infinity, -Infinity);
 				for (let e of n) {
 					e.computeWorldMatrix(!0);
 					let t = e.getBoundingInfo().boundingBox;
-					r = R.Minimize(r, t.minimumWorld), i = R.Maximize(i, t.maximumWorld), e.isPickable = !0, e.receiveShadows = !0, ie.addShadowCaster(e);
+					r = R.Minimize(r, t.minimumWorld), i = R.Maximize(i, t.maximumWorld), e.isPickable = !0, e.receiveShadows = !0, re.addShadowCaster(e);
 				}
-				if (He(n, "architecture", "house"), e.id === "carabell") for (let e of n) ut.set(e, e.material);
+				if (Ve(n), e.id === "carabell") for (let e of n) lt.set(e, e.material);
 				let a = {
 					config: e,
 					meshes: n,
 					center: r.add(i).scale(.5),
 					radius: i.subtract(r).length() * .5
 				};
-				Ze.push(a);
-				for (let e of n) Qe.set(e, a);
+				Xe.push(a);
+				for (let e of n) Ze.set(e, a);
 			} catch (t) {
 				console.error("TEAM FAILED:", e.file, t);
 			}
-		})), Ze.sort((e, t) => h.indexOf(e.config) - h.indexOf(t.config));
+		})), Xe.sort((e, t) => m.indexOf(e.config) - m.indexOf(t.config));
 		try {
-			let e = await lt(p.billboardFile);
-			dt = e, xn = null, He(e, "architecture", "billboard");
+			let e = await V(p.billboardFile);
+			ut = e, bn = null, Ve(e, "architecture", "billboard");
 			for (let t of e) t.isPickable = !1, t.receiveShadows = !1;
 		} catch (e) {
 			console.error("BILLBOARD FAILED:", e);
 		}
 		let e = [];
 		for (let t of [p.roofFile, p.columnsFile]) try {
-			let n = await lt(t);
-			e.push(...n), t === p.roofFile ? Ce.push(...n) : we.push(...n), He(n, "roof");
-			for (let e of n) e.isPickable = !1, e.receiveShadows = !0, ie.addShadowCaster(e), oe.excludedMeshes.push(e);
+			let n = await V(t);
+			e.push(...n), t === p.roofFile ? z.push(...n) : Ce.push(...n), Ve(n, "roof");
+			for (let e of n) e.isPickable = !1, e.receiveShadows = !0, re.addShadowCaster(e), ae.excludedMeshes.push(e);
 		} catch (e) {
 			console.error("INTRO PART FAILED:", t, e);
 		}
-		if (be = !p.introEnabled, be) for (let t of e) t.setEnabled(!1);
+		if (ye = !p.introEnabled, ye) for (let t of e) t.setEnabled(!1);
 		else {
 			let t = performance.now() + p.introHoldMs, n = () => {
 				if (Math.min(1, Math.max(0, (performance.now() - t) / p.introWipeMs)) < 1) requestAnimationFrame(n);
 				else {
-					be = !0;
+					ye = !0;
 					for (let t of e) t.setEnabled(!1);
 				}
 			};
 			requestAnimationFrame(n);
 		}
-		console.log("TRIBUNE READY; teams:", Ze.length);
+		console.log("TRIBUNE READY; teams:", Xe.length);
 	}
-	function gt() {
-		if (xe && Se) {
-			_e.copyFrom(Se.center), ve = !0;
+	function ht() {
+		if (be && xe) {
+			ge.copyFrom(xe.center), _e = !0;
 			return;
 		}
-		if (!rt || !be) {
-			ve = !1;
+		if (!nt || !ye) {
+			_e = !1;
 			return;
 		}
-		let e = O.createPickingRay(nt.x, nt.y, null, j), t = $e.y;
+		let e = D.createPickingRay(et.x, et.y, null, A), t = Qe.y;
 		if (Math.abs(e.direction.y) < 1e-6) {
-			ve = !1;
+			_e = !1;
 			return;
 		}
 		let n = (t - e.origin.y) / e.direction.y;
 		if (n <= 0) {
-			ve = !1;
+			_e = !1;
 			return;
 		}
-		et.copyFrom(e.origin.add(e.direction.scale(n))), _e.copyFrom(et), ve = !0;
+		$e.copyFrom(e.origin.add(e.direction.scale(n))), ge.copyFrom($e), _e = !0;
+	}
+	function gt() {
+		if (be || Ee || !nt || !ye) return null;
+		let e = D.pick(et.x, et.y, (e) => Ze.has(e));
+		return !e?.hit || !e.pickedMesh ? null : Ze.get(e.pickedMesh) ?? null;
 	}
 	function _t() {
-		if (xe || De || !rt || !be) return null;
-		let e = O.pick(nt.x, nt.y, (e) => Qe.has(e));
-		return !e?.hit || !e.pickedMesh ? null : Qe.get(e.pickedMesh) ?? null;
-	}
-	function vt() {
 		let e = null, t = Infinity;
-		if (!xe && ve) for (let n of Ze) {
-			let r = n.center.x - _e.x, i = n.center.z - _e.z, a = Math.hypot(r, i);
+		if (!be && _e) for (let n of Xe) {
+			let r = n.center.x - ge.x, i = n.center.z - ge.z, a = Math.hypot(r, i);
 			a < p.spotlightRadius * p.triggerRadiusMultiplier + n.radius && a < t && (e = n, t = a);
 		}
-		let n = _t();
-		if (g && (at.style.display = n ? "block" : "none"), g && n) {
-			at.textContent = [
+		let n = gt();
+		if (h && (rt.style.display = n ? "block" : "none"), h && n) {
+			rt.textContent = [
 				n.config.name.toUpperCase(),
 				n.config.country,
 				n.config.info
 			].filter(Boolean).join(" · ");
-			let e = w.getBoundingClientRect();
-			at.style.left = e.left + nt.x + 18 + "px", at.style.top = e.top + nt.y + 18 + "px";
+			let e = C.getBoundingClientRect();
+			rt.style.left = e.left + et.x + 18 + "px", rt.style.top = e.top + et.y + 18 + "px";
 		}
-		w.style.cursor = n ? "pointer" : "default";
-		let r = xe ? null : n ?? e;
-		if (r !== Ie) {
-			if (Ie) for (let e of Ie.meshes) B.removeMesh(e);
-			if (je = r ? L.FromHexString(r.config.color) : null, r && je) for (let e of r.meshes) B.addMesh(e, je);
-			Ie = r;
+		C.style.cursor = n ? "pointer" : "default";
+		let r = be ? null : n ?? e;
+		if (r !== B) {
+			if (B) for (let e of B.meshes) Fe.removeMesh(e);
+			if (Ae = r ? L.FromHexString(r.config.color) : null, r && Ae) for (let e of r.meshes) Fe.addMesh(e, Ae);
+			B = r;
 		}
-		Xe = +!!r;
+		Je = +!!r;
 	}
+	let vt = document.createElement("div");
+	vt.style.cssText = "position:fixed;left:12px;top:98px;z-index:2100;background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:10px;font:12px/1.5 monospace;max-width:310px";
 	let yt = document.createElement("div");
-	yt.style.cssText = "position:fixed;left:12px;top:98px;z-index:2100;background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:10px;font:12px/1.5 monospace;max-width:310px";
+	yt.textContent = "TRIBUNE · SPOTLIGHT PROFILER", yt.style.cssText = "font-weight:bold;margin-bottom:6px", vt.appendChild(yt);
 	let bt = document.createElement("div");
-	bt.textContent = "TRIBUNE · SPOTLIGHT PROFILER", bt.style.cssText = "font-weight:bold;margin-bottom:6px", yt.appendChild(bt);
+	bt.style.cssText = "font-size:11px;color:#9fc7d4;margin-bottom:7px", bt.textContent = "Выбери E · Plugin справа. Сравни FPS при одинаковом ракурсе. Режимы меняют внешний вид намеренно.", vt.appendChild(bt);
 	let xt = document.createElement("div");
-	xt.style.cssText = "font-size:11px;color:#9fc7d4;margin-bottom:7px", xt.textContent = "Выбери E · Plugin справа. Сравни FPS при одинаковом ракурсе. Режимы меняют внешний вид намеренно.", yt.appendChild(xt);
+	xt.style.cssText = "display:grid;grid-template-columns:1fr 1fr;gap:5px", vt.appendChild(xt);
 	let St = document.createElement("div");
-	St.style.cssText = "display:grid;grid-template-columns:1fr 1fr;gap:5px", yt.appendChild(St);
-	let Ct = document.createElement("div");
-	Ct.style.cssText = "font-size:11px;margin-top:7px;color:#9fc7d4", yt.appendChild(Ct), g && document.body.appendChild(yt);
-	let wt = /* @__PURE__ */ new Map();
-	function Tt(e) {
-		Ae = e;
-		for (let [t, n] of wt) n.style.background = t === e ? "#27728a" : "#122b39", n.style.color = t === e ? "white" : "#a9c6d3";
-		Ct.textContent = [
+	St.style.cssText = "font-size:11px;margin-top:7px;color:#9fc7d4", vt.appendChild(St), h && document.body.appendChild(vt);
+	let Ct = /* @__PURE__ */ new Map();
+	function wt(e) {
+		ke = e;
+		for (let [t, n] of Ct) n.style.background = t === e ? "#27728a" : "#122b39", n.style.color = t === e ? "white" : "#a9c6d3";
+		St.textContent = [
 			"0 · Full mask",
 			"1 · No distance",
 			"2 · No clay",
@@ -55813,21 +55813,21 @@ function rE(e, t) {
 		[4, "4 · Bypass plugin"]
 	]) {
 		let n = document.createElement("button");
-		n.textContent = t, n.style.cssText = "cursor:pointer;padding:7px 5px;border:1px solid #39768b;border-radius:4px;background:#122b39;color:#a9c6d3;font:11px Arial", n.addEventListener("click", () => Tt(e)), St.appendChild(n), wt.set(e, n);
+		n.textContent = t, n.style.cssText = "cursor:pointer;padding:7px 5px;border:1px solid #39768b;border-radius:4px;background:#122b39;color:#a9c6d3;font:11px Arial", n.addEventListener("click", () => wt(e)), xt.appendChild(n), Ct.set(e, n);
 	}
-	Tt(0);
-	let Et = "NORMAL", Dt = document.createElement("div");
-	Dt.style.cssText = "position:fixed;left:12px;bottom:12px;z-index:2100;background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:10px;font:12px/1.5 monospace;max-width:340px", Dt.innerHTML = "<b>TRIBUNE · FLIGHT ISOLATION</b><div style='font-size:11px;color:#a7c6d2;margin:5px 0'>Тестируй в режиме D · GLB, затем в A · Full</div>";
+	wt(0);
+	let Tt = "NORMAL", Et = document.createElement("div");
+	Et.style.cssText = "position:fixed;left:12px;bottom:12px;z-index:2100;background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:10px;font:12px/1.5 monospace;max-width:340px", Et.innerHTML = "<b>TRIBUNE · FLIGHT ISOLATION</b><div style='font-size:11px;color:#a7c6d2;margin:5px 0'>Тестируй в режиме D · GLB, затем в A · Full</div>";
+	let Dt = document.createElement("div");
+	Dt.style.cssText = "display:grid;grid-template-columns:1fr 1fr;gap:5px", Et.appendChild(Dt);
 	let Ot = document.createElement("div");
-	Ot.style.cssText = "display:grid;grid-template-columns:1fr 1fr;gap:5px", Dt.appendChild(Ot);
-	let U = document.createElement("div");
-	U.style.cssText = "font-size:11px;margin-top:6px;color:#9fc7d4", Dt.appendChild(U), g && document.body.appendChild(Dt);
-	let kt = /* @__PURE__ */ new Map();
-	function At(e) {
-		if (!De) {
-			Et = e;
-			for (let [t, n] of kt) n.style.background = t === e ? "#27728a" : "#122b39", n.style.color = t === e ? "#fff" : "#a9c6d3";
-			U.textContent = "Flight: " + e, console.log("TRIBUNE FLIGHT TEST", e);
+	Ot.style.cssText = "font-size:11px;margin-top:6px;color:#9fc7d4", Et.appendChild(Ot), h && document.body.appendChild(Et);
+	let U = /* @__PURE__ */ new Map();
+	function kt(e) {
+		if (!Ee) {
+			Tt = e;
+			for (let [t, n] of U) n.style.background = t === e ? "#27728a" : "#122b39", n.style.color = t === e ? "#fff" : "#a9c6d3";
+			Ot.textContent = "Flight: " + e, console.log("TRIBUNE FLIGHT TEST", e);
 		}
 	}
 	for (let [e, t] of [
@@ -55842,86 +55842,86 @@ function rE(e, t) {
 			NO_MORPH: "Camera flies normally; projection switches at the endpoint",
 			FIXED_LIGHT: "Hold overview lighting until arrival, then restore detail lighting",
 			DEFER_MASK: "Do not update selected-house masking until arrival"
-		}[e], n.addEventListener("click", () => At(e)), Ot.appendChild(n), kt.set(e, n);
+		}[e], n.addEventListener("click", () => kt(e)), Dt.appendChild(n), U.set(e, n);
 	}
-	At("NORMAL");
-	let jt = !1;
-	function Mt(e) {
-		if (ke = Math.max(0, Math.min(1, e)), j.unfreezeProjectionMatrix(), ke <= 1e-4) {
-			j.mode = jr.ORTHOGRAPHIC_CAMERA;
+	kt("NORMAL");
+	let At = !1;
+	function jt(e) {
+		if (Oe = Math.max(0, Math.min(1, e)), A.unfreezeProjectionMatrix(), Oe <= 1e-4) {
+			A.mode = jr.ORTHOGRAPHIC_CAMERA;
 			return;
 		}
-		if (ke >= .9999) {
-			j.mode = jr.PERSPECTIVE_CAMERA;
+		if (Oe >= .9999) {
+			A.mode = jr.PERSPECTIVE_CAMERA;
 			return;
 		}
-		j.mode = jr.ORTHOGRAPHIC_CAMERA;
-		let t = j.getProjectionMatrix(!0).clone();
-		j.mode = jr.PERSPECTIVE_CAMERA;
-		let n = j.getProjectionMatrix(!0).clone();
-		j.freezeProjectionMatrix(k.Lerp(t, n, ke));
+		A.mode = jr.ORTHOGRAPHIC_CAMERA;
+		let t = A.getProjectionMatrix(!0).clone();
+		A.mode = jr.PERSPECTIVE_CAMERA;
+		let n = A.getProjectionMatrix(!0).clone();
+		A.freezeProjectionMatrix(k.Lerp(t, n, Oe));
 	}
-	function Nt(e, t) {
-		let n = new R(e.target.x + Math.cos(e.alpha) * Math.sin(e.beta) * e.radius, e.target.y + Math.cos(e.beta) * e.radius, e.target.z + Math.sin(e.alpha) * Math.sin(e.beta) * e.radius), r = Math.atan2(Math.sin(e.alpha - j.alpha), Math.cos(e.alpha - j.alpha));
-		De = {
+	function Mt(e, t) {
+		let n = new R(e.target.x + Math.cos(e.alpha) * Math.sin(e.beta) * e.radius, e.target.y + Math.cos(e.beta) * e.radius, e.target.z + Math.sin(e.alpha) * Math.sin(e.beta) * e.radius), r = Math.atan2(Math.sin(e.alpha - A.alpha), Math.cos(e.alpha - A.alpha));
+		Ee = {
 			elapsed: 0,
 			duration: p.teamTransitionSeconds,
-			fromAlpha: j.alpha,
-			toAlpha: j.alpha + r,
-			fromBeta: j.beta,
+			fromAlpha: A.alpha,
+			toAlpha: A.alpha + r,
+			fromBeta: A.beta,
 			toBeta: e.beta,
-			fromRadius: j.radius,
+			fromRadius: A.radius,
 			toRadius: e.radius,
-			fromHeight: M,
+			fromHeight: j,
 			toHeight: e.height,
-			fromTarget: j.target.clone(),
+			fromTarget: A.target.clone(),
 			toTarget: e.target.clone(),
-			fromPosition: j.position.clone(),
+			fromPosition: A.position.clone(),
 			toPosition: n,
-			fromProjectionBlend: ke,
-			toProjectionBlend: +!Ee,
+			fromProjectionBlend: Oe,
+			toProjectionBlend: +!Te,
 			onComplete: t
 		};
 	}
-	function Pt(e) {
-		let t = De;
+	function Nt(e) {
+		let t = Ee;
 		if (!t) return;
 		t.elapsed += e;
 		let n = Math.min(1, t.elapsed / t.duration), r = n * n * (3 - 2 * n), i = (e, t) => e + (t - e) * r, a = R.Lerp(t.fromPosition, t.toPosition, r), o = R.Lerp(t.fromTarget, t.toTarget, r);
-		j.setTarget(o), j.setPosition(a), M = i(t.fromHeight, t.toHeight), N();
+		A.setTarget(o), A.setPosition(a), j = i(t.fromHeight, t.toHeight), M();
 		let s = Math.max(.01, R.Distance(a, o));
-		j.fov = Math.max(.05, Math.min(2.5, 2 * Math.atan(M / s)));
+		A.fov = Math.max(.05, Math.min(2.5, 2 * Math.atan(j / s)));
 		let c = r * r * r * (r * (r * 6 - 15) + 10);
-		Mt(Et === "NO_MORPH" ? t.fromProjectionBlend : t.fromProjectionBlend + (t.toProjectionBlend - t.fromProjectionBlend) * c), n >= 1 && (Et === "NO_MORPH" && Mt(t.toProjectionBlend), De = null, jt && Se && !Ee && (qe(Se), jt = !1), t.onComplete?.());
+		jt(Tt === "NO_MORPH" ? t.fromProjectionBlend : t.fromProjectionBlend + (t.toProjectionBlend - t.fromProjectionBlend) * c), n >= 1 && (Tt === "NO_MORPH" && jt(t.toProjectionBlend), Ee = null, At && xe && !Te && (Ke(xe), At = !1), t.onComplete?.());
 	}
-	let Ft = document.createElement("button");
-	Ft.type = "button", Ft.textContent = "Back to stadium", Ft.style.display = "none", b.append(Ft, x), y.appendChild(b);
-	let It = document.createElement("div");
-	It.style.cssText = "position:fixed;left:16px;bottom:16px;z-index:1002;display:none;padding:10px;background:#050a12e8;border:1px solid #29647a;border-radius:7px;color:#bcefff;font:12px Arial";
-	let Lt = document.createElement("button");
-	Lt.textContent = "Только прожектор: ВЫКЛ", Lt.style.cssText = "padding:8px 12px;background:#132330;color:#bcefff;border:1px solid #29647a;border-radius:4px;cursor:pointer", Lt.addEventListener("click", () => {
-		pe = !pe, Lt.textContent = pe ? "Только прожектор: ВКЛ" : "Только прожектор: ВЫКЛ", Lt.style.background = pe ? "#27657c" : "#132330", zt.setEnabled(pe && xe), Vt.setEnabled(pe && xe), Ht.style.display = pe ? "block" : "none";
+	let Pt = document.createElement("button");
+	Pt.type = "button", Pt.textContent = "Back to stadium", Pt.style.display = "none", y.append(Pt, b), v.appendChild(y);
+	let Ft = document.createElement("div");
+	Ft.style.cssText = "position:fixed;left:16px;bottom:16px;z-index:1002;display:none;padding:10px;background:#050a12e8;border:1px solid #29647a;border-radius:7px;color:#bcefff;font:12px Arial";
+	let It = document.createElement("button");
+	It.textContent = "Только прожектор: ВЫКЛ", It.style.cssText = "padding:8px 12px;background:#132330;color:#bcefff;border:1px solid #29647a;border-radius:4px;cursor:pointer", It.addEventListener("click", () => {
+		fe = !fe, It.textContent = fe ? "Только прожектор: ВКЛ" : "Только прожектор: ВЫКЛ", It.style.background = fe ? "#27657c" : "#132330", Rt.setEnabled(fe && be), Bt.setEnabled(fe && be), Vt.style.display = fe ? "block" : "none";
 	});
-	let Rt = new wc("debugLampEmissive", O);
-	Rt.disableLighting = !0, Rt.emissiveColor = new L(1, .25, .08);
-	let zt = Hu.CreateSphere("DEBUG_spot_source", {
+	let Lt = new wc("debugLampEmissive", D);
+	Lt.disableLighting = !0, Lt.emissiveColor = new L(1, .25, .08);
+	let Rt = Hu.CreateSphere("DEBUG_spot_source", {
 		diameter: 2.2,
 		segments: 12
-	}, O);
-	zt.material = Rt, zt.isPickable = !1, zt.setEnabled(!1);
-	let Bt = new wc("debugSpotTargetLit", O);
-	Bt.diffuseColor = new L(1, 1, 1), Bt.specularColor = new L(0, 0, 0);
-	let Vt = Hu.CreateSphere("DEBUG_spot_target", {
+	}, D);
+	Rt.material = Lt, Rt.isPickable = !1, Rt.setEnabled(!1);
+	let zt = new wc("debugSpotTargetLit", D);
+	zt.diffuseColor = new L(1, 1, 1), zt.specularColor = new L(0, 0, 0);
+	let Bt = Hu.CreateSphere("DEBUG_spot_target", {
 		diameter: 3,
 		segments: 16
-	}, O);
-	Vt.material = Bt, Vt.isPickable = !1, Vt.receiveShadows = !1, Vt.setEnabled(!1);
+	}, D);
+	Bt.material = zt, Bt.isPickable = !1, Bt.receiveShadows = !1, Bt.setEnabled(!1);
+	let Vt = document.createElement("div");
+	Vt.style.cssText = "margin-top:8px;max-width:320px;white-space:pre-line;line-height:1.45;color:#fff;font:12px monospace", Ft.appendChild(Vt), Vt.style.display = "none", Ft.appendChild(It);
 	let Ht = document.createElement("div");
-	Ht.style.cssText = "margin-top:8px;max-width:320px;white-space:pre-line;line-height:1.45;color:#fff;font:12px monospace", It.appendChild(Ht), Ht.style.display = "none", It.appendChild(Lt);
+	Ht.style.cssText = "margin-top:10px;display:flex;gap:5px;flex-wrap:wrap";
 	let Ut = document.createElement("div");
-	Ut.style.cssText = "margin-top:10px;display:flex;gap:5px;flex-wrap:wrap";
-	let Wt = document.createElement("div");
-	Wt.style.cssText = "margin-top:7px;max-width:330px;line-height:1.4";
+	Ut.style.cssText = "margin-top:7px;max-width:330px;line-height:1.4";
 	for (let [e, t] of [
 		["masked", "1 · С маской"],
 		["original", "2 · Оригинал GLB"],
@@ -55929,11 +55929,11 @@ function rE(e, t) {
 	]) {
 		let n = document.createElement("button");
 		n.textContent = t, n.style.cssText = "padding:7px;background:#132330;color:#bcefff;border:1px solid #29647a;border-radius:4px;cursor:pointer", n.addEventListener("click", () => {
-			ot = e, st();
-		}), Ut.appendChild(n);
+			at = e, ot();
+		}), Ht.appendChild(n);
 	}
-	It.appendChild(Ut), It.appendChild(Wt), g && document.body.appendChild(It);
-	let Gt = [
+	Ft.appendChild(Ht), Ft.appendChild(Ut), h && document.body.appendChild(Ft);
+	let Wt = [
 		"albedoTexture",
 		"bumpTexture",
 		"metallicTexture",
@@ -55945,12 +55945,12 @@ function rE(e, t) {
 		"lightmapTexture",
 		"metallicReflectanceTexture",
 		"reflectanceTexture"
-	], Kt = /* @__PURE__ */ new Set();
-	async function qt(e) {
-		if (t.liteModelsUrl && !Kt.has(e.config.id)) {
-			Kt.add(e.config.id);
+	], Gt = /* @__PURE__ */ new Set();
+	async function Kt(e) {
+		if (t.liteModelsUrl && !Gt.has(e.config.id)) {
+			Gt.add(e.config.id);
 			try {
-				let n = await wd.LoadAssetContainerAsync(t.modelsUrl, e.config.file, O), r = new Map(n.textures.map((e) => [e.name, e])), i = /* @__PURE__ */ new Set();
+				let n = await wd.LoadAssetContainerAsync(t.modelsUrl, e.config.file, D), r = new Map(n.textures.map((e) => [e.name, e])), i = /* @__PURE__ */ new Set();
 				for (let t of e.meshes) t.material?.getActiveTextures().forEach((e) => i.add(e));
 				let a = /* @__PURE__ */ new Set(), o = (e, t) => {
 					let n = e?.[t];
@@ -55958,9 +55958,9 @@ function rE(e, t) {
 					let o = r.get(n.name);
 					o && (e[t] = o, a.add(o));
 				};
-				for (let e of O.materials) {
+				for (let e of D.materials) {
 					let t = e;
-					for (let e of Gt) o(t, e);
+					for (let e of Wt) o(t, e);
 					let n = t.clearCoat;
 					for (let e of [
 						"texture",
@@ -55970,31 +55970,31 @@ function rE(e, t) {
 				}
 				n.textures = n.textures.filter((e) => !a.has(e)), n.dispose();
 			} catch (t) {
-				Kt.delete(e.config.id), console.error("FULL TEXTURES FAILED:", e.config.file, t);
+				Gt.delete(e.config.id), console.error("FULL TEXTURES FAILED:", e.config.file, t);
 			}
 		}
 	}
-	function Jt(e) {
-		if (xe || De) return;
-		pt?.setEnabled(!1), qt(e), Oe = {
-			alpha: j.alpha,
-			beta: j.beta,
-			radius: j.radius,
-			height: M,
-			target: j.target.clone()
-		}, ye.center.copyFrom(_e), ye.active = ve, xe = !0, S.classList.add("tribuneDetail"), Se = e, Ee = !1;
-		let n = se.getShadowMap()?.renderList;
+	function qt(e) {
+		if (be || Ee) return;
+		ft?.setEnabled(!1), Kt(e), De = {
+			alpha: A.alpha,
+			beta: A.beta,
+			radius: A.radius,
+			height: j,
+			target: A.target.clone()
+		}, ve.center.copyFrom(ge), ve.active = _e, be = !0, x.classList.add("tribuneDetail"), xe = e, Te = !1;
+		let n = oe.getShadowMap()?.renderList;
 		if (n) {
 			n.length = 0;
 			for (let t of e.meshes) n.push(t);
 		}
-		for (let e of [...Ce, ...we]) e.setEnabled(!1);
-		Et === "DEFER_MASK" ? jt = !0 : qe(e), _e.copyFrom(e.center), ve = !0, at.style.display = "none", Ft.style.display = "", It.style.display = "none", b.classList.add("isOpen");
+		for (let e of [...z, ...Ce]) e.setEnabled(!1);
+		Tt === "DEFER_MASK" ? At = !0 : Ke(e), ge.copyFrom(e.center), _e = !0, rt.style.display = "none", Pt.style.display = "", Ft.style.display = "none", y.classList.add("isOpen");
 		let r = t.teamHref?.(e.config.id) ?? null;
-		x.style.display = r ? "" : "none", r && (x.href = r), ot = "masked";
+		b.style.display = r ? "" : "none", r && (b.href = r), at = "masked";
 		let i = new R(-e.center.x, 0, -e.center.z);
 		i.lengthSquared() > .001 ? i.normalize() : i.set(0, 0, 1);
-		let a = T.getRenderWidth() / Math.max(1, T.getRenderHeight()), o = p.teamCameraFov * .5, s = Math.atan(Math.tan(o) * a), c = p.detailCameraSideAngleDegrees * Math.PI / 180, l = new R(i.x * Math.cos(c) - i.z * Math.sin(c), 0, i.x * Math.sin(c) + i.z * Math.cos(c)), u = Infinity, d = -Infinity;
+		let a = w.getRenderWidth() / Math.max(1, w.getRenderHeight()), o = p.teamCameraFov * .5, s = Math.atan(Math.tan(o) * a), c = p.detailCameraSideAngleDegrees * Math.PI / 180, l = new R(i.x * Math.cos(c) - i.z * Math.sin(c), 0, i.x * Math.sin(c) + i.z * Math.cos(c)), u = Infinity, d = -Infinity;
 		for (let t of e.meshes) {
 			t.computeWorldMatrix(!0);
 			let e = t.getBoundingInfo().boundingBox;
@@ -56002,63 +56002,63 @@ function rE(e, t) {
 		}
 		let f = Math.max(1, d - u) / (2 * Math.tan(o) * p.detailHouseFrameFraction), m = e.radius / Math.max(.1, Math.sin(s)) * .9, h = Math.max(p.teamCameraPreferredDistance * .6, f, m), g = p.detailCameraLookUpDegrees * Math.PI / 180, _ = l.scale(h * Math.cos(g));
 		_.y = -h * Math.sin(g);
-		let v = _.length(), y = Math.acos(Math.max(-1, Math.min(1, _.y / v)));
-		Nt({
+		let v = _.length(), S = Math.acos(Math.max(-1, Math.min(1, _.y / v)));
+		Mt({
 			alpha: Math.atan2(_.z, _.x),
-			beta: y,
+			beta: S,
 			radius: v,
 			height: v * Math.tan(o),
 			target: e.center
 		});
 	}
-	function Yt() {
-		if (!xe || !Oe) return;
-		let e = Oe;
-		ot = "masked", st(), Ee = !0, S.classList.remove("tribuneDetail"), Ft.style.display = "none", It.style.display = "none", x.style.display = "none", b.classList.remove("isOpen"), zt.setEnabled(!1), Vt.setEnabled(!1), Nt(e, () => {
-			xe = !1, Se = null, Oe = null, Ee = !1, pt?.setEnabled(!0), jt = !1, qe(null);
-			for (let e of [...Ce, ...we]) e.setEnabled(!1);
+	function Jt() {
+		if (!be || !De) return;
+		let e = De;
+		at = "masked", ot(), Te = !0, x.classList.remove("tribuneDetail"), Pt.style.display = "none", Ft.style.display = "none", b.style.display = "none", y.classList.remove("isOpen"), Rt.setEnabled(!1), Bt.setEnabled(!1), Mt(e, () => {
+			be = !1, xe = null, De = null, Te = !1, ft?.setEnabled(!0), At = !1, Ke(null);
+			for (let e of [...z, ...Ce]) e.setEnabled(!1);
 		});
 	}
-	for (let e of h) {
+	for (let e of m) {
 		let t = document.createElement("button");
 		t.className = "tribuneTeamButton", t.textContent = e.name, t.addEventListener("click", () => {
-			if (xe || De || !be) return;
-			let t = Ze.find((t) => t.config.id === e.id);
-			t && Jt(t);
-		}), C.appendChild(t);
+			if (be || Ee || !ye) return;
+			let t = Xe.find((t) => t.config.id === e.id);
+			t && qt(t);
+		}), S.appendChild(t);
 	}
-	Ft.addEventListener("click", Yt);
-	let Xt = (e) => {
-		e.key === "Escape" && Yt();
+	Pt.addEventListener("click", Jt);
+	let Yt = (e) => {
+		e.key === "Escape" && Jt();
 	};
-	window.addEventListener("keydown", Xt), w.addEventListener("pointermove", (e) => {
-		let t = w.getBoundingClientRect();
-		nt.set((e.clientX - t.left) * w.clientWidth / t.width, (e.clientY - t.top) * w.clientHeight / t.height), rt = !0;
-	}), w.addEventListener("pointerleave", () => {
-		rt = !1, at.style.display = "none";
-	}), w.addEventListener("click", () => {
-		let e = _t();
-		e && Jt(e);
+	window.addEventListener("keydown", Yt), C.addEventListener("pointermove", (e) => {
+		let t = C.getBoundingClientRect();
+		et.set((e.clientX - t.left) * C.clientWidth / t.width, (e.clientY - t.top) * C.clientHeight / t.height), nt = !0;
+	}), C.addEventListener("pointerleave", () => {
+		nt = !1, rt.style.display = "none";
+	}), C.addEventListener("click", () => {
+		let e = gt();
+		e && qt(e);
 	});
-	let Zt = "A", Qt = /* @__PURE__ */ new Map(), $t = new wc("TRIBUNE_PERF_FLAT", O);
-	$t.disableLighting = !0, $t.diffuseColor = new L(.65, .72, .79), $t.emissiveColor = new L(.65, .72, .79), $t.specularColor = L.Black();
+	let Xt = "A", Zt = /* @__PURE__ */ new Map(), Qt = new wc("TRIBUNE_PERF_FLAT", D);
+	Qt.disableLighting = !0, Qt.diffuseColor = new L(.65, .72, .79), Qt.emissiveColor = new L(.65, .72, .79), Qt.specularColor = L.Black();
+	let $t = document.createElement("div");
+	$t.style.cssText = "position:fixed;right:12px;bottom:12px;z-index:2000;min-width:275px;max-width:calc(100vw - 24px);background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:11px;font:12px/1.5 monospace;box-shadow:0 4px 18px #0005";
 	let en = document.createElement("div");
-	en.style.cssText = "position:fixed;right:12px;bottom:12px;z-index:2000;min-width:275px;max-width:calc(100vw - 24px);background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:11px;font:12px/1.5 monospace;box-shadow:0 4px 18px #0005";
+	en.textContent = "TRIBUNE · ISOLATION TEST A–F", en.style.cssText = "font-weight:bold;letter-spacing:.08em;margin-bottom:8px", $t.appendChild(en);
 	let tn = document.createElement("div");
-	tn.textContent = "TRIBUNE · ISOLATION TEST A–F", tn.style.cssText = "font-weight:bold;letter-spacing:.08em;margin-bottom:8px", en.appendChild(tn);
+	tn.style.cssText = "display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin-bottom:9px", $t.appendChild(tn);
 	let nn = document.createElement("div");
-	nn.style.cssText = "display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin-bottom:9px", en.appendChild(nn);
+	nn.style.whiteSpace = "pre-line", $t.appendChild(nn);
 	let rn = document.createElement("div");
-	rn.style.whiteSpace = "pre-line", en.appendChild(rn);
-	let an = document.createElement("div");
-	an.style.cssText = "color:#86a8b8;margin-top:7px;font:11px/1.4 Arial", an.textContent = "Тестируй в общем виде: D ↔ E = плагин, E ↔ B = highlight, E ↔ F = FX. После смены жди 5–10 сек, затем сравни FPS.", en.appendChild(an), g && document.body.appendChild(en);
-	let on = /* @__PURE__ */ new Map();
-	function sn(e) {
-		if (e !== Zt) {
-			for (let [e, t] of Qt) e.isDisposed() || (e.material = t);
-			if (Qt.clear(), Zt = e, me.bloomEnabled = e === "A" || e === "F", me.fxaaEnabled = e === "A" || e === "F", me.samples = me.fxaaEnabled ? he : 1, B.isEnabled = e === "A" || e === "B", e === "C" || e === "D") for (let t of Pe.keys()) t.isDisposed() || (Qt.set(t, t.material), t.material = e === "C" ? $t : Fe.get(t) ?? t.material);
-			for (let [t, n] of on) n.style.background = t === e ? "#27728a" : "#122b39", n.style.color = t === e ? "white" : "#a9c6d3";
-			cn = 0, ln = 0, un = 0, W = 0, dn = performance.now(), console.log("TRIBUNE PERF MODE", e, "substituted meshes:", Qt.size);
+	rn.style.cssText = "color:#86a8b8;margin-top:7px;font:11px/1.4 Arial", rn.textContent = "Тестируй в общем виде: D ↔ E = плагин, E ↔ B = highlight, E ↔ F = FX. После смены жди 5–10 сек, затем сравни FPS.", $t.appendChild(rn), h && document.body.appendChild($t);
+	let an = /* @__PURE__ */ new Map();
+	function on(e) {
+		if (e !== Xt) {
+			for (let [e, t] of Zt) e.isDisposed() || (e.material = t);
+			if (Zt.clear(), Xt = e, pe.bloomEnabled = e === "A" || e === "F", pe.fxaaEnabled = e === "A" || e === "F", pe.samples = pe.fxaaEnabled ? me : 1, Fe.isEnabled = e === "A" || e === "B", e === "C" || e === "D") for (let t of Ne.keys()) t.isDisposed() || (Zt.set(t, t.material), t.material = e === "C" ? Qt : Pe.get(t) ?? t.material);
+			for (let [t, n] of an) n.style.background = t === e ? "#27728a" : "#122b39", n.style.color = t === e ? "white" : "#a9c6d3";
+			sn = 0, cn = 0, ln = 0, un = 0, W = performance.now(), console.log("TRIBUNE PERF MODE", e, "substituted meshes:", Zt.size);
 		}
 	}
 	for (let [e, t] of [
@@ -56077,117 +56077,117 @@ function rE(e, t) {
 			D: "Original GLB, no plugin/FX/highlight",
 			E: "Plugin, no FX/highlight",
 			F: "Plugin and FX, no highlight"
-		}[e], n.style.cssText = "cursor:pointer;padding:7px 4px;border:1px solid #39768b;border-radius:4px;background:#122b39;color:#a9c6d3;font:11px Arial", n.addEventListener("click", () => sn(e)), nn.appendChild(n), on.set(e, n);
+		}[e], n.style.cssText = "cursor:pointer;padding:7px 4px;border:1px solid #39768b;border-radius:4px;background:#122b39;color:#a9c6d3;font:11px Arial", n.addEventListener("click", () => on(e)), tn.appendChild(n), an.set(e, n);
 	}
-	on.get("A").style.background = "#27728a", on.get("A").style.color = "white";
-	let cn = 0, ln = 0, un = 0, W = 0, dn = performance.now();
-	function fn(e, t) {
-		cn++, ln += e, un = Math.max(un, e), W += t;
+	an.get("A").style.background = "#27728a", an.get("A").style.color = "white";
+	let sn = 0, cn = 0, ln = 0, un = 0, W = performance.now();
+	function dn(e, t) {
+		sn++, cn += e, ln = Math.max(ln, e), un += t;
 		let n = performance.now();
-		if (n - dn < 1e3) return;
-		let r = ln / Math.max(1, cn), i = (W / cn).toFixed(0);
-		rn.textContent = `MODE ${Zt} / ${Et} / shader ${Ae} | FPS ${T.getFps().toFixed(0)}\nscene.render avg: ${r.toFixed(1)} ms\nscene.render max: ${un.toFixed(1)} ms\ndraw calls/frame: ${i}\nactive meshes: ${O.getActiveMeshes().length}\nshadows: ${oe.shadowEnabled ? "ON" : "OFF"}`, console.log("TRIBUNE PERF SAMPLE", {
-			mode: Zt,
-			fps: Math.round(T.getFps()),
+		if (n - W < 1e3) return;
+		let r = cn / Math.max(1, sn), i = (un / sn).toFixed(0);
+		nn.textContent = `MODE ${Xt} / ${Tt} / shader ${ke} | FPS ${w.getFps().toFixed(0)}\nscene.render avg: ${r.toFixed(1)} ms\nscene.render max: ${ln.toFixed(1)} ms\ndraw calls/frame: ${i}\nactive meshes: ${D.getActiveMeshes().length}\nshadows: ${ae.shadowEnabled ? "ON" : "OFF"}`, console.log("TRIBUNE PERF SAMPLE", {
+			mode: Xt,
+			fps: Math.round(w.getFps()),
 			renderAvgMs: Number(r.toFixed(2)),
-			renderMaxMs: Number(un.toFixed(2)),
+			renderMaxMs: Number(ln.toFixed(2)),
 			drawCallsPerFrame: Number(i),
-			activeMeshes: O.getActiveMeshes().length,
-			spotlightShadows: oe.shadowEnabled
-		}), cn = 0, ln = 0, un = 0, W = 0, dn = n;
+			activeMeshes: D.getActiveMeshes().length,
+			spotlightShadows: ae.shadowEnabled
+		}), sn = 0, cn = 0, ln = 0, un = 0, W = n;
 	}
+	let fn = document.createElement("div");
+	fn.style.cssText = "position:fixed;top:16px;left:16px;padding:8px 12px;background:#0009;color:#66ffaa;font:14px monospace;pointer-events:none;z-index:100", h && document.body.appendChild(fn);
 	let pn = document.createElement("div");
-	pn.style.cssText = "position:fixed;top:16px;left:16px;padding:8px 12px;background:#0009;color:#66ffaa;font:14px monospace;pointer-events:none;z-index:100", g && document.body.appendChild(pn);
-	let mn = document.createElement("div");
-	mn.style.cssText = "position:fixed;right:12px;bottom:62px;z-index:2200;background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:9px;font:12px monospace";
-	let hn = document.createElement("button");
-	hn.style.cssText = "cursor:pointer;background:#164457;color:#fff;border:1px solid #39768b;border-radius:4px;padding:6px 9px", Ge = hn, hn.addEventListener("click", () => {
-		if (Zt === "C" || Zt === "D") {
+	pn.style.cssText = "position:fixed;right:12px;bottom:62px;z-index:2200;background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:9px;font:12px monospace";
+	let mn = document.createElement("button");
+	mn.style.cssText = "cursor:pointer;background:#164457;color:#fff;border:1px solid #39768b;border-radius:4px;padding:6px 9px", We = mn, mn.addEventListener("click", () => {
+		if (Xt === "C" || Xt === "D") {
 			console.warn("Material comparison requires A, B, E or F");
 			return;
 		}
-		Le.enabled = !Le.enabled, Ue(), We();
-	}), mn.appendChild(hn);
-	let gn = document.createElement("button");
-	gn.textContent = "Audit → Console", gn.style.cssText = "cursor:pointer;margin-left:6px;background:#122b39;color:#d9f6ff;border:1px solid #39768b;border-radius:4px;padding:6px 9px", gn.addEventListener("click", () => We()), mn.appendChild(gn), g && document.body.appendChild(mn), Ke();
-	let _n = document.createElement("div");
-	_n.style.cssText = "position:fixed;right:12px;bottom:12px;z-index:2200;background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:9px;font:12px monospace";
-	let vn = document.createElement("button");
-	vn.style.cssText = "cursor:pointer;background:#164457;color:#fff;border:1px solid #39768b;border-radius:4px;padding:6px 9px";
-	function yn() {
-		vn.textContent = `Adaptive ${E.enabled ? "ON" : "OFF"} · ${E.currentScale.toFixed(2)}x`;
+		Ie.enabled = !Ie.enabled, He(), Ue();
+	}), pn.appendChild(mn);
+	let hn = document.createElement("button");
+	hn.textContent = "Audit → Console", hn.style.cssText = "cursor:pointer;margin-left:6px;background:#122b39;color:#d9f6ff;border:1px solid #39768b;border-radius:4px;padding:6px 9px", hn.addEventListener("click", () => Ue()), pn.appendChild(hn), h && document.body.appendChild(pn), Ge();
+	let gn = document.createElement("div");
+	gn.style.cssText = "position:fixed;right:12px;bottom:12px;z-index:2200;background:#07131de8;color:#d9f6ff;border:1px solid #39768b;border-radius:7px;padding:9px;font:12px monospace";
+	let _n = document.createElement("button");
+	_n.style.cssText = "cursor:pointer;background:#164457;color:#fff;border:1px solid #39768b;border-radius:4px;padding:6px 9px";
+	function vn() {
+		_n.textContent = `Adaptive ${T.enabled ? "ON" : "OFF"} · ${T.currentScale.toFixed(2)}x`;
 	}
-	vn.addEventListener("click", () => {
-		E.enabled = !E.enabled, E.samples.length = 0, E.lowFPSWindows = 0, E.highFPSWindows = 0, E.enabled || (E.currentScale = E.baseScale, T.setHardwareScalingLevel(E.baseScale)), yn();
-	}), _n.appendChild(vn), g && document.body.appendChild(_n), yn();
-	let bn = 0, xn = null, Sn = "", Cn = !1, wn = performance.now(), Tn = 0, En = 0, Dn = document.createElement("div");
-	Dn.style.cssText = "position:fixed;left:16px;top:54px;z-index:1100;background:#050a12dd;color:#a8f3ff;padding:8px 10px;border:1px solid #29647a;border-radius:5px;font:12px monospace;pointer-events:none;display:none", g && document.body.appendChild(Dn);
-	let On = 0, kn = document.createElement("button");
-	kn.type = "button", kn.className = "tribuneTeamButton", kn.textContent = "Unified Spotlight", kn.setAttribute("aria-pressed", "true"), kn.addEventListener("click", () => {
-		ge = !ge, kn.textContent = ge ? "Unified Spotlight" : "Legacy Spotlight", kn.setAttribute("aria-pressed", String(ge));
-	}), g && C.appendChild(kn);
-	let An = g ? new nE(T, O, C, (e) => (e.team = Se?.config.id ?? null, e.perfMode = Zt, e.flightTest = Et, e.spotlightShaderTest = Ae, e.spotlightMode = ge ? "unified" : "legacy", e.spotlightOnlyTest = pe, e.materialDiagnosticMode = ot, e.materialSharing = Le.enabled, e.adaptive = E.enabled, e.hardwareScaling = T.getHardwareScalingLevel(), e.renderWidth = T.getRenderWidth(), e.renderHeight = T.getRenderHeight(), e.devicePixelRatio = window.devicePixelRatio, e.bloom = me.bloomEnabled, e.fxaa = me.fxaaEnabled, e.msaaSamples = me.samples, e.highlight = B.isEnabled, e.stableShaderFeatures = p.stableShaderFeatures, e.spotlightShadows = oe.shadowEnabled, e.billboard = xn, e.spotlight = ve, e.pointerX = !xe && rt ? nt.x : null, e.pointerY = !xe && rt ? nt.y : null, e.camera = O.activeCamera?.name ?? null, e.cameraAlpha = j.alpha, e.cameraBeta = j.beta, e.cameraRadius = j.radius, e.cameraTargetX = j.target.x, e.cameraTargetY = j.target.y, e.cameraTargetZ = j.target.z, e.cameraFov = j.fov, e.freeDetailCamera = !1, e.warmingMaterials = In, De ? "flight" : xe ? "detail" : "overview"), () => {
-		if (!V || !be) return "Wait for the scene to load.";
-		if (ct !== h.length + 5) return "Benchmark requires all stadium and team GLBs.";
-		if (De || In) return "Wait for the flight or warmup to finish.";
-		let e = O.environmentTexture?.isReady() ?? !1;
-		return !e || !O.isReady(!0) ? (QT(O, e), "Wait for textures and shaders to finish loading.") : null;
-	}) : null, jn = () => {
-		let e = performance.now(), t = e - wn, n = Math.min(.1, t / 1e3);
-		if (wn = e, D(t, e, !!De), g && e - bn > 1e3 && (yn(), bn = e), be && !xe && !De && (j.alpha += p.cameraRotationDegreesPerSecond * Math.PI / 180 * n), Pt(n), De) {
-			let e = Math.min(1, De.elapsed / De.duration), t = e * e * (3 - 2 * e);
-			z = Ee ? 1 - t : t;
-		} else z = +!!xe;
-		gt(), ne.shadowEnabled = !1, oe.shadowEnabled = p.detailShadowsEnabled && !pe && z > .001 && !Ee && (p.detailShadowsDuringFlight || !De);
-		let r = Et === "FIXED_LIGHT" && De ? +!!Ee : z, i = pe ? 0 : p.detailSunIntensity, a = pe ? 0 : p.detailAmbientIntensity, o = pe ? 0 : p.detailEnvironmentIntensity;
-		if (ne.intensity = re + (i - re) * r, I.intensity = te + (a - te) * r, O.environmentIntensity = ce + (o - ce) * r, p.stableShaderFeatures || (le.toneMappingEnabled = z > .9), le.toneMappingType = Ye.TONEMAPPING_ACES, De || (le.exposure = xe ? p.detailExposure : de, le.contrast = xe ? p.detailContrast : fe), p.stableShaderFeatures || (le.colorCurvesEnabled = z > .98), p.stableShaderFeatures || (O.fogMode = z > .9 ? tt.FOGMODE_EXP2 : tt.FOGMODE_NONE), p.stableShaderFeatures || (O.fogDensity = p.detailFogDensity * Math.max(0, (z - .9) / .1)), ae.intensity = (pe ? 100 : p.detailSpotIntensity) * r, oe.intensity = ae.intensity, Se) {
-			let e = Se.center, t = ae.position.set($e.x, Te + p.detailSpotHeightAbovePitch, $e.z), n = $e.subtract(e);
-			n.y = 0, n.lengthSquared() < 1e-4 && n.set(0, 0, 1), n.normalize(), pe && (t.copyFrom(e.add(n.scale(p.debugSpotDistanceFromHouse))), t.y = e.y + p.debugSpotHeightAboveHouse);
-			let r = e.subtractToRef(t, ae.direction), i = r.length();
+	_n.addEventListener("click", () => {
+		T.enabled = !T.enabled, T.samples.length = 0, T.lowFPSWindows = 0, T.highFPSWindows = 0, T.enabled || (T.currentScale = T.baseScale, w.setHardwareScalingLevel(T.baseScale)), vn();
+	}), gn.appendChild(_n), h && document.body.appendChild(gn), vn();
+	let yn = 0, bn = null, xn = "", Sn = !1, Cn = performance.now(), wn = 0, Tn = 0, En = document.createElement("div");
+	En.style.cssText = "position:fixed;left:16px;top:54px;z-index:1100;background:#050a12dd;color:#a8f3ff;padding:8px 10px;border:1px solid #29647a;border-radius:5px;font:12px monospace;pointer-events:none;display:none", h && document.body.appendChild(En);
+	let Dn = 0, On = document.createElement("button");
+	On.type = "button", On.className = "tribuneTeamButton", On.textContent = "Unified Spotlight", On.setAttribute("aria-pressed", "true"), On.addEventListener("click", () => {
+		he = !he, On.textContent = he ? "Unified Spotlight" : "Legacy Spotlight", On.setAttribute("aria-pressed", String(he));
+	}), h && S.appendChild(On);
+	let kn = h ? new nE(w, D, S, (e) => (e.team = xe?.config.id ?? null, e.perfMode = Xt, e.flightTest = Tt, e.spotlightShaderTest = ke, e.spotlightMode = he ? "unified" : "legacy", e.spotlightOnlyTest = fe, e.materialDiagnosticMode = at, e.materialSharing = Ie.enabled, e.adaptive = T.enabled, e.hardwareScaling = w.getHardwareScalingLevel(), e.renderWidth = w.getRenderWidth(), e.renderHeight = w.getRenderHeight(), e.devicePixelRatio = window.devicePixelRatio, e.bloom = pe.bloomEnabled, e.fxaa = pe.fxaaEnabled, e.msaaSamples = pe.samples, e.highlight = Fe.isEnabled, e.stableShaderFeatures = p.stableShaderFeatures, e.spotlightShadows = ae.shadowEnabled, e.billboard = bn, e.spotlight = _e, e.pointerX = !be && nt ? et.x : null, e.pointerY = !be && nt ? et.y : null, e.camera = D.activeCamera?.name ?? null, e.cameraAlpha = A.alpha, e.cameraBeta = A.beta, e.cameraRadius = A.radius, e.cameraTargetX = A.target.x, e.cameraTargetY = A.target.y, e.cameraTargetZ = A.target.z, e.cameraFov = A.fov, e.freeDetailCamera = !1, e.warmingMaterials = Fn, Ee ? "flight" : be ? "detail" : "overview"), () => {
+		if (!ct || !ye) return "Wait for the scene to load.";
+		if (st !== m.length + 5) return "Benchmark requires all stadium and team GLBs.";
+		if (Ee || Fn) return "Wait for the flight or warmup to finish.";
+		let e = D.environmentTexture?.isReady() ?? !1;
+		return !e || !D.isReady(!0) ? (QT(D, e), "Wait for textures and shaders to finish loading.") : null;
+	}) : null, An = () => {
+		let e = performance.now(), t = e - Cn, n = Math.min(.1, t / 1e3);
+		if (Cn = e, E(t, e, !!Ee), h && e - yn > 1e3 && (vn(), yn = e), ye && !be && !Ee && (A.alpha += p.cameraRotationDegreesPerSecond * Math.PI / 180 * n), Nt(n), Ee) {
+			let e = Math.min(1, Ee.elapsed / Ee.duration), t = e * e * (3 - 2 * e);
+			Se = Te ? 1 - t : t;
+		} else Se = +!!be;
+		ht(), te.shadowEnabled = !1, ae.shadowEnabled = p.detailShadowsEnabled && !fe && Se > .001 && !Te && (p.detailShadowsDuringFlight || !Ee);
+		let r = Tt === "FIXED_LIGHT" && Ee ? +!!Te : Se, i = fe ? 0 : p.detailSunIntensity, a = fe ? 0 : p.detailAmbientIntensity, o = fe ? 0 : p.detailEnvironmentIntensity;
+		if (te.intensity = ne + (i - ne) * r, ee.intensity = I + (a - I) * r, D.environmentIntensity = se + (o - se) * r, p.stableShaderFeatures || (ce.toneMappingEnabled = Se > .9), ce.toneMappingType = Ye.TONEMAPPING_ACES, Ee || (ce.exposure = be ? p.detailExposure : ue, ce.contrast = be ? p.detailContrast : de), p.stableShaderFeatures || (ce.colorCurvesEnabled = Se > .98), p.stableShaderFeatures || (D.fogMode = Se > .9 ? tt.FOGMODE_EXP2 : tt.FOGMODE_NONE), p.stableShaderFeatures || (D.fogDensity = p.detailFogDensity * Math.max(0, (Se - .9) / .1)), ie.intensity = (fe ? 100 : p.detailSpotIntensity) * r, ae.intensity = ie.intensity, xe) {
+			let e = xe.center, t = ie.position.set(Qe.x, we + p.detailSpotHeightAbovePitch, Qe.z), n = Qe.subtract(e);
+			n.y = 0, n.lengthSquared() < 1e-4 && n.set(0, 0, 1), n.normalize(), fe && (t.copyFrom(e.add(n.scale(p.debugSpotDistanceFromHouse))), t.y = e.y + p.debugSpotHeightAboveHouse);
+			let r = e.subtractToRef(t, ie.direction), i = r.length();
 			i > 1e-6 ? r.scaleInPlace(1 / i) : r.set(0, -1, 0);
-			let a = Se.radius * p.detailSpotFocusMargin, o = Math.max(p.detailSpotMinAngle, Math.min(p.detailSpotMaxAngle, 2 * Math.atan2(a, i))), s = z * z * (3 - 2 * z);
-			ae.angle = pe ? 2.4 : p.detailSpotAngle + (o - p.detailSpotAngle) * s, ae.range = pe ? 1e3 : Math.max(250, i + Se.radius * 3), oe.position.copyFrom(ae.position), oe.direction.copyFrom(ae.direction), oe.angle = ae.angle, oe.range = ae.range;
-			let c = Math.cos(ae.angle * .5), l = Math.cos(ae.angle * .5 * (1 - ae.softness));
-			ae.coneLimits.set(c * c, l * l, ae.range * ae.range), pe && (zt.position.copyFrom(t), Vt.position.copyFrom(e.add(n.scale(Math.max(5, Se.radius * .65)))), Vt.position.y = e.y + 2, Ht.textContent = `Источник (оранжевый): ${t.x.toFixed(1)}, ${t.y.toFixed(1)}, ${t.z.toFixed(1)}\nДом: ${e.x.toFixed(1)}, ${e.y.toFixed(1)}, ${e.z.toFixed(1)}\nДистанция: ${i.toFixed(1)} · Угол: ${oe.angle.toFixed(2)} rad\nБелая сфера должна освещаться прожектором. Оранжевая светится сама.`);
+			let a = xe.radius * p.detailSpotFocusMargin, o = Math.max(p.detailSpotMinAngle, Math.min(p.detailSpotMaxAngle, 2 * Math.atan2(a, i))), s = Se * Se * (3 - 2 * Se);
+			ie.angle = fe ? 2.4 : p.detailSpotAngle + (o - p.detailSpotAngle) * s, ie.range = fe ? 1e3 : Math.max(250, i + xe.radius * 3), ae.position.copyFrom(ie.position), ae.direction.copyFrom(ie.direction), ae.angle = ie.angle, ae.range = ie.range;
+			let c = Math.cos(ie.angle * .5), l = Math.cos(ie.angle * .5 * (1 - ie.softness));
+			ie.coneLimits.set(c * c, l * l, ie.range * ie.range), fe && (Rt.position.copyFrom(t), Bt.position.copyFrom(e.add(n.scale(Math.max(5, xe.radius * .65)))), Bt.position.y = e.y + 2, Vt.textContent = `Источник (оранжевый): ${t.x.toFixed(1)}, ${t.y.toFixed(1)}, ${t.z.toFixed(1)}\nДом: ${e.x.toFixed(1)}, ${e.y.toFixed(1)}, ${e.z.toFixed(1)}\nДистанция: ${i.toFixed(1)} · Угол: ${ae.angle.toFixed(2)} rad\nБелая сфера должна освещаться прожектором. Оранжевая светится сама.`);
 		}
-		let s = xe || ve || Xe > .01;
-		if (s !== xn) {
-			for (let e of dt) e.setEnabled(s);
-			xn = s;
+		let s = be || _e || Je > .01;
+		if (s !== bn) {
+			for (let e of ut) e.setEnabled(s);
+			bn = s;
 		}
-		if (vt(), (Sn !== ot || Cn !== (xe && !Ee && !De && Se?.config.id === "carabell")) && (st(), Sn = ot, Cn = !(!xe || Ee || De || Se?.config.id !== "carabell")), Zt === "C" || Zt === "D") for (let e of Qt.keys()) {
-			let t = Zt === "C" ? $t : Fe.get(e);
+		if (_t(), (xn !== at || Sn !== (be && !Te && !Ee && xe?.config.id === "carabell")) && (ot(), xn = at, Sn = !(!be || Te || Ee || xe?.config.id !== "carabell")), Xt === "C" || Xt === "D") for (let e of Zt.keys()) {
+			let t = Xt === "C" ? Qt : Pe.get(e);
 			!e.isDisposed() && t && e.material !== t && (e.material = t);
 		}
-		let c = g ? performance.now() : 0;
-		if (O.render(), !An) return;
-		let l = performance.now() - c, u = An.drawCalls;
-		An.recordFrame(e, t, l, u), fn(l, u), De && e - On > 250 && (Dn.textContent = `FLIGHT ${T.getFps().toFixed(0)} FPS | ${O.getActiveMeshes().length} meshes | shadows ${oe.shadowEnabled ? "on" : "off"}`, On = e), Dn.style.display = De ? "block" : "none", De && e - En > 1e3 && (console.log("TRIBUNE TRANSITION PERF", {
-			fps: Math.round(T.getFps()),
-			frameMs: Number((1e3 / Math.max(1, T.getFps())).toFixed(1)),
+		let c = h ? performance.now() : 0;
+		if (D.render(), !kn) return;
+		let l = performance.now() - c, u = kn.drawCalls;
+		kn.recordFrame(e, t, l, u), dn(l, u), Ee && e - Dn > 250 && (En.textContent = `FLIGHT ${w.getFps().toFixed(0)} FPS | ${D.getActiveMeshes().length} meshes | shadows ${ae.shadowEnabled ? "on" : "off"}`, Dn = e), En.style.display = Ee ? "block" : "none", Ee && e - Tn > 1e3 && (console.log("TRIBUNE TRANSITION PERF", {
+			fps: Math.round(w.getFps()),
+			frameMs: Number((1e3 / Math.max(1, w.getFps())).toFixed(1)),
 			drawCalls: u,
-			activeMeshes: O.getActiveMeshes().length,
-			spotlightShadows: oe.shadowEnabled,
-			spotlightCasters: se.getShadowMap()?.renderList?.length ?? 0,
-			projectionBlend: Number(ke.toFixed(2)),
-			detailBlend: Number(z.toFixed(2)),
+			activeMeshes: D.getActiveMeshes().length,
+			spotlightShadows: ae.shadowEnabled,
+			spotlightCasters: oe.getShadowMap()?.renderList?.length ?? 0,
+			projectionBlend: Number(Oe.toFixed(2)),
+			detailBlend: Number(Se.toFixed(2)),
 			shaderFeaturesFixed: p.stableShaderFeatures,
-			toneMapping: le.toneMappingEnabled,
-			fogMode: O.fogMode
-		}), En = e), e - Tn >= 250 && (pn.textContent = "FPS: " + T.getFps().toFixed(0), Tn = e);
-	}, Mn = !1, Nn = !1, Pn = () => {
-		let e = Mn && !document.hidden;
-		e && !Nn && (wn = performance.now(), T.runRenderLoop(jn), Nn = !0), !e && Nn && (T.stopRenderLoop(jn), Nn = !1);
-	}, Fn = new IntersectionObserver((e) => {
-		Mn = e.some((e) => e.isIntersecting), Pn();
+			toneMapping: ce.toneMappingEnabled,
+			fogMode: D.fogMode
+		}), Tn = e), e - wn >= 250 && (fn.textContent = "FPS: " + w.getFps().toFixed(0), wn = e);
+	}, jn = !1, Mn = !1, Nn = () => {
+		let e = jn && !document.hidden;
+		e && !Mn && (Cn = performance.now(), w.runRenderLoop(An), Mn = !0), !e && Mn && (w.stopRenderLoop(An), Mn = !1);
+	}, Pn = new IntersectionObserver((e) => {
+		jn = e.some((e) => e.isIntersecting), Nn();
 	}, { threshold: .05 });
-	Fn.observe(e), document.addEventListener("visibilitychange", Pn);
-	let In = !1;
+	Pn.observe(e), document.addEventListener("visibilitychange", Nn);
+	let Fn = !1;
 	window.addEventListener("keydown", async (e) => {
-		if (!g || e.key.toLowerCase() !== "p" || e.repeat || In) return;
-		In = !0;
+		if (!h || e.key.toLowerCase() !== "p" || e.repeat || Fn) return;
+		Fn = !0;
 		let t = /* @__PURE__ */ new Map();
-		for (let e of Pe.keys()) e.material && !t.has(e.material) && t.set(e.material, e);
+		for (let e of Ne.keys()) e.material && !t.has(e.material) && t.set(e.material, e);
 		let n = [...t.keys()], r = 0, i = performance.now();
 		console.log("TRIBUNE WARMUP START", n.length, "materials");
 		for (let e of n) {
@@ -56202,14 +56202,14 @@ function rE(e, t) {
 				r++, r % 25 == 0 && (console.log("TRIBUNE WARMUP", r, "/", n.length), await new Promise((e) => requestAnimationFrame(() => e())));
 			}
 		}
-		console.log("TRIBUNE WARMUP DONE", r, "materials", Math.round(performance.now() - i), "ms"), In = !1;
-	}), ht().then(() => {
-		We(), O.materials.forEach(A), V = !0, console.log("TRIBUNE V5 READY — P: optional shader warmup; fixed shader features:", p.stableShaderFeatures), console.log("STANDARD LIGHT FALLOFF:", O.materials.filter((e) => e instanceof gc && !e.usePhysicalLightFalloff).length, "PBR materials configured");
+		console.log("TRIBUNE WARMUP DONE", r, "materials", Math.round(performance.now() - i), "ms"), Fn = !1;
+	}), mt().then(() => {
+		Ue(), D.materials.forEach(O), ct = !0, console.log("TRIBUNE V5 READY — P: optional shader warmup; fixed shader features:", p.stableShaderFeatures), console.log("STANDARD LIGHT FALLOFF:", D.materials.filter((e) => e instanceof gc && !e.usePhysicalLightFalloff).length, "PBR materials configured");
 	});
-	function Ln() {
-		Fn.disconnect(), document.removeEventListener("visibilitychange", Pn), window.removeEventListener("keydown", Xt), window.removeEventListener("resize", ee), T.stopRenderLoop(), T.dispose(), y.remove();
+	function In() {
+		Pn.disconnect(), document.removeEventListener("visibilitychange", Nn), window.removeEventListener("keydown", Yt), window.removeEventListener("resize", N), w.stopRenderLoop(), w.dispose(), v.remove();
 	}
-	return { dispose: Ln };
+	return { dispose: In };
 }
 //#endregion
 export { rE as mountStadium };

@@ -79,9 +79,6 @@ export type StadiumOptions = {
    *  size: footprint scale vs the stadium (default 1).
    *  blur: softness as a share of the footprint (default 0.22; smaller = crisper, denser shadow).
    *  Default: off. */
-  /** Overview tint on the team houses: 0 = houses keep their own colours, 1 = full clay tint.
-   *  Default: the MVP value (same as the stadium). */
-  overviewHouseShade?: number;
   groundShadow?: { opacity: number; offset?: [number, number]; blur?: number; size?: number };
 };
 export type StadiumHandle = { dispose: () => void };
@@ -147,8 +144,6 @@ const SETTINGS = {
   detailExposure: 0.95,
   detailContrast: 1.40,
 };
-// Overview tint on team houses (see StadiumOptions.overviewHouseShade).
-const HOUSE_SHADE = options.overviewHouseShade ?? SETTINGS.overviewShadeStrength;
 
 const TEAMS = [
   { id:"carabell", name:"Carabell Club", file:"Carabell.glb", country:"Philippines", info:"Football for Humanity", color:"#F23C38" },
@@ -505,7 +500,7 @@ class AtmospherePlugin extends MaterialPluginBase {
     ubo.updateFloat("tribuneSoftness", SETTINGS.spotlightSoftness);
     ubo.updateFloat("tribuneDetailBlend", detailBlend);
     ubo.updateFloat("tribuneSelected", this.selected ? 1 : 0);
-    ubo.updateFloat("tribuneShade", this.role === "house" ? HOUSE_SHADE : SETTINGS.overviewShadeStrength);
+    ubo.updateFloat("tribuneShade", SETTINGS.overviewShadeStrength);
     ubo.updateFloat("tribuneFieldMarkings", this.role === "fieldMarkings" ? 1 : 0);
     ubo.updateFloat("tribuneSurroundRadius", SETTINGS.detailSurroundRadius);
     ubo.updateFloat("tribuneSurroundFeather", SETTINGS.detailSurroundFeather);
@@ -632,7 +627,7 @@ const unoptimizedMaterialByMesh = new Map<Mesh, Material>();
 const optimizedMaterialByMesh = new Map<Mesh, Material>();
 const pluginByMaterial = new Map<Material, AtmospherePlugin>();
 const materialKindByMesh = new Map<Mesh, "architecture" | "roof">();
-type AtmosphereRole = "normal" | "billboard" | "field" | "fieldMarkings" | "house";
+type AtmosphereRole = "normal" | "billboard" | "field" | "fieldMarkings";
 function addAtmosphere(meshes: Mesh[], kind: "architecture" | "roof" = "architecture", role: AtmosphereRole = "normal") {
   // Local cache is deliberate: each call is a separate team/architectural domain.
   const sharedByOriginal = new Map<Material, Material>();
@@ -893,7 +888,7 @@ async function loadWorld() {
         shadows.addShadowCaster(m);
         // Detail shadow casters are assigned only for the selected team.
       }
-      addAtmosphere(meshes, "architecture", "house");
+      addAtmosphere(meshes);
       if (config.id === "carabell") for (const mesh of meshes) maskedTeamMaterials.set(mesh, mesh.material);
       const center=min.add(max).scale(.5);
       const radius=max.subtract(min).length()*.5;
