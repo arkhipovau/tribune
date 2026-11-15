@@ -33,7 +33,7 @@ LOOKS["3"] = {
   shading: [0.4, 1.9],
   facets: [0.3, 1.5],
   sheen: { color: [0.012, 0.03, 0.075], range: [0.5, 1.7], direction: [-1, -1], radius: 170 },
-  shadow: { opacity: 0.8, offset: [16, 10], blur: 0.26, size: 1.03, color: [0.03, 0.06, 0.14] }, // navy-black
+  shadow: { opacity: 0.75, offset: [16, 10], blur: 0.26, size: 1.03, color: [0.05, 0.1, 0.22] }, // navy-black
 };
 const LOOK_ID = new URLSearchParams(window.location.search).get("look");
 const LOOK = LOOKS[LOOK_ID] ?? LOOKS.base;
@@ -65,7 +65,7 @@ export function initStadiumWindow() {
     observer.disconnect();
     if (!hasWebGL()) { fallback.hidden = false; return; }
     try {
-      const { mountStadium } = await import(new URL("js/stadium.js", base).href);
+      const { mountStadium } = await import(new URL(`js/stadium.js?v=${__STADIUM_VERSION__}`, base).href); // version busts stale caches
       mountStadium(mount, {
         modelsUrl: new URL("models/", base).href,
         liteModelsUrl: new URL("models-lite/", base).href, // small textures first; full ones on opening a house

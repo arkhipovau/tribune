@@ -1,5 +1,7 @@
 import { defineConfig } from "vite";
 import { resolve, basename } from "node:path";
+import { readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 import handlebars from "vite-plugin-handlebars";
 
 const ROOT = import.meta.dirname;
@@ -13,6 +15,12 @@ const PAGE_CONTEXT: Record<string, { home?: boolean; current?: string }> = {
   "about.html": { current: "about" },
 };
 
+// The stadium module entry (public/assets/stadium/js/stadium.js) has a fixed name, so browsers and the
+// service worker would keep serving an old copy. Its content hash goes into the import URL instead.
+const STADIUM_VERSION = createHash("sha256")
+  .update(readFileSync(resolve(ROOT, "public/assets/stadium/js/stadium.js")))
+  .digest("hex").slice(0, 10);
+
 // Multi-page static site, published to GitHub Pages under /tribune/.
 export default defineConfig({
   plugins: [
@@ -25,6 +33,7 @@ export default defineConfig({
   root: resolve(ROOT, "src/pages"),
   publicDir: resolve(ROOT, "public"),
   base: "/tribune/",
+  define: { __STADIUM_VERSION__: JSON.stringify(STADIUM_VERSION) },
   build: {
     outDir: resolve(ROOT, "dist"),
     emptyOutDir: true,
